@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.vercel/
+.env
+.env.local
+.env.*.local
+supabase/.temp/
+supabase/.branches/
+playwright-report/
+test-results/
+coverage/
+# Reference clone of the Astryx source (own git repo, not part of this app)
+astryx/
+public/t/
+*.log

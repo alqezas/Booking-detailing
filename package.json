@@ -1,0 +1,20 @@
+{
+  "name": "claudeproject1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@astryxdesign/core": "^0.7.1",
+    "@astryxdesign/theme-neutral": "^0.7.1",
+    "@stylexjs/stylex": "^0.19.1"
+  },
+  "devDependencies": {
+    "@astryxdesign/cli": "^0.7.1"
+  }
+}
