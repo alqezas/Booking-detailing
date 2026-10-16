@@ -47,7 +47,7 @@ export default function OwnerStatsPage() {
 
   return (
     <VStack>
-      <Section variant="transparent" padding={4}>
+      <Section variant="transparent" padding={4} paddingInline={0}>
         <VStack gap={4}>
           <Heading level={1}>Деньги и заезды</Heading>
           <PeriodNav
@@ -87,7 +87,7 @@ export default function OwnerStatsPage() {
           )}
         </VStack>
       </Section>
-      <Section variant="transparent" padding={4} paddingBlockStart={0}>
+      <Section variant="transparent" padding={4} paddingInline={0} paddingBlockStart={0}>
         {payments.isPending ? (
           <RowsSkeleton rows={3} />
         ) : payments.isError ? (

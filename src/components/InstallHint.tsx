@@ -13,7 +13,7 @@ export function InstallHint() {
   const offer = useInstallOffer();
   if (!offer.kind) return null;
   return (
-    <Section variant="transparent" padding={4}>
+    <Section variant="transparent" padding={0}>
       <Card padding={4} variant="muted">
         <HStack gap={3} align="start">
           <Icon icon={DeviceMobile} color="accent" />

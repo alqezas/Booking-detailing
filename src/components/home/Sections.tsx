@@ -1,5 +1,6 @@
 import {Button} from '@astryxdesign/core/Button';
 import {Card} from '@astryxdesign/core/Card';
+import {ClickableCard} from '@astryxdesign/core/ClickableCard';
 import {Grid} from '@astryxdesign/core/Grid';
 import {Heading} from '@astryxdesign/core/Heading';
 import {HStack} from '@astryxdesign/core/HStack';
@@ -55,7 +56,7 @@ export const ASSISTANT_EXAMPLES = ['Когда ближайшее окно?', '�
 export function RevealSection({title, id, children, action}: {title: string; id?: string; children: ReactNode; action?: ReactNode}) {
   const {ref, style} = useReveal<HTMLElement>();
   return (
-    <Section ref={ref} role="region" aria-labelledby={id} variant="transparent" padding={4} style={style}>
+    <Section ref={ref} role="region" aria-labelledby={id} variant="transparent" padding={0} style={style}>
       <VStack gap={3}>
         <HStack justify="between" align="center" gap={2}>
           <Heading level={2} id={id}>
@@ -73,11 +74,11 @@ export function AboutSection() {
   const t = useTenant();
   if (!t.description) return null;
   return (
-    <Section variant="transparent" padding={4}>
+    <RevealSection title="О студии" id="about-title">
       <Text type="large" textWrap="pretty">
         {t.description}
       </Text>
-    </Section>
+    </RevealSection>
   );
 }
 
@@ -174,19 +175,20 @@ export function GallerySection() {
   const media = t.gallery.map(g => ({type: 'image' as const, src: mediaUrl(g.image_path, g.updated_at) ?? '', alt: g.caption || 'Пример работы'}));
   return (
     <RevealSection title="Наши работы" id="gallery-title">
-      <Grid columns={{minWidth: 150, max: 3}} gap={2}>
+      <Grid columns={{minWidth: 160, max: 4}} gap={3}>
         {t.gallery.map((g, i) => (
-          <Button
+          <ClickableCard
             key={g.id}
             label={g.caption ? `Открыть фото: ${g.caption}` : 'Открыть фото работы'}
-            variant="ghost"
+            padding={0}
+            variant="transparent"
             onClick={() => {
               setIndex(i);
               setOpen(true);
             }}
-            style={{padding: 0, height: 'auto', display: 'block', textAlign: 'start', borderRadius: 'var(--radius-container)', overflow: 'hidden'}}
           >
             <VStack gap={1}>
+              {/* Fixed 4:3 box: the grid never reflows while photos load. */}
               <img
                 src={media[i]!.src}
                 alt={media[i]!.alt}
@@ -194,15 +196,17 @@ export function GallerySection() {
                 decoding="async"
                 width={600}
                 height={450}
-                style={{width: '100%', height: 'auto', aspectRatio: '4 / 3', objectFit: 'cover', display: 'block', borderRadius: 'var(--radius-container)'}}
+                style={{width: '100%', height: 'auto', aspectRatio: '4 / 3', objectFit: 'cover', display: 'block', borderRadius: 'var(--radius-container)', background: 'var(--color-background-muted)'}}
               />
+              {/* Captions are short (≤ 120 chars): wrap rather than truncate. The inset keeps
+                  the last line clear of the card's rounded, clipped corners. */}
               {g.caption && (
-                <Text type="supporting" maxLines={2}>
-                  {g.caption}
-                </Text>
+                <VStack paddingInline={2} paddingBlockEnd={2}>
+                  <Text type="supporting">{g.caption}</Text>
+                </VStack>
               )}
             </VStack>
-          </Button>
+          </ClickableCard>
         ))}
       </Grid>
       <Lightbox isOpen={open} onOpenChange={setOpen} media={media} index={index} onIndexChange={setIndex} hasZoom />

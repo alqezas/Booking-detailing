@@ -3,6 +3,7 @@ import {Section} from '@astryxdesign/core/Section';
 import {Tab, TabList} from '@astryxdesign/core/TabList';
 import {VStack} from '@astryxdesign/core/VStack';
 import {useSearchParams} from 'react-router';
+import {TEXT_MAX_WIDTH} from '../../components/layout/Page.tsx';
 import {GallerySettings} from './settings/GallerySettings.tsx';
 import {InfoCardsSettings} from './settings/InfoCardsSettings.tsx';
 import {ResourcesSettings} from './settings/ResourcesSettings.tsx';
@@ -25,7 +26,7 @@ export default function OwnerSettingsPage() {
   const Body = current.Component;
   return (
     <VStack>
-      <Section variant="transparent" padding={4} paddingBlockEnd={0}>
+      <Section variant="transparent" padding={4} paddingInline={0} paddingBlockEnd={0}>
         <VStack gap={3}>
           <Heading level={1}>Настройки</Heading>
           <TabList value={current.value} onChange={v => setParams({tab: v}, {replace: true})} overflow="scroll" size="sm">
@@ -35,8 +36,11 @@ export default function OwnerSettingsPage() {
           </TabList>
         </VStack>
       </Section>
-      <Section variant="transparent" padding={4}>
-        <Body />
+      <Section variant="transparent" padding={4} paddingInline={0}>
+        {/* Forms keep a readable measure; the photo grid uses the whole column. */}
+        <VStack width="100%" maxWidth={current.value === 'gallery' ? undefined : TEXT_MAX_WIDTH}>
+          <Body />
+        </VStack>
       </Section>
     </VStack>
   );

@@ -3,7 +3,7 @@ import {VStack} from '@astryxdesign/core/VStack';
 import {useEffect, useRef} from 'react';
 import {Outlet, ScrollRestoration, useLocation} from 'react-router';
 import {useTenant} from '../../app/tenant.tsx';
-import {BottomNav, BOTTOM_NAV_SPACE} from '../../components/BottomNav.tsx';
+import {BottomNav, BOTTOM_NAV_SPACE, clientNavItems} from '../../components/BottomNav.tsx';
 import {BookingFlowProvider} from '../../components/booking/BookingFlow.tsx';
 import {PreviewBanner} from '../../components/PreviewBanner.tsx';
 import {RouterLink} from '../../components/RouterLink.tsx';
@@ -38,7 +38,7 @@ export function ClientLayout() {
           {tenant.status === 'preview' && <PreviewBanner />}
           <Outlet />
         </VStack>
-        <BottomNav slug={tenant.slug} />
+        <BottomNav items={clientNavItems(tenant.slug)} />
       </BookingFlowProvider>
     </LinkProvider>
   );

@@ -72,7 +72,7 @@ export default function OwnerBookingsPage() {
 
   return (
     <VStack>
-      <Section variant="transparent" padding={4}>
+      <Section variant="transparent" padding={4} paddingInline={0}>
         <VStack gap={4}>
           <HStack justify="between" align="center">
             <Heading level={1}>Записи</Heading>
@@ -99,7 +99,7 @@ export default function OwnerBookingsPage() {
         </VStack>
       </Section>
 
-      <Section variant="transparent" padding={4} paddingBlockStart={0}>
+      <Section variant="transparent" padding={4} paddingInline={0} paddingBlockStart={0}>
         {bookings.isPending || stats.isPending ? (
           <RowsSkeleton rows={5} height={64} />
         ) : bookings.isError ? (

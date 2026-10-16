@@ -5,7 +5,9 @@ import {LinkProvider} from '@astryxdesign/core/Link';
 import {Tab, TabList} from '@astryxdesign/core/TabList';
 import {Text} from '@astryxdesign/core/Text';
 import {VStack} from '@astryxdesign/core/VStack';
-import {ArrowSquareOut, SignOut} from '@phosphor-icons/react';
+import {ArrowSquareOut, CalendarDots, ChatCircleDots, Coins, GearSix, SignOut} from '@phosphor-icons/react';
+import {useMatchMedia} from '../../lib/motion.ts';
+import {BottomNav, BOTTOM_NAV_SPACE} from '../../components/BottomNav.tsx';
 import type {Session} from '@supabase/supabase-js';
 import {useQuery, useQueryClient} from '@tanstack/react-query';
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
@@ -17,6 +19,7 @@ import {OwnerApi} from '../../lib/api/owner.ts';
 import {clearPrivateCaches} from '../../lib/pwa.ts';
 import {ownerClient} from '../../lib/supabase.ts';
 import {OwnerContext, ownerKey} from './ownerContext.tsx';
+import {PageContainer} from '../../components/layout/Page.tsx';
 
 export default function OwnerRoot() {
   const tenant = useTenant();
@@ -26,6 +29,7 @@ export default function OwnerRoot() {
   const {pathname} = useLocation();
   const [session, setSession] = useState<Session | null | undefined>(undefined);
   const main = useRef<HTMLElement | null>(null);
+  const wide = useMatchMedia('(min-width: 720px)');
 
   useEffect(() => {
     void client.auth.getSession().then(({data}) => setSession(data.session));
@@ -67,6 +71,12 @@ export default function OwnerRoot() {
   }
 
   const base = `/s/${tenant.slug}/owner`;
+  const sections = [
+    {value: 'bookings', label: 'Записи', to: base, icon: CalendarDots},
+    {value: 'stats', label: 'Деньги', to: `${base}/stats`, icon: Coins},
+    {value: 'settings', label: 'Настройки', to: `${base}/settings`, icon: GearSix},
+    {value: 'assistant', label: 'Помощник', to: `${base}/assistant`, icon: ChatCircleDots},
+  ];
   const tab = pathname.replace(base, '').replace(/^\//, '').split('/')[0] || 'bookings';
 
   return (
@@ -74,35 +84,40 @@ export default function OwnerRoot() {
       <LinkProvider component={RouterLink}>
         <ScrollRestoration />
         <VStack minHeight="100dvh" style={{paddingTop: 'env(safe-area-inset-top, 0px)', paddingBottom: 'env(safe-area-inset-bottom, 0px)'}}>
+          {/* Full-width sticky bar; its content sits on the same column as the page below. */}
           <VStack
             as="header"
-            gap={2}
-            paddingInline={4}
-            paddingBlockStart={3}
             style={{position: 'sticky', top: 0, zIndex: 20, background: 'var(--color-background-body)', borderBottom: '1px solid var(--color-border)'}}
           >
-            <HStack justify="between" align="center" gap={2}>
-              <VStack gap={0}>
-                <Text type="supporting">Кабинет</Text>
-                <Text weight="bold" maxLines={1}>
-                  {tenant.name}
-                </Text>
-              </VStack>
-              <HStack gap={1}>
-                <Button label="Открыть сайт студии" variant="ghost" size="sm" isIconOnly icon={<Icon icon={ArrowSquareOut} />} href={`/s/${tenant.slug}/`} target="_blank" tooltip="Сайт студии" />
-                <Button label="Выйти" variant="ghost" size="sm" icon={<Icon icon={SignOut} />} onClick={() => void logout()} />
+            <PageContainer style={{gap: 'var(--spacing-2)', paddingBlockStart: 'var(--spacing-3)'}}>
+              <HStack justify="between" align="center" gap={2}>
+                <VStack gap={0} style={{minWidth: 0}}>
+                  <Text type="supporting">Кабинет</Text>
+                  <Text weight="bold" maxLines={1}>
+                    {tenant.name}
+                  </Text>
+                </VStack>
+                <HStack gap={1} style={{flexShrink: 0}}>
+                  <Button label="Открыть сайт студии" variant="ghost" size="sm" isIconOnly icon={<Icon icon={ArrowSquareOut} />} href={`/s/${tenant.slug}/`} target="_blank" tooltip="Сайт студии" />
+                  <Button label="Выйти" variant="ghost" size="sm" icon={<Icon icon={SignOut} />} onClick={() => void logout()} />
+                </HStack>
               </HStack>
-            </HStack>
-            <TabList value={tab} onChange={v => navigate(v === 'bookings' ? base : `${base}/${v}`)} layout="fill" size="md">
-              <Tab value="bookings" label="Записи" href={base} />
-              <Tab value="stats" label="Деньги" href={`${base}/stats`} />
-              <Tab value="settings" label="Настройки" href={`${base}/settings`} />
-              <Tab value="assistant" label="Помощник" href={`${base}/assistant`} />
-            </TabList>
+              {/* Wide screens: tabs in the header. Phones: the same four sections in a bottom bar. */}
+              {wide ? (
+                <TabList value={tab} onChange={v => navigate(v === 'bookings' ? base : `${base}/${v}`)} size="md">
+                  {sections.map(s => (
+                    <Tab key={s.value} value={s.value} label={s.label} href={s.to} />
+                  ))}
+                </TabList>
+              ) : (
+                <VStack style={{height: 'var(--spacing-1)'}} aria-hidden="true" />
+              )}
+            </PageContainer>
           </VStack>
-          <VStack as="main" ref={main} tabIndex={-1} aria-label="Кабинет" maxWidth={960} width="100%" style={{marginInline: 'auto', outline: 'none'}}>
+          <PageContainer as="main" ref={main} style={{outline: 'none', paddingBlockEnd: wide ? 'var(--spacing-8)' : BOTTOM_NAV_SPACE}}>
             <Outlet />
-          </VStack>
+          </PageContainer>
+          {!wide && <BottomNav label="Разделы кабинета" items={sections.map(s => ({to: s.to, label: s.label, icon: s.icon, end: s.value === 'bookings'}))} />}
         </VStack>
       </LinkProvider>
     </OwnerContext.Provider>

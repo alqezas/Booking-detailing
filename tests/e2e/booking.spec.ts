@@ -60,10 +60,12 @@ test('customer books a service; the owner sees it in the cabinet', async ({page,
   await owner.getByRole('button', {name: 'Войти'}).click();
   await expect(owner.getByRole('heading', {name: 'Записи', level: 1})).toBeVisible();
   await owner.getByRole('radio', {name: 'Неделя'}).click();
-  let row = owner.getByText(new RegExp(name));
-  if (!(await row.count())) {
-    await owner.getByRole('button', {name: 'Вперёд'}).click(); // booking may fall into next week
-    row = owner.getByText(new RegExp(name));
+  const row = owner.getByText(new RegExp(name));
+  // Wait for this week's list; only if the booking is not in it, look at the next week.
+  const inThisWeek = await row.waitFor({timeout: 10_000}).then(() => true, () => false);
+  if (!inThisWeek) {
+    await owner.getByRole('button', {name: 'Вперёд'}).click();
+    await row.waitFor({timeout: 10_000});
   }
   await expect(row).toHaveCount(1);
   await expect(owner.getByText(time).first()).toBeVisible();
@@ -72,6 +74,7 @@ test('customer books a service; the owner sees it in the cabinet', async ({page,
 
 test('the same slot cannot be booked twice from two devices', async ({browser}, info) => {
   test.skip(info.project.name !== 'phone', 'one run is enough');
+  test.setTimeout(150_000); // two full booking flows in two browser contexts
   const open = async () => {
     const ctx = await browser.newContext(info.project.use);
     const p = await ctx.newPage();

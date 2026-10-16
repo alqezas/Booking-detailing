@@ -8,6 +8,7 @@ import {useTenant} from '../../app/tenant.tsx';
 import {useLiquidGlass} from '../../lib/glass.ts';
 import {mediaUrl} from '../../lib/media.ts';
 import {useBookingFlow} from '../booking/BookingFlow.tsx';
+import {PageContainer} from '../layout/Page.tsx';
 
 /**
  * Full-bleed photo with the studio name and a wide glass «Записаться» button.
@@ -24,7 +25,7 @@ export function Hero() {
   useLiquidGlass({target: '[data-glass="hero-cta"]', snapshot: '[data-glass-snapshot="hero"]', enabled: !!hero, resolution: 1.5, frost: 1});
 
   return (
-    <VStack as="header" style={{position: 'relative', minHeight: 'min(78dvh, 720px)', overflow: 'hidden'}}>
+    <VStack as="header" style={{position: 'relative', minHeight: 'clamp(460px, 74svh, 720px)', overflow: 'hidden'}}>
       <VStack data-glass-snapshot="hero" style={{position: 'absolute', inset: 0, zIndex: 0}} aria-hidden="true">
         {hero && (
           <img
@@ -47,17 +48,21 @@ export function Hero() {
           background: 'linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.88) 100%)',
         }}
       />
-      <VStack
-        gap={4}
-        padding={4}
-        justify="end"
-        style={{position: 'relative', flex: 1, paddingTop: 'calc(env(safe-area-inset-top, 0px) + var(--spacing-4))'}}
+      <PageContainer
+        style={{
+          position: 'relative',
+          flex: 1,
+          justifyContent: 'flex-end',
+          gap: 'var(--spacing-4)',
+          paddingBlockStart: 'calc(env(safe-area-inset-top, 0px) + var(--spacing-4))',
+          paddingBlockEnd: 'var(--spacing-6)',
+        }}
       >
         <HStack gap={2} align="center" style={{marginBottom: 'auto'}}>
           {logo && <Avatar src={logo} name={t.name} size="md" />}
           <Text weight="semibold">{t.short_name ?? t.name}</Text>
         </HStack>
-        <VStack gap={2} maxWidth={640}>
+        <VStack gap={2} maxWidth={720}>
           <Heading level={1} type="display-2" textWrap="balance">
             {t.name}
           </Heading>
@@ -67,7 +72,7 @@ export function Hero() {
             </Text>
           )}
         </VStack>
-        <VStack width="100%" maxWidth={640} style={{position: 'relative'}}>
+        <VStack width="100%" maxWidth={420} style={{position: 'relative'}}>
           {/* The lens: a decorative layer under the real button. liquid-gl makes its
               target non-interactive, so the clickable button sits above it. */}
           <VStack
@@ -103,7 +108,7 @@ export function Hero() {
             }}
           />
         </VStack>
-      </VStack>
+      </PageContainer>
     </VStack>
   );
 }

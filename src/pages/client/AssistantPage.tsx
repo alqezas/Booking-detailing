@@ -9,6 +9,7 @@ import {AssistantChat} from '../../components/AssistantChat.tsx';
 import {useBookingFlow} from '../../components/booking/BookingFlow.tsx';
 import {ASSISTANT_EXAMPLES} from '../../components/home/Sections.tsx';
 import {InlineEmpty} from '../../components/StatusScreens.tsx';
+import {GUTTER, TEXT_MAX_WIDTH} from '../../components/layout/Page.tsx';
 
 export default function AssistantPage() {
   const t = useTenant();
@@ -29,9 +30,14 @@ export default function AssistantPage() {
   return (
     <VStack
       ref={box}
-      maxWidth={760}
+      maxWidth={TEXT_MAX_WIDTH}
       width="100%"
-      style={{marginInline: 'auto', height: `calc(100dvh - ${top}px - ${BOTTOM_NAV_SPACE})`, paddingTop: 'env(safe-area-inset-top, 0px)'}}
+      style={{
+        marginInline: 'auto',
+        height: `calc(100svh - ${top}px - ${BOTTOM_NAV_SPACE})`,
+        paddingTop: 'env(safe-area-inset-top, 0px)',
+        paddingInline: `calc(${GUTTER} - var(--spacing-4))`,
+      }}
     >
       <AssistantChat
         endpoint="assistant"

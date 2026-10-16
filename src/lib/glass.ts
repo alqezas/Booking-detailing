@@ -53,7 +53,8 @@ export function useLiquidGlass({target, snapshot, enabled = true, refreshKey, ti
         tint: tint ?? 'rgba(10, 12, 18, 0.32)',
         shadow: true,
         specular: !reduced,
-        reveal: reduced ? 'none' : 'fade',
+        // The CSS frosted fallback is already on screen; swap to the lens without a fade-in flash.
+        reveal: 'none',
         tilt: false,
         interaction: 'none',
       });

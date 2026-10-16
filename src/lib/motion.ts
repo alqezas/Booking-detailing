@@ -19,8 +19,9 @@ export function useReducedMotion(): boolean {
 }
 
 /**
- * Fade-and-rise when a section scrolls into view. With reduced motion the
- * content is simply visible: no transform, no transition.
+ * Gentle fade when a section scrolls into view. Opacity only: nothing moves,
+ * so nothing appears to jump. With reduced motion the content is simply
+ * visible, without any transition.
  */
 export function useReveal<T extends HTMLElement>(): {ref: RefObject<T | null>; style: CSSProperties} {
   const ref = useRef<T | null>(null);
@@ -52,8 +53,23 @@ export function useReveal<T extends HTMLElement>(): {ref: RefObject<T | null>; s
     ref,
     style: {
       opacity: shown ? 1 : 0,
-      transform: shown ? 'none' : 'translateY(var(--spacing-4))',
-      transition: 'opacity var(--duration-medium) var(--ease-standard), transform var(--duration-medium) var(--ease-standard)',
+      transition: 'opacity var(--duration-medium) var(--ease-standard)',
     },
   };
+}
+
+/**
+ * Media query that is correct on the FIRST render (this app is client-only),
+ * so a layout switch never flashes the wrong variant and then jumps.
+ */
+export function useMatchMedia(query: string): boolean {
+  const [matches, setMatches] = useState(() => typeof window !== 'undefined' && window.matchMedia(query).matches);
+  useEffect(() => {
+    const mq = window.matchMedia(query);
+    const on = () => setMatches(mq.matches);
+    on();
+    mq.addEventListener('change', on);
+    return () => mq.removeEventListener('change', on);
+  }, [query]);
+  return matches;
 }
