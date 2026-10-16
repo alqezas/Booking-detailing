@@ -10,6 +10,8 @@ export default defineConfig({
   globalSetup: './tests/e2e/global-setup.ts',
   expect: {timeout: 15_000},
   fullyParallel: false,
+  // Tests share one studio's free slots: two parallel bookers would race for the same slot.
+  workers: 1,
   retries: 0,
   reporter: [['list']],
   use: {baseURL: 'http://localhost:4173', trace: 'retain-on-failure', locale: 'ru-RU', timezoneId: 'Europe/Moscow'},

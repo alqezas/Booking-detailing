@@ -15,3 +15,4 @@ public/s/
 *.log
 supabase/functions/.env
 supabase/functions/.env.sim
+.env.publish

@@ -8,7 +8,7 @@
   "trailingSlash": false,
   "rewrites": [
     {"source": "/s/:slug", "destination": "/s/:slug/index.html"},
-    {"source": "/s/:slug/:path((?!.*\.[a-zA-Z0-9]+$).*)", "destination": "/s/:slug/index.html"}
+    {"source": "/s/:slug/:path((?!.*[.][a-zA-Z0-9]+$).*)", "destination": "/s/:slug/index.html"}
   ],
   "headers": [
     {
