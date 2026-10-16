@@ -11,5 +11,5 @@ test-results/
 coverage/
 # Reference clone of the Astryx source (own git repo, not part of this app)
 astryx/
-public/t/
+public/s/
 *.log
