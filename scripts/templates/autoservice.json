@@ -1,0 +1,180 @@
+{
+  "slug": "__slug__",
+  "name": "__name__",
+  "kind": "autoservice",
+  "tagline": "Автосервис",
+  "description": "Коротко о студии: что делаете лучше всего и почему к вам едут.",
+  "locale": "ru-RU",
+  "timezone": "Asia/Yekaterinburg",
+  "currency": "RUB",
+  "accentColor": "#FF8A3D",
+  "contacts": {
+    "phone": "+70000000000",
+    "address": "Адрес студии, город, улица, дом"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [],
+  "booking": {
+    "slotStepMinutes": 15,
+    "minLeadMinutes": 60,
+    "horizonDays": 21,
+    "cancelCutoffHours": 2,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "lift-1",
+      "name": "Пост 1 (подъёмник)"
+    },
+    {
+      "key": "lift-2",
+      "name": "Пост 2 (подъёмник)"
+    },
+    {
+      "key": "tyre",
+      "name": "Шиномонтаж"
+    }
+  ],
+  "services": [
+    {
+      "key": "oil",
+      "name": "Замена масла и фильтра",
+      "category": "ТО",
+      "description": "Работа без стоимости масла. Проверим уровни жидкостей бесплатно.",
+      "price": 1200,
+      "durationMinutes": 45,
+      "resources": [
+        "lift-1",
+        "lift-2"
+      ]
+    },
+    {
+      "key": "to-full",
+      "name": "Плановое ТО",
+      "category": "ТО",
+      "description": "Регламент производителя: масла, фильтры, свечи, проверка тормозов.",
+      "price": 4500,
+      "priceFrom": true,
+      "durationMinutes": 150,
+      "resources": [
+        "lift-1",
+        "lift-2"
+      ]
+    },
+    {
+      "key": "diagnostics",
+      "name": "Компьютерная диагностика",
+      "category": "Диагностика",
+      "description": "Сканер, чтение ошибок, отчёт с рекомендациями.",
+      "price": 1500,
+      "durationMinutes": 45,
+      "resources": [
+        "lift-1",
+        "lift-2"
+      ]
+    },
+    {
+      "key": "tyres",
+      "name": "Шиномонтаж R13–R18",
+      "category": "Шины",
+      "description": "Снятие, монтаж, балансировка четырёх колёс.",
+      "price": 2400,
+      "durationMinutes": 45,
+      "bufferMinutes": 0,
+      "resources": [
+        "tyre"
+      ]
+    },
+    {
+      "key": "brakes",
+      "name": "Замена тормозных колодок",
+      "category": "Ходовая",
+      "description": "Одна ось, работа. Проверка дисков и суппортов.",
+      "price": 1800,
+      "durationMinutes": 60,
+      "resources": [
+        "lift-1",
+        "lift-2"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "wrench",
+      "title": "Любые марки",
+      "text": "Корейцы, японцы, немцы и отечественные — опыт с 2012 года."
+    },
+    {
+      "icon": "medal",
+      "title": "Гарантия 6 месяцев",
+      "text": "На все работы. Запчасти — по гарантии производителя."
+    },
+    {
+      "icon": "clock",
+      "title": "Без ожидания",
+      "text": "Записываем на точное время и сразу ставим машину на пост."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-1.webp",
+      "caption": "Подпись к работе"
+    },
+    {
+      "image": "images/work-2.webp",
+      "caption": "Подпись к работе"
+    },
+    {
+      "image": "images/work-3.webp",
+      "caption": "Подпись к работе"
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}

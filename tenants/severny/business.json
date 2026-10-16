@@ -1,0 +1,105 @@
+{
+  "slug": "severny",
+  "name": "Северный Бокс",
+  "shortName": "Северный",
+  "kind": "autoservice",
+  "tagline": "Автосервис у дома: ТО, шины, ходовая",
+  "description": "Обслуживаем любые марки. Честная диагностика перед ремонтом, запчасти в наличии и под заказ, гарантия на работы 6 месяцев.",
+  "locale": "ru-RU",
+  "timezone": "Asia/Yekaterinburg",
+  "currency": "RUB",
+  "accentColor": "#FF8A3D",
+  "contacts": {
+    "phone": "+7 343 000-55-66",
+    "address": "Екатеринбург, ул. Северная, 15 (демо-адрес)",
+    "mapUrl": "https://yandex.ru/maps/?text=%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B1%D1%83%D1%80%D0%B3",
+    "whatsapp": "+73430005566"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [["08:00", "20:00"]],
+    "tue": [["08:00", "20:00"]],
+    "wed": [["08:00", "20:00"]],
+    "thu": [["08:00", "20:00"]],
+    "fri": [["08:00", "20:00"]],
+    "sat": [["09:00", "17:00"]],
+    "sun": []
+  },
+  "closedDates": ["2027-01-01"],
+  "booking": {
+    "slotStepMinutes": 15,
+    "minLeadMinutes": 60,
+    "horizonDays": 21,
+    "cancelCutoffHours": 2,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {"key": "lift-1", "name": "Пост 1 (подъёмник)"},
+    {"key": "lift-2", "name": "Пост 2 (подъёмник)"},
+    {"key": "tyre", "name": "Шиномонтаж"}
+  ],
+  "services": [
+    {
+      "key": "oil",
+      "name": "Замена масла и фильтра",
+      "category": "ТО",
+      "description": "Работа без стоимости масла. Проверим уровни жидкостей бесплатно.",
+      "price": 1200,
+      "durationMinutes": 45,
+      "resources": ["lift-1", "lift-2"]
+    },
+    {
+      "key": "to-full",
+      "name": "Плановое ТО",
+      "category": "ТО",
+      "description": "Регламент производителя: масла, фильтры, свечи, проверка тормозов.",
+      "price": 4500,
+      "priceFrom": true,
+      "durationMinutes": 150,
+      "resources": ["lift-1", "lift-2"]
+    },
+    {
+      "key": "diagnostics",
+      "name": "Компьютерная диагностика",
+      "category": "Диагностика",
+      "description": "Сканер, чтение ошибок, отчёт с рекомендациями.",
+      "price": 1500,
+      "durationMinutes": 45,
+      "resources": ["lift-1", "lift-2"]
+    },
+    {
+      "key": "tyres",
+      "name": "Шиномонтаж R13–R18",
+      "category": "Шины",
+      "description": "Снятие, монтаж, балансировка четырёх колёс.",
+      "price": 2400,
+      "durationMinutes": 45,
+      "bufferMinutes": 0,
+      "resources": ["tyre"]
+    },
+    {
+      "key": "brakes",
+      "name": "Замена тормозных колодок",
+      "category": "Ходовая",
+      "description": "Одна ось, работа. Проверка дисков и суппортов.",
+      "price": 1800,
+      "durationMinutes": 60,
+      "resources": ["lift-1", "lift-2"]
+    }
+  ],
+  "infoCards": [
+    {"icon": "wrench", "title": "Любые марки", "text": "Корейцы, японцы, немцы и отечественные — опыт с 2012 года."},
+    {"icon": "medal", "title": "Гарантия 6 месяцев", "text": "На все работы. Запчасти — по гарантии производителя."},
+    {"icon": "clock", "title": "Без ожидания", "text": "Записываем на точное время и сразу ставим машину на пост."}
+  ],
+  "gallery": [
+    {"image": "images/work-1.webp", "caption": "Плановое ТО, Kia Sportage"},
+    {"image": "images/work-2.webp", "caption": "Замена колодок, Toyota RAV4"},
+    {"image": "images/work-3.webp", "caption": "Сезонный шиномонтаж"}
+  ],
+  "owner": {"email": "owner@severny.demo"},
+  "assistant": {"enabled": true}
+}
