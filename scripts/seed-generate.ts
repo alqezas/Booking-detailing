@@ -15,7 +15,7 @@ import path from 'node:path';
 import {toSyncPayload} from './lib/payload.ts';
 import {ROOT, isLoaded, listTenantSlugs, loadTenant, printIssues} from './lib/tenants.ts';
 
-export const DEMO_OWNER_PASSWORD = 'demo-owner-2026';
+import {DEMO_OWNER_PASSWORD} from './lib/demo.ts';
 
 const sqlString = (s: string) => `'${s.replace(/'/g, "''")}'`;
 const userId = (slug: string) => {

@@ -413,3 +413,15 @@ enabled = true
 # formatted with uppercase keywords, indent 2, max width 180, trailing commas,
 # and column/key alignment. Set to "null" to emit raw, unformatted SQL.
 # format_options = "{\"keywordCase\":\"upper\",\"indent\":2,\"maxWidth\":180,\"commaStyle\":\"trailing\"}"
+
+# Public assistant: anonymous callers, limits and budget enforced inside.
+[functions.assistant]
+verify_jwt = false
+
+# Owner assistant: verifies the owner's JWT itself and calls the database with it.
+[functions.owner-assistant]
+verify_jwt = false
+
+# Woken by pg_cron with a shared secret (x-cron-secret), not a user JWT.
+[functions.notify-dispatch]
+verify_jwt = false

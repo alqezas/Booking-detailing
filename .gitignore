@@ -13,3 +13,5 @@ coverage/
 astryx/
 public/s/
 *.log
+supabase/functions/.env
+supabase/functions/.env.sim
