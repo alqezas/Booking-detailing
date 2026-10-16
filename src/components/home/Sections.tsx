@@ -36,6 +36,7 @@ import {formatDuration, formatPhone, formatPrice, summarizeHours} from '../../li
 import {mediaUrl} from '../../lib/media.ts';
 import {useReveal} from '../../lib/motion.ts';
 import {useBookingFlow} from '../booking/BookingFlow.tsx';
+import {TEXT_MAX_WIDTH} from '../layout/Page.tsx';
 
 const CARD_ICONS: Record<string, PhosphorIcon> = {
   shield: ShieldCheck,
@@ -75,7 +76,8 @@ export function AboutSection() {
   if (!t.description) return null;
   return (
     <RevealSection title="О студии" id="about-title">
-      <Text type="large" textWrap="pretty">
+      {/* Regular body text in the secondary colour: an introduction, not a headline. */}
+      <Text color="secondary" textWrap="pretty" style={{maxWidth: TEXT_MAX_WIDTH}}>
         {t.description}
       </Text>
     </RevealSection>

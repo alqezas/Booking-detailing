@@ -72,7 +72,8 @@ export function Hero() {
             </Text>
           )}
         </VStack>
-        <VStack width="100%" maxWidth={420} style={{position: 'relative'}}>
+        {/* Full width of the page column, on phones and on desktop alike. */}
+        <VStack width="100%" style={{position: 'relative'}}>
           {/* The lens: a decorative layer under the real button. liquid-gl makes its
               target non-interactive, so the clickable button sits above it. */}
           <VStack
