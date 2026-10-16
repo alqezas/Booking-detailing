@@ -41,7 +41,7 @@ export type PublicTenant = {
   logo_path: string | null;
   hero_path: string | null;
   assistant_enabled: boolean;
-  booking: {slot_step_minutes: number; min_lead_minutes: number; horizon_days: number; cancel_cutoff_hours: number};
+  booking: {slot_step_minutes: number; min_lead_minutes: number; horizon_days: number; cancel_cutoff_hours: number; default_buffer_minutes: number};
   services: Service[];
   hours: HoursRow[];
   exceptions: ScheduleException[];

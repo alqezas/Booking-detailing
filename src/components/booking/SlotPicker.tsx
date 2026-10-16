@@ -5,10 +5,11 @@ import {HStack} from '@astryxdesign/core/HStack';
 import {Text} from '@astryxdesign/core/Text';
 import {VStack} from '@astryxdesign/core/VStack';
 import {addDays, format, parseISO} from 'date-fns';
+import {keepPreviousData, useQuery} from '@tanstack/react-query';
 import {useEffect, useMemo, useState} from 'react';
 import {formatDayLabel, formatTime, todayIn} from '../../lib/format.ts';
 import {useAvailability} from '../../lib/queries.ts';
-import type {AvailabilityDay} from '../../lib/types.ts';
+import type {Availability, AvailabilityDay} from '../../lib/types.ts';
 import {InlineEmpty, InlineError, RowsSkeleton} from '../StatusScreens.tsx';
 
 const PAGE_DAYS = 7;
@@ -22,12 +23,21 @@ type Props = {
   onChange: (startAt: string) => void;
   /** Message to show above the grid, e.g. after the chosen slot was taken. */
   notice?: string | null;
+  /** Owner cabinet: load slots with the owner's session instead of the public endpoint. */
+  ownerLoad?: (from: string, days: number) => Promise<Availability>;
 };
 
-export function SlotPicker({slug, serviceId, timezone, horizonDays, value, onChange, notice}: Props) {
+export function SlotPicker({slug, serviceId, timezone, horizonDays, value, onChange, notice, ownerLoad}: Props) {
   const today = todayIn(timezone);
   const [from, setFrom] = useState(today);
-  const q = useAvailability(slug, serviceId, from, PAGE_DAYS);
+  const publicQ = useAvailability(slug, ownerLoad ? null : serviceId, from, PAGE_DAYS);
+  const ownerQ = useQuery({
+    queryKey: ['owner', slug, 'availability', serviceId, from, PAGE_DAYS],
+    queryFn: () => ownerLoad!(from, PAGE_DAYS),
+    enabled: !!ownerLoad,
+    placeholderData: keepPreviousData,
+  });
+  const q = ownerLoad ? ownerQ : publicQ;
   const days = useMemo(() => q.data?.days ?? [], [q.data]);
   const [day, setDay] = useState<string | null>(null);
 

@@ -16,7 +16,7 @@ export function ownerClient(slug: string): SupabaseClient {
   let c = ownerClients.get(slug);
   if (!c) {
     c = createClient(env.supabaseUrl, env.supabaseAnonKey, {
-      auth: {persistSession: true, autoRefreshToken: true, detectSessionInUrl: false, storageKey: `studio-owner-${slug}`},
+      auth: {persistSession: true, autoRefreshToken: true, detectSessionInUrl: true, flowType: 'pkce', storageKey: `studio-owner-${slug}`},
     });
     ownerClients.set(slug, c);
   }

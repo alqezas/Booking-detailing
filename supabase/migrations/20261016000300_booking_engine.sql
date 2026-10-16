@@ -268,7 +268,8 @@ begin
       'slot_step_minutes', t.slot_step_minutes,
       'min_lead_minutes', t.min_lead_minutes,
       'horizon_days', t.horizon_days,
-      'cancel_cutoff_hours', t.cancel_cutoff_hours
+      'cancel_cutoff_hours', t.cancel_cutoff_hours,
+      'default_buffer_minutes', t.default_buffer_minutes
     ),
     'services', coalesce((
       select jsonb_agg(jsonb_build_object(
