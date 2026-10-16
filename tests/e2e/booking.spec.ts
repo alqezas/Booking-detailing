@@ -33,10 +33,12 @@ test('customer books a service; the owner sees it in the cabinet', async ({page,
   await sheet.getByRole('button', {name: 'Проверить запись'}).click();
   await expect(sheet.getByText('Укажите имя')).toBeVisible();
   await sheet.getByLabel('Имя').fill(name);
-  await sheet.getByLabel('Телефон').fill('8 900 123-45-67');
+  // A fresh number per run: the server allows only a few bookings per phone per day.
+  const digits = String(Math.floor(1_000_000 + Math.random() * 8_999_999));
+  await sheet.getByLabel('Телефон').fill(`8 900 ${digits}`);
   await sheet.getByLabel('Автомобиль').fill('Kia Rio');
   await sheet.getByRole('button', {name: 'Проверить запись'}).click();
-  await expect(sheet.getByText('+7 900 123-45-67')).toBeVisible();
+  await expect(sheet.getByText(`+7 900 ${digits.slice(0, 3)}-${digits.slice(3, 5)}-${digits.slice(5)}`)).toBeVisible();
 
   // Double tap must not create two bookings
   const confirm = sheet.getByRole('button', {name: 'Подтвердить запись'});
