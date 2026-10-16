@@ -49,7 +49,9 @@ test('customer books a service; the owner sees it in the cabinet', async ({page,
   await expect(page.getByRole('heading', {name: 'Детейлинг-мойка'})).toBeVisible();
   await expect(page.getByText(name).first()).toBeVisible();
 
-  // Owner, in a separate browser context (no shared session)
+  // Owner, in a separate browser context (no shared session). Only against the
+  // local stack: the deployed owner password is never typed by automation.
+  if (!/localhost|127\.0\.0\.1/.test(String(info.project.use.baseURL))) return;
   const ctx = await browser.newContext(info.project.use);
   const owner = await ctx.newPage();
   await owner.goto('/s/graphite/owner/');

@@ -53,6 +53,12 @@ await check('Страница студии', async () => {
   assert(html.includes('<title>') && html.includes(name.replace(/&/g, '&amp;')), 'в <title> нет названия студии');
   assert(html.includes('apple-touch-icon'), 'нет apple-touch-icon');
 });
+await check('Адрес внутри области приложения', async () => {
+  const r = await fetch(`${site}/s/${slug}/`, {redirect: 'manual'});
+  assert(r.status === 200, `/s/${slug}/ отвечает ${r.status} ${r.headers.get('location') ?? ''} — start_url окажется вне scope`);
+  const bare = await fetch(`${site}/s/${slug}`, {redirect: 'manual'});
+  assert(bare.status === 200 || bare.headers.get('location')?.endsWith(`/s/${slug}/`), 'адрес без слеша не ведёт в область приложения');
+});
 await check('Глубокая ссылка /services', async () => {
   const html = await (await get(`/s/${slug}/services`, 'text/html')).text();
   assert(html.includes(`/s/${slug}/manifest.webmanifest`), 'отдана не та оболочка');

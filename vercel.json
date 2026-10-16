@@ -5,36 +5,84 @@
   "buildCommand": "pnpm build",
   "outputDirectory": "dist",
   "cleanUrls": false,
-  "trailingSlash": false,
   "rewrites": [
-    {"source": "/s/:slug", "destination": "/s/:slug/index.html"},
-    {"source": "/s/:slug/:path((?!.*[.][a-zA-Z0-9]+$).*)", "destination": "/s/:slug/index.html"}
+    {
+      "source": "/s/:slug/:path((?!.*[.][a-zA-Z0-9]+$).*)",
+      "destination": "/s/:slug/index.html"
+    }
   ],
   "headers": [
     {
       "source": "/s/:slug/sw.js",
       "headers": [
-        {"key": "Cache-Control", "value": "no-cache, no-store, must-revalidate"},
-        {"key": "Service-Worker-Allowed", "value": "/s/:slug/"}
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Service-Worker-Allowed",
+          "value": "/s/:slug/"
+        }
       ]
     },
     {
       "source": "/s/:slug/manifest.webmanifest",
       "headers": [
-        {"key": "Content-Type", "value": "application/manifest+json"},
-        {"key": "Cache-Control", "value": "no-cache"}
+        {
+          "key": "Content-Type",
+          "value": "application/manifest+json"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
       ]
     },
-    {"source": "/s/:slug/index.html", "headers": [{"key": "Cache-Control", "value": "no-cache"}]},
-    {"source": "/assets/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
+    {
+      "source": "/s/:slug/index.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [
-        {"key": "X-Content-Type-Options", "value": "nosniff"},
-        {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
-        {"key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()"},
-        {"key": "X-Frame-Options", "value": "DENY"}
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/s/:slug([a-z0-9-]+)",
+      "destination": "/s/:slug/",
+      "permanent": false
     }
   ]
 }
