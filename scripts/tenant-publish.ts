@@ -79,7 +79,11 @@ try {
 }
 
 if (values.deploy) {
-  run('npx', ['vercel', 'deploy', '--yes', ...(values.prod ? ['--prod'] : [])]);
+  // Build locally with the project's env, then upload the prebuilt output.
+  const target = values.prod ? 'production' : 'preview';
+  run('npx', ['vercel', 'pull', '--yes', `--environment=${target}`]);
+  run('npx', ['vercel', 'build', ...(values.prod ? ['--prod'] : [])]);
+  run('npx', ['vercel', 'deploy', '--prebuilt', '--yes', ...(values.prod ? ['--prod'] : [])]);
 }
 
 console.log(`
