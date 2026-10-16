@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "pnpm tenant:assets && tsc -b && vite build",
+    "build": "pnpm tenant:assets && tsc -b && vite build && tsx scripts/finalize-build.ts",
     "preview": "vite preview",
     "typecheck": "tsc -b",
     "test": "vitest run --project unit",

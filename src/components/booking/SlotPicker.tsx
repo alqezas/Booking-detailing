@@ -141,6 +141,8 @@ export function SlotPicker({slug, serviceId, timezone, horizonDays, value, onCha
                 <Button
                   key={s.start_at}
                   label={`${t}, занято`}
+                  role="radio"
+                  aria-checked={false}
                   isDisabled
                   variant="ghost"
                   width="100%"

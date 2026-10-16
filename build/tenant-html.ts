@@ -2,11 +2,10 @@
  * One shared JS/CSS build, many studios.
  *
  * Dev:   /s/<slug>/… navigations get index.html with that studio's <head>.
- * Build: writes dist/s/<slug>/index.html (studio <head> + the shared bundle)
- *        and dist/s/<slug>/sw.js (the shared worker, served from the studio's
- *        own scope so installs and caches stay separate).
+ * Build: writes dist/s/<slug>/index.html (studio <head> + the shared bundle).
+ *        scripts/finalize-build.ts then copies the worker into each scope.
  */
-import {copyFileSync, existsSync, readFileSync, readdirSync, writeFileSync} from 'node:fs';
+import {existsSync, readFileSync, readdirSync, writeFileSync} from 'node:fs';
 import path from 'node:path';
 import type {Plugin, ViteDevServer} from 'vite';
 
@@ -73,17 +72,25 @@ export function tenantHtml(): Plugin {
         res.end(html);
       });
     },
+    // `vite preview` behaves like vercel.json: deep links get their studio's shell.
+    configurePreviewServer(server) {
+      server.middlewares.use((req, _res, next) => {
+        const m = (req.url ?? '').match(/^\/s\/([a-z0-9-]+)(\/[^?#]*)?(\?.*)?$/);
+        if (m && req.method === 'GET' && !/\.[a-z0-9]+$/i.test(m[2] ?? '') && existsSync(path.join(outDir, 's', m[1]!, 'index.html'))) {
+          req.url = `/s/${m[1]}/index.html${m[3] ?? ''}`;
+        }
+        next();
+      });
+    },
     closeBundle() {
       const shell = path.join(outDir, 'index.html');
       const tenantsDir = path.join(outDir, 's');
       if (!existsSync(shell) || !existsSync(tenantsDir)) return;
       const template = readFileSync(shell, 'utf8');
-      const sw = path.join(outDir, 'sw.js');
       for (const slug of readdirSync(tenantsDir)) {
         const head = readHead(outDir, slug);
         if (!head) continue;
         writeFileSync(path.join(tenantsDir, slug, 'index.html'), template.replace(MARKER, renderHead(head)));
-        if (existsSync(sw)) copyFileSync(sw, path.join(tenantsDir, slug, 'sw.js'));
       }
       // The bare domain gets a neutral title.
       writeFileSync(shell, template.replace(MARKER, '<title>Онлайн-запись</title>\n    <meta name="robots" content="noindex" />'));
