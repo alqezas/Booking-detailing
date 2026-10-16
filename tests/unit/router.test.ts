@@ -64,8 +64,8 @@ describe('dates in the studio time zone', () => {
 describe('owner router', () => {
   it('routes the three example questions', () => {
     expect(routeOwner('Что у меня завтра?', TZ, NOW)).toEqual({intent: 'bookings', period: 'day', anchor: '2026-10-17'});
-    expect(routeOwner('Сколько машин было на неделе?', TZ, NOW)).toEqual({intent: 'stats', period: 'week', anchor: '2026-10-16', focus: 'cars'});
-    expect(routeOwner('Сколько денег получено?', TZ, NOW)).toEqual({intent: 'stats', period: 'day', anchor: '2026-10-16', focus: 'money'});
+    expect(routeOwner('Сколько машин было на неделе?', TZ, NOW)).toEqual({intent: 'stats', period: 'week', anchor: '2026-10-16', focus: 'cars', explicit: true});
+    expect(routeOwner('Сколько денег получено?', TZ, NOW)).toEqual({intent: 'stats', period: 'day', anchor: '2026-10-16', focus: 'money', explicit: false});
   });
 
   it('understands previous periods', () => {

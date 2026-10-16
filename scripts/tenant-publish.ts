@@ -14,7 +14,7 @@
 import {spawnSync} from 'node:child_process';
 import {parseArgs} from 'node:util';
 import {adminClient, loadPipelineEnv} from './lib/env.ts';
-import {ensureOwner} from './lib/owner.ts';
+import {CREDENTIALS_FILE, ensureOwner, recordCredential} from './lib/owner.ts';
 import {toSyncPayload} from './lib/payload.ts';
 import {ROOT, isLoaded, loadTenant, printIssues} from './lib/tenants.ts';
 
@@ -69,7 +69,8 @@ const site = env.siteUrl?.replace(/\/$/, '');
 try {
   const owner = await ensureOwner(admin, slug, t.config.owner.email, {invite: values.invite!, redirectTo: site ? `${site}/s/${slug}/owner/login` : undefined});
   if (owner.created && owner.tempPassword) {
-    console.log(`✓ Владелец ${t.config.owner.email} создан. Временный пароль (показывается один раз): ${owner.tempPassword}`);
+    recordCredential(slug, t.config.owner.email, owner.tempPassword, site ?? null);
+    console.log(`✓ Владелец ${t.config.owner.email} создан. Временный пароль записан в ${CREDENTIALS_FILE} (файл не попадает в git)`);
   } else if (owner.created) {
     console.log(`✓ Владельцу ${t.config.owner.email} отправлено приглашение на почту`);
   } else console.log(`✓ Владелец ${t.config.owner.email} привязан к студии`);

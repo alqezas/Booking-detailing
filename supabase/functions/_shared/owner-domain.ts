@@ -120,9 +120,15 @@ export async function ownerFallback(src: OwnerSource, text: string): Promise<Age
     const more = r.bookings.length > 12 ? `\n…и ещё ${r.bookings.length - 12}` : '';
     return {text: `${r.period}: ${r.total_active} ${plural(r.total_active, 'запись', 'записи', 'записей')}.\n${lines.join('\n')}${more}`, mode: 'fallback', tools: ['get_bookings']};
   }
-  const s = await ownerStats(src, intent.period, intent.anchor);
-  const cars = `Заездов: ${s.arrivals}, работ завершено: ${s.completed}, записей: ${s.bookings}.`;
-  const cash = `Получено ${money(s.net_received, src.currency)}${s.refunds ? ` (оплаты ${money(s.money_received, src.currency)}, возвраты ${money(s.refunds, src.currency)})` : ''}.`;
-  const body = intent.focus === 'money' ? cash : intent.focus === 'cars' ? cars : `${cars} ${cash}`;
-  return {text: `${s.period}. ${body}`, mode: 'fallback', tools: ['get_stats']};
+  const line = async (period: OwnerPeriod, label?: string) => {
+    const s = await ownerStats(src, period, intent.anchor);
+    const cars = `заездов ${s.arrivals}, работ завершено ${s.completed}, записей ${s.bookings}`;
+    const cash = `получено ${money(s.net_received, src.currency)}${s.refunds ? ` (оплаты ${money(s.money_received, src.currency)}, возвраты ${money(s.refunds, src.currency)})` : ''}`;
+    const body = intent.focus === 'money' ? cash : intent.focus === 'cars' ? cars : `${cars}; ${cash}`;
+    return `${label ?? s.period}: ${body}.`;
+  };
+  // No period in the question: answer for today and for this week.
+  const answer = intent.explicit ? await line(intent.period) : `${await line('day', 'Сегодня')}
+${await line('week', 'За эту неделю')}`;
+  return {text: answer.charAt(0).toUpperCase() + answer.slice(1), mode: 'fallback', tools: ['get_stats']};
 }

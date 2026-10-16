@@ -27,7 +27,9 @@
     "owner:invite": "tsx scripts/owner-invite.ts",
     "vapid:generate": "tsx scripts/vapid-generate.ts",
     "seed:generate": "tsx scripts/seed-generate.ts",
-    "astryx": "astryx"
+    "astryx": "astryx",
+    "cloud:configure": "tsx scripts/cloud-configure.ts",
+    "functions:deploy": "supabase functions deploy assistant owner-assistant notify-dispatch"
   },
   "dependencies": {
     "@astryxdesign/core": "0.7.1",

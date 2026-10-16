@@ -58,3 +58,9 @@ export function localDate(tz: string, offsetDays = 0, now = new Date()): string 
     new Date(now.getTime() + offsetDays * 86_400_000),
   );
 }
+
+/** +74950001234 → +7 495 000-12-34 */
+export function phone(e164: string): string {
+  const m = e164.match(/^\+7(\d{3})(\d{3})(\d{2})(\d{2})$/);
+  return m ? `+7 ${m[1]} ${m[2]}-${m[3]}-${m[4]}` : e164;
+}

@@ -1,4 +1,6 @@
 import {randomBytes} from 'node:crypto';
+import {appendFileSync, mkdirSync} from 'node:fs';
+import path from 'node:path';
 import type {SupabaseClient} from '@supabase/supabase-js';
 
 async function findUserByEmail(admin: SupabaseClient, email: string) {
@@ -12,10 +14,18 @@ async function findUserByEmail(admin: SupabaseClient, email: string) {
   return null;
 }
 
+/** Temporary passwords never go to the console: they land in a git-ignored file. */
+export const CREDENTIALS_FILE = path.resolve(import.meta.dirname, '..', '..', '.secrets', 'owners.local.txt');
+export function recordCredential(slug: string, email: string, password: string, site: string | null): void {
+  mkdirSync(path.dirname(CREDENTIALS_FILE), {recursive: true});
+  appendFileSync(CREDENTIALS_FILE, `${new Date().toISOString()}  ${slug}  ${email}  ${password}  ${site ? `${site}/s/${slug}/owner/` : ''}
+`);
+}
+
 /**
  * Makes sure the owner account exists and is a member of the studio.
  * New accounts get either an e-mail invitation (needs SMTP in Supabase Auth)
- * or a one-time password printed once to this terminal.
+ * or a one-time password written to CREDENTIALS_FILE.
  */
 export async function ensureOwner(
   admin: SupabaseClient,

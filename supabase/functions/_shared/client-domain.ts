@@ -4,7 +4,7 @@
  */
 import type {AgentReply} from './agent.ts';
 import {routeClient} from './router.ts';
-import {duration, localDate, money, when} from './text.ts';
+import {duration, localDate, money, phone, when} from './text.ts';
 
 export type PublicService = {id: string; name: string; category: string; price: number; price_from: boolean; duration_minutes: number; description: string};
 export type PublicTenant = {
@@ -106,14 +106,14 @@ export async function clientFallback(src: ClientSource, text: string): Promise<A
   switch (intent.intent) {
     case 'location': {
       const i = studioInfo(t);
-      return {text: `Мы находимся по адресу: ${i.address}. Маршрут: ${i.map_url}. Телефон: ${i.phone}.`, mode: 'fallback', tools: ['get_studio_info'], data: {map_url: i.map_url}};
+      return {text: `Мы находимся по адресу: ${i.address}. Маршрут: ${i.map_url}. Телефон: ${phone(i.phone)}.`, mode: 'fallback', tools: ['get_studio_info'], data: {map_url: i.map_url}};
     }
     case 'hours': {
       const i = studioInfo(t);
       return {text: `Часы работы: ${i.hours.map(h => `${h.day} ${h.hours}`).join('; ')}.`, mode: 'fallback', tools: ['get_studio_info']};
     }
     case 'contacts':
-      return {text: `Телефон студии: ${t.phone}. Адрес: ${t.address}.`, mode: 'fallback', tools: ['get_studio_info']};
+      return {text: `Телефон студии: ${phone(t.phone)}. Адрес: ${t.address}.`, mode: 'fallback', tools: ['get_studio_info']};
     case 'services':
     case 'price': {
       const ids = intent.intent === 'price' ? intent.serviceIds : t.services.map(s => s.id);
@@ -124,7 +124,7 @@ export async function clientFallback(src: ClientSource, text: string): Promise<A
     case 'nearest_slot': {
       const r = await freeSlots(src, intent.serviceId, intent.dateFrom, 3);
       if ('error' in r) return {text: r.error as string, mode: 'fallback', tools: ['find_free_slots']};
-      if (!r.slots.length) return {text: `На «${r.service.name}» в ближайшие три недели свободного времени нет. Позвоните: ${t.phone}.`, mode: 'fallback', tools: ['find_free_slots']};
+      if (!r.slots.length) return {text: `На «${r.service.name}» в ближайшие три недели свободного времени нет. Позвоните: ${phone(t.phone)}.`, mode: 'fallback', tools: ['find_free_slots']};
       return {
         text: `Ближайшее свободное время на «${r.service.name}»: ${r.slots.map(s => s.label).join(', ')}. Нажмите «Записаться», чтобы выбрать его.`,
         mode: 'fallback',

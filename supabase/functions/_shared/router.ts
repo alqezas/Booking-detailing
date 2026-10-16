@@ -22,7 +22,7 @@ export type ClientIntent =
 export type OwnerPeriod = 'day' | 'week' | 'month';
 export type OwnerIntent =
   | {intent: 'bookings'; period: OwnerPeriod; anchor: string}
-  | {intent: 'stats'; period: OwnerPeriod; anchor: string; focus: 'cars' | 'money' | 'all'}
+  | {intent: 'stats'; period: OwnerPeriod; anchor: string; focus: 'cars' | 'money' | 'all'; explicit: boolean}
   | {intent: 'clarify'; question: string; options?: string[]};
 
 const has = (text: string, re: RegExp) => re.test(text);
@@ -129,6 +129,7 @@ export function routeOwner(text: string, tz: string, now = new Date()): OwnerInt
   const t = norm(text);
   let period: OwnerPeriod = 'day';
   let anchor = localDate(tz, 0, now);
+  const explicit = /недел|месяц|вчера|сегодня|завтра|понедельник|вторник|сред[уа]|четверг|пятниц|суббот|воскресень|\d{1,2}\s+[а-я]+/.test(t);
   if (/прошл\S* недел/.test(t)) {
     period = 'week';
     anchor = localDate(tz, -7, now);
@@ -146,9 +147,9 @@ export function routeOwner(text: string, tz: string, now = new Date()): OwnerInt
 
   const money = has(t, /денег|деньги|выручк|получен|заработ|оплат|касс|сколько.{0,10}(рубл|₽)/);
   const cars = has(t, /сколько.{0,12}(машин|авто|заезд|клиент)|заезд|машин было|приехал/);
-  if (money || cars) return {intent: 'stats', period, anchor, focus: money && cars ? 'all' : money ? 'money' : 'cars'};
+  if (money || cars) return {intent: 'stats', period, anchor, focus: money && cars ? 'all' : money ? 'money' : 'cars', explicit};
   if (has(t, /что у меня|какие записи|кто.{0,10}(записан|приедет|будет)|расписани|записи|загрузк|план/)) return {intent: 'bookings', period, anchor};
-  if (has(t, /статистик|итог|отчет|сводк/)) return {intent: 'stats', period, anchor, focus: 'all'};
+  if (has(t, /статистик|итог|отчет|сводк/)) return {intent: 'stats', period, anchor, focus: 'all', explicit};
   return {
     intent: 'clarify',
     question: 'Могу показать записи и посчитать машины или деньги за день, неделю или месяц. Что нужно?',

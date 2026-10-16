@@ -16,3 +16,9 @@ public/s/
 supabase/functions/.env
 supabase/functions/.env.sim
 .env.publish
+
+.vercel
+.env*
+!.env.example
+!supabase/functions/.env.example
+.secrets/
