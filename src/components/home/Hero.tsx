@@ -4,11 +4,13 @@ import {HStack} from '@astryxdesign/core/HStack';
 import {Text} from '@astryxdesign/core/Text';
 import {VStack} from '@astryxdesign/core/VStack';
 import {Avatar} from '@astryxdesign/core/Avatar';
+import type {CSSProperties, ReactNode} from 'react';
 import {useTenant} from '../../app/tenant.tsx';
 import {useLiquidGlass} from '../../lib/glass.ts';
 import {mediaUrl} from '../../lib/media.ts';
 import {useBookingFlow} from '../booking/BookingFlow.tsx';
 import {PageContainer} from '../layout/Page.tsx';
+import {useMatchMedia} from '../../lib/motion.ts';
 import {msg} from '../../i18n/index.ts';
 
 /**
@@ -23,10 +25,29 @@ export function Hero() {
   const flow = useBookingFlow();
   const hero = mediaUrl(t.hero_path);
   const logo = mediaUrl(t.logo_path);
-  useLiquidGlass({target: '[data-glass="hero-cta"]', snapshot: '[data-glass-snapshot="hero"]', enabled: !!hero, resolution: 1.5, frost: 1});
+  // Phones: full-bleed photo. Wide screens: a rounded card on the page column, so
+  // photos are shown near their own size instead of being stretched edge to edge.
+  const wide = useMatchMedia('(min-width: 900px)');
+  useLiquidGlass({target: '[data-glass="hero-cta"]', snapshot: '[data-glass-snapshot="hero"]', enabled: !!hero, resolution: 1.5, frost: 1, refreshKey: String(wide)});
 
-  return (
-    <VStack as="header" style={{position: 'relative', minHeight: 'clamp(460px, 74svh, 720px)', overflow: 'hidden'}}>
+  const content: CSSProperties = {
+    position: 'relative',
+    flex: 1,
+    justifyContent: 'flex-end',
+    gap: 'var(--spacing-4)',
+    paddingBlockStart: wide ? 'var(--spacing-6)' : 'calc(env(safe-area-inset-top, 0px) + var(--spacing-4))',
+    paddingBlockEnd: wide ? 'var(--spacing-8)' : 'var(--spacing-6)',
+  };
+  const card = (
+    <VStack
+      data-hero-card
+      style={{
+        position: 'relative',
+        overflow: 'hidden',
+        minHeight: wide ? 'clamp(420px, 62svh, 600px)' : 'clamp(460px, 74svh, 720px)',
+        ...(wide ? {borderRadius: 'var(--radius-page)', border: '1px solid var(--color-border)'} : {}),
+      }}
+    >
       <VStack data-glass-snapshot="hero" style={{position: 'absolute', inset: 0, zIndex: 0}} aria-hidden="true">
         {hero && (
           <img
@@ -49,16 +70,7 @@ export function Hero() {
           background: 'linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.88) 100%)',
         }}
       />
-      <PageContainer
-        style={{
-          position: 'relative',
-          flex: 1,
-          justifyContent: 'flex-end',
-          gap: 'var(--spacing-4)',
-          paddingBlockStart: 'calc(env(safe-area-inset-top, 0px) + var(--spacing-4))',
-          paddingBlockEnd: 'var(--spacing-6)',
-        }}
-      >
+      <Inner wide={wide} style={content}>
         <HStack gap={2} align="center" style={{marginBottom: 'auto'}}>
           {logo && <Avatar src={logo} name={t.name} size="md" />}
           <Text weight="semibold">{t.short_name ?? t.name}</Text>
@@ -110,7 +122,20 @@ export function Hero() {
             }}
           />
         </VStack>
-      </PageContainer>
+      </Inner>
     </VStack>
   );
+
+  return wide ? (
+    <PageContainer as="header" style={{paddingBlockStart: 'calc(env(safe-area-inset-top, 0px) + var(--spacing-4))'}}>
+      {card}
+    </PageContainer>
+  ) : (
+    <VStack as="header">{card}</VStack>
+  );
+}
+
+/** Hero text column: the page column on phones, an inset inside the card on wide screens. */
+function Inner({wide, style, children}: {wide: boolean; style: CSSProperties; children: ReactNode}) {
+  return wide ? <VStack style={{...style, paddingInline: 'var(--spacing-8)'}}>{children}</VStack> : <PageContainer style={style}>{children}</PageContainer>;
 }

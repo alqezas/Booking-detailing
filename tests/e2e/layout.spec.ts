@@ -1,9 +1,11 @@
 import {expect, test} from '@playwright/test';
 
 /**
- * Layout contract (src/components/layout/Page.tsx): at every width the hero
- * title, the hero button and every section heading start on one content line,
- * the button spans the column, nothing scrolls sideways.
+ * Layout contract (src/components/layout/Page.tsx): nothing scrolls sideways;
+ * every section heading starts on one content line. Phones: the hero title and
+ * button share that line and the button spans the column. Wide screens: the
+ * hero is a card on the column; title and button share its inner line and the
+ * button spans the card.
  */
 const WIDTHS = [360, 390, 768, 1024, 1440];
 
@@ -20,21 +22,30 @@ test.describe('one content line at every width', () => {
         const cta = [...document.querySelectorAll('button')].find(b => b.textContent?.trim() === 'Записаться');
         const h2 = [...document.querySelectorAll('main h2')].filter(h => h.getBoundingClientRect().width > 0).map(left);
         const column = document.querySelector('main h2')?.closest('.astryx-section')?.parentElement;
+        const card = document.querySelector('[data-hero-card]');
         return {
           overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
           h1: left(document.querySelector('h1')),
           cta: left(cta),
           ctaWidth: Math.round(cta?.getBoundingClientRect().width ?? 0),
           columnWidth: Math.round(column?.getBoundingClientRect().width ?? 0),
+          card: left(card),
+          cardWidth: Math.round(card?.getBoundingClientRect().width ?? 0),
           h2,
         };
       });
       expect(m.overflow).toBeLessThanOrEqual(0);
       expect(m.cta).toBe(m.h1);
-      // Sections follow one another: every heading sits on the same content line.
-      expect(new Set(m.h2)).toEqual(new Set([m.h1]));
-      // The hero button spans the whole column.
-      expect(m.ctaWidth).toBeGreaterThanOrEqual(m.columnWidth - 1);
+      if (width < 900) {
+        // Full-bleed hero: title, button and every section heading on one line; the button spans the column.
+        expect(new Set(m.h2)).toEqual(new Set([m.h1]));
+        expect(m.ctaWidth).toBeGreaterThanOrEqual(m.columnWidth - 1);
+      } else {
+        // Hero card on the column: sections start at the card edge, the button spans the card inset evenly.
+        expect(m.cardWidth).toBeGreaterThanOrEqual(m.columnWidth - 1);
+        expect(new Set(m.h2)).toEqual(new Set([m.card]));
+        expect(m.ctaWidth).toBe(m.cardWidth - 2 * (m.h1 - m.card));
+      }
     });
   }
 
