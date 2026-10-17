@@ -43,11 +43,18 @@ export function BookingSummary(p: Props) {
         </MetadataListItem>
       )}
       {p.customer && (
-        <MetadataListItem label="Клиент">
-          <Text>
-            {p.customer.name}, {formatPhone(p.customer.phone)}, {p.customer.car}
-          </Text>
-        </MetadataListItem>
+        <>
+          <MetadataListItem label="Клиент">
+            <Text>{p.customer.name}</Text>
+          </MetadataListItem>
+          <MetadataListItem label="Телефон">
+            {/* Never break a phone number across lines. */}
+            <Text textWrap="nowrap">{formatPhone(p.customer.phone)}</Text>
+          </MetadataListItem>
+          <MetadataListItem label="Автомобиль">
+            <Text>{p.customer.car}</Text>
+          </MetadataListItem>
+        </>
       )}
     </MetadataList>
   );

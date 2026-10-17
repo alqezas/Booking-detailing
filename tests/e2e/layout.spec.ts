@@ -38,6 +38,27 @@ test.describe('one content line at every width', () => {
     });
   }
 
+  for (const width of [360, 1440]) {
+    test(`my booking @ ${width}px: title, section and card share the line`, async ({page}) => {
+      await page.setViewportSize({width, height: 900});
+      await page.goto('/s/graphite/my');
+      await expect(page.getByRole('heading', {name: 'Записей пока нет'})).toBeVisible();
+      const m = await page.evaluate(() => {
+        const left = (el: Element | null) => (el ? Math.round(el.getBoundingClientRect().left) : -1);
+        const button = [...document.querySelectorAll('main button')].find(b => b.textContent?.includes('Выбрать услугу и время'));
+        return {
+          overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+          h1: left(document.querySelector('main h1')),
+          h2: left(document.querySelector('main h2')),
+          card: left(button?.closest('.astryx-card') ?? null),
+        };
+      });
+      expect(m.overflow).toBeLessThanOrEqual(0);
+      expect(m.h2).toBe(m.h1);
+      expect(m.card).toBe(m.h1);
+    });
+  }
+
   test('cabinet login fits phone and desktop', async ({page}) => {
     for (const width of [360, 390, 1280]) {
       await page.setViewportSize({width, height: 900});

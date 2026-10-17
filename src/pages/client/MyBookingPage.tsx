@@ -15,11 +15,12 @@ import {useMutation, useQueryClient} from '@tanstack/react-query';
 import {useEffect, useMemo, useState} from 'react';
 import {useLocation, useNavigate, useSearchParams} from 'react-router';
 import {useTenant} from '../../app/tenant.tsx';
-import {PageContainer, PageTitle, TEXT_MAX_WIDTH} from '../../components/layout/Page.tsx';
+import {PageContainer, PageTitle} from '../../components/layout/Page.tsx';
+import {RevealSection} from '../../components/home/Sections.tsx';
 import {useBookingFlow} from '../../components/booking/BookingFlow.tsx';
 import {BookingSummary} from '../../components/booking/BookingSummary.tsx';
 import {ReminderOffer} from '../../components/booking/ReminderOffer.tsx';
-import {InlineEmpty, InlineError, RowsSkeleton} from '../../components/StatusScreens.tsx';
+import {InlineError, RowsSkeleton} from '../../components/StatusScreens.tsx';
 import {cancelBooking, getBooking} from '../../lib/api/public.ts';
 import {forgetBooking, listBookings, rememberBooking, type StoredBooking} from '../../lib/booking-store.ts';
 import {errorText} from '../../lib/errors.ts';
@@ -38,9 +39,12 @@ export const STATUS_LABEL: Record<BookingStatus, {label: string; variant: 'info'
 export default function MyBookingPage() {
   const t = useTenant();
   const navigate = useNavigate();
-  const {hash} = useLocation();
+  const {hash, key: locationKey} = useLocation();
   const [params, setParams] = useSearchParams();
   const [stored, setStored] = useState<StoredBooking[]>(() => listBookings(t.slug));
+  // Re-read the device's bookings on every navigation: a booking made from the
+  // sheet on this very page lands here without remounting it.
+  useEffect(() => setStored(listBookings(t.slug)), [t.slug, locationKey]);
   const [linkError, setLinkError] = useState<string | null>(null);
   const flow = useBookingFlow();
 
@@ -62,49 +66,54 @@ export default function MyBookingPage() {
   const selected = stored.find(b => b.id === selectedId) ?? null;
   const upcoming = useMemo(() => stored.filter(b => b.id !== selectedId), [stored, selectedId]);
 
+  // Same structure as the home page: page title, then sections whose headings
+  // share one content line, cards spanning the whole column.
   return (
     <PageContainer>
-      <VStack maxWidth={TEXT_MAX_WIDTH} width="100%">
       <PageTitle title="Моя запись" />
-      {linkError && (
-        <Section variant="transparent" padding={0} paddingBlockEnd={4}>
-          <InlineError message={linkError} />
-        </Section>
-      )}
-      {!selected ? (
-        <Section variant="transparent" padding={0} paddingBlockEnd={4}>
-          <InlineEmpty
-            title="Записей на этом устройстве нет"
-            description="Запишитесь — подробности появятся здесь. Если записывались с другого телефона, откройте ссылку на запись."
-            action={<Button label="Записаться" variant="primary" onClick={() => flow.open()} />}
-          />
-        </Section>
-      ) : (
-        <BookingDetails
-          key={selected.id}
-          entry={selected}
-          onGone={() => {
-            forgetBooking(t.slug, selected.id);
-            setStored(listBookings(t.slug));
-            setParams({}, {replace: true});
-          }}
-        />
-      )}
-      {upcoming.length > 0 && (
-        <Section variant="transparent" padding={0} paddingBlockEnd={4}>
-          <List header={<Heading level={2}>Другие записи</Heading>} hasDividers>
-            {upcoming.map(b => (
-              <ListItem
-                key={b.id}
-                label={b.serviceName}
-                description={formatWhen(b.startAt, t.timezone)}
-                endContent={<Icon icon={CaretRight} color="secondary" />}
-                onClick={() => navigate(`/s/${t.slug}/my?b=${b.id}`)}
-              />
-            ))}
-          </List>
-        </Section>
-      )}
+      <VStack gap={8} style={{paddingBlockEnd: 'var(--spacing-6)'}}>
+        {linkError && <InlineError message={linkError} />}
+        {!selected ? (
+          <RevealSection title="Записей пока нет" id="my-empty-title">
+            <Card padding={4}>
+              <VStack gap={3}>
+                <Text color="secondary">
+                  Запишитесь — подробности появятся здесь. Если записывались с другого телефона, откройте ссылку на запись.
+                </Text>
+                <Button label="Выбрать услугу и время" variant="primary" size="lg" width="100%" onClick={() => flow.open()} />
+              </VStack>
+            </Card>
+          </RevealSection>
+        ) : (
+          <RevealSection title="Ваша запись" id="my-current-title">
+            <BookingDetails
+              key={selected.id}
+              entry={selected}
+              onGone={() => {
+                forgetBooking(t.slug, selected.id);
+                setStored(listBookings(t.slug));
+                setParams({}, {replace: true});
+              }}
+            />
+          </RevealSection>
+        )}
+        {upcoming.length > 0 && (
+          <RevealSection title="Другие записи" id="my-other-title">
+            <Card padding={0}>
+              <List hasDividers>
+                {upcoming.map(b => (
+                  <ListItem
+                    key={b.id}
+                    label={b.serviceName}
+                    description={formatWhen(b.startAt, t.timezone)}
+                    endContent={<Icon icon={CaretRight} color="secondary" />}
+                    onClick={() => navigate(`/s/${t.slug}/my?b=${b.id}`)}
+                  />
+                ))}
+              </List>
+            </Card>
+          </RevealSection>
+        )}
       </VStack>
     </PageContainer>
   );
@@ -128,7 +137,7 @@ function BookingDetails({entry, onGone}: {entry: StoredBooking; onGone: () => vo
 
   if (q.isPending) {
     return (
-      <Section variant="transparent" padding={0} paddingBlockEnd={4}>
+      <Section variant="transparent" padding={0}>
         <RowsSkeleton rows={4} />
       </Section>
     );
@@ -136,7 +145,7 @@ function BookingDetails({entry, onGone}: {entry: StoredBooking; onGone: () => vo
   if (q.isError) {
     const gone = (q.error as {status?: number}).status === 404;
     return (
-      <Section variant="transparent" padding={0} paddingBlockEnd={4}>
+      <Section variant="transparent" padding={0}>
         <InlineError
           message={gone ? 'Запись не найдена: возможно, ссылка устарела.' : q.error.message}
           onRetry={gone ? onGone : () => void q.refetch()}
@@ -149,11 +158,11 @@ function BookingDetails({entry, onGone}: {entry: StoredBooking; onGone: () => vo
   const shareUrl = `${location.origin}/s/${t.slug}/my#t=${entry.token}`;
 
   return (
-    <Section variant="transparent" padding={0} paddingBlockEnd={4}>
+    <Section variant="transparent" padding={0}>
       <Card padding={4}>
         <VStack gap={4}>
           <HStack justify="between" align="center" gap={2}>
-            <Heading level={2}>{b.service_name}</Heading>
+            <Heading level={3}>{b.service_name}</Heading>
             <Badge label={status.label} variant={status.variant} />
           </HStack>
           {b.is_demo && <Text color="secondary">Демонстрационная запись образца приложения.</Text>}
