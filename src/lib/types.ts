@@ -39,6 +39,8 @@ export type PublicTenant = {
   lng: number | null;
   telegram: string | null;
   whatsapp: string | null;
+  instagram: string | null;
+  facebook: string | null;
   email: string | null;
   logo_path: string | null;
   hero_path: string | null;

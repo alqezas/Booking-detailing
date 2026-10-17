@@ -17,6 +17,9 @@ import {
   Coffee,
   CreditCard,
   Drop,
+  EnvelopeSimple,
+  FacebookLogo,
+  InstagramLogo,
   MapPin,
   Medal,
   NavigationArrow,
@@ -324,8 +327,20 @@ export function ContactsSection() {
               {formatPhone(t.phone)}
             </Button>
           </HStack>
-          {(t.telegram || t.whatsapp) && (
+          {t.email && (
+            <HStack gap={3} align="center">
+              <Icon icon={EnvelopeSimple} color="accent" />
+              <Button label={t.email} variant="ghost" href={`mailto:${t.email}`} />
+            </HStack>
+          )}
+          {(t.telegram || t.whatsapp || t.instagram || t.facebook) && (
             <HStack gap={2} wrap="wrap">
+              {t.instagram && (
+                <Button label="Instagram" icon={<Icon icon={InstagramLogo} />} href={`https://www.instagram.com/${t.instagram.replace(/^@/, '')}`} target="_blank" size="sm" />
+              )}
+              {t.facebook && (
+                <Button label="Facebook" icon={<Icon icon={FacebookLogo} />} href={`https://www.facebook.com/${t.facebook}`} target="_blank" size="sm" />
+              )}
               {t.telegram && (
                 <Button label="Telegram" icon={<Icon icon={TelegramLogo} />} href={`https://t.me/${t.telegram.replace(/^@/, '')}`} target="_blank" size="sm" />
               )}
