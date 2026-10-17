@@ -16,6 +16,7 @@ import {parseArgs} from 'node:util';
 import {adminClient, loadPipelineEnv} from './lib/env.ts';
 import {CREDENTIALS_FILE, ensureOwner, recordCredential} from './lib/owner.ts';
 import {toSyncPayload} from './lib/payload.ts';
+import {findPlaceholders} from '../shared/business.ts';
 import {ROOT, isLoaded, loadTenant, printIssues} from './lib/tenants.ts';
 
 const {values, positionals} = parseArgs({
@@ -66,7 +67,10 @@ if (sync.status === 'preview' && (sync.created || values['reseed-demo'])) {
 }
 
 const site = env.siteUrl?.replace(/\/$/, '');
-try {
+// No account for a placeholder address: nobody could ever receive its mail.
+if (findPlaceholders(t.config).includes('owner.email')) {
+  console.log(`• Владелец не создан: в business.json почта-заглушка ${t.config.owner.email}. Укажите реальную и опубликуйте снова.`);
+} else try {
   const owner = await ensureOwner(admin, slug, t.config.owner.email, {invite: values.invite!, redirectTo: site ? `${site}/s/${slug}/owner/login` : undefined});
   if (owner.created && owner.tempPassword) {
     recordCredential(slug, t.config.owner.email, owner.tempPassword, site ?? null);
