@@ -22,6 +22,8 @@ import {errorText} from '../../../lib/errors.ts';
 import {formatWhen, todayIn} from '../../../lib/format.ts';
 import {ownerKey, useOwner} from '../ownerContext.tsx';
 import {useRefreshStudio} from './shared.tsx';
+import {ApiError} from '../../../lib/errors.ts';
+import {msg} from '../../../i18n/index.ts';
 
 type ResourceRow = {id: string; name: string; is_active: boolean; sort: number};
 type ISODate = `${number}${number}${number}${number}-${number}${number}-${number}${number}`;
@@ -35,8 +37,8 @@ export function ResourcesSettings() {
     <VStack gap={6}>
       <Card padding={4}>
         <VStack gap={3}>
-          <Heading level={2}>Боксы и посты</Heading>
-          <Text color="secondary">Каждый бокс принимает одну машину. Услуга занимает подходящий бокс на всё время работы и подготовки.</Text>
+          <Heading level={2}>{msg.bays.title}</Heading>
+          <Text color="secondary">{msg.bays.lead}</Text>
           {q.data.map(r => (
             <ResourceRowEditor key={r.id} resource={r} />
           ))}
@@ -69,9 +71,9 @@ function ResourceRowEditor({resource}: {resource: ResourceRow | null}) {
   return (
     <VStack gap={1}>
       <HStack gap={2} align="end" wrap="wrap">
-        <TextInput label={resource ? 'Название бокса' : 'Новый бокс'} value={name} onChange={setName} placeholder="Например: Бокс 3" width={240} />
-        {resource && <Switch label="Работает" value={active} onChange={setActive} />}
-        <Button label={resource ? 'Сохранить' : 'Добавить'} isDisabled={!dirty || name.trim().length < 1} isLoading={save.isPending} onClick={() => save.mutate()} />
+        <TextInput label={resource ? msg.bays.name : msg.bays.newBay} value={name} onChange={setName} placeholder={msg.bays.placeholder} width={240} />
+        {resource && <Switch label={msg.bays.active} value={active} onChange={setActive} />}
+        <Button label={resource ? msg.common.save : msg.common.add} isDisabled={!dirty || name.trim().length < 1} isLoading={save.isPending} onClick={() => save.mutate()} />
       </HStack>
       {save.isError && (
         <Text color="accent" role="alert">
@@ -101,7 +103,7 @@ function BlockForm({resources}: {resources: ResourceRow[]}) {
   const blocks = useQuery({queryKey: ownerKey(slug, 'blocks'), queryFn: () => api.blocks(range.from, range.to) as Promise<Block[]>});
   const add = useMutation({
     mutationFn: () => {
-      if (!day || !from || !toDay || !to) throw new Error('Укажите начало и конец');
+      if (!day || !from || !toDay || !to) throw new ApiError('CLIENT', msg.bays.needRange);
       const start = fromZonedTime(`${day}T${from.slice(0, 5)}:00`, tenant.timezone).toISOString();
       const end = fromZonedTime(`${toDay}T${to.slice(0, 5)}:00`, tenant.timezone).toISOString();
       return api.blockResource(resourceId, start, end, note);
@@ -109,7 +111,7 @@ function BlockForm({resources}: {resources: ResourceRow[]}) {
     onSuccess: () => {
       refresh();
       void blocks.refetch();
-      showToast({body: 'Бокс закрыт на это время'});
+      showToast({body: msg.bays.blocked});
     },
   });
   const remove = useMutation({
@@ -119,29 +121,29 @@ function BlockForm({resources}: {resources: ResourceRow[]}) {
       void blocks.refetch();
     },
   });
-  const nameOf = (id: string) => resources.find(r => r.id === id)?.name ?? 'Бокс';
+  const nameOf = (id: string) => resources.find(r => r.id === id)?.name ?? msg.bays.fallback;
   const bounds = (p: string) => p.replace(/[[\]()"]/g, '').split(',');
 
   return (
     <Card padding={4}>
       <VStack gap={4}>
-        <Heading level={2}>Закрыть бокс на время</Heading>
+        <Heading level={2}>{msg.bays.blockTitle}</Heading>
         <FormLayout>
-          <Selector label="Бокс" value={resourceId} onChange={v => v && setResourceId(v)} options={resources.map(r => ({value: r.id, label: r.name}))} />
+          <Selector label={msg.bays.bay} value={resourceId} onChange={v => v && setResourceId(v)} options={resources.map(r => ({value: r.id, label: r.name}))} />
           <HStack gap={2} wrap="wrap">
-            <DateInput label="С даты" value={day} onChange={setDay} min={today as ISODate} />
-            <TimeInput label="Время" value={from} onChange={setFrom} hourFormat="24h" />
+            <DateInput label={msg.bays.fromDate} value={day} onChange={setDay} min={today as ISODate} />
+            <TimeInput label={msg.bays.time} value={from} onChange={setFrom} hourFormat="24h" />
           </HStack>
           <HStack gap={2} wrap="wrap">
-            <DateInput label="По дату" value={toDay} onChange={setToDay} min={day ?? (today as ISODate)} />
-            <TimeInput label="Время" value={to} onChange={setTo} hourFormat="24h" />
+            <DateInput label={msg.bays.toDate} value={toDay} onChange={setToDay} min={day ?? (today as ISODate)} />
+            <TimeInput label={msg.bays.time} value={to} onChange={setTo} hourFormat="24h" />
           </HStack>
-          <TextInput label="Причина" isOptional value={note} onChange={setNote} placeholder="Ремонт подъёмника" />
+          <TextInput label={msg.bays.reason} isOptional value={note} onChange={setNote} placeholder={msg.bays.reasonPlaceholder} />
         </FormLayout>
         {add.isError && <Banner status="error" title={errorText(add.error)} collapsible={false} />}
-        <Button label="Закрыть бокс" isLoading={add.isPending} isDisabled={!resourceId} onClick={() => add.mutate()} />
+        <Button label={msg.bays.close} isLoading={add.isPending} isDisabled={!resourceId} onClick={() => add.mutate()} />
         {blocks.data && blocks.data.length > 0 && (
-          <List header={<Heading level={3}>Ближайшие закрытия</Heading>} hasDividers>
+          <List header={<Heading level={3}>{msg.bays.upcoming}</Heading>} hasDividers>
             {blocks.data.map(b => {
               const [s, e] = bounds(b.period);
               return (
@@ -149,7 +151,7 @@ function BlockForm({resources}: {resources: ResourceRow[]}) {
                   key={b.id}
                   label={`${nameOf(b.resource_id)}: ${formatWhen(s!, tenant.timezone)} — ${formatWhen(e!, tenant.timezone)}`}
                   description={b.note ?? undefined}
-                  endContent={<Button label="Открыть" size="sm" variant="ghost" isLoading={remove.isPending && remove.variables === b.id} onClick={() => remove.mutate(b.id)} />}
+                  endContent={<Button label={msg.bays.open} size="sm" variant="ghost" isLoading={remove.isPending && remove.variables === b.id} onClick={() => remove.mutate(b.id)} />}
                 />
               );
             })}

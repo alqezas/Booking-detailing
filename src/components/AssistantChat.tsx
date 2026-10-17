@@ -10,6 +10,7 @@ import {useMutation} from '@tanstack/react-query';
 import {useEffect, useRef, useState, type ReactNode} from 'react';
 import {env} from '../lib/env.ts';
 import {ApiError, toApiError} from '../lib/errors.ts';
+import {msg} from '../i18n/index.ts';
 
 type Turn = {role: 'user' | 'assistant'; content: string; data?: {options?: string[]; slots?: {start_at: string; label: string}[]; service_id?: string}; notice?: string};
 
@@ -27,7 +28,7 @@ async function askAssistant(endpoint: string, token: string | null, body: unknow
     throw toApiError(e);
   }
   const json = await res.json().catch(() => null);
-  if (!res.ok) throw new ApiError(json?.error ?? 'ASSISTANT_ERROR', json?.message ?? 'Помощник сейчас недоступен. Запись работает как обычно.', res.status);
+  if (!res.ok) throw new ApiError(json?.error ?? 'ASSISTANT_ERROR', json?.message ?? msg.assistant.unavailable, res.status);
   return json as AssistantReply;
 }
 
@@ -50,7 +51,7 @@ export function AssistantChat({endpoint, slug, token = null, examples, intro, in
 
   const ask = useMutation({
     mutationFn: (message: string) =>
-      askAssistant(endpoint, token, {slug, message, history: turns.slice(-8).map(t => ({role: t.role, content: t.content}))}),
+      askAssistant(endpoint, token, {slug, message, locale: msg.intl, history: turns.slice(-8).map(t => ({role: t.role, content: t.content}))}),
     onSuccess: r => setTurns(t => [...t, {role: 'assistant', content: r.text, data: r.data, notice: r.notice}]),
   });
 
@@ -86,7 +87,7 @@ export function AssistantChat({endpoint, slug, token = null, examples, intro, in
           value={draft}
           onChange={setDraft}
           onSubmit={send}
-          placeholder="Напишите вопрос…"
+          placeholder={msg.assistant.placeholder}
           isDisabled={ask.isPending}
           status={ask.isError ? {type: 'error', message: toApiError(ask.error).message} : undefined}
         />
@@ -97,24 +98,28 @@ export function AssistantChat({endpoint, slug, token = null, examples, intro, in
         emptyState={
           <VStack gap={4} padding={4}>
             {header}
-            <EmptyState isCompact icon={<Icon icon={ChatCircleDots} />} title="Помощник" description={intro} />
+            <EmptyState isCompact icon={<Icon icon={ChatCircleDots} />} title={msg.assistant.title} description={intro} />
             {chips(examples)}
           </VStack>
         }
       >
-        {turns.map((t, i) => (
-          <ChatMessage key={i} sender={t.role} name={t.role === 'user' ? 'Вы' : 'Помощник'}>
+        {/* Only real rows as children: a `false` placeholder counts as a child and hides the empty state. */}
+        {[
+          ...turns.map((t, i) => (
+          <ChatMessage key={i} sender={t.role} name={t.role === 'user' ? msg.assistant.you : msg.assistant.title}>
             <ChatMessageBubble>
-              <Text>{t.content}</Text>
+              {/* Template answers put one price or slot per line. */}
+              <Text style={{whiteSpace: 'pre-line'}}>{t.content}</Text>
             </ChatMessageBubble>
             {t.notice && <Text type="supporting">{t.notice}</Text>}
             {t.data?.options && t.data.options.length > 0 && chips(t.data.options)}
             {onBook && t.data?.service_id && t.data.slots && t.data.slots.length > 0 && (
-              <Button label="Записаться на это время" variant="primary" size="sm" onClick={() => onBook(t.data!.service_id!)} />
+              <Button label={msg.assistant.bookThis} variant="primary" size="sm" onClick={() => onBook(t.data!.service_id!)} />
             )}
           </ChatMessage>
-        ))}
-        {ask.isPending && <ChatSystemMessage>Помощник проверяет данные…</ChatSystemMessage>}
+          )),
+          ...(ask.isPending ? [<ChatSystemMessage key="pending">{msg.assistant.thinking}</ChatSystemMessage>] : []),
+        ]}
       </ChatMessageList>
     </ChatLayout>
   );

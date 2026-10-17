@@ -12,6 +12,7 @@ import {formatMoney, formatWhen, todayIn} from '../../lib/format.ts';
 import {StatTile} from './OwnerBookingsPage.tsx';
 import {ownerKey, useOwner} from './ownerContext.tsx';
 import {PeriodNav, periodLabel, type Period} from './PeriodNav.tsx';
+import {msg} from '../../i18n/index.ts';
 
 type PaymentRow = {
   id: string;
@@ -23,7 +24,6 @@ type PaymentRow = {
   bookings: {service_name: string; customer_name: string; car: string} | null;
 };
 
-const METHOD: Record<string, string> = {cash: 'наличные', card: 'карта', transfer: 'перевод', other: 'другое'};
 
 export default function OwnerStatsPage() {
   const tenant = useTenant();
@@ -49,7 +49,7 @@ export default function OwnerStatsPage() {
     <VStack>
       <Section variant="transparent" padding={4} paddingInline={0}>
         <VStack gap={4}>
-          <Heading level={1}>Деньги и заезды</Heading>
+          <Heading level={1}>{msg.stats.title}</Heading>
           <PeriodNav
             period={period}
             periods={['day', 'week', 'month']}
@@ -65,23 +65,23 @@ export default function OwnerStatsPage() {
             <RowsSkeleton rows={2} height={88} />
           ) : (
             <VStack gap={3}>
-              <Heading level={2}>Получено</Heading>
+              <Heading level={2}>{msg.stats.received}</Heading>
               <Grid columns={{minWidth: 150, max: 3}} gap={2}>
-                <StatTile label="Чистыми" value={formatMoney(s.net_received, cur)} hint="оплаты минус возвраты" />
-                <StatTile label="Оплаты" value={formatMoney(s.received, cur)} />
-                <StatTile label="Возвраты" value={formatMoney(s.refunded, cur)} />
+                <StatTile label={msg.stats.net} value={formatMoney(s.net_received, cur)} hint={msg.stats.netHint} />
+                <StatTile label={msg.stats.payments} value={formatMoney(s.received, cur)} />
+                <StatTile label={msg.stats.refunds} value={formatMoney(s.refunded, cur)} />
               </Grid>
-              <Heading level={2}>Машины</Heading>
+              <Heading level={2}>{msg.stats.cars}</Heading>
               <Grid columns={{minWidth: 150, max: 4}} gap={2}>
-                <StatTile label="Заездов" value={String(s.arrivals)} hint="машин принято" />
-                <StatTile label="Готово" value={String(s.completed)} hint="работ завершено" />
-                <StatTile label="Записей" value={String(s.bookings)} hint="на этот период" />
-                <StatTile label="Отмены / неявки" value={`${s.cancelled} / ${s.no_show}`} />
+                <StatTile label={msg.bookings.tiles.arrivals} value={String(s.arrivals)} hint={msg.bookings.tiles.arrivalsHint} />
+                <StatTile label={msg.bookings.tiles.ready} value={String(s.completed)} hint={msg.bookings.tiles.readyHint} />
+                <StatTile label={msg.bookings.tiles.bookings} value={String(s.bookings)} hint={msg.stats.bookingsHint} />
+                <StatTile label={msg.stats.cancelNoShow} value={`${s.cancelled} / ${s.no_show}`} />
               </Grid>
               <StatTile
-                label="Ожидаемая стоимость записей"
+                label={msg.stats.expected}
                 value={formatMoney(s.expected_value, cur)}
-                hint="Прогноз по ценам записей периода. Это не выручка: деньги считаются только после оплаты."
+                hint={msg.stats.expectedHint}
               />
             </VStack>
           )}
@@ -93,14 +93,14 @@ export default function OwnerStatsPage() {
         ) : payments.isError ? (
           <InlineError message={payments.error.message} onRetry={() => void payments.refetch()} />
         ) : payments.data.length === 0 ? (
-          <InlineEmpty title="Платежей нет" description="За этот период оплаты не вносились." />
+          <InlineEmpty title={msg.stats.noPayments} description={msg.stats.noPaymentsHint} />
         ) : (
-          <List header={<Heading level={2}>Платежи периода</Heading>} hasDividers>
+          <List header={<Heading level={2}>{msg.stats.periodPayments}</Heading>} hasDividers>
             {payments.data.map(p => (
               <ListItem
                 key={p.id}
-                label={`${p.kind === 'refund' ? 'Возврат −' : '+'}${formatMoney(p.amount, cur)}`}
-                description={`${formatWhen(p.paid_at, tenant.timezone)} · ${METHOD[p.method] ?? p.method}${p.bookings ? ` · ${p.bookings.customer_name}, ${p.bookings.service_name}` : ''}`}
+                label={`${p.kind === 'refund' ? msg.stats.refundPrefix : '+'}${formatMoney(p.amount, cur)}`}
+                description={`${formatWhen(p.paid_at, tenant.timezone)} · ${msg.methods.short[p.method] ?? p.method}${p.bookings ? ` · ${p.bookings.customer_name}, ${p.bookings.service_name}` : ''}`}
                 endContent={p.note ? <Text type="supporting">{p.note}</Text> : undefined}
               />
             ))}

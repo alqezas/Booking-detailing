@@ -1,8 +1,7 @@
-import {InternationalizationProvider} from '@astryxdesign/core/i18n';
-import ruRU from '@astryxdesign/core/locales/ru-RU.generated.js';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {RouterProvider} from 'react-router/dom';
 import {ApiError} from '../lib/errors.ts';
+import {ComponentLanguage} from './language.tsx';
 import {router} from './router.tsx';
 
 export const queryClient = new QueryClient({
@@ -17,10 +16,10 @@ export const queryClient = new QueryClient({
 
 export function App() {
   return (
-    <InternationalizationProvider locale="ru-RU" messages={{'ru-RU': ruRU}}>
+    <ComponentLanguage>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
       </QueryClientProvider>
-    </InternationalizationProvider>
+    </ComponentLanguage>
   );
 }

@@ -10,6 +10,7 @@
 import {createClient} from '@supabase/supabase-js';
 import webpush from 'web-push';
 import {fail, json} from '../_shared/http.ts';
+import {langOf} from '../_shared/lang.ts';
 import {when} from '../_shared/text.ts';
 
 const env = (k: string) => Deno.env.get(k);
@@ -19,7 +20,7 @@ type Job = {
   id: number;
   booking_start_at: string;
   booking: {id: string; status: string; start_at: string; service_name: string; is_demo: boolean};
-  tenant: {slug: string; name: string; status: string; timezone: string; address: string};
+  tenant: {slug: string; name: string; status: string; timezone: string; address: string; locale?: string};
   subscriptions: {endpoint: string; p256dh: string; auth: string}[];
 };
 
@@ -63,7 +64,7 @@ Deno.serve(async req => {
 
     const payload = JSON.stringify({
       title: job.tenant.name,
-      body: `${b.service_name} — ${when(b.start_at, job.tenant.timezone)}. ${job.tenant.address}`,
+      body: `${b.service_name} — ${when(b.start_at, job.tenant.timezone, undefined, langOf(job.tenant.locale))}. ${job.tenant.address}`,
       url: `/s/${job.tenant.slug}/my?b=${b.id}`,
       tag: `reminder-${b.id}`,
     });

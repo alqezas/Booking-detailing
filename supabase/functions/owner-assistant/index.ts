@@ -9,6 +9,7 @@ import {runAgent} from '../_shared/agent.ts';
 import {corsHeaders, fail, json} from '../_shared/http.ts';
 import {llmFromEnv} from '../_shared/llm.ts';
 import {ownerExecutor, ownerFallback, ownerSystemPrompt, type OwnerSource} from '../_shared/owner-domain.ts';
+import {langOf, texts} from '../_shared/lang.ts';
 import {localDate} from '../_shared/text.ts';
 
 const Body = z.object({
@@ -18,6 +19,8 @@ const Body = z.object({
     .array(z.object({role: z.enum(['user', 'assistant']), content: z.string().max(3000)}))
     .max(12)
     .default([]),
+  /** Interface language, for errors raised before the studio is known. */
+  locale: z.string().max(10).optional(),
 });
 
 const env = (k: string) => Deno.env.get(k);
@@ -25,41 +28,45 @@ const svc = createClient(env('SUPABASE_URL')!, env('SUPABASE_SERVICE_ROLE_KEY')!
 
 Deno.serve(async req => {
   if (req.method === 'OPTIONS') return new Response('ok', {headers: corsHeaders(req)});
-  if (req.method !== 'POST') return fail(req, 405, 'METHOD', 'Только POST');
+  if (req.method !== 'POST') return fail(req, 405, 'METHOD', 'Only POST');
+  const raw = await req.json().catch(() => null);
+  let say = texts(langOf(typeof raw?.locale === 'string' ? raw.locale : null));
 
   const auth = req.headers.get('authorization') ?? '';
-  if (!/^Bearer\s+\S+/.test(auth)) return fail(req, 401, 'UNAUTHORIZED', 'Войдите в кабинет');
+  if (!/^Bearer\s+\S+/.test(auth)) return fail(req, 401, 'UNAUTHORIZED', say.signIn);
   const user = createClient(env('SUPABASE_URL')!, env('SUPABASE_ANON_KEY')!, {
     auth: {persistSession: false},
     global: {headers: {Authorization: auth}},
   });
   const who = await user.auth.getUser(auth.replace(/^Bearer\s+/, ''));
-  if (who.error || !who.data.user) return fail(req, 401, 'UNAUTHORIZED', 'Сессия истекла, войдите снова');
+  if (who.error || !who.data.user) return fail(req, 401, 'UNAUTHORIZED', say.sessionExpired);
 
-  const parsed = Body.safeParse(await req.json().catch(() => null));
-  if (!parsed.success) return fail(req, 422, 'INVALID_INPUT', 'Напишите вопрос до 500 символов');
+  const parsed = Body.safeParse(raw);
+  if (!parsed.success) return fail(req, 422, 'INVALID_INPUT', say.badQuestion);
   const {slug, message, history} = parsed.data;
 
   // RLS returns the studio only to its members.
-  const t = await user.from('tenants').select('id, name, timezone, currency').eq('slug', slug).maybeSingle();
-  if (t.error || !t.data) return fail(req, 403, 'FORBIDDEN', 'Нет доступа к этой студии');
-  const tenant = t.data as {id: string; name: string; timezone: string; currency: string};
+  const t = await user.from('tenants').select('id, name, timezone, currency, locale').eq('slug', slug).maybeSingle();
+  if (t.error || !t.data) return fail(req, 403, 'FORBIDDEN', say.noAccess);
+  const tenant = t.data as {id: string; name: string; timezone: string; currency: string; locale: string};
+  say = texts(langOf(tenant.locale));
 
   const rl = await svc.rpc('svc_rate_limit_hit', {p_key: `ai:owner:${who.data.user.id}`, p_limit: 40, p_window_seconds: 600});
-  if (!rl.data) return fail(req, 429, 'RATE_LIMITED', 'Слишком много вопросов подряд. Подождите пару минут.');
+  if (!rl.data) return fail(req, 429, 'RATE_LIMITED', say.tooManyOwner);
 
   const src: OwnerSource = {
     timezone: tenant.timezone,
     currency: tenant.currency,
     studioName: tenant.name,
+    lang: langOf(tenant.locale),
     stats: async (period, anchor) => {
       const r = await user.rpc('owner_stats', {p_tenant_id: tenant.id, p_period: period, p_anchor: anchor});
-      if (r.error) throw new Error(r.error.hint ?? 'Не удалось посчитать');
+      if (r.error) throw new Error(say.cannotCount);
       return r.data;
     },
     bookings: async (from, to) => {
       const r = await user.rpc('owner_bookings', {p_tenant_id: tenant.id, p_from: from, p_to: to});
-      if (r.error) throw new Error(r.error.hint ?? 'Не удалось получить записи');
+      if (r.error) throw new Error(say.cannotLoadBookings);
       return r.data;
     },
   };
@@ -71,7 +78,7 @@ Deno.serve(async req => {
     history,
     user: message,
     execute: ownerExecutor(src),
-    fallback: async reason => ({...(await ownerFallback(src, message)), notice: reason === 'no-model' ? undefined : 'Помощник отвечает в упрощённом режиме'}),
+    fallback: async reason => ({...(await ownerFallback(src, message)), notice: reason === 'no-model' ? undefined : say.simplified}),
     chat: llm.chat,
     model: llm.model,
     toolMode: llm.toolMode,

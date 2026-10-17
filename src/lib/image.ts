@@ -1,13 +1,16 @@
+import {msg} from '../i18n/index.ts';
+import {ApiError} from './errors.ts';
+
 /**
  * Shrink a phone photo before upload: max side `max` px, WebP (JPEG fallback).
  * Keeps uploads small on mobile data and within the bucket's 8 MB limit.
  */
 export async function prepareImage(file: File, max = 1800, quality = 0.82): Promise<{blob: Blob; ext: string}> {
   if (!/^image\/(jpeg|png|webp|avif|heic|heif)$/i.test(file.type)) {
-    throw new Error('Нужна фотография: JPG, PNG, WebP или HEIC');
+    throw new ApiError('CLIENT', msg.image.notImage);
   }
   const bitmap = await createImageBitmap(file).catch(() => {
-    throw new Error('Не удалось открыть фото. Попробуйте JPG или PNG.');
+    throw new ApiError('CLIENT', msg.image.cannotOpen);
   });
   const scale = Math.min(1, max / Math.max(bitmap.width, bitmap.height));
   const w = Math.round(bitmap.width * scale);
@@ -21,7 +24,7 @@ export async function prepareImage(file: File, max = 1800, quality = 0.82): Prom
   const webp = await toBlob('image/webp');
   if (webp && webp.type === 'image/webp') return {blob: webp, ext: 'webp'};
   const jpeg = await toBlob('image/jpeg');
-  if (!jpeg) throw new Error('Не удалось подготовить фото');
+  if (!jpeg) throw new ApiError('CLIENT', msg.image.cannotPrepare);
   return {blob: jpeg, ext: 'jpg'};
 }
 

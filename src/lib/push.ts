@@ -1,4 +1,6 @@
+import {msg} from '../i18n/index.ts';
 import {savePushSubscription} from './api/public.ts';
+import {ApiError} from './errors.ts';
 import {env} from './env.ts';
 import {isIOS, isStandalone, tenantWorker} from './pwa.ts';
 import type {PublicBooking} from './types.ts';
@@ -28,9 +30,9 @@ function urlBase64ToUint8Array(base64: string): Uint8Array<ArrayBuffer> {
 }
 
 export async function enableReminder(slug: string, token: string): Promise<PublicBooking> {
-  if (!env.vapidPublicKey) throw new Error('Напоминания не настроены');
+  if (!env.vapidPublicKey) throw new ApiError('CLIENT', msg.reminder.notConfigured);
   const permission = await Notification.requestPermission();
-  if (permission !== 'granted') throw new Error('Уведомления запрещены в настройках браузера');
+  if (permission !== 'granted') throw new ApiError('CLIENT', msg.reminder.blocked);
   const reg = (await tenantWorker(slug)) ?? (await navigator.serviceWorker.ready);
   const sub =
     (await reg.pushManager.getSubscription()) ??

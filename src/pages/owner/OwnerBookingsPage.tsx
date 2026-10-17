@@ -16,7 +16,8 @@ import {useTenant} from '../../app/tenant.tsx';
 import {InlineEmpty, InlineError, RowsSkeleton} from '../../components/StatusScreens.tsx';
 import {fmt, formatMoney, formatTime, todayIn} from '../../lib/format.ts';
 import type {OwnerBooking} from '../../lib/types.ts';
-import {STATUS_LABEL} from '../client/MyBookingPage.tsx';
+import {statusLabel} from '../client/MyBookingPage.tsx';
+import {msg} from '../../i18n/index.ts';
 import {BookingSheet} from './BookingSheet.tsx';
 import {NewBookingSheet} from './NewBookingSheet.tsx';
 import {ownerKey, useOwner} from './ownerContext.tsx';
@@ -75,8 +76,8 @@ export default function OwnerBookingsPage() {
       <Section variant="transparent" padding={4} paddingInline={0}>
         <VStack gap={4}>
           <HStack justify="between" align="center">
-            <Heading level={1}>Записи</Heading>
-            <Button label="Добавить запись" variant="primary" icon={<Icon icon={Plus} />} onClick={() => setCreating(true)} />
+            <Heading level={1}>{msg.bookings.title}</Heading>
+            <Button label={msg.bookings.add} variant="primary" icon={<Icon icon={Plus} />} onClick={() => setCreating(true)} />
           </HStack>
           <PeriodNav
             period={period}
@@ -90,10 +91,10 @@ export default function OwnerBookingsPage() {
             <InlineError message={stats.error.message} onRetry={() => void stats.refetch()} />
           ) : (
             <Grid columns={{minWidth: 150, max: 4}} gap={2}>
-              <StatTile label="Записей" value={s ? String(s.bookings) : '—'} />
-              <StatTile label="Заездов" value={s ? String(s.arrivals) : '—'} hint="машин принято" />
-              <StatTile label="Готово" value={s ? String(s.completed) : '—'} hint="работ завершено" />
-              <StatTile label="Получено" value={s ? formatMoney(s.net_received, cur) : '—'} hint="за вычетом возвратов" />
+              <StatTile label={msg.bookings.tiles.bookings} value={s ? String(s.bookings) : '—'} />
+              <StatTile label={msg.bookings.tiles.arrivals} value={s ? String(s.arrivals) : '—'} hint={msg.bookings.tiles.arrivalsHint} />
+              <StatTile label={msg.bookings.tiles.ready} value={s ? String(s.completed) : '—'} hint={msg.bookings.tiles.readyHint} />
+              <StatTile label={msg.bookings.tiles.received} value={s ? formatMoney(s.net_received, cur) : '—'} hint={msg.bookings.tiles.receivedHint} />
             </Grid>
           )}
         </VStack>
@@ -106,9 +107,9 @@ export default function OwnerBookingsPage() {
           <InlineError message={bookings.error.message} onRetry={() => void bookings.refetch()} />
         ) : byDay.length === 0 ? (
           <InlineEmpty
-            title="Записей нет"
-            description="На этот период никто не записан."
-            action={<Button label="Добавить запись" onClick={() => setCreating(true)} />}
+            title={msg.bookings.empty}
+            description={msg.bookings.emptyHint}
+            action={<Button label={msg.bookings.add} onClick={() => setCreating(true)} />}
           />
         ) : (
           <VStack gap={4}>
@@ -123,12 +124,12 @@ export default function OwnerBookingsPage() {
                 }
               >
                 {list.map(b => {
-                  const st = STATUS_LABEL[b.status];
+                  const st = statusLabel(b.status);
                   return (
                     <ListItem
                       key={b.id}
                       label={b.service_name}
-                      description={`${b.customer_name} · ${b.car} · ${b.resource_name}${b.balance > 0 && b.status !== 'cancelled' ? ` · к оплате ${formatMoney(b.balance, cur)}` : ''}`}
+                      description={`${b.customer_name} · ${b.car} · ${b.resource_name}${b.balance > 0 && b.status !== 'cancelled' ? msg.bookings.toPay(formatMoney(b.balance, cur)) : ''}`}
                       startContent={<Text hasTabularNumbers weight="semibold">{formatTime(b.start_at, tenant.timezone)}</Text>}
                       endContent={<Badge label={st.label} variant={st.variant} />}
                       onClick={() => setOpenId(b.id)}

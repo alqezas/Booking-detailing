@@ -10,14 +10,15 @@ import {ResourcesSettings} from './settings/ResourcesSettings.tsx';
 import {ScheduleSettings} from './settings/ScheduleSettings.tsx';
 import {ServicesSettings} from './settings/ServicesSettings.tsx';
 import {StudioSettings} from './settings/StudioSettings.tsx';
+import {msg} from '../../i18n/index.ts';
 
 const SECTIONS = [
-  {value: 'studio', label: 'Студия', Component: StudioSettings},
-  {value: 'services', label: 'Услуги', Component: ServicesSettings},
-  {value: 'bays', label: 'Боксы', Component: ResourcesSettings},
-  {value: 'schedule', label: 'График', Component: ScheduleSettings},
-  {value: 'cards', label: 'Главная', Component: InfoCardsSettings},
-  {value: 'gallery', label: 'Фото работ', Component: GallerySettings},
+  {value: 'studio', Component: StudioSettings},
+  {value: 'services', Component: ServicesSettings},
+  {value: 'bays', Component: ResourcesSettings},
+  {value: 'schedule', Component: ScheduleSettings},
+  {value: 'cards', Component: InfoCardsSettings},
+  {value: 'gallery', Component: GallerySettings},
 ] as const;
 
 export default function OwnerSettingsPage() {
@@ -28,10 +29,10 @@ export default function OwnerSettingsPage() {
     <VStack>
       <Section variant="transparent" padding={4} paddingInline={0} paddingBlockEnd={0}>
         <VStack gap={3}>
-          <Heading level={1}>Настройки</Heading>
+          <Heading level={1}>{msg.settings.title}</Heading>
           <TabList value={current.value} onChange={v => setParams({tab: v}, {replace: true})} overflow="scroll" size="sm">
             {SECTIONS.map(s => (
-              <Tab key={s.value} value={s.value} label={s.label} />
+              <Tab key={s.value} value={s.value} label={msg.settings.tabs[s.value]} />
             ))}
           </TabList>
         </VStack>

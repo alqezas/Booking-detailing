@@ -98,9 +98,11 @@ export class OwnerApi {
   removeException = (id: string) => this.q(this.client.from('schedule_exceptions').delete().eq('id', id).select('id'));
   saveInfoCard = (position: number, row: {icon: string; title: string; text: string}) =>
     this.q(this.client.from('info_cards').upsert({tenant_id: this.tenantId, position, ...row}).select('position').single());
-  addGalleryItem = (imagePath: string, caption: string, sort: number) =>
-    this.q(this.client.from('gallery_items').insert({tenant_id: this.tenantId, image_path: imagePath, caption, sort}).select('id').single());
-  updateGalleryItem = (id: string, patch: {image_path?: string; caption?: string}) =>
+  addGalleryItem = (imagePath: string, caption: string, sort: number, beforePath: string | null = null) =>
+    this.q(
+      this.client.from('gallery_items').insert({tenant_id: this.tenantId, image_path: imagePath, before_path: beforePath, caption, sort}).select('id').single(),
+    );
+  updateGalleryItem = (id: string, patch: {image_path?: string; before_path?: string | null; caption?: string}) =>
     this.q(this.client.from('gallery_items').update(patch).eq('id', id).select('id').single());
   removeGalleryItem = (id: string) => this.q(this.client.from('gallery_items').delete().eq('id', id).select('id'));
 

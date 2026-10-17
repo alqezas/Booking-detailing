@@ -18,6 +18,7 @@ import {errorText, toApiError} from '../../lib/errors.ts';
 import {formatDuration, formatPrice} from '../../lib/format.ts';
 import {customerSchema, fieldErrors} from '../../lib/schemas.ts';
 import {ownerKey, useOwner} from './ownerContext.tsx';
+import {msg} from '../../i18n/index.ts';
 
 /** A booking taken by phone: same engine, same conflict rules as online booking. */
 export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; onClose: () => void; onCreated: (id: string) => void}) {
@@ -49,7 +50,7 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
     onSuccess: b => {
       void qc.invalidateQueries({queryKey: ownerKey(slug)});
       void qc.invalidateQueries({queryKey: ['availability', slug]});
-      showToast({body: 'Запись добавлена'});
+      showToast({body: msg.newBooking.added});
       reset();
       onClose();
       onCreated(b.id);
@@ -78,17 +79,17 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
   const set = (k: keyof typeof form) => (v: string) => setForm(f => ({...f, [k]: v}));
 
   return (
-    <BottomSheet isOpen={isOpen} onOpenChange={o => !o && onClose()} label="Новая запись" height="tall" purpose="form">
+    <BottomSheet isOpen={isOpen} onOpenChange={o => !o && onClose()} label={msg.newBooking.title} height="tall" purpose="form">
       <VStack gap={4}>
-        <Heading level={2}>Новая запись</Heading>
+        <Heading level={2}>{msg.newBooking.title}</Heading>
         <Selector
-          label="Услуга"
+          label={msg.newBooking.service}
           value={serviceId ?? undefined}
           onChange={v => {
             setServiceId(v ?? null);
             setStart(null);
           }}
-          placeholder="Выберите услугу"
+          placeholder={msg.newBooking.pickService}
           options={tenant.services.map(s => ({
             value: s.id,
             label: s.name,
@@ -112,18 +113,18 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
         )}
         {start && (
           <FormLayout defaultOptionality="required">
-            <TextInput label="Имя клиента" value={form.name} onChange={set('name')} status={errors.name ? {type: 'error', message: errors.name} : undefined} />
-            <TextInput label="Телефон" value={form.phone} onChange={set('phone')} placeholder="+7 999 123-45-67" status={errors.phone ? {type: 'error', message: errors.phone} : undefined} />
-            <TextInput label="Автомобиль" value={form.car} onChange={set('car')} status={errors.car ? {type: 'error', message: errors.car} : undefined} />
-            <TextArea label="Комментарий" isOptional value={form.comment} onChange={set('comment')} rows={2} />
+            <TextInput label={msg.newBooking.clientName} value={form.name} onChange={set('name')} status={errors.name ? {type: 'error', message: errors.name} : undefined} />
+            <TextInput label={msg.flow.phone} value={form.phone} onChange={set('phone')} placeholder={msg.phonePlaceholder} status={errors.phone ? {type: 'error', message: errors.phone} : undefined} />
+            <TextInput label={msg.flow.car} value={form.car} onChange={set('car')} status={errors.car ? {type: 'error', message: errors.car} : undefined} />
+            <TextArea label={msg.flow.comment} isOptional value={form.comment} onChange={set('comment')} rows={2} />
           </FormLayout>
         )}
         {create.isError && toApiError(create.error).code !== 'SLOT_TAKEN' && (
           <Banner status="error" title={errorText(create.error)} collapsible={false} />
         )}
         <HStack gap={2}>
-          <Button label="Закрыть" variant="ghost" onClick={onClose} style={{flexShrink: 0}} />
-          <Button label="Создать запись" variant="primary" width="100%" isDisabled={!start} isLoading={create.isPending} onClick={submit} />
+          <Button label={msg.common.close} variant="ghost" onClick={onClose} style={{flexShrink: 0}} />
+          <Button label={msg.newBooking.create} variant="primary" width="100%" isDisabled={!start} isLoading={create.isPending} onClick={submit} />
         </HStack>
       </VStack>
     </BottomSheet>

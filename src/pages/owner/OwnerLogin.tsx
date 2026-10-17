@@ -13,6 +13,7 @@ import {useTenant} from '../../app/tenant.tsx';
 import {errorText} from '../../lib/errors.ts';
 import {fieldErrors, loginSchema} from '../../lib/schemas.ts';
 import {ownerClient} from '../../lib/supabase.ts';
+import {msg} from '../../i18n/index.ts';
 
 /**
  * Email + password sign-in. There is no sign-up: owner accounts are created
@@ -60,17 +61,17 @@ export default function OwnerLogin() {
     setError(null);
     const parsed = loginSchema.shape.email.safeParse(email.trim());
     if (!parsed.success) {
-      setErrors({email: 'Введите почту, на которую придёт ссылка'});
+      setErrors({email: msg.login.resetEmailNeeded});
       return;
     }
     const {error: e} = await client.auth.resetPasswordForEmail(parsed.data, {redirectTo: `${location.origin}/s/${tenant.slug}/owner/login`});
     if (e) setError(errorText(e));
-    else setInfo('Если такая почта есть, на неё придёт ссылка для смены пароля.');
+    else setInfo(msg.login.resetSent);
   };
 
   const setNewPassword = async () => {
     if (password.length < 8) {
-      setErrors({password: 'Новый пароль — от 8 символов'});
+      setErrors({password: msg.login.newPasswordShort});
       return;
     }
     setBusy(true);
@@ -86,14 +87,14 @@ export default function OwnerLogin() {
         <VStack gap={4}>
           <VStack gap={1}>
             <Text type="supporting">{tenant.name}</Text>
-            <Heading level={1}>{recovery ? 'Новый пароль' : 'Вход в кабинет'}</Heading>
+            <Heading level={1}>{recovery ? msg.login.newPassword : msg.login.title}</Heading>
           </VStack>
           {error && <Banner status="error" title={error} collapsible={false} />}
           {info && <Banner status="success" title={info} collapsible={false} />}
           <FormLayout>
             {!recovery && (
               <TextInput
-                label="Почта"
+                label={msg.login.email}
                 type="email"
                 value={email}
                 onChange={setEmail}
@@ -102,7 +103,7 @@ export default function OwnerLogin() {
               />
             )}
             <TextInput
-              label={recovery ? 'Новый пароль' : 'Пароль'}
+              label={recovery ? msg.login.newPassword : msg.login.password}
               type="password"
               value={password}
               onChange={setPassword}
@@ -112,15 +113,15 @@ export default function OwnerLogin() {
             />
           </FormLayout>
           {recovery ? (
-            <Button label="Сохранить пароль" variant="primary" size="lg" width="100%" isLoading={busy} onClick={setNewPassword} />
+            <Button label={msg.login.savePassword} variant="primary" size="lg" width="100%" isLoading={busy} onClick={setNewPassword} />
           ) : (
             <>
-              <Button label="Войти" variant="primary" size="lg" width="100%" isLoading={busy} onClick={signIn} />
-              <Button label="Забыли пароль?" variant="ghost" onClick={sendReset} />
-              <Text type="supporting">Регистрации нет: доступ владельцу выдаёт администратор приложения.</Text>
+              <Button label={msg.login.signIn} variant="primary" size="lg" width="100%" isLoading={busy} onClick={signIn} />
+              <Button label={msg.login.forgot} variant="ghost" onClick={sendReset} />
+              <Text type="supporting">{msg.login.noSignup}</Text>
             </>
           )}
-          <Button label="На сайт студии" variant="ghost" href={`/s/${tenant.slug}/`} />
+          <Button label={msg.login.toSite} variant="ghost" href={`/s/${tenant.slug}/`} />
         </VStack>
       </Card>
     </Center>

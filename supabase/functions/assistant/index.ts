@@ -9,6 +9,7 @@ import {runAgent} from '../_shared/agent.ts';
 import {clientExecutor, clientFallback, clientSystemPrompt, type ClientSource, type PublicTenant} from '../_shared/client-domain.ts';
 import {clientIp, corsHeaders, fail, json} from '../_shared/http.ts';
 import {llmFromEnv} from '../_shared/llm.ts';
+import {langOf, texts} from '../_shared/lang.ts';
 import {localDate} from '../_shared/text.ts';
 
 const Body = z.object({
@@ -18,6 +19,8 @@ const Body = z.object({
     .array(z.object({role: z.enum(['user', 'assistant']), content: z.string().max(1500)}))
     .max(12)
     .default([]),
+  /** Interface language, for errors raised before the studio is known. */
+  locale: z.string().max(10).optional(),
 });
 
 const env = (k: string) => Deno.env.get(k);
@@ -25,30 +28,33 @@ const svc = createClient(env('SUPABASE_URL')!, env('SUPABASE_SERVICE_ROLE_KEY')!
 
 Deno.serve(async req => {
   if (req.method === 'OPTIONS') return new Response('ok', {headers: corsHeaders(req)});
-  if (req.method !== 'POST') return fail(req, 405, 'METHOD', 'Только POST');
+  if (req.method !== 'POST') return fail(req, 405, 'METHOD', 'Only POST');
 
-  const parsed = Body.safeParse(await req.json().catch(() => null));
-  if (!parsed.success) return fail(req, 422, 'INVALID_INPUT', 'Напишите вопрос до 500 символов');
+  const raw = await req.json().catch(() => null);
+  let say = texts(langOf(typeof raw?.locale === 'string' ? raw.locale : null));
+  const parsed = Body.safeParse(raw);
+  if (!parsed.success) return fail(req, 422, 'INVALID_INPUT', say.badQuestion);
   const {slug, message, history} = parsed.data;
 
   const ip = clientIp(req);
   const ipOk = await svc.rpc('svc_rate_limit_hit', {p_key: `ai:ip:${ip}`, p_limit: 20, p_window_seconds: 600});
-  if (ipOk.error) return fail(req, 500, 'RATE_CHECK', 'Помощник временно недоступен');
-  if (!ipOk.data) return fail(req, 429, 'RATE_LIMITED', 'Слишком много вопросов подряд. Попробуйте через несколько минут.');
+  if (ipOk.error) return fail(req, 500, 'RATE_CHECK', say.unavailable);
+  if (!ipOk.data) return fail(req, 429, 'RATE_LIMITED', say.tooMany);
 
   const t = await svc.rpc('public_get_tenant', {p_slug: slug});
-  if (t.error) return fail(req, 404, 'TENANT_NOT_FOUND', 'Студия не найдена');
+  if (t.error) return fail(req, 404, 'TENANT_NOT_FOUND', say.studioNotFound);
   const tenant = t.data as PublicTenant & {id: string; assistant_enabled: boolean};
-  if (!tenant.assistant_enabled) return fail(req, 403, 'DISABLED', 'Помощник в этой студии выключен');
+  say = texts(langOf(tenant.locale));
+  if (!tenant.assistant_enabled) return fail(req, 403, 'DISABLED', say.disabled);
 
   const tenantOk = await svc.rpc('svc_rate_limit_hit', {p_key: `ai:tenant:${tenant.id}`, p_limit: 600, p_window_seconds: 3600});
-  if (!tenantOk.data) return fail(req, 429, 'RATE_LIMITED', 'Помощник сейчас перегружен. Попробуйте позже или позвоните в студию.');
+  if (!tenantOk.data) return fail(req, 429, 'RATE_LIMITED', say.overloaded);
 
   const src: ClientSource = {
     tenant,
     availability: async (serviceId, from, days) => {
       const r = await svc.rpc('svc_public_availability', {p_slug: slug, p_service_id: serviceId, p_from: from, p_days: days});
-      if (r.error) throw new Error(r.error.hint ?? 'Не удалось получить свободное время');
+      if (r.error) throw new Error(say.noSlotsData);
       return r.data;
     },
   };
@@ -64,7 +70,7 @@ Deno.serve(async req => {
     fallback: async reason => {
       const r = await clientFallback(src, message);
       if (reason === 'budget') budgetHit = true;
-      return {...r, notice: reason === 'no-model' ? undefined : 'Помощник отвечает в упрощённом режиме'};
+      return {...r, notice: reason === 'no-model' ? undefined : say.simplified};
     },
     chat: llm.chat,
     model: llm.model,

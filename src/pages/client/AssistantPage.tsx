@@ -7,7 +7,8 @@ import {useTenant} from '../../app/tenant.tsx';
 import {BOTTOM_NAV_SPACE} from '../../components/BottomNav.tsx';
 import {AssistantChat} from '../../components/AssistantChat.tsx';
 import {useBookingFlow} from '../../components/booking/BookingFlow.tsx';
-import {ASSISTANT_EXAMPLES} from '../../components/home/Sections.tsx';
+import {assistantExamples} from '../../components/home/Sections.tsx';
+import {msg} from '../../i18n/index.ts';
 import {InlineEmpty} from '../../components/StatusScreens.tsx';
 import {GUTTER, TEXT_MAX_WIDTH} from '../../components/layout/Page.tsx';
 
@@ -25,7 +26,7 @@ export default function AssistantPage() {
     return () => window.removeEventListener('resize', measure);
   }, []);
   if (!t.assistant_enabled) {
-    return <InlineEmpty title="Помощник выключен" description={`Позвоните в студию: ${t.phone}`} />;
+    return <InlineEmpty title={msg.assistant.off} description={msg.assistant.offHint(t.phone)} />;
   }
   return (
     <VStack
@@ -42,13 +43,13 @@ export default function AssistantPage() {
       <AssistantChat
         endpoint="assistant"
         slug={t.slug}
-        examples={ASSISTANT_EXAMPLES}
-        intro="Спросите о ценах, свободном времени или как нас найти. Отвечаю только по данным студии."
+        examples={assistantExamples()}
+        intro={msg.assistant.intro}
         initialQuestion={params.get('q')}
         onBook={id => flow.open(id)}
         header={
           <VStack gap={1}>
-            <Heading level={1}>Помощник</Heading>
+            <Heading level={1}>{msg.assistant.title}</Heading>
             <Text color="secondary">{t.name}</Text>
           </VStack>
         }

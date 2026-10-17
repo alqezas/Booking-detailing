@@ -27,14 +27,18 @@ import {errorText} from '../../lib/errors.ts';
 import {formatPhone, formatWhen} from '../../lib/format.ts';
 import {bookingKey, usePublicBooking} from '../../lib/queries.ts';
 import type {BookingStatus, PublicBooking} from '../../lib/types.ts';
+import {msg} from '../../i18n/index.ts';
 
-export const STATUS_LABEL: Record<BookingStatus, {label: string; variant: 'info' | 'success' | 'warning' | 'error' | 'neutral'}> = {
-  confirmed: {label: 'Подтверждена', variant: 'info'},
-  arrived: {label: 'Машина принята', variant: 'warning'},
-  ready: {label: 'Готово', variant: 'success'},
-  cancelled: {label: 'Отменена', variant: 'neutral'},
-  no_show: {label: 'Неявка', variant: 'error'},
+const STATUS_VARIANT: Record<BookingStatus, 'info' | 'success' | 'warning' | 'error' | 'neutral'> = {
+  confirmed: 'info',
+  arrived: 'warning',
+  ready: 'success',
+  cancelled: 'neutral',
+  no_show: 'error',
 };
+
+/** Badge text and colour of a booking status, in the studio language. */
+export const statusLabel = (s: BookingStatus) => ({label: msg.status[s], variant: STATUS_VARIANT[s]});
 
 export default function MyBookingPage() {
   const t = useTenant();
@@ -70,22 +74,20 @@ export default function MyBookingPage() {
   // share one content line, cards spanning the whole column.
   return (
     <PageContainer>
-      <PageTitle title="Моя запись" />
+      <PageTitle title={msg.my.title} />
       <VStack gap={8} style={{paddingBlockEnd: 'var(--spacing-6)'}}>
         {linkError && <InlineError message={linkError} />}
         {!selected ? (
-          <RevealSection title="Записей пока нет" id="my-empty-title">
+          <RevealSection title={msg.my.empty} id="my-empty-title">
             <Card padding={4}>
               <VStack gap={3}>
-                <Text color="secondary">
-                  Запишитесь — подробности появятся здесь. Если записывались с другого телефона, откройте ссылку на запись.
-                </Text>
-                <Button label="Выбрать услугу и время" variant="primary" size="lg" width="100%" onClick={() => flow.open()} />
+                <Text color="secondary">{msg.my.emptyText}</Text>
+                <Button label={msg.home.pickServiceAndTime} variant="primary" size="lg" width="100%" onClick={() => flow.open()} />
               </VStack>
             </Card>
           </RevealSection>
         ) : (
-          <RevealSection title="Ваша запись" id="my-current-title">
+          <RevealSection title={msg.my.current} id="my-current-title">
             <BookingDetails
               key={selected.id}
               entry={selected}
@@ -98,7 +100,7 @@ export default function MyBookingPage() {
           </RevealSection>
         )}
         {upcoming.length > 0 && (
-          <RevealSection title="Другие записи" id="my-other-title">
+          <RevealSection title={msg.my.other} id="my-other-title">
             <Card padding={0}>
               <List hasDividers>
                 {upcoming.map(b => (
@@ -131,7 +133,7 @@ function BookingDetails({entry, onGone}: {entry: StoredBooking; onGone: () => vo
       qc.setQueryData(bookingKey(t.slug, entry.token), b);
       void qc.invalidateQueries({queryKey: ['availability', t.slug]});
       setConfirming(false);
-      showToast({body: 'Запись отменена'});
+      showToast({body: msg.my.cancelled});
     },
   });
 
@@ -147,14 +149,14 @@ function BookingDetails({entry, onGone}: {entry: StoredBooking; onGone: () => vo
     return (
       <Section variant="transparent" padding={0}>
         <InlineError
-          message={gone ? 'Запись не найдена: возможно, ссылка устарела.' : q.error.message}
+          message={gone ? msg.my.linkGone : q.error.message}
           onRetry={gone ? onGone : () => void q.refetch()}
         />
       </Section>
     );
   }
   const b: PublicBooking = q.data;
-  const status = STATUS_LABEL[b.status];
+  const status = statusLabel(b.status);
   const shareUrl = `${location.origin}/s/${t.slug}/my#t=${entry.token}`;
 
   return (
@@ -165,7 +167,7 @@ function BookingDetails({entry, onGone}: {entry: StoredBooking; onGone: () => vo
             <Heading level={3}>{b.service_name}</Heading>
             <Badge label={status.label} variant={status.variant} />
           </HStack>
-          {b.is_demo && <Text color="secondary">Демонстрационная запись образца приложения.</Text>}
+          {b.is_demo && <Text color="secondary">{msg.my.demo}</Text>}
           <BookingSummary
             serviceName={b.service_name}
             price={b.price}
@@ -177,29 +179,27 @@ function BookingDetails({entry, onGone}: {entry: StoredBooking; onGone: () => vo
             currency={t.currency}
             customer={{name: b.customer_name, phone: b.customer_phone, car: b.car}}
           />
-          <Text color="secondary">Адрес: {b.tenant.address}</Text>
+          <Text color="secondary">{msg.my.address(b.tenant.address)}</Text>
           {b.status === 'confirmed' && <ReminderOffer booking={b} token={entry.token} />}
           <HStack gap={2} wrap="wrap">
-            <Button label={`Позвонить в студию ${formatPhone(t.phone)}`} icon={<Icon icon={Phone} />} href={`tel:${t.phone}`}>
-              Позвонить в студию
+            <Button label={msg.my.callStudioLabel(formatPhone(t.phone))} icon={<Icon icon={Phone} />} href={`tel:${t.phone}`}>
+              {msg.my.callStudio}
             </Button>
             <Button
-              label="Скопировать ссылку на запись"
+              label={msg.my.copyLink}
               variant="ghost"
               icon={<Icon icon={LinkSimple} />}
               clickAction={async () => {
                 await navigator.clipboard.writeText(shareUrl);
-                showToast({body: 'Ссылка скопирована — по ней запись откроется на любом устройстве'});
+                showToast({body: msg.my.copied});
               }}
             />
           </HStack>
           {b.status === 'confirmed' &&
             (b.can_cancel ? (
-              <Button label="Отменить запись" variant="destructive" onClick={() => setConfirming(true)} />
+              <Button label={msg.my.cancel} variant="destructive" onClick={() => setConfirming(true)} />
             ) : (
-              <Text type="supporting">
-                Онлайн-отмена доступна до {formatWhen(b.cancel_deadline, t.timezone)}. Сейчас — только по телефону студии.
-              </Text>
+              <Text type="supporting">{msg.my.cancelUntil(formatWhen(b.cancel_deadline, t.timezone))}</Text>
             ))}
           {cancel.isError && (
             <Text color="accent" role="alert">
@@ -211,10 +211,10 @@ function BookingDetails({entry, onGone}: {entry: StoredBooking; onGone: () => vo
       <AlertDialog
         isOpen={confirming}
         onOpenChange={setConfirming}
-        title="Отменить запись?"
-        description={`${b.service_name}, ${formatWhen(b.start_at, t.timezone)}. Время освободится для других клиентов.`}
-        actionLabel="Отменить запись"
-        cancelLabel="Не отменять"
+        title={msg.my.cancelTitle}
+        description={msg.my.cancelText(b.service_name, formatWhen(b.start_at, t.timezone))}
+        actionLabel={msg.my.cancel}
+        cancelLabel={msg.my.keep}
         isActionLoading={cancel.isPending}
         onAction={() => cancel.mutate()}
       />

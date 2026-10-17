@@ -20,6 +20,9 @@ type Head = {
   heroPreload: string;
   ogImage: string;
   splash: {href: string; media: string}[];
+  /** <html lang>; the app reads it to pick the interface language before the studio loads. */
+  lang?: string;
+  noscript?: string;
 };
 
 const MARKER = '<!--tenant-head-->';
@@ -44,6 +47,13 @@ export function renderHead(h: Head): string {
   ].join('\n    ');
 }
 
+/** The shared shell with one studio's <head>, language and <noscript> text. */
+function applyHead(template: string, h: Head): string {
+  let html = template.replace(MARKER, renderHead(h)).replace(/<html lang="[a-z-]+"/, `<html lang="${h.lang ?? 'ru'}"`);
+  if (h.noscript) html = html.replace(/<noscript>[^<]*<\/noscript>/,`<noscript>${esc(h.noscript)}</noscript>`);
+  return html;
+}
+
 function readHead(root: string, slug: string): Head | null {
   const file = path.join(root, 's', slug, 'head.json');
   return existsSync(file) ? (JSON.parse(readFileSync(file, 'utf8')) as Head) : null;
@@ -66,7 +76,7 @@ export function tenantHtml(): Plugin {
         if (!m || req.method !== 'GET' || !accept.includes('text/html') || /\.[a-z0-9]+$/i.test(m[2] ?? '')) return next();
         const head = readHead(publicDir, m[1]!);
         if (!head) return next();
-        const template = readFileSync(path.resolve(server.config.root, 'index.html'), 'utf8').replace(MARKER, renderHead(head));
+        const template = applyHead(readFileSync(path.resolve(server.config.root, 'index.html'), 'utf8'), head);
         const html = await server.transformIndexHtml(url, template);
         res.setHeader('content-type', 'text/html; charset=utf-8');
         res.end(html);
@@ -90,7 +100,7 @@ export function tenantHtml(): Plugin {
       for (const slug of readdirSync(tenantsDir)) {
         const head = readHead(outDir, slug);
         if (!head) continue;
-        writeFileSync(path.join(tenantsDir, slug, 'index.html'), template.replace(MARKER, renderHead(head)));
+        writeFileSync(path.join(tenantsDir, slug, 'index.html'), applyHead(template, head));
       }
       // The bare domain gets a neutral title.
       writeFileSync(shell, template.replace(MARKER, '<title>Онлайн-запись</title>\n    <meta name="robots" content="noindex" />'));

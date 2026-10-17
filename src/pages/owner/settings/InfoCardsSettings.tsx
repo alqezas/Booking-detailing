@@ -17,25 +17,14 @@ import {errorText} from '../../../lib/errors.ts';
 import {fieldErrors, infoCardSchema} from '../../../lib/schemas.ts';
 import {useOwner} from '../ownerContext.tsx';
 import {errorStatus, useRefreshStudio} from './shared.tsx';
-
-const ICON_LABEL: Record<(typeof INFO_CARD_ICONS)[number], string> = {
-  shield: 'Щит — гарантия',
-  sparkle: 'Блеск — качество',
-  clock: 'Часы — время',
-  drop: 'Капля — мойка',
-  car: 'Автомобиль',
-  wrench: 'Ключ — ремонт',
-  medal: 'Медаль — опыт',
-  sun: 'Солнце',
-  coffee: 'Кофе — ожидание',
-  'credit-card': 'Карта — оплата',
-};
+import {ApiError} from '../../../lib/errors.ts';
+import {msg} from '../../../i18n/index.ts';
 
 export function InfoCardsSettings() {
   const t = useTenant();
   return (
     <VStack gap={4}>
-      <Text color="secondary">Три карточки в разделе «Почему мы» на главной странице.</Text>
+      <Text color="secondary">{msg.cardsSettings.lead}</Text>
       {[1, 2, 3].map(pos => (
         <CardEditor key={pos} position={pos} initial={t.info_cards.find(c => c.position === pos)} />
       ))}
@@ -54,27 +43,27 @@ function CardEditor({position, initial}: {position: number; initial?: {icon: str
       const p = infoCardSchema.safeParse(f);
       if (!p.success) {
         setErrors(fieldErrors(p.error));
-        throw new Error('Проверьте поля карточки');
+        throw new ApiError('CLIENT', msg.cardsSettings.checkCard);
       }
       setErrors({});
       return api.saveInfoCard(position, p.data);
     },
     onSuccess: () => {
       refresh();
-      showToast({body: `Карточка ${position} сохранена`});
+      showToast({body: msg.cardsSettings.saved(position)});
     },
   });
   return (
     <Card padding={4}>
       <VStack gap={3}>
-        <Heading level={2}>Карточка {position}</Heading>
+        <Heading level={2}>{msg.cardsSettings.card(position)}</Heading>
         <FormLayout defaultOptionality="required">
-          <Selector label="Значок" value={f.icon} onChange={v => v && setF(x => ({...x, icon: v}))} options={INFO_CARD_ICONS.map(i => ({value: i, label: ICON_LABEL[i]}))} />
-          <TextInput label="Заголовок" value={f.title} onChange={v => setF(x => ({...x, title: v}))} status={errorStatus(errors.title)} />
-          <TextArea label="Текст" value={f.text} onChange={v => setF(x => ({...x, text: v}))} rows={2} maxLength={160} status={errorStatus(errors.text)} />
+          <Selector label={msg.cardsSettings.icon} value={f.icon} onChange={v => v && setF(x => ({...x, icon: v}))} options={INFO_CARD_ICONS.map(i => ({value: i, label: msg.cardsSettings.icons[i] ?? i}))} />
+          <TextInput label={msg.cardsSettings.heading} value={f.title} onChange={v => setF(x => ({...x, title: v}))} status={errorStatus(errors.title)} />
+          <TextArea label={msg.cardsSettings.text} value={f.text} onChange={v => setF(x => ({...x, text: v}))} rows={2} maxLength={160} status={errorStatus(errors.text)} />
         </FormLayout>
         {save.isError && !Object.keys(errors).length && <Banner status="error" title={errorText(save.error)} collapsible={false} />}
-        <Button label="Сохранить карточку" isLoading={save.isPending} onClick={() => save.mutate()} />
+        <Button label={msg.cardsSettings.save} isLoading={save.isPending} onClick={() => save.mutate()} />
       </VStack>
     </Card>
   );

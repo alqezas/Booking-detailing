@@ -25,6 +25,7 @@ import type {PublicBooking, Service} from '../../lib/types.ts';
 import {BookingSummary} from './BookingSummary.tsx';
 import {ReminderOffer} from './ReminderOffer.tsx';
 import {SlotPicker} from './SlotPicker.tsx';
+import {msg} from '../../i18n/index.ts';
 
 type Step = 'service' | 'time' | 'details' | 'confirm' | 'done';
 
@@ -164,11 +165,11 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
           else setStep(s as Step);
         }}
       >
-        <BottomSheet sheetId="service" label="Выбор услуги" height="tall">
+        <BottomSheet sheetId="service" label={msg.flow.serviceSheet} height="tall">
           <VStack gap={4}>
             <VStack gap={1}>
-              <Heading level={2}>Запись в студию</Heading>
-              <Text color="secondary">Шаг 1 из 3 — выберите услугу</Text>
+              <Heading level={2}>{msg.flow.title}</Heading>
+              <Text color="secondary">{msg.flow.step1}</Text>
             </VStack>
             {grouped.map(([category, services]) => (
               <List key={category} header={<Heading level={3}>{category}</Heading>} hasDividers>
@@ -191,14 +192,13 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
           </VStack>
         </BottomSheet>
 
-        <BottomSheet sheetId="time" label="Выбор даты и времени" height="tall">
+        <BottomSheet sheetId="time" label={msg.flow.timeSheet} height="tall">
           {service && (
             <VStack gap={4}>
               <VStack gap={1}>
                 <Heading level={2}>{service.name}</Heading>
                 <Text color="secondary">
-                  Шаг 2 из 3 — дата и время · {formatDuration(service.duration_minutes)} ·{' '}
-                  {formatPrice(service.price, service.price_from, tenant.currency)}
+                  {msg.flow.step2(formatDuration(service.duration_minutes), formatPrice(service.price, service.price_from, tenant.currency))}
                 </Text>
               </VStack>
               <SlotPicker
@@ -214,44 +214,44 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
                 notice={notice}
               />
               <HStack gap={2}>
-                <Button label="Назад" variant="ghost" onClick={() => setStep('service')} style={{flexShrink: 0}} />
-                <Button label="Дальше" variant="primary" width="100%" isDisabled={!startAt} onClick={() => setStep('details')} />
+                <Button label={msg.common.back} variant="ghost" onClick={() => setStep('service')} style={{flexShrink: 0}} />
+                <Button label={msg.common.next} variant="primary" width="100%" isDisabled={!startAt} onClick={() => setStep('details')} />
               </HStack>
             </VStack>
           )}
         </BottomSheet>
 
-        <BottomSheet sheetId="details" label="Контактные данные" height="tall" purpose="form">
+        <BottomSheet sheetId="details" label={msg.flow.detailsSheet} height="tall" purpose="form">
           <VStack gap={4}>
             <VStack gap={1}>
-              <Heading level={2}>Ваши данные</Heading>
-              <Text color="secondary">Шаг 3 из 3 — чтобы студия могла связаться с вами</Text>
+              <Heading level={2}>{msg.flow.yourData}</Heading>
+              <Text color="secondary">{msg.flow.step3}</Text>
             </VStack>
             <FormLayout defaultOptionality="required">
-              <TextInput label="Имя" value={customer.name} onChange={set('name')} autoComplete="name" status={errors.name ? {type: 'error', message: errors.name} : undefined} />
+              <TextInput label={msg.flow.name} value={customer.name} onChange={set('name')} autoComplete="name" status={errors.name ? {type: 'error', message: errors.name} : undefined} />
               <TextInput
-                label="Телефон"
+                label={msg.flow.phone}
                 value={customer.phone}
                 onChange={set('phone')}
                 autoComplete="tel"
-                placeholder="+7 999 123-45-67"
-                description="Позвоним, только если что-то изменится"
+                placeholder={msg.phonePlaceholder}
+                description={msg.flow.phoneHint}
                 status={errors.phone ? {type: 'error', message: errors.phone} : undefined}
               />
-              <TextInput label="Автомобиль" value={customer.car} onChange={set('car')} placeholder="Марка и модель" status={errors.car ? {type: 'error', message: errors.car} : undefined} />
-              <TextArea label="Комментарий" isOptional value={customer.comment ?? ''} onChange={set('comment')} rows={2} maxLength={500} />
+              <TextInput label={msg.flow.car} value={customer.car} onChange={set('car')} placeholder={msg.flow.carPlaceholder} status={errors.car ? {type: 'error', message: errors.car} : undefined} />
+              <TextArea label={msg.flow.comment} isOptional value={customer.comment ?? ''} onChange={set('comment')} rows={2} maxLength={500} />
             </FormLayout>
             <HStack gap={2}>
-              <Button label="Назад" variant="ghost" onClick={() => setStep('time')} style={{flexShrink: 0}} />
-              <Button label="Проверить запись" variant="primary" width="100%" onClick={submitDetails} />
+              <Button label={msg.common.back} variant="ghost" onClick={() => setStep('time')} style={{flexShrink: 0}} />
+              <Button label={msg.flow.review} variant="primary" width="100%" onClick={submitDetails} />
             </HStack>
           </VStack>
         </BottomSheet>
 
-        <BottomSheet sheetId="confirm" label="Подтверждение записи" height="tall" purpose="form">
+        <BottomSheet sheetId="confirm" label={msg.flow.confirmSheet} height="tall" purpose="form">
           {service && startAt && (
             <VStack gap={4}>
-              <Heading level={2}>Проверьте и подтвердите</Heading>
+              <Heading level={2}>{msg.flow.confirmTitle}</Heading>
               <BookingSummary
                 serviceName={service.name}
                 price={service.price}
@@ -262,16 +262,14 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
                 currency={tenant.currency}
                 customer={{name: customer.name, phone: customerSchema.shape.phone.safeParse(customer.phone).data ?? customer.phone, car: customer.car}}
               />
-              <Text type="supporting">
-                Отменить онлайн можно не позднее чем за {tenant.booking.cancel_cutoff_hours} ч до визита.
-              </Text>
+              <Text type="supporting">{msg.flow.cancelRule(tenant.booking.cancel_cutoff_hours)}</Text>
               {create.isError && !(create.error instanceof ApiError && create.error.code === 'SLOT_TAKEN') && (
-                <Banner status="error" title="Запись не создана" description={toApiError(create.error).message} collapsible={false} />
+                <Banner status="error" title={msg.flow.notCreated} description={toApiError(create.error).message} collapsible={false} />
               )}
               <HStack gap={2}>
-                <Button label="Изменить" variant="ghost" isDisabled={create.isPending} onClick={() => setStep('details')} style={{flexShrink: 0}} />
+                <Button label={msg.flow.edit} variant="ghost" isDisabled={create.isPending} onClick={() => setStep('details')} style={{flexShrink: 0}} />
                 <Button
-                  label="Подтвердить запись"
+                  label={msg.flow.confirm}
                   variant="primary"
                   size="lg"
                   width="100%"
@@ -285,16 +283,14 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
           )}
         </BottomSheet>
 
-        <BottomSheet sheetId="done" label="Запись создана" height="tall">
+        <BottomSheet sheetId="done" label={msg.flow.doneSheet} height="tall">
           {result && (
             <VStack gap={4}>
               <HStack gap={2} align="center">
                 <Icon icon={CheckCircle} color="success" size="lg" />
-                <Heading level={2}>Вы записаны</Heading>
+                <Heading level={2}>{msg.flow.doneTitle}</Heading>
               </HStack>
-              <Text>
-                {result.booking.service_name}, {formatWhen(result.booking.start_at, tz)}. Ждём вас по адресу: {tenant.address}.
-              </Text>
+              <Text>{msg.flow.doneText(result.booking.service_name, formatWhen(result.booking.start_at, tz), tenant.address)}</Text>
               <BookingSummary
                 serviceName={result.booking.service_name}
                 price={result.booking.price}
@@ -308,7 +304,7 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
               <ReminderOffer booking={result.booking} token={result.token} />
               <HStack gap={2}>
                 <Button
-                  label="Моя запись"
+                  label={msg.flow.myBooking}
                   variant="primary"
                   width="100%"
                   onClick={() => {
@@ -317,7 +313,7 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
                     navigate(`/s/${tenant.slug}/my?b=${result.booking.id}`, {replace: true});
                   }}
                 />
-                <Button label="Готово" variant="ghost" onClick={close} style={{flexShrink: 0}} />
+                <Button label={msg.common.done} variant="ghost" onClick={close} style={{flexShrink: 0}} />
               </HStack>
             </VStack>
           )}

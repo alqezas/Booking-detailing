@@ -20,6 +20,7 @@ import {clearPrivateCaches} from '../../lib/pwa.ts';
 import {ownerClient} from '../../lib/supabase.ts';
 import {OwnerContext, ownerKey} from './ownerContext.tsx';
 import {PageContainer} from '../../components/layout/Page.tsx';
+import {msg} from '../../i18n/index.ts';
 
 export default function OwnerRoot() {
   const tenant = useTenant();
@@ -59,12 +60,12 @@ export default function OwnerRoot() {
 
   if (session === undefined || (session && member.isPending)) return <FullScreenLoading />;
   if (!session) return <Navigate to={`/s/${tenant.slug}/owner/login`} replace />;
-  if (member.isError) return <FullScreenError title="Не удалось открыть кабинет" description={member.error.message} onRetry={() => void member.refetch()} />;
+  if (member.isError) return <FullScreenError title={msg.owner.cannotOpen} description={member.error.message} onRetry={() => void member.refetch()} />;
   if (!member.data) {
     return (
       <FullScreenError
-        title="Нет доступа к этой студии"
-        description="Вы вошли под учётной записью, которая не связана с этой студией."
+        title={msg.owner.noAccess}
+        description={msg.owner.noAccessHint}
         onRetry={() => void logout()}
       />
     );
@@ -72,10 +73,10 @@ export default function OwnerRoot() {
 
   const base = `/s/${tenant.slug}/owner`;
   const sections = [
-    {value: 'bookings', label: 'Записи', to: base, icon: CalendarDots},
-    {value: 'stats', label: 'Деньги', to: `${base}/stats`, icon: Coins},
-    {value: 'settings', label: 'Настройки', to: `${base}/settings`, icon: GearSix},
-    {value: 'assistant', label: 'Помощник', to: `${base}/assistant`, icon: ChatCircleDots},
+    {value: 'bookings', label: msg.owner.tabs.bookings, to: base, icon: CalendarDots},
+    {value: 'stats', label: msg.owner.tabs.stats, to: `${base}/stats`, icon: Coins},
+    {value: 'settings', label: msg.owner.tabs.settings, to: `${base}/settings`, icon: GearSix},
+    {value: 'assistant', label: msg.owner.tabs.assistant, to: `${base}/assistant`, icon: ChatCircleDots},
   ];
   const tab = pathname.replace(base, '').replace(/^\//, '').split('/')[0] || 'bookings';
 
@@ -92,14 +93,14 @@ export default function OwnerRoot() {
             <PageContainer style={{gap: 'var(--spacing-2)', paddingBlockStart: 'var(--spacing-3)'}}>
               <HStack justify="between" align="center" gap={2}>
                 <VStack gap={0} style={{minWidth: 0}}>
-                  <Text type="supporting">Кабинет</Text>
+                  <Text type="supporting">{msg.owner.cabinet}</Text>
                   <Text weight="bold" maxLines={1}>
                     {tenant.name}
                   </Text>
                 </VStack>
                 <HStack gap={1} style={{flexShrink: 0}}>
-                  <Button label="Открыть сайт студии" variant="ghost" size="sm" isIconOnly icon={<Icon icon={ArrowSquareOut} />} href={`/s/${tenant.slug}/`} target="_blank" tooltip="Сайт студии" />
-                  <Button label="Выйти" variant="ghost" size="sm" icon={<Icon icon={SignOut} />} onClick={() => void logout()} />
+                  <Button label={msg.owner.openSite} variant="ghost" size="sm" isIconOnly icon={<Icon icon={ArrowSquareOut} />} href={`/s/${tenant.slug}/`} target="_blank" tooltip={msg.owner.siteTip} />
+                  <Button label={msg.owner.logout} variant="ghost" size="sm" icon={<Icon icon={SignOut} />} onClick={() => void logout()} />
                 </HStack>
               </HStack>
               {/* Wide screens: tabs in the header. Phones: the same four sections in a bottom bar. */}
@@ -117,7 +118,7 @@ export default function OwnerRoot() {
           <PageContainer as="main" ref={main} style={{outline: 'none', paddingBlockEnd: wide ? 'var(--spacing-8)' : BOTTOM_NAV_SPACE}}>
             <Outlet />
           </PageContainer>
-          {!wide && <BottomNav label="Разделы кабинета" items={sections.map(s => ({to: s.to, label: s.label, icon: s.icon, end: s.value === 'bookings'}))} />}
+          {!wide && <BottomNav label={msg.owner.navLabel} items={sections.map(s => ({to: s.to, label: s.label, icon: s.icon, end: s.value === 'bookings'}))} />}
         </VStack>
       </LinkProvider>
     </OwnerContext.Provider>

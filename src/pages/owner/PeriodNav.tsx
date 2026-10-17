@@ -6,8 +6,8 @@ import {Text} from '@astryxdesign/core/Text';
 import {VStack} from '@astryxdesign/core/VStack';
 import {CaretLeft, CaretRight} from '@phosphor-icons/react';
 import {addDays, addMonths, format, parseISO} from 'date-fns';
-import {ru} from 'date-fns/locale';
 import {todayIn} from '../../lib/format.ts';
+import {msg} from '../../i18n/index.ts';
 
 export type Period = 'day' | 'week' | 'month';
 
@@ -23,11 +23,15 @@ export function periodLabel(period: Period, fromDate: string, toDate: string, ti
   const f = parseISO(fromDate);
   if (period === 'day') {
     const tomorrow = format(addDays(parseISO(today), 1), 'yyyy-MM-dd');
-    const prefix = fromDate === today ? 'Сегодня, ' : fromDate === tomorrow ? 'Завтра, ' : '';
-    return prefix + format(f, 'EEEEEE, d MMMM', {locale: ru});
+    const prefix = fromDate === today ? `${msg.fmt.Today}, ` : fromDate === tomorrow ? `${msg.fmt.Tomorrow}, ` : '';
+    return prefix + format(f, msg.fmt.periodDay, {locale: msg.dateLocale});
   }
-  if (period === 'month') return format(f, 'LLLL yyyy', {locale: ru});
-  return `${format(f, 'd MMM', {locale: ru})} – ${format(parseISO(toDate), 'd MMM', {locale: ru})}`;
+  if (period === 'month') {
+    const m = format(f, msg.fmt.periodMonth, {locale: msg.dateLocale});
+    return m.charAt(0).toUpperCase() + m.slice(1);
+  }
+  const edge = (d: Date) => format(d, msg.fmt.periodWeekEdge, {locale: msg.dateLocale});
+  return `${edge(f)} – ${edge(parseISO(toDate))}`;
 }
 
 type Props = {
@@ -41,27 +45,27 @@ type Props = {
 };
 
 export function PeriodNav({period, periods = ['day', 'week'], onPeriod, anchor, onAnchor, label, timezone}: Props) {
-  const names: Record<Period, string> = {day: 'День', week: 'Неделя', month: 'Месяц'};
+  const names: Record<Period, string> = {day: msg.period.day, week: msg.period.week, month: msg.period.month};
   return (
     <VStack gap={2}>
-      <SegmentedControl label="Период" value={period} onChange={v => onPeriod(v as Period)} layout="fill">
+      <SegmentedControl label={msg.period.label} value={period} onChange={v => onPeriod(v as Period)} layout="fill">
         {periods.map(p => (
           <SegmentedControlItem key={p} value={p} label={names[p]} />
         ))}
       </SegmentedControl>
       <HStack justify="between" align="center" gap={2}>
-        <Button label="Назад" isIconOnly variant="ghost" icon={<Icon icon={CaretLeft} />} onClick={() => onAnchor(shiftAnchor(anchor, period, -1))} />
+        <Button label={msg.period.back} isIconOnly variant="ghost" icon={<Icon icon={CaretLeft} />} onClick={() => onAnchor(shiftAnchor(anchor, period, -1))} />
         <VStack gap={0} align="center">
           <Text weight="semibold" justify="center">
             {label}
           </Text>
           {anchor !== todayIn(timezone) && (
-            <Button label="К сегодняшнему дню" variant="ghost" size="sm" onClick={() => onAnchor(todayIn(timezone))}>
-              Сегодня
+            <Button label={msg.period.toToday} variant="ghost" size="sm" onClick={() => onAnchor(todayIn(timezone))}>
+              {msg.period.today}
             </Button>
           )}
         </VStack>
-        <Button label="Вперёд" isIconOnly variant="ghost" icon={<Icon icon={CaretRight} />} onClick={() => onAnchor(shiftAnchor(anchor, period, 1))} />
+        <Button label={msg.period.forward} isIconOnly variant="ghost" icon={<Icon icon={CaretRight} />} onClick={() => onAnchor(shiftAnchor(anchor, period, 1))} />
       </HStack>
     </VStack>
   );

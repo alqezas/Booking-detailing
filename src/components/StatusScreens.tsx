@@ -7,8 +7,9 @@ import {Spinner} from '@astryxdesign/core/Spinner';
 import {VStack} from '@astryxdesign/core/VStack';
 import {CloudSlash, MagnifyingGlass, Tray} from '@phosphor-icons/react';
 import type {ReactNode} from 'react';
+import {msg} from '../i18n/index.ts';
 
-export function FullScreenLoading({label = 'Загружаем…'}: {label?: string}) {
+export function FullScreenLoading({label = msg.common.loading}: {label?: string}) {
   return (
     <Center minHeight="100dvh">
       <Spinner size="lg" label={label} />
@@ -24,7 +25,7 @@ export function FullScreenError({title, description, onRetry}: {title: string; d
         icon={<Icon icon={onRetry ? CloudSlash : MagnifyingGlass} size="lg" />}
         title={title}
         description={description}
-        actions={onRetry ? <Button label="Повторить" variant="primary" onClick={onRetry} /> : undefined}
+        actions={onRetry ? <Button label={msg.common.retry} variant="primary" onClick={onRetry} /> : undefined}
       />
     </Center>
   );
@@ -36,9 +37,9 @@ export function InlineError({message, onRetry}: {message: string; onRetry?: () =
     <EmptyState
       isCompact
       icon={<Icon icon={CloudSlash} />}
-      title="Не загрузилось"
+      title={msg.common.notLoaded}
       description={message}
-      actions={onRetry ? <Button label="Повторить" size="sm" onClick={onRetry} /> : undefined}
+      actions={onRetry ? <Button label={msg.common.retry} size="sm" onClick={onRetry} /> : undefined}
     />
   );
 }
@@ -49,7 +50,7 @@ export function InlineEmpty({title, description, action}: {title: string; descri
 
 export function RowsSkeleton({rows = 4, height = 56}: {rows?: number; height?: number}) {
   return (
-    <VStack gap={2} aria-busy="true" aria-label="Загрузка">
+    <VStack gap={2} aria-busy="true" aria-label={msg.common.loadingAria}>
       {Array.from({length: rows}, (_, i) => (
         <Skeleton key={i} height={height} index={i} />
       ))}

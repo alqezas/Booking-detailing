@@ -12,6 +12,7 @@ import {downloadIcs, googleCalendarUrl, type IcsInput} from '../../lib/ics.ts';
 import {enableReminder, pushSupport} from '../../lib/push.ts';
 import {bookingKey} from '../../lib/queries.ts';
 import type {PublicBooking} from '../../lib/types.ts';
+import {msg} from '../../i18n/index.ts';
 
 /**
  * After booking: offer a reminder 24 h before. Web Push where it really
@@ -36,12 +37,12 @@ export function ReminderOffer({booking, token}: {booking: PublicBooking; token: 
     start: booking.start_at,
     end: booking.end_at,
     location: booking.tenant.address,
-    description: `Телефон студии: ${booking.tenant.phone}`,
+    description: msg.reminder.icsDescription(booking.tenant.phone),
   };
   const calendarButtons = (
     <HStack gap={2} wrap="wrap">
-      <Button label="Добавить в календарь" icon={<Icon icon={CalendarPlus} />} onClick={() => downloadIcs(ics, 'zapis-v-studiyu.ics')} />
-      <Button label="Google Календарь" variant="ghost" icon={<Icon icon={GoogleLogo} />} href={googleCalendarUrl(ics)} target="_blank" />
+      <Button label={msg.reminder.addToCalendar} icon={<Icon icon={CalendarPlus} />} onClick={() => downloadIcs(ics, msg.reminder.icsFile)} />
+      <Button label={msg.reminder.googleCalendar} variant="ghost" icon={<Icon icon={GoogleLogo} />} href={googleCalendarUrl(ics)} target="_blank" />
     </HStack>
   );
 
@@ -50,16 +51,16 @@ export function ReminderOffer({booking, token}: {booking: PublicBooking; token: 
   if (booking.status !== 'confirmed') {
     return null;
   } else if (booking.tenant.status !== 'live' || booking.is_demo) {
-    status = 'В образце приложения напоминания не отправляются. Можно добавить запись в календарь.';
+    status = msg.reminder.preview;
   } else if (reminder?.status === 'pending' || reminder?.status === 'sent') {
-    status = `Напоминание включено: придёт ${formatWhen(reminder.run_at, tz)}.`;
+    status = msg.reminder.enabled(formatWhen(reminder.run_at, tz));
   } else if (within24h) {
-    status = 'До записи меньше суток — добавьте её в календарь, чтобы не забыть.';
+    status = msg.reminder.lessThanDay;
   } else if (support === 'available' || support === 'granted') {
-    status = 'Пришлём уведомление за сутки до записи.';
+    status = msg.reminder.willNotify;
     action = (
       <Button
-        label="Напомнить за сутки"
+        label={msg.reminder.remind}
         variant="primary"
         icon={<Icon icon={BellRinging} />}
         isLoading={enable.isPending}
@@ -67,11 +68,11 @@ export function ReminderOffer({booking, token}: {booking: PublicBooking; token: 
       />
     );
   } else if (support === 'needs-install') {
-    status = 'На iPhone уведомления работают, когда приложение добавлено на экран «Домой» (Поделиться → На экран «Домой»). Пока можно добавить запись в календарь.';
+    status = msg.reminder.needsInstall;
   } else if (support === 'denied') {
-    status = 'Уведомления запрещены в настройках браузера. Добавьте запись в календарь — он напомнит сам.';
+    status = msg.reminder.denied;
   } else {
-    status = 'Этот браузер не поддерживает уведомления. Добавьте запись в календарь — он напомнит за сутки.';
+    status = msg.reminder.unsupported;
   }
 
   return (

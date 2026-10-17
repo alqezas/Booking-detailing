@@ -43,6 +43,12 @@ async function iconOnBlack(src: string, size: number, inner: number, out: string
     .toFile(out);
 }
 
+/** Words that ship in the manifest and HTML, in the studio's language. */
+const ASSET_TEXT = {
+  ru: {lang: 'ru', booking: 'Онлайн-запись', book: 'Записаться', my: 'Моя запись', noscript: 'Для записи включите JavaScript.'},
+  cs: {lang: 'cs', booking: 'Online rezervace', book: 'Rezervovat termín', my: 'Moje rezervace', noscript: 'Pro rezervaci zapněte JavaScript.'},
+};
+
 async function buildTenant(slug: string, dir: string, c: BusinessConfig): Promise<void> {
   const outDir = path.join(PUBLIC_TENANTS_DIR, slug);
   rmSync(outDir, {recursive: true, force: true});
@@ -53,8 +59,8 @@ async function buildTenant(slug: string, dir: string, c: BusinessConfig): Promis
   const hero = path.join(dir, c.images.hero);
   await sharp(hero).rotate().resize({width: 1800, withoutEnlargement: true}).webp({quality: 80}).toFile(path.join(outDir, 'media', mediaFileName(c.images.hero)));
   await sharp(hero).rotate().resize(1200, 630, {fit: 'cover'}).jpeg({quality: 82}).toFile(path.join(outDir, 'media', 'og.jpg'));
-  for (const g of c.gallery) {
-    await sharp(path.join(dir, g.image)).rotate().resize({width: 1400, withoutEnlargement: true}).webp({quality: 78}).toFile(path.join(outDir, 'media', mediaFileName(g.image)));
+  for (const file of c.gallery.flatMap(g => (g.before ? [g.image, g.before] : [g.image]))) {
+    await sharp(path.join(dir, file)).rotate().resize({width: 1400, withoutEnlargement: true}).webp({quality: 78}).toFile(path.join(outDir, 'media', mediaFileName(file)));
   }
   const logo = path.join(dir, c.images.logo);
   await sharp(logo).resize(512, 512, {fit: 'contain', background: BG}).png().toFile(path.join(outDir, 'media', mediaFileName(c.images.logo)));
@@ -91,13 +97,14 @@ async function buildTenant(slug: string, dir: string, c: BusinessConfig): Promis
   }
 
   const shortName = c.shortName ?? (c.name.length <= 14 ? c.name : c.name.split(/\s+/)[0]!.slice(0, 14));
-  const description = c.tagline || `Онлайн-запись: ${c.name}`;
+  const words = c.locale === 'cs-CZ' ? ASSET_TEXT.cs : ASSET_TEXT.ru;
+  const description = c.tagline || `${words.booking}: ${c.name}`;
   const manifest = {
     id: `${base}/`,
     name: c.name,
     short_name: shortName,
     description,
-    lang: 'ru',
+    lang: words.lang,
     dir: 'ltr',
     start_url: `${base}/?source=pwa`,
     scope: `${base}/`,
@@ -113,15 +120,15 @@ async function buildTenant(slug: string, dir: string, c: BusinessConfig): Promis
       {src: `${base}/icons/maskable-512.png`, sizes: '512x512', type: 'image/png', purpose: 'maskable'},
     ],
     shortcuts: [
-      {name: 'Записаться', url: `${base}/?book=1`, icons: [{src: `${base}/icons/icon-192.png`, sizes: '192x192'}]},
-      {name: 'Моя запись', url: `${base}/my`, icons: [{src: `${base}/icons/icon-192.png`, sizes: '192x192'}]},
+      {name: words.book, url: `${base}/?book=1`, icons: [{src: `${base}/icons/icon-192.png`, sizes: '192x192'}]},
+      {name: words.my, url: `${base}/my`, icons: [{src: `${base}/icons/icon-192.png`, sizes: '192x192'}]},
     ],
   };
   writeFileSync(path.join(outDir, 'manifest.webmanifest'), JSON.stringify(manifest, null, 2));
 
   const head = {
     slug,
-    title: `${c.name} — онлайн-запись`,
+    title: `${c.name} — ${words.booking.toLowerCase()}`,
     description,
     shortName,
     manifest: `${base}/manifest.webmanifest`,
@@ -130,6 +137,8 @@ async function buildTenant(slug: string, dir: string, c: BusinessConfig): Promis
     heroPreload: `${base}/media/${mediaFileName(c.images.hero)}`,
     ogImage: `${base}/media/og.jpg`,
     splash: splashLinks,
+    lang: words.lang,
+    noscript: words.noscript,
   };
   writeFileSync(path.join(outDir, 'head.json'), JSON.stringify(head, null, 2));
 }

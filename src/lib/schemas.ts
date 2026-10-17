@@ -1,43 +1,59 @@
 import {z} from 'zod';
 import {HEX_RE, PHONE_RE, TIME_RE, normalizePhone} from '../../shared/business.ts';
+import {msg, type Messages} from '../i18n/index.ts';
 
-/** Accepts «8 999 123-45-67», «+7 (999) 123 45 67», «9991234567» → +79991234567. */
-export function toE164(raw: string): string {
+/** Validation messages are read when a check fails, so they follow the studio's language. */
+const say = (pick: (v: Messages['v']) => string) => ({error: () => pick(msg.v)});
+
+/**
+ * Accepts local and international spellings and returns E.164:
+ *   ru: «8 999 123-45-67», «+7 (999) 123 45 67», «9991234567» → +79991234567
+ *   cs: «777 056 596», «00420 777 056 596», «+420777056596» → +420777056596
+ */
+export function toE164(raw: string, country: string = msg.phoneCountry): string {
   let p = normalizePhone(raw.trim());
-  if (/^8\d{10}$/.test(p)) p = '+7' + p.slice(1);
-  else if (/^9\d{9}$/.test(p)) p = '+7' + p;
-  else if (/^7\d{10}$/.test(p)) p = '+' + p;
+  if (p.startsWith('00')) p = '+' + p.slice(2);
+  if (p.startsWith('+')) return p;
+  if (country === '7') {
+    if (/^8\d{10}$/.test(p)) return '+7' + p.slice(1);
+    if (/^9\d{9}$/.test(p)) return '+7' + p;
+    if (/^7\d{10}$/.test(p)) return '+' + p;
+  } else if (country === '420') {
+    if (/^\d{9}$/.test(p)) return '+420' + p;
+    if (/^42[01]\d{9}$/.test(p)) return '+' + p;
+  }
   return p;
 }
 
 const phone = z
   .string()
   .trim()
-  .min(1, 'Укажите телефон')
-  .transform(toE164)
-  .refine(v => PHONE_RE.test(v), 'Телефон в формате +7 999 123-45-67');
+  .min(1, say(v => v.phoneRequired))
+  .transform(v => toE164(v))
+  .refine(v => PHONE_RE.test(v), say(v => v.phoneFormat));
 
 export const customerSchema = z.object({
-  name: z.string().trim().min(2, 'Укажите имя').max(80, 'Слишком длинное имя'),
+  name: z.string().trim().min(2, say(v => v.nameRequired)).max(80, say(v => v.nameLong)),
   phone,
-  car: z.string().trim().min(2, 'Укажите марку и модель').max(80, 'Слишком длинно'),
-  comment: z.string().trim().max(500, 'Комментарий до 500 символов').default(''),
+  car: z.string().trim().min(2, say(v => v.carRequired)).max(80, say(v => v.tooLong)),
+  comment: z.string().trim().max(500, say(v => v.commentLong)).default(''),
 });
 export type CustomerInput = z.input<typeof customerSchema>;
 
 export const loginSchema = z.object({
-  email: z.email('Введите почту'),
-  password: z.string().min(6, 'Пароль от 6 символов'),
+  email: z.email(say(v => v.emailRequired)),
+  password: z.string().min(6, say(v => v.passwordShort)),
 });
 
 export const studioSettingsSchema = z.object({
-  name: z.string().trim().min(2, 'От 2 символов').max(60),
+  name: z.string().trim().min(2, say(v => v.min2)).max(60),
   tagline: z.string().trim().max(90),
   description: z.string().trim().max(600),
   phone,
-  address: z.string().trim().min(5, 'Укажите адрес').max(200),
-  map_url: z.union([z.literal(''), z.url('Ссылка должна начинаться с https://').startsWith('https://', 'Нужна ссылка https://')]),
-  accent_color: z.string().regex(HEX_RE, 'Цвет в формате #4690FF'),
+  address: z.string().trim().min(5, say(v => v.addressRequired)).max(200),
+  legal_address: z.string().trim().max(200),
+  map_url: z.union([z.literal(''), z.url(say(v => v.urlHttps)).startsWith('https://', say(v => v.needHttps))]),
+  accent_color: z.string().regex(HEX_RE, say(v => v.colorFormat)),
 });
 
 export const bookingRulesSchema = z.object({
@@ -49,30 +65,30 @@ export const bookingRulesSchema = z.object({
 });
 
 export const serviceEditSchema = z.object({
-  name: z.string().trim().min(2, 'От 2 символов').max(80),
+  name: z.string().trim().min(2, say(v => v.min2)).max(80),
   description: z.string().trim().max(400),
-  category: z.string().trim().min(1, 'Укажите раздел').max(40),
-  price: z.number({error: 'Укажите цену'}).int().min(0).max(10_000_000),
+  category: z.string().trim().min(1, say(v => v.categoryRequired)).max(40),
+  price: z.number(say(v => v.priceRequired)).int().min(0).max(10_000_000),
   price_from: z.boolean(),
-  duration_minutes: z.number({error: 'Укажите длительность'}).int().min(15, 'Минимум 15 минут').max(20160),
+  duration_minutes: z.number(say(v => v.durationRequired)).int().min(15, say(v => v.min15)).max(20160),
   buffer_minutes: z.number().int().min(0).max(1440).nullable(),
-  resource_ids: z.array(z.string().uuid()).min(1, 'Выберите хотя бы один бокс'),
+  resource_ids: z.array(z.string().uuid()).min(1, say(v => v.bayRequired)),
 });
 
 export const hoursRowSchema = z
   .object({weekday: z.number().int().min(1).max(7), opens: z.string().regex(TIME_RE), closes: z.string().regex(TIME_RE)})
-  .refine(r => r.opens < r.closes, {message: 'Закрытие позже открытия', path: ['closes']});
+  .refine(r => r.opens < r.closes, {...say(v => v.closeAfterOpen), path: ['closes']});
 
 export const infoCardSchema = z.object({
-  title: z.string().trim().min(2, 'От 2 символов').max(40),
-  text: z.string().trim().min(2, 'От 2 символов').max(160),
+  title: z.string().trim().min(2, say(v => v.min2)).max(40),
+  text: z.string().trim().min(2, say(v => v.min2)).max(160),
   icon: z.string(),
 });
 
-export const captionSchema = z.string().trim().max(120, 'До 120 символов');
+export const captionSchema = z.string().trim().max(120, say(v => v.upTo120));
 
 export const paymentSchema = z.object({
-  amount: z.number({error: 'Укажите сумму'}).int('Целое число').positive('Больше нуля').max(10_000_000),
+  amount: z.number(say(v => v.amountRequired)).int(say(v => v.integer)).positive(say(v => v.positive)).max(10_000_000),
   method: z.enum(['cash', 'card', 'transfer', 'other']),
   note: z.string().trim().max(200),
 });

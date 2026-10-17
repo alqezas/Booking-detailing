@@ -9,6 +9,7 @@ import {useLiquidGlass} from '../../lib/glass.ts';
 import {mediaUrl} from '../../lib/media.ts';
 import {useBookingFlow} from '../booking/BookingFlow.tsx';
 import {PageContainer} from '../layout/Page.tsx';
+import {msg} from '../../i18n/index.ts';
 
 /**
  * Full-bleed photo with the studio name and a wide glass «Записаться» button.
@@ -91,7 +92,7 @@ export function Hero() {
             }}
           />
           <Button
-            label="Записаться"
+            label={msg.home.book}
             size="lg"
             variant="ghost"
             width="100%"

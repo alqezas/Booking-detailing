@@ -1,0 +1,237 @@
+{
+  "slug": "jh-auto-detailing",
+  "name": "JH Auto Detailing",
+  "shortName": "JH Detailing",
+  "kind": "detailing",
+  "tagline": "Čištění interiéru, leštění laku, keramika, PPF a tónování oken v Tišnově",
+  "description": "Jsme detailingové studio v Tišnově. Postaráme se o interiér od základního vysátí až po tepování sedaček, vyleštíme lak a ochráníme ho voskem nebo keramikou. Lepíme PPF fólie a tónujeme okna s atestem. Termín si zarezervujete online během minuty – bez registrace.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#E1251B",
+  "contacts": {
+    "phone": "+420 777 056 596",
+    "address": "Olbrachtova 1740, 666 03 Tišnov",
+    "legalAddress": "Květnická 1621, 666 01 Tišnov",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Olbrachtova%201740%2C%20666%2003%20Ti%C5%A1nov"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [["08:00", "17:00"]],
+    "tue": [["08:00", "17:00"]],
+    "wed": [["08:00", "17:00"]],
+    "thu": [["08:00", "17:00"]],
+    "fri": [["08:00", "17:00"]],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 120,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [{"key": "box-1", "name": "Box 1"}],
+  "services": [
+    {
+      "key": "interier-1",
+      "name": "Interiér 1: Základní čištění",
+      "category": "Interiér",
+      "description": "Vysátí interiéru a kufru, utření prachu, provonění.",
+      "price": 1600,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": ["box-1"]
+    },
+    {
+      "key": "interier-2",
+      "name": "Interiér 2: Detailní údržba",
+      "category": "Interiér",
+      "description": "Vše ze základního čištění a navíc komplexní čištění, okna zevnitř, čištění mezidveřních prostor a impregnace plastů.",
+      "price": 2700,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": ["box-1"]
+    },
+    {
+      "key": "interier-3",
+      "name": "Interiér 3: Čištění a tepování",
+      "category": "Interiér",
+      "description": "Vše z detailní údržby a navíc tepování sedaček a tepování kufru.",
+      "price": 3600,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": ["box-1"]
+    },
+    {
+      "key": "lesteni-bronz",
+      "name": "Leštění laku Bronz",
+      "category": "Leštění laku",
+      "description": "Vydrží týdny. Detailní mytí a dekontaminace laku, jednostupňové leštění (odstraní 60–70 % škrábanců), ochrana detailerem na 4–8 týdnů.",
+      "price": 7000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": ["box-1"]
+    },
+    {
+      "key": "lesteni-silver",
+      "name": "Leštění laku Silver",
+      "category": "Leštění laku",
+      "description": "Vydrží měsíce. Detailní mytí a dekontaminace laku, dvoustupňové leštění (70–80 % škrábanců), ochrana syntetickým voskem na 6 měsíců, leštění světlometů, impregnace pneumatik a plastů.",
+      "price": 10000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": ["box-1"]
+    },
+    {
+      "key": "lesteni-gold",
+      "name": "Leštění laku Gold",
+      "category": "Leštění laku",
+      "description": "Vydrží až 5 let. Detailní mytí a dekontaminace laku, dvou- až třístupňové leštění (80–95 % škrábanců), keramická ochrana až na 5 let, leštění světlometů, impregnace pneumatik a plastů.",
+      "price": 12000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": ["box-1"]
+    },
+    {
+      "key": "ochrana-detailer",
+      "name": "Detailer: rychlé osvěžení laku",
+      "category": "Ochrana laku",
+      "description": "Rychlé osvěžení vzhledu laku a ochrana na týdny.",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": ["box-1"]
+    },
+    {
+      "key": "ochrana-vosk",
+      "name": "Syntetický vosk",
+      "category": "Ochrana laku",
+      "description": "Lesk a ochrana laku na měsíce.",
+      "price": 4000,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": ["box-1"]
+    },
+    {
+      "key": "ochrana-keramika",
+      "name": "Keramická ochrana laku",
+      "category": "Ochrana laku",
+      "description": "Keramický povlak, který vydrží až 5 let. Varianty na 1, 3 nebo 5 let.",
+      "price": 5000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": ["box-1"]
+    },
+    {
+      "key": "ppf-dily",
+      "name": "PPF fólie na díly vozu",
+      "category": "PPF fólie",
+      "description": "Ochrana jednotlivých dílů vozu: přední světla, sloupky dveří, zpětná zrcátka, misky pod kliky a další díly dle domluvy.",
+      "price": 2000,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": ["box-1"]
+    },
+    {
+      "key": "svetla-renovace",
+      "name": "Renovace světlometů",
+      "category": "Světlomety",
+      "description": "Renovace a rozleštění zašlých světlometů.",
+      "price": 1600,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": ["box-1"]
+    },
+    {
+      "key": "svetla-keramika",
+      "name": "Keramická ochrana světlometů",
+      "category": "Světlomety",
+      "description": "Tenký a tvrdý keramický povlak. Chrání před škrábanci, UV zářením a chemií. Životnost 1–2 roky.",
+      "price": 800,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": ["box-1"]
+    },
+    {
+      "key": "svetla-ppf",
+      "name": "PPF fólie na světlomety",
+      "category": "Světlomety",
+      "description": "Ochrana proti kamínkům a mechanickému poškození. Životnost až 5–7 let.",
+      "price": 2000,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": ["box-1"]
+    },
+    {
+      "key": "tonovani-predni",
+      "name": "Tónování předních bočních oken",
+      "category": "Tónování oken",
+      "description": "Tónování s atestem a kartičkou o aplikaci. Fólie KeetecFol Protector a Infrasol, zatmavení max. 30 % – legálně na STK.",
+      "price": 1600,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": ["box-1"]
+    },
+    {
+      "key": "tonovani-zadni",
+      "name": "Tónování zadních oken",
+      "category": "Tónování oken",
+      "description": "Tónování s atestem a kartičkou o aplikaci. Fólie KeetecFol Protector a Infrasol s propustností 5 %, 25 % nebo 45 % (zatmavení 95 %, 75 % nebo 55 %).",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": ["box-1"]
+    },
+    {
+      "key": "sunstrip",
+      "name": "Sunstrip",
+      "category": "Tónování oken",
+      "description": "Protisluneční pruh s atestem a kartičkou o aplikaci, fólie Infrasol.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": ["box-1"]
+    }
+  ],
+  "infoCards": [
+    {"icon": "sparkle", "title": "Interiér jako nový", "text": "Tepování sedaček, impregnace plastů a čištění i mezidveřních prostor."},
+    {"icon": "shield", "title": "Fólie s atestem", "text": "Tónování oken s atestem a kartičkou o aplikaci – legálně na STK."},
+    {"icon": "clock", "title": "Rezervace online", "text": "Termín si vyberete sami, bez registrace a bez čekání na telefonu."}
+  ],
+  "gallery": [
+    {"image": "images/work-g1-after.webp", "before": "images/work-g1-before.webp", "caption": "Kompletní čištění interiéru, Ford Focus"},
+    {"image": "images/work-dacia-duster-after.webp", "before": "images/work-dacia-duster-before.webp", "caption": "Čištění interiéru, Dacia Duster"},
+    {"image": "images/work-g7-after.webp", "before": "images/work-g7-before.webp", "caption": "Tepování koberců, Porsche Cayenne GTS"},
+    {"image": "images/work-g8-after.webp", "before": "images/work-g8-before.webp", "caption": "Tepování kufru"},
+    {"image": "images/work-g2-after.webp", "before": "images/work-g2-before.webp", "caption": "Čištění sedaček a interiéru"},
+    {"image": "images/work-g9-after.webp", "before": "images/work-g9-before.webp", "caption": "Čištění výplně dveří"},
+    {"image": "images/work-porsche-interior.webp", "caption": "Interiér po čištění, Porsche"}
+  ],
+  "owner": {"email": "owner@example.com"},
+  "assistant": {"enabled": true}
+}

@@ -22,7 +22,9 @@ import {useTenant} from '../../../app/tenant.tsx';
 import {InlineEmpty, InlineError, RowsSkeleton} from '../../../components/StatusScreens.tsx';
 import {randomKey} from '../../../lib/booking-store.ts';
 import {errorText} from '../../../lib/errors.ts';
-import {formatDuration, formatPrice} from '../../../lib/format.ts';
+import {currencySymbol, formatDuration, formatPrice} from '../../../lib/format.ts';
+import {ApiError} from '../../../lib/errors.ts';
+import {msg} from '../../../i18n/index.ts';
 import {fieldErrors, serviceEditSchema} from '../../../lib/schemas.ts';
 import {ownerKey, useOwner} from '../ownerContext.tsx';
 import {errorStatus, useRefreshStudio} from './shared.tsx';
@@ -55,11 +57,11 @@ export function ServicesSettings() {
   return (
     <VStack gap={3}>
       <HStack justify="between" align="center">
-        <Text color="secondary">Цена и длительность новой записи берутся отсюда. Уже созданные записи сохраняют свою цену.</Text>
+        <Text color="secondary">{msg.servicesSettings.lead}</Text>
       </HStack>
-      <Button label="Добавить услугу" icon={<Icon icon={Plus} />} onClick={() => setEditing('new')} />
+      <Button label={msg.servicesSettings.add} icon={<Icon icon={Plus} />} onClick={() => setEditing('new')} />
       {services.data.length === 0 ? (
-        <InlineEmpty title="Услуг пока нет" />
+        <InlineEmpty title={msg.servicesSettings.none} />
       ) : (
         <List hasDividers>
           {services.data.map(s => (
@@ -69,7 +71,7 @@ export function ServicesSettings() {
               description={`${s.category} · ${formatPrice(s.price, s.price_from, tenant.currency)} · ${formatDuration(s.duration_minutes)}`}
               endContent={
                 <HStack gap={2} align="center">
-                  {!s.is_active && <Badge label="Скрыта" />}
+                  {!s.is_active && <Badge label={msg.servicesSettings.hidden} />}
                   <Icon icon={PencilSimple} color="secondary" />
                 </HStack>
               }
@@ -89,6 +91,7 @@ export function ServicesSettings() {
 }
 
 function ServiceEditor({service, resources, onClose}: {service: ServiceRow | 'new' | null; resources: ResourceRow[]; onClose: () => void}) {
+  const tenant = useTenant();
   const {api} = useOwner();
   const refresh = useRefreshStudio();
   const showToast = useToast();
@@ -96,7 +99,7 @@ function ServiceEditor({service, resources, onClose}: {service: ServiceRow | 'ne
   const [f, setF] = useState({
     name: existing?.name ?? '',
     description: existing?.description ?? '',
-    category: existing?.category ?? 'Услуги',
+    category: existing?.category ?? msg.servicesSettings.defaultCategory,
     price: existing?.price ?? null as number | null,
     price_from: existing?.price_from ?? false,
     duration_minutes: existing?.duration_minutes ?? 60 as number | null,
@@ -111,7 +114,7 @@ function ServiceEditor({service, resources, onClose}: {service: ServiceRow | 'ne
       const parsed = serviceEditSchema.safeParse(f);
       if (!parsed.success) {
         setErrors(fieldErrors(parsed.error));
-        throw new Error('Проверьте выделенные поля');
+        throw new ApiError('CLIENT', msg.common.checkFields);
       }
       setErrors({});
       const {resource_ids, ...row} = parsed.data;
@@ -124,50 +127,50 @@ function ServiceEditor({service, resources, onClose}: {service: ServiceRow | 'ne
     },
     onSuccess: () => {
       refresh();
-      showToast({body: existing ? 'Услуга сохранена' : 'Услуга добавлена'});
+      showToast({body: existing ? msg.servicesSettings.saved : msg.servicesSettings.added});
       onClose();
     },
   });
 
   return (
-    <BottomSheet isOpen={!!service} onOpenChange={o => !o && onClose()} label="Услуга" height="tall" purpose="form">
+    <BottomSheet isOpen={!!service} onOpenChange={o => !o && onClose()} label={msg.servicesSettings.sheet} height="tall" purpose="form">
       <VStack gap={4}>
-        <Heading level={2}>{existing ? 'Услуга' : 'Новая услуга'}</Heading>
+        <Heading level={2}>{existing ? msg.servicesSettings.sheet : msg.servicesSettings.newTitle}</Heading>
         <FormLayout defaultOptionality="required">
-          <TextInput label="Название" value={f.name} onChange={v => setF(x => ({...x, name: v}))} status={errorStatus(errors.name)} />
-          <TextInput label="Раздел" value={f.category} onChange={v => setF(x => ({...x, category: v}))} description="Например: Мойка, Полировка, Защита" status={errorStatus(errors.category)} />
-          <TextArea label="Описание" isOptional value={f.description} onChange={v => setF(x => ({...x, description: v}))} rows={2} maxLength={400} />
-          <NumberInput label="Цена, ₽" value={f.price} onChange={v => setF(x => ({...x, price: v}))} min={0} step={100} status={errorStatus(errors.price)} />
-          <Switch label="Цена «от»" description="Окончательная стоимость зависит от машины" value={f.price_from} onChange={v => setF(x => ({...x, price_from: v}))} />
+          <TextInput label={msg.servicesSettings.name} value={f.name} onChange={v => setF(x => ({...x, name: v}))} status={errorStatus(errors.name)} />
+          <TextInput label={msg.servicesSettings.category} value={f.category} onChange={v => setF(x => ({...x, category: v}))} description={msg.servicesSettings.categoryHint} status={errorStatus(errors.category)} />
+          <TextArea label={msg.servicesSettings.description} isOptional value={f.description} onChange={v => setF(x => ({...x, description: v}))} rows={2} maxLength={400} />
+          <NumberInput label={msg.servicesSettings.price(currencySymbol(tenant.currency))} value={f.price} onChange={v => setF(x => ({...x, price: v}))} min={0} step={100} status={errorStatus(errors.price)} />
+          <Switch label={msg.servicesSettings.priceFrom} description={msg.servicesSettings.priceFromHint} value={f.price_from} onChange={v => setF(x => ({...x, price_from: v}))} />
           <NumberInput
-            label="Длительность, минут"
+            label={msg.servicesSettings.duration}
             value={f.duration_minutes}
             onChange={v => setF(x => ({...x, duration_minutes: v}))}
             min={15}
             step={15}
-            description={f.duration_minutes ? `= ${formatDuration(f.duration_minutes)}. Сутки = 1440 минут: бокс будет занят непрерывно.` : undefined}
+            description={f.duration_minutes ? msg.servicesSettings.durationHint(formatDuration(f.duration_minutes)) : undefined}
             status={errorStatus(errors.duration_minutes)}
           />
           <NumberInput
-            label="Подготовка бокса после машины, минут"
+            label={msg.servicesSettings.buffer}
             isOptional
-            description="Пусто — как в правилах записи"
+            description={msg.servicesSettings.bufferHint}
             value={f.buffer_minutes}
             onChange={v => setF(x => ({...x, buffer_minutes: Number.isFinite(v) ? v : null}))}
             min={0}
             step={5}
           />
-          <CheckboxList label="Боксы для услуги" value={f.resource_ids} onChange={v => setF(x => ({...x, resource_ids: v}))} status={errorStatus(errors.resource_ids)}>
+          <CheckboxList label={msg.servicesSettings.bays} value={f.resource_ids} onChange={v => setF(x => ({...x, resource_ids: v}))} status={errorStatus(errors.resource_ids)}>
             {resources.map(r => (
-              <CheckboxListItem key={r.id} value={r.id} label={r.name} description={r.is_active ? undefined : 'Бокс отключён'} />
+              <CheckboxListItem key={r.id} value={r.id} label={r.name} description={r.is_active ? undefined : msg.servicesSettings.bayOff} />
             ))}
           </CheckboxList>
-          <Switch label="Показывать клиентам" value={f.is_active} onChange={v => setF(x => ({...x, is_active: v}))} description="Скрытая услуга остаётся в истории записей" />
+          <Switch label={msg.servicesSettings.visible} value={f.is_active} onChange={v => setF(x => ({...x, is_active: v}))} description={msg.servicesSettings.visibleHint} />
         </FormLayout>
         {save.isError && <Banner status="error" title={errorText(save.error)} collapsible={false} />}
         <HStack gap={2}>
-          <Button label="Отмена" variant="ghost" onClick={onClose} style={{flexShrink: 0}} />
-          <Button label="Сохранить" variant="primary" width="100%" isLoading={save.isPending} onClick={() => save.mutate()} />
+          <Button label={msg.common.cancel} variant="ghost" onClick={onClose} style={{flexShrink: 0}} />
+          <Button label={msg.common.save} variant="primary" width="100%" isLoading={save.isPending} onClick={() => save.mutate()} />
         </HStack>
       </VStack>
     </BottomSheet>

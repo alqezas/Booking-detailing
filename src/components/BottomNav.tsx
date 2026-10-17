@@ -6,6 +6,7 @@ import {CalendarCheck, House, IconContext, ListBullets, type Icon as PhosphorIco
 import type {CSSProperties} from 'react';
 import {NavLink, useLocation} from 'react-router';
 import {useLiquidGlass} from '../lib/glass.ts';
+import {msg} from '../i18n/index.ts';
 
 /** Height the page must keep free at the bottom so the bar never covers content. */
 export const BOTTOM_NAV_SPACE = 'calc(96px + env(safe-area-inset-bottom, 0px))';
@@ -13,13 +14,13 @@ export const BOTTOM_NAV_SPACE = 'calc(96px + env(safe-area-inset-bottom, 0px))';
 export type NavItem = {to: string; label: string; icon: PhosphorIcon; end?: boolean};
 
 export const clientNavItems = (slug: string): NavItem[] => [
-  {to: `/s/${slug}/`, label: 'Главная', icon: House, end: true},
-  {to: `/s/${slug}/services`, label: 'Услуги', icon: ListBullets},
-  {to: `/s/${slug}/my`, label: 'Моя запись', icon: CalendarCheck},
+  {to: `/s/${slug}/`, label: msg.nav.home, icon: House, end: true},
+  {to: `/s/${slug}/services`, label: msg.nav.services, icon: ListBullets},
+  {to: `/s/${slug}/my`, label: msg.nav.my, icon: CalendarCheck},
 ];
 
 /** Floating glass tab bar: the client app, and the owner cabinet on phones. */
-export function BottomNav({items, label = 'Разделы'}: {items: NavItem[]; label?: string}) {
+export function BottomNav({items, label = msg.nav.label}: {items: NavItem[]; label?: string}) {
   const {pathname} = useLocation();
   // Real refraction of whatever scrolls under the bar.
   useLiquidGlass({target: '[data-glass="nav"]', snapshot: 'body', refreshKey: pathname, resolution: 1, frost: 3});

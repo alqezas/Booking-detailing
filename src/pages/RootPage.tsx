@@ -4,6 +4,7 @@ import {EmptyState} from '@astryxdesign/core/EmptyState';
 import {Icon} from '@astryxdesign/core/Icon';
 import {Car} from '@phosphor-icons/react';
 import {DEFAULT_ACCENT, studioTheme} from '../app/theme.ts';
+import {msg} from '../i18n/index.ts';
 
 /** The bare domain lists nothing: every studio is reached by its own link. */
 export function RootPage() {
@@ -13,8 +14,8 @@ export function RootPage() {
         <EmptyState
           headingLevel={1}
           icon={<Icon icon={Car} size="lg" />}
-          title="Онлайн-запись в студию"
-          description="Откройте ссылку, которую прислала ваша студия, — она выглядит как …/s/название-студии/"
+          title={msg.app.rootTitle}
+          description={msg.app.rootHint}
         />
       </Center>
     </Theme>

@@ -31,6 +31,8 @@ const interval = z
 
 const key = z.string().regex(/^[a-z0-9][a-z0-9-]{0,39}$/, 'Ключ: латиница, цифры и дефис');
 
+export const CURRENCIES = ['RUB', 'KZT', 'BYN', 'EUR', 'USD', 'CZK'] as const;
+
 export const INFO_CARD_ICONS = [
   'shield',
   'sparkle',
@@ -68,13 +70,16 @@ export const businessSchema = z
     kind: z.enum(['detailing', 'autoservice']),
     tagline: z.string().trim().max(90).default(''),
     description: z.string().trim().max(600).default(''),
-    locale: z.literal('ru-RU').default('ru-RU'),
+    /** Interface language of the studio's site and cabinet. */
+    locale: z.enum(['ru-RU', 'cs-CZ']).default('ru-RU'),
     timezone: z.string().refine(isValidTimeZone, 'Неизвестный часовой пояс IANA'),
-    currency: z.enum(['RUB', 'KZT', 'BYN', 'EUR', 'USD']).default('RUB'),
+    currency: z.enum(CURRENCIES).default('RUB'),
     accentColor: z.string().regex(HEX_RE),
     contacts: z.object({
-      phone: z.string().transform(normalizePhone).pipe(z.string().regex(PHONE_RE, 'Телефон в формате +79991234567')),
+      phone: z.string().transform(normalizePhone).pipe(z.string().regex(PHONE_RE, 'Телефон в формате E.164: +79991234567, +420777056596')),
       address: z.string().trim().min(5).max(200),
+      /** Registered office, when it differs from where cars are brought (Czech «sídlo»). */
+      legalAddress: z.string().trim().min(5).max(200).optional(),
       mapUrl: z.url().optional(),
       lat: z.number().min(-90).max(90).optional(),
       lng: z.number().min(-180).max(180).optional(),
@@ -109,7 +114,17 @@ export const businessSchema = z
         }),
       )
       .length(3),
-    gallery: z.array(z.object({image: z.string().min(1), caption: z.string().trim().max(120).default('')})).max(40),
+    gallery: z
+      .array(
+        z.object({
+          /** The result («after»). */
+          image: z.string().min(1),
+          /** Optional «before» photo of the same work, shown side by side. */
+          before: z.string().min(1).optional(),
+          caption: z.string().trim().max(120).default(''),
+        }),
+      )
+      .max(40),
     owner: z.object({email: z.email()}),
     assistant: z.object({enabled: z.boolean().default(true)}).default({enabled: true}),
   })

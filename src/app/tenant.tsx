@@ -8,6 +8,8 @@ import type {PublicTenant} from '../lib/types.ts';
 import {registerTenantWorker} from '../lib/pwa.ts';
 import {DEFAULT_ACCENT, studioTheme} from './theme.ts';
 import {FullScreenError, FullScreenLoading} from '../components/StatusScreens.tsx';
+import {langOf, msg, setLang} from '../i18n/index.ts';
+import {ComponentLanguage} from './language.tsx';
 
 const TenantContext = createContext<PublicTenant | null>(null);
 
@@ -41,6 +43,8 @@ export function TenantRoot(): ReactNode {
     if (q.data) document.title = q.data.name;
   }, [q.data]);
 
+  // Switch the interface language before anything of this studio renders.
+  if (q.data) setLang(langOf(q.data.locale));
   const accent = q.data?.accent_color ?? DEFAULT_ACCENT;
   return (
     <Theme theme={studioTheme(accent)} mode="dark">
@@ -48,14 +52,16 @@ export function TenantRoot(): ReactNode {
         <FullScreenLoading />
       ) : q.isError ? (
         q.error instanceof ApiError && q.error.status === 404 ? (
-          <FullScreenError title="Студия не найдена" description="Проверьте ссылку — возможно, в ней опечатка." />
+          <FullScreenError title={msg.app.studioNotFound} description={msg.app.studioNotFoundHint} />
         ) : (
-          <FullScreenError title="Не удалось загрузить студию" description={q.error.message} onRetry={() => void q.refetch()} />
+          <FullScreenError title={msg.app.studioLoadFailed} description={q.error.message} onRetry={() => void q.refetch()} />
         )
       ) : (
-        <TenantContext.Provider value={q.data}>
-          <Outlet />
-        </TenantContext.Provider>
+        <ComponentLanguage key={msg.lang}>
+          <TenantContext.Provider value={q.data}>
+            <Outlet />
+          </TenantContext.Provider>
+        </ComponentLanguage>
       )}
     </Theme>
   );

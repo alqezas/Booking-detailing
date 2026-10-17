@@ -11,6 +11,7 @@ import {formatDayLabel, formatTime, todayIn} from '../../lib/format.ts';
 import {useAvailability} from '../../lib/queries.ts';
 import type {Availability, AvailabilityDay} from '../../lib/types.ts';
 import {InlineEmpty, InlineError, RowsSkeleton} from '../StatusScreens.tsx';
+import {msg} from '../../i18n/index.ts';
 
 const PAGE_DAYS = 7;
 
@@ -72,29 +73,29 @@ export function SlotPicker({slug, serviceId, timezone, horizonDays, value, onCha
       )}
       <VStack gap={2}>
         <HStack justify="between" align="center">
-          <Heading level={3}>Дата</Heading>
+          <Heading level={3}>{msg.slots.date}</Heading>
           <HStack gap={1}>
             <Button
-              label="Раньше"
+              label={msg.slots.earlier}
               size="sm"
               variant="ghost"
               isDisabled={!canGoBack}
               onClick={() => shift(format(addDays(parseISO(from), -PAGE_DAYS), 'yyyy-MM-dd') < today ? today : format(addDays(parseISO(from), -PAGE_DAYS), 'yyyy-MM-dd'))}
             />
-            <Button label="Позже" size="sm" variant="ghost" isDisabled={!canGoForward} onClick={() => shift(nextFrom)} />
+            <Button label={msg.slots.later} size="sm" variant="ghost" isDisabled={!canGoForward} onClick={() => shift(nextFrom)} />
           </HStack>
         </HStack>
         {days.length === 0 ? (
-          <InlineEmpty title="На эти дни записи нет" description="Посмотрите следующую неделю или позвоните в студию." />
+          <InlineEmpty title={msg.slots.noDays} description={msg.slots.noDaysHint} />
         ) : (
-          <HStack gap={2} isScrollable role="radiogroup" aria-label="Выбор даты" style={{paddingBlockEnd: 'var(--spacing-1)'}}>
+          <HStack gap={2} isScrollable role="radiogroup" aria-label={msg.slots.pickDate} style={{paddingBlockEnd: 'var(--spacing-1)'}}>
             {days.map(d => {
               const free = d.slots.filter(s => s.available).length;
               const selected = d.date === day;
               return (
                 <Button
                   key={d.date}
-                  label={`${formatDayLabel(d.date, timezone)}, свободно ${free}`}
+                  label={msg.slots.dayLabel(formatDayLabel(d.date, timezone), free)}
                   variant={selected ? 'primary' : 'secondary'}
                   role="radio"
                   aria-checked={selected}
@@ -106,7 +107,7 @@ export function SlotPicker({slug, serviceId, timezone, horizonDays, value, onCha
                       {formatDayLabel(d.date, timezone)}
                     </Text>
                     <Text type="supporting" color="inherit">
-                      {free ? `${free} своб.` : 'занято'}
+                      {free ? msg.slots.freeShort(free) : msg.slots.taken}
                     </Text>
                   </VStack>
                 </Button>
@@ -118,11 +119,11 @@ export function SlotPicker({slug, serviceId, timezone, horizonDays, value, onCha
 
       {current && (
         <VStack gap={2}>
-          <Heading level={3}>Время</Heading>
+          <Heading level={3}>{msg.slots.time}</Heading>
           {current.slots.every(s => !s.available) && (
-            <Text color="secondary">В этот день всё занято — выберите другую дату.</Text>
+            <Text color="secondary">{msg.slots.allTaken}</Text>
           )}
-          <Grid columns={{minWidth: 76, max: 6}} gap={2} role="radiogroup" aria-label="Выбор времени">
+          <Grid columns={{minWidth: 76, max: 6}} gap={2} role="radiogroup" aria-label={msg.slots.pickTime}>
             {current.slots.map(s => {
               const t = formatTime(s.start_at, timezone);
               const selected = value === s.start_at;
@@ -140,13 +141,13 @@ export function SlotPicker({slug, serviceId, timezone, horizonDays, value, onCha
               ) : (
                 <Button
                   key={s.start_at}
-                  label={`${t}, занято`}
+                  label={msg.slots.slotTaken(t)}
                   role="radio"
                   aria-checked={false}
                   isDisabled
                   variant="ghost"
                   width="100%"
-                  tooltip="Это время занято"
+                  tooltip={msg.slots.slotTakenTip}
                   style={{minHeight: 48}}
                 >
                   <VStack gap={0} align="center">
@@ -154,7 +155,7 @@ export function SlotPicker({slug, serviceId, timezone, horizonDays, value, onCha
                       {t}
                     </Text>
                     <Text type="supporting" color="inherit">
-                      занято
+                      {msg.slots.taken}
                     </Text>
                   </VStack>
                 </Button>
@@ -162,7 +163,7 @@ export function SlotPicker({slug, serviceId, timezone, horizonDays, value, onCha
             })}
           </Grid>
           {Intl.DateTimeFormat().resolvedOptions().timeZone !== timezone && (
-            <Text type="supporting">Время указано по часовому поясу студии.</Text>
+            <Text type="supporting">{msg.slots.tzNote}</Text>
           )}
         </VStack>
       )}

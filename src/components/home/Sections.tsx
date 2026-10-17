@@ -32,9 +32,11 @@ import {
 import {useState, type ReactNode} from 'react';
 import {useNavigate} from 'react-router';
 import {useTenant} from '../../app/tenant.tsx';
-import {formatDuration, formatPhone, formatPrice, summarizeHours} from '../../lib/format.ts';
+import {formatDate, formatDuration, formatPhone, formatPrice, summarizeHours} from '../../lib/format.ts';
+import {msg} from '../../i18n/index.ts';
+import type {GalleryItem} from '../../lib/types.ts';
 import {mediaUrl} from '../../lib/media.ts';
-import {useReveal} from '../../lib/motion.ts';
+import {useMatchMedia, useReveal} from '../../lib/motion.ts';
 import {useBookingFlow} from '../booking/BookingFlow.tsx';
 import {TEXT_MAX_WIDTH} from '../layout/Page.tsx';
 
@@ -51,7 +53,8 @@ const CARD_ICONS: Record<string, PhosphorIcon> = {
   'credit-card': CreditCard,
 };
 
-export const ASSISTANT_EXAMPLES = ['Когда ближайшее окно?', 'Сколько стоит полировка?', 'Как найти студию?'];
+/** Example questions for the assistant, in the studio language. */
+export const assistantExamples = () => msg.home.assistantExamples;
 
 /** A page section that fades in when scrolled into view (static with reduced motion). */
 export function RevealSection({title, id, children, action}: {title: string; id?: string; children: ReactNode; action?: ReactNode}) {
@@ -75,7 +78,7 @@ export function AboutSection() {
   const t = useTenant();
   if (!t.description) return null;
   return (
-    <RevealSection title="О студии" id="about-title">
+    <RevealSection title={msg.home.about} id="about-title">
       {/* Regular body text in the secondary colour: an introduction, not a headline. */}
       <Text color="secondary" textWrap="pretty" style={{maxWidth: TEXT_MAX_WIDTH}}>
         {t.description}
@@ -89,21 +92,21 @@ export function BookingCard() {
   const flow = useBookingFlow();
   const popular = t.services.slice(0, 3);
   return (
-    <RevealSection title="Запись в студию" id="booking-title">
+    <RevealSection title={msg.home.bookingTitle} id="booking-title">
       <Card padding={4} variant="default">
         <VStack gap={3}>
-          <Text color="secondary">Выберите услугу, дату и свободное время — без регистрации, за минуту.</Text>
+          <Text color="secondary">{msg.home.bookingLead}</Text>
           <List hasDividers>
             {popular.map(s => (
               <ListItem
                 key={s.id}
                 label={s.name}
                 description={`${formatPrice(s.price, s.price_from, t.currency)} · ${formatDuration(s.duration_minutes)}`}
-                endContent={<Button label={`Записаться: ${s.name}`} size="sm" onClick={() => flow.open(s.id)}>Выбрать</Button>}
+                endContent={<Button label={msg.home.bookService(s.name)} size="sm" onClick={() => flow.open(s.id)}>{msg.home.choose}</Button>}
               />
             ))}
           </List>
-          <Button label="Выбрать услугу и время" variant="primary" size="lg" width="100%" onClick={() => flow.open()} />
+          <Button label={msg.home.pickServiceAndTime} variant="primary" size="lg" width="100%" onClick={() => flow.open()} />
         </VStack>
       </Card>
     </RevealSection>
@@ -114,7 +117,7 @@ export function InfoCardsSection() {
   const t = useTenant();
   if (!t.info_cards.length) return null;
   return (
-    <RevealSection title="Почему мы" id="why-title">
+    <RevealSection title={msg.home.why} id="why-title">
       <Grid columns={{minWidth: 220, max: 3}} gap={3}>
         {t.info_cards.map(c => (
           <Card key={c.position} padding={4}>
@@ -135,11 +138,36 @@ export function ServicesSection({limit}: {limit?: number}) {
   const flow = useBookingFlow();
   const navigate = useNavigate();
   const list = limit ? t.services.slice(0, limit) : t.services;
+  // Phones: price and button go under the text, so the one-line name gets the full row width.
+  const wide = useMatchMedia('(min-width: 600px)');
+  const priceAndButton = (s: (typeof list)[number], place: 'below' | 'side') => {
+    const price = (
+      <Text weight="bold" hasTabularNumbers>
+        {formatPrice(s.price, s.price_from, t.currency)}
+      </Text>
+    );
+    const button = (
+      <Button label={msg.home.bookService(s.name)} size="sm" variant="secondary" onClick={() => flow.open(s.id)}>
+        {msg.home.bookShort}
+      </Button>
+    );
+    return place === 'side' ? (
+      <VStack gap={1} align="end">
+        {price}
+        {button}
+      </VStack>
+    ) : (
+      <HStack gap={2} align="center" justify="between" style={{paddingBlockStart: 'var(--spacing-1)'}}>
+        {price}
+        {button}
+      </HStack>
+    );
+  };
   return (
     <RevealSection
-      title="Услуги и цены"
+      title={msg.home.services}
       id="services-title"
-      action={limit && t.services.length > limit ? <Button label="Все услуги" variant="ghost" size="sm" onClick={() => navigate(`/s/${t.slug}/services`)} /> : undefined}
+      action={limit && t.services.length > limit ? <Button label={msg.home.allServices} variant="ghost" size="sm" onClick={() => navigate(`/s/${t.slug}/services`)} /> : undefined}
     >
       <List hasDividers density="spacious">
         {list.map(s => (
@@ -150,22 +178,43 @@ export function ServicesSection({limit}: {limit?: number}) {
               <VStack gap={0.5}>
                 {s.description && <Text color="secondary">{s.description}</Text>}
                 <Text type="supporting">{formatDuration(s.duration_minutes)}</Text>
+                {!wide && priceAndButton(s, 'below')}
               </VStack>
             }
-            endContent={
-              <VStack gap={1} align="end">
-                <Text weight="bold" hasTabularNumbers>
-                  {formatPrice(s.price, s.price_from, t.currency)}
-                </Text>
-                <Button label={`Записаться: ${s.name}`} size="sm" variant="secondary" onClick={() => flow.open(s.id)}>
-                  Записаться
-                </Button>
-              </VStack>
-            }
+            endContent={wide ? priceAndButton(s, 'side') : undefined}
           />
         ))}
       </List>
     </RevealSection>
+  );
+}
+
+/** Fixed-ratio photo: the grid never reflows while photos load. */
+function Photo({src, alt, ratio, label}: {src: string; alt: string; ratio: string; label?: string}) {
+  return (
+    <VStack style={{position: 'relative', flex: 1, minWidth: 0}}>
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        width={600}
+        height={450}
+        style={{width: '100%', height: 'auto', aspectRatio: ratio, objectFit: 'cover', display: 'block', background: 'var(--color-background-muted)'}}
+      />
+      {label && (
+        <VStack
+          aria-hidden="true"
+          paddingInline={2}
+          paddingBlock={0.5}
+          style={{position: 'absolute', top: 'var(--spacing-2)', left: 'var(--spacing-2)', borderRadius: 'var(--radius-element)', background: 'rgba(0, 0, 0, 0.62)'}}
+        >
+          <Text type="supporting" weight="semibold" color="primary">
+            {label}
+          </Text>
+        </VStack>
+      )}
+    </VStack>
   );
 }
 
@@ -174,32 +223,43 @@ export function GallerySection() {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
   if (!t.gallery.length) return null;
-  const media = t.gallery.map(g => ({type: 'image' as const, src: mediaUrl(g.image_path, g.updated_at) ?? '', alt: g.caption || 'Пример работы'}));
+  const url = (g: GalleryItem, path: string) => mediaUrl(path, g.updated_at) ?? '';
+  const alt = (g: GalleryItem, label?: string) => [g.caption || msg.home.workPhoto, label].filter(Boolean).join(' — ');
+  // One lightbox for everything: a «before / after» card contributes two photos.
+  const media: {type: 'image'; src: string; alt: string}[] = [];
+  const firstIndex = t.gallery.map(g => {
+    const at = media.length;
+    if (g.before_path) media.push({type: 'image', src: url(g, g.before_path), alt: alt(g, msg.home.before)});
+    media.push({type: 'image', src: url(g, g.image_path), alt: alt(g, g.before_path ? msg.home.after : undefined)});
+    return at;
+  });
+  // Side-by-side pairs need wider cards: one per row on phones.
+  const hasPairs = t.gallery.some(g => g.before_path);
   return (
-    <RevealSection title="Наши работы" id="gallery-title">
-      <Grid columns={{minWidth: 160, max: 4}} gap={3}>
+    <RevealSection title={msg.home.gallery} id="gallery-title">
+      <Grid columns={hasPairs ? {minWidth: 280, max: 3} : {minWidth: 160, max: 4}} gap={3}>
         {t.gallery.map((g, i) => (
           <ClickableCard
             key={g.id}
-            label={g.caption ? `Открыть фото: ${g.caption}` : 'Открыть фото работы'}
+            label={g.caption ? msg.home.openPhoto(g.caption) : msg.home.openAnyPhoto}
             padding={0}
             variant="transparent"
             onClick={() => {
-              setIndex(i);
+              setIndex(firstIndex[i]!);
               setOpen(true);
             }}
           >
             <VStack gap={1}>
-              {/* Fixed 4:3 box: the grid never reflows while photos load. */}
-              <img
-                src={media[i]!.src}
-                alt={media[i]!.alt}
-                loading="lazy"
-                decoding="async"
-                width={600}
-                height={450}
-                style={{width: '100%', height: 'auto', aspectRatio: '4 / 3', objectFit: 'cover', display: 'block', borderRadius: 'var(--radius-container)', background: 'var(--color-background-muted)'}}
-              />
+              <HStack gap={0.5} style={{borderRadius: 'var(--radius-container)', overflow: 'hidden'}}>
+                {g.before_path ? (
+                  <>
+                    <Photo src={url(g, g.before_path)} alt={alt(g, msg.home.before)} ratio="3 / 4" label={msg.home.before} />
+                    <Photo src={url(g, g.image_path)} alt={alt(g, msg.home.after)} ratio="3 / 4" label={msg.home.after} />
+                  </>
+                ) : (
+                  <Photo src={url(g, g.image_path)} alt={alt(g)} ratio="4 / 3" />
+                )}
+              </HStack>
               {/* Captions are short (≤ 120 chars): wrap rather than truncate. The inset keeps
                   the last line clear of the card's rounded, clipped corners. */}
               {g.caption && (
@@ -220,16 +280,21 @@ export function ContactsSection() {
   const t = useTenant();
   const hours = summarizeHours(t.hours);
   const closedSoon = t.exceptions.filter(e => e.is_closed).slice(0, 3);
-  const mapHref = t.map_url ?? `https://yandex.ru/maps/?text=${encodeURIComponent(t.address)}`;
+  const mapHref = t.map_url ?? msg.mapSearch(t.address);
   return (
-    <RevealSection title="Как нас найти" id="contacts-title">
+    <RevealSection title={msg.home.contacts} id="contacts-title">
       <Card padding={4}>
         <VStack gap={4}>
           <HStack gap={3} align="start">
             <Icon icon={MapPin} color="accent" />
             <VStack gap={2}>
               <Text weight="semibold">{t.address}</Text>
-              <Button label="Построить маршрут" icon={<Icon icon={NavigationArrow} />} href={mapHref} target="_blank" size="sm" />
+              {t.legal_address && t.legal_address !== t.address && (
+                <Text type="supporting">
+                  {msg.home.legalAddress}: {t.legal_address}
+                </Text>
+              )}
+              <Button label={msg.home.route} icon={<Icon icon={NavigationArrow} />} href={mapHref} target="_blank" size="sm" />
             </VStack>
           </HStack>
           <HStack gap={3} align="start">
@@ -240,21 +305,22 @@ export function ContactsSection() {
                   <Text weight="semibold" style={{minWidth: '5.5em'}}>
                     {h.days}
                   </Text>
-                  <Text color={h.hours === 'Выходной' ? 'secondary' : 'primary'} hasTabularNumbers>
+                  <Text color={h.closed ? 'secondary' : 'primary'} hasTabularNumbers>
                     {h.hours}
                   </Text>
                 </HStack>
               ))}
               {closedSoon.length > 0 && (
                 <Text type="supporting">
-                  Не работаем: {closedSoon.map(e => new Date(`${e.day}T12:00:00Z`).toLocaleDateString('ru-RU', {day: 'numeric', month: 'long'})).join(', ')}
+                  {msg.home.closedOn}
+                  {closedSoon.map(e => formatDate(e.day)).join(', ')}
                 </Text>
               )}
             </VStack>
           </HStack>
           <HStack gap={3} align="center">
             <Icon icon={Phone} color="accent" />
-            <Button label={`Позвонить: ${formatPhone(t.phone)}`} variant="ghost" href={`tel:${t.phone}`}>
+            <Button label={msg.home.call(formatPhone(t.phone))} variant="ghost" href={`tel:${t.phone}`}>
               {formatPhone(t.phone)}
             </Button>
           </HStack>
@@ -280,15 +346,15 @@ export function AssistantTeaser() {
   if (!t.assistant_enabled) return null;
   const ask = (q: string) => navigate(`/s/${t.slug}/assistant?q=${encodeURIComponent(q)}`);
   return (
-    <RevealSection title="Спросите помощника" id="assistant-title">
+    <RevealSection title={msg.home.assistantTitle} id="assistant-title">
       <Card padding={4}>
         <VStack gap={3}>
           <HStack gap={2} align="center">
             <Icon icon={ChatCircleDots} color="accent" />
-            <Text color="secondary">Отвечает по услугам, ценам и свободному времени студии.</Text>
+            <Text color="secondary">{msg.home.assistantLead}</Text>
           </HStack>
           <HStack gap={2} wrap="wrap">
-            {ASSISTANT_EXAMPLES.map(q => (
+            {assistantExamples().map(q => (
               <Button key={q} label={q} size="md" onClick={() => ask(q)} />
             ))}
           </HStack>

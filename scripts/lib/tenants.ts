@@ -32,7 +32,7 @@ export function imagePaths(config: BusinessConfig): string[] {
     config.images.hero,
     config.images.logo,
     ...(config.images.icon ? [config.images.icon] : []),
-    ...config.gallery.map(g => g.image),
+    ...config.gallery.flatMap(g => (g.before ? [g.image, g.before] : [g.image])),
   ];
 }
 

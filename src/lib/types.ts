@@ -13,7 +13,7 @@ export type Service = {
 };
 
 export type InfoCard = {position: number; icon: string; title: string; text: string};
-export type GalleryItem = {id: string; image_path: string; caption: string; updated_at: string};
+export type GalleryItem = {id: string; image_path: string; before_path: string | null; caption: string; updated_at: string};
 export type HoursRow = {weekday: number; opens: string; closes: string};
 export type ScheduleException = {day: string; is_closed: boolean; opens: string | null; closes: string | null; note: string | null};
 
@@ -32,6 +32,8 @@ export type PublicTenant = {
   accent_color: string;
   phone: string;
   address: string;
+  /** Registered office when it differs from the workshop address. */
+  legal_address: string | null;
   map_url: string | null;
   lat: number | null;
   lng: number | null;

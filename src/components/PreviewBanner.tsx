@@ -1,4 +1,5 @@
 import {Banner} from '@astryxdesign/core/Banner';
+import {msg} from '../i18n/index.ts';
 
 /** Shown on every page of a studio that has not been activated yet. */
 export function PreviewBanner() {
@@ -6,8 +7,8 @@ export function PreviewBanner() {
     <Banner
       status="info"
       container="section"
-      title="Образец приложения"
-      description="Записи здесь демонстрационные и не попадут в работу студии. Уведомления не отправляются."
+      title={msg.preview.title}
+      description={msg.preview.text}
       collapsible={false}
     />
   );

@@ -37,9 +37,9 @@ describe('formatting', () => {
   it('groups equal working days', () => {
     const rows = [1, 2, 3, 4, 5].map(d => ({weekday: d, opens: '09:00', closes: '21:00'})).concat({weekday: 6, opens: '10:00', closes: '18:00'});
     expect(summarizeHours(rows)).toEqual([
-      {days: 'Пн–Пт', hours: '09:00–21:00'},
-      {days: 'Сб', hours: '10:00–18:00'},
-      {days: 'Вс', hours: 'Выходной'},
+      {days: 'Пн–Пт', hours: '09:00–21:00', closed: false},
+      {days: 'Сб', hours: '10:00–18:00', closed: false},
+      {days: 'Вс', hours: 'Выходной', closed: true},
     ]);
   });
 });
