@@ -57,7 +57,7 @@ async function buildTenant(slug: string, dir: string, c: BusinessConfig): Promis
 
   // Photos
   const hero = path.join(dir, c.images.hero);
-  await sharp(hero).rotate().resize({width: 1800, withoutEnlargement: true}).webp({quality: 80}).toFile(path.join(outDir, 'media', mediaFileName(c.images.hero)));
+  await sharp(hero).rotate().resize({width: 2656, withoutEnlargement: true}).webp({quality: 84}).toFile(path.join(outDir, 'media', mediaFileName(c.images.hero)));
   await sharp(hero).rotate().resize(1200, 630, {fit: 'cover'}).jpeg({quality: 82}).toFile(path.join(outDir, 'media', 'og.jpg'));
   for (const file of c.gallery.flatMap(g => (g.before ? [g.image, g.before] : [g.image]))) {
     await sharp(path.join(dir, file)).rotate().resize({width: 1400, withoutEnlargement: true}).webp({quality: 78}).toFile(path.join(outDir, 'media', mediaFileName(file)));
