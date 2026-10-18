@@ -1,0 +1,507 @@
+{
+  "slug": "perfectwash-brno",
+  "name": "PerfectWash Brno",
+  "shortName": "PerfectWash",
+  "kind": "detailing",
+  "tagline": "Detailingové studio v Brně-Medlánkách – profesionální péče o všechny typy vozidel",
+  "description": "Jmenuji se Martin Krček a jsem majitelem PerfectWash Brno. Detailingu se věnuji více než 5 let a spíše než prací je pro mě koníčkem. Specializuji se na renovaci laku, aplikaci keramických povlaků a čištění interiéru. Pod rukama mi prošlo přes 700 vozidel a mým cílem je každému zákazníkovi dopřát kvalitně odvedenou práci.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#2FB4CB",
+  "contacts": {
+    "phone": "+420 734 737 986",
+    "address": "Hudcova 70b, 621 00 Brno-Medlánky",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Hudcova%2070b%2C%20621%2000%20Brno",
+    "email": "perfectwash-brno@email.cz",
+    "whatsapp": "420734737986",
+    "instagram": "perfectwash_brno",
+    "facebook": "https://www.facebook.com/p/PerfectWash-Brno-100076632020452/"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "07:00",
+        "15:30"
+      ]
+    ],
+    "tue": [
+      [
+        "07:00",
+        "15:30"
+      ]
+    ],
+    "wed": [
+      [
+        "07:00",
+        "15:30"
+      ]
+    ],
+    "thu": [
+      [
+        "07:00",
+        "15:30"
+      ]
+    ],
+    "fri": [
+      [
+        "07:00",
+        "15:30"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 120,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Studio"
+    }
+  ],
+  "services": [
+    {
+      "key": "basic",
+      "name": "Balíček Basic",
+      "category": "Balíčky",
+      "description": "Čištění interiéru na sucho a ruční mytí karoserie včetně aplikace mokrého vosku.",
+      "price": 2490,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "premium",
+      "name": "Balíček Premium",
+      "category": "Balíčky",
+      "description": "Čištění interiéru na mokro a ruční mytí karoserie včetně chemické dekontaminace a vosku.",
+      "price": 3990,
+      "priceFrom": true,
+      "durationMinutes": 420,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "exclusive",
+      "name": "Balíček Exclusive",
+      "category": "Balíčky",
+      "description": "Čištění interiéru na mokro, ruční mytí karoserie s chemickou dekontaminací a aplikace jednoletého keramického sealantu.",
+      "price": 7990,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "exclusive-plus",
+      "name": "Balíček Exclusive PLUS",
+      "category": "Balíčky",
+      "description": "Ruční mytí karoserie, chemická dekontaminace, jednokrokové strojní leštění laku, jednoletá keramická ochrana a čištění interiéru na mokro.",
+      "price": 14990,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "myti",
+      "name": "Ruční mytí karoserie s mokrým voskem",
+      "category": "Mytí a interiér",
+      "description": "Šetrné ruční mytí karoserie včetně aplikace mokrého vosku.",
+      "price": 990,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "myti-dekontaminace",
+      "name": "Ruční mytí s chemickou dekontaminací",
+      "category": "Mytí a interiér",
+      "description": "Ruční mytí karoserie, chemická dekontaminace laku (polétavá rez, asfalt) a aplikace mokrého vosku.",
+      "price": 1690,
+      "priceFrom": true,
+      "durationMinutes": 150,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "interier-sucho",
+      "name": "Čištění interiéru na sucho",
+      "category": "Mytí a interiér",
+      "description": "Důkladné vysávání, hloubkové čištění a impregnace všech plastových dílů, umytí oken a provonění interiéru.",
+      "price": 1490,
+      "priceFrom": false,
+      "durationMinutes": 150,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "interier-mokro",
+      "name": "Čištění interiéru na mokro",
+      "category": "Mytí a interiér",
+      "description": "Vše z čištění na sucho plus tepování sedadel, nebo hloubkové čištění a impregnace kůže a alcantary.",
+      "price": 2990,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "interier-demontaz",
+      "name": "Detailing interiéru s demontáží sedadel",
+      "category": "Mytí a interiér",
+      "description": "Nejhlubší čištění interiéru – demontáž sedadel, vyčištění podlahy a míst pod sedadly, tepování a impregnace.",
+      "price": 3990,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "lesteni-1",
+      "name": "Jednokrokové strojní leštění",
+      "category": "Leštění laku",
+      "description": "Ideální před prodejem. Auto dostane hezký lesk a vypadá mnohem lépe – odstranění cca 60–70 % vad, drobných škrábanců, hologramů a „sluníček“.",
+      "price": 6990,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "lesteni-vice",
+      "name": "Vícekrokové strojní leštění",
+      "category": "Leštění laku",
+      "description": "Odstranění veškerých defektů, které tloušťka laku dovolí – až 99 % vad laku. Leštění do maximálního lesku.",
+      "price": 9990,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "sealant",
+      "name": "Jednoletý keramický sealant",
+      "category": "Keramika a PPF",
+      "description": "Ochrana laku na celý rok a snadná údržba bez častého voskování.",
+      "price": 5990,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "keramika-3",
+      "name": "Tříletá keramická ochrana Ewocar Hydro 36",
+      "category": "Keramika a PPF",
+      "description": "Keramická ochrana laku s životností až 3 roky – vysoký lesk, hydrofobní efekt a snadná údržba.",
+      "price": 11990,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "keramika-5",
+      "name": "Pětiletá grafenová ochrana Ewocar Graphen 60",
+      "category": "Keramika a PPF",
+      "description": "Grafenová keramická ochrana s životností až 5 let – nejodolnější ochrana laku v naší nabídce.",
+      "price": 16990,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "keramika-celni",
+      "name": "Keramická ochrana čelního skla",
+      "category": "Keramika a PPF",
+      "description": "Hydrofobní keramická vrstva na čelní sklo – voda stéká, lepší výhled za deště.",
+      "price": 1490,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "keramika-okna",
+      "name": "Keramická ochrana všech oken",
+      "category": "Keramika a PPF",
+      "description": "Hydrofobní keramická vrstva na všechna okna vozu.",
+      "price": 2490,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "keramika-disky",
+      "name": "Keramická ochrana disků",
+      "category": "Keramika a PPF",
+      "description": "Keramická ochrana kol – brzdný prach a nečistoty se tak snadno nepřichytí a kola se snadno myjí.",
+      "price": 3990,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-sloupky",
+      "name": "PPF fólie na sloupky u dveří (za kus)",
+      "category": "Keramika a PPF",
+      "description": "Ochranná PPF fólie na lakované sloupky dveří. Cena 500 Kč za kus.",
+      "price": 500,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-svetla",
+      "name": "PPF fólie na světla (za kus)",
+      "category": "Keramika a PPF",
+      "description": "Ochranná PPF fólie na světlomet proti odletujícím kamínkům a škrábancům. Cena 1 500 Kč za kus.",
+      "price": 1500,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "car",
+      "title": "Přes 700 vozidel",
+      "text": "Za více než 5 let mi pod rukama prošlo přes 700 aut všech značek a tříd."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Lak a keramika",
+      "text": "Specializuji se na renovaci laku a keramické ochrany Ewocar s životností až 5 let."
+    },
+    {
+      "icon": "shield",
+      "title": "Osobní přístup",
+      "text": "Na každém voze pracuji osobně – detailing je pro mě koníček, ne jen práce."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-bmw7.webp",
+      "caption": "BMW řady 7"
+    },
+    {
+      "image": "images/work-cayman-gt4.webp",
+      "caption": "Porsche 718 Cayman GT4"
+    },
+    {
+      "image": "images/work-bmw4.webp",
+      "caption": "BMW řady 4 Cabrio"
+    },
+    {
+      "image": "images/work-giulia.webp",
+      "caption": "Alfa Romeo Giulia"
+    },
+    {
+      "image": "images/work-touareg.webp",
+      "caption": "Volkswagen Touareg"
+    },
+    {
+      "image": "images/work-i30n.webp",
+      "caption": "Hyundai i30 N"
+    },
+    {
+      "image": "images/work-lesk.webp",
+      "caption": "Hloubka lesku po strojním leštění"
+    },
+    {
+      "image": "images/work-gt4-interier.webp",
+      "caption": "Interiér Porsche 718 GT4"
+    },
+    {
+      "image": "images/work-gt4-sedadlo.webp",
+      "caption": "Sedadlo Porsche GT4 – alcantara a kůže"
+    },
+    {
+      "image": "images/work-bmw4-interier.webp",
+      "caption": "Světlá kůže v BMW řady 4 Cabrio"
+    },
+    {
+      "image": "images/work-giulia-interier.webp",
+      "caption": "Interiér Alfa Romeo Giulia"
+    },
+    {
+      "image": "images/work-i30n-interier.webp",
+      "caption": "Interiér Hyundai i30 N"
+    },
+    {
+      "image": "images/work-touareg-interier.webp",
+      "caption": "Středový tunel VW Touareg"
+    },
+    {
+      "image": "images/work-kola-bmw.webp",
+      "caption": "Kola BMW řady 4"
+    },
+    {
+      "image": "images/work-kola-touareg.webp",
+      "caption": "Kola VW Touareg"
+    },
+    {
+      "image": "images/work-kola-i30n.webp",
+      "caption": "Kola Hyundai i30 N"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Pracujete i o víkendu?",
+      "answer": "Běžně máme otevřeno v pondělí až pátek 7:00–15:30. Sobota a neděle jsou po domluvě – zavolejte nebo napište na +420 734 737 986.",
+      "keywords": [
+        "vikend",
+        "sobota",
+        "sobotu",
+        "nedele",
+        "nedeli",
+        "oteviraci",
+        "otevreno",
+        "kdy mate"
+      ]
+    },
+    {
+      "question": "Proč jsou ceny uvedené „od“?",
+      "answer": "Uvedené ceny jsou výchozí. Konečná cena závisí na velikosti vozu a jeho stavu – u velkých SUV nebo silně znečištěných interiérů může být vyšší. Cenu vždy domluvíme předem.",
+      "keywords": [
+        "cena od",
+        "proc od",
+        "konecna cena",
+        "kolik bude stat",
+        "kolik to bude",
+        "suv",
+        "velke auto"
+      ]
+    },
+    {
+      "question": "Jaký je rozdíl mezi jednokrokovým a vícekrokovým leštěním?",
+      "answer": "Jednokrokové leštění (od 6 990 Kč) je ideální před prodejem – auto dostane hezký lesk a odstraní se cca 60–70 % vad, drobných škrábanců, hologramů a „sluníček“. Vícekrokové leštění (od 9 990 Kč) odstraní veškeré defekty, které tloušťka laku dovolí – až 99 % vad, s maximálním leskem.",
+      "keywords": [
+        "rozdil",
+        "jednokrok",
+        "vicekrok",
+        "lesten",
+        "lestit",
+        "skrabance",
+        "hologram",
+        "slunicka"
+      ]
+    },
+    {
+      "question": "Jakou keramickou ochranu si vybrat?",
+      "answer": "Nabízíme tři úrovně: jednoletý keramický sealant (od 5 990 Kč), tříletou keramickou ochranu Ewocar Hydro 36 (od 11 990 Kč) a pětiletou grafenovou ochranu Ewocar Graphen 60 (od 16 990 Kč). Keramickou ochranu nabízíme i na čelní sklo (1 490 Kč), všechna okna (2 490 Kč) a disky (3 990 Kč). Rádi poradíme podle toho, jak auto používáte.",
+      "keywords": [
+        "keramik",
+        "sealant",
+        "ewocar",
+        "grafen",
+        "graphen",
+        "hydro",
+        "ochrana laku",
+        "kolik let"
+      ]
+    },
+    {
+      "question": "Co obsahují balíčky?",
+      "answer": "Basic (od 2 490 Kč): čištění interiéru na sucho a mytí karoserie. Premium (od 3 990 Kč): čištění interiéru na mokro a mytí s dekontaminací a voskem. Exclusive (od 7 990 Kč): navíc jednoletý keramický sealant. Exclusive PLUS (od 14 990 Kč): navíc jednokrokové strojní leštění laku.",
+      "keywords": [
+        "balicek",
+        "balicky",
+        "basic",
+        "premium",
+        "exclusive",
+        "plus",
+        "co obsahuje",
+        "co zahrnuje"
+      ]
+    },
+    {
+      "question": "Nabízíte PPF ochranné fólie?",
+      "answer": "Ano – PPF fólii na sloupky u dveří (500 Kč za kus) a na světla (1 500 Kč za kus).",
+      "keywords": [
+        "ppf",
+        "folie",
+        "svetla",
+        "sloupky",
+        "kaminky"
+      ]
+    },
+    {
+      "question": "Kde vás najdu a kde se můžu podívat na vaši práci?",
+      "answer": "Studio najdete na adrese Hudcova 70b, Brno-Medlánky. Ukázky práce sdílíme na Instagramu @perfectwash_brno, na Facebooku a na našem YouTube kanálu PerfectWash Brno.",
+      "keywords": [
+        "kde",
+        "adresa",
+        "medlanky",
+        "hudcova",
+        "youtube",
+        "instagram",
+        "ukazky",
+        "video"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
