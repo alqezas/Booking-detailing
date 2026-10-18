@@ -1,0 +1,498 @@
+{
+  "slug": "mad-max-detailing",
+  "name": "Mad Max Detailing",
+  "shortName": "Mad Max",
+  "kind": "detailing",
+  "tagline": "Profesionální čištění aut a detailing v Praze-Radotíně",
+  "description": "Jeden detail za druhým, kapka luxusu v každém kroku – protože u nás platí: kvalita je v detailu. V našem studiu v Praze-Radotíně nabízíme čištění interiéru, ruční mytí exteriéru, výhodné balíčky i detailing – keramické ochrany, leštění karoserie a tvrdé vosky. Všechny ceny jsou včetně DPH.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#F59E0B",
+  "contacts": {
+    "phone": "+420 735 864 293",
+    "address": "Výpadová 1335, hala č. 13, 153 00 Praha 16 – Radotín",
+    "legalAddress": "MadMaxDetailing, IČO 17409322, DIČ CZ17409322",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=V%C3%BDpadov%C3%A1%201335%2C%20153%2000%20Praha%2016",
+    "email": "info@madmaxradotin.cz",
+    "whatsapp": "420735864293"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "sat": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "sun": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ]
+  },
+  "closedDates": [],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 120,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Hala č. 13"
+    }
+  ],
+  "services": [
+    {
+      "key": "balicek-standard",
+      "name": "Balíček STANDARD",
+      "category": "Výhodné balíčky",
+      "description": "120 min. Interiér: vyčištění palubní desky a vnitřních plastů, vysátí celého interiéru včetně kufru, vyleštění skel, oken, zrcátek a displejů, provonění. Exteriér: ruční mytí exteriéru, bezkontaktní mytí kol a podběhů, odstranění hmyzu, vyčištění mezidveřních prostor, vysušení mikrovláknem a kompresorem.",
+      "price": 1890,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "balicek-premium",
+      "name": "Balíček PREMIUM",
+      "category": "Výhodné balíčky",
+      "description": "210 min. Doporučujeme! Vše z balíčku STANDARD plus hloubkové čištění, výživa a impregnace kůže, tepování 4 koberečků, hloubkové ruční mytí kol, odstranění polétavé rzi na kolech, vyčištění okolí víčka nádrže a tekutý nanovosk (ochrana až 3 měsíce).",
+      "price": 3690,
+      "priceFrom": false,
+      "durationMinutes": 210,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "interier-standard",
+      "name": "Interiér STANDARD",
+      "category": "Interiér",
+      "description": "90 min. Vyčištění palubní desky a vnitřních plastů, vysátí celého interiéru včetně kufru a koberečků, vyleštění skel, oken, zrcátek a displejů, provonění.",
+      "price": 1190,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "interier-premium",
+      "name": "Interiér PREMIUM",
+      "category": "Interiér",
+      "description": "120 min. Doporučujeme! Vše z Interiéru STANDARD plus hloubkové čištění kůže, výživa a impregnace kůže a tepování 4 koberečků.",
+      "price": 2490,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "interier-ultra",
+      "name": "Interiér ULTRA",
+      "category": "Interiér",
+      "description": "180 min. Vše z Interiéru PREMIUM plus tepování všech látkových sedaček, odstranění skvrn a zápachu a tepování podlahy v kufru.",
+      "price": 3490,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "exterier-standard",
+      "name": "Exteriér STANDARD",
+      "category": "Exteriér",
+      "description": "45 min. Ruční mytí exteriéru, bezkontaktní mytí kol a podběhů, odstranění hmyzu, vyčištění mezidveřních prostor, vysušení mikrovláknem a kompresorem.",
+      "price": 790,
+      "priceFrom": false,
+      "durationMinutes": 45,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "exterier-premium",
+      "name": "Exteriér PREMIUM",
+      "category": "Exteriér",
+      "description": "90 min. Doporučujeme! Vše z Exteriéru STANDARD plus hloubkové ruční mytí kol, odstranění polétavé rzi na kolech, vyčištění okolí víčka nádrže a tekutý nanovosk (ochrana až 3 měsíce).",
+      "price": 1390,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "exterier-ultra",
+      "name": "Exteriér ULTRA",
+      "category": "Exteriér",
+      "description": "120 min. Vše z Exteriéru PREMIUM plus dekontaminace laku clayem, odstranění polétavé rzi, asfaltu, pryskyřice a stop po zaschlé vodě. Ideální před aplikací ochrany či leštěním.",
+      "price": 2490,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "sterace",
+      "name": "Tekuté stěrače (trvanlivost až 1 rok)",
+      "category": "Doplňkové služby",
+      "description": "Hydrofobní ošetření skel s trvanlivostí až 1 rok.",
+      "price": 490,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "motor",
+      "name": "Mytí motoru a motorového prostoru",
+      "category": "Doplňkové služby",
+      "description": "Mytí motoru a motorového prostoru – bez záruky.",
+      "price": 490,
+      "priceFrom": false,
+      "durationMinutes": 45,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "tepovani-sedadla",
+      "name": "Tepování sedadla (za kus)",
+      "category": "Doplňkové služby",
+      "description": "Tepování jednoho sedadla – 590 Kč za kus.",
+      "price": 590,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "tepovani-podlahy",
+      "name": "Tepování kobercové podlahy",
+      "category": "Doplňkové služby",
+      "description": "Tepování celé kobercové podlahy vozu.",
+      "price": 850,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "tepovani-koberecku",
+      "name": "Tepování koberečků (za kus)",
+      "category": "Doplňkové služby",
+      "description": "Tepování koberečku – 150 Kč za kus.",
+      "price": 150,
+      "priceFrom": false,
+      "durationMinutes": 15,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "chlupy",
+      "name": "Odstranění zvířecích chlupů",
+      "category": "Doplňkové služby",
+      "description": "Odstranění zvířecích chlupů z interiéru – cena podle množství.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 30,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Čištění a dezinfekce klimatizace ozonem",
+      "category": "Doplňkové služby",
+      "description": "Čištění a dezinfekce klimatizace a prostorů vozu ozonem.",
+      "price": 500,
+      "priceFrom": false,
+      "durationMinutes": 45,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "impregnace",
+      "name": "Impregnace látkových sedaček (za kus)",
+      "category": "Doplňkové služby",
+      "description": "Impregnace látkového sedadla – 300 Kč za kus.",
+      "price": 300,
+      "priceFrom": false,
+      "durationMinutes": 15,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "lesteni",
+      "name": "Leštění karoserie",
+      "category": "Detailing",
+      "description": "Strojní leštění karoserie. Cena závisí na vašich požadavcích – rádi vám uděláme cenovou nabídku.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "keramika-lak",
+      "name": "Keramická ochrana laku",
+      "category": "Detailing",
+      "description": "Aplikace keramické ochrany laku. Cenu připravíme na míru podle vozu a požadavků.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "keramika-interier",
+      "name": "Keramická ochrana kůže a plastů",
+      "category": "Detailing",
+      "description": "Aplikace keramické ochrany na kůži a plasty v interiéru. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "tvrdy-vosk",
+      "name": "Aplikace tvrdých vosků",
+      "category": "Detailing",
+      "description": "Ruční aplikace tvrdého vosku. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "kabriolet",
+      "name": "Impregnace střechy kabrioletu",
+      "category": "Detailing",
+      "description": "Impregnace textilní střechy kabrioletu. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "sparkle",
+      "title": "Kvalita je v detailu",
+      "text": "Jeden detail za druhým, kapka luxusu v každém kroku."
+    },
+    {
+      "icon": "clock",
+      "title": "Každý den",
+      "text": "Termín domluvíme individuálně podle vašich potřeb – i o víkendu."
+    },
+    {
+      "icon": "credit-card",
+      "title": "Ceny včetně DPH",
+      "text": "Pevné ceny balíčků. SUV a velké vozy s jasnou přirážkou."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-bmw-m3.webp",
+      "caption": "BMW M3 v našem studiu"
+    },
+    {
+      "image": "images/work-i20n.webp",
+      "caption": "Hyundai i20 N"
+    },
+    {
+      "image": "images/work-superb.webp",
+      "caption": "Škoda Superb"
+    },
+    {
+      "image": "images/work-g.webp",
+      "caption": "Mercedes-Benz třídy G"
+    },
+    {
+      "image": "images/work-e.webp",
+      "caption": "Mercedes-Benz třídy E"
+    },
+    {
+      "image": "images/work-audi.webp",
+      "caption": "Audi v našem studiu"
+    },
+    {
+      "image": "images/work-bmw-interier.webp",
+      "caption": "Interiér BMW M"
+    },
+    {
+      "image": "images/work-mercedes-interier.webp",
+      "caption": "Interiér Mercedes-Benz"
+    },
+    {
+      "image": "images/work-lexus-interier.webp",
+      "caption": "Kožený interiér Lexus"
+    },
+    {
+      "image": "images/work-porsche-interier.webp",
+      "caption": "Interiér Porsche"
+    },
+    {
+      "image": "images/work-kuze.webp",
+      "caption": "Hnědý kožený interiér"
+    },
+    {
+      "image": "images/work-pred-po.webp",
+      "caption": "Interiér před a po"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Liší se cena podle velikosti vozu?",
+      "answer": "Ano. SUV, crossovery, MPV a luxusní limuzíny +20 % na ceně. Užitkové vozy, dodávky, multivany a velké pickupy +30 % na ceně. Při silném znečištění od +20 % na ceně.",
+      "keywords": [
+        "suv",
+        "crossover",
+        "mpv",
+        "limuzin",
+        "dodavk",
+        "multivan",
+        "pickup",
+        "velikost",
+        "priplat",
+        "priraz",
+        "spinav",
+        "znecist"
+      ]
+    },
+    {
+      "question": "Kdy máte otevřeno?",
+      "answer": "Pracujeme každý den dle individuální dohody. Pro objednání termínu nás kontaktujte telefonicky na +420 735 864 293, přes WhatsApp nebo e-mailem info@madmaxradotin.cz – domluvíme se podle vašich potřeb.",
+      "keywords": [
+        "oteviraci",
+        "otevreno",
+        "kdy mate",
+        "vikend",
+        "sobota",
+        "nedele",
+        "kazdy den"
+      ]
+    },
+    {
+      "question": "Kde vás najdu?",
+      "answer": "Naše provozovna je na adrese Výpadová 1335, 153 00 Praha 16 – Radotín, hala č. 13.",
+      "keywords": [
+        "kde",
+        "adresa",
+        "radotin",
+        "vypadova",
+        "hala",
+        "najdu"
+      ]
+    },
+    {
+      "question": "Jsou ceny včetně DPH?",
+      "answer": "Ano, všechny ceny jsou včetně DPH.",
+      "keywords": [
+        "dph",
+        "faktur",
+        "vcetne"
+      ]
+    },
+    {
+      "question": "Jaký je rozdíl mezi balíčky?",
+      "answer": "Balíček STANDARD (1 890 Kč, 120 min) zahrnuje základní čištění interiéru i ruční mytí exteriéru. Balíček PREMIUM (3 690 Kč, 210 min) přidává hloubkové čištění a impregnaci kůže, tepování 4 koberečků, hloubkové mytí kol s odstraněním polétavé rzi a tekutý nanovosk s ochranou až 3 měsíce.",
+      "keywords": [
+        "rozdil",
+        "balicek",
+        "standard",
+        "premium",
+        "ultra",
+        "co obsahuje",
+        "vybrat"
+      ]
+    },
+    {
+      "question": "Kolik stojí leštění nebo keramika?",
+      "answer": "Cena leštění karoserie, keramické ochrany laku, kůže a plastů, tvrdých vosků i impregnace střechy kabrioletu závisí na vašich požadavcích. Neváhejte nás kontaktovat a rádi vám uděláme cenovou nabídku.",
+      "keywords": [
+        "lesten",
+        "keramik",
+        "vosk",
+        "kabriolet",
+        "nabidk",
+        "detailing"
+      ]
+    },
+    {
+      "question": "Nabízíte dárkové vouchery?",
+      "answer": "Ano, čištění auta můžete darovat formou voucheru. Pro jeho objednání nás kontaktujte telefonicky nebo e-mailem.",
+      "keywords": [
+        "voucher",
+        "poukaz",
+        "darek",
+        "darkov"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
