@@ -1,0 +1,465 @@
+{
+  "slug": "transervis",
+  "name": "TRANSERVIS",
+  "shortName": "TRANSERVIS",
+  "kind": "autoservice",
+  "tagline": "Servis osobních a užitkových vozidel všech značek v Brně-Řečkovicích",
+  "description": "Autoservis TRANSERVIS představuje model silné firmy, jejíž zaměstnanci jsou vedeni k osobnímu a individuálnímu přístupu ke každému zákazníkovi. Nabízíme vám své dlouholeté zkušenosti se servisem a údržbou vozidel – 19 let v oboru. Najdete u nás kompletní nabídku servisních i rychloservisních služeb pro osobní i užitková auta, od pravidelného servisu přes opravy karoserií až po kalibraci radarů. Cílem našeho snažení byl a vždy bude spokojený zákazník.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#F39200",
+  "contacts": {
+    "phone": "+420 739 081 188",
+    "address": "Maříkova 2098/28, 621 00 Brno-Řečkovice",
+    "legalAddress": "TRANSERVIS s.r.o., Maříkova 2098/28, 621 00 Brno, IČO 29186889",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=TRANSERVIS%20s.r.o.%2C%20Ma%C5%99%C3%ADkova%202098%2F28%2C%20621%2000%20Brno",
+    "email": "servis@transervis.com"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 1440,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "stani-1",
+      "name": "Pracoviště 1"
+    },
+    {
+      "key": "stani-2",
+      "name": "Pracoviště 2"
+    }
+  ],
+  "services": [
+    {
+      "key": "servis",
+      "name": "Pravidelný servis",
+      "category": "Servis a opravy",
+      "description": "Pravidelné a pečlivé kontroly a údržba vozidla podle předpisu výrobce pro dlouhodobou spolehlivost a životnost vašeho vozu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "olej",
+      "name": "Výměna motorového oleje a filtru",
+      "category": "Servis a opravy",
+      "description": "Kvalitní olej doporučený výrobcem a kvalitní olejový filtr. Mezitím můžete v klidu počkat v naší čekárně.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "olej-prevodovka",
+      "name": "Výměna oleje v převodovce",
+      "category": "Servis a opravy",
+      "description": "Manuální i automatické převodovky – vypuštění starého oleje, kontrola a výměna filtrů, plnění olejem podle specifikace výrobce.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "diagnostika",
+      "name": "Diagnostika",
+      "category": "Servis a opravy",
+      "description": "Komplexní analýza klíčových systémů vozidla – motor, převodovka, ABS, systémy stability a další – nejnovějším diagnostickým zařízením.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "elektro",
+      "name": "Elektroinstalace",
+      "category": "Servis a opravy",
+      "description": "Diagnostika a opravy elektrických poruch, instalace parkovacích senzorů, kamer, navigací a dalších doplňků.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "brzdy",
+      "name": "Servis brzdových systémů",
+      "category": "Servis a opravy",
+      "description": "Výměna brzdových destiček, kotoučů, hadic a kapaliny, diagnostika a opravy ABS a elektronických brzdových systémů.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "podvozek",
+      "name": "Podvozek",
+      "category": "Servis a opravy",
+      "description": "Diagnostika a opravy tlumičů, pružin, zavěšení kol, řízení a dalších částí podvozku.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "rozvody",
+      "name": "Rozvody",
+      "category": "Servis a opravy",
+      "description": "Kontrola a výměna rozvodových řemenů a řetězů včetně napínáků a vodicích kladek – kvalitními díly podle doporučení výrobce.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "egr-dpf",
+      "name": "Servis EGR ventilů a DPF filtrů",
+      "category": "Servis a opravy",
+      "description": "Diagnostika a servis systémů recirkulace výfukových plynů a filtrů pevných částic pro nízké emise a plný výkon motoru.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "klimatizace",
+      "name": "Klimatizace",
+      "category": "Servis a opravy",
+      "description": "Diagnostika, servis a opravy klimatizace – doplnění chladiva, výměna filtrů, dezinfekce a odstranění zápachu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "pneuservis",
+      "name": "Pneuservis",
+      "category": "Pneu, geometrie a ADAS",
+      "description": "Výběr a prodej pneumatik, montáž, vyvážení, opravy a sezónní přezutí. Nabízíme i uskladnění pneumatik.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "geometrie",
+      "name": "Geometrie",
+      "category": "Pneu, geometrie a ADAS",
+      "description": "Přesné měření a nastavení přední i zadní geometrie, kontrola a případná výměna opotřebených dílů zavěšení.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "adas",
+      "name": "Kalibrace radaru a kamer ADAS",
+      "category": "Pneu, geometrie a ADAS",
+      "description": "Řízená a interaktivní kalibrace asistenčních systémů řidiče zařízením DAS 3000 – adaptivní tempomat, hlídání jízdního pruhu, nouzové brzdění.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "karoserie",
+      "name": "Opravy karoserií",
+      "category": "Karoserie, skla a světla",
+      "description": "Od drobných oděrek a důlků bez lakování přes opravy po nehodě až po kompletní renovace. Rozsah posoudíme a doporučíme nejlepší postup.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "skla",
+      "name": "Výměna autoskel",
+      "category": "Karoserie, skla a světla",
+      "description": "Výměna čelních, bočních i zadních skel kvalitními materiály se správným těsněním a přilnavostí.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "svetla",
+      "name": "Světla",
+      "category": "Karoserie, skla a světla",
+      "description": "Kontrola, oprava a výměna světlometů i zadních, brzdových a směrových světel, profesionální seřízení světlometů.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "stk",
+      "name": "Zajištění STK a emisí",
+      "category": "STK a odtah",
+      "description": "Vozidlo připravíme a případně opravíme vše, co je předmětem kontroly. Pak ho za vás přihlásíme a odvezeme na STK a emise.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "odtah",
+      "name": "Odtahová služba",
+      "category": "STK a odtah",
+      "description": "Odtah vozidla při poruše, nehodě nebo jiné situaci, kdy je potřeba vůz přesunout. Domluvte se s námi telefonicky.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "19 let zkušeností",
+      "text": "Školení zaměstnanci vám kvalitně a rychle pomohou s řešením všech problémů."
+    },
+    {
+      "icon": "clock",
+      "title": "Krátké termíny",
+      "text": "Snažíme se co nejrychleji reagovat a poskytovat služby v co nejkratším čase."
+    },
+    {
+      "icon": "wrench",
+      "title": "Vše na jednom místě",
+      "text": "Osobní i užitková vozidla všech značek – od rychloservisu po kalibraci radarů DAS 3000."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-areal.webp",
+      "caption": "Autoservis TRANSERVIS v Brně-Řečkovicích"
+    },
+    {
+      "image": "images/work-prijem.webp",
+      "caption": "Příjem oprav od 8:00 do 17:00"
+    },
+    {
+      "image": "images/work-prijezd.webp",
+      "caption": "Příjezd k autoservisu na Maříkově ulici"
+    },
+    {
+      "image": "images/work-adas.webp",
+      "caption": "Kalibrace asistenčních systémů ADAS"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Kolik bude servis stát?",
+      "answer": "Cenu vždy stanovíme podle konkrétního vozu a rozsahu práce. Zavolejte nám na +420 739 081 188 nebo napište na servis@transervis.com a rádi vám připravíme nabídku.",
+      "keywords": [
+        "kolik",
+        "cena",
+        "cenik",
+        "stoji",
+        "nabidk"
+      ]
+    },
+    {
+      "question": "Kdy přijímáte vozy do opravy?",
+      "answer": "Příjem oprav je od 8:00 do 17:00 hod. Najdete nás na adrese Maříkova 2098/28, Brno – Řečkovice.",
+      "keywords": [
+        "kdy",
+        "oteviraci",
+        "otevreno",
+        "prijem",
+        "hodin",
+        "kde",
+        "adresa",
+        "reckovice"
+      ]
+    },
+    {
+      "question": "Opravujete i užitková auta?",
+      "answer": "Ano, servisujeme osobní i užitková vozidla všech značek.",
+      "keywords": [
+        "uzitkov",
+        "dodavk",
+        "znack",
+        "transit",
+        "vsech znacek"
+      ]
+    },
+    {
+      "question": "Můžu na výměnu oleje počkat?",
+      "answer": "Ano. Výměnu oleje a filtru zvládneme rychle a vy mezitím můžete v klidu počkat v naší čekárně.",
+      "keywords": [
+        "pockat",
+        "cekarn",
+        "na pockani",
+        "rychle",
+        "olej"
+      ]
+    },
+    {
+      "question": "Zařídíte za mě STK?",
+      "answer": "Ano. Vozidlo připravíme na technickou a emisní kontrolu, případně opravíme vše potřebné, a pak ho za vás přihlásíme a odvezeme na STK.",
+      "keywords": [
+        "stk",
+        "emise",
+        "technick",
+        "kontrola"
+      ]
+    },
+    {
+      "question": "Umíte kalibrovat radary a kamery?",
+      "answer": "Ano. Disponujeme řízenou a interaktivní kalibrací DAS 3000 pro přesné nastavení asistenčních systémů řidiče (ADAS).",
+      "keywords": [
+        "kalibrac",
+        "radar",
+        "adas",
+        "kamer",
+        "asistent",
+        "das 3000",
+        "tempomat"
+      ]
+    },
+    {
+      "question": "Máte odtahovou službu?",
+      "answer": "Ano, nabízíme odtah vozidla při poruše, nehodě nebo jiné situaci, kdy je potřeba vůz přesunout. Zavolejte na +420 739 081 188.",
+      "keywords": [
+        "odtah",
+        "nepojizd",
+        "porucha",
+        "nehod",
+        "odvez"
+      ]
+    },
+    {
+      "question": "Můžete prověřit auto před koupí?",
+      "answer": "Historii vozu si můžete předem prověřit přes službu CEBIA, na kterou odkazujeme z našeho webu. Technický stav vozu vám rádi zkontrolujeme v rámci diagnostiky.",
+      "keywords": [
+        "pred koupi",
+        "cebia",
+        "proverit",
+        "ojet",
+        "koupit auto"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
