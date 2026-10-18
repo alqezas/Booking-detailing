@@ -1,0 +1,488 @@
+{
+  "slug": "degaso",
+  "name": "Degaso",
+  "shortName": "Degaso",
+  "kind": "detailing",
+  "tagline": "Detailing, garáž & shop v Brně – zamilovaní do aut do posledního detailu",
+  "description": "DEtailing, GAráž & ShOp, to je DEGASO. Pod střechou jedné velkorysé garáže v Brně pečujeme o daily cars, veterány, SUV i dodávky. Ruční čištění aut, leštění laku i keramickou ochranu provádíme pečlivě a šetrně – do posledního zákrutu. Začínali jsme v roce 2018 a jsme výhradním distributorem kalifornské autokosmetiky Masterson’s pro ČR a SR. Pořádáme také individuální kurzy detailingu.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#E4572E",
+  "contacts": {
+    "phone": "+420 730 516 038",
+    "address": "Hájecká 1162/3, 618 00 Brno – Černovice",
+    "legalAddress": "Degaso, s.r.o., Hájecká 1162/3, 618 00 Brno – Černovice",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Degaso%2C%20H%C3%A1jeck%C3%A1%201162%2F3%2C%20618%2000%20Brno",
+    "email": "martin@degaso.cz",
+    "instagram": "degasocz",
+    "facebook": "https://www.facebook.com/profile.php?id=61559922983255"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "12:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 1440,
+    "horizonDays": 60,
+    "cancelCutoffHours": 48,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Dílna 1"
+    },
+    {
+      "key": "box-2",
+      "name": "Dílna 2"
+    }
+  ],
+  "services": [
+    {
+      "key": "komplet",
+      "name": "Kompletní vyčištění celého auta",
+      "category": "Čištění",
+      "description": "Hotovo za 2 dny. Hloubkové vyčištění a vyživení interiéru, dekontaminace a voskování laku, čištění motoru a kol. Malé auto 13 189 Kč, střední 14 399 Kč, velké 15 609 Kč.",
+      "price": 13189,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "interier-kuze",
+      "name": "Vyčištění a vyživení interiéru – kůže",
+      "category": "Čištění",
+      "description": "Hotovo za 2 dny. Kompletní ruční vyčištění celého interiéru včetně stropnice a mezidveřních prostor, hloubkové vyčištění a vyživení kůže. Více než 5místné, MPV a minibus 8 349 Kč.",
+      "price": 7865,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "interier-latka",
+      "name": "Vyčištění interiéru – látkové sedačky",
+      "category": "Čištění",
+      "description": "Hotovo za 2 dny. Kompletní vyčištění interiéru do posledního detailu, tepování sedaček a čalounění, hloubkové vyčištění plastů. Více než 5místné, MPV a minibus od 7 865 Kč.",
+      "price": 7139,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "vosk",
+      "name": "Voskování a dekontaminace laku",
+      "category": "Čištění",
+      "description": "Hotovo za 1 den. Ruční mytí kol, podběhů a mezidveřních prostor, dekontaminace laku (polétavá rez, asfalt, hmyz, pryskyřice), opětovné mytí, tuhý vosk, vyživení pneu a plastů. SUV, MPV a dodávka od 7 139 Kč.",
+      "price": 6655,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "lesteni-1",
+      "name": "Základní leštění laku (jednokrokové)",
+      "category": "Leštění laku",
+      "description": "Hotovo za 2–3 dny. Odstranění 80–90 % drobných škrábanců a navrácení lesku. Vyčištění, dekontaminace, strojní leštění a vosk. Malé auto od 21 780 Kč, střední od 24 200 Kč, velké od 26 620 Kč.",
+      "price": 21780,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "lesteni-top",
+      "name": "TOP vyleštění laku (vícekrokové)",
+      "category": "Leštění laku",
+      "description": "Hotovo za 3 dny. Odstranění až 95 % drobného poškození laku, maximální sytost barvy a hloubka lesku. Malé auto od 26 620 Kč, střední od 29 040 Kč, velké od 31 460 Kč.",
+      "price": 26620,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "keramika-basic",
+      "name": "Keramická ochrana BASIC",
+      "category": "Keramika a PPF",
+      "description": "Hotovo za 4–5 dnů. Vyčištění exteriéru, dekontaminace, strojní vyleštění a 2 vrstvy nano keramiky s výdrží 2 roky. Malé auto od 38 720 Kč, střední od 41 140 Kč, SUV a limuzína od 43 560 Kč.",
+      "price": 38720,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "keramika-long",
+      "name": "Keramická ochrana LONG",
+      "category": "Keramika a PPF",
+      "description": "Hotovo za 4–5 dnů. Jako BASIC, ale 3 vrstvy nano keramiky s tvrdostí 9H a výdrží 3 až 5 let. Malé auto od 43 560 Kč, střední od 45 980 Kč, SUV a limuzína od 48 400 Kč.",
+      "price": 43560,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "keramika-top",
+      "name": "Keramická ochrana TOP",
+      "category": "Keramika a PPF",
+      "description": "Hotovo za 4–6 dnů. Jako LONG plus keramika na skla, kola a nelakované plasty s trvanlivostí 1 rok. Malé auto od 55 660 Kč, střední od 58 080 Kč, SUV a limuzína od 60 500 Kč.",
+      "price": 55660,
+      "priceFrom": true,
+      "durationMinutes": 8640,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ppf-front",
+      "name": "PPF fólie – Front packet základ",
+      "category": "Keramika a PPF",
+      "description": "Kapota, nárazník a světla. Samohojivá PPF fólie s životností až 10 let. Hotovo za 1–3 týdny.",
+      "price": 29040,
+      "priceFrom": true,
+      "durationMinutes": 10080,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ppf-front-plny",
+      "name": "PPF fólie – Front packet plný",
+      "category": "Keramika a PPF",
+      "description": "Kapota, nárazník, světla, blatníky, zrcátka, A sloupky a hrana kufru. Samohojivá PPF fólie s životností až 10 let.",
+      "price": 38720,
+      "priceFrom": true,
+      "durationMinutes": 10080,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ppf-celopolep",
+      "name": "PPF fólie – celopolep",
+      "category": "Keramika a PPF",
+      "description": "Celopolep vozu samohojivou PPF fólií (lesk nebo mat) s životností až 10 let. Hotovo za 1–3 týdny.",
+      "price": 89540,
+      "priceFrom": true,
+      "durationMinutes": 20160,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "kurz-zaklady",
+      "name": "Individuální kurz – Základy detailingu",
+      "category": "Kurzy",
+      "description": "4hodinový praktický kurz pro začátečníky s certifikátem, jeden na jednoho nebo v malé skupince. Veškerý materiál v ceně.",
+      "price": 5900,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "kurz-lesteni",
+      "name": "Individuální kurz – Strojní leštění laku",
+      "category": "Kurzy",
+      "description": "4hodinový praktický kurz strojního leštění laku pro začátečníky s certifikátem.",
+      "price": 6900,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "kurz-interier",
+      "name": "Individuální kurz – Profesionální čištění interiéru",
+      "category": "Kurzy",
+      "description": "4hodinový praktický kurz pro začínající profesionály s certifikátem.",
+      "price": 6900,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Know-how od A do Z",
+      "text": "Léta zkušeností v čištění a leštění vozidel – stovky vozů od limuzíny po bagr (opravdu)."
+    },
+    {
+      "icon": "shield",
+      "title": "Záruka na keramiku",
+      "text": "Za kvalitou si stojíme – na keramický povlak dáváme záruku trvanlivosti až 3 roky."
+    },
+    {
+      "icon": "drop",
+      "title": "Masterson’s Car Care",
+      "text": "Výhradní distributor kalifornské autokosmetiky pro ČR a SR – vyzkoušejte ji v našem showroomu."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-civic-r.webp",
+      "caption": "Honda Civic Type R – keramická ochrana"
+    },
+    {
+      "image": "images/work-tesla.webp",
+      "caption": "Tesla Model Y – keramická ochrana"
+    },
+    {
+      "image": "images/work-california.webp",
+      "caption": "Ferrari California – dekontaminace a voskování"
+    },
+    {
+      "image": "images/work-ghibli.webp",
+      "caption": "Maserati Ghibli – dekontaminace a voskování"
+    },
+    {
+      "image": "images/work-corvette.webp",
+      "caption": "Chevrolet Corvette C3"
+    },
+    {
+      "image": "images/work-bmw5.webp",
+      "caption": "BMW řady 5 – vyčištění celého auta"
+    },
+    {
+      "image": "images/work-superb.webp",
+      "caption": "Škoda Superb po strojním leštění"
+    },
+    {
+      "image": "images/work-lak-pred-po.webp",
+      "caption": "Lak před a po strojním leštění"
+    },
+    {
+      "image": "images/work-astra.webp",
+      "caption": "Opel Astra – dekontaminace a voskování"
+    },
+    {
+      "image": "images/work-z4.webp",
+      "caption": "Kabriolet s červenou kůží – vyčištění celého auta"
+    },
+    {
+      "image": "images/work-motor.webp",
+      "caption": "Vyčištěný motorový prostor Fiat 124 Spider"
+    },
+    {
+      "image": "images/work-cl-interier.webp",
+      "caption": "Kožený interiér Mercedes-Benz CL"
+    },
+    {
+      "image": "images/work-bmw7-interier.webp",
+      "caption": "Světlá kůže v BMW řady 7"
+    },
+    {
+      "image": "images/work-keramika.webp",
+      "caption": "Aplikace keramické ochrany"
+    },
+    {
+      "image": "images/work-lesteni.webp",
+      "caption": "Detailní leštění laku"
+    },
+    {
+      "image": "images/work-para.webp",
+      "caption": "Čištění interiéru párou"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Musím z auta vyndat osobní věci?",
+      "answer": "Rozhodně ne. Poté, co nám auto předáte, vyndáme vaše osobní věci z kapes, přihrádek a kufru a bezpečně je uložíme do speciálního boxu.",
+      "keywords": [
+        "osobni veci",
+        "vyndat",
+        "vyklidit",
+        "pripravit",
+        "veci v aute"
+      ]
+    },
+    {
+      "question": "Proč čištění trvá 2 dny?",
+      "answer": "Čistíme ručně a do posledního detailu, včetně zdánlivě nepřístupných míst. Po tepování necháváme interiér dostatečně dlouho vyschnout, takže domů nepojedete ve vlhkém autě.",
+      "keywords": [
+        "jak dlouho",
+        "trva",
+        "dva dny",
+        "2 dny",
+        "vlhk",
+        "kdy bude hotov"
+      ]
+    },
+    {
+      "question": "Jak se liší ceny podle velikosti auta?",
+      "answer": "U kompletního čištění, leštění a keramiky rozlišujeme malé, střední a velké auto (SUV, limuzína). U interiéru mají vozy s více než 5 místy, MPV a minibusy vyšší cenu, u voskování SUV, MPV a dodávky od 7 139 Kč. Konkrétní ceny najdete u každé služby.",
+      "keywords": [
+        "velikost",
+        "suv",
+        "limuzin",
+        "mpv",
+        "dodavk",
+        "minibus",
+        "velke auto",
+        "male auto"
+      ]
+    },
+    {
+      "question": "Jakou keramiku si vybrat?",
+      "answer": "BASIC – 2 vrstvy nano keramiky s výdrží 2 roky. LONG – 3 vrstvy keramiky s tvrdostí 9H a výdrží 3 až 5 let. TOP – jako LONG plus keramika na skla, kola a nelakované plasty. Na povlak dáváme záruku trvanlivosti až 3 roky. Rádi vás přivítáme na nezávazné konzultaci zdarma.",
+      "keywords": [
+        "keramik",
+        "basic",
+        "long",
+        "top",
+        "zaruk",
+        "vydrz",
+        "9h",
+        "konzultac"
+      ]
+    },
+    {
+      "question": "Jaký je rozdíl mezi jednokrokovým a vícekrokovým leštěním?",
+      "answer": "Jednokrokové leštění vrátí laku lesk a odstraní 80–90 % drobných škrábanců – vhodné, pokud lak není výrazně poškozen. Vícekrokové (2–3 kroky) odstraní až 95 % drobného poškození a vyleští lak do hi-end finiše. Pokud by něco nešlo odstranit, upozorníme vás na to už při vstupní konzultaci.",
+      "keywords": [
+        "lesten",
+        "jednokrok",
+        "vicekrok",
+        "skrabanc",
+        "rozdil",
+        "lesk"
+      ]
+    },
+    {
+      "question": "Co je PPF fólie?",
+      "answer": "Průhledná polyuretanová fólie (cca 150–200 mikronů) se samohojivým efektem, která chrání lak i před odletujícími kamínky, škrábanci, UV zářením či solí. Životnost až 10 let. Lepíme lokálně (Front packet od 29 040 Kč) i celopolepy (od 89 540 Kč), existuje i matná a barevná varianta.",
+      "keywords": [
+        "ppf",
+        "folie",
+        "kaminky",
+        "celopolep",
+        "samohoj",
+        "mat"
+      ]
+    },
+    {
+      "question": "Pořádáte kurzy detailingu?",
+      "answer": "Ano – individuální 4hodinové kurzy s certifikátem: Základy detailingu (5 900 Kč), Strojní leštění laku (6 900 Kč) a Profesionální čištění interiéru (6 900 Kč). Konají se v pracovní dny (i večer) nebo v sobotu dopoledne v naší dílně na Hájecké 3. Pořádáme také tematické workshopy zdarma.",
+      "keywords": [
+        "kurz",
+        "skoleni",
+        "workshop",
+        "naucit",
+        "certifikat"
+      ]
+    },
+    {
+      "question": "Můžu si koupit autokosmetiku Masterson’s?",
+      "answer": "Ano. Jsme výhradním distributorem Masterson’s Car Care pro ČR a SR. Produkty si můžete prohlédnout a vyzkoušet v našem showroomu nad kávou, nebo objednat v e-shopu na degaso.cz.",
+      "keywords": [
+        "masterson",
+        "kosmetik",
+        "e-shop",
+        "eshop",
+        "koupit",
+        "produkt",
+        "showroom"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
