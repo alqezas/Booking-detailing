@@ -1,0 +1,453 @@
+{
+  "slug": "dokonaly-kary",
+  "name": "Dokonalý Káry",
+  "shortName": "Dokonalý Káry",
+  "kind": "detailing",
+  "tagline": "Detailing studio v Brně – ruční mytí, korekce laku, keramika Fireball a Artdeshine",
+  "description": "Děláme z aut dokonalý káry. O váš vůz se postaráme profesionálně a s maximálním úsilím, ať jde o ruční umytí nebo kompletní detailingový program. Myjeme metodou dvou věder bez kartáčů, lak korigujeme leštičkami RUPES a jsme certifikovaní pro keramiku Fireball a Artdeshine. Ceny se liší podle třídy vozu (standard, limuzína, SUV) a jsou uvedeny bez DPH.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#0060A8",
+  "contacts": {
+    "phone": "+420 776 886 997",
+    "address": "Karásek 2245/1F, 621 00 Brno-Řečkovice",
+    "legalAddress": "Dobrá Sedma s.r.o., IČO 04326270, DIČ CZ04326270",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Kar%C3%A1sek%202245%2F1F%2C%20621%2000%20Brno",
+    "email": "info@dokonalykary.cz",
+    "facebook": "dokonalykary"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 240,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Box 1"
+    }
+  ],
+  "services": [
+    {
+      "key": "myti-standard",
+      "name": "Mytí Standard",
+      "category": "Ruční mytí",
+      "price": 550,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1"
+      ],
+      "description": "Předmytí, čištění kol, mytí mikrovláknovou rukavicí, rychlovosk, sušení včetně mezidveřních prostor, impregnace pneu Starbrite. Standard 550 Kč, limuzína 600 Kč, SUV 650 Kč bez DPH."
+    },
+    {
+      "key": "myti-detailing",
+      "name": "Mytí Detailing",
+      "category": "Ruční mytí",
+      "price": 1200,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1"
+      ],
+      "description": "Aktivní pěna, čištění kol zvenku i zevnitř a podběhů, APC na mřížky, světla a panty, mytí dvojvědrem pH neutrálním šamponem, odstranění asfaltu, Iron, WET Coat nebo Clay, sušení a dosušení vzduchem, impregnace pneu GYEON. Standard 1 200 Kč, limuzína 1 300 Kč, SUV 1 400 Kč bez DPH."
+    },
+    {
+      "key": "vosk-standard",
+      "name": "Voskování Standard",
+      "category": "Voskování",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ],
+      "description": "Nejoblíbenější program: mytí Detailing s dekontaminací laku, odmaštění, vosk Fusso v 1 vrstvě, rozleštění, impregnace vnějších plastů. Standard 3 000 Kč, limuzína 3 200 Kč, SUV 3 400 Kč bez DPH."
+    },
+    {
+      "key": "vosk-detailing",
+      "name": "Voskování Detailing",
+      "category": "Voskování",
+      "price": 5900,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ],
+      "description": "Pro náročné: vosk ve 2 vrstvách i do mezidveřních prostor a na čelní stranu disků, tekuté stěrače na všechna okna, odmaštění oken a disků, impregnace vnějších plastů. Standard 5 900 Kč, limuzína 6 500 Kč, SUV 7 100 Kč bez DPH."
+    },
+    {
+      "key": "interier",
+      "name": "Čištění interiéru suchou metodou",
+      "category": "Čištění interiéru",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "box-1"
+      ],
+      "description": "Důkladné vysátí, čištění a impregnace plastů a výdechů, sedadla suchou metodou (Tornado) nebo párou, péče o kůži, stropnice a sloupky, vyleštění oken a provonění. Produkty Star Brite. Standard 3 000 Kč, limuzína 3 300 Kč, SUV 3 300 Kč bez DPH."
+    },
+    {
+      "key": "korekce-1",
+      "name": "Korekce laku 1. stupeň",
+      "category": "Korekce laku",
+      "price": 10300,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ],
+      "description": "Základní péče: mytí Detailing s dekontaminací, oblepení karoserie, leštění pro obnovení lesku a odstranění drobných poškození, vosk. Standard 10 300 Kč, limuzína 11 300 Kč, SUV 11 900 Kč bez DPH."
+    },
+    {
+      "key": "korekce-2",
+      "name": "Korekce laku 2. stupeň",
+      "category": "Korekce laku",
+      "price": 14400,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1"
+      ],
+      "description": "Lak skoro jako nový: důkladné seříznutí poškozené části laku a doleštění do vysokého lesku, vosk. Standard 14 400 Kč, limuzína 15 700 Kč, SUV 16 800 Kč bez DPH."
+    },
+    {
+      "key": "korekce-3",
+      "name": "Korekce laku 3. stupeň",
+      "category": "Korekce laku",
+      "price": 30200,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "box-1"
+      ],
+      "description": "Pro lak jako zrcadlo: broušení za mokra Trizact 1500/2000/3000, seříznutí, doleštění do vysokého lesku, drobné retuše od kamínků, vosk. Standard 30 200 Kč, limuzína 33 300 Kč, SUV 35 000 Kč bez DPH."
+    },
+    {
+      "key": "fireball-aegis",
+      "name": "Fireball Aegis (24 měsíců)",
+      "category": "Keramika Fireball",
+      "price": 8800,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ],
+      "description": "Keramická ochrana laku Fireball s výdrží 24 měsíců. Standard 8 800 Kč, limuzína 9 800 Kč, SUV 10 800 Kč bez DPH."
+    },
+    {
+      "key": "fireball-devil",
+      "name": "Fireball Devil's Blood (36 měsíců)",
+      "category": "Keramika Fireball",
+      "price": 12400,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ],
+      "description": "Keramická ochrana laku Fireball s výdrží 36 měsíců. Standard 12 400 Kč, limuzína 13 800 Kč, SUV 15 600 Kč bez DPH."
+    },
+    {
+      "key": "fireball-silla",
+      "name": "Fireball Silla (60 měsíců)",
+      "category": "Keramika Fireball",
+      "price": 16000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ],
+      "description": "Keramická ochrana laku Fireball s výdrží 60 měsíců. Standard 16 000 Kč, limuzína 17 800 Kč, SUV 20 000 Kč bez DPH."
+    },
+    {
+      "key": "fireball-butterfly",
+      "name": "Fireball Butterfly (84 měsíců)",
+      "category": "Keramika Fireball",
+      "price": 18500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ],
+      "description": "Keramická ochrana laku Fireball s výdrží 84 měsíců. Standard 18 500 Kč, limuzína 20 300 Kč, SUV 23 000 Kč bez DPH."
+    },
+    {
+      "key": "fireball-dokdo",
+      "name": "Fireball Dok-Do (120 měsíců)",
+      "category": "Keramika Fireball",
+      "price": 29400,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ],
+      "description": "Nejodolnější keramická ochrana laku Fireball s výdrží 120 měsíců. Standard 29 400 Kč, limuzína 32 400 Kč, SUV 36 600 Kč bez DPH."
+    },
+    {
+      "key": "ads-ngc",
+      "name": "Nano Graphene Coating NGC V3 (84 měsíců)",
+      "category": "Artdeshine coating",
+      "price": 18500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ],
+      "description": "Grafenová ochrana laku nebo PPF fólie Artdeshine s výdrží 84 měsíců. Standard 18 500 Kč, limuzína 20 300 Kč, SUV 23 000 Kč bez DPH."
+    },
+    {
+      "key": "ads-cmo",
+      "name": "Metal Oxide Coating CMO V2 (60 měsíců)",
+      "category": "Artdeshine coating",
+      "price": 16500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ],
+      "description": "Antimonitá ochrana laku nebo PPF fólie Artdeshine s výdrží 60 měsíců. Standard 16 500 Kč, limuzína 18 300 Kč, SUV 20 800 Kč bez DPH."
+    },
+    {
+      "key": "ads-wheel",
+      "name": "Wheel Coating V2 – pohledová strana kol",
+      "category": "Artdeshine coating",
+      "price": 3500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ],
+      "description": "Ochrana kol Artdeshine z pohledové strany, výdrž 24 měsíců. Standard 3 500 Kč, limuzína 4 000 Kč, SUV 4 500 Kč bez DPH."
+    },
+    {
+      "key": "ads-wheel-2",
+      "name": "Wheel Coating V2 – kola z obou stran",
+      "category": "Artdeshine coating",
+      "price": 6000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ],
+      "description": "Ochrana kol Artdeshine z obou stran, výdrž 24 měsíců. Standard 6 000 Kč, limuzína 6 500 Kč, SUV 7 000 Kč bez DPH."
+    },
+    {
+      "key": "svetla",
+      "name": "Renovace světel",
+      "category": "Renovace světel",
+      "price": 2000,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1"
+      ],
+      "description": "Umytí, broušení pod vodou (600–3000), rozleštění Scholl Concept a keramika Fireball Talon s výdrží až 12 měsíců. Cena za pár. Cena 2 000 Kč bez DPH."
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "shield",
+      "title": "Certifikace Fireball a Artdeshine",
+      "text": "Keramické a grafenové ochrany laku s výdrží 24 až 120 měsíců."
+    },
+    {
+      "icon": "car",
+      "title": "Pick-up service",
+      "text": "Vůz vyzvedneme doma nebo v práci a vrátíme. Náhradní Škoda Octavia za zvýhodněnou cenu."
+    },
+    {
+      "icon": "drop",
+      "title": "Ruční mytí bez kartáčů",
+      "text": "Metoda dvou věder, pH neutrální šampon a kosmetika Chemical Guys."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-myti3-po.webp",
+      "before": "images/work-myti3-pred.webp",
+      "caption": "Ruční mytí"
+    },
+    {
+      "image": "images/work-myti1-po.webp",
+      "before": "images/work-myti1-pred.webp",
+      "caption": "Mytí Detailing – koncovky výfuku"
+    },
+    {
+      "image": "images/work-myti2-po.webp",
+      "before": "images/work-myti2-pred.webp",
+      "caption": "Čištění kol a podběhů"
+    },
+    {
+      "image": "images/work-interier-po.webp",
+      "before": "images/work-interier-pred.webp",
+      "caption": "Čištění interiéru"
+    },
+    {
+      "image": "images/work-svetla-po.webp",
+      "before": "images/work-svetla-pred.webp",
+      "caption": "Renovace světel"
+    },
+    {
+      "image": "images/work-artdeshine.webp",
+      "caption": "Nano Graphene Coating Artdeshine"
+    },
+    {
+      "image": "images/work-keramika.webp",
+      "caption": "Keramická ochrana laku, BMW"
+    },
+    {
+      "image": "images/work-korekce.webp",
+      "caption": "Korekce laku"
+    },
+    {
+      "image": "images/work-zrcadlo.webp",
+      "caption": "Lak jako zrcadlo"
+    },
+    {
+      "image": "images/work-bmw.webp",
+      "caption": "Voskování, BMW"
+    },
+    {
+      "image": "images/work-interier2.webp",
+      "caption": "Péče o interiér"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Proč se cena liší podle vozu?",
+      "answer": "Ceny počítáme podle třídy vozu: standard, limuzína a SUV – větší vůz znamená více práce i materiálu. U každé služby najdete všechny tři ceny. Uvedené ceny jsou bez DPH.",
+      "keywords": [
+        "trid",
+        "limuzin",
+        "suv",
+        "dph",
+        "velky vuz",
+        "lisi"
+      ]
+    },
+    {
+      "question": "Nabízíte pick-up service nebo náhradní vůz?",
+      "answer": "Ano. Přijedeme za vámi domů nebo do zaměstnání, převezeme vůz k nám do studia a po dokončení všech služeb vám ho doručíme zpět. Po dobu práce můžete využít naše náhradní vozidlo Škoda Octavia za zvýhodněnou cenu dle individuální domluvy.",
+      "keywords": [
+        "pick-up",
+        "pick up",
+        "vyzved",
+        "odvoz",
+        "dovez",
+        "nahradni",
+        "zapujc",
+        "privez"
+      ]
+    },
+    {
+      "question": "Proč nejezdit do automatické myčky?",
+      "answer": "Kartáče v myčce lak poškozují vždy – u měkkých laků stačí jedno umytí, u tvrdších se poškození projeví po několika mytích. Lak postupně ztrácí lesk, až po letech zmatní. Myčka také zbrousí ochranný povlak světlometů. Proto myjeme ručně metodou dvou věder s pH neutrálním šamponem.",
+      "keywords": [
+        "mycka",
+        "mycky",
+        "kartac",
+        "automaticka"
+      ]
+    },
+    {
+      "question": "Proč aplikovat na auto vosk?",
+      "answer": "Vosk chrání lak před vodou, znečištěním, UV zářením i zimní posypovou solí, odpuzuje vodu a usnadňuje mytí. Navíc vyplní mikroškrábance, dodá lesk a oživí barvu. Používáme japonské vosky Fusso Coat s výdrží od 3 týdnů do 12 měsíců.",
+      "keywords": [
+        "vosk",
+        "voskovan",
+        "proc vosk"
+      ]
+    },
+    {
+      "question": "Jak dlouho vydrží keramická ochrana?",
+      "answer": "Podle typu: Fireball Aegis 24 měsíců, Devil's Blood 36, Silla 60, Butterfly 84 a Dok-Do 120 měsíců. Artdeshine Nano Graphene Coating V3 vydrží 84 měsíců a Metal Oxide Coating V2 60 měsíců. Keramika odpuzuje vodu, takže voskování už není potřeba.",
+      "keywords": [
+        "vydrzi",
+        "vydrz",
+        "zivotnost",
+        "jak dlouho vydrzi",
+        "kolik mesicu"
+      ]
+    },
+    {
+      "question": "Přijmete vůz i mimo otevírací dobu?",
+      "answer": "Otevřeno máme Po–Pá 8:00–17:00. Mimo pracovní dobu pouze po předchozí domluvě – zavolejte na +420 776 886 997.",
+      "keywords": [
+        "mimo",
+        "vikend",
+        "sobot",
+        "nedel",
+        "vecer",
+        "oteviraci"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
