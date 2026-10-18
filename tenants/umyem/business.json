@@ -1,0 +1,498 @@
+{
+  "slug": "umyem",
+  "name": "UMYEM",
+  "shortName": "UMYEM",
+  "kind": "detailing",
+  "tagline": "Děláme krásná a voňavá auta – detailing a keramické ochrany v Brně",
+  "description": "Jsme specialisté na ošetření vozidel keramickými povlaky a vosky, renovujeme laky a oživujeme interiéry. Zabýváme se detailovou péčí o automobily od roku 2011 a ročně pečujeme o zhruba 450 aut. Naší hlavní předností je individuální přístup k zákazníkovi. Jsme certifikovaným resellerem GYEON a při renovaci laku používáme výhradně leštičky RUPES. Jsme oblíbení, jsme z Brna, jsme pozorní, jsme lidští, jsme UMYEM.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#2DD4BF",
+  "contacts": {
+    "phone": "+420 776 170 777",
+    "address": "Vranovská 53/2, 614 00 Brno-Zábrdovice (vjezd z ulice Jana Svobody)",
+    "legalAddress": "UMYEM, s.r.o., Palackého třída 249/32, 621 00 Brno, IČ 05693616",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Vranovsk%C3%A1%2053%2F2%2C%20614%2000%20Brno",
+    "email": "jirka@umyem.com",
+    "instagram": "umyem_love_life",
+    "facebook": "umyem"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "15:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "15:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "15:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "15:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "15:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 240,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Box 1"
+    },
+    {
+      "key": "box-2",
+      "name": "Box 2"
+    }
+  ],
+  "services": [
+    {
+      "key": "myti",
+      "name": "1. Exteriér – mytí",
+      "category": "Mám rád čisté auto",
+      "description": "Cca 45 minut. Šetrné mytí šamponem s odstraněním hmyzu z masky, skel a zrcátek, mytí kol a nástupních prostor, sušení ručníkem i vzduchem a impregnace pneumatik. Cena bez DPH.",
+      "price": 1200,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "myti-vosk",
+      "name": "2. Exteriér – mytí s voskem",
+      "category": "Mám rád čisté auto",
+      "description": "Cca 4 hodiny. Rozšířený program s dekontaminací laku a aplikací sealantu – lak je chráněný a snadněji se udržuje. Cena bez DPH.",
+      "price": 3500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "detailing-myti",
+      "name": "A. Exteriér detailing – mytí",
+      "category": "Miluji své auto",
+      "description": "Do 3 hodin. Certifikovaní detaileři, prémiová péče, dekontaminace laku a ochranný sealant. Cena bez DPH.",
+      "price": 4400,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "detailing-vosk",
+      "name": "B. Exteriér detailing – mytí a voskování",
+      "category": "Miluji své auto",
+      "description": "1 den. Kompletní mechanická dekontaminace laku a aplikace tuhého vosku s účinností až 12 měsíců. Cena bez DPH.",
+      "price": 10000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "interier",
+      "name": "Čištění interiéru",
+      "category": "Interiér",
+      "description": "Vysávání, tepování sedaček a koberečků, čištění a impregnace plastů, kůže i alcantary, detailní čištění volantu, vyleštění oken. Cenu připravíme na míru po konzultaci.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "kuze-keramika",
+      "name": "Keramická ochrana kůže",
+      "category": "Interiér",
+      "description": "Nejvyšší stupeň ochrany kůže – zabrání ztrácení barvy, drobným oděrkám a usnadní čištění. Cenu připravíme na míru po konzultaci.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Dezinfekce interiéru ozonem",
+      "category": "Interiér",
+      "description": "Dezinfekce interiéru ozonem. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "renovace-laku",
+      "name": "Renovace laku",
+      "category": "Lak a keramika",
+      "description": "Strojní renovace laku leštičkami RUPES – navrátí lesk i laku v „přirozeném matu“. Výsledek domlouváme vždy předem na osobní schůzce. Cenu připravíme na míru po konzultaci.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "keramika",
+      "name": "Keramická ochrana laku GYEON",
+      "category": "Lak a keramika",
+      "description": "Mytí, dekontaminace, renovace laku a aplikace keramické ochrany GYEON se zárukou až 5 let. Práce trvá i více než 4 dny. Ochranu vybíráme podle toho, jak auto používáte. Cenu připravíme na míru po konzultaci.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 5760,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "matny-lak",
+      "name": "Péče o matný lak",
+      "category": "Lak a keramika",
+      "description": "Ruční mytí, chemická dekontaminace bez leštění a ochrana vhodným voskem nebo keramikou pro matné laky. Cenu připravíme na míru po konzultaci.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "opravy-laku",
+      "name": "Oprava odštěpků laku",
+      "category": "Lak a keramika",
+      "description": "Oprava drobných odštěpků od kamínků s namícháním přesného odstínu laku. Cenu připravíme na míru po konzultaci.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "kola",
+      "name": "Kola a podběhy",
+      "category": "Další péče",
+      "description": "Sundání a jednotlivé mytí kol, dekontaminace, leštění, keramická ochrana kol a brzdových třmenů, ochrana podběhů a pneumatik. Cenu připravíme na míru po konzultaci.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "motor",
+      "name": "Mytí a ošetření motoru",
+      "category": "Další péče",
+      "description": "Mytí a vyčištění motoru s ohledem na jeho důležité součásti, ošetření plastů. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "okna",
+      "name": "Ošetření oken – tekuté stěrače",
+      "category": "Další péče",
+      "description": "Základní hydrofobní ošetření nebo prémiová varianta s dlouhodobým účinkem a zárukou. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "kabriolet",
+      "name": "Impregnace střechy kabrioletu",
+      "category": "Další péče",
+      "description": "Zakrytí laku a impregnace plátěné střechy pro dobrý odvod vody. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "svetla",
+      "name": "Renovace světlometů",
+      "category": "Další péče",
+      "description": "Renovace zašlých či zažloutlých světel, na přání s keramickou ochranou. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "detaily",
+      "name": "Klavírní lak, znaky a polepy",
+      "category": "Další péče",
+      "description": "Rozleštění laku pod znaky, péče o klavírní lak s keramickou ochranou, sundání či aplikace drobných polepů. Cenu připravíme na míru po konzultaci.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "sparkle",
+      "title": "Krásná a voňavá auta",
+      "text": "Od roku 2011, ročně pečujeme o zhruba 450 automobilů."
+    },
+    {
+      "icon": "shield",
+      "title": "Certifikovaný reseller GYEON",
+      "text": "Keramické ochrany GYEON se zárukou až 5 let."
+    },
+    {
+      "icon": "medal",
+      "title": "Individuální přístup",
+      "text": "Každou renovaci a keramiku domlouváme osobně podle toho, jak auto používáte."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-golf-r.webp",
+      "caption": "Volkswagen Golf R – keramická ochrana a voskování"
+    },
+    {
+      "image": "images/work-gle.webp",
+      "caption": "Mercedes-Benz GLE AMG 63 S – keramická ochrana"
+    },
+    {
+      "image": "images/work-amg-gt.webp",
+      "caption": "Mercedes-AMG GT"
+    },
+    {
+      "image": "images/work-lesteni-porsche.webp",
+      "caption": "Strojní renovace laku"
+    },
+    {
+      "image": "images/work-rupes.webp",
+      "caption": "Leštění leštičkou RUPES"
+    },
+    {
+      "image": "images/work-znak.webp",
+      "caption": "Péče o detaily – znaky a lak pod nimi"
+    },
+    {
+      "image": "images/work-range-rover.webp",
+      "caption": "Range Rover"
+    },
+    {
+      "image": "images/work-kolo.webp",
+      "caption": "Kola a pneumatiky po ošetření"
+    },
+    {
+      "image": "images/work-abarth.webp",
+      "caption": "Interiér Abarth"
+    },
+    {
+      "image": "images/work-kuze.webp",
+      "caption": "Perforovaná kůže po čištění a impregnaci"
+    },
+    {
+      "image": "images/work-interier.webp",
+      "caption": "Detailní čištění interiéru"
+    },
+    {
+      "image": "images/work-kola.webp",
+      "caption": "Mytí kol a podběhů"
+    },
+    {
+      "image": "images/work-gyeon.webp",
+      "caption": "Keramické ochrany GYEON"
+    },
+    {
+      "image": "images/work-lak.webp",
+      "caption": "Lesk laku po renovaci"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Jsou ceny s DPH?",
+      "answer": "Ceny v naší nabídce jsou uvedeny bez DPH.",
+      "keywords": [
+        "dph",
+        "faktur",
+        "bez dph",
+        "s dph"
+      ]
+    },
+    {
+      "question": "Jaký je rozdíl mezi programy?",
+      "answer": "„Mám rád čisté auto“ je pro ty, kdo chtějí opravdu čisté auto za odpovídající cenu: mytí (od 1 200 Kč, cca 45 min) a mytí s voskem (od 3 500 Kč, cca 4 hod). „Miluji své auto“ je pro nadšence: exteriér detailing – mytí s dekontaminací a sealantem (od 4 400 Kč, do 3 hod) a mytí s voskováním tuhým voskem (od 10 000 Kč, 1 den). Ceny jsou bez DPH. Pokud vám žádný program nevyhovuje, domluvíme individuální postup.",
+      "keywords": [
+        "rozdil",
+        "program",
+        "mam rad",
+        "miluji",
+        "vybrat",
+        "co obsahuje"
+      ]
+    },
+    {
+      "question": "Kolik stojí keramická ochrana nebo renovace laku?",
+      "answer": "Keramickou ochranu i renovaci laku připravujeme vždy na míru po konzultaci s vámi – potřebujeme vědět, jak často auto používáte, co od ochrany očekáváte a jak se o něj staráte. Pracujeme s ochranami GYEON se zárukou až 5 let. Práce na keramice trvá i více než 4 dny.",
+      "keywords": [
+        "keramik",
+        "gyeon",
+        "renovac",
+        "lesten",
+        "kolik stoji",
+        "zaruk",
+        "9h"
+      ]
+    },
+    {
+      "question": "Proč nelze keramiku dát na nové auto bez leštění?",
+      "answer": "I úplně nový automobil má lak částečně poškozený. Před aplikací keramické ochrany musí lak projít důkladným mytím, dekontaminací a alespoň základní renovací – jinak bychom nemohli garantovat funkčnost ochrany ani poskytnout záruku.",
+      "keywords": [
+        "nove auto",
+        "novy vuz",
+        "bez lesten",
+        "proc lestit",
+        "priprava"
+      ]
+    },
+    {
+      "question": "Kdy máte otevřeno?",
+      "answer": "Služby poskytujeme v pondělí až pátek 8:00–15:00, pouze na objednání. Prodejna je otevřená pondělí až čtvrtek 8:00–15:00, v pátek po předchozí dohodě.",
+      "keywords": [
+        "oteviraci",
+        "otevreno",
+        "kdy mate",
+        "vikend",
+        "sobota",
+        "prodejna",
+        "objednani"
+      ]
+    },
+    {
+      "question": "Jak se k vám dostanu?",
+      "answer": "Provozovna je na adrese Vranovská 53/2, Brno-Zábrdovice. Vjezd je z ulice Jana Svobody.",
+      "keywords": [
+        "kde",
+        "adresa",
+        "vjezd",
+        "vranovska",
+        "zabrdovice",
+        "jana svobody"
+      ]
+    },
+    {
+      "question": "Nabízíte služby pro firmy?",
+      "answer": "Ano. Pro firmy nabízíme mytí firemních vozů i kompletní správu vozového parku – měsíční fakturace, pick-up servis, evidence fotografií před a po službě, stavu km a technického stavu vozu. Nabídku připravujeme individuálně, napište na info@umyem.com.",
+      "keywords": [
+        "firm",
+        "vozovy park",
+        "flotil",
+        "pick up",
+        "pickup",
+        "fakturac",
+        "management"
+      ]
+    },
+    {
+      "question": "Prodáváte autokosmetiku?",
+      "answer": "Ano, jsme certifikovaným resellerem společnosti GYEON a nabízíme prémiovou autokosmetiku v naší prodejně a e-shopu eshop.umyem.com.",
+      "keywords": [
+        "kosmetik",
+        "gyeon",
+        "eshop",
+        "e-shop",
+        "koupit",
+        "prodejna"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
