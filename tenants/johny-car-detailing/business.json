@@ -1,0 +1,405 @@
+{
+  "slug": "johny-car-detailing",
+  "name": "Johny Car Detailing",
+  "shortName": "Johny Car",
+  "kind": "detailing",
+  "tagline": "PPF fólie, leštění a keramická ochrana laku NASIOL, čištění interiéru – Mohelnice",
+  "description": "Pečuji o vozy, na kterých Vám záleží: polepy PPF fólií se zárukou 10 let, jednokrokové i vícekrokové leštění laku, certifikovaná keramická ochrana NASIOL a kompletní čištění interiéru. Pracuji i o víkendech a svátcích, kdy auto nejméně potřebujete, a vůz si mohu vyzvednout u Vás doma nebo ve firmě.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#9D753A",
+  "contacts": {
+    "phone": "+420 736 224 625",
+    "address": "Podolí 175, 789 85 Mohelnice",
+    "legalAddress": "Jan Zifčák, Podolí 175, 789 85 Mohelnice, IČO 19769385",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Podol%C3%AD%20175%2C%20789%2085%20Mohelnice",
+    "email": "info@johnycardetailing.cz",
+    "instagram": "johny_car_detailing",
+    "facebook": "https://www.facebook.com/profile.php?id=61556632991830"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sun": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ]
+  },
+  "closedDates": [],
+  "booking": {
+    "slotStepMinutes": 60,
+    "minLeadMinutes": 720,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Box 1"
+    }
+  ],
+  "services": [
+    {
+      "key": "ppf-kapota",
+      "name": "PPF fólie: kapota",
+      "category": "PPF fólie",
+      "description": "Transparentní, matná nebo saténová PPF fólie, vyřezaná předem na plotru podle šablony modelu – bez řezání nožem na voze. Záruka 10 let, kontrolní prohlídka po 14 dnech.",
+      "price": 7000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-kapota-naraznik",
+      "name": "PPF fólie: kapota a nárazník",
+      "category": "PPF fólie",
+      "description": "Transparentní, matná nebo saténová PPF fólie, vyřezaná předem na plotru podle šablony modelu – bez řezání nožem na voze. Záruka 10 let, kontrolní prohlídka po 14 dnech.",
+      "price": 14000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-predni-cast",
+      "name": "PPF fólie: polep přední části vozu",
+      "category": "PPF fólie",
+      "description": "Transparentní, matná nebo saténová PPF fólie, vyřezaná předem na plotru podle šablony modelu – bez řezání nožem na voze. Záruka 10 let, kontrolní prohlídka po 14 dnech.",
+      "price": 25000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-komplet",
+      "name": "PPF fólie: kompletní polep vozu",
+      "category": "PPF fólie",
+      "description": "Transparentní, matná nebo saténová PPF fólie, vyřezaná předem na plotru podle šablony modelu – bez řezání nožem na voze. Záruka 10 let, kontrolní prohlídka po 14 dnech. Matné a saténové laky vyžadují celopolep.",
+      "price": 60000,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "lesteni-1",
+      "name": "Jednokrokové leštění laku",
+      "category": "Leštění laku",
+      "description": "Odstraní 60–70 % viditelných defektů laku, obnoví lesk a hladkost. Ideální před prodejem vozu. Časová náročnost 1–2 dny.",
+      "price": 7000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "lesteni-vice",
+      "name": "Vícekrokové leštění laku",
+      "category": "Leštění laku",
+      "description": "Tvrdé pasty a kotouče pro maximální odstranění škrábanců, poté jemné leštění do extrémního lesku. Odstraní až 90 % viditelných defektů – ideální příprava před PPF nebo keramikou. Časová náročnost 2–3 dny.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 4320,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "nasiol-xr03",
+      "name": "Keramická ochrana NASIOL XR03 (1,5 roku)",
+      "category": "Keramická ochrana",
+      "description": "Tenký, tvrdý a hydrofobní povlak s výdrží až 1,5 roku. Chrání lak před drobnými škrábanci, UV zářením, chemikáliemi a nečistotami. Kvalitní keramika za nižší cenu.",
+      "price": 5000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "nasiol-zr53",
+      "name": "Keramická ochrana NASIOL ZR-53 (3 roky)",
+      "category": "Keramická ochrana",
+      "description": "Nanokeramika s tvrdostí až 10H, vysokým leskem a vynikající hydrofobností. Ochrana laku až na 3 roky – vyvážený poměr cena / výdrž.",
+      "price": 8000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "nasiol-nl272",
+      "name": "Keramická ochrana NASIOL NL272 (5 let)",
+      "category": "Keramická ochrana",
+      "description": "Prémiová nanokeramika s tvrdostí až 10H, vysokým leskem a hydrofobností. Maximální výdrž – ochrana laku až na 5 let.",
+      "price": 15000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "nasiol-trimcoat",
+      "name": "Keramická ochrana plastů NASIOL TRIMCOAT",
+      "category": "Keramická ochrana",
+      "description": "Tvrdost 7H, ochrana plastových částí vozu až na 2 roky: odpuzuje vodu a nečistoty, chrání před UV zářením a vyblednutím.",
+      "price": 2000,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "nasiol-glasshield",
+      "name": "Keramická ochrana skel NASIOL GLASSHIELD",
+      "category": "Keramická ochrana",
+      "description": "Voděodpudivá neviditelná vrstva na skla: lepší viditelnost v dešti, pomalejší tvorba námrazy, šetří stěrače. Až 80 000 setření nebo 2 roky.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "interier-textil",
+      "name": "Kompletní čištění interiéru – textil",
+      "category": "Čištění interiéru",
+      "description": "Detailní vysátí včetně kufru, mokré čištění látkových sedadel a textilií, čištění a impregnace plastů, výdechy, spáry a těsnění, skla zevnitř, provonění. Příplatek SUV +500 Kč, dodávka +800 Kč.",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "interier-kuze",
+      "name": "Kompletní čištění interiéru – kůže",
+      "category": "Čištění interiéru",
+      "description": "Detailní vysátí včetně kufru, čištění a impregnace kožených sedadel, ošetření plastů, výdechy, spáry a těsnění, skla zevnitř, provonění. Příplatek SUV +500 Kč, dodávka +800 Kč.",
+      "price": 3500,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "aviloo",
+      "name": "AVILOO test baterie elektromobilu",
+      "category": "Testy EV baterie",
+      "description": "Ověřte si stav baterie před koupí i prodejem elektromobilu nezávislým certifikovaným testem AVILOO.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "shield",
+      "title": "Záruka 10 let na PPF",
+      "text": "Fólie řezané na plotru podle šablon modelu, kontrola po 14 dnech."
+    },
+    {
+      "icon": "car",
+      "title": "Pick-up servis",
+      "text": "Vůz si vyzvednu u Vás doma nebo ve firmě a po dokončení ho přistavím zpět."
+    },
+    {
+      "icon": "clock",
+      "title": "I o víkendech",
+      "text": "Pracuji i o víkendech a svátcích, kdy auto nejméně potřebujete."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-defender-ppf.webp",
+      "caption": "Aplikace PPF fólie, Land Rover Defender"
+    },
+    {
+      "image": "images/work-defender.webp",
+      "caption": "Land Rover Defender"
+    },
+    {
+      "image": "images/work-cupra-ppf.webp",
+      "caption": "Aplikace PPF fólie, Cupra"
+    },
+    {
+      "image": "images/work-cupra-matna.webp",
+      "caption": "Cupra Leon"
+    },
+    {
+      "image": "images/work-mercedes-eqs.webp",
+      "caption": "Mercedes-Benz EQS 580"
+    },
+    {
+      "image": "images/work-bmw-7.webp",
+      "caption": "BMW řady 7"
+    },
+    {
+      "image": "images/work-audi.webp",
+      "caption": "Audi A6"
+    },
+    {
+      "image": "images/work-audi-nasiol.webp",
+      "caption": "Keramická ochrana NASIOL, Audi"
+    },
+    {
+      "image": "images/work-hilux-nasiol.webp",
+      "caption": "Keramická ochrana NASIOL, Toyota Hilux"
+    },
+    {
+      "image": "images/work-porsche-cayenne.webp",
+      "caption": "Porsche Cayenne S"
+    },
+    {
+      "image": "images/work-kuze.webp",
+      "caption": "Čištění a impregnace kůže"
+    },
+    {
+      "image": "images/work-interier-skoda.webp",
+      "caption": "Čištění interiéru, Škoda"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Vyzvednete si vůz u mě?",
+      "answer": "Ano. Domluvíme se na službě, vůz si vyzvednu u Vás doma nebo ve firmě a po dokončení vybrané služby Vám ho zase přistavím zpět. O nic se nestaráte. Nabízím také odtah.",
+      "keywords": [
+        "vyzvednete",
+        "vyzvednout",
+        "vyzvedne",
+        "pick-up",
+        "pick up",
+        "odtah",
+        "odvoz",
+        "privezete",
+        "pristav",
+        "dovoz",
+        "u me doma"
+      ]
+    },
+    {
+      "question": "Pracujete o víkendu a svátcích?",
+      "answer": "Ano. Pracovní doba je individuální podle objednávek – na Vašem voze mohu pracovat i o víkendech a svátcích, kdy auto nejméně potřebujete.",
+      "keywords": [
+        "vikend",
+        "sobot",
+        "nedel",
+        "svatk",
+        "svatek",
+        "pracovni doba",
+        "oteviraci"
+      ]
+    },
+    {
+      "question": "Kolik stojí PPF fólie?",
+      "answer": "Orientačně: kapota od 7 000 Kč, kapota a nárazník od 14 000 Kč, přední část vozu od 25 000 Kč, kompletní polep od 60 000 Kč. Přesná cena závisí na stavu vozu a Vašich požadavcích, proto každému nabízím osobní konzultaci, kde probereme detaily a optimální postup.",
+      "keywords": [
+        "ppf",
+        "folie",
+        "polep",
+        "celopolep"
+      ]
+    },
+    {
+      "question": "Jak probíhá instalace PPF fólie?",
+      "answer": "Fólie vždy předem přesně vyřežu na specializovaném plotru podle digitálních šablon konkrétního modelu, takže se na autě neřeže nožem. Před instalací lak důkladně vyčistím, vyleštím a případně doplním. Po aplikaci následuje kontrolní prohlídka po 14 dnech. Ideální jsou nová či zánovní vozidla.",
+      "keywords": [
+        "instalac",
+        "aplikac",
+        "jak probiha",
+        "plotr",
+        "noz",
+        "kontrol"
+      ]
+    },
+    {
+      "question": "Jakou keramickou ochranu vybrat?",
+      "answer": "Nabízím certifikovanou keramiku NASIOL ve třech úrovních: XR03 s výdrží až 1,5 roku (od 5 000 Kč), ZR-53 až 3 roky (od 8 000 Kč) a prémiovou NL272 až 5 let (od 15 000 Kč). Všechny vytvářejí tvrdý hydrofobní povlak, který chrání lak, usnadňuje mytí a dodává vysoký lesk. Před keramikou doporučuji vícekrokové leštění.",
+      "keywords": [
+        "keramik",
+        "nasiol",
+        "xr03",
+        "zr-53",
+        "zr53",
+        "nl272",
+        "vybrat"
+      ]
+    },
+    {
+      "question": "Kolik stojí čištění interiéru?",
+      "answer": "Kompletní čištění textilního interiéru od 3 000 Kč, kožený interiér od 3 500 Kč – podle míry znečištění. Příplatek za SUV +500 Kč, za dodávku +800 Kč. Časová náročnost zhruba 1 den.",
+      "keywords": [
+        "interier",
+        "cisteni interieru",
+        "sedack",
+        "tepovan",
+        "dodavk",
+        "suv"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}

@@ -14,6 +14,7 @@ import {writeFileSync} from 'node:fs';
 import path from 'node:path';
 import {toSyncPayload} from './lib/payload.ts';
 import {ROOT, isLoaded, listTenantSlugs, loadTenant, printIssues} from './lib/tenants.ts';
+import {findPlaceholders} from '../shared/business.ts';
 
 import {DEMO_OWNER_PASSWORD} from './lib/demo.ts';
 
@@ -37,6 +38,8 @@ for (const slug of listTenantSlugs()) {
   }
   const payload = JSON.stringify(toSyncPayload(t.config));
   const id = userId(slug);
+  // Studios still on the placeholder address get their own local demo login.
+  const ownerEmail = findPlaceholders(t.config).includes('owner.email') ? `owner@${slug}.demo` : t.config.owner.email;
   parts.push(
     `-- ${t.config.name}`,
     `select public.svc_sync_tenant(${sqlString(payload)}::jsonb, ${sqlString(t.hash)}, true);`,
@@ -44,12 +47,12 @@ for (const slug of listTenantSlugs()) {
     `insert into auth.users (instance_id, id, aud, role, email, encrypted_password, email_confirmed_at,
   raw_app_meta_data, raw_user_meta_data, created_at, updated_at, confirmation_token, email_change,
   email_change_token_new, recovery_token)
-values ('00000000-0000-0000-0000-000000000000', '${id}', 'authenticated', 'authenticated', ${sqlString(t.config.owner.email)},
+values ('00000000-0000-0000-0000-000000000000', '${id}', 'authenticated', 'authenticated', ${sqlString(ownerEmail)},
   extensions.crypt(${sqlString(DEMO_OWNER_PASSWORD)}, extensions.gen_salt('bf')), now(),
   '{"provider":"email","providers":["email"]}', '{}', now(), now(), '', '', '', '')
 on conflict (id) do nothing;`,
     `insert into auth.identities (id, user_id, provider_id, identity_data, provider, last_sign_in_at, created_at, updated_at)
-values ('${id}', '${id}', '${id}', jsonb_build_object('sub', '${id}', 'email', ${sqlString(t.config.owner.email)}, 'email_verified', true),
+values ('${id}', '${id}', '${id}', jsonb_build_object('sub', '${id}', 'email', ${sqlString(ownerEmail)}, 'email_verified', true),
   'email', now(), now(), now())
 on conflict do nothing;`,
     `select public.svc_add_member(${sqlString(slug)}, '${id}', 'owner');`,

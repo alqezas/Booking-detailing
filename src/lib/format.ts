@@ -19,7 +19,9 @@ export const formatMoney = (amount: number, currency = 'RUB'): string => moneyFo
 export const currencySymbol = (currency: string): string =>
   moneyFormat(currency).formatToParts(0).find(p => p.type === 'currency')?.value ?? currency;
 
-export const formatPrice = (price: number, from: boolean, currency = 'RUB') => `${from ? msg.fmt.from : ''}${formatMoney(price, currency)}`;
+/** «от 18 000 ₽», «od 1 600 Kč»; a price of 0 without «от» means «price on request». */
+export const formatPrice = (price: number, from: boolean, currency = 'RUB') =>
+  price === 0 && !from ? msg.fmt.onRequest : `${from ? msg.fmt.from : ''}${formatMoney(price, currency)}`;
 
 export function formatDuration(minutes: number): string {
   if (minutes >= 1440) return msg.fmt.days(Math.ceil(minutes / 1440));

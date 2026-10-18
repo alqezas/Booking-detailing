@@ -15,6 +15,7 @@ export const cs: Messages = {
 
   fmt: {
     from: 'od ',
+    onRequest: 'cena na dotaz',
     days: (n: number) => `${n} ${plural(n, 'den', 'dny', 'dní')}`,
     hours: (h: number) => `${h} h`,
     minutes: (m: number) => `${m} min`,

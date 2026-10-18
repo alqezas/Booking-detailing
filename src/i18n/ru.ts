@@ -25,6 +25,8 @@ export const ru = {
 
   fmt: {
     from: 'от ',
+    /** Price 0 without «от»: the studio quotes it individually. */
+    onRequest: 'цена по запросу',
     days: (n: number) => `${n} ${plural(n, 'день', 'дня', 'дней')}`,
     hours: (h: number) => `${h} ч`,
     minutes: (m: number) => `${m} мин`,

@@ -18,6 +18,7 @@ export const L = {
     h: 'ч',
     min: 'мин',
     from: 'от ',
+    onRequest: 'цена по запросу',
     weekdays: ['', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
     dayOff: 'выходной',
     // client
@@ -90,6 +91,7 @@ export const L = {
     h: 'h',
     min: 'min',
     from: 'od ',
+    onRequest: 'cena na dotaz',
     weekdays: ['', 'Po', 'Út', 'St', 'Čt', 'Pá', 'So', 'Ne'],
     dayOff: 'zavřeno',
     noService: 'Taková služba neexistuje. Vezmi service_id z list_services.',
