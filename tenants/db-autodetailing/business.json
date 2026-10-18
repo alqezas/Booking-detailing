@@ -1,0 +1,534 @@
+{
+  "slug": "db-autodetailing",
+  "name": "DB Autodetailing",
+  "shortName": "DB Detailing",
+  "kind": "detailing",
+  "tagline": "Detailing, keramika NASIOL, PPF fólie a renovace kůže – Ostrava a okolí",
+  "description": "Pečujeme o osobní vozy, motocykly i nákladní tahače v Ostravě a okolí. Jsme certifikovaným aplikačním střediskem keramických povlaků NASIOL a máme certifikaci renovace kůže systémem Fenice. Každé vozidlo oceňuji individuálně – osobní konzultace je vždy zdarma. U MPV, SUV a dodávek se cena navyšuje o 25 %.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#B0B8C1",
+  "contacts": {
+    "phone": "+420 777 191 857",
+    "address": "Záhumenní 2034/103, Ostrava-Poruba (budova B ze dvora)",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Z%C3%A1humenn%C3%AD%202034%2F103%2C%20Ostrava-Poruba",
+    "email": "autodetailing.klimkovice@gmail.com",
+    "instagram": "db.autodetailing",
+    "facebook": "db.autodetailing.klimkovice"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Box 1"
+    }
+  ],
+  "services": [
+    {
+      "key": "udrzba",
+      "name": "Údržbové mytí exteriéru + interiéru",
+      "category": "Mytí a čištění",
+      "description": "Základní mytí exteriéru, vysátí interiéru, utření prachu, čištění oken a koberečků, provonění. Pro vozy po kompletním čištění nebo pro nové vozy. Doba max. 4 hod.",
+      "price": 1800,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "interier-tepovani",
+      "name": "Detailing interiéru s tepováním",
+      "category": "Mytí a čištění",
+      "description": "Základní mytí exteriéru, tepování sedadel a koberečků, detailní čištění interiéru, pedálů, rámů a prahů, okna, ozonové čištění a vůně. Doba max. 24 hod (kvůli schnutí interiéru).",
+      "price": 5000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "prodej",
+      "name": "Příprava vozu na prodej",
+      "category": "Mytí a čištění",
+      "description": "Detailní čištění interiéru, základní umytí exteriéru, glazura laku pro oživení vzhledu, mytí motoru, desinfekce ozonem a provonění interiéru.",
+      "price": 5000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "tahac",
+      "name": "Čištění interiéru tahače",
+      "category": "Mytí a čištění",
+      "description": "Hloubkové čištění interiéru tahače včetně kastlíků, ledničky, mikrovlnky, tepování sedadel a matrace, rámů a pantů dveří, pedálů, volantu, podlahy a oken, desinfekce ozonem, čisticí patrona klimatizace a vůně.",
+      "price": 7000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "kuze",
+      "name": "Čištění + impregnace kůže/alcantary",
+      "category": "Mytí a čištění",
+      "description": "Důkladné čištění kůže nebo alcantary a impregnace systémem Fenice.",
+      "price": 2500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "tepovani",
+      "name": "Tepování sedadel",
+      "category": "Mytí a čištění",
+      "description": "Hloubkové čištění a tepování sedadel.",
+      "price": 2000,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Desinfekce ozonem",
+      "category": "Mytí a čištění",
+      "description": "Odstranění zápachu a virů ozonem.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "lesteni-keramika",
+      "name": "Jednokrokové leštění + keramický povlak na 3 roky",
+      "category": "Leštění a keramika",
+      "description": "Detailní mytí exteriéru, dekontaminace laku, jednokrokové leštění, odmaštění a keramický povlak laku s výdrží na 3 roky.",
+      "price": 14000,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "zima",
+      "name": "Příprava vozu na sezonu s keramikou až na 3 roky",
+      "category": "Leštění a keramika",
+      "description": "Ruční mytí karoserie, dekontaminace laku, jednokrokové leštění, odmaštění a keramický povlak laku s životností až 3 roky – vše, co auto potřebuje před nadcházející sezonou.",
+      "price": 14000,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "lesteni",
+      "name": "Jednokrokové leštění laku bez ochrany",
+      "category": "Leštění a keramika",
+      "description": "Odstranění cca 70 % vad laku a oživení vzhledu.",
+      "price": 8000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "nasiol-zr53",
+      "name": "Keramická ochrana laku NASIOL ZR53 (3 roky)",
+      "category": "Leštění a keramika",
+      "description": "Certifikovaná keramická ochrana laku: odolnost vůči soli a chemii, snazší údržba, lepší odvod vody a špíny, tvrdost 10H.",
+      "price": 8000,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "nasiol-nl272",
+      "name": "Keramická ochrana laku NASIOL NL272 (5 let)",
+      "category": "Leštění a keramika",
+      "description": "Prémiová certifikovaná keramická ochrana laku s výjimečnými vlastnostmi a samohojivým efektem, tvrdost 10H.",
+      "price": 16000,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "kola",
+      "name": "Keramická ochrana kol a třmenů na 2 roky",
+      "category": "Leštění a keramika",
+      "description": "Detailní mytí podběhů, kol a brzdových třmenů a keramická ochrana.",
+      "price": 8000,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "steraky",
+      "name": "Tekuté stěrače čelního okna včetně leštění",
+      "category": "Leštění a keramika",
+      "description": "Ošetření čelního skla včetně leštění. Všechna okna od 3 000 Kč.",
+      "price": 1500,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-front",
+      "name": "Full Front PPF fólií GSWF",
+      "category": "Fólie a tónování",
+      "description": "Polep přední části vozu ochrannou fólií: kapota, přední nárazník, světla, blatníky, A sloupky, pás na střeše, zrcátka. Záruka na fólii 10 let, fólie už má keramickou ochranu. Cena dle typu vozidla, doba cca 3 dny.",
+      "price": 30000,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-svetla",
+      "name": "PPF předních světel",
+      "category": "Fólie a tónování",
+      "description": "Ochrana světel před poškozením, záruka 10 let na kvalitu fólie. Před aplikací doporučujeme leštění a broušení (+3 000 Kč).",
+      "price": 2000,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-hrana",
+      "name": "Polepení nákladové hrany kufru PPF fólií",
+      "category": "Fólie a tónování",
+      "description": "Ochrana nákladové hrany kufru proti oděrům.",
+      "price": 2000,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "tonovani-standart",
+      "name": "Tónování oken – Standart",
+      "category": "Fólie a tónování",
+      "description": "Osobní vůz: Coupe 3 500 Kč, Sedan 4 000 Kč, Kombi 4 500 Kč.",
+      "price": 3500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "tonovani-premium",
+      "name": "Tónování oken – Premium",
+      "category": "Fólie a tónování",
+      "description": "Osobní vůz: Coupe 5 500 Kč, Sedan 6 000 Kč, Kombi 6 500 Kč.",
+      "price": 5500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "zadni-svetla",
+      "name": "Zatmavení zadních světel fólií",
+      "category": "Fólie a tónování",
+      "description": "Podle velikosti a požadavků zákazníka.",
+      "price": 2000,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "dechrome",
+      "name": "Dechrome okrasných lišt fólií",
+      "category": "Fólie a tónování",
+      "description": "Podle velikosti a požadavků zákazníka.",
+      "price": 4000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "svetla",
+      "name": "Leštění a broušení světel s keramikou na 2 roky",
+      "category": "Další úpravy",
+      "description": "Strojní broušení světel od zrnitosti 360 až po 3000, poté leštění do vysokého lesku a keramická ochrana na 2 roky.",
+      "price": 2000,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "volant",
+      "name": "Renovace volantu",
+      "category": "Další úpravy",
+      "description": "Důkladné čištění, kitování, broušení a barvení systémem Fenice – volant není třeba přešívat novou kůží.",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "trmeny",
+      "name": "Natírání brzdových třmenů barvou",
+      "category": "Další úpravy",
+      "description": "Obroušení třmenů a nátěr ve zvolené barvě ve 2 vrstvách.",
+      "price": 4000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "shield",
+      "title": "Certifikované středisko NASIOL",
+      "text": "Keramické povlaky s dlouhou životností a silnou chemickou odolností – na 3 nebo 5 let."
+    },
+    {
+      "icon": "medal",
+      "title": "Certifikace Fenice",
+      "text": "Opravíme protrženou nebo propálenou kůži, ošoupané bočnice i volant."
+    },
+    {
+      "icon": "car",
+      "title": "Osobní auta i tahače",
+      "text": "Ostrava, Poruba, Klimkovice, Bílovec, Studénka a okolí."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-audi.webp",
+      "caption": "Audi A6 allroad"
+    },
+    {
+      "image": "images/work-mercedes.webp",
+      "caption": "Mercedes-Benz GLE"
+    },
+    {
+      "image": "images/work-skoda.webp",
+      "caption": "Škoda Octavia"
+    },
+    {
+      "image": "images/work-kuze.webp",
+      "caption": "Čištění kůže – rozdíl je vidět hned"
+    },
+    {
+      "image": "images/work-motor.webp",
+      "caption": "Mytí motoru"
+    },
+    {
+      "image": "images/work-volant.webp",
+      "caption": "Renovace volantu systémem Fenice"
+    },
+    {
+      "image": "images/work-tesla-ppf.webp",
+      "caption": "PPF fólie na displej, Tesla"
+    },
+    {
+      "image": "images/work-svetla.webp",
+      "caption": "Broušení a leštění světlometů"
+    },
+    {
+      "image": "images/work-bmw-nasiol.webp",
+      "caption": "Keramická ochrana NASIOL ZR53, BMW"
+    },
+    {
+      "image": "images/work-tahac-nasiol.webp",
+      "caption": "Keramická ochrana NASIOL, tahač"
+    },
+    {
+      "image": "images/work-tahace.webp",
+      "caption": "Péče o nákladní tahače"
+    },
+    {
+      "image": "images/work-motocykl.webp",
+      "caption": "Čištění motocyklu"
+    },
+    {
+      "image": "images/work-bmw-interier.webp",
+      "caption": "Interiér po čištění, BMW"
+    },
+    {
+      "image": "images/work-pena.webp",
+      "caption": "Ruční mytí, BMW"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Kolik to bude stát?",
+      "answer": "Všechna vozidla oceňuji individuálně a osobní konzultace ke každému vozidlu je ZDARMA. Ceny v ceníku jsou výchozí. U MPV, SUV a dodávek se cena navyšuje o 25 %.",
+      "keywords": [
+        "kolik to bude stat",
+        "kolik me to bude stat",
+        "individualn",
+        "konzultac",
+        "suv",
+        "mpv",
+        "dodavk",
+        "priplat"
+      ]
+    },
+    {
+      "question": "Platí se záloha?",
+      "answer": "Při větších objednávkách je záloha 50 % z předpokládané ceny.",
+      "keywords": [
+        "zaloh",
+        "predem zaplatit",
+        "platba predem"
+      ]
+    },
+    {
+      "question": "Kde vás najdu?",
+      "answer": "Záhumenní 2034/103, Ostrava-Poruba – budova B ze dvora. Působíme v okruhu Ostrava, Poruba, Polanka nad Odrou, Vřesina, Klimkovice, Zbyslavice, Josefovice, Jistebník, Olbramice, Bílovec, Bravantice, Studénka, Kyjovice, Horní a Dolní Lhota.",
+      "keywords": [
+        "kde vas najdu",
+        "najdu",
+        "adres",
+        "kde jste",
+        "budova",
+        "dvora",
+        "okoli",
+        "jezdite",
+        "pusobite"
+      ]
+    },
+    {
+      "question": "Opravíte poškozenou kůži nebo ošoupaný volant?",
+      "answer": "Ano. Máme certifikaci RENOVACE KŮŽE V AUTOMOBILECH systémem Fenice. Opravíme poškozenou bočnici, protržený sedák, propálení nebo ošoupaný volant a doplněním barvy vrátíme původní vzhled. Volant není třeba přešívat novou kůží.",
+      "keywords": [
+        "oprav",
+        "protrz",
+        "propal",
+        "osoupan",
+        "bocnic",
+        "volant",
+        "fenice"
+      ]
+    },
+    {
+      "question": "Kolik stojí tónování oken?",
+      "answer": "Standart: Coupe 3 500 Kč, Sedan 4 000 Kč, Kombi 4 500 Kč. Premium: Coupe 5 500 Kč, Sedan 6 000 Kč, Kombi 6 500 Kč.",
+      "keywords": [
+        "tonovan",
+        "tonovat",
+        "okna fol"
+      ]
+    },
+    {
+      "question": "Nabízíte dárkové poukazy?",
+      "answer": "Ano, dárkový poukaz od 1 000 Kč je ideální dárek pro přátele nebo rodinu. Stačí zavolat nebo napsat.",
+      "keywords": [
+        "poukaz",
+        "darek",
+        "darkov",
+        "voucher"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
