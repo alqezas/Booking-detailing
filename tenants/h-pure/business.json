@@ -1,0 +1,504 @@
+{
+  "slug": "h-pure",
+  "name": "H-Pure",
+  "shortName": "H-Pure",
+  "kind": "detailing",
+  "tagline": "Mobilní čištění a detailing vozidel v Ostravě – přijedeme k vám",
+  "description": "Specialisté na mobilní čištění a detailing vozidel, čištění koberců a sedacích souprav. Také máte rádi příjemné svezení v čistém, voňavém a naleštěném autě? Nebo se chystáte prodat vůz a chcete zvýšit jeho cenu? Dokonalý detailing, oprava drobných oděrek a škrábanců na laku, provoněný interiér, ošetření a výživa kůže, oživení plastů a mnoho dalšího. Jsme pojištěni u Kooperativy, včetně převzatých motorových vozidel.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#F5B301",
+  "contacts": {
+    "phone": "+420 737 805 029",
+    "address": "Za Školou 2839/8, 700 30 Ostrava-Zábřeh",
+    "legalAddress": "Jan Hrbáček, Za Školou 2839/8, 700 30 Ostrava-Zábřeh, IČO 74722344",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Za%20%C5%A0kolou%202839%2F8%2C%20700%2030%20Ostrava",
+    "email": "h-pure@email.cz",
+    "instagram": "hpure.cz",
+    "facebook": "https://www.facebook.com/profile.php?id=100087584511870"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 180,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "tym",
+      "name": "Mobilní tým"
+    }
+  ],
+  "services": [
+    {
+      "key": "zakladni",
+      "name": "Interiér – Základní Packet",
+      "category": "Čištění vozidel",
+      "description": "Cca 1,5 hod. Důkladné vysátí celého interiéru včetně kufru, umytí a chemické ošetření plastů včetně impregnace, vyčištění oken z obou stran včetně zrcátek. Ceny jsou orientační – odvíjí se od míry znečištění a velikosti vozidla.",
+      "price": 2100,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "medium",
+      "name": "Interiér – Medium Packet",
+      "category": "Čištění vozidel",
+      "description": "Cca 3–4 hod. Vše ze Základního packetu plus mokré čištění sedaček a koberečků (tepování 1 sady koberečků) a čištění a impregnace kožených či alcantara sedaček. Ceny jsou orientační – odvíjí se od míry znečištění a velikosti vozidla.",
+      "price": 2800,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "full",
+      "name": "Full Detail Packet",
+      "category": "Čištění vozidel",
+      "description": "Cca 5–7 hod. Bezkontaktní mytí, aktivní pěna, vysušení, mezidveřní prostory, motorový prostor, kompletní interiér s tepováním, výživa a impregnace sedaček Gyeon Q2, dekontaminace kol a UV ochrana pneu. Ceny jsou orientační – odvíjí se od míry znečištění a velikosti vozidla.",
+      "price": 4000,
+      "priceFrom": true,
+      "durationMinutes": 420,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "exterier-plus",
+      "name": "Exteriér plus",
+      "category": "Čištění vozidel",
+      "description": "Doplněk k Základnímu packetu: oplach vysokotlakým čističem, aktivní pěna, ruční mytí karoserie mycími rukavicemi, dekontaminace kol a UV ochrana pneumatik.",
+      "price": 1800,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "koberecky",
+      "name": "Tepování koberečků (za kus)",
+      "category": "Doplňkové služby",
+      "description": "Tepování koberečků mokrou cestou – 100 Kč za kus.",
+      "price": 100,
+      "priceFrom": false,
+      "durationMinutes": 15,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "kufr",
+      "name": "Tepování kufru",
+      "category": "Doplňkové služby",
+      "description": "Tepování zavazadlového prostoru.",
+      "price": 400,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "stropnice",
+      "name": "Vyčištění stropnice",
+      "category": "Doplňkové služby",
+      "description": "Šetrné vyčištění stropnice.",
+      "price": 350,
+      "priceFrom": false,
+      "durationMinutes": 45,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "rezerva",
+      "name": "Vyčištění prostoru pod rezervou",
+      "category": "Doplňkové služby",
+      "description": "Vyčištění úložného prostoru pod rezervou.",
+      "price": 200,
+      "priceFrom": false,
+      "durationMinutes": 15,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Dezinfekce klimatizace ozónem / aerosolem",
+      "category": "Doplňkové služby",
+      "description": "Dezinfekce klimatizace ozónem nebo aerosolem – 400 až 500 Kč.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 30,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "clay",
+      "name": "Dekontaminace laku metodou CLAY",
+      "category": "Doplňkové služby",
+      "description": "Chemická a mechanická dekontaminace laku – vhodné před aplikací vosku.",
+      "price": 400,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "vosk-tekuty",
+      "name": "Aplikace tekutého vosku",
+      "category": "Doplňkové služby",
+      "description": "Aplikace tekutého vosku a závěrečné ošetření Auto Finesse Finale pro prohloubení lesku.",
+      "price": 500,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "vosk-tuhy",
+      "name": "Aplikace tuhého vosku",
+      "category": "Doplňkové služby",
+      "description": "Dekontaminace, polish, odmaštění a aplikace tuhého vosku s delší životností než tekutý. 1 000–1 200 Kč dle velikosti vozu – dejte nám prosím vědět předem.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "lesteni",
+      "name": "Renovace laku – rozleštění celého vozu",
+      "category": "Doplňkové služby",
+      "description": "Rozleštění poškozeného laku celého vozu. Lokální rozleštění (kliky, oděrky, povrchové škrábance) naceníme podle počtu a velikosti míst.",
+      "price": 6000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "polepy",
+      "name": "Šetrné odstranění polepů, fólií a nálepek",
+      "category": "Kamiony a firmy",
+      "description": "Odstranění polepů, fólií a nálepek z karoserie přípravky Koch-Chemie, včetně zbytků lepidel, polétavé rzi a asfaltu, s možností lokálního rozleštění. Cena po osobní prohlídce vozu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "kamion",
+      "name": "Interiér kamionu (tahače) – Medium Detail",
+      "category": "Kamiony a firmy",
+      "description": "Detailní čištění interiéru tahače, cena bez dopravy. Nadměrné znečištění (psí chlupy, rozlité nápoje) 6 000 Kč, extrémní (kuřák, mastnota z vaření) 8 000 Kč. Při rámcové smlouvě množstevní sleva.",
+      "price": 4000,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "koberec",
+      "name": "Čištění koberce do 2 m²",
+      "category": "Koberce a sedačky",
+      "description": "Suché i mokré čištění. Koberec s krátkým vlasem od 600 Kč, každý další m² 60–90 Kč dle znečištění, dlouhý vlas +25 Kč/m².",
+      "price": 499,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "sedacka",
+      "name": "Čištění sedací soupravy (za sedací místo)",
+      "category": "Koberce a sedačky",
+      "description": "Cena za jedno sedací místo (cca 60 cm). Polštáře malé 40 Kč, velké 60 Kč za kus.",
+      "price": 200,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "matrace",
+      "name": "Čištění matrace",
+      "category": "Koberce a sedačky",
+      "description": "Matrace 180×80 cm z obou stran – 500 Kč za kus.",
+      "price": 500,
+      "priceFrom": false,
+      "durationMinutes": 45,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "kreslo",
+      "name": "Čištění křesla",
+      "category": "Koberce a sedačky",
+      "description": "Křeslo 199 Kč/ks, taburet 130 Kč/ks, kuchyňská lavice 350 Kč/ks, židle 60–90 Kč/ks.",
+      "price": 199,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "tym"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "car",
+      "title": "Přijedeme k vám",
+      "text": "Mobilní čištění – doprava do 10 km zdarma, v Moravskoslezském kraji 10 Kč/km."
+    },
+    {
+      "icon": "shield",
+      "title": "Pojištění Kooperativa",
+      "text": "Jsme pojištěni pro případ škody na majetku, včetně převzatých motorových vozidel."
+    },
+    {
+      "icon": "wrench",
+      "title": "Spolupráce s firmami",
+      "text": "Celoroční servis a čištění firemních vozů – spolupracujeme s desítkami firem."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-cupra.webp",
+      "caption": "Cupra"
+    },
+    {
+      "image": "images/work-yaris.webp",
+      "caption": "Toyota Yaris"
+    },
+    {
+      "image": "images/work-vosk.webp",
+      "caption": "Ruční aplikace vosku"
+    },
+    {
+      "image": "images/work-interier-mercedes.webp",
+      "caption": "Čištění interiéru Mercedes-Benz"
+    },
+    {
+      "image": "images/work-interier-cupra.webp",
+      "caption": "Čištění palubní desky"
+    },
+    {
+      "image": "images/work-pena.webp",
+      "caption": "Mytí vozu aktivní pěnou"
+    },
+    {
+      "image": "images/work-octavia-combi.webp",
+      "caption": "Škoda Octavia Combi – před a po"
+    },
+    {
+      "image": "images/work-octavia.webp",
+      "caption": "Škoda Octavia – před a po"
+    },
+    {
+      "image": "images/work-octavia-2.webp",
+      "caption": "Škoda Octavia II Combi – před a po"
+    },
+    {
+      "image": "images/work-jaguar-interier.webp",
+      "caption": "Interiér Jaguar F-Pace – před a po"
+    },
+    {
+      "image": "images/work-jaguar-motor.webp",
+      "caption": "Motorový prostor Jaguar – před a po"
+    },
+    {
+      "image": "images/work-motor.webp",
+      "caption": "Motorový prostor – před a po"
+    },
+    {
+      "image": "images/work-ford-interier.webp",
+      "caption": "Interiér Fordu – před a po"
+    },
+    {
+      "image": "images/work-tepovani.webp",
+      "caption": "Tepování sedadel – před a po"
+    },
+    {
+      "image": "images/work-kola.webp",
+      "caption": "Čištění kol – před a po"
+    },
+    {
+      "image": "images/work-polep.webp",
+      "caption": "Šetrné odstranění polepu z dodávky"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Přijedete za mnou?",
+      "answer": "Ano, specializujeme se na mobilní čištění. U vozidel je doprava do 10 km zdarma, mimo Ostravu v rámci Moravskoslezského kraje účtujeme 10 Kč/km. U čištění koberců a sedaček je doprava po Ostravě zdarma, mimo Ostravu příplatek 250 Kč.",
+      "keywords": [
+        "prijedete",
+        "mobilni",
+        "doprava",
+        "k nam",
+        "domu",
+        "kde",
+        "adresa",
+        "ostrav",
+        "km"
+      ]
+    },
+    {
+      "question": "Liší se cena podle vozu?",
+      "answer": "Ano. Ceny se odvíjí od míry znečištění a velikosti vozidla. Za SUV, MPV a silně znečištěná vozidla (např. firemní auta ze stavebnictví a průmyslu) nebo při nadměrném znečištění je přirážka od 25 %. Dodávky a vícemístná vozidla od 35 %.",
+      "keywords": [
+        "suv",
+        "mpv",
+        "dodavk",
+        "velikost",
+        "priraz",
+        "priplat",
+        "znecist",
+        "spinav",
+        "kolik bude"
+      ]
+    },
+    {
+      "question": "Co obsahují jednotlivé packety?",
+      "answer": "Základní Packet (od 2 100 Kč, cca 1,5 hod): vysátí, plasty a okna. Medium Packet (od 2 800 Kč, cca 3–4 hod): navíc tepování sedaček a koberečků a čištění kůže/alcantary. Full Detail Packet (od 4 000 Kč, cca 5–7 hod): kompletní interiér i exteriér včetně motorového prostoru a ošetření sedaček Gyeon Q2.",
+      "keywords": [
+        "packet",
+        "paket",
+        "balicek",
+        "zakladni",
+        "medium",
+        "full",
+        "rozdil",
+        "co obsahuje"
+      ]
+    },
+    {
+      "question": "Jste pojištěni?",
+      "answer": "Ano, jsme pojištěni proti vzniku škody na majetku u Kooperativy – včetně újmy na movité věci převzaté nebo užívané, tedy i převzatých motorových vozidel.",
+      "keywords": [
+        "pojist",
+        "skoda",
+        "kooperativ",
+        "odpovednost"
+      ]
+    },
+    {
+      "question": "Děláte i firemní vozy a kamiony?",
+      "answer": "Ano. Firmám nabízíme dlouhodobou spolupráci a celoroční servis a čištění vozidel – spolupracujeme s desítkami firem. Interiér tahače (Medium Detail) od 4 000 Kč bez dopravy, při rámcové smlouvě s množstevní slevou.",
+      "keywords": [
+        "firm",
+        "kamion",
+        "tahac",
+        "flotil",
+        "ramcov",
+        "faktur",
+        "dodavk"
+      ]
+    },
+    {
+      "question": "Čistíte i koberce a sedačky?",
+      "answer": "Ano. Koberec do 2 m² od 499 Kč, sedací souprava 200 Kč za sedací místo, matrace 500 Kč, křeslo 199 Kč. U více znečištěných ploch účtujeme příplatek 20 %. Čištění podlah, oken a žaluzií parním čističem dle dohody.",
+      "keywords": [
+        "koberec",
+        "koberc",
+        "sedack",
+        "gauc",
+        "matrac",
+        "kreslo",
+        "zidle",
+        "zaluzi"
+      ]
+    },
+    {
+      "question": "Jak reklamovat čištění koberce?",
+      "answer": "Reklamaci vyčištěného koberce je nutné provést nejpozději do 24 hodin od převzetí. U vlněných koberců bílé barvy nelze zaručit bezchybné vyčištění a na koberce předávané ve stočeném stavu se záruka nevztahuje.",
+      "keywords": [
+        "reklamac",
+        "zaruk",
+        "stiznost",
+        "nespokojen"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
