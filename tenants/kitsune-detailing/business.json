@@ -1,0 +1,604 @@
+{
+  "slug": "kitsune-detailing",
+  "name": "Kitsune Detailing",
+  "shortName": "Kitsune",
+  "kind": "detailing",
+  "tagline": "Komplexní wellness pro váš vůz – detailing, keramika a PPF v Chlebovicích",
+  "description": "Jsme certifikované detailingové studio KRYTEX, Rupes a Smart Detailing University, nově aplikujeme také povlaky americké firmy FEYNLAB. Nabízíme detailing, čištění interiérů, leštění a renovace laků, certifikované keramické ochrany a PPF fólie. Používáme jen produkty ověřených světových firem (LeTech, GYEON, SWAG, Koch-Chemie). Držíme se hesla „řemeslo má zlaté dno“ – máme více než 12leté zkušenosti a brigádníky u nás nenajdete.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#D9262E",
+  "contacts": {
+    "phone": "+420 605 021 780",
+    "address": "Příborská 259, 739 42 Frýdek-Místek – Chlebovice",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Kitsune%20Detailing%2C%20P%C5%99%C3%ADborsk%C3%A1%20259%2C%20739%2042%20Chlebovice",
+    "email": "info@kitsunedetailing.cz",
+    "instagram": "kitsunedetailing",
+    "facebook": "kitsunedetailing"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 120,
+    "horizonDays": 45,
+    "cancelCutoffHours": 12,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Box 1"
+    },
+    {
+      "key": "box-2",
+      "name": "Box 2"
+    }
+  ],
+  "services": [
+    {
+      "key": "expres",
+      "name": "Interiér EXPRES & Coffee",
+      "category": "Interiér",
+      "description": "Cca 20–30 min. Expres vysátí interiéru a zavazadlového prostoru, ošetření plastů a vůně – kafíčko při čekání samozřejmostí. Malé auto 600 Kč, velké auto (Audi A8, BMW X5, Dodge RAM) 800 Kč. Vhodné jako udržovací program.",
+      "price": 600,
+      "priceFrom": true,
+      "durationMinutes": 30,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "classic",
+      "name": "Interiér Classic",
+      "category": "Interiér",
+      "description": "Cca 60–90 min. Vysátí interiéru i kufru, impregnace plastů prémiovou kosmetikou, vyčištění oken zevnitř, čištění pedálů, kastlíků a clonítek, prémiová vůně. U kůže výživa přípravky Swag nebo LeTech. Cena je orientační – přesnou nabídku na klíč připravíme podle stavu vozu.",
+      "price": 1200,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "bublinka",
+      "name": "Interiérový kompletní wellness Bublinka",
+      "category": "Interiér",
+      "description": "Cca 6–8 hod. Hloubkové tepování sedadel extraktorem Kärcher Puzzi, UV ochrana textilu, čištění a výživa kůže, ošetření plastů, okna zevnitř, šetrné čištění stropnice dle stavu, prémiová vůně. Cena je orientační – přesnou nabídku na klíč připravíme podle stavu vozu.",
+      "price": 1900,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "woow",
+      "name": "Kompletní wellness pro auto WOOW",
+      "category": "Interiér",
+      "description": "Cca 8–10 hod. Interiér + exteriér: hloubkové vysávání, tepování nebo čištění kůže, UV ochrana, čištění stropnice dle stavu, ošetření plastů, okna zevnitř a ruční mytí PREMIUM. Pick-up servis zdarma do 10 km. Cena je orientační – přesnou nabídku na klíč připravíme podle stavu vozu.",
+      "price": 2500,
+      "priceFrom": true,
+      "durationMinutes": 600,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "myti-classic",
+      "name": "Mytí vozu CLASSIC",
+      "category": "Exteriér",
+      "description": "45 min. Vysokotlaké předmytí a aktivní pěna, mytí pH neutrálním šampónem, odstranění hmyzu, mytí kol a podběhů. Vhodné i pro vozy s keramickou ochranou.",
+      "price": 890,
+      "priceFrom": false,
+      "durationMinutes": 45,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "myti-premium",
+      "name": "Mytí vozu PREMIUM",
+      "category": "Exteriér",
+      "description": "60 min. Vše z CLASSIC plus tekutý vosk a impregnace pneumatik.",
+      "price": 1190,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "myti-exclusive",
+      "name": "Mytí vozu EXCLUSIVE",
+      "category": "Exteriér",
+      "description": "90 min. Předmytí a aktivní pěna, pH neutrální šampón, detailní mytí kol a podběhů, nano ochrana skel, křemičitý vosk s výdrží až 3 měsíce, čištění rámů dveří, impregnace pneu na SiO2 bázi.",
+      "price": 1790,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "lesteni-keramika",
+      "name": "Kitsune leštění laku + keramická ochrana",
+      "category": "Keramika, leštění a PPF",
+      "description": "Cca 24–36 hod. Mytí, chemická a ruční dekontaminace, jednokrokové (nebo vícekrokové) strojní leštění a certifikovaná keramická ochrana se zárukou. Pick-up servis v okolí v ceně. Cena podle stupně leštění, velikosti vozu a ochrany.",
+      "price": 6900,
+      "priceFrom": true,
+      "durationMinutes": 2160,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "keramika",
+      "name": "Keramická ochrana laku vozidla",
+      "category": "Keramika, leštění a PPF",
+      "description": "Cca 24 hod. Ideální pro nové vozy. Mytí, dekontaminace, příprava laku a certifikovaná keramická ochrana na 1 až 5 let se zárukou. Pick-up servis v okolí v ceně.",
+      "price": 4900,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "dream",
+      "name": "Kitsune DREAM Detailing",
+      "category": "Keramika, leštění a PPF",
+      "description": "Cca 24 hod. Profesionální detailing interiéru i exteriéru: tepování celého interiéru, stropnice, plasty, ruční mytí EXCLUSIVE a aplikace profi keramického sealantu na lak. Možnost pick-up servisu. Cena je orientační – přesnou nabídku na klíč připravíme podle stavu vozu.",
+      "price": 5500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "komplexni",
+      "name": "Komplexní MAXI WELLNESS + ochrana laku",
+      "category": "Keramika, leštění a PPF",
+      "description": "Kompletní péče o interiér i exteriér, ruční mytí EXCLUSIVE, chemická dekontaminace a certifikovaná keramická ochrana na 1–5 let se zárukou, strojní leštění dle dohody. Cenu domluvíme individuálně.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ppf-front",
+      "name": "PPF Front – přední část vozu",
+      "category": "Keramika, leštění a PPF",
+      "description": "Mytí, dekontaminace, příprava laku a lepení polyuretanové PPF fólie (lesk / mat) na dohodnuté přední části vozu. Cena individuálně na základě obhlídky.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ppf-full",
+      "name": "PPF Full – celopolep vozu",
+      "category": "Keramika, leštění a PPF",
+      "description": "Mytí, dekontaminace, příprava laku a celopolep vozu polyuretanovou PPF fólií (lesk / mat). Cena individuálně na základě obhlídky.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "sterace-krytex",
+      "name": "Tekuté stěrače KRYTEX (záruka 12 měsíců)",
+      "category": "Doplňkové služby",
+      "description": "Certifikované tekuté stěrače KRYTEX – nesrovnatelný komfort jízdy v dešti. Záruka 12 měsíců.",
+      "price": 1900,
+      "priceFrom": true,
+      "durationMinutes": 150,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "sterace",
+      "name": "Tekuté stěrače s výdrží 5 měsíců",
+      "category": "Doplňkové služby",
+      "description": "Hydrofobní úprava skel s výdrží cca 5 měsíců.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 30,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "motor",
+      "name": "Ruční čištění motoru",
+      "category": "Doplňkové služby",
+      "description": "Ruční čištění motorového prostoru – vodní nebo bezvodou metodou.",
+      "price": 850,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "vosk",
+      "name": "Aplikace tvrdého vosku",
+      "category": "Doplňkové služby",
+      "description": "Tvrdý vosk s výdrží 3 a více měsíců.",
+      "price": 1990,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "sealant",
+      "name": "Aplikace křemičitého sealantu",
+      "category": "Doplňkové služby",
+      "description": "Křemičitý sealant s výdrží 12 měsíců.",
+      "price": 2800,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "dekontaminace",
+      "name": "Dekontaminace laku",
+      "category": "Doplňkové služby",
+      "description": "Ruční a chemická dekontaminace laku.",
+      "price": 1300,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "svetlomety",
+      "name": "Vyleštění světlometů (pár)",
+      "category": "Doplňkové služby",
+      "description": "Vyleštění světlometů, cena za pár.",
+      "price": 990,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Dezinfekce interiéru a klimatizace ozónem",
+      "category": "Doplňkové služby",
+      "description": "Cca 45 min. Dezinfekce interiéru a klimatizace ozónem.",
+      "price": 500,
+      "priceFrom": false,
+      "durationMinutes": 45,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "filtr",
+      "name": "Výměna kabinového filtru",
+      "category": "Doplňkové služby",
+      "description": "Výměna kabinového filtru – cena bez materiálu.",
+      "price": 199,
+      "priceFrom": true,
+      "durationMinutes": 15,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "odhlucneni",
+      "name": "Odhlučnění vozu",
+      "category": "Doplňkové služby",
+      "description": "Odhlučnění dveří a dalších částí vozu. Cenu domluvíme podle vozu a rozsahu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "antiradar",
+      "name": "Montáž antiradaru nebo autokamery",
+      "category": "Doplňkové služby",
+      "description": "Montáž antiradarů Genevo, Radago nebo autokamer. Cenu domluvíme podle vozu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Certifikované studio",
+      "text": "Certifikace KRYTEX, Rupes a Smart Detailing University, nově povlaky FEYNLAB. Na naše keramické povlaky dáváme záruku."
+    },
+    {
+      "icon": "car",
+      "title": "Pick-up nebo odvoz",
+      "text": "U delších programů vám auto vyzvedneme, nebo vás odvezeme domů."
+    },
+    {
+      "icon": "wrench",
+      "title": "Vše pod jednou střechou",
+      "text": "Lakování a oprava důlků, čalounění, autofólie a PPF, polepy, odhlučnění a další úpravy vozu."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-amg-ppf.webp",
+      "caption": "Mercedes-AMG – aplikace PPF fólie"
+    },
+    {
+      "image": "images/work-audi-q7.webp",
+      "caption": "Audi Q7 v našem studiu"
+    },
+    {
+      "image": "images/work-eqs.webp",
+      "caption": "Mercedes-Benz EQS"
+    },
+    {
+      "image": "images/work-cayenne.webp",
+      "caption": "Porsche Cayenne"
+    },
+    {
+      "image": "images/work-bmw-e30.webp",
+      "caption": "BMW řady 3 (E30)"
+    },
+    {
+      "image": "images/work-felicia.webp",
+      "caption": "Veterán Škoda Felicia kabriolet"
+    },
+    {
+      "image": "images/work-skoda-klasik.webp",
+      "caption": "Klasická Škoda v našem studiu"
+    },
+    {
+      "image": "images/work-wrx.webp",
+      "caption": "Subaru WRX STI"
+    },
+    {
+      "image": "images/work-durango.webp",
+      "caption": "Dodge Durango"
+    },
+    {
+      "image": "images/work-cx60.webp",
+      "caption": "Mazda CX-60"
+    },
+    {
+      "image": "images/work-lexus.webp",
+      "caption": "Lexus NX"
+    },
+    {
+      "image": "images/work-ram.webp",
+      "caption": "RAM 1500"
+    },
+    {
+      "image": "images/work-lesteni.webp",
+      "caption": "Strojní leštění laku"
+    },
+    {
+      "image": "images/work-priprava.webp",
+      "caption": "Příprava a leštění laku"
+    },
+    {
+      "image": "images/work-odhlucneni.webp",
+      "caption": "Odhlučnění dveří"
+    },
+    {
+      "image": "images/work-interier.webp",
+      "caption": "Interiér Audi Q7"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Musím se před návštěvou ozvat?",
+      "answer": "Ano, prosíme. Stává se, že jezdíme externě na obhlídky, aplikace nebo školení. Před návštěvou studia se proto prosím ozvěte na +420 605 021 780.",
+      "keywords": [
+        "navstev",
+        "prijet",
+        "stavit",
+        "bez objednani",
+        "zavolat",
+        "ozvat"
+      ]
+    },
+    {
+      "question": "Pracujete i o víkendu?",
+      "answer": "Běžně máme otevřeno Po–Pá 9:00–18:00, ale pracujeme i o víkendu – termín o víkendu domluvíme telefonicky. Volné termíny máme často do 24 hodin.",
+      "keywords": [
+        "vikend",
+        "sobota",
+        "nedele",
+        "oteviraci",
+        "otevreno",
+        "kdy mate",
+        "volny termin"
+      ]
+    },
+    {
+      "question": "Jaké jsou storno podmínky?",
+      "answer": "Zrušení nebo nedostavení se na termín méně než 12 hodin předem účtujeme storno poplatkem 1 000 Kč.",
+      "keywords": [
+        "storno",
+        "zrusit",
+        "zruseni",
+        "nedostav",
+        "poplatek",
+        "presunout"
+      ]
+    },
+    {
+      "question": "Proč jsou ceny orientační?",
+      "answer": "Cena záleží na stavu vozidla a požadovaném výsledku. Vždy vaše auto prohlédneme individuálně a doporučíme postup. U leštění a keramických ochran navrhneme kombinaci podle informací o voze a domluvíme cenu na klíč – v případě potřeby i po osobní obhlídce.",
+      "keywords": [
+        "orientacni",
+        "cena od",
+        "konecna cena",
+        "kolik bude",
+        "na klic",
+        "obhlidk",
+        "nacenit"
+      ]
+    },
+    {
+      "question": "Jakou keramickou ochranu nabízíte?",
+      "answer": "Aplikujeme certifikované keramické povlaky v profesionální třídě bez nutnosti doživování a boostrování – od ročních až po 5leté ochrany. Na naše povlaky dáváme plnou záruku funkčnosti. Jsme certifikovaní na značky KRYTEX, UltraCoat a CarPro, nově aplikujeme i FEYNLAB. Keramika je vhodná i pro matné laky a vozy ve fólii.",
+      "keywords": [
+        "keramik",
+        "krytex",
+        "feynlab",
+        "zaruk",
+        "povlak",
+        "ochrana laku",
+        "matny",
+        "mat"
+      ]
+    },
+    {
+      "question": "Vyzvednete auto u mě?",
+      "answer": "Ano. U programů, které zaberou déle, nabízíme pick-up servis – auto vyzvedneme, nebo vás odvezeme domů. U programu WOOW je odvoz nebo vyzvednutí zdarma do 10 km, u leštění a keramických ochran je pick-up v okolí v ceně. Jinak podle dohody.",
+      "keywords": [
+        "vyzvednut",
+        "pick up",
+        "pickup",
+        "odvoz",
+        "dovoz",
+        "odvezete",
+        "pristaveni"
+      ]
+    },
+    {
+      "question": "Můžu na auto počkat?",
+      "answer": "U rychlého programu Interiér EXPRES & Coffee (cca 20–30 min) ano – kafíčko při čekání je samozřejmostí. Delší programy trvají hodiny až dny, proto nabízíme pick-up servis.",
+      "keywords": [
+        "pockat",
+        "cekat",
+        "kafe",
+        "kava",
+        "coffee",
+        "jak dlouho"
+      ]
+    },
+    {
+      "question": "Děláte i PPF fólie a další úpravy?",
+      "answer": "Ano. Lepíme PPF fólie (lesk i mat) – přední části i celopolepy, cena individuálně po obhlídce. Zajistíme také lakovací práce, opravu laku a důlků, čalounění, autofólie, reklamní polepy, odhlučnění a montáž antiradarů Genevo, Radago či autokamer.",
+      "keywords": [
+        "ppf",
+        "folie",
+        "polep",
+        "odhlucn",
+        "antiradar",
+        "kamer",
+        "lakovani",
+        "dulk",
+        "calouneni"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
