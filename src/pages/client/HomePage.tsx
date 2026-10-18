@@ -7,6 +7,7 @@ import {
   AssistantTeaser,
   BookingCard,
   ContactsSection,
+  FaqSection,
   GallerySection,
   InfoCardsSection,
   ServicesSection,
@@ -26,9 +27,10 @@ export function HomePage() {
           <AboutSection />
           <BookingCard />
           <InfoCardsSection />
-          <ServicesSection limit={4} />
+          <ServicesSection />
           <GallerySection />
           <AssistantTeaser />
+          <FaqSection />
           <ContactsSection />
           <InstallHint />
         </VStack>

@@ -23,6 +23,7 @@ export type PublicTenant = {
   hours: {weekday: number; opens: string; closes: string}[];
   exceptions: {day: string; is_closed: boolean; note: string | null}[];
   booking: {horizon_days: number};
+  faq?: {question: string; answer: string; keywords?: string[]}[];
 };
 export type AvailabilityDays = {timezone: string; days: {date: string; slots: {start_at: string; available: boolean}[]}[]; horizon_end: string};
 
@@ -108,7 +109,9 @@ export function clientExecutor(src: ClientSource) {
 }
 
 export function clientSystemPrompt(t: PublicTenant, today: string): string {
-  return texts(langOfTenant(t)).clientPrompt(t.name, today, t.timezone);
+  const say = texts(langOfTenant(t));
+  const faq = (t.faq ?? []).map(f => `— ${f.question}\n${f.answer}`).join('\n\n');
+  return say.clientPrompt(t.name, today, t.timezone) + (faq ? `\n\n${say.faqIntro}\n${faq}` : '');
 }
 
 /** Template answer from the deterministic router: correct, if less fluent. */
@@ -116,7 +119,7 @@ export async function clientFallback(src: ClientSource, text: string): Promise<A
   const t = src.tenant;
   const lang = langOfTenant(t);
   const say = texts(lang);
-  const intent = routeClient(text, t.services, t.timezone, undefined, lang);
+  const intent = routeClient(text, t.services, t.timezone, undefined, lang, t.faq ?? []);
   const cur = t.currency;
   switch (intent.intent) {
     case 'location': {
@@ -147,6 +150,8 @@ export async function clientFallback(src: ClientSource, text: string): Promise<A
         data: {service_id: r.service.id, slots: r.slots},
       };
     }
+    case 'faq':
+      return {text: t.faq![intent.index]!.answer, mode: 'fallback', tools: []};
     case 'clarify':
       return {text: intent.question, mode: 'fallback', tools: [], data: {options: intent.options ?? []}};
   }

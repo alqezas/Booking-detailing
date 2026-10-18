@@ -8,6 +8,8 @@ import {Icon} from '@astryxdesign/core/Icon';
 import {Lightbox} from '@astryxdesign/core/Lightbox';
 import {List, ListItem} from '@astryxdesign/core/List';
 import {Section} from '@astryxdesign/core/Section';
+import {Collapsible} from '@astryxdesign/core/Collapsible';
+import {Tab, TabList} from '@astryxdesign/core/TabList';
 import {Text} from '@astryxdesign/core/Text';
 import {VStack} from '@astryxdesign/core/VStack';
 import {
@@ -32,14 +34,14 @@ import {
   Wrench,
   type Icon as PhosphorIcon,
 } from '@phosphor-icons/react';
-import {useState, type ReactNode} from 'react';
+import {useMemo, useState, type ReactNode} from 'react';
 import {useNavigate} from 'react-router';
 import {useTenant} from '../../app/tenant.tsx';
 import {formatDate, formatDuration, formatPhone, formatPrice, summarizeHours} from '../../lib/format.ts';
 import {msg} from '../../i18n/index.ts';
 import type {GalleryItem} from '../../lib/types.ts';
 import {mediaUrl} from '../../lib/media.ts';
-import {useMatchMedia, useReveal} from '../../lib/motion.ts';
+import {useReveal} from '../../lib/motion.ts';
 import {useBookingFlow} from '../booking/BookingFlow.tsx';
 import {TEXT_MAX_WIDTH} from '../layout/Page.tsx';
 
@@ -136,58 +138,74 @@ export function InfoCardsSection() {
   );
 }
 
-export function ServicesSection({limit}: {limit?: number}) {
+/**
+ * Services grouped by category: one tab per category, the chosen category's
+ * services as cards. A long price list stays easy to scan.
+ */
+export function ServicesSection() {
   const t = useTenant();
   const flow = useBookingFlow();
-  const navigate = useNavigate();
-  const list = limit ? t.services.slice(0, limit) : t.services;
-  // Phones: price and button go under the text, so the one-line name gets the full row width.
-  const wide = useMatchMedia('(min-width: 600px)');
-  const priceAndButton = (s: (typeof list)[number], place: 'below' | 'side') => {
-    const price = (
-      <Text weight="bold" hasTabularNumbers>
-        {formatPrice(s.price, s.price_from, t.currency)}
-      </Text>
-    );
-    const button = (
-      <Button label={msg.home.bookService(s.name)} size="sm" variant="secondary" onClick={() => flow.open(s.id)}>
-        {msg.home.bookShort}
-      </Button>
-    );
-    return place === 'side' ? (
-      <VStack gap={1} align="end">
-        {price}
-        {button}
-      </VStack>
-    ) : (
-      <HStack gap={2} align="center" justify="between" style={{paddingBlockStart: 'var(--spacing-1)'}}>
-        {price}
-        {button}
-      </HStack>
-    );
-  };
+  const categories = useMemo(() => [...new Set(t.services.map(s => s.category))], [t.services]);
+  const [picked, setPicked] = useState<string | null>(null);
+  const category = picked && categories.includes(picked) ? picked : (categories[0] ?? '');
+  const list = categories.length > 1 ? t.services.filter(s => s.category === category) : t.services;
   return (
-    <RevealSection
-      title={msg.home.services}
-      id="services-title"
-      action={limit && t.services.length > limit ? <Button label={msg.home.allServices} variant="ghost" size="sm" onClick={() => navigate(`/s/${t.slug}/services`)} /> : undefined}
-    >
-      <List hasDividers density="spacious">
+    <RevealSection title={msg.home.services} id="services-title">
+      {categories.length > 1 && (
+        <TabList value={category} onChange={setPicked} overflow="scroll" size="md" aria-label={msg.home.categories}>
+          {categories.map(c => (
+            <Tab key={c} value={c} label={c} />
+          ))}
+        </TabList>
+      )}
+      <Grid columns={{minWidth: 260, max: 3}} gap={3}>
         {list.map(s => (
-          <ListItem
-            key={s.id}
-            label={s.name}
-            description={
-              <VStack gap={0.5}>
-                {s.description && <Text color="secondary">{s.description}</Text>}
+          <Card key={s.id} padding={4}>
+            <VStack gap={3} style={{height: '100%'}}>
+              <VStack gap={1}>
+                <Heading level={3}>{s.name}</Heading>
+                <Text type="large" weight="bold" hasTabularNumbers>
+                  {formatPrice(s.price, s.price_from, t.currency)}
+                </Text>
                 <Text type="supporting">{formatDuration(s.duration_minutes)}</Text>
-                {!wide && priceAndButton(s, 'below')}
               </VStack>
-            }
-            endContent={wide ? priceAndButton(s, 'side') : undefined}
-          />
+              {s.description && (
+                <Text color="secondary" textWrap="pretty">
+                  {s.description}
+                </Text>
+              )}
+              <VStack style={{marginTop: 'auto'}}>
+                <Button label={msg.home.bookService(s.name)} variant="secondary" width="100%" onClick={() => flow.open(s.id)}>
+                  {msg.home.bookShort}
+                </Button>
+              </VStack>
+            </VStack>
+          </Card>
         ))}
-      </List>
+      </Grid>
+    </RevealSection>
+  );
+}
+
+/** Frequently asked questions: one collapsible card per question. */
+export function FaqSection() {
+  const t = useTenant();
+  if (!t.faq?.length) return null;
+  return (
+    <RevealSection title={msg.home.faq} id="faq-title">
+      <VStack gap={2}>
+        {t.faq.map(f => (
+          <Card key={f.question} padding={4}>
+            <Collapsible defaultIsOpen={false} trigger={<Text weight="semibold">{f.question}</Text>}>
+              <VStack paddingBlockStart={3}>
+                <Text color="secondary" textWrap="pretty" style={{whiteSpace: 'pre-line', maxWidth: TEXT_MAX_WIDTH}}>
+                  {f.answer}
+                </Text>
+              </VStack>
+            </Collapsible>
+          </Card>
+        ))}
+      </VStack>
     </RevealSection>
   );
 }

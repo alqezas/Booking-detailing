@@ -43,6 +43,7 @@ export const L = {
         'Не обсуждай других клиентов и чужие записи — таких данных у тебя нет.',
         'Чтобы записаться, предложи нажать «Записаться» и выбрать время. Сам ты записи не создаёшь и не отменяешь.',
       ].join('\n'),
+    faqIntro: 'Частые вопросы и ответы студии. Отвечай по ним своими словами, ничего не добавляя от себя:',
     // owner
     status: {confirmed: 'ожидаем', arrived: 'принята', ready: 'готова', cancelled: 'отменена', no_show: 'не приехал'} as Record<string, string>,
     netNote: 'net_received — реально полученные деньги. expected_value_forecast — прогноз по ценам записей, не выручка.',
@@ -113,6 +114,7 @@ export const L = {
         'Nebav se o jiných zákaznících ani cizích rezervacích – taková data nemáš.',
         'K rezervaci doporuč klepnout na „Rezervovat“ a vybrat čas. Sám rezervace nevytváříš ani nerušíš.',
       ].join('\n'),
+    faqIntro: 'Časté dotazy a odpovědi studia. Odpovídej podle nich vlastními slovy a nic si nepřidávej:',
     status: {confirmed: 'čekáme', arrived: 'převzato', ready: 'hotovo', cancelled: 'zrušeno', no_show: 'nedostavil se'} as Record<string, string>,
     netNote: 'net_received — skutečně přijaté peníze. expected_value_forecast — odhad podle cen rezervací, není to tržba.',
     noBookings: (period: string) => `${period}: žádné rezervace.`,

@@ -144,3 +144,26 @@ describe('Czech assistant without a model', () => {
     expect(sp(owner.text)).toContain('Dnes: přijato 5 000 Kč.');
   });
 });
+
+describe('JH FAQ in the assistant fallback', () => {
+  const config = businessSchema.parse(JSON.parse(readFileSync('tenants/jh-auto-detailing/business.json', 'utf8')));
+  const services = config.services.map(s => ({id: s.key, name: s.name, category: s.category}));
+  const ask = (q: string) => {
+    const r = routeClient(q, services, 'Europe/Prague', new Date('2026-10-19T08:00:00Z'), 'cs', config.faq);
+    return r.intent === 'faq' ? config.faq[r.index]!.question : r.intent;
+  };
+  it('answers the studio questions with the studio answers', () => {
+    expect(ask('Jak dlouho budu bez auta?')).toBe('Jak dlouho budu bez vozu?');
+    expect(ask('Jak dlouho trvá leštění?')).toBe('Jak dlouho budu bez vozu?');
+    expect(ask('Je příplatek za SUV?')).toBe('Kolik mě to bude stát?');
+    expect(ask('Můžete auto vyzvednout u mě doma?')).toBe('Vyzvednete si vůz u mě?');
+    expect(ask('Jak často mám čistit interiér?')).toBe('Jak často má smysl detailní čištění?');
+    expect(ask('Mám v autě psí chlupy a je hodně špinavé')).toBe('Co když je vůz opravdu hodně špinavý?');
+    expect(ask('Můžu platit kartou?')).toBe('Jak se platí?');
+    expect(ask('Kde vás najdu?')).toBe('Jak se ke mně dostanete?');
+  });
+  it('keeps prices and free time of a named service on live data', () => {
+    expect(ask('Kolik stojí čištění interiéru?')).toBe('price');
+    expect(ask('Máte volný termín na tónování zadních oken?')).toBe('nearest_slot');
+  });
+});

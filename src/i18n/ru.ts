@@ -117,6 +117,8 @@ export const ru = {
     why: 'Почему мы',
     services: 'Услуги и цены',
     allServices: 'Все услуги',
+    categories: 'Разделы услуг',
+    faq: 'Частые вопросы',
     bookShort: 'Записаться',
     gallery: 'Наши работы',
     workPhoto: 'Пример работы',

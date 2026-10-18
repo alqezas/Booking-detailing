@@ -13,6 +13,7 @@ export type Service = {
 };
 
 export type InfoCard = {position: number; icon: string; title: string; text: string};
+export type FaqItem = {question: string; answer: string};
 export type GalleryItem = {id: string; image_path: string; before_path: string | null; caption: string; updated_at: string};
 export type HoursRow = {weekday: number; opens: string; closes: string};
 export type ScheduleException = {day: string; is_closed: boolean; opens: string | null; closes: string | null; note: string | null};
@@ -51,6 +52,7 @@ export type PublicTenant = {
   exceptions: ScheduleException[];
   info_cards: InfoCard[];
   gallery: GalleryItem[];
+  faq: FaqItem[];
 };
 
 export type Slot = {start_at: string; available: boolean};

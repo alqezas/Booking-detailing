@@ -10,6 +10,25 @@ import {texts, type Lang} from './lang.ts';
 import {localDate, norm, stem, words} from './text.ts';
 
 export type ServiceRef = {id: string; name: string; category?: string};
+export type FaqRef = {question: string; keywords?: string[]};
+
+/**
+ * The studio's FAQ entry the question is about: most keyword hits wins.
+ * Keywords are compared without diacritics, as substrings of the question.
+ */
+export function matchFaq(text: string, faq: FaqRef[], lang: Lang = 'ru'): number | null {
+  const t = ` ${norm(text, lang)} `;
+  let best: number | null = null;
+  let bestScore = 0;
+  faq.forEach((f, i) => {
+    const score = (f.keywords ?? []).filter(k => t.includes(norm(k, lang))).length;
+    if (score > bestScore) {
+      best = i;
+      bestScore = score;
+    }
+  });
+  return best;
+}
 
 export type ClientIntent =
   | {intent: 'nearest_slot'; serviceId: string; dateFrom: string | null}
@@ -18,6 +37,7 @@ export type ClientIntent =
   | {intent: 'hours'}
   | {intent: 'services'}
   | {intent: 'contacts'}
+  | {intent: 'faq'; index: number}
   | {intent: 'clarify'; question: string; options?: string[]};
 
 export type OwnerPeriod = 'day' | 'week' | 'month';
@@ -169,12 +189,26 @@ export function parseDate(text: string, tz: string, now = new Date(), lang: Lang
   return null;
 }
 
-export function routeClient(text: string, services: ServiceRef[], tz: string, now = new Date(), lang: Lang = 'ru'): ClientIntent {
+export function routeClient(
+  text: string,
+  services: ServiceRef[],
+  tz: string,
+  now = new Date(),
+  lang: Lang = 'ru',
+  faq: FaqRef[] = [],
+): ClientIntent {
   const p = PATTERNS[lang];
   const say = texts(lang);
   const t = norm(text, lang);
   const mentioned = matchServices(t, services, lang);
   const names = services.map(s => s.name);
+
+  // A price or free time for a named service is answered from data; anything
+  // else the studio has written an answer for is answered with that answer.
+  if (!(mentioned.length && (has(t, p.price) || has(t, p.slot)))) {
+    const f = matchFaq(text, faq, lang);
+    if (f !== null) return {intent: 'faq', index: f};
+  }
 
   if (has(t, p.location)) return {intent: 'location'};
   if (has(t, p.price)) {

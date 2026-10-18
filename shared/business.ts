@@ -128,6 +128,21 @@ export const businessSchema = z
         }),
       )
       .max(40),
+    /**
+     * Frequently asked questions: shown on the home page and used by the
+     * assistant. `keywords` (lower case, without diacritics) help the no-model
+     * fallback recognise the question; the model reads the text itself.
+     */
+    faq: z
+      .array(
+        z.object({
+          question: z.string().trim().min(3).max(120),
+          answer: z.string().trim().min(3).max(1500),
+          keywords: z.array(z.string().trim().min(2).max(40)).max(20).default([]),
+        }),
+      )
+      .max(20)
+      .default([]),
     owner: z.object({email: z.email()}),
     assistant: z.object({enabled: z.boolean().default(true)}).default({enabled: true}),
   })

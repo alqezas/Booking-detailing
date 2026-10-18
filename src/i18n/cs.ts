@@ -135,6 +135,8 @@ export const cs: Messages = {
     why: 'Proč my',
     services: 'Služby a ceny',
     allServices: 'Všechny služby',
+    categories: 'Kategorie služeb',
+    faq: 'Časté dotazy',
     bookShort: 'Rezervovat',
     gallery: 'Naše práce',
     workPhoto: 'Ukázka práce',
