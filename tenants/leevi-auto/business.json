@@ -1,0 +1,519 @@
+{
+  "slug": "leevi-auto",
+  "name": "Leevi-Auto",
+  "shortName": "Leevi-Auto",
+  "kind": "autoservice",
+  "tagline": "Autoservis v Brně-Černovicích – opravujeme správně a bez kompromisů",
+  "description": "Autoservis Leevi-Auto vznikl z pneuservisu otevřeného v roce 2022 v Adamově. Dnes v moderních prostorách v Brně nabízíme kompletní opravy vozidel všech značek, servis klimatizací, pneuservis a další odborné práce – se čtyřmi pracovními stáními se zvedáky do 4 tun a moderní diagnostikou (TEXA, VCDS, OEM Toyota / Lexus). Na sociálních sítích upozorňujeme na špatně provedené opravy – u nás víte, že vaše auto opravujeme správně.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#D0202E",
+  "contacts": {
+    "phone": "+420 776 177 524",
+    "address": "Vinohradská 1305/82A, 618 00 Brno-Černovice",
+    "legalAddress": "Leevi-Auto s.r.o., Nové sady 988/2, 602 00 Brno, IČO 23835087",
+    "mapUrl": "https://mapy.com/cs/turisticka?q=Brno%20-%20%C4%8Cernovice%2C%20Vinohradsk%C3%A1%201305%2F82a&source=addr&id=14061409&ds=2&x=16.6447390&y=49.1707323&z=17",
+    "email": "info@leevi-auto.cz",
+    "whatsapp": "420776177524",
+    "instagram": "autoservis_leeviauto",
+    "facebook": "Leevi.Auto"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "07:30",
+        "12:00"
+      ],
+      [
+        "12:30",
+        "16:30"
+      ]
+    ],
+    "tue": [
+      [
+        "07:30",
+        "12:00"
+      ],
+      [
+        "12:30",
+        "16:30"
+      ]
+    ],
+    "wed": [
+      [
+        "07:30",
+        "12:00"
+      ],
+      [
+        "12:30",
+        "16:30"
+      ]
+    ],
+    "thu": [
+      [
+        "07:30",
+        "12:00"
+      ],
+      [
+        "12:30",
+        "16:30"
+      ]
+    ],
+    "fri": [
+      [
+        "07:30",
+        "12:00"
+      ],
+      [
+        "12:30",
+        "15:30"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 1440,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "stani-1",
+      "name": "Pracovní stání 1"
+    },
+    {
+      "key": "stani-2",
+      "name": "Pracovní stání 2"
+    }
+  ],
+  "services": [
+    {
+      "key": "prohlidka",
+      "name": "Preventivní / sezónní prohlídka vozidla",
+      "category": "Servis a diagnostika",
+      "description": "Základní kontrola stavu vozidla. V případě následné opravy u nás se prohlídka neúčtuje.",
+      "price": 299,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "olej",
+      "name": "Výměna motorového oleje a filtrů",
+      "category": "Servis a diagnostika",
+      "description": "Cena za úkon bez materiálu (filtry, olej a další spotřební materiál). Oleje a filtry podle specifikace výrobce.",
+      "price": 1450,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "diagnostika",
+      "name": "Diagnostika závad",
+      "category": "Servis a diagnostika",
+      "description": "Kompletní diagnostika všech řídicích jednotek vozidla včetně protokolu – osobní i užitkové vozy (TEXA, VCDS, OEM Toyota / Lexus).",
+      "price": 999,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "autoelektrika",
+      "name": "Autoelektrika a diagnostika elektrických závad",
+      "category": "Servis a diagnostika",
+      "description": "Diagnostika a opravy elektroinstalace, měření, práce s technickými daty výrobce a řešení elektrických závad.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "prace-pkw",
+      "name": "Mechanická práce – osobní vůz",
+      "category": "Servis a diagnostika",
+      "description": "Cena za hodinu práce včetně DPH. Osobní vozidla a přívěsy do celkové hmotnosti 750 kg. Opravy motorů, převodovek, brzd, náprav a podvozků.",
+      "price": 1250,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "prace-lkw",
+      "name": "Mechanická práce – užitkový vůz a offroad",
+      "category": "Servis a diagnostika",
+      "description": "Cena za hodinu práce včetně DPH. Užitková vozidla a offroady do 3,5 t.",
+      "price": 1350,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "prace-individual",
+      "name": "Mechanická práce – INDIVIDUAL",
+      "category": "Servis a diagnostika",
+      "description": "Cena za hodinu práce včetně DPH. Nestandardní práce, historická vozidla a specifické zakázky.",
+      "price": 1450,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "klima-plneni",
+      "name": "Plnění klimatizace",
+      "category": "Klimatizace",
+      "description": "Plnění automatickou stanicí TEXA pro chladiva R134a i R1234yf, vakuování a kontrola těsnosti. Cena za úkon bez materiálu (chladivo, olej kompresoru, ventily).",
+      "price": 999,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "klima-dezinfekce",
+      "name": "Dezinfekce klimatizace ozonem",
+      "category": "Klimatizace",
+      "description": "Odstranění bakterií, zápachu a plísní z klimatizačního systému pomocí ozonu. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "klima-oprava",
+      "name": "Diagnostika a oprava klimatizace",
+      "category": "Klimatizace",
+      "description": "Kontrola funkce, tlaku a komponent, řešení úniků a výměna dílů. Cenu sdělíme po diagnostice.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "prezuti",
+      "name": "Přezutí a vyvážení kol",
+      "category": "Pneuservis",
+      "description": "Osobní i užitková vozidla do velikosti 24″. Cenu stanovíme podle velikosti a typu kol.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "defekt",
+      "name": "Oprava defektu",
+      "category": "Pneuservis",
+      "description": "Odborná oprava pneumatiky správným postupem – ne „rychlé lepení“. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "tazne",
+      "name": "Montáž tažného zařízení",
+      "category": "Montáže a ostatní",
+      "description": "Montáž kompletního tažného zařízení včetně elektroinstalace, případného kódování a zápisu do TP. Montujeme pouze námi dodané komponenty.",
+      "price": 3500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "pred-koupi",
+      "name": "Kontrola vozidla před koupí",
+      "category": "Montáže a ostatní",
+      "description": "Přivezete auto i prodávajícího k nám – vůz projdeme před vámi, napojíme diagnostiku a upozorníme na skryté závady. Cena podle rozsahu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "dekarbonizace",
+      "name": "Dekarbonizace motoru",
+      "category": "Montáže a ostatní",
+      "description": "Čištění motoru od karbonových usazenin. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "chlazeni",
+      "name": "Čištění chladicího systému",
+      "category": "Montáže a ostatní",
+      "description": "Vyčištění chladicího systému motoru. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    },
+    {
+      "key": "stk",
+      "name": "Příprava a zajištění STK",
+      "category": "Montáže a ostatní",
+      "description": "Vozidlo předem zkontrolujeme a připravíme, STK a měření emisí (benzín, diesel, LPG, CNG) zajistíme u partnera. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stani-1",
+        "stani-2"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "wrench",
+      "title": "Čtyři pracovní stání",
+      "text": "Zvedáky do 4 tun, moderní diagnostika a vybavení pro osobní i užitkové vozy."
+    },
+    {
+      "icon": "shield",
+      "title": "Opravujeme správně",
+      "text": "Hledáme skutečnou příčinu závady. Používáme jen ověřené díly s jasným původem."
+    },
+    {
+      "icon": "medal",
+      "title": "Věrnostní program",
+      "text": "Stálým zákazníkům nabízíme individuální výhody, lepší ceny a přednostní termíny."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-rozvody.webp",
+      "caption": "Výměna rozvodů a oprava motoru"
+    },
+    {
+      "image": "images/work-motor-bmw.webp",
+      "caption": "Oprava řadového šestiválce"
+    },
+    {
+      "image": "images/work-motor.webp",
+      "caption": "Servis motorů"
+    },
+    {
+      "image": "images/work-prevodovka.webp",
+      "caption": "Oprava manuální převodovky"
+    },
+    {
+      "image": "images/work-klimatizace.webp",
+      "caption": "Plnění klimatizace stanicí TEXA"
+    },
+    {
+      "image": "images/work-texa.webp",
+      "caption": "Plnicí stanice TEXA pro R134a i R1234yf"
+    },
+    {
+      "image": "images/work-brzdy.webp",
+      "caption": "Servis brzdových systémů"
+    },
+    {
+      "image": "images/work-naprava.webp",
+      "caption": "Oprava nápravy a podvozku"
+    },
+    {
+      "image": "images/work-zvedak.webp",
+      "caption": "Vůz na 4t zvedáku v naší dílně"
+    },
+    {
+      "image": "images/work-pneuservis.webp",
+      "caption": "Pneuservis"
+    },
+    {
+      "image": "images/work-oleje.webp",
+      "caption": "Oleje a filtry podle specifikace výrobce"
+    },
+    {
+      "image": "images/work-tazne.webp",
+      "caption": "Montáž tažného zařízení"
+    },
+    {
+      "image": "images/work-vozik.webp",
+      "caption": "Servis přívěsných vozíků"
+    },
+    {
+      "image": "images/work-pred-koupi.webp",
+      "caption": "Kontrola vozidla před koupí"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Mohu přijet bez objednání?",
+      "answer": "Vozidla k opravě přijímáme zásadně po předchozí domluvě. Příjezd bez objednání neznamená, že vůz budeme schopni ihned přijmout. U náhlé nebo urgentní závady nás ale určitě kontaktujte – pokusíme se najít nejbližší řešení, případně po dohodě nabídnout zpoplatněné EXPRESNÍ vyřízení.",
+      "keywords": [
+        "bez objednani",
+        "prijet",
+        "hned",
+        "expres",
+        "urgent",
+        "nalehav",
+        "dnes"
+      ]
+    },
+    {
+      "question": "Jak dlouho bude oprava trvat?",
+      "answer": "Záleží na rozsahu závady, diagnostice, dostupnosti dílů a vytížení servisu. U běžných úkonů dobu předem odhadneme, u složitějších oprav přesný čas dokončení často určit nelze. Neslibujeme termíny, které nemůžeme garantovat – jakmile je vůz hotový, ozveme se.",
+      "keywords": [
+        "jak dlouho",
+        "trva",
+        "kdy bude hotov",
+        "termin dokonceni",
+        "doba opravy"
+      ]
+    },
+    {
+      "question": "Budu znát cenu předem?",
+      "answer": "U běžných servisních úkonů cenu nebo její rozsah sdělíme předem. U diagnostiky a složitějších oprav to vždy nejde. Pokud se ukáže potřeba dalších prací, před jejich provedením vás kontaktujeme a postup odsouhlasíme. Hodinová sazba je 1 250 Kč u osobních vozů, 1 350 Kč u užitkových a 1 450 Kč u individuálních zakázek, vše vč. DPH.",
+      "keywords": [
+        "cena predem",
+        "kolik",
+        "hodinov",
+        "sazba",
+        "dph",
+        "odhad"
+      ]
+    },
+    {
+      "question": "Provádíte diagnostiku na počkání?",
+      "answer": "Diagnostiku provádíme po objednání. Načtení paměti závad většinou není skutečnou diagnostikou – chybový kód ukáže část systému, ne příčinu. Pokud potřebujete jen načíst paměť závad, řekněte nám to při objednání a pokusíme se ji provést v krátkém časovém okně.",
+      "keywords": [
+        "diagnostik",
+        "pocka",
+        "chybov",
+        "pamet zavad",
+        "kontrolka"
+      ]
+    },
+    {
+      "question": "Mohu si dodat vlastní díly?",
+      "answer": "Standardně náhradní díly ani provozní kapaliny dodané zákazníkem nemontujeme. Za průběh opravy a kvalitu práce potřebujeme mít kontrolu nad použitými komponenty – používáme jen ověřené díly s jasným původem.",
+      "keywords": [
+        "vlastni dil",
+        "svuj dil",
+        "dodat dil",
+        "prinest",
+        "vlastni olej"
+      ]
+    },
+    {
+      "question": "Jak se dostanu do areálu?",
+      "answer": "Brána areálu na Vinohradské 1305/82A se automaticky zavírá. Pro otevření pošlete SMS s textem „BRANA-VASEPRIJMENI“ na číslo 776 177 524. Parkujte prosím pouze před vraty autoservisu.",
+      "keywords": [
+        "brana",
+        "arel",
+        "areal",
+        "vjezd",
+        "parkovan",
+        "kde",
+        "adresa",
+        "sms"
+      ]
+    },
+    {
+      "question": "Kdy máte otevřeno?",
+      "answer": "Po–Čt 7:30–12:00 a 12:30–16:30, Pá 7:30–12:00 a 12:30–15:30. Sobota od 8:00 dle předchozí domluvy. Neděle zavřeno – v akutních případech volejte 774 670 544. Zákaznická linka 776 177 524 a info@leevi-auto.cz funguje Po–Pá 7:30–16:30.",
+      "keywords": [
+        "oteviraci",
+        "otevreno",
+        "kdy mate",
+        "sobota",
+        "nedele",
+        "vikend",
+        "akutni"
+      ]
+    },
+    {
+      "question": "Uskladníte mi kola?",
+      "answer": "Ano, kola i pneumatiky u nás uskladníme za výhodnou cenu a připravíme je na další sezónu. Ekologická likvidace starých pneumatik je zdarma.",
+      "keywords": [
+        "uskladn",
+        "sklad",
+        "kola na zimu",
+        "likvidac",
+        "stare pneu"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
