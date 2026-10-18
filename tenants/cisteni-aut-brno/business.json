@@ -1,0 +1,290 @@
+{
+  "slug": "cisteni-aut-brno",
+  "name": "Čištění aut Brno",
+  "shortName": "Čištění aut",
+  "kind": "detailing",
+  "tagline": "Profesionální čištění interiéru aut v Brně – tepování, pára, dezinfekce",
+  "description": "Jmenuji se Roman a čištění aut se věnuji několik let. V areálu na Kaštanové působím přes 15 let a každému vozu věnuji maximální péči v čistém a profesionálně vybaveném prostoru. Vždy pracuji jen na jednom voze. Tři jasné balíčky bez skrytých příplatků – ceny jsou konečné, nejsem plátce DPH.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#06B6D4",
+  "contacts": {
+    "phone": "+420 777 852 920",
+    "address": "Kaštanová 520/141A, 617 00 Brno",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ka%C5%A1tanov%C3%A1%20520%2F141A%2C%20617%2000%20Brno",
+    "email": "cisteniautabrno@gmail.com",
+    "instagram": "car_cleaning_brno",
+    "facebook": "https://www.facebook.com/profile.php?id=61566352894215",
+    "tiktok": "car.cleaning.ra"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "07:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "07:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "07:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "07:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "07:00",
+        "17:00"
+      ]
+    ],
+    "sat": [
+      [
+        "07:00",
+        "17:00"
+      ]
+    ],
+    "sun": [
+      [
+        "07:00",
+        "17:00"
+      ]
+    ]
+  },
+  "closedDates": [],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 120,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Dílna"
+    }
+  ],
+  "services": [
+    {
+      "key": "refresh",
+      "name": "Refresh",
+      "category": "Čištění interiéru",
+      "description": "Základní čištění bez čekání: vysátí včetně kufru, očištění plastů a palubní desky, vyčištění oken, provonění a odstranění pachů. Cca 90 min.",
+      "price": 1290,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "detail",
+      "name": "Detail",
+      "category": "Čištění interiéru",
+      "description": "Nejčastější volba – viditelná změna interiéru. Vše z balíčku Refresh plus tepování sedadel, koberců a kufru, čištění čalounění a kůže mokrou cestou párou, impregnace plastů a kůže, detailní práce ve spárách. Cca 3–5 hod.",
+      "price": 2590,
+      "priceFrom": false,
+      "durationMinutes": 300,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "premium",
+      "name": "Premium",
+      "category": "Čištění interiéru",
+      "description": "Auto jako nové – kompletní restart interiéru. Vše z balíčku Detail plus demontáž sedadel a čištění pod nimi, tepování celého interiéru, hloubkové čištění a impregnace volantu, dezinfekce. Vyzvednutí a vrácení vozu po Brně zdarma. Cca 5–8 hod.",
+      "price": 3690,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "exterier",
+      "name": "Exteriér a leštění laku",
+      "category": "Exteriér",
+      "description": "Mytí exteriéru a leštění laku domlouvám individuálně – napište mi nebo zavolejte a domluvíme rozsah i termín.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Přes 15 let v areálu",
+      "text": "Většina zákazníků přichází na doporučení nebo se vrací."
+    },
+    {
+      "icon": "car",
+      "title": "Vždy jen jeden vůz",
+      "text": "Každý vůz zpracovávám osobně v uzavřené a zabezpečené dílně."
+    },
+    {
+      "icon": "credit-card",
+      "title": "Jasné ceny",
+      "text": "Tři balíčky bez skrytých příplatků. Ceny jsou konečné, nejsem plátce DPH."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-predek-after.webp",
+      "before": "images/work-predek-before.webp",
+      "caption": "Přední sedadla, BMW 3 Touring"
+    },
+    {
+      "image": "images/work-sedacka-after.webp",
+      "before": "images/work-sedacka-before.webp",
+      "caption": "Zadní sedačka, BMW 3 Touring"
+    },
+    {
+      "image": "images/work-volant-after.webp",
+      "before": "images/work-volant-before.webp",
+      "caption": "Volant a palubní deska, BMW 3 Touring"
+    },
+    {
+      "image": "images/work-kufr2-after.webp",
+      "before": "images/work-kufr2-before.webp",
+      "caption": "Zavazadlový prostor, BMW 3 Touring"
+    },
+    {
+      "image": "images/work-para.webp",
+      "caption": "Čištění párou"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Jak dlouho čištění trvá?",
+      "answer": "Délka práce závisí na stavu vozu a zvolené službě. Běžné čištění interiéru trvá přibližně 3–5 hodin, náročnější zakázky mohou trvat celý den. Přesný čas vždy řeknu při převzetí vozu.",
+      "keywords": [
+        "jak dlouho",
+        "dlouho",
+        "trva",
+        "trvat",
+        "bez vozu",
+        "bez auta",
+        "kdy bude hotov"
+      ]
+    },
+    {
+      "question": "Co všechno je v ceně čištění?",
+      "answer": "V ceně je vždy kompletní práce podle zvoleného balíčku – žádné skryté příplatky, žádná překvapení. Refresh zahrnuje vysátí, čištění plastů, okna a provonění. Detail přidává tepování sedadel, koberců a čalounění párou. Premium jde nejhlouběji – demontáž sedadel, hloubkové tepování celého interiéru a dezinfekce. Součástí balíčku Premium je vyzvednutí a vrácení vozu po Brně zdarma.",
+      "keywords": [
+        "v cene",
+        "co zahrnuje",
+        "co obsahuje",
+        "skryte",
+        "rozdil mezi",
+        "vyzvednuti",
+        "vyzvednete",
+        "odvoz",
+        "pristaveni"
+      ]
+    },
+    {
+      "question": "Můžu u vás auto nechat celý den?",
+      "answer": "Ano. Většina zákazníků auto ráno přiveze a odpoledne nebo večer vyzvedne. Přesný čas domluvíme předem podle rozsahu práce.",
+      "keywords": [
+        "nechat",
+        "cely den",
+        "rano",
+        "vecer"
+      ]
+    },
+    {
+      "question": "Je auto během práce v bezpečí?",
+      "answer": "Ano. Vůz je po celou dobu práce v uzavřené a zabezpečené dílně a je pod stálým dohledem. Každý vůz zpracovávám osobně a vždy se věnuji pouze jednomu vozu v daný čas.",
+      "keywords": [
+        "bezpeci",
+        "zabezpec",
+        "hlidan",
+        "dohled",
+        "ukraden"
+      ]
+    },
+    {
+      "question": "Musím auto předem nějak připravit?",
+      "answer": "Stačí vyndat osobní věci z interiéru. O všechno ostatní se postarám já. Pokud je auto výrazně znečištěné, stačí to zmínit při rezervaci.",
+      "keywords": [
+        "pripravit",
+        "priprava",
+        "osobni veci",
+        "vyndat",
+        "vyklidit"
+      ]
+    },
+    {
+      "question": "Děláte i exteriér nebo leštění laku?",
+      "answer": "Ano, exteriér a leštění laku provádím také — tato služba se ale domlouvá individuálně. Napište mi nebo zavolejte a domluvíme se na rozsahu a termínu.",
+      "keywords": [
+        "exterier",
+        "lesten",
+        "laku",
+        "myti karoserie",
+        "zvenku"
+      ]
+    },
+    {
+      "question": "Kolik to bude stát u mého auta?",
+      "answer": "Pro většinu aut je ideální balíček Detail – 2 590 Kč. U více znečištěných nebo hodnotnějších vozů doporučím Premium. Všechny ceny jsou konečné, nejsem plátce DPH; faktura bez DPH nebo s DPH dle domluvy.",
+      "keywords": [
+        "kolik to bude stat",
+        "kolik me to bude stat",
+        "u meho auta",
+        "dph",
+        "faktur",
+        "ktery balicek"
+      ]
+    },
+    {
+      "question": "Co když je auto hodně špinavé?",
+      "answer": "To je běžná situace. U náročnějších interiérů se může cena lehce upravit – vždy vám ji řeknu dopředu, obvykle maximálně do +20 %. Klidně pošlete poptávku, podívám se na to a řeknu vám konkrétně.",
+      "keywords": [
+        "spinav",
+        "znecist",
+        "spina",
+        "chlupy",
+        "zvirat",
+        "priplat"
+      ]
+    },
+    {
+      "question": "Má smysl brát levnější balíček?",
+      "answer": "Refresh auto hezky oživí a uklidí. Detail jde víc do hloubky a je to nejčastější volba. Nejste si jistí? Napište mi, doporučím vám ideální variantu.",
+      "keywords": [
+        "levnejsi",
+        "ma smysl",
+        "refresh nebo",
+        "doporucit",
+        "vybrat"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
