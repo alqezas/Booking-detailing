@@ -1,0 +1,466 @@
+{
+  "slug": "palo-detailing",
+  "name": "Palo Detailing",
+  "shortName": "Palo",
+  "kind": "detailing",
+  "tagline": "Ruční mytí, voskování a detailing v garážích pod Žižkovskou věží",
+  "description": "Ruční mytí, detailing, renovace laku, keramická dlouhodobá ochrana laku, tepování interiéru – jednoduše komplexní péče o váš vůz. Staráme se o vaše vozy a motorky, ke každému zákazníkovi přistupujeme individuálně a nebojíme se jít nad rámec nabízených služeb. Máme profesionální tým proškolený ve všech oblastech našich služeb a používáme přípravky Mayvinci, Swissvax, Fenice, Rupes a Cartec.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#D4A72C",
+  "contacts": {
+    "phone": "+420 725 873 066",
+    "address": "Mahlerovy sady 2699/1, 130 00 Praha 3 – Žižkov (vjezd z ulice Fibichova)",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=50.0812374%2C14.4505519",
+    "email": "info@palodetailing.cz",
+    "instagram": "palo_detailing",
+    "facebook": "palodetailing"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "20:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "20:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "20:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "20:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "20:00"
+      ]
+    ],
+    "sat": [
+      [
+        "12:00",
+        "20:00"
+      ]
+    ],
+    "sun": [
+      [
+        "12:00",
+        "20:00"
+      ]
+    ]
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 120,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Box 1"
+    },
+    {
+      "key": "box-2",
+      "name": "Box 2"
+    }
+  ],
+  "services": [
+    {
+      "key": "basic",
+      "name": "BASIC",
+      "category": "Mytí a interiér",
+      "description": "45–60 min. Ruční mytí aktivní pěnou a neutrálním šampónem, odstranění hmyzu, ruční mytí a čištění disků kol, vysušení karoserie, vnitřních prahů a disků, ošetření pneu.",
+      "price": 790,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "basic-plus",
+      "name": "BASIC PLUS",
+      "category": "Mytí a interiér",
+      "description": "60–80 min. Vše z BASIC plus vysátí interiéru včetně zavazadlového prostoru a čištění a ošetření palubní desky.",
+      "price": 1190,
+      "priceFrom": false,
+      "durationMinutes": 80,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "interier",
+      "name": "INTERIER",
+      "category": "Mytí a interiér",
+      "description": "60–80 min. Vysátí interiéru včetně zavazadlového prostoru, kompletní čištění vnitřních plastů a lesklých dílů, vyleštění vnitřních stran oken.",
+      "price": 1090,
+      "priceFrom": false,
+      "durationMinutes": 80,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "complete",
+      "name": "COMPLETE",
+      "category": "Mytí a interiér",
+      "description": "120–180 min. Ruční mytí exteriéru jako BASIC, vysátí interiéru i kufru, kompletní čištění vnitřních plastů a lesklých dílů, vyleštění oken a zrcátek.",
+      "price": 1690,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "comfort",
+      "name": "COMFORT",
+      "category": "Mytí a interiér",
+      "description": "120–180 min. Tepování čalounění a sedaček / čištění a impregnace kůže, vysátí interiéru i kufru, čištění vnitřních plastů a lesklých dílů, vyleštění vnitřních stran oken.",
+      "price": 2490,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "diamond",
+      "name": "DIAMOND",
+      "category": "Mytí a interiér",
+      "description": "180–240 min. Ruční mytí, vysušení všech mezer teplým vzduchem, ošetření vnějších plastů a chromu, tepování čalounění a sedaček / čištění kůže, kompletní čištění interiéru, vyleštění oken a zrcátek.",
+      "price": 3090,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "leather",
+      "name": "LEATHER – čištění kůže",
+      "category": "Mytí a interiér",
+      "description": "180–240 min. Hloubkové čištění koženého čalounění a následná impregnace přípravky FENICE. Cena za 5 sedaček.",
+      "price": 2800,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "platinum",
+      "name": "PLATINUM",
+      "category": "Mytí a interiér",
+      "description": "1 den. Kompletní mytí a čištění interiéru, tepování včetně sedaček, mytí motoru, chemická dekontaminace, clay, odmaštění, nanesení vosku, keramická ochrana čelního skla (tekuté stěrače) a čištění interiéru ozónem.",
+      "price": 7400,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "platinum-leather",
+      "name": "PLATINUM LEATHER",
+      "category": "Mytí a interiér",
+      "description": "1 den. Jako PLATINUM, ale místo tepování hloubkové čištění a impregnace kožených sedaček přípravky FENICE.",
+      "price": 8400,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "motor",
+      "name": "Mytí a ošetření motoru",
+      "category": "Mytí a interiér",
+      "description": "Cca 60 min. Šetrné mytí a ošetření motorového prostoru.",
+      "price": 750,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "vosk-basic",
+      "name": "Voskování BASIC",
+      "category": "Voskování",
+      "description": "Ruční mytí aktivní pěnou, dekontaminace laku od polétavé rzi a dalších nečistot, clay a ruční nanesení tekutého vosku.",
+      "price": 2490,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "vosk-synteticky",
+      "name": "Voskování – syntetické a PTFE vosky",
+      "category": "Voskování",
+      "description": "Ruční mytí aktivní pěnou, dekontaminace laku, clay a ruční voskování. Trvanlivost vosku na karoserii až 6 měsíců.",
+      "price": 3500,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "vosk-swissvax",
+      "name": "Voskování – karnaubský vosk SWISSVAX",
+      "category": "Voskování",
+      "description": "Mytí, dekontaminace, clay, SWISSVAX Cleaner Fluid a ruční masáž voskem SWISSVAX Mirage (40 % karnauby) nebo Concorso (50 % karnauby). Ochrana laku na dlouhé měsíce, obzvláště v zimě.",
+      "price": 6900,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "svetlomety",
+      "name": "Renovace světlometů",
+      "category": "Detailing",
+      "description": "Detailní vyčištění a kompletní ruční renovace obou světlometů. Životnost a průsvitnost až 5 let – řešení problému s průhledností na STK. Cena dle poškození.",
+      "price": 990,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "keramika-sklo",
+      "name": "Keramická ochrana čelního skla ZviZZer",
+      "category": "Detailing",
+      "description": "Dvě vrstvy. Ochrana před alkáliemi a posypovými solemi, snadné odstranění námrazy, ledu, sněhu i hmyzu. Lze aplikovat i na boční a zadní okna.",
+      "price": 1790,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "keramika-kola",
+      "name": "Keramická ochrana kol",
+      "category": "Detailing",
+      "description": "Čtyři kola. Demontáž a čištění kol, brzd, podběhů a zavěšení, dekontaminace a sklokeramická ochrana disků (na cca 30 tisíc km).",
+      "price": 6600,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "renovace-laku",
+      "name": "Renovace laku vozidel a motorek",
+      "category": "Detailing",
+      "description": "Kompletní mytí a čištění interiéru, chemická dekontaminace, clay, odmaštění, vícekrokové leštění karoserie a sklokeramická ochrana Mayvinci na pět a více let. Plán a cenu domluvíme na osobní schůzce.",
+      "price": 39000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "car",
+      "title": "Parkování zdarma",
+      "text": "Po dobu mytí parkujete v garážích pod Žižkovskou věží zdarma – mezitím si zajděte na oběd do restaurace Oblaca nebo Mimino."
+    },
+    {
+      "icon": "clock",
+      "title": "Otevřeno i o víkendu",
+      "text": "Po–Pá 9:00–20:00, So–Ne 12:00–20:00. Státní svátky zavřeno."
+    },
+    {
+      "icon": "shield",
+      "title": "Keramika Mayvinci",
+      "text": "Celý tým absolvoval školení k náročné aplikaci sklokeramické ochrany Mayvinci."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-m4.webp",
+      "caption": "BMW M4"
+    },
+    {
+      "image": "images/work-lak.webp",
+      "caption": "Lesk laku – záběr z našeho videa"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Jak se k vám dostanu?",
+      "answer": "Sídlíme v garážích přímo pod Žižkovskou věží, Mahlerovy sady 2699/1, Praha 3 – Žižkov. Vjezd: příjezd ulicí Fibichova, po cca 50 m odbočte doprava do podzemních garáží.",
+      "keywords": [
+        "kde",
+        "vjezd",
+        "prijezd",
+        "adresa",
+        "fibichova",
+        "zizkov",
+        "vez",
+        "garaz",
+        "najdu",
+        "dostanu"
+      ]
+    },
+    {
+      "question": "Mohu u vás během mytí parkovat?",
+      "answer": "Ano, po dobu mytí máte parkování v garážích zdarma. Mezitím si můžete v klidu vychutnat oběd nebo večeři v restauraci Oblaca přímo ve věži Žižkovského vysílače, nebo v restauraci Mimino.",
+      "keywords": [
+        "parkovani",
+        "parkovat",
+        "pockat",
+        "cekat",
+        "mezitim",
+        "restaurace",
+        "obed"
+      ]
+    },
+    {
+      "question": "Platí ceny pro všechna auta?",
+      "answer": "Ceny platí pro osobní vozy. U mytí a voskování: užitkové vozy, MPV, SUV a 4×4 +25 % z ceny služby, velkoprostorové vozy +35 %. U detailingu: užitkové vozy, MPV, SUV a 4×4 +20 %, velkoprostorové vozy +30 %. Další požadavky po dohodě s personálem.",
+      "keywords": [
+        "suv",
+        "mpv",
+        "4x4",
+        "uzitkov",
+        "velkoprostor",
+        "dodavk",
+        "priplat",
+        "velke auto",
+        "vsechna auta"
+      ]
+    },
+    {
+      "question": "Jsou ceny s DPH?",
+      "answer": "Nejsme plátci DPH – uvedené ceny jsou konečné.",
+      "keywords": [
+        "dph",
+        "faktur",
+        "platce"
+      ]
+    },
+    {
+      "question": "Kdy máte otevřeno?",
+      "answer": "Pondělí až pátek 9:00–20:00, sobota a neděle 12:00–20:00. Ve státní svátky máme zavřeno. Objednávky přijímáme i na tel. +420 725 873 066.",
+      "keywords": [
+        "oteviraci",
+        "otevreno",
+        "kdy mate",
+        "vikend",
+        "sobota",
+        "nedele",
+        "svatek",
+        "svatky"
+      ]
+    },
+    {
+      "question": "Jak dlouho vydrží vosk?",
+      "answer": "Po voskování syntetickými nebo PTFE vosky vydrží vosk na karoserii až 6 měsíců. Prémiové karnaubské vosky SWISSVAX chrání lak na dlouhé měsíce, obzvláště v zimě. Před voskováním doporučujeme a provádíme dekontaminaci laku, díky které vosk vydrží déle.",
+      "keywords": [
+        "vosk",
+        "vydrzi",
+        "trvanlivost",
+        "jak dlouho",
+        "swissvax",
+        "karnaub",
+        "ptfe"
+      ]
+    },
+    {
+      "question": "Jak probíhá renovace laku a keramická ochrana?",
+      "answer": "Renovace laku (od 39 000 Kč) zahrnuje kompletní mytí a čištění, dekontaminaci, clay, vícekrokové leštění a sklokeramickou ochranu Mayvinci na pět a více let. Protože postup sestavujeme individuálně, je potřeba osobní schůzka – představíme vám plán a upravíme jej podle vašich cenových i časových požadavků.",
+      "keywords": [
+        "renovace",
+        "lesten",
+        "keramik",
+        "mayvinci",
+        "skrabance",
+        "hologram",
+        "vlasecnic",
+        "schuzk"
+      ]
+    },
+    {
+      "question": "Staráte se i o motorky?",
+      "answer": "Ano, staráme se o auta i motorky – od ručního mytí až po renovaci laku a keramickou ochranu.",
+      "keywords": [
+        "motork",
+        "motocykl",
+        "motorka"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
