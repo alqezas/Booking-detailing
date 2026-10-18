@@ -1,0 +1,514 @@
+{
+  "slug": "denner-detailing",
+  "name": "Denner Detailing",
+  "shortName": "Denner",
+  "kind": "detailing",
+  "tagline": "Renovace laku, keramická ochrana laku a čištění interiéru v Brně-Židenicích",
+  "description": "Vracíme vozům původní lesk a chráníme ho na dlouhá léta. Každému vozu věnuji maximální péči a používám pouze ty nejkvalitnější produkty a certifikované postupy. Přes 28 let praxe, více než 1000 vozů ročně a přes 55 recenzí na Googlu. Ceny jsou orientační – odvíjí se od velikosti vozu a míry poškození laku, konečnou cenu potvrdím po bezplatné prohlídce.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#F8D0B3",
+  "contacts": {
+    "phone": "+420 732 461 496",
+    "address": "Vančurova 4302/34, 615 00 Brno-Židenice",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Van%C4%8Durova%204302%2F34%2C%20615%2000%20Brno",
+    "email": "petrdenner@seznam.cz",
+    "facebook": "petr.denner.1"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "sat": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Box 1"
+    },
+    {
+      "key": "box-2",
+      "name": "Box 2"
+    }
+  ],
+  "services": [
+    {
+      "key": "myti",
+      "name": "Ruční mytí",
+      "category": "Renovace laku",
+      "description": "Mytí laku, skel a kol dvousložkovými čističi, odmaštění mytých ploch, vysušení laku a skel. 800–1 200 Kč podle velikosti vozu.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "lesteni",
+      "name": "Leštění – obnova lesku a ochrany laku",
+      "category": "Renovace laku",
+      "description": "Obnova lesku a ochranné vrstvy zašlých laků: ruční mytí, broušení, leštění a konzervace karnaubským voskem.",
+      "price": 4800,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "nano-vosk",
+      "name": "Renovace laku – tuhý nanovosk Nano Pro Plus",
+      "category": "Renovace laku",
+      "description": "Ruční mytí, broušení laku, leštění a konzervace laku tuhým nanovoskem.",
+      "price": 8000,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "nano-tuhy-kremik",
+      "name": "Renovace laku – Nano Pro Plus ++ tuhý křemík",
+      "category": "Renovace laku",
+      "description": "Leštění do vysokého hlubokého lesku a konzervace Nano Pro Plus na 2 roky ++ tuhý křemík.",
+      "price": 12500,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "hluboky-lesk",
+      "name": "Renovace laku – vysoký hluboký lesk",
+      "category": "Renovace laku",
+      "description": "Nanokonzervace s akrylovou syntetickou složkou pro plně odolnou ochranu laku proti poškrábání v myčce.",
+      "price": 16000,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "nano-tekuty-kremik",
+      "name": "Renovace laku – Nano Pro Plus ++ tekutý křemík",
+      "category": "Renovace laku",
+      "description": "Nano ochrana laku – konzervace tuhá i tekutá, vícevrstvá chemie křemíku, plně syntetické složky.",
+      "price": 20000,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "kompletni-renovace",
+      "name": "Kompletní renovace a konzervace laku",
+      "category": "Renovace laku",
+      "description": "Odstranění škrábanců a konzervace: ruční mytí, broušení vhodnou chemií bez narušení laku, leštění a konzervace syntetickými akrylovými polymery. 8 000–12 000 Kč.",
+      "price": 8000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "steraky",
+      "name": "Aplikace tekutých stěračů",
+      "category": "Renovace laku",
+      "description": "Ošetření všech skel speciálním přípravkem – voda krásně odtéká z povrchu skel.",
+      "price": 1200,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "alu-kola",
+      "name": "Kompletní lakování ALU kol",
+      "category": "Renovace laku",
+      "description": "Nástřik několika vrstev laku pro perfektní ochranu litých kol. Cena 2 000 Kč za kolo.",
+      "price": 2000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "lakovani",
+      "name": "Lakování, retuše, výměny dílů a další opravy",
+      "category": "Renovace laku",
+      "description": "Cena dle rozsahu a typu opravy po konzultaci.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "nano-ceramic",
+      "name": "Keramická ochrana Nano-Ceramic (3 roky)",
+      "category": "Keramická ochrana",
+      "description": "Tříletá ochrana laku proti mikro škrábancům s hydrofobním efektem, aplikace několika vrstev nanotechnologií. 24 000–28 000 Kč.",
+      "price": 24000,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "graphene",
+      "name": "Keramická ochrana Nano GrapHene Coating V3 Krytex (5 let)",
+      "category": "Keramická ochrana",
+      "description": "Pětiletá grafenová ochrana s hydrofobním efektem, ultra tenký sklovitý film proti mikro škrábancům. 36 000–40 000 Kč.",
+      "price": 36000,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "balicek",
+      "name": "Výhodný balíček Interiér a lak",
+      "category": "Balíčky a detailing",
+      "description": "Leštění laku do vysokého lesku, konzervace syntetickým voskem, vyčištění interiéru mokrou cestou a dezinfekce ozónem. Původní cena 12 800 Kč.",
+      "price": 8800,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "detailing",
+      "name": "Detailing",
+      "category": "Balíčky a detailing",
+      "description": "Nadstandardní péče o každý detail vozu pomocí špičkových přípravků a postupů. Orientační cena vychází z ostatních služeb.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "interier-komplet",
+      "name": "Kompletní čištění a tepování interiéru",
+      "category": "Čištění interiéru",
+      "description": "Vysátí suchou cestou, tepování sedaček a interiéru, čištění a ošetření plastů a dezinfekce ozónem O3. 2 800–8 000 Kč.",
+      "price": 2800,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "vysati",
+      "name": "Vysátí interiéru suchou cestou",
+      "category": "Čištění interiéru",
+      "description": "Důkladné vysátí celého interiéru vozu.",
+      "price": 800,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "tepovani",
+      "name": "Tepování sedaček mokrou cestou",
+      "category": "Čištění interiéru",
+      "description": "Hloubkové tepování sedaček a čalounění mokrou cestou. 800–1 200 Kč.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "kuze-cisteni",
+      "name": "Čištění kůže a plastů",
+      "category": "Čištění interiéru",
+      "description": "Šetrné vyčištění kožených i plastových povrchů interiéru.",
+      "price": 800,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "impregnace",
+      "name": "Ošetření kůže a plastů (impregnace)",
+      "category": "Čištění interiéru",
+      "description": "Impregnace kůže a plastů pro ochranu a delší životnost.",
+      "price": 800,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "kuze-nano",
+      "name": "Ošetření kožené výbavy nanotechnologií",
+      "category": "Čištění interiéru",
+      "description": "Pokročilá ochrana kožených částí pomocí nanotechnologií. 800–1 200 Kč.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Dezinfekce ozonem O3",
+      "category": "Čištění interiéru",
+      "description": "Dezinfekce a odstranění zápachu ozonovým generátorem O3.",
+      "price": 800,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "28+ let praxe",
+      "text": "Přes 1000 vozů ročně a více než 55 recenzí na Googlu."
+    },
+    {
+      "icon": "shield",
+      "title": "Certifikované postupy",
+      "text": "Jen ty nejkvalitnější prémiové produkty a ověřené postupy."
+    },
+    {
+      "icon": "car",
+      "title": "Konzultace zdarma",
+      "text": "Vůz si nezávazně prohlédnu a navrhnu nejvhodnější postup i cenu."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-bmw-ambient.webp",
+      "caption": "Kožený interiér po čištění, BMW"
+    },
+    {
+      "image": "images/work-mercedes-v.webp",
+      "caption": "Čištění a ošetření kůže, Mercedes-Benz třídy V"
+    },
+    {
+      "image": "images/work-bmw-zadni.webp",
+      "caption": "Zadní sedadla po čištění, BMW"
+    },
+    {
+      "image": "images/work-bmw-palubka.webp",
+      "caption": "Palubní deska a sedadla, BMW"
+    },
+    {
+      "image": "images/work-mercedes-v-zadni.webp",
+      "caption": "Tepování a ošetření kůže, Mercedes-Benz třídy V"
+    },
+    {
+      "image": "images/work-mercedes-dvere.webp",
+      "caption": "Čištění výplně dveří, Mercedes-Benz"
+    },
+    {
+      "image": "images/work-bmw-sedadla.webp",
+      "caption": "Ošetření kožených sedadel, BMW"
+    },
+    {
+      "image": "images/work-panorama.webp",
+      "caption": "Interiér s panoramatickou střechou"
+    },
+    {
+      "image": "images/work-bmw-interier.webp",
+      "caption": "Kompletní čištění interiéru, BMW"
+    },
+    {
+      "image": "images/work-operadlo.webp",
+      "caption": "Ošetření kůže nanotechnologií"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Jak dlouho trvá kompletní detailing vozu?",
+      "answer": "Záleží na velikosti vozu a rozsahu služeb. Leštění s keramickou ochranou obvykle trvá 2–3 dny, vícekroková renovace laku až 4–5 dní. Přesnější odhad vám řeknu při osobní konzultaci.",
+      "keywords": [
+        "jak dlouho",
+        "dlouho",
+        "trva",
+        "trvat",
+        "bez vozu",
+        "bez auta",
+        "kolik dni"
+      ]
+    },
+    {
+      "question": "Je nutné se objednat předem?",
+      "answer": "Ano. Pracuji pouze na základě předchozí objednávky, abych se každému vozu mohl věnovat naplno a bez spěchu. Termín si můžete zarezervovat přímo tady online nebo mi zavolat.",
+      "keywords": [
+        "predem",
+        "objednat",
+        "bez objednani",
+        "prijet hned",
+        "jen tak prijet"
+      ]
+    },
+    {
+      "question": "Jak se mám o auto starat po aplikaci keramické ochrany?",
+      "answer": "Doporučuji ruční mytí pH neutrálním šamponem a sušení mikrovláknovou utěrkou. Kartáčové myčky mohou ochranu poškodit. Rád vám správný postup ukážu a doporučím vhodné produkty.",
+      "keywords": [
+        "starat",
+        "udrzba",
+        "udrzovat",
+        "po aplikaci",
+        "mycka",
+        "myt auto po"
+      ]
+    },
+    {
+      "question": "Jaká je cena za vaše služby?",
+      "answer": "Cena je individuální a závisí na stavu a velikosti vozu a na zvolených službách. Orientační ceny najdete v ceníku, konečnou cenu potvrdím po bezplatné prohlídce vozu.",
+      "keywords": [
+        "jaka je cena",
+        "kolik to bude stat",
+        "kolik me to bude stat",
+        "konecna cena",
+        "orientacni",
+        "prohlidk",
+        "konzultac"
+      ]
+    },
+    {
+      "question": "Odstraní leštění všechny škrábance?",
+      "answer": "Leštění odstraní většinu běžných škrábanců, hologramů a oxidace – zhruba 80–95 %. Hluboké škrábance, které sahají až k základní barvě nebo na plech, odstranit nelze. Při konzultaci vám ukážu, co se dá opravit.",
+      "keywords": [
+        "skrabanc",
+        "hologram",
+        "oxidac",
+        "odstrani",
+        "hluboke"
+      ]
+    },
+    {
+      "question": "Účtujete příplatek za silně znečištěný interiér?",
+      "answer": "Ano, u silně znečištěného interiéru – například skvrny po stavební práci nebo velké množství chlupů z koček a psů – je příplatek 20 % a více, vždy podle předchozí dohody.",
+      "keywords": [
+        "spinav",
+        "znecist",
+        "chlupy",
+        "psi",
+        "kocky",
+        "stavebni",
+        "priplat"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
