@@ -1,0 +1,528 @@
+{
+  "slug": "r8-performance",
+  "name": "R8 Performance",
+  "shortName": "R8 Performance",
+  "kind": "autoservice",
+  "tagline": "Servis, pneuservis, chip tuning a car detailing v Olomouci",
+  "description": "Jsme olomoucká firma působící na trhu od roku 2018. Místo srdce nám v hrudi tepe dobře naladěný motor a kupředu nás pohání radost z kvalitně odvedené práce a spokojenost našich zákazníků. Nabízíme klasický servis vozidel všech značek, pneuservis, ruční mytí a car detailing – a pro pravé automobilové nadšence také úpravy software i hardware vozidel. Jsme autorizovaným dealerem firmy revo.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#2B86D9",
+  "contacts": {
+    "phone": "+420 731 860 437",
+    "address": "Hodolany 1220, 779 00 Olomouc",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=R8%20Performance%2C%20Hodolany%201220%2C%20779%2000%20Olomouc",
+    "email": "r8performance@email.cz",
+    "instagram": "r8performance",
+    "facebook": "R8PerformanceOL"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "07:30",
+        "16:30"
+      ]
+    ],
+    "tue": [
+      [
+        "07:30",
+        "16:30"
+      ]
+    ],
+    "wed": [
+      [
+        "07:30",
+        "16:30"
+      ]
+    ],
+    "thu": [
+      [
+        "07:30",
+        "16:30"
+      ]
+    ],
+    "fri": [
+      [
+        "07:30",
+        "16:30"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 120,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "dilna",
+      "name": "Dílna"
+    },
+    {
+      "key": "myci-box",
+      "name": "Mycí box"
+    }
+  ],
+  "services": [
+    {
+      "key": "classic",
+      "name": "CLASSIC – základní mytí",
+      "category": "Mytí a detailing",
+      "description": "Cca 60 min. Předmytí aktivní pěnou včetně podběhů, odstranění hmyzu, ruční mytí pH neutrálním šampónem s voskem, mytí mezidveřních prostor, vysoušení, mytí disků kol a impregnace pneumatik. Cena se může lišit podle náročnosti vašich požadavků.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "myci-box"
+      ]
+    },
+    {
+      "key": "interior-classic",
+      "name": "INTERIOR CLASSIC – čištění interiéru",
+      "category": "Mytí a detailing",
+      "description": "Cca 120 min. Čištění a ošetření všech vnitřních plastů, luxování interiéru a zavazadlového prostoru, vyleštění vnitřních oken a zrcátek, čištění koberců a provonění interiéru. Cena se může lišit podle náročnosti vašich požadavků.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "myci-box"
+      ]
+    },
+    {
+      "key": "style",
+      "name": "STYLE – mytí a interiér",
+      "category": "Mytí a detailing",
+      "description": "Cca 2–2,5 hod. Kompletní program CLASSIC a INTERIOR CLASSIC v jednom, navíc vyleštění vnějších oken a všech zrcátek vozu. Cena se může lišit podle náročnosti vašich požadavků.",
+      "price": 1300,
+      "priceFrom": true,
+      "durationMinutes": 150,
+      "resources": [
+        "myci-box"
+      ]
+    },
+    {
+      "key": "briliant",
+      "name": "BRILIANT – exteriér s ochranou laku",
+      "category": "Mytí a detailing",
+      "description": "Cca 6 hod. Ruční mytí, ošetření vnějších plastů, hydrofobní ochrana čelního skla Kamikaze Collection, hloubková dekontaminace (polétavá rez, průmyslový spád, asfalt, smůla), čištění laku pod vosk a ošetření laku sealantem. Cena se může lišit podle náročnosti vašich požadavků.",
+      "price": 3200,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": [
+        "myci-box"
+      ]
+    },
+    {
+      "key": "excellent",
+      "name": "EXCELLENT – kompletní péče",
+      "category": "Mytí a detailing",
+      "description": "Cca 10 hod. Kompletní mytí exteriéru i interiéru jako STYLE, navíc ošetření vnějších plastů, tepování sedaček textilního interiéru, čištění a ošetření kůže a tepování čalounění dveří. Cena se může lišit podle náročnosti vašich požadavků.",
+      "price": 3900,
+      "priceFrom": true,
+      "durationMinutes": 600,
+      "resources": [
+        "myci-box"
+      ]
+    },
+    {
+      "key": "renovace-laku",
+      "name": "RENOVACE LAKU",
+      "category": "Mytí a detailing",
+      "description": "Od 24 hod. Ruční mytí, hloubková dekontaminace laku, hydrofobní ochrana čelního skla Kamikaze Collection, ošetření vnějších plastů a 1–3stupňová renovace laku. Cena se může lišit podle náročnosti vašich požadavků.",
+      "price": 9000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "myci-box"
+      ]
+    },
+    {
+      "key": "vosk",
+      "name": "Aplikace vosku dle výběru",
+      "category": "Mytí a detailing",
+      "description": "Ke každému mycímu programu lze dokoupit aplikaci vosku dle vlastního výběru.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "myci-box"
+      ]
+    },
+    {
+      "key": "svetlomety",
+      "name": "Rozleštění světlometů (za kus)",
+      "category": "Mytí a detailing",
+      "description": "Broušení, leštění a ošetření světlometů. Cena je uvedena za kus.",
+      "price": 750,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "myci-box"
+      ]
+    },
+    {
+      "key": "mechanika",
+      "name": "Mechanická práce (1 hod)",
+      "category": "Servis",
+      "description": "Servisní a mechanické práce na vozidlech všech značek. Cena za 1 hodinu práce.",
+      "price": 700,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "diagnostika",
+      "name": "Diagnostika",
+      "category": "Servis",
+      "description": "Počítačová diagnostika vozidla – načtení a vyhodnocení chybových kódů.",
+      "price": 600,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "kontrola-pred-koupi",
+      "name": "Kontrola vozidla před koupí",
+      "category": "Servis",
+      "description": "Kontrola všech mechanických částí vozidla na heveru, diagnostika, testovací jízda a proměření tloušťky laku.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "defekt",
+      "name": "Oprava defektu",
+      "category": "Pneuservis",
+      "description": "Oprava defektu pneumatiky.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 30,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "prezuti",
+      "name": "Přezutí kompletních kol bez vyvážení",
+      "category": "Pneuservis",
+      "description": "Výměna kompletních kol (letní/zimní) bez vyvážení.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 30,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "prezuti-plech",
+      "name": "Přezutí kompletních plechových kol + vyvážení",
+      "category": "Pneuservis",
+      "description": "Výměna kompletních plechových kol včetně vyvážení.",
+      "price": 550,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "prezuti-alu",
+      "name": "Přezutí kompletních alu kol + vyvážení",
+      "category": "Pneuservis",
+      "description": "Výměna kompletních alu kol včetně vyvážení.",
+      "price": 650,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "disk-16",
+      "name": "Přezutí z disku na disk 10″–16″",
+      "category": "Pneuservis",
+      "description": "Přezutí pneumatik na discích 10″–16″.",
+      "price": 850,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "disk-21",
+      "name": "Přezutí z disku na disk 17″–21″",
+      "category": "Pneuservis",
+      "description": "Přezutí pneumatik na discích 17″–21″.",
+      "price": 1100,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "chip-tuning",
+      "name": "Chip tuning revo",
+      "category": "Chip tuning",
+      "description": "Upgrade software motoru a převodovky DSG/S-tronic od firmy revo, jejímž jsme autorizovaným dealerem. Revo = doživotní aktualizace software zdarma. Cenu domluvíme podle vozu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "hw-upravy",
+      "name": "Hardwarové úpravy",
+      "category": "Chip tuning",
+      "description": "Sání revo a Forge Motorsport, podvozek, spojka a další úpravy pro vyšší výkon i bezpečnost. Ozvěte se a najdeme řešení přímo pro vás.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "kodovani",
+      "name": "Kódování dodatečné výbavy",
+      "category": "Chip tuning",
+      "description": "Zprovoznění skrytých funkcí vozu – např. přísvit do zatáček, staging budíků, coming/leaving home, hill hold control. Funkce se liší podle vozu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "dilna"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "wrench",
+      "title": "Na trhu od roku 2018",
+      "text": "Servis vozidel všech značek, pneuservis, mytí a detailing pod jednou střechou v Olomouci."
+    },
+    {
+      "icon": "medal",
+      "title": "Autorizovaný dealer revo",
+      "text": "Software i hardware revo – s doživotní aktualizací software zdarma."
+    },
+    {
+      "icon": "credit-card",
+      "title": "Ceny včetně DPH",
+      "text": "Všechny ceny jsou uvedeny včetně DPH. Individuální přání = individuální cena."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-arteon.webp",
+      "caption": "Volkswagen Arteon R-line – jednokrokové leštění a ochrana Kamikaze Over Coat"
+    },
+    {
+      "image": "images/work-arteon-pred.webp",
+      "caption": "Příď Arteonu po leštění"
+    },
+    {
+      "image": "images/work-arteon-lak.webp",
+      "caption": "Zrcadlový odraz v laku Arteonu"
+    },
+    {
+      "image": "images/work-q5.webp",
+      "caption": "Audi Q5 2.0 TDI – příprava před zimou"
+    },
+    {
+      "image": "images/work-q5-interier.webp",
+      "caption": "Interiér Audi Q5 po hloubkovém čištění"
+    },
+    {
+      "image": "images/work-q5-sedadla.webp",
+      "caption": "Zadní sedadla Audi Q5"
+    },
+    {
+      "image": "images/work-octavia.webp",
+      "caption": "Škoda Octavia Combi – rozleštění laku a ochrana Kamikaze Over Coat"
+    },
+    {
+      "image": "images/work-octavia-pred.webp",
+      "caption": "Detail přídě Octavie"
+    },
+    {
+      "image": "images/work-karoq.webp",
+      "caption": "Škoda Karoq – mytí a Kamikaze Infinity Wax"
+    },
+    {
+      "image": "images/work-rapid.webp",
+      "caption": "Škoda Rapid 1.2 TSI revo stage 1 – náš firemní vůz"
+    },
+    {
+      "image": "images/work-rapid-kola.webp",
+      "caption": "Alu kola Autec Wizard na Rapidu"
+    },
+    {
+      "image": "images/work-rapid-sani.webp",
+      "caption": "Otevřené sání Forge Motorsport v Rapidu"
+    },
+    {
+      "image": "images/work-rs3.webp",
+      "caption": "Audi RS3 revo stage 1 – aktualizace software"
+    },
+    {
+      "image": "images/work-a5-sani.webp",
+      "caption": "Revo open intake system v Audi A5 2.0 TFSI"
+    },
+    {
+      "image": "images/work-a5.webp",
+      "caption": "Audi A5 2.0 TFSI v naší dílně"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Liší se cena mytí podle velikosti vozu?",
+      "answer": "Ano. V rámci všech mycích programů platí příplatky: středně velká vozidla +10 %, SUV a luxusní limuzíny +20 %, VAN a velká SUV / off-road +30 %.",
+      "keywords": [
+        "velikost",
+        "suv",
+        "limuzin",
+        "van",
+        "off road",
+        "offroad",
+        "priplatek",
+        "priplat",
+        "velke auto",
+        "dodavk"
+      ]
+    },
+    {
+      "question": "Co když je auto hodně špinavé?",
+      "answer": "V případě nadměrného znečištění se připlácí 500 Kč za každou hodinu práce navíc.",
+      "keywords": [
+        "spinav",
+        "znecist",
+        "chlupy",
+        "zvirat",
+        "hodina navic"
+      ]
+    },
+    {
+      "question": "Jsou ceny včetně DPH?",
+      "answer": "Ano, všechny ceny jsou uvedeny včetně DPH. Individuální přání = individuální cena.",
+      "keywords": [
+        "dph",
+        "faktur",
+        "vcetne",
+        "bez dph"
+      ]
+    },
+    {
+      "question": "Můžu si k mytí přikoupit vosk?",
+      "answer": "Ano, ke každému mycímu programu lze dokoupit aplikaci vosku dle vlastního výběru od 1 000 Kč.",
+      "keywords": [
+        "vosk",
+        "voskovan",
+        "prikoupit",
+        "dokoupit"
+      ]
+    },
+    {
+      "question": "Jaký mycí program si vybrat?",
+      "answer": "CLASSIC (od 500 Kč, cca 60 min) – ruční mytí exteriéru. INTERIOR CLASSIC (od 800 Kč, cca 2 hod) – čištění interiéru. STYLE (od 1 300 Kč, cca 2–2,5 hod) – exteriér i interiér. BRILIANT (od 3 200 Kč, cca 6 hod) – exteriér s dekontaminací a sealantem. EXCELLENT (od 3 900 Kč, cca 10 hod) – kompletní péče včetně tepování. RENOVACE LAKU (od 9 000 Kč, od 24 hod) – 1–3stupňová renovace laku.",
+      "keywords": [
+        "program",
+        "vybrat",
+        "rozdil",
+        "classic",
+        "style",
+        "briliant",
+        "excellent",
+        "jak dlouho",
+        "trva"
+      ]
+    },
+    {
+      "question": "Děláte chip tuning?",
+      "answer": "Ano. Jsme autorizovaným dealerem firmy revo – nabízíme upgrade software motoru i převodovek DSG/S-tronic a hardwarové úpravy (např. sání). Revo = doživotní aktualizace software zdarma. Pracujeme i s dalšími značkami – ozvěte se a najdeme řešení přímo pro vás.",
+      "keywords": [
+        "chip",
+        "tuning",
+        "cip",
+        "revo",
+        "stage",
+        "vykon",
+        "software",
+        "dsg",
+        "remap"
+      ]
+    },
+    {
+      "question": "Co zahrnuje kontrola vozu před koupí?",
+      "answer": "Kontrolu všech mechanických částí vozidla na heveru, diagnostiku, testovací jízdu a proměření tloušťky laku. Cena od 1 500 Kč.",
+      "keywords": [
+        "pred koupi",
+        "koupe",
+        "kupuji",
+        "ojet",
+        "zanovni",
+        "proverit",
+        "tloustka laku"
+      ]
+    },
+    {
+      "question": "Kdy máte otevřeno?",
+      "answer": "Kontaktovat nás můžete ve všední dny od 7:30 do 16:30. V urgentních případech dle dohody – volejte +420 731 860 437.",
+      "keywords": [
+        "oteviraci",
+        "otevreno",
+        "kdy mate",
+        "vikend",
+        "sobota",
+        "nedele",
+        "urgent",
+        "nalehav"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
