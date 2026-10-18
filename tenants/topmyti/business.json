@@ -1,0 +1,621 @@
+{
+  "slug": "topmyti",
+  "name": "TopMytí",
+  "shortName": "TopMytí",
+  "kind": "detailing",
+  "tagline": "Ruční mytí aut a motocyklů v Brně – kvalitní ruční mytí s tradicí",
+  "description": "Jsme firma s mnohaletou tradicí v oblasti ručního mytí aut a čištění interiérů – již přes 10 let nejdéle fungující ruční mytí v Brně. Zabýváme se také detailingem, precizním voskováním, renovacemi laků a aplikací nanokosmetiky. Používáme autokosmetiku Meguiar's, Auto Finesse, Autoglym, Rupes, Swissvax, Gtechniq či Gyeon a zakládáme si na individuálním přístupu.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#52C0D8",
+  "contacts": {
+    "phone": "+420 777 718 525",
+    "address": "Hybešova 21, 602 00 Brno (dvorní trakt)",
+    "legalAddress": "Tozor s.r.o., Nové sady 988/2, 602 00 Brno, IČO 02030292",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Hybe%C5%A1ova%2021%2C%20602%2000%20Brno",
+    "email": "topmyticz@gmail.com",
+    "instagram": "topmyti.cz",
+    "facebook": "Topmyti.cz"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 120,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Mycí box 1"
+    },
+    {
+      "key": "box-2",
+      "name": "Mycí box 2"
+    }
+  ],
+  "services": [
+    {
+      "key": "myti",
+      "name": "Ruční mytí a sušení karoserie",
+      "category": "Exteriér",
+      "description": "Šetrné ruční mytí a vysušení karoserie.",
+      "price": 800,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "myti-detail",
+      "name": "Detailní mytí a sušení karoserie",
+      "category": "Exteriér",
+      "description": "Detailní mytí a sušení – vhodné i pro vozidla ošetřená nanopovlaky.",
+      "price": 1400,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "kola",
+      "name": "Mytí a ošetření litých kol",
+      "category": "Exteriér",
+      "description": "Mytí, dekontaminace a ošetření litých kol.",
+      "price": 1000,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "pneu",
+      "name": "Čištění a ošetření pneu",
+      "category": "Exteriér",
+      "description": "Vyčištění a ošetření pneumatik.",
+      "price": 300,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ramy",
+      "name": "Čištění rámů dveří",
+      "category": "Exteriér",
+      "description": "Důkladné vyčištění rámů a mezidveřních prostor.",
+      "price": 600,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "plasty-venku",
+      "name": "Čištění a ošetření plastových dílů karoserie",
+      "category": "Exteriér",
+      "description": "Vyčištění a ošetření vnějších plastů.",
+      "price": 400,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "okna",
+      "name": "Čištění oken",
+      "category": "Exteriér",
+      "description": "Čištění oken zvenku i zevnitř.",
+      "price": 600,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "kabriolet",
+      "name": "Čištění a ošetření plátěné střechy kabrioletu",
+      "category": "Exteriér",
+      "description": "Vyčištění a ošetření látkové střechy kabrioletu.",
+      "price": 2000,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "znamky",
+      "name": "Odstranění dálničních známek",
+      "category": "Exteriér",
+      "description": "Šetrné odstranění dálničních známek ze skla.",
+      "price": 200,
+      "priceFrom": false,
+      "durationMinutes": 15,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "polepy",
+      "name": "Odstranění polepů z karoserie",
+      "category": "Exteriér",
+      "description": "Odstranění polepů a zbytků lepidla z karoserie.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "dekontaminace",
+      "name": "Dekontaminace laku",
+      "category": "Lak a ochrana",
+      "description": "Odstranění poletavé rzi a asfaltu z laku.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "clay",
+      "name": "Čištění laku hmotou Clay",
+      "category": "Lak a ochrana",
+      "description": "Čištění laku speciální hmotou Clay – příprava laku před voskováním.",
+      "price": 1000,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "lesteni",
+      "name": "Leštění laku (renovace laku)",
+      "category": "Lak a ochrana",
+      "description": "Renovace laku leštěním. Cena 1 500 Kč za hodinu práce – rozsah domluvíme podle stavu laku.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "vosk-tvrdy",
+      "name": "Ochrana laku tvrdým voskem",
+      "category": "Lak a ochrana",
+      "description": "Dlouhodobá ochrana laku tvrdým voskem.",
+      "price": 1500,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "vosk-karnauba",
+      "name": "Ochrana laku karnaubským voskem",
+      "category": "Lak a ochrana",
+      "description": "Dlouhodobá ochrana laku karnaubským voskem.",
+      "price": 2500,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "vosk-exkluzivni",
+      "name": "Ochrana laku exkluzivním voskem",
+      "category": "Lak a ochrana",
+      "description": "Dlouhodobá ochrana laku exkluzivním voskem – cena podle typu a značky vosku.",
+      "price": 3500,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "keramika",
+      "name": "Keramická ochrana laku – nanopovlak",
+      "category": "Lak a ochrana",
+      "description": "Keramický nanopovlak laku – cena podle počtu aplikovaných vrstev.",
+      "price": 19000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "luxovani",
+      "name": "Luxování interiéru",
+      "category": "Interiér",
+      "description": "Důkladné vyluxování interiéru.",
+      "price": 800,
+      "priceFrom": false,
+      "durationMinutes": 45,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "tepovani",
+      "name": "Tepování interiéru extraktorem",
+      "category": "Interiér",
+      "description": "Tepování interiéru pomocí extraktoru (bez stropu).",
+      "price": 1900,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "strop",
+      "name": "Čištění stropu",
+      "category": "Interiér",
+      "description": "Vyčištění stropnice.",
+      "price": 900,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "plasty",
+      "name": "Čištění a ošetření plastů interiéru",
+      "category": "Interiér",
+      "description": "Vyčištění a ošetření plastových dílů interiéru.",
+      "price": 600,
+      "priceFrom": false,
+      "durationMinutes": 45,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "kuze",
+      "name": "Čištění a ošetření kožených sedadel",
+      "category": "Interiér",
+      "description": "Šetrné vyčištění a ošetření kožených sedadel.",
+      "price": 1900,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "koberecky",
+      "name": "Mytí gumových koberečků",
+      "category": "Interiér",
+      "description": "Umytí gumových koberečků.",
+      "price": 200,
+      "priceFrom": false,
+      "durationMinutes": 15,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "klimatizace",
+      "name": "Dezinfekce klimatizace",
+      "category": "Interiér",
+      "description": "Dezinfekce klimatizace sprejem.",
+      "price": 600,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Dezinfekce interiéru ozonem",
+      "category": "Interiér",
+      "description": "Dezinfekce interiéru a odstranění pachů ozonem.",
+      "price": 1000,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "motor",
+      "name": "Mytí a konzervace motoru",
+      "category": "Motor a motocykly",
+      "description": "Mytí a konzervace motorového prostoru (bez záruky).",
+      "price": 1000,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "moto-myti",
+      "name": "Ruční mytí motocyklu",
+      "category": "Motor a motocykly",
+      "description": "Ruční mytí motocyklu.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "moto-vosk",
+      "name": "Voskování motocyklu",
+      "category": "Motor a motocykly",
+      "description": "Voskování a ochrana motocyklu.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Přes 10 let na trhu",
+      "text": "Nejdéle fungující ruční mytí aut v Brně, hodnocení 4,9/5 na Googlu."
+    },
+    {
+      "icon": "car",
+      "title": "Odvoz a dovoz vozu",
+      "text": "V rámci Brna a okolí vůz vyzvedneme a vrátíme umytý – od 500 Kč."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Značková kosmetika",
+      "text": "Meguiar's, Auto Finesse, Autoglym, Rupes, Swissvax, Gtechniq, Gyeon a další."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-bentley-gtc.webp",
+      "caption": "Bentley Continental GTC"
+    },
+    {
+      "image": "images/work-bentley.webp",
+      "caption": "Bentley Continental"
+    },
+    {
+      "image": "images/work-bmw-e24.webp",
+      "caption": "Klasika BMW řady 6"
+    },
+    {
+      "image": "images/work-mercedes-s.webp",
+      "caption": "Mercedes-Benz třídy S"
+    },
+    {
+      "image": "images/work-mustang.webp",
+      "caption": "Ford Mustang"
+    },
+    {
+      "image": "images/work-harley.webp",
+      "caption": "Detailing motocyklu Harley-Davidson"
+    },
+    {
+      "image": "images/work-lesteni.webp",
+      "caption": "Leštění karbonových dílů"
+    },
+    {
+      "image": "images/work-tepovani.webp",
+      "caption": "Tepování koberců extraktorem"
+    },
+    {
+      "image": "images/work-kuze.webp",
+      "caption": "Čištění kožených sedadel"
+    },
+    {
+      "image": "images/work-motor.webp",
+      "caption": "Mytí a konzervace motoru"
+    },
+    {
+      "image": "images/work-myti.webp",
+      "caption": "Ruční mytí karoserie"
+    },
+    {
+      "image": "images/work-koberecky.webp",
+      "caption": "Čištění koberečků"
+    },
+    {
+      "image": "images/work-cekarna.webp",
+      "caption": "Čekárna v naší provozovně"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Jak k vám vjedu?",
+      "answer": "Najdete nás na ulici Hybešova 21 v centru Brna, ve dvorním traktu. Při vjezdu do dvora si u závory odeberte parkovací lístek a vjeďte dovnitř. Při odjezdu vám závoru otevřeme.",
+      "keywords": [
+        "vjedu",
+        "vjezd",
+        "zavor",
+        "parkovac",
+        "listek",
+        "kde vas najdu",
+        "najdu",
+        "adres",
+        "dvor"
+      ]
+    },
+    {
+      "question": "Můžete auto vyzvednout a přivézt zpět?",
+      "answer": "Ano. Rádi vám ušetříme čas – v rámci Brna a okolí vaše vozidlo vyzvedneme a doručíme zpět umyté. Odvoz a dovoz vozidla stojí od 500 Kč.",
+      "keywords": [
+        "vyzved",
+        "odvoz",
+        "dovoz",
+        "dovez",
+        "privez",
+        "pristav"
+      ]
+    },
+    {
+      "question": "Jaké jsou storno podmínky?",
+      "answer": "Při zrušení rezervace méně než 24 hodin předem účtujeme 50 % ceny objednané služby. U dražších, exkluzivních služeb požadujeme nevratnou zálohu 50 % z ceny.",
+      "keywords": [
+        "storno",
+        "zrusen",
+        "zrusit",
+        "zaloh"
+      ]
+    },
+    {
+      "question": "Máte věrnostní program?",
+      "answer": "Ano, VIP karty. Stříbrná obsahuje 10 mycích programů typu A (luxování a suché čištění interiéru, ruční mytí karoserie) a slevu 10 % na všechny služby. Zlatá obsahuje 10 programů typu B (navíc čištění plastů interiéru a oken) a slevu 20 %. Po vyčerpání programů je možné kartu znovu nabít.",
+      "keywords": [
+        "vip",
+        "vernost",
+        "karta",
+        "karty",
+        "sleva",
+        "slevu",
+        "pravideln"
+      ]
+    },
+    {
+      "question": "Prodáváte dárkové poukazy?",
+      "answer": "Ano, v libovolné hodnotě – s finanční částkou nebo s vybranými službami. Poukazy mají roční platnost a dostanete je ve stylové černé obálce. Koupit je můžete na recepci na Hybešově 21 nebo e-mailem na topmyticz@gmail.com.",
+      "keywords": [
+        "poukaz",
+        "darek",
+        "darkov",
+        "voucher"
+      ]
+    },
+    {
+      "question": "Kolik stojí leštění laku?",
+      "answer": "Leštění (renovace laku) účtujeme 1 500 Kč za hodinu práce. Rozsah a výslednou cenu domluvíme na místě podle stavu laku.",
+      "keywords": [
+        "lesten",
+        "renovace laku",
+        "za hodinu",
+        "hodinov"
+      ]
+    },
+    {
+      "question": "Ručíte za mytí motoru?",
+      "answer": "Mytí a konzervaci motoru provádíme pečlivě, podle našeho ceníku je ale tato služba bez záruky.",
+      "keywords": [
+        "motor",
+        "zaruk",
+        "ruci",
+        "ucite"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
