@@ -1,0 +1,329 @@
+{
+  "slug": "hrdlicka-detailing",
+  "name": "Hrdlička Detailing",
+  "shortName": "Hrdlička",
+  "kind": "detailing",
+  "tagline": "Leštění a renovace laku, keramická ochrana a péče o interiér v Brně",
+  "description": "Leštění aut je moje hlavní disciplína. Odstraním asfalt, poletavou rez, škrábance, hologramy i stopy po myčce a vrátím laku lesk a hloubku – od jednokrokového rozjasnění po vícekrokové leštění. Lak ochráním keramikou, voskem nebo PPF fólií, postarám se o interiér, světlomety i střechy kabrioletů. V jednu chvíli se věnuji vždy jen jednomu vozu.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#C8E63C",
+  "contacts": {
+    "phone": "+420 778 660 677",
+    "address": "Tovární 726/11, Brno",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Hrdli%C4%8Dka+Detailing+Tov%C3%A1rn%C3%AD+726%2F11+Brno",
+    "email": "tomas@hrdlickadetailing.cz",
+    "instagram": "hrdlickadetailing",
+    "facebook": "hrdlickadetailing"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Dílna"
+    }
+  ],
+  "services": [
+    {
+      "key": "lesteni-1",
+      "name": "Jednokrokové rozjasnění laku",
+      "category": "Leštění laku",
+      "description": "Příprava vozu, odstranění asfaltu, poletavé rzi a nečistot z laku a jednokrokové leštění, které vrátí laku lesk a odstraní lehké stopy po myčce. Cena je individuální.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "lesteni-vice",
+      "name": "Vícekrokové leštění laku",
+      "category": "Leštění laku",
+      "description": "Korekce škrábanců, hologramů a stop po myčce ve více krocích pro maximální lesk a hloubku laku. Cena je individuální podle stavu laku.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 4320,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "keramika",
+      "name": "Keramická ochrana laku",
+      "category": "Ochrana laku",
+      "description": "Tvrdý hydrofobní povlak navázaný přímo na lak, který podtrhne barevnou hloubku a lesk a vydrží roky, ne měsíce. Cena včetně leštění podle zvoleného typu keramiky.",
+      "price": 10000,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "vosk",
+      "name": "Voskování",
+      "category": "Ochrana laku",
+      "description": "Klasika, která laku dodá hloubku a lesk. Nejlevnější vstup do ochrany laku, ideální po leštění nebo jako sezónní údržba. Cena včetně mytí vozu.",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf",
+      "name": "Ochranná PPF fólie",
+      "category": "Ochrana laku",
+      "description": "Průhledná samoléčivá fólie proti kamínkům, odřeninám a větvím – na exponované díly (nárazník, světla, kapota, zrcátka, sloupky, prahy) nebo na celý vůz. Realizace s partnerem.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "interier-zaklad",
+      "name": "Základní vyčištění vozu",
+      "category": "Péče o interiér",
+      "description": "Ruční mytí celého vozu, kompletní vysátí a odstranění prachu, mytí všech oken.",
+      "price": 1800,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "interier-sucho",
+      "name": "Kompletní čištění nasucho",
+      "category": "Péče o interiér",
+      "description": "Kompletní vyčištění vozu bez tepování a bez čištění kůže.",
+      "price": 2500,
+      "priceFrom": false,
+      "durationMinutes": 300,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "interier-komplet",
+      "name": "Kompletní vyčištění vozu",
+      "category": "Péče o interiér",
+      "description": "Ruční mytí celého vozu včetně zádveří, kompletní vysátí a odstranění prachu, tepování veškerého čalounění nebo čištění a impregnace kůže, čištění a ochrana plastů, mytí oken.",
+      "price": 4000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "interier-detailing",
+      "name": "Detailing interiéru",
+      "category": "Péče o interiér",
+      "description": "Detailní vyčištění kompletního interiéru s použitím prémiových produktů.",
+      "price": 7000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "prodej",
+      "name": "Příprava vozu na prodej",
+      "category": "Další služby",
+      "description": "Kompletní mytí vozu, přeleštění karoserie jedním krokem a kompletní vyčištění interiéru včetně tepování sedadel, koberců a podlah a čištění kůže.",
+      "price": 8000,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "svetla",
+      "name": "Renovace světlometů",
+      "category": "Další služby",
+      "description": "Zbrousím degradovanou vrstvu zažloutlých a zmatnělých světlometů, vyleštím je do čirosti a zakonzervuji ochrannou vrstvou proti UV. Cena za pár světel.",
+      "price": 2000,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "kabriolet",
+      "name": "Péče o střechu kabrioletu",
+      "category": "Další služby",
+      "description": "Hloubkové čištění skvrn a nánosů na látkové střeše a následná důkladná impregnace. Ochranu se vyplatí řešit už od chvíle, kdy je střecha nová.",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "sparkle",
+      "title": "Leštění je moje disciplína",
+      "text": "Od jednokrokového rozjasnění po vícekrokovou korekci pro maximální lesk a hloubku laku."
+    },
+    {
+      "icon": "car",
+      "title": "Vždy jen jeden vůz",
+      "text": "Věnuji se jen jednomu autu najednou – další přebírám až po dokončení."
+    },
+    {
+      "icon": "shield",
+      "title": "Ochrana na roky",
+      "text": "Keramika, vosk nebo PPF fólie – vždy hledám nejvhodnější řešení pro váš vůz."
+    }
+  ],
+  "gallery": [],
+  "faq": [
+    {
+      "question": "Kolik mi to zabere času?",
+      "answer": "Záleží na rozsahu. Jednodušší zásahy jako renovace světlometů nebo voskování zvládnu během jednoho dne. Plná korekce laku s keramickou ochranou je práce na několik dní — lak musí projít přípravou, leštěním i vytvrzením povlaku. Přesný termín i délku vám řeknu hned při konzultaci, abyste věděli, na jak dlouho vaše auto zůstane v mé péči.",
+      "keywords": [
+        "jak dlouho",
+        "dlouho",
+        "zabere",
+        "casu",
+        "trva",
+        "trvat",
+        "bez vozu",
+        "bez auta",
+        "kdy bude hotov"
+      ]
+    },
+    {
+      "question": "Děláte i detailing motocyklů, lodí, letadel a třeba i šalin?",
+      "answer": "Ano, dělám. Zpravidla jsou na detailing náročnější, ale od toho jsou výzvy.",
+      "keywords": [
+        "motocykl",
+        "motork",
+        "lod",
+        "letadl",
+        "salin",
+        "karavan",
+        "obytn"
+      ]
+    },
+    {
+      "question": "Děláte i čištění vozidel a tepování interiéru?",
+      "answer": "Ano. Kompletní čištění vozidel dělám zvenku i zevnitř — od ručního mytí a dekontaminace laku po detailing interiéru. Tepování interiéru, tedy extrakční čištění látkových sedadel, koberců a stropnice, je součástí kompletního vyčištění interiéru, ale nabízím ho i samostatně.",
+      "keywords": [
+        "tepovan",
+        "stropnic",
+        "samostatne",
+        "extrakcni"
+      ]
+    },
+    {
+      "question": "Můžete dorazit ke mně?",
+      "answer": "Kvalitní leštění potřebuje zázemí — stabilní světlo, teplo a čisté prostředí bez prachu. Proto pracuji v dílně na Tovární 726/11 v Brně, kde mám vše potřebné. Po domluvě se ale vždycky dá něco vymyslet — zavolejte a probereme, co je reálné.",
+      "keywords": [
+        "dorazit",
+        "prijet ke mne",
+        "prijedete",
+        "ke mne",
+        "u me",
+        "mobilni",
+        "vyjezd",
+        "vyzvednete",
+        "vyzvednout"
+      ]
+    },
+    {
+      "question": "Kolik to bude stát?",
+      "answer": "Ceník paušálně nezveřejňuji, protože by byl zavádějící. Cena se odvíjí od velikosti vozu, stavu laku a rozsahu služeb. Zavolejte mi, domluvíme se na prohlídce, při které ověříme stav auta a dostanete konkrétní nezávaznou nabídku.",
+      "keywords": [
+        "kolik to bude stat",
+        "kolik me to bude stat",
+        "kolik mi to bude stat",
+        "cenik",
+        "nabidk",
+        "nezavazn",
+        "prohlidk"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
