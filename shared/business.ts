@@ -87,7 +87,9 @@ export const businessSchema = z
       whatsapp: z.string().max(32).optional(),
       /** Profile handles, e.g. «jh_auto_detailing» → instagram.com/jh_auto_detailing. */
       instagram: z.string().regex(/^@?[A-Za-z0-9._]{1,64}$/, 'Instagram: имя профиля без ссылки').optional(),
-      facebook: z.string().regex(/^[A-Za-z0-9.\-]{1,64}$/, 'Facebook: имя страницы без ссылки').optional(),
+      /** Page name («jhautodetailingcz») or the full https://www.facebook.com/… link for pages without one. */
+      facebook: z.union([z.string().regex(/^[A-Za-z0-9.\-]{1,64}$/), z.url().startsWith('https://www.facebook.com/').max(200)], {error: 'Facebook: имя страницы или ссылка https://www.facebook.com/…'}).optional(),
+      tiktok: z.string().regex(/^@?[A-Za-z0-9._]{1,64}$/, 'TikTok: имя профиля без ссылки').optional(),
       email: z.email().optional(),
     }),
     images: z.object({

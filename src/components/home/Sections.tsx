@@ -22,6 +22,7 @@ import {
   EnvelopeSimple,
   FacebookLogo,
   InstagramLogo,
+  TiktokLogo,
   MapPin,
   Medal,
   NavigationArrow,
@@ -351,13 +352,16 @@ export function ContactsSection() {
               <Button label={t.email} variant="ghost" href={`mailto:${t.email}`} />
             </HStack>
           )}
-          {(t.telegram || t.whatsapp || t.instagram || t.facebook) && (
+          {(t.telegram || t.whatsapp || t.instagram || t.facebook || t.tiktok) && (
             <HStack gap={2} wrap="wrap">
               {t.instagram && (
                 <Button label="Instagram" icon={<Icon icon={InstagramLogo} />} href={`https://www.instagram.com/${t.instagram.replace(/^@/, '')}`} target="_blank" size="sm" />
               )}
               {t.facebook && (
-                <Button label="Facebook" icon={<Icon icon={FacebookLogo} />} href={`https://www.facebook.com/${t.facebook}`} target="_blank" size="sm" />
+                <Button label="Facebook" icon={<Icon icon={FacebookLogo} />} href={t.facebook.startsWith('https://') ? t.facebook : `https://www.facebook.com/${t.facebook}`} target="_blank" size="sm" />
+              )}
+              {t.tiktok && (
+                <Button label="TikTok" icon={<Icon icon={TiktokLogo} />} href={`https://www.tiktok.com/@${t.tiktok.replace(/^@/, '')}`} target="_blank" size="sm" />
               )}
               {t.telegram && (
                 <Button label="Telegram" icon={<Icon icon={TelegramLogo} />} href={`https://t.me/${t.telegram.replace(/^@/, '')}`} target="_blank" size="sm" />

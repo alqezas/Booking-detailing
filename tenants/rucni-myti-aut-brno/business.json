@@ -1,0 +1,419 @@
+{
+  "slug": "rucni-myti-aut-brno",
+  "name": "Ruční mytí aut – Martin Klimš",
+  "shortName": "Ruční mytí",
+  "kind": "detailing",
+  "tagline": "Ruční mytí a profesionální čištění interiéru aut v Brně",
+  "description": "Postaráme se o to, aby Váš vůz vypadal a voněl jako nový. Pracujeme precizně, šetrně a s důrazem na každý detail: pečlivé ruční mytí exteriéru, detailní čištění interiéru, tepování sedaček, renovace plastů, ochrana laku, keramická ochrana a PPF fólie. Přes 20 let na trhu a přes 1000 vyčištěných vozů.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#E9423B",
+  "contacts": {
+    "phone": "+420 774 838 325",
+    "address": "Dusíkova 7a, Brno-sever",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Dus%C3%ADkova%207a%2C%20Brno",
+    "email": "rucnimytiaut@gmail.com",
+    "instagram": "mkstyle.ppf",
+    "facebook": "https://www.facebook.com/p/Ru%C4%8Dn%C3%AD-myt%C3%AD-aut-Brno-Lesn%C3%A1-100063228701194/",
+    "tiktok": "ochransvujvuz.cz"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 120,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Box 1"
+    }
+  ],
+  "services": [
+    {
+      "key": "medium",
+      "name": "Program Medium",
+      "category": "Mycí programy",
+      "description": "Suché čištění interiéru: tlakové a důkladné ruční mytí karoserie, disků a podběhů, odstranění hmyzu, tekutý vosk, sušení, luxování včetně kufru, mytí oken, ošetření plastů, čištění koberečků a ošetření pneumatik. Cca 75 min.",
+      "price": 1560,
+      "priceFrom": false,
+      "durationMinutes": 75,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "komplet",
+      "name": "Program Komplet",
+      "category": "Mycí programy",
+      "description": "Kompletní mytí a mokré čištění interiéru (mimo stropu) s ošetřením kůže. Vše z programu Medium: ruční mytí karoserie, tekutý vosk, luxování, okna, plasty a pneumatiky. Cca 4–5 hod.",
+      "price": 2750,
+      "priceFrom": false,
+      "durationMinutes": 300,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "exclusive",
+      "name": "Program Exclusive",
+      "category": "Mycí programy",
+      "description": "Vše z programu Komplet a navíc odstranění menších škrábanců a dlouhodobé voskování vozu (ochrana na 3 měsíce). Cca 6 hod.",
+      "price": 3150,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "exclusive-plus",
+      "name": "Program Exclusive Plus",
+      "category": "Mycí programy",
+      "description": "Vše z programu Exclusive a navíc dekontaminace a ošetření laku, dlouhodobý vosk (karnaubský nebo nanotechnologie, ochrana cca 1 rok) a desinfekce klimatizace. Cca 8 hod.",
+      "price": 4900,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "keramika",
+      "name": "Program Keramika",
+      "category": "Mycí programy",
+      "description": "Kompletní mytí exteriéru a mokré čištění interiéru, dekontaminace laku, strojové rozleštění karoserie a profesionální keramická ochrana laku ve dvou vrstvách. Cca 48 hod.",
+      "price": 9990,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-predni-cast",
+      "name": "PPF fólie: přední část vozu",
+      "category": "PPF fólie",
+      "description": "Ochranná PPF fólie. Velikost vozu S 32 000 Kč, M 35 000 Kč, XL 38 000 Kč.",
+      "price": 32000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-cele-auto",
+      "name": "PPF fólie: celé auto",
+      "category": "PPF fólie",
+      "description": "Ochranná PPF fólie. Velikost vozu S 76 000 Kč, M 90 000 Kč, XL 102 000 Kč.",
+      "price": 76000,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-kapota",
+      "name": "PPF fólie: kapota",
+      "category": "PPF fólie",
+      "description": "Ochranná PPF fólie. Velikost vozu S 10 000 Kč, M 11 000 Kč, XL 12 000 Kč.",
+      "price": 10000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-strecha",
+      "name": "PPF fólie: střecha",
+      "category": "PPF fólie",
+      "description": "Ochranná PPF fólie. Velikost vozu S 8 000 Kč, M 10 000 Kč, XL 10 000 Kč.",
+      "price": 8000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-predni-naraznik",
+      "name": "PPF fólie: přední nárazník",
+      "category": "PPF fólie",
+      "description": "Ochranná PPF fólie. Velikost vozu S 9 000 Kč, M 10 000 Kč, XL 11 000 Kč.",
+      "price": 9000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-zadni-naraznik",
+      "name": "PPF fólie: zadní nárazník",
+      "category": "PPF fólie",
+      "description": "Ochranná PPF fólie. Velikost vozu S 8 000 Kč, M 10 000 Kč, XL 11 000 Kč.",
+      "price": 8000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-predni-dvere",
+      "name": "PPF fólie: přední dveře",
+      "category": "PPF fólie",
+      "description": "Ochranná PPF fólie. Velikost vozu S 4 000 Kč, M 5 000 Kč, XL 5 500 Kč.",
+      "price": 4000,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-zadni-dvere",
+      "name": "PPF fólie: zadní dveře",
+      "category": "PPF fólie",
+      "description": "Ochranná PPF fólie. Velikost vozu S 4 000 Kč, M 5 000 Kč, XL 5 500 Kč.",
+      "price": 4000,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-dvere-kufru",
+      "name": "PPF fólie: dveře kufru",
+      "category": "PPF fólie",
+      "description": "Ochranná PPF fólie. Velikost vozu S 4 000 Kč, M 5 000 Kč, XL 6 000 Kč.",
+      "price": 4000,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-predni-blatnik",
+      "name": "PPF fólie: přední blatník",
+      "category": "PPF fólie",
+      "description": "Ochranná PPF fólie. Velikost vozu S 5 000 Kč, M 5 500 Kč, XL 6 000 Kč.",
+      "price": 5000,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-zadni-blatnik",
+      "name": "PPF fólie: zadní blatník",
+      "category": "PPF fólie",
+      "description": "Ochranná PPF fólie. Velikost vozu S 4 000 Kč, M 5 000 Kč, XL 7 000 Kč.",
+      "price": 4000,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-svetlo-predni",
+      "name": "PPF fólie: přední světlo",
+      "category": "PPF fólie",
+      "description": "Ochranná PPF fólie. Cena pro všechny velikosti vozu.",
+      "price": 1500,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-svetlo-zadni",
+      "name": "PPF fólie: zadní světlo",
+      "category": "PPF fólie",
+      "description": "Ochranná PPF fólie. Cena pro všechny velikosti vozu.",
+      "price": 1500,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Přes 20 let na trhu",
+      "text": "Přes 1000 vyčištěných vozů – víme, jak na každý interiér i lak."
+    },
+    {
+      "icon": "clock",
+      "title": "Termín do 3 dnů",
+      "text": "Volný termín pro Vás obvykle najdeme do 3 dnů."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Precizně a šetrně",
+      "text": "Ruční mytí a péče o každý detail, aby vůz vypadal i voněl jako nový."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-koberecky.webp",
+      "caption": "Koberečky před a po čištění"
+    },
+    {
+      "image": "images/work-sedacka.webp",
+      "caption": "Sedačka před a po tepování"
+    },
+    {
+      "image": "images/work-kufr.webp",
+      "caption": "Kufr před a po čištění"
+    },
+    {
+      "image": "images/work-sedadlo.webp",
+      "caption": "Sedadlo před a po tepování"
+    },
+    {
+      "image": "images/work-tepovani.webp",
+      "caption": "Tepování sedaček"
+    },
+    {
+      "image": "images/work-porsche.webp",
+      "caption": "Porsche 911"
+    },
+    {
+      "image": "images/work-mercedes.webp",
+      "caption": "Mercedes-Benz GLE"
+    },
+    {
+      "image": "images/work-mustang.webp",
+      "caption": "Ford Mustang"
+    },
+    {
+      "image": "images/work-audi.webp",
+      "caption": "Audi S8"
+    },
+    {
+      "image": "images/work-corvette.webp",
+      "caption": "Chevrolet Corvette"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Je ceník závazný?",
+      "answer": "Ceník je pouze orientační. Konečná cena závisí na velikosti a stavu vozu. Pro podrobnou kalkulaci nám neváhejte zavolat na 774 838 325.",
+      "keywords": [
+        "zavazn",
+        "orientacni",
+        "kalkulac",
+        "konecna cena",
+        "kolik me to bude stat",
+        "kolik to bude stat"
+      ]
+    },
+    {
+      "question": "Jak rychle se dostanu na řadu?",
+      "answer": "Termín obvykle najdeme do 3 dnů. Nejrychlejší je zarezervovat si volný čas přímo tady online, nebo nám zavolat.",
+      "keywords": [
+        "jak rychle",
+        "na radu",
+        "cekaci",
+        "cekat"
+      ]
+    },
+    {
+      "question": "Pracujete i o víkendu?",
+      "answer": "Ve všední dny (Po–Pá) pracujeme od 8 do 17 hodin. V sobotu pracujeme na objednávku – zavolejte nám a domluvíme se.",
+      "keywords": [
+        "vikend",
+        "sobot",
+        "nedel",
+        "o vikendu"
+      ]
+    },
+    {
+      "question": "Jak se počítá cena PPF fólie?",
+      "answer": "Cena PPF fólie závisí na dílu a velikosti vozu (S, M, XL) – přehled najdete v ceníku v sekci PPF fólie. Ochrana prahů je cenou dohodou. Pro přesnou kalkulaci nám zavolejte.",
+      "keywords": [
+        "velikost",
+        "prah",
+        "prahy",
+        "kalkulace ppf"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
