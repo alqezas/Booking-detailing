@@ -1,0 +1,495 @@
+{
+  "slug": "wash-wrap",
+  "name": "Wash & Wrap",
+  "shortName": "Wash & Wrap",
+  "kind": "detailing",
+  "tagline": "Prémiový autodetailing, PPF a polepy aut v Brně",
+  "description": "Jsme tu pro vás od roku 2015. Za více než 10 let jsme vyčistili a ošetřili tisíce vozů, aplikovali stovky keramických ochran a zrealizovali řadu sofistikovaných projektů – od BMW M2 po vrtulník Robinson R44. Naše moderní mycí centrum v Brně na ploše přes 200 m² spojuje zkušenosti, špičkovou technologii a vášeň pro detail. Jsme oficiální partner Ceramic Pro v ČR, certifikovaní RUPES a pracujeme s fóliemi KAVACA.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#D6247E",
+  "contacts": {
+    "phone": "+420 603 298 838",
+    "address": "Garáže M-Palác, Heršpická 814/5a, Brno",
+    "legalAddress": "NanoHome s.r.o., IČO 17832161",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=M-Pal%C3%A1c%20Her%C5%A1pick%C3%A1%20814%2F5a%20Brno",
+    "email": "info@washwrap.cz",
+    "instagram": "washwrap",
+    "facebook": "WashWrap"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 15,
+    "minLeadMinutes": 120,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Box 1"
+    },
+    {
+      "key": "box-2",
+      "name": "Box 2"
+    }
+  ],
+  "services": [
+    {
+      "key": "wash",
+      "name": "Wash",
+      "category": "Wash",
+      "description": "Cca 45 min. Ruční mytí, čištění disků, sušení a impregnace pneu.",
+      "price": 980,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "clean-go",
+      "name": "Clean & Go",
+      "category": "Wash",
+      "description": "Cca 1 h 45 min. Kompletní ruční mytí, vysávání interiéru, čištění plastů a leštění oken.",
+      "price": 2200,
+      "priceFrom": true,
+      "durationMinutes": 105,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "textile",
+      "name": "Textile Full",
+      "category": "Wash",
+      "description": "Cca 3 h. Ruční mytí, vysávání, tepování, čištění plastů a leštění oken.",
+      "price": 3200,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "leather",
+      "name": "Leather Full",
+      "category": "Wash",
+      "description": "Cca 3 h. Kompletní ruční mytí, vysávání, čištění a impregnace kůže, plasty a okna.",
+      "price": 3600,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "doplnky-cisteni",
+      "name": "Doplňkové služby k čištění",
+      "category": "Wash",
+      "description": "Mytí a impregnace motoru, renovace světlometů, opravy kůže systémem Colourlock.",
+      "price": 590,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "wax",
+      "name": "Wax",
+      "category": "Polish",
+      "description": "Cca 3 h. Ruční mytí, dekontaminace, vosk, impregnace pneu, leštění oken.",
+      "price": 3500,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "shine",
+      "name": "Shine & Wax",
+      "category": "Polish",
+      "description": "1–2 dny. Kompletní mytí, dekontaminace, 1krokové leštění RUPES, vosk, impregnace pneu a leštění oken.",
+      "price": 10200,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "deep",
+      "name": "Deep Polish & Wax",
+      "category": "Polish",
+      "description": "Cca 2 dny. Kompletní mytí, dekontaminace, 2krokové leštění laku, vosk, impregnace pneu a leštění oken.",
+      "price": 14500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "retus",
+      "name": "Leštění a lokální opravy, retuše laku",
+      "category": "Polish",
+      "description": "Doplňková služba, cca 1 h.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "cp-9h",
+      "name": "Ceramic Pro 9H (5 let)",
+      "category": "Keramika",
+      "description": "Aplikace 3–5 dní. Mytí, dekontaminace, 3krokové leštění, 1× Ceramic Pro 9H + 1× Ceramic Pro Light. Výdrž 5 let.",
+      "price": 35000,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "cp-ion",
+      "name": "Ceramic Pro ION (7 let)",
+      "category": "Keramika",
+      "description": "Aplikace 3–5 dní. Mytí, dekontaminace, 3krokové leštění, ION Base + ION Top – iontová výměna a nanotechnologie. Výdrž 7 let.",
+      "price": 42000,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "cp-rain",
+      "name": "Ceramic Pro Rain na okna",
+      "category": "Keramika",
+      "description": "Keramická ochrana oken.",
+      "price": 2000,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "cp-wheel",
+      "name": "Ceramic Pro Wheel",
+      "category": "Keramika",
+      "description": "Keramická ochrana kol.",
+      "price": 5000,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "cp-lux",
+      "name": "Ochrana interiéru Ceramic Pro LUX",
+      "category": "Keramika",
+      "description": "Keramická ochrana interiéru.",
+      "price": 10000,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ppf-front",
+      "name": "PPF Front (nárazník + světla)",
+      "category": "PPF & Wrap",
+      "description": "Prémiová polyuretanová fólie KAVACA s keramickou vrstvou, díly řezané plotrem. Instalace 2–7 dní.",
+      "price": 15000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ppf-full-front",
+      "name": "PPF Full Front",
+      "category": "PPF & Wrap",
+      "description": "Nárazník, světla, kapota a blatníky fólií KAVACA.",
+      "price": 32000,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ppf-full",
+      "name": "PPF Full Wrap (celopolep)",
+      "category": "PPF & Wrap",
+      "description": "Celopolep vozu ochrannou fólií KAVACA.",
+      "price": 80000,
+      "priceFrom": true,
+      "durationMinutes": 10080,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ppf-svetla",
+      "name": "Polep světel PPF",
+      "category": "PPF & Wrap",
+      "description": "Ochrana světlometů PPF fólií.",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ppf-sklo",
+      "name": "Čelní sklo PPF",
+      "category": "PPF & Wrap",
+      "description": "Ochranná fólie na čelní sklo.",
+      "price": 8000,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "tonovani",
+      "name": "Tónování oken Kavaca IR",
+      "category": "PPF & Wrap",
+      "description": "Tónovací fólie Kavaca IR.",
+      "price": 2500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "wrap",
+      "name": "Wrap – změna barvy",
+      "category": "PPF & Wrap",
+      "description": "Změna barvy i designu vozu barevnou fólií.",
+      "price": 50000,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "car",
+      "title": "Přistavení 24/7",
+      "text": "Přistavení a vyzvednutí auta 7 dní v týdnu."
+    },
+    {
+      "icon": "coffee",
+      "title": "Lounge u kávy",
+      "text": "Služby na počkání s posezením v lounge u dobré kávy."
+    },
+    {
+      "icon": "medal",
+      "title": "Partner Ceramic Pro",
+      "text": "Oficiální zastoupení Ceramic Pro v ČR, certifikace RUPES z Itálie."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-m2.webp",
+      "caption": "BMW M2 – PPF fólie, wrap střechy a keramická ochrana"
+    },
+    {
+      "image": "images/work-lc500.webp",
+      "caption": "Lexus LC500 – renovace laku a keramika 9H"
+    },
+    {
+      "image": "images/work-630i.webp",
+      "caption": "BMW 630i – leštění laku a keramika 9H"
+    },
+    {
+      "image": "images/work-r44.webp",
+      "caption": "Robinson R44 – celoplošný polep a PPF fólie"
+    },
+    {
+      "image": "images/work-veteran.webp",
+      "caption": "Veteránská motorka – renovace laku a keramika"
+    },
+    {
+      "image": "images/work-wrap.webp",
+      "caption": "Instalace barevné fólie"
+    },
+    {
+      "image": "images/work-ppf.webp",
+      "caption": "Aplikace PPF fólie KAVACA"
+    },
+    {
+      "image": "images/work-lesteni.webp",
+      "caption": "Strojní leštění RUPES"
+    },
+    {
+      "image": "images/work-keramika.webp",
+      "caption": "Aplikace keramiky Ceramic Pro"
+    },
+    {
+      "image": "images/work-kuze.webp",
+      "caption": "Renovace kůže Colourlock"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Liší se cena podle vozu?",
+      "answer": "Ceny jsou včetně DPH. Pro SUV, VAN, limuzíny a silné znečištění se účtuje příplatek 20–50 %.",
+      "keywords": [
+        "suv",
+        "van",
+        "limuzin",
+        "priplat",
+        "dph",
+        "velikost"
+      ]
+    },
+    {
+      "question": "Vyzvednete auto u mě?",
+      "answer": "Ano, nabízíme přistavení a vyzvednutí auta 7 dní v týdnu, 24/7. Objednat se můžete na +420 603 298 838.",
+      "keywords": [
+        "vyzvedn",
+        "pristav",
+        "odvoz",
+        "dovoz",
+        "24"
+      ]
+    },
+    {
+      "question": "Můžu na auto počkat?",
+      "answer": "Ano, služby na počkání nabízíme s posezením v lounge u dobré kávy.",
+      "keywords": [
+        "pockat",
+        "pocka",
+        "cekat",
+        "kava",
+        "lounge"
+      ]
+    },
+    {
+      "question": "Jaký je rozdíl mezi Ceramic Pro 9H a ION?",
+      "answer": "Ceramic Pro 9H (od 35 000 Kč) – 1× 9H + 1× Light s výdrží 5 let. Ceramic Pro ION (od 42 000 Kč) – nejmodernější ochrana na bázi iontové výměny s výdrží 7 let. Obě zahrnují mytí, dekontaminaci a 3krokové leštění, aplikace trvá 3–5 dní.",
+      "keywords": [
+        "ceramic",
+        "keramik",
+        "9h",
+        "ion",
+        "rozdil"
+      ]
+    },
+    {
+      "question": "Kde vás najdu?",
+      "answer": "V garážích M-Palác, Heršpická 814/5a, Brno. Otevřeno Po–Pá 8:00–17:00, objednat se můžete 24/7.",
+      "keywords": [
+        "kde",
+        "adresa",
+        "brno",
+        "hersp",
+        "palac",
+        "oteviraci"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
