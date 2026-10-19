@@ -1,0 +1,347 @@
+{
+  "slug": "autodetox",
+  "name": "AutoDetox",
+  "shortName": "AutoDetox",
+  "kind": "detailing",
+  "tagline": "Prémiová péče o váš vůz – detailing nedaleko Ostravy",
+  "description": "Jmenuji se Jan Vysocký a detailingu se profesionálně věnuji od roku 2015. Každý vůz, který se objeví v mé garáži, je pro mě čistým plátnem, které proměním v mistrovské dílo. Specializuji se na drobné opravy laku, leštění a keramické povlaky, nabízím ale i čištění kůže a interiérů, leštění světel, PPF fólie a vosky Swissvax. Pracuji sám – kvalita má přednost před kvantitou. Kde ostatní končí, já teprve začínám.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#9CA3AF",
+  "contacts": {
+    "phone": "+420 728 352 666",
+    "address": "Na Drahách 844, 739 23 Stará Ves nad Ondřejnicí",
+    "legalAddress": "Jan Vysocký, Na Drahách 844, 739 23 Stará Ves nad Ondřejnicí, IČ 05101948",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Na%20Drah%C3%A1ch%20844%2C%20Star%C3%A1%20Ves%20nad%20Ond%C5%99ejnic%C3%AD",
+    "email": "info@autodetox.cz",
+    "instagram": "autodetox",
+    "facebook": "AutoDetox.cz"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 60,
+    "minLeadMinutes": 1440,
+    "horizonDays": 90,
+    "cancelCutoffHours": 72,
+    "defaultBufferMinutes": 60
+  },
+  "resources": [
+    {
+      "key": "studio",
+      "name": "Studio"
+    }
+  ],
+  "services": [
+    {
+      "key": "konzultace",
+      "name": "Osobní konzultace a prohlídka vozu",
+      "category": "Lak a ochrana",
+      "description": "Před stanovením ceny preferuji osobní schůzku – posoudím stav vozu a vyslechnu si vaše požadavky. Zvu vás do své nové dílny.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "lesteni",
+      "name": "Leštění a renovace laku",
+      "category": "Lak a ochrana",
+      "description": "Stěžejní služba. Odstraním drobné škrábance a oxidaci a oživím hloubku a lesk jakékoliv barvy. Cena po prohlídce vozu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "keramika",
+      "name": "Keramické povlaky",
+      "category": "Lak a ochrana",
+      "description": "Dlouhodobá ochrana laku proti nečistotám, chemikáliím a drobným škrábancům, aplikovaná po leštění karoserie. Cena po prohlídce vozu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 4320,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "vosk",
+      "name": "Prémiové voskování Swissvax",
+      "category": "Lak a ochrana",
+      "description": "Tvrdé karnaubské vosky Swissvax – ochrana, která na laku vydrží i několik let. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "ppf",
+      "name": "PPF ochranné fólie",
+      "category": "Lak a ochrana",
+      "description": "Téměř neviditelná fólie chránící karoserii před škrábanci a odstřelenými kamínky. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 4320,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "interier",
+      "name": "Čištění interiéru",
+      "category": "Interiér",
+      "description": "Suché i mokré čištění interiéru, vysátí, odstranění prachu a nečistot a provonění prémiovými parfémy. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "kuze",
+      "name": "Čištění a impregnace kůže",
+      "category": "Interiér",
+      "description": "Odstranění nečistot a skvrn z kožených povrchů a impregnace, aby kůže zůstala čistá a pružná. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "svetla",
+      "name": "Leštění světel",
+      "category": "Opravy a doplňky",
+      "description": "Oživení zašlých světlometů pro lepší viditelnost a bezpečnost. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "mikrolakovani",
+      "name": "Mikrolakování a opravy škrábanců",
+      "category": "Opravy a doplňky",
+      "description": "Opravy škrábanců tak, aby bylo poškození neviditelné – za zlomek ceny lakování dílů. Cena po prohlídce.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "pdr",
+      "name": "PDR vytahování důlků",
+      "category": "Opravy a doplňky",
+      "description": "Odstranění důlků bez lakování metodou PDR. Cena po prohlídce.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "studio"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Od roku 2015",
+      "text": "Z dlouholetého koníčku se stala práce a vlastní detailingové studio."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Kvalita před kvantitou",
+      "text": "Pracuji sám a na každý vůz si vyhrazuji dostatek času."
+    },
+    {
+      "icon": "clock",
+      "title": "Objednací doba cca 1 měsíc",
+      "text": "Kvůli časové náročnosti práce je potřeba počítat s delší objednací dobou."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-911-996.webp",
+      "caption": "Porsche 911 Carrera 4S"
+    },
+    {
+      "image": "images/work-911-detail.webp",
+      "caption": "Porsche 911 Carrera 4S – detail"
+    },
+    {
+      "image": "images/work-911-964.webp",
+      "caption": "Klasické Porsche 911 ve studiu"
+    },
+    {
+      "image": "images/work-lesteni.webp",
+      "caption": "Strojní leštění laku"
+    },
+    {
+      "image": "images/work-q7.webp",
+      "caption": "Audi Q7"
+    },
+    {
+      "image": "images/work-q7-zad.webp",
+      "caption": "Audi Q7 – záď"
+    },
+    {
+      "image": "images/work-studio.webp",
+      "caption": "Studio AutoDetox"
+    },
+    {
+      "image": "images/work-challenger.webp",
+      "caption": "Dodge Challenger"
+    },
+    {
+      "image": "images/work-g.webp",
+      "caption": "Mercedes-Benz třídy G"
+    },
+    {
+      "image": "images/work-gts.webp",
+      "caption": "Porsche 911 Carrera GTS"
+    },
+    {
+      "image": "images/work-taycan.webp",
+      "caption": "Porsche Taycan"
+    },
+    {
+      "image": "images/work-bmw-e32.webp",
+      "caption": "BMW řady 7 (E32)"
+    },
+    {
+      "image": "images/work-bmw5.webp",
+      "caption": "BMW řady 5"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Kolik to bude stát?",
+      "answer": "Před stanovením ceny preferuji osobní schůzku, během které posoudím stav vozu a vyslechnu si vaše požadavky. Zavolejte na 728 352 666 nebo napište na info@autodetox.cz.",
+      "keywords": [
+        "kolik",
+        "cena",
+        "cenik",
+        "stoji",
+        "nabidk"
+      ]
+    },
+    {
+      "question": "Jak dlouho dopředu se musím objednat?",
+      "answer": "Protože si na každý vůz vyhrazuji hodně času, je potřeba počítat s objednací dobou přibližně 1 měsíc.",
+      "keywords": [
+        "termin",
+        "objednat",
+        "dopredu",
+        "kdy",
+        "volno",
+        "cekaci"
+      ]
+    },
+    {
+      "question": "Kdo na mém autě pracuje?",
+      "answer": "Pracuji sám – jsem Jan Vysocký a detailingu se profesionálně věnuji od roku 2015. Díky tomu se mohu soustředit na každý detail.",
+      "keywords": [
+        "kdo",
+        "sam",
+        "tym",
+        "majitel",
+        "zkusenost"
+      ]
+    },
+    {
+      "question": "Kde vás najdu?",
+      "answer": "Studio AutoDetox je ve Staré Vsi nad Ondřejnicí, Na Drahách 844 – nedaleko Ostravy.",
+      "keywords": [
+        "kde",
+        "adresa",
+        "ostrav",
+        "stara ves"
+      ]
+    },
+    {
+      "question": "Proč nejdřív leštění a pak keramika?",
+      "answer": "Keramický povlak aplikuji po leštění karoserie, aby byla co nejdéle zachovaná hloubka lesku a lak byl ochráněn proti vnějším vlivům.",
+      "keywords": [
+        "keramik",
+        "lesten",
+        "proc",
+        "povlak"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
