@@ -1,0 +1,387 @@
+{
+  "slug": "dps-detailing",
+  "name": "DPS Detailing",
+  "shortName": "DPS",
+  "kind": "detailing",
+  "tagline": "Nedělám rozdíl mezi značkami. Dělám rozdíl ve výsledku.",
+  "description": "Jmenuju se Dominik a za DPS Detailing v Olomouci stojím já. Auta mě fascinují od dětství a nejvíc mě baví rozdíl mezi autem při příjezdu a při předání. Nejde mi o co nejvíc aut – chci dělat výsledek, za kterým si můžu stát i po čase. Péče o interiér, renovace laku a ochrana, která navazuje na skutečný stav vašeho auta.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#F26B1D",
+  "contacts": {
+    "phone": "+420 774 343 304",
+    "address": "Holická 49A, Olomouc",
+    "mapUrl": "https://maps.app.goo.gl/gDQe1yKKzKH6X8ws8",
+    "email": "info@dpsdetailing.cz",
+    "whatsapp": "420774343304",
+    "instagram": "dps.detailing"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 60,
+    "minLeadMinutes": 1440,
+    "horizonDays": 60,
+    "cancelCutoffHours": 48,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "studio",
+      "name": "Studio"
+    }
+  ],
+  "services": [
+    {
+      "key": "care",
+      "name": "DPS Care",
+      "category": "Programy",
+      "description": "Pravidelná udržovací péče pro auto v dobrém stavu – lehká údržba interiéru i exteriéru v jednom termínu, bez tepování. Ušetříte 200 Kč. Cena pro malé auto (např. Fabia / Golf), u větších vozů a dodávek vyšší.",
+      "price": 2200,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "reset",
+      "name": "DPS Reset",
+      "category": "Programy",
+      "description": "Celkový restart: běžné čištění interiéru, ruční mytí a příprava, vosk přibližně na 6 měsíců. Ušetříte 500 Kč. Cena pro malé auto (např. Fabia / Golf), u větších vozů a dodávek vyšší.",
+      "price": 4900,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "signature",
+      "name": "DPS Signature",
+      "category": "Programy",
+      "description": "Vlajkový program: čištění interiéru, jednokroková renovace laku, 4letá keramická ochrana laku a keramika čelního skla. Ušetříte 1 500 Kč. Cena pro malé auto (např. Fabia / Golf), u větších vozů a dodávek vyšší.",
+      "price": 24000,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "interier",
+      "name": "Běžné čištění interiéru",
+      "category": "Interiér",
+      "description": "Sedadla a čalounění, koberce a kufr, plasty a spáry, tepování a pára podle materiálu, skla a finální kontrola. Obvykle 6–8 hodin, auto předávám suché. Cena pro malé auto (např. Fabia / Golf), u větších vozů a dodávek vyšší.",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 420,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "interier-hloubkove",
+      "name": "Hloubkové čištění silně znečištěného interiéru",
+      "category": "Interiér",
+      "description": "Kompletní rozsah plus opakované tepování, více průchodů čištění, cílená práce se skvrnami a usazeninami. Cena pro malé auto (např. Fabia / Golf), u větších vozů a dodávek vyšší.",
+      "price": 5000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "myti",
+      "name": "Ruční mytí a příprava",
+      "category": "Péče o lak",
+      "description": "Bezpečné ruční mytí, dekontaminace vozidla a důkladné vysušení. Cena pro malé auto (např. Fabia / Golf), u větších vozů a dodávek vyšší.",
+      "price": 900,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "vosk",
+      "name": "Vosk",
+      "category": "Péče o lak",
+      "description": "Ochrana laku přibližně na 6 měsíců, zvýrazní lesk a usnadní údržbu. Cena pro malé auto (např. Fabia / Golf), u větších vozů a dodávek vyšší.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "jednokrok",
+      "name": "Jednokroková renovace laku",
+      "category": "Péče o lak",
+      "description": "Pro lak s běžnými mikroškrábanci a ztrátou lesku – odstraní velkou část provozních stop a zvýrazní hloubku barvy. Cena pro malé auto (např. Fabia / Golf), u větších vozů a dodávek vyšší.",
+      "price": 9000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "vicekrok",
+      "name": "Vícekroková renovace laku",
+      "category": "Péče o lak",
+      "description": "Pro výrazně poškozený nebo zoxidovaný lak – korekce ve více krocích při zachování bezpečné rezervy materiálu. Cena pro malé auto (např. Fabia / Golf), u větších vozů a dodávek vyšší.",
+      "price": 14000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "keramika-1",
+      "name": "Jednokrok + keramika 1 rok",
+      "category": "Renovace + keramika",
+      "description": "Jednokroková renovace 9 000 Kč + keramická ochrana na 1 rok 4 500 Kč. Keramika vždy navazuje na renovaci. Cena pro malé auto (např. Fabia / Golf), u větších vozů a dodávek vyšší.",
+      "price": 13500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "keramika-3",
+      "name": "Jednokrok + keramika 3 roky",
+      "category": "Renovace + keramika",
+      "description": "Jednokroková renovace 9 000 Kč + keramická ochrana na 3 roky 9 000 Kč. Cena pro malé auto (např. Fabia / Golf), u větších vozů a dodávek vyšší.",
+      "price": 18000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "keramika-4",
+      "name": "Jednokrok + keramika 4 roky",
+      "category": "Renovace + keramika",
+      "description": "Jednokroková renovace 9 000 Kč + keramická ochrana na 4 roky 12 000 Kč – nejdelší varianta v nabídce. Cena pro malé auto (např. Fabia / Golf), u větších vozů a dodávek vyšší.",
+      "price": 21000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "studio"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "5,0 na Googlu",
+      "text": "Hodnocení zákazníků na Google recenzích."
+    },
+    {
+      "icon": "car",
+      "title": "Odvoz i vyzvednutí",
+      "text": "Po domluvě vás odvezu po předání auta, nebo vůz vyzvednu a vrátím."
+    },
+    {
+      "icon": "shield",
+      "title": "Nic navíc bez souhlasu",
+      "text": "Pokud se ukáže větší rozsah, nejdřív zavolám a domluvíme další postup."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-lesteni.webp",
+      "caption": "Strojní renovace laku"
+    },
+    {
+      "image": "images/work-detail.webp",
+      "caption": "Leštění detailů karoserie"
+    },
+    {
+      "image": "images/work-keramika.webp",
+      "caption": "Aplikace keramické ochrany"
+    },
+    {
+      "image": "images/work-lak.webp",
+      "caption": "Kontrola laku po renovaci"
+    },
+    {
+      "image": "images/work-mustang-interier.webp",
+      "caption": "Interiér Ford Mustang"
+    },
+    {
+      "image": "images/work-mustang.webp",
+      "caption": "Ford Mustang"
+    },
+    {
+      "image": "images/work-g-interier.webp",
+      "caption": "Kožený interiér Mercedes-Benz G"
+    },
+    {
+      "image": "images/work-mustang-studio.webp",
+      "caption": "Ford Mustang ve studiu"
+    },
+    {
+      "image": "images/work-mach-e.webp",
+      "caption": "Ford Mustang Mach-E"
+    },
+    {
+      "image": "images/work-studio.webp",
+      "caption": "Studio DPS Detailing, Holická 49A"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Jak dlouho trvá čištění interiéru?",
+      "answer": "Obvykle 6–8 hodin podle stavu interiéru a doby schnutí. Auto předávám suché a připravené k provozu.",
+      "keywords": [
+        "jak dlouho",
+        "trva",
+        "interier",
+        "hodin"
+      ]
+    },
+    {
+      "question": "Musím auto předem vyčistit?",
+      "answer": "Není potřeba předem vysávat ani čistit. Pomůže ale vyndat osobní věci, cennosti a obsah přihrádek i kufru.",
+      "keywords": [
+        "predem",
+        "pripravit",
+        "vyndat",
+        "osobni veci",
+        "vycistit"
+      ]
+    },
+    {
+      "question": "Odstraníte každou skvrnu a zápach?",
+      "answer": "Ne vždy. Rozhoduje materiál, stáří a původ znečištění i předchozí zásahy. Cílem je maximální bezpečný výsledek, ne poškození materiálu kvůli honbě za 100 %.",
+      "keywords": [
+        "skvrn",
+        "zapach",
+        "flek",
+        "kazdou"
+      ]
+    },
+    {
+      "question": "Lze objednat keramiku bez renovace?",
+      "answer": "Ne. Povrch se nejprve připraví a renovuje, teprve potom se uzavírá keramickou ochranou. Cena keramiky se přičítá k ceně renovace (1 rok 4 500 Kč, 3 roky 9 000 Kč, 4 roky 12 000 Kč).",
+      "keywords": [
+        "keramik",
+        "bez renovace",
+        "bez lesten",
+        "samostat"
+      ]
+    },
+    {
+      "question": "Jak dlouho auto ve studiu zůstane?",
+      "answer": "U renovace a keramiky obvykle 2–5 dní podle rozsahu, počtu kroků a zvolené ochrany. U vícedenních zakázek lze po domluvě řešit vyzvednutí a vrácení vozu.",
+      "keywords": [
+        "kolik dni",
+        "jak dlouho",
+        "studiu",
+        "vyzvednut",
+        "odvoz"
+      ]
+    },
+    {
+      "question": "Zmizí každý škrábanec?",
+      "answer": "Ne vždy. Některé hlubší defekty lze výrazně zlepšit nebo odstranit, u jiných by další korekce znamenala zbytečné riziko pro lak. Rozsah si odsouhlasíme před začátkem práce.",
+      "keywords": [
+        "skraban",
+        "skrabanec",
+        "defekt",
+        "jednokrok"
+      ]
+    },
+    {
+      "question": "Liší se cena podle velikosti auta?",
+      "answer": "Ano. Uvedené ceny platí pro malé auto (např. Fabia / Golf), pro střední, velké vozy a dodávky jsou vyšší.",
+      "keywords": [
+        "velikost",
+        "suv",
+        "dodavk",
+        "velke auto",
+        "stredni"
+      ]
+    },
+    {
+      "question": "Kde vás najdu?",
+      "answer": "Holická 49A, Olomouc. Příjezd po předchozí domluvě – zavolejte na +420 774 343 304 nebo napište na WhatsApp.",
+      "keywords": [
+        "kde",
+        "adresa",
+        "olomouc",
+        "holicka"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
