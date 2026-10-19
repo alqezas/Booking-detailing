@@ -1,0 +1,374 @@
+{
+  "slug": "auto-v-cistote",
+  "name": "Auto v čistotě",
+  "shortName": "Auto v čistotě",
+  "kind": "detailing",
+  "tagline": "Mobilní čištění aut v Praze – přijedeme k vám, doprava v ceně",
+  "description": "Provádíme kompletní čištění interiéru a exteriéru aut a jsme plně mobilní – přijedeme na vámi zvolené místo, klidně zatímco jste v práci nebo na schůzce. Když je potřeba, elektřinu si vyrobíme vlastní elektrocentrálou a modré zóny pro nás nejsou překážkou. Jsme tu od roku 2019 a práci děláme sami za sebe – auto čistíme, jako by bylo naše. Neseď v bordelu… seď v čistotě!",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#D7262E",
+  "contacts": {
+    "phone": "+420 604 422 412",
+    "address": "Praha a okolí – přijedeme k vám",
+    "legalAddress": "Pavel Schmidt, Korunní 2569/108, 101 00 Praha, IČO 05957087",
+    "mapUrl": "https://maps.app.goo.gl/YLdLqhpzyN8NJHsy6",
+    "email": "autovcistote@seznam.cz"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [],
+  "booking": {
+    "slotStepMinutes": 60,
+    "minLeadMinutes": 720,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 60
+  },
+  "resources": [
+    {
+      "key": "tym",
+      "name": "Mobilní tým"
+    }
+  ],
+  "services": [
+    {
+      "key": "suche",
+      "name": "Základní čištění (suché)",
+      "category": "Čištění interiéru",
+      "description": "Precizní vysátí, utření prachu ze všech plastů, sedaček a palubní desky, vyčištění oken a zrcátek, spár u dveří a provonění parfémem. Cena se může lišit dle velikosti a míry znečištění auta.",
+      "price": 1300,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Základní čištění a dezinfekce ozonem",
+      "category": "Čištění interiéru",
+      "description": "Základní čištění + kompletní vyčištění interiéru ozonem a dezinfekce klimatizace. Cena se může lišit dle velikosti a míry znečištění auta.",
+      "price": 1800,
+      "priceFrom": false,
+      "durationMinutes": 150,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "standard",
+      "name": "Čištění a tepování STANDARD (mokré)",
+      "category": "Čištění interiéru",
+      "description": "Základní čištění + tepování sedaček, ochrana kůže, ruční čištění koberců vč. kufru, vnitřních plastů a stropnice. Cena se může lišit dle velikosti a míry znečištění auta.",
+      "price": 2700,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "komplet",
+      "name": "Čištění a tepování KOMPLET (mokré)",
+      "category": "Čištění interiéru",
+      "description": "Kompletní tepování všech dílů (kufr, koberce, sedačky), čištění a ochrana plastů, stropu, pedálů, těsnění a výdechů, dezinfekce ozonem včetně klimatizace. Cena se může lišit dle velikosti a míry znečištění auta.",
+      "price": 4000,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "vosk",
+      "name": "Keramický vosk",
+      "category": "Exteriér a keramika",
+      "description": "Důkladné ruční umytí, dekontaminace karoserie a ruční nanesení a vyleštění keramického vosku. Cena se může lišit dle velikosti a míry znečištění auta.",
+      "price": 2000,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "keramika-1",
+      "name": "Keramická ochrana laku na 1 rok",
+      "category": "Exteriér a keramika",
+      "description": "Až 10 000 km. Aplikace jen po leštění laku. SUV příplatek +2000 Kč.",
+      "price": 5000,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "keramika-3",
+      "name": "Keramická ochrana laku na 3 roky",
+      "category": "Exteriér a keramika",
+      "description": "30 000–40 000 km. Aplikace jen po leštění laku. SUV příplatek +2000 Kč.",
+      "price": 7000,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "keramika-5",
+      "name": "Certifikovaná keramika na 5 let a více",
+      "category": "Exteriér a keramika",
+      "description": "40 000–80 000 km. Aplikace jen po leštění laku. SUV příplatek +2000 Kč.",
+      "price": 10000,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "hydro",
+      "name": "Ultra odolná hydrofobní vrstva (+2 roky)",
+      "category": "Exteriér a keramika",
+      "description": "Druhá keramická vrstva, která ještě zvýší lesk a hydrofobní vlastnosti laku. SUV příplatek +1000 Kč.",
+      "price": 6000,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "lesteni-1",
+      "name": "Jednokrokové leštění laku",
+      "category": "Leštění laku",
+      "description": "Oživení hloubky laku, vyšší lesk, odstranění 50–60 % škrábanců. Včetně umytí, odmaštění a přípravy na vosk či keramiku. SUV příplatek +1000 Kč.",
+      "price": 5000,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "lesteni-2",
+      "name": "Dvoukrokové leštění laku",
+      "category": "Leštění laku",
+      "description": "Odstranění 70–80 % škrábanců. SUV příplatek +1000 Kč.",
+      "price": 7000,
+      "priceFrom": false,
+      "durationMinutes": 600,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "lesteni-3",
+      "name": "Tříkrokové leštění laku",
+      "category": "Leštění laku",
+      "description": "Abrazivní, střední a finišovací krok – odstranění 95 % škrábanců. SUV příplatek +1000 Kč.",
+      "price": 9000,
+      "priceFrom": false,
+      "durationMinutes": 720,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "svetla",
+      "name": "Leštění světlometů (za kus)",
+      "category": "Leštění laku",
+      "description": "Leštění světlometu, cena od 1 000 Kč za kus.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "karavan",
+      "name": "Karavan komplet",
+      "category": "Karavany a kamiony",
+      "description": "Kompletní čištění a tepování interiéru karavanu včetně lůžek, kuchyňky a koupelny a dezinfekce ozonem. Cena se může lišit dle velikosti a míry znečištění auta.",
+      "price": 8490,
+      "priceFrom": false,
+      "durationMinutes": 600,
+      "resources": [
+        "tym"
+      ]
+    },
+    {
+      "key": "kamion",
+      "name": "Tahač / kamion",
+      "category": "Karavany a kamiony",
+      "description": "Kompletní čištění kabiny tahače včetně lůžek, kuchyňky, úložných boxů a dezinfekce ozonem. Cena se může lišit dle velikosti a míry znečištění auta.",
+      "price": 4500,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "tym"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "car",
+      "title": "Přijedeme k vám",
+      "text": "Po Praze je doprava v ceně, modré zóny nejsou překážkou – máme i vlastní elektrocentrálu."
+    },
+    {
+      "icon": "clock",
+      "title": "Šetříme váš čas",
+      "text": "Auto vyčistíme, zatímco jste v práci nebo na schůzce."
+    },
+    {
+      "icon": "drop",
+      "title": "Nejlepší prostředky",
+      "text": "Koch Chemie, Auto Finesse a další špičkové čisticí a ochranné prostředky."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-sedadla-after.webp",
+      "before": "images/work-sedadla-before.webp",
+      "caption": "Přední sedadla a podlaha – před a po"
+    },
+    {
+      "image": "images/work-ridic-after.webp",
+      "before": "images/work-ridic-before.webp",
+      "caption": "Místo řidiče – před a po"
+    },
+    {
+      "image": "images/work-kufr-after.webp",
+      "before": "images/work-kufr-before.webp",
+      "caption": "Zavazadlový prostor – před a po"
+    },
+    {
+      "image": "images/work-palubka-after.webp",
+      "before": "images/work-palubka-before.webp",
+      "caption": "Palubní deska a středový tunel – před a po"
+    },
+    {
+      "image": "images/work-superb-after.webp",
+      "before": "images/work-superb-before.webp",
+      "caption": "Interiér Škoda Superb – před a po"
+    },
+    {
+      "image": "images/work-kufr-2-after.webp",
+      "before": "images/work-kufr-2-before.webp",
+      "caption": "Kufr plný sena – před a po"
+    },
+    {
+      "image": "images/work-zadni-after.webp",
+      "before": "images/work-zadni-before.webp",
+      "caption": "Zadní sedačka – před a po"
+    },
+    {
+      "image": "images/work-mobil.webp",
+      "caption": "Mobilní čištění přímo u zákazníka"
+    },
+    {
+      "image": "images/work-bmw-e30.webp",
+      "caption": "BMW řady 3 (E30)"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Kam za mnou přijedete?",
+      "answer": "Jsme plně mobilní a přijedeme na vámi zvolené místo. Po Praze je doprava v ceně, modré zóny nejsou překážkou a v případě potřeby si elektřinu vyrobíme vlastní elektrocentrálou. Stačí jen dostatečné místo na práci.",
+      "keywords": [
+        "kam",
+        "kde",
+        "prijedete",
+        "mobilni",
+        "doprava",
+        "praha",
+        "zona",
+        "elektr"
+      ]
+    },
+    {
+      "question": "Platí ceny i pro SUV?",
+      "answer": "Ceny čištění interiéru jsou stejné pro všechny osobní auta i SUV do 5 sedadel, 7místné vozy mají příplatek 700 Kč. U keramiky a leštění je u SUV příplatek 1 000–2 000 Kč.",
+      "keywords": [
+        "suv",
+        "7mist",
+        "sedmimist",
+        "priplat",
+        "velikost"
+      ]
+    },
+    {
+      "question": "Čistíte i sedačky a koberce doma?",
+      "answer": "Ano, umíme vyčistit i koberce, sedačky, gauče a křesla. Cenu domluvíme po telefonu.",
+      "keywords": [
+        "koberc",
+        "sedack",
+        "gauc",
+        "kresl",
+        "doma"
+      ]
+    },
+    {
+      "question": "Nabízíte dárkové poukazy?",
+      "answer": "Ano, dárkové poukazy v hodnotě 1 000 až 10 000 Kč. Ozvěte se na +420 604 422 412.",
+      "keywords": [
+        "poukaz",
+        "voucher",
+        "darek",
+        "darkov"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
