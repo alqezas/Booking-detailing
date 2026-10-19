@@ -1,0 +1,339 @@
+{
+  "slug": "carsfit",
+  "name": "CarsFIT Brno",
+  "shortName": "CarsFIT",
+  "kind": "detailing",
+  "tagline": "PPF fólie, keramická ochrana, polepy aut a detailing v centru Brna",
+  "description": "Favorit nebo Ferrari? U nás neděláme rozdíly – každé auto dostane maximální péči. Máme mnohaleté zkušenosti v detailingu a klademe důraz na kvalitu. Nabízíme důkladné čištění interiéru, renovace laku s ošetřením nejkvalitnějšími vosky a keramickými povlaky, PPF fólie i polepy. Po odvedené práci vám předáme naše zkušenosti a rady, jak se o auto starat.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#E3262E",
+  "contacts": {
+    "phone": "+420 604 404 051",
+    "address": "Špitálka 23a, 602 00 Brno-střed",
+    "legalAddress": "Carsfitdetailing s.r.o., IČO 21621683",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=%C5%A0pit%C3%A1lka%2023a%2C%20602%2000%20Brno",
+    "email": "info@carsfit.cz"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 240,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Garáž"
+    }
+  ],
+  "services": [
+    {
+      "key": "myti",
+      "name": "Detailingové ruční mytí",
+      "category": "Základní služby",
+      "description": "Cca 2 hod. Ruční mytí, čištění disků, dekontaminace laku od polétavé rzi a asfaltu, keramický sealant, impregnace plastů a pneu.",
+      "price": 2000,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "interier",
+      "name": "Čištění interiéru",
+      "category": "Základní služby",
+      "description": "Cca 4 hod. Hloubkové vysátí a vyčištění celého vozu, tepování sedaček, čištění a impregnace plastů i kůže.",
+      "price": 2900,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "interier-keramika",
+      "name": "Čištění interiéru s keramickou ochranou",
+      "category": "Základní služby",
+      "description": "Kompletní čištění celého interiéru a nanesení keramické ochrany na kožené a plastové části.",
+      "price": 4900,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "vosk",
+      "name": "Voskování auta",
+      "category": "Ochrana a renovace",
+      "description": "Detailingové mytí vozu i kol, chemická a mechanická dekontaminace, tuhý vosk nebo keramický sealant s životností až 12 měsíců.",
+      "price": 4890,
+      "priceFrom": false,
+      "durationMinutes": 300,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "lesteni",
+      "name": "Renovace a leštění laku",
+      "category": "Ochrana a renovace",
+      "description": "Retuš škrábanců a defektů na laku a strojní leštění.",
+      "price": 7000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "keramika",
+      "name": "Keramická ochrana laku",
+      "category": "Ochrana a renovace",
+      "description": "Aplikace keramické ochrany s výdrží 1–5 let.",
+      "price": 11000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "svetla",
+      "name": "Renovace světel",
+      "category": "Specializované služby",
+      "description": "Broušení a leštění světel a nanesení keramické ochrany. Aplikace PPF fólie na světla +2 000 Kč.",
+      "price": 1700,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-front",
+      "name": "PPF fólie – přední část vozu",
+      "category": "Specializované služby",
+      "description": "Nárazník, kapota, blatníky a světla.",
+      "price": 30000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "ppf-full",
+      "name": "PPF fólie – celopolep vozu",
+      "category": "Specializované služby",
+      "description": "Kompletní polep vozu ochrannou PPF fólií.",
+      "price": 60000,
+      "priceFrom": true,
+      "durationMinutes": 5760,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "wrap",
+      "name": "Wrapové fólie / polepy",
+      "category": "Specializované služby",
+      "description": "Barevné celopolepy a polepy vozidel. Cena dle typu vozidla a fólie.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Mnohaleté zkušenosti",
+      "text": "Stovky spokojených zákazníků jsou naší nejlepší vizitkou."
+    },
+    {
+      "icon": "shield",
+      "title": "Nejlepší ochrana",
+      "text": "Produkty nejlepších světových značek a neustálá školení."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Rady na cestu",
+      "text": "Po práci vám předáme zkušenosti, jak se o auto dál starat."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-ferrari.webp",
+      "caption": "Ferrari 812 Superfast v naší garáži"
+    },
+    {
+      "image": "images/work-interier.webp",
+      "caption": "Detailingové čištění interiéru"
+    },
+    {
+      "image": "images/work-priprava.webp",
+      "caption": "Příprava před aplikací keramické ochrany"
+    },
+    {
+      "image": "images/work-myti.webp",
+      "caption": "Ruční mytí a dekontaminace laku"
+    },
+    {
+      "image": "images/work-lesteni.webp",
+      "caption": "Renovace laku"
+    },
+    {
+      "image": "images/work-keramika.webp",
+      "caption": "Aplikace keramické ochrany"
+    },
+    {
+      "image": "images/work-bentley.webp",
+      "caption": "Bentley – aplikace PPF fólie"
+    },
+    {
+      "image": "images/work-bentley-ppf.webp",
+      "caption": "PPF fólie na přední části Bentley"
+    },
+    {
+      "image": "images/work-m4-ppf.webp",
+      "caption": "PPF ochrana BMW M4"
+    },
+    {
+      "image": "images/work-ppf.webp",
+      "caption": "Aplikace PPF fólie na světlomet"
+    },
+    {
+      "image": "images/work-wrap.webp",
+      "caption": "Polep Audi Q3"
+    },
+    {
+      "image": "images/work-celopolep.webp",
+      "caption": "Celopolep Audi A6"
+    },
+    {
+      "image": "images/work-folie.webp",
+      "caption": "Polepy automobilů"
+    },
+    {
+      "image": "images/work-tonovani.webp",
+      "caption": "Tónování autoskel"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Kolik stojí čištění interiéru?",
+      "answer": "Čištění interiéru od 2 900 Kč (cca 4 hodiny), s keramickou ochranou kůže a plastů 4 900 Kč. Detailingové ruční mytí 2 000 Kč.",
+      "keywords": [
+        "kolik",
+        "cena",
+        "interier",
+        "cisteni",
+        "myti"
+      ]
+    },
+    {
+      "question": "Kolik stojí PPF fólie?",
+      "answer": "Přední část vozu (nárazník, kapota, blatníky, světla) od 30 000 Kč, celopolep od 60 000 Kč. PPF na světla k renovaci světel +2 000 Kč.",
+      "keywords": [
+        "ppf",
+        "folie",
+        "celopolep",
+        "kaminky"
+      ]
+    },
+    {
+      "question": "Děláte i polepy a tónování?",
+      "answer": "Ano – barevné wrapové celopolepy, reklamní polepy i tónování autoskel. Cena se odvíjí od typu vozidla a fólie.",
+      "keywords": [
+        "polep",
+        "wrap",
+        "tonovani",
+        "zatmaveni",
+        "reklam"
+      ]
+    },
+    {
+      "question": "Kde vás najdu a kdy máte otevřeno?",
+      "answer": "Špitálka 23a, 602 00 Brno-střed. Po–Pá 8:00–17:00, sobota dle domluvy, neděle zavřeno.",
+      "keywords": [
+        "kde",
+        "adresa",
+        "brno",
+        "spitalka",
+        "oteviraci",
+        "sobota"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
