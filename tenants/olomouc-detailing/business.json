@@ -1,0 +1,219 @@
+{
+  "slug": "olomouc-detailing",
+  "name": "Olomouc Detailing",
+  "shortName": "Olomouc Det.",
+  "kind": "detailing",
+  "tagline": "Čištění a péče o interiér aut v Olomouci",
+  "description": "Vracíme interiéru vašeho vozu čistotu, svěžest a vzhled nového auta. Precizní ruční práce s důrazem na detail. Šetříme váš čas – auto si po dohodě vyzvedneme u vás doma nebo v práci a vrátíme vám ho dokonale čisté.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#3B5BA9",
+  "contacts": {
+    "phone": "+420 797 859 558",
+    "address": "Olomouc a okolí (pick-up & delivery)",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Olomouc",
+    "instagram": "olomoucdetailing",
+    "facebook": "olomoucdetailing",
+    "tiktok": "olomoucdetailing"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [],
+  "booking": {
+    "slotStepMinutes": 60,
+    "minLeadMinutes": 1440,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 60
+  },
+  "resources": [
+    {
+      "key": "dilna",
+      "name": "Dílna"
+    }
+  ],
+  "services": [
+    {
+      "key": "male",
+      "name": "Kompletní čištění interiéru – malé vozy",
+      "category": "Čištění interiéru",
+      "description": "Fabia, Yaris, Golf… Hloubkové tepování sedadel, koberců, čalounění a kufru; detailní čištění, dezinfekce a impregnace plastů; čištění, výživa a impregnace kůže; mezidveřní prostory, prahy a okna z obou stran. Doba cca 8–12 hodin včetně sušení.",
+      "price": 2500,
+      "priceFrom": false,
+      "durationMinutes": 600,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "stredni",
+      "name": "Kompletní čištění interiéru – střední a velké vozy",
+      "category": "Čištění interiéru",
+      "description": "Octavia, Passat… Hloubkové tepování sedadel, koberců, čalounění a kufru; detailní čištění, dezinfekce a impregnace plastů; čištění, výživa a impregnace kůže; mezidveřní prostory, prahy a okna z obou stran. Doba cca 8–12 hodin včetně sušení.",
+      "price": 3500,
+      "priceFrom": false,
+      "durationMinutes": 600,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "suv",
+      "name": "Kompletní čištění interiéru – SUV / crossover / MPV",
+      "category": "Čištění interiéru",
+      "description": "Kodiaq, CX-5… Hloubkové tepování sedadel, koberců, čalounění a kufru; detailní čištění, dezinfekce a impregnace plastů; čištění, výživa a impregnace kůže; mezidveřní prostory, prahy a okna z obou stran. Doba cca 8–12 hodin včetně sušení.",
+      "price": 4500,
+      "priceFrom": false,
+      "durationMinutes": 660,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "dodavka",
+      "name": "Kompletní čištění interiéru – dodávky a mikrobusy",
+      "category": "Čištění interiéru",
+      "description": "Hloubkové tepování sedadel, koberců, čalounění a kufru; detailní čištění, dezinfekce a impregnace plastů; čištění, výživa a impregnace kůže; mezidveřní prostory, prahy a okna z obou stran. Doba cca 8–12 hodin včetně sušení.",
+      "price": 5000,
+      "priceFrom": true,
+      "durationMinutes": 720,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Dezinfekce klimatizace a ozonování interiéru",
+      "category": "Čištění interiéru",
+      "description": "Doplňková služba k čištění interiéru.",
+      "price": 500,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "dilna"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "car",
+      "title": "Pick-up & Delivery",
+      "text": "Auto si po dohodě vyzvedneme u vás doma nebo v práci v Olomouci a okolí a vrátíme ho čisté."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Ruční práce",
+      "text": "Precizní ruční práce s důrazem na každý detail interiéru."
+    },
+    {
+      "icon": "credit-card",
+      "title": "Jasný ceník",
+      "text": "Cena podle velikosti vozu – od 2 500 Kč za malé auto."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-tepovani.webp",
+      "caption": "Hloubkové tepování sedadel"
+    },
+    {
+      "image": "images/work-plasty.webp",
+      "caption": "Detailní čištění plastů štětci"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Kolik stojí čištění interiéru?",
+      "answer": "Malé vozy (Fabia, Yaris, Golf) 2 500 Kč, střední a velké (Octavia, Passat) 3 500 Kč, SUV / crossover / MPV 4 500 Kč, dodávky a mikrobusy od 5 000 Kč. Dezinfekce klimatizace a ozonování +500 Kč.",
+      "keywords": [
+        "kolik",
+        "cena",
+        "cenik",
+        "stoji",
+        "suv",
+        "dodavk"
+      ]
+    },
+    {
+      "question": "Jak dlouho čištění trvá?",
+      "answer": "Zhruba 8–12 hodin včetně důkladného sušení.",
+      "keywords": [
+        "jak dlouho",
+        "trva",
+        "hodin",
+        "suseni"
+      ]
+    },
+    {
+      "question": "Vyzvednete auto u mě?",
+      "answer": "Ano, nabízíme pick-up & delivery v Olomouci a okolí – auto si po dohodě vyzvedneme u vás doma nebo v práci a vrátíme ho dokonale čisté.",
+      "keywords": [
+        "vyzvedn",
+        "pick up",
+        "pickup",
+        "odvoz",
+        "dovoz",
+        "kde",
+        "adresa"
+      ]
+    },
+    {
+      "question": "Kdy máte otevřeno?",
+      "answer": "Otevírací doba je dle dohody – zavolejte na +420 797 859 558.",
+      "keywords": [
+        "oteviraci",
+        "otevreno",
+        "kdy mate",
+        "vikend"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
