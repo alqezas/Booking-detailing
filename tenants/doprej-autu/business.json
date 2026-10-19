@@ -1,0 +1,376 @@
+{
+  "slug": "doprej-autu",
+  "name": "Dopřej Autu",
+  "shortName": "Dopřej Autu",
+  "kind": "detailing",
+  "tagline": "Čištění interiéru, renovace laku a keramická ochrana v Brně",
+  "description": "Ať je váš vůz odrazem toho, jaký standard si zasloužíte. Specializuji se na profesionální detailing aut – důkladné čištění interiéru, renovaci laku i ochranu karoserie. Každý detail zpracovávám s maximální péčí a precizností a používám kvalitní značkové materiály Koch Chemie, Auto Finesse a GYEON. Mým cílem je nejen vylepšit vzhled vašeho auta, ale také zvýšit jeho hodnotu a prodloužit jeho životnost.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#1F4E9C",
+  "contacts": {
+    "phone": "+420 739 826 006",
+    "address": "Pratecká 12B, 620 00 Brno-Tuřany",
+    "legalAddress": "Dopřej Autu, IČ 17789826",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Prateck%C3%A1%2012B%2C%20620%2000%20Brno",
+    "email": "info@doprejautu.cz",
+    "whatsapp": "420739826006",
+    "instagram": "doprejautu"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "studio",
+      "name": "Studio"
+    }
+  ],
+  "services": [
+    {
+      "key": "sucho",
+      "name": "Čištění interiéru suchou cestou",
+      "category": "Interiér",
+      "description": "Vysátí vozu a kufru, čištění a impregnace plastů, vyleštění vnitřních oken a zrcátek, nástupní prostory, odstranění pachů a provonění. Cena se může lišit dle znečištění.",
+      "price": 1490,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "mokro",
+      "name": "Mokré čištění / čištění kůže",
+      "category": "Interiér",
+      "description": "Tepování koberečků, čištění látkových sedaček nebo kožených sedaček s impregnací, hloubkové ošetření plastů, mezidveřní prostory, okna a provonění.",
+      "price": 2490,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "keramika-kuze",
+      "name": "Keramická ochrana kůže",
+      "category": "Interiér",
+      "description": "Ochrana na bázi oxidu křemičitého pro všechny typy automobilové kůže – proti nečistotám a UV, matný povrch bez kluzkosti. Cena zahrnuje čištění a přípravu.",
+      "price": 3990,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "jednokrok",
+      "name": "Jednokrokové leštění",
+      "category": "Renovace laku",
+      "description": "Minimální proces před keramikou – odstranění drobných škrábanců a vlásečnic, vyčištění laku a vysoký lesk.",
+      "price": 6990,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "vicekrok",
+      "name": "Vícekrokové leštění",
+      "category": "Renovace laku",
+      "description": "Odstraní až 95 % mikroškrábanců („sluníček“) a poškození od kartáčových myček a obnoví původní vzhled laku.",
+      "price": 10990,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "svetla",
+      "name": "Renovace světlometů (za kus)",
+      "category": "Renovace laku",
+      "description": "Renovace předního světla – 490 Kč za kus.",
+      "price": 490,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "keramika-1",
+      "name": "Keramická ochrana laku na 1 rok",
+      "category": "Keramická ochrana",
+      "description": "Gyeon CanCoat EVO s výdrží až 12 měsíců nebo 15 000 km. Cena zahrnuje mytí a dekontaminaci laku.",
+      "price": 4990,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "keramika-3",
+      "name": "Keramická ochrana laku na 3 roky",
+      "category": "Keramická ochrana",
+      "description": "Gyeon Q2 Pure EVO Lightbox s výdrží až 36 měsíců nebo 40 000 km.",
+      "price": 9990,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "keramika-5",
+      "name": "Keramická ochrana laku na 5 let",
+      "category": "Keramická ochrana",
+      "description": "Nejpokročilejší keramika Gyeon ve dvou vrstvách s životností až 48 měsíců nebo 50 000 km.",
+      "price": 13990,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "disky",
+      "name": "Keramická ochrana alu disků (za kus)",
+      "category": "Keramická ochrana",
+      "description": "Ochrana před posypovou solí, brzdným prachem, asfaltem a polétavou rzí, životnost 24 měsíců. 1 250 Kč za kus.",
+      "price": 1250,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "plasty",
+      "name": "Keramická ochrana venkovních plastů",
+      "category": "Keramická ochrana",
+      "description": "Chrání plasty před vyblednutím, prodlužuje životnost a usnadňuje údržbu.",
+      "price": 1490,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "okna",
+      "name": "Keramická ochrana oken",
+      "category": "Keramická ochrana",
+      "description": "Chrání skla před nečistotami a poškrábáním a zlepšuje viditelnost.",
+      "price": 1990,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "sterace",
+      "name": "Tekuté stěrače Gyeon QuickView",
+      "category": "Keramická ochrana",
+      "description": "Vyleštění a odmaštění oken a tekuté stěrače s výdrží až 6 měsíců – odvod vody od 50 km/h, okna méně zamrzají.",
+      "price": 690,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "studio"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "drop",
+      "title": "Značková kosmetika",
+      "text": "Koch Chemie, Auto Finesse a GYEON."
+    },
+    {
+      "icon": "clock",
+      "title": "Rychlost a preciznost",
+      "text": "Výsledky, které očekáváte, v co nejkratším čase a s maximální péčí."
+    },
+    {
+      "icon": "shield",
+      "title": "Dlouhotrvající ochrana",
+      "text": "Keramika Gyeon s výdrží až 50 000 km."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-911.webp",
+      "caption": "Porsche 911"
+    },
+    {
+      "image": "images/work-911-interier.webp",
+      "caption": "Interiér Porsche 911"
+    },
+    {
+      "image": "images/work-x6m.webp",
+      "caption": "BMW X6 M"
+    },
+    {
+      "image": "images/work-gle.webp",
+      "caption": "Mercedes-AMG GLE Coupé"
+    },
+    {
+      "image": "images/work-mustang.webp",
+      "caption": "Ford Mustang GT"
+    },
+    {
+      "image": "images/work-v60.webp",
+      "caption": "Volvo V60 Cross Country"
+    },
+    {
+      "image": "images/work-touareg.webp",
+      "caption": "Volkswagen Touareg"
+    },
+    {
+      "image": "images/work-superb.webp",
+      "caption": "Škoda Superb Combi"
+    },
+    {
+      "image": "images/work-multivan.webp",
+      "caption": "Volkswagen Multivan"
+    },
+    {
+      "image": "images/work-outback.webp",
+      "caption": "Subaru Outback"
+    },
+    {
+      "image": "images/work-audi-interier.webp",
+      "caption": "Interiér Audi RS"
+    },
+    {
+      "image": "images/work-bmw-interier.webp",
+      "caption": "Interiér BMW řady 5"
+    },
+    {
+      "image": "images/work-amg-interier.webp",
+      "caption": "Interiér Mercedes-AMG"
+    },
+    {
+      "image": "images/work-c-interier.webp",
+      "caption": "Světlá kůže Mercedes-Benz třídy C"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Kolik stojí čištění interiéru?",
+      "answer": "Suché čištění od 1 490 Kč, mokré čištění nebo čištění kůže od 2 490 Kč. Cena se může lišit dle stavu znečištění vozidla.",
+      "keywords": [
+        "kolik",
+        "cena",
+        "interier",
+        "cisteni",
+        "tepovani"
+      ]
+    },
+    {
+      "question": "Jakou keramickou ochranu zvolit?",
+      "answer": "Na 1 rok Gyeon CanCoat EVO (od 4 990 Kč, až 15 000 km), na 3 roky Gyeon Q2 Pure EVO (od 9 990 Kč, až 40 000 km), na 5 let dvě vrstvy nejpokročilejší keramiky Gyeon (od 13 990 Kč, až 50 000 km). Před keramikou je vhodné alespoň jednokrokové leštění.",
+      "keywords": [
+        "keramik",
+        "gyeon",
+        "rok",
+        "let",
+        "ochrana"
+      ]
+    },
+    {
+      "question": "Nabízíte dárkový poukaz?",
+      "answer": "Ano, poukaz na hloubkové čištění interiéru, renovaci laku nebo keramickou ochranu. Pro objednání napište na WhatsApp +420 739 826 006.",
+      "keywords": [
+        "poukaz",
+        "voucher",
+        "darek",
+        "darkov"
+      ]
+    },
+    {
+      "question": "Kde vás najdu?",
+      "answer": "Pratecká 12B, 620 00 Brno-Tuřany. Telefon +420 739 826 006, e-mail info@doprejautu.cz.",
+      "keywords": [
+        "kde",
+        "adresa",
+        "brno",
+        "turany",
+        "prateck"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
