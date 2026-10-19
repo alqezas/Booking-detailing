@@ -1,0 +1,511 @@
+{
+  "slug": "hd-detailing",
+  "name": "High Definition Detailing",
+  "shortName": "HD Detailing",
+  "kind": "detailing",
+  "tagline": "Detailní péče o vaše vozy v Ostravě-Vítkovicích",
+  "description": "V oboru péče o automobily působíme od roku 2018. Již to není „one man show“ – náš tým tvoří zkušení jednotlivci s bohatými zkušenostmi. Nerozdělujeme služby na primární a sekundární, naše široká škála služeb umožňuje vyjít vstříc jakémukoliv přání. Zakládáme si na precizní práci a naším cílem je, aby každý zákazník odjížděl se svým vozem spokojený.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#F5B700",
+  "contacts": {
+    "phone": "+420 604 762 424",
+    "address": "Mostárenská 303/55, 703 00 Ostrava-Vítkovice",
+    "legalAddress": "High Definition Detailing, IČO 22069348 (plátce DPH)",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Most%C3%A1rensk%C3%A1%20303%2F55%2C%20Ostrava",
+    "instagram": "hd_detailingcz",
+    "facebook": "hddetailingcz"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 1440,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Box 1"
+    },
+    {
+      "key": "box-2",
+      "name": "Box 2"
+    }
+  ],
+  "services": [
+    {
+      "key": "comfort",
+      "name": "Interiér COMFORT",
+      "category": "Interiér",
+      "description": "Cca 3–4 h. Vyluxování vozu a kufru, čištění plastů, tepování koberečků, vyleštění vnitřních oken, nástupní prostory, odstranění pachů a provonění.",
+      "price": 1700,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "special",
+      "name": "Interiér SPECIAL",
+      "category": "Interiér",
+      "description": "Cca 7–10 h. Navíc čištění pedálů párou, látkových i kožených sedaček a kožených částí, mezidveřní prostory a ošetření těsnění.",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 600,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "full",
+      "name": "Interiér FULL DETAIL",
+      "category": "Interiér",
+      "description": "Cca 12–15 h. Tepování všech látkových částí s impregnací, hloubkové čištění kůže a volantu, stropnice po konzultaci, pojezdy sedadel, výdechy klimatizace párou.",
+      "price": 5000,
+      "priceFrom": true,
+      "durationMinutes": 900,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "motor",
+      "name": "Vyčištění motorového prostoru",
+      "category": "Interiér",
+      "description": "Doplňková služba.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "klima",
+      "name": "Dezinfekce klimatizace",
+      "category": "Interiér",
+      "description": "Dezinfekce klimatizace a odstranění pachů.",
+      "price": 500,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ext-standard",
+      "name": "Exteriér STANDARD",
+      "category": "Exteriér",
+      "description": "Kola a podběhy, odstranění nečistot a hmyzu, tekutý vosk, vnější okna, nástupní prostory, sušení ručníkem a fukarem, impregnace pneu.",
+      "price": 1000,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ext-exclusive",
+      "name": "Exteriér EXCLUSIVE",
+      "category": "Exteriér",
+      "description": "Dekontaminace kol vč. vnitřní strany, chemická a mechanická dekontaminace laku, hydrofobní sealant vč. kol, okna keramickým čističem.",
+      "price": 2000,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "voskovani",
+      "name": "Voskování",
+      "category": "Exteriér",
+      "description": "2 vrstvy tuhého vosku s fluorine polymerem s výdrží až 8 měsíců, v ceně dekontaminační program.",
+      "price": 2700,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "sterace",
+      "name": "Tekuté stěrače AngelWax",
+      "category": "Exteriér",
+      "description": "Výdrž až 12 měsíců, odvod vody už od 50 km/h, okna méně zamrzají.",
+      "price": 1000,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "refresh",
+      "name": "Renovace laku Refresh (1 krok)",
+      "category": "Renovace laku",
+      "description": "Jednokrokové leštění – odstraní drobné škrábance a vlásečnice. Minimální proces před keramikou a PPF.",
+      "price": 7000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "gold",
+      "name": "Renovace laku Gold (2 kroky)",
+      "category": "Renovace laku",
+      "description": "Dvoukrokové leštění – odstraní středně hluboké škrábance, mnohdy všechny. Doporučeno před keramikou a PPF.",
+      "price": 13000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "diamond",
+      "name": "Renovace laku Diamond (3 kroky)",
+      "category": "Renovace laku",
+      "description": "Tříkrokové hloubkové leštění – odstraní všechny defekty s ohledem na tloušťku laku, obrovský finální lesk.",
+      "price": 20000,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "svetla",
+      "name": "Renovace světlometů (za kus)",
+      "category": "Renovace laku",
+      "description": "Renovace předního světla – 600 Kč za kus.",
+      "price": 600,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "keramika-1",
+      "name": "Keramická ochrana na 1 rok",
+      "category": "Keramika a PPF",
+      "description": "Cena nezahrnuje leštění laku – doporučujeme alespoň jednokrokové.",
+      "price": 4000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "keramika-2",
+      "name": "Keramická ochrana na 2 roky",
+      "category": "Keramika a PPF",
+      "description": "Cena nezahrnuje leštění laku.",
+      "price": 7000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "keramika-3",
+      "name": "Keramická ochrana na 3 roky",
+      "category": "Keramika a PPF",
+      "description": "Cena nezahrnuje leštění laku.",
+      "price": 10000,
+      "priceFrom": true,
+      "durationMinutes": 960,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "keramika-5",
+      "name": "Keramická ochrana laku na 5 let",
+      "category": "Keramika a PPF",
+      "description": "Cena nezahrnuje leštění laku.",
+      "price": 15500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "keramika-kola",
+      "name": "Keramická ochrana kol na 1 rok",
+      "category": "Keramika a PPF",
+      "description": "Keramická ochrana disků.",
+      "price": 3700,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "keramika-okna",
+      "name": "Keramická ochrana oken",
+      "category": "Keramika a PPF",
+      "description": "Hydrofobní keramika na okna.",
+      "price": 2000,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ppf-front",
+      "name": "PPF fólie Front shield",
+      "category": "Keramika a PPF",
+      "description": "Nárazník, světla, kapota, blatníky, zrcátka. Cena podle velikosti vozu.",
+      "price": 29000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ppf-full",
+      "name": "PPF fólie Full body",
+      "category": "Keramika a PPF",
+      "description": "Kompletní polep vozu PPF fólií.",
+      "price": 80000,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Od roku 2018",
+      "text": "Tým zkušených jednotlivců s bohatými zkušenostmi."
+    },
+    {
+      "icon": "car",
+      "title": "Pick-up servis",
+      "text": "Za příplatek vyzvedneme vůz u vás doma či na firmě a vrátíme ho zpět."
+    },
+    {
+      "icon": "credit-card",
+      "title": "Plátci DPH",
+      "text": "SUV, VAN a dodávky +25 % k danému programu."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-tym.webp",
+      "caption": "Lamborghini Urus v naší dílně"
+    },
+    {
+      "image": "images/work-lesteni.webp",
+      "caption": "Strojní renovace laku"
+    },
+    {
+      "image": "images/work-lesteni-2.webp",
+      "caption": "Leštění přídě Lamborghini Urus"
+    },
+    {
+      "image": "images/work-keramika.webp",
+      "caption": "Aplikace keramické ochrany"
+    },
+    {
+      "image": "images/work-gyeon.webp",
+      "caption": "Keramická ochrana GYEON"
+    },
+    {
+      "image": "images/work-urus.webp",
+      "caption": "Lamborghini Urus po renovaci laku"
+    },
+    {
+      "image": "images/work-urus-zad.webp",
+      "caption": "Lamborghini Urus – záď"
+    },
+    {
+      "image": "images/work-interier.webp",
+      "caption": "Čištění interiéru Lamborghini"
+    },
+    {
+      "image": "images/work-volant.webp",
+      "caption": "Detail volantu"
+    },
+    {
+      "image": "images/work-bmw-interier.webp",
+      "caption": "Čištění interiéru BMW"
+    },
+    {
+      "image": "images/work-kola.webp",
+      "caption": "Péče o kola"
+    },
+    {
+      "image": "images/work-challenger.webp",
+      "caption": "Dodge Challenger SRT Hellcat"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Liší se cena podle vozu?",
+      "answer": "Ano. U SUV, VAN a dodávek je přirážka 25 % k danému programu, za zvířecí chlupy od 500 Kč. Ceny jsou orientační a mohou se lišit podle znečištění.",
+      "keywords": [
+        "suv",
+        "van",
+        "dodavk",
+        "priraz",
+        "priplat",
+        "chlupy",
+        "velke auto"
+      ]
+    },
+    {
+      "question": "Jaké jsou storno podmínky?",
+      "answer": "Pokud se nemůžete dostavit, omluvte se prosím telefonicky minimálně den předem. U termínů rezervovaných déle než dva týdny dopředu požadujeme 50% zálohu z vybraného programu.",
+      "keywords": [
+        "storno",
+        "zrusit",
+        "omluv",
+        "zaloh",
+        "nedostav"
+      ]
+    },
+    {
+      "question": "Zahrnuje keramika leštění?",
+      "answer": "Ne, cena keramické ochrany nezahrnuje leštění laku. Před aplikací doporučujeme alespoň jednokrokové leštění Refresh (od 7 000 Kč). Typ keramiky vybereme po konzultaci.",
+      "keywords": [
+        "keramik",
+        "lesten",
+        "zahrnuje",
+        "refresh"
+      ]
+    },
+    {
+      "question": "Jak dlouho trvá renovace laku?",
+      "answer": "Zhruba 2–5 dní podle zvoleného programu (Refresh, Gold, Diamond), velikosti vozu a jeho stavu.",
+      "keywords": [
+        "jak dlouho",
+        "renovac",
+        "dni",
+        "trva"
+      ]
+    },
+    {
+      "question": "Vyzvednete auto u mě?",
+      "answer": "Ano, za příplatek nabízíme pick-up servis – vůz vyzvedneme u vás doma či na firmě a po dokončení ho přivezeme zpět.",
+      "keywords": [
+        "pick up",
+        "pickup",
+        "vyzvedn",
+        "odvoz",
+        "dovoz"
+      ]
+    },
+    {
+      "question": "Kde vás najdu?",
+      "answer": "Mostárenská 303/55, Ostrava-Vítkovice. Termín je potřeba domluvit předem na +420 604 762 424.",
+      "keywords": [
+        "kde",
+        "adresa",
+        "ostrav",
+        "vitkovic",
+        "mostarensk"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
