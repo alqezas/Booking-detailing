@@ -1,0 +1,225 @@
+{
+  "slug": "lazne-pro-auta",
+  "name": "Lázně pro auta",
+  "shortName": "Lázně pro auta",
+  "kind": "detailing",
+  "tagline": "Profesionální detailing a keramická ochrana v Ostravě",
+  "description": "Každé auto má svůj příběh a my mu pomáháme zářit. Jsme firma z Ostravy, specializující se na profesionální detailing. Postaráme se o to, aby váš vůz nejen skvěle vypadal, ale také byl chráněný. Na detailech si zakládáme – u nás nejde jen o detailing, ale o skutečnou proměnu. Používáme certifikované ochrany laku.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#1E9BD7",
+  "contacts": {
+    "phone": "+420 734 409 968",
+    "address": "Frýdecká 298/308, 703 00 Ostrava-Kunčice",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fr%C3%BDdeck%C3%A1%20298%2F308%2C%20703%2000%20Ostrava",
+    "email": "rezervace@lazneproauta.cz",
+    "instagram": "lazneproauta_detailing",
+    "facebook": "lazneproautadetailing",
+    "tiktok": "lazneproauta_detailing"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 240,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Studio"
+    }
+  ],
+  "services": [
+    {
+      "key": "interier",
+      "name": "Čištění interiéru",
+      "category": "Interiér",
+      "description": "Doba trvání 4 h, mytí vozidla v ceně. Vysátí, šetrné čištění plastů a kůže, výživa kůže, impregnace plastů, tepování sedaček a podlahy, mytí a ošetření mezidveřních prostor, impregnace gumového těsnění.",
+      "price": 2997,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "lesteni",
+      "name": "Strojní leštění laku",
+      "category": "Lak a keramika",
+      "description": "Doba trvání 4 h+, ochrana laku v ceně. Ruční mytí vozu i kol, chemická a mechanická dekontaminace laku a oken, strojní leštění, odmaštění a aplikace tříměsíční ochrany laku.",
+      "price": 4997,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "keramika-1",
+      "name": "Keramická ochrana laku na 1 rok",
+      "category": "Lak a keramika",
+      "description": "Nezahrnuje strojní leštění. Ruční mytí, chemická a mechanická dekontaminace laku a oken, odmaštění, tekuté stěrače a aplikace roční ochrany laku.",
+      "price": 3997,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "keramika-5",
+      "name": "Keramická ochrana laku na 5 let",
+      "category": "Lak a keramika",
+      "description": "Zahrnuje všechny služby: čištění interiéru, mytí a dekontaminace všech ploch, mytí motorového prostoru, leštění světlometů, strojní leštění laku a keramická ochrana laku, oken i kol.",
+      "price": 19997,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "sparkle",
+      "title": "Na detailech si zakládáme",
+      "text": "Vše děláme s maximální péčí a důrazem na kvalitu."
+    },
+    {
+      "icon": "clock",
+      "title": "Interiér za pár hodin",
+      "text": "Čištění interiéru zvládneme zhruba za 4 hodiny, ne za celý den."
+    },
+    {
+      "icon": "shield",
+      "title": "Certifikovaná keramika",
+      "text": "Keramické ochrany laku s výdrží 1 rok nebo 5 let."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-amg.webp",
+      "caption": "Mercedes-AMG – leštění a ochrana laku"
+    },
+    {
+      "image": "images/work-interier.webp",
+      "caption": "Interiér Mercedes po čištění"
+    },
+    {
+      "image": "images/work-volant.webp",
+      "caption": "Čištění interiéru – dezinfekce a detail volantu"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Kolik to bude stát?",
+      "answer": "Čištění interiéru od 2 997 Kč, strojní leštění laku od 4 997 Kč, keramická ochrana na 1 rok od 3 997 Kč a na 5 let od 19 997 Kč. Rádi s vámi nezávazně vytvoříme nabídku na míru.",
+      "keywords": [
+        "kolik",
+        "cena",
+        "cenik",
+        "stoji",
+        "nabidk"
+      ]
+    },
+    {
+      "question": "Jak dlouho trvá čištění interiéru?",
+      "answer": "Zhruba 4 hodiny a mytí vozidla je v ceně.",
+      "keywords": [
+        "jak dlouho",
+        "trva",
+        "interier",
+        "hodin"
+      ]
+    },
+    {
+      "question": "Jaký je rozdíl mezi keramikou na 1 rok a na 5 let?",
+      "answer": "Roční keramika (od 3 997 Kč) zahrnuje mytí, dekontaminaci, tekuté stěrače a roční ochranu laku, ale ne strojní leštění. Pětiletá (od 19 997 Kč) zahrnuje všechny služby včetně čištění interiéru, leštění laku a světlometů a keramiky na lak, okna i kola.",
+      "keywords": [
+        "keramik",
+        "rozdil",
+        "1 rok",
+        "5 let",
+        "rocni",
+        "petilet"
+      ]
+    },
+    {
+      "question": "Kde vás najdu?",
+      "answer": "Frýdecká 298/308, 703 00 Ostrava-Kunčice. Objednat se můžete na +420 734 409 968 nebo rezervace@lazneproauta.cz.",
+      "keywords": [
+        "kde",
+        "adresa",
+        "ostrav",
+        "kuncice",
+        "frydecka"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
