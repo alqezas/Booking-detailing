@@ -1,0 +1,337 @@
+{
+  "slug": "toms-detailing",
+  "name": "Tom's Detailing",
+  "shortName": "Tom's",
+  "kind": "detailing",
+  "tagline": "Profesionální leštění laku a aplikace keramických ochran v Olomouci",
+  "description": "Detailing je řemeslo, ne sériová výroba. Leštění a ochranám laku se věnuji od roku 2015 – za víc než 11 let mi prošlo pod rukama několik stovek vozidel, od běžných aut po sběratelské a sportovní vozy. Specializuji se na leštění laku a keramické ochrany Nasiol. Pracuji s jedním vozem v daný čas a před zahájením prací probíhá osobní konzultace, měření tloušťky laku a návrh postupu na míru. Tomáš Pupík",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#C9A24A",
+  "contacts": {
+    "phone": "+420 731 328 879",
+    "address": "Jiráskova 81/13, 779 00 Olomouc",
+    "legalAddress": "Tomáš Pupík, IČO 23455519",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Tom%27s+detailing+Jir%C3%A1skova+81%2F13+Olomouc",
+    "email": "pupik.t@gmail.com",
+    "instagram": "toms.car.detailing"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 60,
+    "minLeadMinutes": 1440,
+    "horizonDays": 60,
+    "cancelCutoffHours": 48,
+    "defaultBufferMinutes": 60
+  },
+  "resources": [
+    {
+      "key": "studio",
+      "name": "Studio"
+    }
+  ],
+  "services": [
+    {
+      "key": "konzultace",
+      "name": "Osobní konzultace a měření laku",
+      "category": "Leštění laku",
+      "description": "Před zahájením prací probíhá osobní konzultace, měření tloušťky laku a návrh postupu na míru vašemu vozu i rozpočtu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "jednokrok",
+      "name": "Jednokrokové leštění laku",
+      "category": "Leštění laku",
+      "description": "Odstranění lehkých defektů a oxidace v jednom kroku. Obnovení hloubky a sytosti barvy bez zbytečného úbytku laku. Cenu navrhnu po osobní konzultaci a změření tloušťky laku.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "vicekrok",
+      "name": "Vícekrokové leštění laku",
+      "category": "Leštění laku",
+      "description": "Odstraní hlubší škrábance, hologramy a stopy po nesprávném mytí. Výsledkem je zrcadlový lesk a lak bez viditelného poškození. Cenu navrhnu po osobní konzultaci a změření tloušťky laku.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "nl272",
+      "name": "Nasiol NL272 (až 5 let)",
+      "category": "Keramická ochrana Nasiol",
+      "description": "Špičková keramická ochrana s životností až 5 let – tvrdá vrstva proti škrábancům, chemii a UV, extrémní lesk a hydrofobní efekt. Cenu navrhnu po osobní konzultaci a změření tloušťky laku.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "zr53",
+      "name": "Nasiol ZR53 (až 3 roky)",
+      "category": "Keramická ochrana Nasiol",
+      "description": "Tvrdá ochranná vrstva proti nečistotám, UV a chemii, zvýrazní lesk a usnadní mytí. Výdrž až 3 roky. Cenu navrhnu po osobní konzultaci a změření tloušťky laku.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "xr03",
+      "name": "Nasiol XR03 (až 18 měsíců)",
+      "category": "Keramická ochrana Nasiol",
+      "description": "Odolná vrstva proti nečistotám, UV, chemii i soli se silným hydrofobním efektem. Výdrž až 18 měsíců. Cenu navrhnu po osobní konzultaci a změření tloušťky laku.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 960,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "metalcoat",
+      "name": "Nasiol MetalCoat (až 1 rok)",
+      "category": "Keramická ochrana Nasiol",
+      "description": "Vstupní keramická ochrana laku s výdrží až 1 rok – ideální jako krátkodobá, ale účinná ochrana. Cenu navrhnu po osobní konzultaci a změření tloušťky laku.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "sklo",
+      "name": "Ochrana čelního skla Nasiol Glasshield",
+      "category": "Další služby",
+      "description": "Hydrofobní vrstva, která odvádí vodu už od 60 km/h a zlepšuje viditelnost za deště a v noci. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "studio"
+      ]
+    },
+    {
+      "key": "kabriolet",
+      "name": "Čištění a impregnace látkové střechy",
+      "category": "Další služby",
+      "description": "Šetrné čištění a impregnace látkových střech kabrioletů pro obnovení barvy a ochranu. Cena na dotaz.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "studio"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "11+ let praxe",
+      "text": "Od roku 2015, přes 1000 hodin korekcí laku a několik stovek vozů."
+    },
+    {
+      "icon": "car",
+      "title": "Jeden vůz v daný čas",
+      "text": "Žádný spěch, žádné kompromisy – 100% vlastní práce."
+    },
+    {
+      "icon": "shield",
+      "title": "Certifikované coatingy",
+      "text": "Nasiol NL272, ZR53, XR03 a MetalCoat s evidencí v zákaznické kartě."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-urus.webp",
+      "caption": "Lamborghini Urus – leštění laku"
+    },
+    {
+      "image": "images/work-f812.webp",
+      "caption": "Ferrari 812 Superfast – vícekrokové leštění laku"
+    },
+    {
+      "image": "images/work-f488.webp",
+      "caption": "Ferrari 488 – vícekrokové leštění laku"
+    },
+    {
+      "image": "images/work-fordgt.webp",
+      "caption": "Ford GT – leštění a ochrana sběratelského vozu"
+    },
+    {
+      "image": "images/work-bentley.webp",
+      "caption": "Bentley Bentayga – vícekrokové leštění laku"
+    },
+    {
+      "image": "images/work-911-gts.webp",
+      "caption": "Porsche 911 GTS – leštění a keramická ochrana laku"
+    },
+    {
+      "image": "images/work-panamera.webp",
+      "caption": "Porsche Panamera 4 – vícekrokové leštění a základní ochrana"
+    },
+    {
+      "image": "images/work-taycan.webp",
+      "caption": "Porsche Taycan GTS – leštění interiérových lišt"
+    },
+    {
+      "image": "images/work-m340i.webp",
+      "caption": "BMW G20 M340i – vícekrokové leštění a keramická ochrana"
+    },
+    {
+      "image": "images/work-740d.webp",
+      "caption": "BMW 740d – vícekrokové leštění a keramická ochrana"
+    },
+    {
+      "image": "images/work-840ci.webp",
+      "caption": "BMW 840Ci – renovace laku youngtimeru"
+    },
+    {
+      "image": "images/work-m4.webp",
+      "caption": "BMW M4 – leštění laku a keramická ochrana"
+    },
+    {
+      "image": "images/work-q8.webp",
+      "caption": "Audi Q8 – leštění a keramická ochrana"
+    },
+    {
+      "image": "images/work-ftype.webp",
+      "caption": "Jaguar F-Type S – leštění a keramická ochrana"
+    },
+    {
+      "image": "images/work-c3.webp",
+      "caption": "Chevrolet Corvette C3 – leštění laku sběratelského vozu"
+    },
+    {
+      "image": "images/work-ioniq.webp",
+      "caption": "Hyundai Ioniq 5 N – keramická ochrana matného laku"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Kolik to bude stát?",
+      "answer": "Nevnucuji univerzální programy. Nejdříve lak důkladně zhodnotím a změřím jeho tloušťku a pak navrhnu postup, který dává smysl pro váš vůz i rozpočet. Napište mi pár slov o voze – ozvu se zpravidla do 24 hodin s návrhem postupu a termínem.",
+      "keywords": [
+        "kolik",
+        "cena",
+        "cenik",
+        "stoji",
+        "nabidk"
+      ]
+    },
+    {
+      "question": "Jakou keramickou ochranu si vybrat?",
+      "answer": "Nasiol NL272 vydrží až 5 let, ZR53 až 3 roky, XR03 až 18 měsíců a MetalCoat až 1 rok jako vstupní ochrana. Doporučím podle stavu laku a toho, jak auto používáte.",
+      "keywords": [
+        "keramik",
+        "nasiol",
+        "nl272",
+        "zr53",
+        "xr03",
+        "metalcoat",
+        "vybrat"
+      ]
+    },
+    {
+      "question": "Čistíte i interiér?",
+      "answer": "Hloubkové čištění a impregnaci kůže, plastů a textilií nabízím pouze jako součást náročnějších programů, ne samostatně.",
+      "keywords": [
+        "interier",
+        "kuze",
+        "tepovani",
+        "cisteni"
+      ]
+    },
+    {
+      "question": "Kde vás najdu a kdy máte otevřeno?",
+      "answer": "Studio je na adrese Jiráskova 81/13, 779 00 Olomouc. Otevírací doba je dle telefonické domluvy na +420 731 328 879.",
+      "keywords": [
+        "kde",
+        "adresa",
+        "olomouc",
+        "oteviraci",
+        "kdy"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
