@@ -1,0 +1,618 @@
+{
+  "slug": "lv-detailing",
+  "name": "LV! Detailing Studio",
+  "shortName": "LV! Detailing",
+  "kind": "detailing",
+  "tagline": "Auto jako ze showroomu – detailing, PPF fólie a tónování skel v Ostravě",
+  "description": "Ať už máte novinku z autosalonu, nebo věrného parťáka po tisících kilometrech, u nás získá královský vzhled i ochranu. Specializujeme se na profesionální detailing, PPF fólie a tónování autoskel. Preciznost, top materiály a posedlost detailem – to je naše záruka. Každé auto bereme jako vlastní, ať má emblém Ferrari nebo Fabie.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#D4A63A",
+  "contacts": {
+    "phone": "+420 602 336 063",
+    "address": "Novinářská 1113/3, 709 00 Ostrava (Futurum)",
+    "legalAddress": "LV! Detailing Studio, IČO 23620731",
+    "mapUrl": "https://maps.app.goo.gl/q1Y5RvS5rdoFvpXMA",
+    "email": "info@lvdetailing.cz",
+    "instagram": "lv_detailing_studio_futurum",
+    "facebook": "https://www.facebook.com/profile.php?id=61583990288755"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 240,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Box 1"
+    },
+    {
+      "key": "box-2",
+      "name": "Box 2"
+    }
+  ],
+  "services": [
+    {
+      "key": "myti-zaklad",
+      "name": "Ruční mytí ZÁKLAD",
+      "category": "Mytí a čištění",
+      "description": "Předmytí, mytí NANO šamponem, mytí kol a podběhů, mytí a impregnace pneumatik, vysušení vozu.",
+      "price": 599,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "myti-exclusive",
+      "name": "Ruční mytí EXCLUSIVE",
+      "category": "Mytí a čištění",
+      "description": "Prémiová péče o exteriér: šetrný šampon, kola a podběhy, rámy dveří vč. kufru, nástupní hrany, impregnace pneu, keramický sealant na lak a nano ochrana skel.",
+      "price": 1099,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "interier-zaklad",
+      "name": "Základní čištění interiéru",
+      "category": "Mytí a čištění",
+      "description": "Vysátí vozu včetně kufru, čištění a ošetření plastů, leštění oken a zrcátek zevnitř, nástupní hrany, provonění.",
+      "price": 1999,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "interier-mokro",
+      "name": "Čištění interiéru mokrou cestou",
+      "category": "Mytí a čištění",
+      "description": "Vše ze základního čištění plus kompletní tepování (sedadla, podlaha, koberce, kufr) nebo čištění a impregnace kůže.",
+      "price": 2999,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "combo-zaklad",
+      "name": "Základní interiér & ruční mytí EXCLUSIVE",
+      "category": "Mytí a čištění",
+      "description": "Ruční mytí EXCLUSIVE se sealantem a nano ochranou skel + základní čištění interiéru.",
+      "price": 2699,
+      "priceFrom": true,
+      "durationMinutes": 210,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "combo-mokro",
+      "name": "Interiér mokrou cestou & ruční mytí EXCLUSIVE",
+      "category": "Mytí a čištění",
+      "description": "Ruční mytí EXCLUSIVE + kompletní tepování interiéru nebo čištění kůže s impregnací.",
+      "price": 3699,
+      "priceFrom": true,
+      "durationMinutes": 390,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "top",
+      "name": "DETAILING TOP – interiér & detailní ruční mytí",
+      "category": "Mytí a čištění",
+      "description": "Dekontaminace karoserie, detailní mytí spár a kol, keramický sealant, nano ochrana skel; v interiéru pojezdy sedadel, prostor rezervy, stropnice, tepování / kůže, dezinfekce.",
+      "price": 5999,
+      "priceFrom": true,
+      "durationMinutes": 540,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "textil",
+      "name": "Ochrana textilních částí interiéru",
+      "category": "Doplňkové služby",
+      "description": "Impregnace textilií v interiéru.",
+      "price": 999,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "kuze",
+      "name": "Nano ochrana kůže",
+      "category": "Doplňkové služby",
+      "description": "Nano ochrana kožených částí.",
+      "price": 999,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "dezinfekce",
+      "name": "Dezinfekce klimatizace / interiéru",
+      "category": "Doplňkové služby",
+      "description": "Dezinfekce klimatizace a interiéru.",
+      "price": 399,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "stropnice",
+      "name": "Čištění stropnice",
+      "category": "Doplňkové služby",
+      "description": "Šetrné čištění stropnice.",
+      "price": 699,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "motor",
+      "name": "Čištění motorového prostoru",
+      "category": "Doplňkové služby",
+      "description": "Čištění motorového prostoru.",
+      "price": 499,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "sedadla",
+      "name": "Čištění sedadel mokrou cestou",
+      "category": "Doplňkové služby",
+      "description": "Tepování sedadel.",
+      "price": 999,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "dekontaminace",
+      "name": "Dekontaminace laku",
+      "category": "Doplňkové služby",
+      "description": "Chemická a mechanická dekontaminace laku.",
+      "price": 3999,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "lesteni",
+      "name": "Leštění / renovace laku",
+      "category": "Doplňkové služby",
+      "description": "Cena individuální podle stavu laku.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "skla",
+      "name": "Nano ochrana skel",
+      "category": "Doplňkové služby",
+      "description": "Hydrofobní nano ochrana skel.",
+      "price": 999,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "keramika",
+      "name": "Nano keramická ochrana",
+      "category": "Doplňkové služby",
+      "description": "Nano keramická ochrana laku.",
+      "price": 2999,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "vosk",
+      "name": "Aplikace tvrdého vosku",
+      "category": "Doplňkové služby",
+      "description": "Ruční aplikace tvrdého vosku.",
+      "price": 1999,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "svetla",
+      "name": "Vyleštění světlometů",
+      "category": "Doplňkové služby",
+      "description": "Renovace a vyleštění světlometů.",
+      "price": 899,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "kola",
+      "name": "Detailní mytí ALU kol – sada",
+      "category": "Doplňkové služby",
+      "description": "Detailní mytí sady ALU kol.",
+      "price": 999,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ppf-standard",
+      "name": "PPF Standardní balíček",
+      "category": "PPF fólie",
+      "description": "Základní ochrana přední části vozu prémiovou samoregenerační PPF fólií. Na vybrané řady záruka až 10 let.",
+      "price": 24999,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ppf-premium",
+      "name": "PPF Prémiový balíček",
+      "category": "PPF fólie",
+      "description": "Rozšířená ochrana přední části vozu prémiovou PPF fólií.",
+      "price": 29999,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ppf-komplet",
+      "name": "PPF Kompletní balíček",
+      "category": "PPF fólie",
+      "description": "Ochrana celého vozu PPF fólií.",
+      "price": 59999,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ton-3d",
+      "name": "Tónování skel – 3dveřové",
+      "category": "Tónování skel",
+      "description": "Fólie KeetecFOL PREMIUM / BELUGA Nano Ceramic s homologací pro ČR, 99% UV ochrana, záruka až 15 let. Uvedená cena je za aplikaci fólie STANDARD, nezahrnuje přední boční okna ani čelní sklo.",
+      "price": 2799,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ton-5d",
+      "name": "Tónování skel – 5dveřové",
+      "category": "Tónování skel",
+      "description": "Homologované fólie s 99% UV ochranou a zárukou až 15 let. Uvedená cena je za aplikaci fólie STANDARD, nezahrnuje přední boční okna ani čelní sklo.",
+      "price": 3199,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ton-sedan",
+      "name": "Tónování skel – sedan",
+      "category": "Tónování skel",
+      "description": "Homologované fólie s 99% UV ochranou a zárukou až 15 let. Uvedená cena je za aplikaci fólie STANDARD, nezahrnuje přední boční okna ani čelní sklo.",
+      "price": 3799,
+      "priceFrom": true,
+      "durationMinutes": 210,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ton-combi",
+      "name": "Tónování skel – combi",
+      "category": "Tónování skel",
+      "description": "Homologované fólie s 99% UV ochranou a zárukou až 15 let. Uvedená cena je za aplikaci fólie STANDARD, nezahrnuje přední boční okna ani čelní sklo.",
+      "price": 4199,
+      "priceFrom": true,
+      "durationMinutes": 210,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ton-suv",
+      "name": "Tónování skel – SUV / offroad",
+      "category": "Tónování skel",
+      "description": "Homologované fólie s 99% UV ochranou a zárukou až 15 let. Uvedená cena je za aplikaci fólie STANDARD, nezahrnuje přední boční okna ani čelní sklo.",
+      "price": 4499,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ton-dodavka",
+      "name": "Tónování skel – dodávka",
+      "category": "Tónování skel",
+      "description": "Homologované fólie s 99% UV ochranou a zárukou až 15 let. Uvedená cena je za aplikaci fólie STANDARD, nezahrnuje přední boční okna ani čelní sklo.",
+      "price": 5999,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ton-predni",
+      "name": "Tónování předních bočních skel / čelního skla",
+      "category": "Tónování skel",
+      "description": "Tónování předních bočních oken nebo čelního skla.",
+      "price": 1400,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "sunstrip",
+      "name": "Sunstrip",
+      "category": "Tónování skel",
+      "description": "Pruh fólie v horní části čelního skla.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "car",
+      "title": "Náhradní vůz nebo vyzvednutí",
+      "text": "Maximální komfort: náhradní vozidlo k dispozici, nebo vyzvedneme váš vůz přímo u vás."
+    },
+    {
+      "icon": "shield",
+      "title": "Záruka až 10 / 15 let",
+      "text": "PPF fólie se zárukou až 10 let, tónovací fólie s homologací a zárukou až 15 let."
+    },
+    {
+      "icon": "credit-card",
+      "title": "Ceny včetně DPH",
+      "text": "U SUV, dodávek a 7místných vozů může být účtován příplatek dle náročnosti."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-rsq8.webp",
+      "caption": "Audi RS Q8 ve studiu"
+    },
+    {
+      "image": "images/work-studio.webp",
+      "caption": "Studio LV! Detailing v Ostravě"
+    },
+    {
+      "image": "images/work-ppf-arteon.webp",
+      "caption": "Aplikace PPF fólie na VW Arteon"
+    },
+    {
+      "image": "images/work-ppf-octavia.webp",
+      "caption": "Aplikace PPF fólie na přední část vozu"
+    },
+    {
+      "image": "images/work-myti.webp",
+      "caption": "Ruční mytí BMW aktivní pěnou"
+    },
+    {
+      "image": "images/work-tesla.webp",
+      "caption": "Tesla Model Y po detailingu"
+    },
+    {
+      "image": "images/work-tonovani.webp",
+      "caption": "Tónování autoskel"
+    },
+    {
+      "image": "images/work-octavia.webp",
+      "caption": "Škoda Octavia Combi"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Nabízíte náhradní vůz nebo vyzvednutí?",
+      "answer": "Ano. Pro zákazníky máme k dispozici náhradní vozidlo, nebo váš vůz vyzvedneme přímo u vás a po dokončení vrátíme.",
+      "keywords": [
+        "nahradni",
+        "zapujc",
+        "pujceni",
+        "vyzvedn",
+        "odvoz",
+        "dovoz"
+      ]
+    },
+    {
+      "question": "Jsou tónovací fólie legální?",
+      "answer": "Ano. Používáme fólie KeetecFOL PREMIUM a BELUGA Nano Ceramic se schválením Ministerstva dopravy ČR (ATEST 8SD 3 587), které splňují zákon č. 56/2001 Sb. i předpis EHK 43. Záruka až 15 let.",
+      "keywords": [
+        "legal",
+        "homolog",
+        "atest",
+        "stk",
+        "tonovani",
+        "zatmaveni"
+      ]
+    },
+    {
+      "question": "Liší se cena podle velikosti vozu?",
+      "answer": "Ano, u větších vozidel (SUV, dodávky, 7místné) a silně znečištěných vozů může být účtován příplatek dle náročnosti. Ceny jsou včetně DPH.",
+      "keywords": [
+        "suv",
+        "dodavk",
+        "velikost",
+        "priplat",
+        "dph"
+      ]
+    },
+    {
+      "question": "Kolik stojí PPF fólie?",
+      "answer": "Standardní balíček přední části od 24 999 Kč, prémiový od 29 999 Kč, kompletní ochrana celého vozu od 59 999 Kč. Na vybrané řady fólií poskytujeme záruku až 10 let.",
+      "keywords": [
+        "ppf",
+        "folie",
+        "kolik",
+        "cena",
+        "kaminky"
+      ]
+    },
+    {
+      "question": "Kde vás najdu a kdy máte otevřeno?",
+      "answer": "Novinářská 1113/3, 709 00 Ostrava (Futurum). Otevřeno Po–Pá 8:00–17:00.",
+      "keywords": [
+        "kde",
+        "adresa",
+        "futurum",
+        "ostrav",
+        "oteviraci",
+        "otevreno"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
