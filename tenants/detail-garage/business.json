@@ -1,0 +1,366 @@
+{
+  "slug": "detail-garage",
+  "name": "Detail Garage",
+  "shortName": "Detail Garage",
+  "kind": "detailing",
+  "tagline": "Specialisté na ochranné PPF fólie a keramické povlaky v Brně",
+  "description": "Jmenuji se Honza Smékal a společně s kolegou Martinem se staráme, aby vaše nová auta zůstala pomocí ochranné PPF fólie stejně krásná, jako když jste si je zakoupili. U starších vozů navrátíme zašlou krásu renovací laku a ošetřením keramickými povlaky. Profesionálně se autům věnuji od roku 2013. Jsme českým distributorem PPF fólií Skyfol, aplikujeme keramiku Modesta a Gyeon a pořádáme školení lepení PPF.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#F2323F",
+  "contacts": {
+    "phone": "+420 774 150 787",
+    "address": "Areál Kulkova 8, hala E, Brno",
+    "legalAddress": "Detail Garage s.r.o., IČ 06829970 (plátce DPH)",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Kulkova%208%2C%20Brno",
+    "email": "info@detailgarage.cz",
+    "instagram": "detailgaragecz",
+    "facebook": "detailgaragecz"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 60,
+    "minLeadMinutes": 1440,
+    "horizonDays": 60,
+    "cancelCutoffHours": 48,
+    "defaultBufferMinutes": 60
+  },
+  "resources": [
+    {
+      "key": "dilna",
+      "name": "Dílna"
+    }
+  ],
+  "services": [
+    {
+      "key": "ppf-lesk",
+      "name": "Ochranná PPF fólie – lesk (za m²)",
+      "category": "PPF fólie",
+      "description": "Fólie Skyfol s životností 10–12 let. Pro přesnou kalkulaci je potřeba znát typ vozu a rozsah polepu. Cena bez DPH.",
+      "price": 4850,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "ppf-mat",
+      "name": "Ochranná PPF fólie – mat (za m²)",
+      "category": "PPF fólie",
+      "description": "Matná PPF fólie. Pro přesnou kalkulaci je potřeba znát typ vozu a rozsah. Cena bez DPH.",
+      "price": 5000,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "ppf-barva",
+      "name": "Barevná PPF fólie (za m²)",
+      "category": "PPF fólie",
+      "description": "Lesk nebo mat, přes 50 barevných odstínů dle vzorníku – změna barvy s ochranou laku. Cena bez DPH.",
+      "price": 5500,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "svetla",
+      "name": "Zatmavení světel PPF fólií (pár)",
+      "category": "PPF fólie",
+      "description": "Možnosti zatmavení 30 %, 50 % a 70 % VLT. Cena bez DPH.",
+      "price": 3000,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "celni-sklo",
+      "name": "Ochrana čelního okna Skyfol VisionGuard",
+      "category": "PPF fólie",
+      "description": "Ochrana čelního skla proti kamínkům, 99% UV ochrana, životnost 1 rok. Šíře role / výška skla max. 120 cm. Cena bez DPH.",
+      "price": 10000,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "tonovani",
+      "name": "Tónování oken – keramické fólie",
+      "category": "PPF fólie",
+      "description": "Keramické okenní fólie s nejlepší ochranou proti slunci i zlodějům. Cena bez DPH.",
+      "price": 5500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "lesteni",
+      "name": "Renovace a leštění laku (za hodinu)",
+      "category": "Lak a keramika",
+      "description": "Strojní leštění včetně materiálu. Běžně se lak renovuje jedním krokem za cca 10 hodin, náročné laky i 16–24 hodin. Cenu upřesníme po prohlídce. Cena bez DPH.",
+      "price": 1350,
+      "priceFrom": false,
+      "durationMinutes": 600,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "sealant",
+      "name": "Keramický sealant Gyeon CanCoat Evo PRO",
+      "category": "Lak a keramika",
+      "description": "Výdrž až 12 měsíců, v ceně příprava laku před aplikací. Cena bez DPH.",
+      "price": 8500,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "gyeon",
+      "name": "Keramické povlaky Gyeon",
+      "category": "Lak a keramika",
+      "description": "Od 12 000 do 16 000 Kč dle typu a rozsahu ošetřených povrchů. Cena bez DPH.",
+      "price": 12000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "modesta",
+      "name": "Sklokeramické povlaky Modesta",
+      "category": "Lak a keramika",
+      "description": "Od 18 000 do 35 000 Kč dle typu a rozsahu ošetřených povrchů. Cena bez DPH.",
+      "price": 18000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "interier",
+      "name": "Čištění interiéru a hloubkové čištění kůže",
+      "category": "Interiér a kůže",
+      "description": "Všechny kožené části se vyčistí a naimpregnují (běžné znečištění u vozu střední třídy). Cena bez DPH.",
+      "price": 6000,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "kuze",
+      "name": "Opravy a renovace kůže",
+      "category": "Interiér a kůže",
+      "description": "Cena dle míry znečištění a poškození. Cena bez DPH.",
+      "price": 5000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "dilna"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Od roku 2013",
+      "text": "Zkušenosti mimo jiné z Royal Garage Bratislava – péče o auta z časopisů a plakátů."
+    },
+    {
+      "icon": "shield",
+      "title": "Distributor Skyfol",
+      "text": "Český distributor PPF fólií Skyfol se životností až 12 let."
+    },
+    {
+      "icon": "wrench",
+      "title": "Školení PPF",
+      "text": "Individuální kurzy lepení PPF fólií pro začátečníky i pokročilé."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-gtc4.webp",
+      "caption": "Ferrari GTC4Lusso"
+    },
+    {
+      "image": "images/work-gt3rs.webp",
+      "caption": "Instalace ochranné PPF fólie na Porsche GT3 RS"
+    },
+    {
+      "image": "images/work-ppf.webp",
+      "caption": "Lepení PPF fólie"
+    },
+    {
+      "image": "images/work-911-pink.webp",
+      "caption": "Porsche 911 v naší dílně"
+    },
+    {
+      "image": "images/work-911-duo.webp",
+      "caption": "Dvojice Porsche 911"
+    },
+    {
+      "image": "images/work-m4.webp",
+      "caption": "BMW M4"
+    },
+    {
+      "image": "images/work-m3.webp",
+      "caption": "BMW M3 Touring"
+    },
+    {
+      "image": "images/work-defender.webp",
+      "caption": "Land Rover Defender"
+    },
+    {
+      "image": "images/work-rr.webp",
+      "caption": "Range Rover"
+    },
+    {
+      "image": "images/work-gls.webp",
+      "caption": "Mercedes-Benz GLS"
+    },
+    {
+      "image": "images/work-720s.webp",
+      "caption": "McLaren 720S"
+    },
+    {
+      "image": "images/work-ferrari.webp",
+      "caption": "Ferrari v dílně"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Proč je leštění za hodinu?",
+      "answer": "Konečná cena závisí na poškození a tvrdosti laku, velikosti auta a očekávaném výsledku. Středně tvrdé laky se většinou renovují jedním krokem do 10 hodin (cca 13 500 Kč bez DPH), tvrdé laky kolem 16 hodin a extrémní renovace i přes 24 hodin. Cílem je zachovat co největší tloušťku čirého laku.",
+      "keywords": [
+        "lesten",
+        "hodin",
+        "renovac",
+        "kolik",
+        "proc"
+      ]
+    },
+    {
+      "question": "Kolik stojí PPF fólie?",
+      "answer": "Lesklá PPF 4 850 Kč/m², matná 5 000 Kč/m², barevná od 5 500 Kč/m² (bez DPH). Pro přesnou kalkulaci potřebujeme znát typ vozu a rozsah polepu – pracujeme jen s fóliemi s životností 10–12 let.",
+      "keywords": [
+        "ppf",
+        "folie",
+        "kolik",
+        "cena",
+        "m2",
+        "metr"
+      ]
+    },
+    {
+      "question": "Jsou ceny s DPH?",
+      "answer": "Uvedené ceny jsou bez DPH, jsme plátci DPH.",
+      "keywords": [
+        "dph",
+        "faktur",
+        "bez dph"
+      ]
+    },
+    {
+      "question": "Pořádáte školení lepení PPF?",
+      "answer": "Ano, individuální 2–3denní školení lepení ochranných PPF fólií pro začátečníky i pokročilé, včetně byznysové stránky a cenotvorby. Prodáváme také PPF fólie a pomůcky.",
+      "keywords": [
+        "skoleni",
+        "kurz",
+        "naucit",
+        "b2b"
+      ]
+    },
+    {
+      "question": "Kde vás najdu?",
+      "answer": "V Brně v Areálu Kulkova 8, hala E. Otevřeno Po–Pá 8:00–17:00.",
+      "keywords": [
+        "kde",
+        "adresa",
+        "kulkova",
+        "brno",
+        "oteviraci"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
