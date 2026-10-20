@@ -1,0 +1,298 @@
+{
+  "slug": "el-clean",
+  "name": "EL Clean",
+  "shortName": "EL Clean",
+  "kind": "detailing",
+  "tagline": "Profesionální čištění interiérů aut v Praze – Lipence a okolí Zbraslavi",
+  "description": "V EL Clean vracíme interiérům vozů čistotu, svěžest a reprezentativní vzhled. Specializujeme se na detailní ruční čištění včetně péče o kůži i látku s šetrnou autokosmetikou KOCH a parní dezinfekcí. Máme za sebou 500+ vyčištěných vozů a 5 let zkušeností – od malých hatchbacků po luxusní SUV i firemní flotily.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#F2D400",
+  "contacts": {
+    "phone": "+420 608 584 455",
+    "address": "K Černošicím 818, 155 31 Praha – Lipence",
+    "legalAddress": "Skaceltrans s.r.o., Na Folimance 2155/15, Praha 2, IČ 07729456",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=K%20%C4%8Cerno%C5%A1ic%C3%ADm%20818%2C%20Praha%20Lipence",
+    "email": "elclean.auto@gmail.com",
+    "instagram": "elc.lean",
+    "facebook": "https://www.facebook.com/profile.php?id=61565392815682"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "10:00",
+        "16:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "dilna",
+      "name": "Provozovna"
+    }
+  ],
+  "services": [
+    {
+      "key": "latka-male",
+      "name": "Látkový interiér – malé auto",
+      "category": "Látkový interiér",
+      "description": "Např. Škoda Fabia. V ceně hloubkové čištění sedaček, podlah a plastů, parní dezinfekce, mytí vnitřních skel, mezidveřní prostory a těsnění. Cca 6–8 hodin. Cena bez DPH.",
+      "price": 2000,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "latka-stredni",
+      "name": "Látkový interiér – střední auto",
+      "category": "Látkový interiér",
+      "description": "Např. Octavia kombi. V ceně hloubkové čištění sedaček, podlah a plastů, parní dezinfekce, mytí vnitřních skel, mezidveřní prostory a těsnění. Cca 6–8 hodin. Cena bez DPH.",
+      "price": 2500,
+      "priceFrom": false,
+      "durationMinutes": 420,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "latka-velke",
+      "name": "Látkový interiér – velké auto / SUV",
+      "category": "Látkový interiér",
+      "description": "Např. SUV. V ceně hloubkové čištění sedaček, podlah a plastů, parní dezinfekce, mytí vnitřních skel, mezidveřní prostory a těsnění. Cca 6–8 hodin. Cena bez DPH.",
+      "price": 3000,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "kuze-male",
+      "name": "Kožený interiér – malé auto",
+      "category": "Kožený interiér",
+      "description": "Např. Fiat 500. Včetně čištění a revitalizace kůže. V ceně hloubkové čištění sedaček, podlah a plastů, parní dezinfekce, mytí vnitřních skel, mezidveřní prostory a těsnění. Cca 6–8 hodin. Cena bez DPH.",
+      "price": 2500,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "kuze-stredni",
+      "name": "Kožený interiér – střední auto",
+      "category": "Kožený interiér",
+      "description": "Např. VW Passat. Včetně čištění a revitalizace kůže. V ceně hloubkové čištění sedaček, podlah a plastů, parní dezinfekce, mytí vnitřních skel, mezidveřní prostory a těsnění. Cca 6–8 hodin. Cena bez DPH.",
+      "price": 3000,
+      "priceFrom": false,
+      "durationMinutes": 420,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "kuze-velke",
+      "name": "Kožený interiér – velké auto / SUV",
+      "category": "Kožený interiér",
+      "description": "Např. BMW X5. Včetně čištění a revitalizace kůže. V ceně hloubkové čištění sedaček, podlah a plastů, parní dezinfekce, mytí vnitřních skel, mezidveřní prostory a těsnění. Cca 6–8 hodin. Cena bez DPH.",
+      "price": 3500,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "mpv",
+      "name": "Velká MPV a atypická vozidla",
+      "category": "Látkový interiér",
+      "description": "Např. VW Transporter. Cenu určíme individuálně – kontaktujte nás pro nezávaznou kalkulaci.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 540,
+      "resources": [
+        "dilna"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "500+ vyčištěných vozů",
+      "text": "5 let zkušeností – od malých hatchbacků po luxusní SUV."
+    },
+    {
+      "icon": "drop",
+      "title": "Přípravky KOCH a pára",
+      "text": "Šetrná prémiová autokosmetika a parní dezinfekce v každém čištění."
+    },
+    {
+      "icon": "car",
+      "title": "Vyzvednutí vozu",
+      "text": "V okolí Zbraslavi a Lipenců si vůz vyzvedneme a po vyčištění vrátíme."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-fabia.webp",
+      "caption": "Interiér Škoda Fabia po čištění"
+    },
+    {
+      "image": "images/work-sedadlo.webp",
+      "caption": "Látkové sedadlo po tepování"
+    },
+    {
+      "image": "images/work-ridic.webp",
+      "caption": "Místo řidiče"
+    },
+    {
+      "image": "images/work-kufr.webp",
+      "caption": "Zavazadlový prostor"
+    },
+    {
+      "image": "images/work-octavia.webp",
+      "caption": "Interiér Škoda Octavia"
+    },
+    {
+      "image": "images/work-palubka.webp",
+      "caption": "Palubní deska"
+    },
+    {
+      "image": "images/work-volvo.webp",
+      "caption": "Středová konzole Volvo"
+    },
+    {
+      "image": "images/work-para.webp",
+      "caption": "Parní dezinfekce interiéru"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Jak dlouho trvá čištění interiéru auta?",
+      "answer": "Délka závisí na typu vozu a míře znečištění. Většinou to trvá 6–8 hodin, u extrémně znečištěných vozů i déle.",
+      "keywords": [
+        "jak dlouho",
+        "trva",
+        "hodin"
+      ]
+    },
+    {
+      "question": "Kolik čištění stojí?",
+      "answer": "Látkový interiér 2 000 / 2 500 / 3 000 Kč (malé / střední / velké auto), kožený 2 500 / 3 000 / 3 500 Kč. Velká MPV individuálně. Při výjimečně silném znečištění příplatek 500 Kč. Ceny jsou bez DPH a bez skrytých poplatků.",
+      "keywords": [
+        "kolik",
+        "cena",
+        "cenik",
+        "stoji",
+        "dph",
+        "priplat"
+      ]
+    },
+    {
+      "question": "Vyzvednete auto u mě?",
+      "answer": "Ano, pokud jste z okolí Zbraslavi nebo Lipenců, rádi si váš vůz vyzvedneme a po vyčištění vrátíme zpět. Nebo nás navštivte na provozovně K Černošicím 818, Praha – Lipence.",
+      "keywords": [
+        "vyzvedn",
+        "odvoz",
+        "dovoz",
+        "zbraslav",
+        "lipence",
+        "kde",
+        "adresa"
+      ]
+    },
+    {
+      "question": "Odstraníte i skvrny a zápach?",
+      "answer": "Hloubkovým čištěním a parní dezinfekcí odstraňujeme skvrny od jídla, zvířecí chlupy, prach i zápach – výsledek je vždy znát.",
+      "keywords": [
+        "skvrn",
+        "zapach",
+        "flek",
+        "chlupy",
+        "pes"
+      ]
+    },
+    {
+      "question": "Kdy máte otevřeno?",
+      "answer": "Po–Pá 8:00–18:00, sobota 10:00–16:00, neděle zavřeno.",
+      "keywords": [
+        "oteviraci",
+        "otevreno",
+        "kdy mate",
+        "sobota",
+        "nedele"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
