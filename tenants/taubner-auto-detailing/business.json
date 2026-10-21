@@ -1,0 +1,661 @@
+{
+  "slug": "taubner-auto-detailing",
+  "name": "Taubner Auto Detailing",
+  "shortName": "Taubner",
+  "kind": "detailing",
+  "tagline": "Leštění světlometů a renovace autolaků v Praze 4 – Modřanech",
+  "description": "Specializujeme se na leštění světel a plexiskel, leštění a renovaci zašlých laků, údržbu a kompletní detailing automobilů a motocyklů. Za 17 let zkušeností jsme vyleštili přes 400 párů světel a přes 250 vozů, motocyklů a plastových dílů. Pracujeme s přípravky Rupes, Kamikaze Collection, Meguiar´s, Gyeon, Angelwax, Auto Finesse a 3M. Naším cílem je, aby byl výsledek vždy perfektní.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#E0202A",
+  "contacts": {
+    "phone": "+420 776 243 532",
+    "address": "Mezihorská 1329/20, 143 00 Praha 4 – Modřany",
+    "legalAddress": "Filip Taubner, IČ 71575049",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Mezihorsk%C3%A1%201329%2F20%2C%20Praha%204",
+    "email": "filip.taubner@seznam.cz",
+    "instagram": "taubner_auto_detailing",
+    "facebook": "LesteniLaku"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "sun": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ]
+  },
+  "closedDates": [
+    "2026-10-28",
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-07-06",
+    "2027-09-28",
+    "2027-10-28",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 1440,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "dilna",
+      "name": "Dílna"
+    }
+  ],
+  "services": [
+    {
+      "key": "svetla-par",
+      "name": "Leštění předních světlometů – pár",
+      "category": "Leštění světel",
+      "description": "Osobní automobily 1 300–1 600 Kč za pár dle náročnosti a velikosti světlometu. Bez demontáže, přímo na voze, i na počkání (cca 2–2,5 hod). V ceně 2 vrstvy keramiky GYEON Q2M Trim, záruka 1 rok.",
+      "price": 1300,
+      "priceFrom": true,
+      "durationMinutes": 150,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "svetla-suv",
+      "name": "Leštění předních světlometů – SUV, dodávky (1 ks)",
+      "category": "Leštění světel",
+      "description": "SUV, multivany, dodávky a nákladní automobily od 800 Kč za světlomet. V ceně 2 vrstvy keramiky GYEON Q2M Trim, záruka 1 rok.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "svetla-zadni",
+      "name": "Leštění zadního světla (1 ks)",
+      "category": "Leštění světel",
+      "description": "Zadní svítilny 300–450 Kč za kus. V ceně ochranná keramika GYEON Q2M Trim.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "plasty",
+      "name": "Blikače, mlhovky, štíty a jiné plasty",
+      "category": "Leštění světel",
+      "description": "Blikače, mlhovky, sloupky, přístrojové štíty, motocyklové štíty, hledí a jiné leštění polykarbonátu a plastu – cena dle dohody.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "lak-1",
+      "name": "1krokové leštění laku",
+      "category": "Renovace laku",
+      "description": "Rozjasnění zašlého laku, odstranění cca 70 % defektů: clay, odstranění kruhových škrábanců a hologramů, odmaštění a příprava na keramiku nebo vosk. SUV a VAN +30 %.",
+      "price": 7490,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "lak-2",
+      "name": "2krokové leštění – kompletní renovace laku",
+      "category": "Renovace laku",
+      "description": "Hlubší renovace: clay, odstranění kruhových škrábanců, jemných i hrubších defektů a hologramů, obnovení jasu a hloubky barvy, příprava na keramiku nebo vosk. SUV a VAN +30 %.",
+      "price": 13490,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "lak-3",
+      "name": "Vícekrokové leštění – prémiová renovace laku",
+      "category": "Renovace laku",
+      "description": "Pro nadšence: několikanásobné hloubkové leštění se zaměřením na hluboké škrábance a defekty, odstranění oxidace a vyleštění do zrcadlového lesku. SUV a VAN +30 %.",
+      "price": 18490,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "lak-dil",
+      "name": "Leštění a voskování 1 dílu",
+      "category": "Renovace laku",
+      "description": "Cena za 1 díl, např. blatník, dveře nebo kapota.",
+      "price": 900,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "ker-lak",
+      "name": "Keramická ochrana laku – 3 vrstvy (12+ měsíců)",
+      "category": "Keramika GYEON",
+      "description": "Keramika GYEON na bázi SiO2: efekt nového laku, větší hloubka a lesk, vyšší odolnost proti poškrábání, UV a chemikáliím a lepší samočisticí schopnost. SUV a VAN +30 %.",
+      "price": 12490,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "ker-plasty",
+      "name": "Keramika na vnější plasty, gumy a světla",
+      "category": "Keramika GYEON",
+      "description": "Keramická ochrana vnějších plastových a gumových částí a světel.",
+      "price": 3800,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "ker-skla",
+      "name": "Keramika na skla a zrcátka vč. leštění",
+      "category": "Keramika GYEON",
+      "description": "Keramická ochrana oken a zrcátek včetně leštění.",
+      "price": 3950,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "ker-disky",
+      "name": "Keramika na disky vč. leštění (4 ks)",
+      "category": "Keramika GYEON",
+      "description": "Keramická ochrana 4 disků včetně leštění.",
+      "price": 6500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "ker-pneu",
+      "name": "Keramická ochrana a oživení pneumatik (4 ks)",
+      "category": "Keramika GYEON",
+      "description": "Keramická ochrana a oživení 4 pneumatik.",
+      "price": 1600,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "ker-strecha",
+      "name": "Keramika na textilní střechu kabrioletu",
+      "category": "Keramika GYEON",
+      "description": "Keramická ochrana textilní střechy kabrioletů.",
+      "price": 4500,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "ker-motor",
+      "name": "Keramika plastů motorového prostoru vč. čištění",
+      "category": "Keramika GYEON",
+      "description": "Čištění a keramická ochrana plastových částí motorového prostoru.",
+      "price": 2200,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "ker-textil",
+      "name": "Nano-hydrofobní ochrana textilu (1 sedadlo)",
+      "category": "Keramika GYEON",
+      "description": "Hydrofobní ochrana textilního sedadla.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "vosk-tekuty",
+      "name": "Tekutý vosk",
+      "category": "Vosky a impregnace",
+      "description": "Aplikace tekutého vosku.",
+      "price": 950,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "vosk-tuhy",
+      "name": "Tuhý vosk s příměsí karnauby",
+      "category": "Vosky a impregnace",
+      "description": "Aplikace tuhého vosku s příměsí karnauby.",
+      "price": 1450,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "sealant",
+      "name": "Polymerové vosky a sealanty",
+      "category": "Vosky a impregnace",
+      "description": "Aplikace polymerového vosku nebo sealantu.",
+      "price": 2450,
+      "priceFrom": true,
+      "durationMinutes": 150,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "vosk-disky",
+      "name": "Voskování disků (4 ks)",
+      "category": "Vosky a impregnace",
+      "description": "Voskování 4 disků.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "motor",
+      "name": "Povrchové čištění motorového prostoru",
+      "category": "Vosky a impregnace",
+      "description": "Čištění motorového prostoru, oživení plastů a hadic. Tlakové mytí motorů neprovádíme.",
+      "price": 1200,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "pneu",
+      "name": "Oživení a impregnace pneumatik",
+      "category": "Vosky a impregnace",
+      "description": "Oživení a impregnace pneumatik.",
+      "price": 600,
+      "priceFrom": true,
+      "durationMinutes": 30,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "myti",
+      "name": "Ruční mytí metodou dvou věder",
+      "category": "Exteriér",
+      "description": "Ruční mytí pH neutrálním šamponem s mycí rukavicí a metodou dvou věder + sušení.",
+      "price": 700,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "dekont-disky",
+      "name": "Dekontaminace disků (4 ks)",
+      "category": "Exteriér",
+      "description": "Chemická dekontaminace 4 disků.",
+      "price": 1800,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "clay",
+      "name": "Dekontaminace laku (clay)",
+      "category": "Exteriér",
+      "description": "Kompletní odstranění nečistot a vyčištění pórů laku.",
+      "price": 2600,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "lesteni-disky",
+      "name": "Leštění lakovaných disků (4 ks)",
+      "category": "Exteriér",
+      "description": "Příprava disků pro keramiku nebo voskování.",
+      "price": 4400,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "celni-sklo",
+      "name": "Vyhlazení čelního skla + tekuté stěrače",
+      "category": "Exteriér",
+      "description": "Vyhlazení čelního skla od drobných defektů a zaschlého znečištění, aplikace tekutých stěračů.",
+      "price": 1400,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "miza",
+      "name": "Odstranění mízy ze stromů, asfaltu…",
+      "category": "Exteriér",
+      "description": "Odstranění mízy, asfaltu a podobných nečistot.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "koncovky",
+      "name": "Leštění chromových koncovek výfuků (2 ks)",
+      "category": "Exteriér",
+      "description": "Leštění 2 chromových koncovek.",
+      "price": 700,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "interier",
+      "name": "Suché čištění interiéru",
+      "category": "Interiér a ostatní",
+      "description": "Suché vysátí interiéru, koberečků a kufru, čištění plastových částí a impregnace.",
+      "price": 1750,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "kuze",
+      "name": "Čištění a impregnace kůže + interiér",
+      "category": "Interiér a ostatní",
+      "description": "Čištění, ošetření a impregnace kůže, suché vysátí interiéru a kufru, čištění a impregnace plastů.",
+      "price": 3250,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "klima",
+      "name": "Dezinfekce klimatizace a odstranění zápachu",
+      "category": "Interiér a ostatní",
+      "description": "Dezinfekce klimatizace, odstranění zápachu a provonění interiéru.",
+      "price": 500,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "prodej",
+      "name": "Kompletní příprava vozu na prodej",
+      "category": "Interiér a ostatní",
+      "description": "Mytí, korekce laku, čištění interiéru a kufru, čištění motorového prostoru – cena dle dohody.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "dilna"
+      ]
+    },
+    {
+      "key": "skoleni",
+      "name": "Poradenství, individuální školení a konzultace",
+      "category": "Interiér a ostatní",
+      "description": "Cena 900 Kč za hodinu.",
+      "price": 900,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "dilna"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Best Detailing Awards",
+      "text": "Ocenění Best Detailing by Meguiar´s v letech 2012 a 2013."
+    },
+    {
+      "icon": "sun",
+      "title": "400+ párů světel",
+      "text": "17 let zkušeností a přes 250 vyleštěných a vydetailovaných vozů."
+    },
+    {
+      "icon": "shield",
+      "title": "Záruka 1 rok",
+      "text": "Na vyleštěné světlomety, chráněné 2 vrstvami keramiky GYEON."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/svetla-1-2-after.webp",
+      "before": "images/svetla-1-2-before.webp",
+      "caption": "Renovace předního světlometu – před a po"
+    },
+    {
+      "image": "images/svetla-3-4-after.webp",
+      "before": "images/svetla-3-4-before.webp",
+      "caption": "Renovace předního světlometu – před a po"
+    },
+    {
+      "image": "images/svetla-9-10-after.webp",
+      "before": "images/svetla-9-10-before.webp",
+      "caption": "Renovace předního světlometu – před a po"
+    },
+    {
+      "image": "images/svetla-11-12-after.webp",
+      "before": "images/svetla-11-12-before.webp",
+      "caption": "Renovace předního světlometu – před a po"
+    },
+    {
+      "image": "images/svetla-15-16-after.webp",
+      "before": "images/svetla-15-16-before.webp",
+      "caption": "Renovace předního světlometu – před a po"
+    },
+    {
+      "image": "images/svetla-17-18-after.webp",
+      "before": "images/svetla-17-18-before.webp",
+      "caption": "Renovace předního světlometu – před a po"
+    },
+    {
+      "image": "images/svetla-21-22-after.webp",
+      "before": "images/svetla-21-22-before.webp",
+      "caption": "Renovace předního světlometu – před a po"
+    },
+    {
+      "image": "images/svetla-25-26-after.webp",
+      "before": "images/svetla-25-26-before.webp",
+      "caption": "Renovace předního světlometu – před a po"
+    },
+    {
+      "image": "images/svetla-27-28-after.webp",
+      "before": "images/svetla-27-28-before.webp",
+      "caption": "Renovace předního světlometu – před a po"
+    },
+    {
+      "image": "images/svetla-29-30-after.webp",
+      "before": "images/svetla-29-30-before.webp",
+      "caption": "Renovace předního světlometu – před a po"
+    },
+    {
+      "image": "images/work-fabia.webp",
+      "caption": "Leštění světlometů Škoda Fabia – reportáž pro SkodaHome.cz"
+    },
+    {
+      "image": "images/work-bmw.webp",
+      "caption": "BMW – detailing laku"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Kolik stojí leštění světel?",
+      "answer": "Jeden přední světlomet 650–800 Kč (1 300–1 600 Kč za pár) dle náročnosti a velikosti, u SUV a dodávek od 800 Kč za kus. Zadní svítilny 300–450 Kč za kus. V ceně jsou vždy 2 vrstvy keramiky GYEON Q2M Trim. Ceny jsou včetně DPH.",
+      "keywords": [
+        "kolik",
+        "cena",
+        "cenik",
+        "stoji"
+      ]
+    },
+    {
+      "question": "Leštíte světla na počkání?",
+      "answer": "Ano. Renovace obou předních světel většinou zabere 2 až 2,5 hodiny, vše probíhá přímo na voze bez demontáže a celý proces můžete sledovat.",
+      "keywords": [
+        "pockan",
+        "jak dlouho",
+        "trva",
+        "hodin",
+        "demontaz"
+      ]
+    },
+    {
+      "question": "Jakou dáváte záruku?",
+      "answer": "Na vyleštěné světlomety poskytujeme záruku 1 rok.",
+      "keywords": [
+        "zaruk",
+        "vydrz",
+        "jak dlouho vydrz"
+      ]
+    },
+    {
+      "question": "Jak dlouho trvá renovace laku?",
+      "answer": "Leštění a renovace laku trvá 2 až 4 dny podle rozsahu poškození laku a velikosti auta.",
+      "keywords": [
+        "lak",
+        "renovac",
+        "lesten",
+        "dni",
+        "dny"
+      ]
+    },
+    {
+      "question": "Platí ceny i pro SUV?",
+      "answer": "Všechny ceny jsou orientační, závisí na rozsahu poškození a velikosti vozu – u SUV a VAN +30 %. Ceny jsou uvedeny včetně DPH 21 %.",
+      "keywords": [
+        "suv",
+        "van",
+        "dph",
+        "priplat",
+        "orientac"
+      ]
+    },
+    {
+      "question": "Kdy máte otevřeno?",
+      "answer": "Pondělí–neděle dle objednání. Najdete nás na adrese Mezihorská 1329/20, Praha 4 – Modřany.",
+      "keywords": [
+        "oteviraci",
+        "otevreno",
+        "kdy mate",
+        "kde",
+        "adresa",
+        "modrany"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
