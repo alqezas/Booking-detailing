@@ -113,7 +113,7 @@
       "description": "Cca 7–10 h. Navíc čištění pedálů párou, látkových i kožených sedaček a kožených částí, mezidveřní prostory a ošetření těsnění.",
       "price": 3000,
       "priceFrom": true,
-      "durationMinutes": 600,
+      "durationMinutes": 1440,
       "resources": [
         "box-1",
         "box-2"
@@ -126,7 +126,7 @@
       "description": "Cca 12–15 h. Tepování všech látkových částí s impregnací, hloubkové čištění kůže a volantu, stropnice po konzultaci, pojezdy sedadel, výdechy klimatizace párou.",
       "price": 5000,
       "priceFrom": true,
-      "durationMinutes": 900,
+      "durationMinutes": 1440,
       "resources": [
         "box-1",
         "box-2"
@@ -295,7 +295,7 @@
       "description": "Cena nezahrnuje leštění laku.",
       "price": 10000,
       "priceFrom": true,
-      "durationMinutes": 960,
+      "durationMinutes": 1440,
       "resources": [
         "box-1",
         "box-2"

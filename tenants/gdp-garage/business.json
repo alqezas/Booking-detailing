@@ -194,7 +194,7 @@
       "description": "Zabezpieczenie lakieru powłoką ceramiczną z trwałością 5 lat. Cena nie obejmuje przygotowania auta (korekty lub przygotowania nowego pojazdu).",
       "price": 1800,
       "priceFrom": true,
-      "durationMinutes": 600,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]

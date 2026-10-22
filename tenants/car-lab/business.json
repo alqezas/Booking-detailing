@@ -174,7 +174,7 @@
       "description": "Podstawowe zabezpieczenie lakieru. Cena brutto.",
       "price": 1800,
       "priceFrom": true,
-      "durationMinutes": 960,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]

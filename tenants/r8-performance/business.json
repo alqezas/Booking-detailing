@@ -148,7 +148,7 @@
       "description": "Cca 10 hod. Kompletní mytí exteriéru i interiéru jako STYLE, navíc ošetření vnějších plastů, tepování sedaček textilního interiéru, čištění a ošetření kůže a tepování čalounění dveří. Cena se může lišit podle náročnosti vašich požadavků.",
       "price": 3900,
       "priceFrom": true,
-      "durationMinutes": 600,
+      "durationMinutes": 1440,
       "resources": [
         "myci-box"
       ]

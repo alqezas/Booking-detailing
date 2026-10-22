@@ -127,7 +127,7 @@
       "description": "Usunięcie od 30% do 40% rys. Mały / średni / duży samochód: 800 / 900 / 1000 zł netto.",
       "price": 800,
       "priceFrom": true,
-      "durationMinutes": 720,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]
@@ -139,7 +139,7 @@
       "description": "Usunięcie od 50% do 70% rys. Mały / średni / duży samochód: 1100 / 1200 / 1300 zł netto.",
       "price": 1100,
       "priceFrom": true,
-      "durationMinutes": 960,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]
@@ -187,7 +187,7 @@
       "description": "Mały / średni / duży samochód: 1350 / 1450 / 1550 zł netto.",
       "price": 1350,
       "priceFrom": true,
-      "durationMinutes": 600,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]
@@ -451,7 +451,7 @@
       "description": "Do 500 km przebiegu: mycie detailingowe, ceramika na lakier 1 rok, powłoka na szyby, felgi front, impregnacja skór/tapicerki, czernienie opon. Mały / średni / duży samochód: 1600 / 1800 / 2000 zł netto.",
       "price": 1600,
       "priceFrom": true,
-      "durationMinutes": 960,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]
@@ -463,7 +463,7 @@
       "description": "Jak BASIC, z powłoką ceramiczną na 3 lata. Mały / średni / duży samochód: 2100 / 2300 / 2500 zł netto.",
       "price": 2100,
       "priceFrom": true,
-      "durationMinutes": 960,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]
@@ -535,7 +535,7 @@
       "description": "Mycie z dekontaminacją, jednoetapowa korekta, quick detailer, sprzątanie wnętrza, odtłuszczenie szyb. Mały / średni / duży samochód: 1150 / 1300 / 1450 zł netto.",
       "price": 1150,
       "priceFrom": true,
-      "durationMinutes": 720,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]

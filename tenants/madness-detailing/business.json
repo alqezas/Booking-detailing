@@ -139,7 +139,7 @@
       "description": "Usunięcie do 75% zarysowań lakieru. Kompakt (np. Renault Clio, Audi A1) 1100 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) 1300 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) 1500 zł.",
       "price": 1100,
       "priceFrom": true,
-      "durationMinutes": 720,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]
@@ -247,7 +247,7 @@
       "description": "Chroni lakier przed brudem i zarysowaniami oraz wydobywa jego głębię. Kompakt (np. Renault Clio, Audi A1) 1600 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) 1900 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) 2200 zł.",
       "price": 1600,
       "priceFrom": true,
-      "durationMinutes": 600,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]
@@ -259,7 +259,7 @@
       "description": "Chroni lakier przed brudem i zarysowaniami oraz wydobywa jego głębię. Kompakt (np. Renault Clio, Audi A1) 1200 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) 1400 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) 1700 zł.",
       "price": 1200,
       "priceFrom": true,
-      "durationMinutes": 600,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]
@@ -271,7 +271,7 @@
       "description": "Powłoka grafenowa z 3-letnią trwałością. Kompakt (np. Renault Clio, Audi A1) 2600 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) 3000 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) 3400 zł.",
       "price": 2600,
       "priceFrom": true,
-      "durationMinutes": 720,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]
@@ -283,7 +283,7 @@
       "description": "Powłoka elastomerowa z 4-letnią trwałością. Kompakt (np. Renault Clio, Audi A1) 3300 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) 3600 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) 3900 zł.",
       "price": 3300,
       "priceFrom": true,
-      "durationMinutes": 720,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]

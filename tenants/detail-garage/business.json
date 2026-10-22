@@ -169,7 +169,7 @@
       "description": "Strojní leštění včetně materiálu. Běžně se lak renovuje jedním krokem za cca 10 hodin, náročné laky i 16–24 hodin. Cenu upřesníme po prohlídce. Cena bez DPH.",
       "price": 1350,
       "priceFrom": false,
-      "durationMinutes": 600,
+      "durationMinutes": 1440,
       "resources": [
         "dilna"
       ]

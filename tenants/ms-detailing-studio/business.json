@@ -282,7 +282,7 @@
       "description": "Dwuetapowe polerowanie – usuwa więcej zarysowań i hologramów.",
       "price": 1000,
       "priceFrom": true,
-      "durationMinutes": 720,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]
@@ -318,7 +318,7 @@
       "description": "Powłoka ceramiczna na lakier z trwałością 4 lata.",
       "price": 2350,
       "priceFrom": true,
-      "durationMinutes": 720,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]

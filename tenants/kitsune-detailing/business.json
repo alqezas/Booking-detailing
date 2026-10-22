@@ -139,7 +139,7 @@
       "description": "Cca 8–10 hod. Interiér + exteriér: hloubkové vysávání, tepování nebo čištění kůže, UV ochrana, čištění stropnice dle stavu, ošetření plastů, okna zevnitř a ruční mytí PREMIUM. Pick-up servis zdarma do 10 km. Cena je orientační – přesnou nabídku na klíč připravíme podle stavu vozu.",
       "price": 2500,
       "priceFrom": true,
-      "durationMinutes": 600,
+      "durationMinutes": 1440,
       "resources": [
         "box-1",
         "box-2"

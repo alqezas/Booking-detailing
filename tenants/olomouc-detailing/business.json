@@ -106,7 +106,7 @@
       "description": "Kodiaq, CX-5… Hloubkové tepování sedadel, koberců, čalounění a kufru; detailní čištění, dezinfekce a impregnace plastů; čištění, výživa a impregnace kůže; mezidveřní prostory, prahy a okna z obou stran. Doba cca 8–12 hodin včetně sušení.",
       "price": 4500,
       "priceFrom": false,
-      "durationMinutes": 660,
+      "durationMinutes": 1440,
       "resources": [
         "dilna"
       ]
@@ -118,7 +118,7 @@
       "description": "Hloubkové tepování sedadel, koberců, čalounění a kufru; detailní čištění, dezinfekce a impregnace plastů; čištění, výživa a impregnace kůže; mezidveřní prostory, prahy a okna z obou stran. Doba cca 8–12 hodin včetně sušení.",
       "price": 5000,
       "priceFrom": true,
-      "durationMinutes": 720,
+      "durationMinutes": 1440,
       "resources": [
         "dilna"
       ]

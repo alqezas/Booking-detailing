@@ -102,6 +102,20 @@ export async function loadTenant(slug: string): Promise<LoadedTenant | {slug: st
     names.set(out, rel);
   }
 
+  // A service shorter than a day must fit into one opening interval; anything
+  // longer than the longest interval but under 24 h never gets a free slot.
+  const toMin = (t: string) => Number(t.slice(0, 2)) * 60 + Number(t.slice(3, 5));
+  const longestDay = Math.max(0, ...Object.values(config.hours).flatMap(iv => iv.map(([a, b]) => toMin(b) - toMin(a))));
+  config.services.forEach((s, i) => {
+    if (s.durationMinutes > longestDay && s.durationMinutes < 1440) {
+      issues.push({
+        level: 'error',
+        path: `services[${i}].durationMinutes`,
+        message: `«${s.name}»: ${s.durationMinutes} мин не помещаются в рабочий день (${longestDay} мин) — записаться будет нельзя. Укажите до ${longestDay} или от 1440 (вся ночь в боксе)`,
+      });
+    }
+  });
+
   for (const p of findPlaceholders(config)) {
     issues.push({level: 'warning', path: p, message: 'Значение-заглушка: перед запуском замените реальными данными'});
   }

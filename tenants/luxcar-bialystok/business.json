@@ -174,7 +174,7 @@
       "description": "Auta prawie nowe do 2 lat ok. 999 zł, używane od 2 lat ok. 1499 zł. Przy nowych autach pod powłokę – 0 zł. Wycena po oględzinach umytego auta.",
       "price": 999,
       "priceFrom": true,
-      "durationMinutes": 960,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]

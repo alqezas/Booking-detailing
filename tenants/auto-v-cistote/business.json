@@ -213,7 +213,7 @@
       "description": "Abrazivní, střední a finišovací krok – odstranění 95 % škrábanců. SUV příplatek +1000 Kč.",
       "price": 9000,
       "priceFrom": false,
-      "durationMinutes": 720,
+      "durationMinutes": 1440,
       "resources": [
         "tym"
       ]

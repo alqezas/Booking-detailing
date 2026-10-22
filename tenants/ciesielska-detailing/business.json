@@ -127,7 +127,7 @@
       "description": "Nowy wygląd bez malowania: usuwa hologramy, mikrorysy i oksydację, przywraca blask i głębię koloru. Idealna baza pod ceramikę lub folię PPF. Cenę ustalamy indywidualnie po oględzinach auta.",
       "price": 0,
       "priceFrom": false,
-      "durationMinutes": 960,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]

@@ -210,7 +210,7 @@
       "description": "Przywraca głębię koloru i połysk, redukuje zarysowania i ślady po myjniach. Cena netto.",
       "price": 950,
       "priceFrom": true,
-      "durationMinutes": 720,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]
@@ -270,7 +270,7 @@
       "description": "Powłoka ceramiczna na 2 lata. Wymagana co najmniej jednoetapowa korekta lakieru. Cena netto.",
       "price": 1850,
       "priceFrom": true,
-      "durationMinutes": 960,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]
@@ -282,7 +282,7 @@
       "description": "Powłoka ceramiczna na 3 lata. Wymagana co najmniej jednoetapowa korekta lakieru. Cena netto.",
       "price": 2400,
       "priceFrom": true,
-      "durationMinutes": 960,
+      "durationMinutes": 1440,
       "resources": [
         "stanowisko"
       ]
