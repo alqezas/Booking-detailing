@@ -1,0 +1,583 @@
+{
+  "slug": "detailking-krakow",
+  "name": "DetailKing Kraków",
+  "shortName": "DetailKing",
+  "kind": "detailing",
+  "tagline": "Auto Detailing & Smart Repair w Krakowie – PPF CarbonQ, ceramika, korekta lakieru",
+  "description": "DetailKing to salon auto detailingu i auto spa w Krakowie. Usuwamy rysy i zmatowienia przez kompleksową renowację lakieru, zabezpieczamy karoserię powłoką ceramiczną, woskiem premium lub bezbarwną folią PPF CarbonQ, a nawet zmieniamy kolor auta. Wypucujemy samochód wewnątrz, wypierzemy fotele i pogłębimy kolor lakieru – przy odbiorze możesz nie poznać swojego auta. Robimy też konserwację podwozia, przyciemnianie szyb i inspekcję nowego auta w salonie.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#F2A900",
+  "contacts": {
+    "phone": "+48 501 031 414",
+    "address": "ul. Longinusa Podbipięty 77, 31-980 Kraków",
+    "mapUrl": "https://bit.ly/2ZUFYNf",
+    "email": "detailkingkrakow@gmail.com",
+    "instagram": "detailkingkrakow",
+    "facebook": "StudioDetailKingKrakow"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "14:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "mycie",
+      "name": "Detailingowe mycie zewnętrzne",
+      "category": "Bieżąca pielęgnacja",
+      "description": "Dokładne mycie karoserii, felg i trudno dostępnych miejsc. Cena netto.",
+      "price": 140,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie-osady",
+      "name": "Mycie zewnętrzne z usuwaniem osadów",
+      "category": "Bieżąca pielęgnacja",
+      "description": "Detailingowe mycie wraz z dekontaminacją lakieru. Cena netto.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 150,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wosk",
+      "name": "Wosk klasy premium z myciem",
+      "category": "Bieżąca pielęgnacja",
+      "description": "Zabezpiecza lakier i nadaje karoserii głęboki połysk. Cena netto.",
+      "price": 380,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze-podst",
+      "name": "Podstawowe czyszczenie wnętrza",
+      "category": "Bieżąca pielęgnacja",
+      "description": "Cena zależna od wielkości samochodu. Cena netto.",
+      "price": 180,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze-det",
+      "name": "Detailingowe czyszczenie wnętrza",
+      "category": "Bieżąca pielęgnacja",
+      "description": "Cena zależna od wielkości samochodu. Cena netto.",
+      "price": 450,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pranie",
+      "name": "Pranie wnętrza",
+      "category": "Bieżąca pielęgnacja",
+      "description": "Pranie foteli i tapicerki. Cena netto.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora-podst",
+      "name": "Czyszczenie i podstawowa impregnacja skór",
+      "category": "Bieżąca pielęgnacja",
+      "description": "Tapicerka skórzana. Cena netto.",
+      "price": 600,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora-powloka",
+      "name": "Czyszczenie i impregnacja skór dedykowaną powłoką",
+      "category": "Bieżąca pielęgnacja",
+      "description": "Tapicerka skórzana z powłoką ochronną. Cena netto.",
+      "price": 950,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "hydrofob",
+      "name": "Powłoka hydrofobowa na tapicerkę lub dach cabrio",
+      "category": "Bieżąca pielęgnacja",
+      "description": "Impregnacja tapicerki materiałowej lub dachu cabrio. Cena netto.",
+      "price": 750,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-1",
+      "name": "Jednoetapowa korekta lakieru",
+      "category": "Korekta i powłoki",
+      "description": "Przywraca głębię koloru i połysk, redukuje zarysowania i ślady po myjniach. Cena netto.",
+      "price": 950,
+      "priceFrom": true,
+      "durationMinutes": 720,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-2",
+      "name": "Dwuetapowa korekta lakieru",
+      "category": "Korekta i powłoki",
+      "description": "Głębsza korekta zarysowań i zmatowień. Cena netto.",
+      "price": 1700,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-multi",
+      "name": "Wieloetapowa korekta lakieru",
+      "category": "Korekta i powłoki",
+      "description": "Pełna renowacja lakieru. Cena netto.",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "kwarc-6",
+      "name": "Powłoka kwarcowa do 6 miesięcy",
+      "category": "Korekta i powłoki",
+      "description": "Szybkie zabezpieczenie lakieru. Cena netto.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "kwarc-12",
+      "name": "Powłoka kwarcowa do 12 miesięcy",
+      "category": "Korekta i powłoki",
+      "description": "Zabezpieczenie lakieru na rok. Cena netto.",
+      "price": 850,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-2",
+      "name": "Powłoka ceramiczna dwuletnia",
+      "category": "Korekta i powłoki",
+      "description": "Powłoka ceramiczna na 2 lata. Wymagana co najmniej jednoetapowa korekta lakieru. Cena netto.",
+      "price": 1850,
+      "priceFrom": true,
+      "durationMinutes": 960,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-3",
+      "name": "Powłoka ceramiczna trzyletnia",
+      "category": "Korekta i powłoki",
+      "description": "Powłoka ceramiczna na 3 lata. Wymagana co najmniej jednoetapowa korekta lakieru. Cena netto.",
+      "price": 2400,
+      "priceFrom": true,
+      "durationMinutes": 960,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-5",
+      "name": "Powłoka ceramiczna pięcioletnia",
+      "category": "Korekta i powłoki",
+      "description": "Powłoka ceramiczna na 5 lat. Wymagana co najmniej jednoetapowa korekta lakieru. Cena netto.",
+      "price": 3550,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full-front",
+      "name": "Folia PPF CarbonQ – Full Front",
+      "category": "Folia PPF",
+      "description": "Zderzak przód, lampy przód, maska, błotniki przód, lusterka, słupki A, wnęki klamek i próg załadunkowy bagażnika. Cena netto.",
+      "price": 5700,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full-body",
+      "name": "Folia PPF CarbonQ – Full Body",
+      "category": "Folia PPF",
+      "description": "Całe auto bezbarwną folią ochronną. Cena netto.",
+      "price": 13500,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-lampy",
+      "name": "Folia PPF – lampy przód",
+      "category": "Folia PPF",
+      "description": "Ochrona przednich lamp. Cena netto.",
+      "price": 600,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-prog",
+      "name": "Folia PPF – próg załadunkowy bagażnika",
+      "category": "Folia PPF",
+      "description": "Ochrona progu bagażnika. Cena netto.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-progi",
+      "name": "Folia PPF – progi wewnętrzne",
+      "category": "Folia PPF",
+      "description": "Ochrona progów przy wsiadaniu. Cena netto.",
+      "price": 550,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-klamki",
+      "name": "Folia PPF – wnęki klamek (4 szt.)",
+      "category": "Folia PPF",
+      "description": "Ochrona wnęk klamek przed zarysowaniem. Cena netto.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-ranty",
+      "name": "Folia PPF – ranty drzwi (4 szt.)",
+      "category": "Folia PPF",
+      "description": "Ochrona krawędzi drzwi. Cena netto.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "kolor-zew",
+      "name": "Zmiana koloru – pakiet zewnętrzny (bez wnęk)",
+      "category": "Zmiana koloru i inne",
+      "description": "Zmiana koloru nadwozia folią. Cena netto.",
+      "price": 9000,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "kolor-wneki",
+      "name": "Zmiana koloru – pakiet zewnętrzny z wnękami",
+      "category": "Zmiana koloru i inne",
+      "description": "Zmiana koloru nadwozia folią wraz z wnękami. Cena netto.",
+      "price": 15000,
+      "priceFrom": true,
+      "durationMinutes": 10080,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "dechroming",
+      "name": "Dechroming i dekory wnętrza",
+      "category": "Zmiana koloru i inne",
+      "description": "Zmiana koloru elementów chromowanych i dekorów wewnętrznych – wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szyby",
+      "name": "Przyciemnianie szyb",
+      "category": "Zmiana koloru i inne",
+      "description": "Przyciemnianie szyb w samochodzie. Cena netto.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "podwozie",
+      "name": "Konserwacja podwozia",
+      "category": "Zmiana koloru i inne",
+      "description": "Zabezpieczenie antykorozyjne podwozia. Cena netto.",
+      "price": 2000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "inspekcja",
+      "name": "Inspekcja nowego auta w salonie",
+      "category": "Zmiana koloru i inne",
+      "description": "Sprawdzenie stanu lakieru i wnętrza nowego auta przed odbiorem. Cena netto.",
+      "price": 600,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "shield",
+      "title": "Folie PPF CarbonQ",
+      "text": "Bezbarwna folia ochronna – od wybranych elementów po całe auto."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Indywidualna wycena",
+      "text": "Każdy samochód wyceniamy także indywidualnie, według jego stanu."
+    },
+    {
+      "icon": "car",
+      "title": "Inspekcja w salonie",
+      "text": "Sprawdzimy nowe auto, zanim je odbierzesz."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-rs6.webp",
+      "caption": "Audi RS6"
+    },
+    {
+      "image": "images/work-bmw8.webp",
+      "caption": "BMW serii 8 Gran Coupé"
+    },
+    {
+      "image": "images/work-cla45.webp",
+      "caption": "Mercedes-AMG CLA 45 S"
+    },
+    {
+      "image": "images/work-challenger.webp",
+      "caption": "Dodge Challenger"
+    },
+    {
+      "image": "images/work-mercedes.webp",
+      "caption": "Mercedes-Benz klasy S i GLE"
+    },
+    {
+      "image": "images/work-bmw7.webp",
+      "caption": "BMW serii 7"
+    },
+    {
+      "image": "images/work-e30.webp",
+      "caption": "BMW serii 3 E30 Touring"
+    },
+    {
+      "image": "images/work-m3.webp",
+      "caption": "BMW M3 E46"
+    },
+    {
+      "image": "images/work-bmw2.webp",
+      "caption": "BMW serii 2 Coupé"
+    },
+    {
+      "image": "images/work-jeep.webp",
+      "caption": "Jeep Grand Cherokee"
+    },
+    {
+      "image": "images/work-lexus.webp",
+      "caption": "Lexus UX"
+    },
+    {
+      "image": "images/work-ppf.webp",
+      "caption": "Aplikacja folii ochronnej PPF"
+    },
+    {
+      "image": "images/work-korekta.webp",
+      "caption": "Korekta lakieru"
+    },
+    {
+      "image": "images/work-podwozie.webp",
+      "caption": "Konserwacja podwozia"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Czy ceny są netto?",
+      "answer": "Tak, ceny w cenniku są cenami netto. Każdy samochód wyceniamy również indywidualnie w zależności od jego stanu.",
+      "keywords": [
+        "netto",
+        "brutto",
+        "vat",
+        "faktur"
+      ]
+    },
+    {
+      "question": "Czy powłokę ceramiczną można nałożyć bez korekty?",
+      "answer": "Nie – do każdej powłoki ceramicznej wymagana jest co najmniej jednoetapowa korekta lakieru (od 950 zł netto).",
+      "keywords": [
+        "bez korekty",
+        "wymagan",
+        "przed powlok",
+        "ceramik"
+      ]
+    },
+    {
+      "question": "Co obejmuje Full Front?",
+      "answer": "Zderzak przód, lampy przód, maskę, błotniki przód, lusterka, słupki A, wnęki klamek i próg załadunkowy bagażnika – folią PPF CarbonQ, od 5700 zł netto.",
+      "keywords": [
+        "full front",
+        "obejmuje",
+        "zawiera",
+        "co wchodzi"
+      ]
+    },
+    {
+      "question": "Gdzie was znajdę?",
+      "answer": "Kraków, ul. Longinusa Podbipięty 77. Zadzwoń: 501 031 414.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "podbipiet",
+        "dojazd",
+        "dojechac"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
