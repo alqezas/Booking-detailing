@@ -1,0 +1,463 @@
+{
+  "slug": "czar-shine",
+  "name": "Czar Shine",
+  "shortName": "Czar Shine",
+  "kind": "detailing",
+  "tagline": "Auto detailing w Białymstoku – folie PPF, powłoki elastomerowe i ceramiczne",
+  "description": "Cześć, tu Czarek – właściciel Czar Shine, nowoczesnego studia auto detailingu w Białymstoku. Profesjonalnie zabezpieczamy samochody foliami PPF, powłokami elastomerowymi i ceramicznymi, robimy korektę lakieru, mrożenie lakieru, zmianę koloru auta i czyszczenie wnętrz. Jako jedyni na Podlasiu pracujemy na powłokach Gyeon Quartz, CarbonQ i foliach Universe Protection. Mamy odseparowaną strefę mokrą z centralnym zmiękczaczem wody i suchą strefę do aplikacji powłok i folii.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#F26522",
+  "contacts": {
+    "phone": "+48 577 905 175",
+    "address": "ul. 42 Pułku Piechoty 41, 15-181 Białystok",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=42%20Pu%C5%82ku%20Piechoty%2041%2C%2015-181%20Bia%C5%82ystok",
+    "email": "kontakt@czarshine.pl",
+    "instagram": "czarshine",
+    "facebook": "czarshine"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "14:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 1440,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 60
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "ppf-bikini",
+      "name": "Folia PPF – pakiet „Bikini” (Front Basic)",
+      "category": "Folie PPF",
+      "description": "Zderzak przedni, lampy, lusterka – podstawowa ochrona trasowa. Czas realizacji 1–2 dni. Pisemna gwarancja 7–12 lat. Darmowa konsultacja i bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full-front",
+      "name": "Folia PPF – Full Front",
+      "category": "Folie PPF",
+      "description": "Najpopularniejszy: maska, błotniki, zderzak, lampy, lusterka – pełna ochrona przodu auta. Czas realizacji 3–4 dni. Darmowa konsultacja i bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 4320,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full-body",
+      "name": "Folia PPF – całe auto (Full Body)",
+      "category": "Folie PPF",
+      "description": "Wszystkie elementy lakierowane – 100% karoserii. Czas realizacji 5–7 dni. Darmowa konsultacja i bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-interior",
+      "name": "Folia PPF – pakiet Interior",
+      "category": "Folie PPF",
+      "description": "Ekrany dotykowe i elementy Piano Black – wnętrze wolne od rys. Kilka godzin. Darmowa konsultacja i bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mrozenie",
+      "name": "Mrożenie lakieru",
+      "category": "Folie PPF",
+      "description": "Matowa folia PPF – efekt satynowego lakieru wraz z jego zabezpieczeniem, dużo taniej niż fabryczny mat. Darmowa konsultacja i bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "zmiana-koloru",
+      "name": "Zmiana koloru auta",
+      "category": "Folie PPF",
+      "description": "Folie od matowych, satynowych i połyskowych po perłowe i chromowane – wzorniki z kilkudziesięcioma kolorami. Darmowa konsultacja i bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "lampy",
+      "name": "Przyciemnianie lamp folią PPF",
+      "category": "Folie PPF",
+      "description": "Przyciemnienie i jednoczesne zabezpieczenie lamp. Darmowa konsultacja i bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "elastomer",
+      "name": "Powłoka elastomerowa",
+      "category": "Powłoki i lakier",
+      "description": "Najbardziej elastyczna forma zabezpieczenia lakieru: odporna na chemię drogową i UV, ogranicza water spoty od twardej wody. Darmowa konsultacja i bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika",
+      "name": "Powłoka ceramiczna",
+      "category": "Powłoki i lakier",
+      "description": "Powłoki Gyeon Quartz i CarbonQ nakładane w suchej strefie bez wilgoci w powietrzu. Darmowa konsultacja i bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta",
+      "name": "Korekta lakieru",
+      "category": "Powłoki i lakier",
+      "description": "Coś więcej niż polerowanie – lakier lepszy niż fabryczny, z głębszym kolorem i blaskiem. Darmowa konsultacja i bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie",
+      "name": "Mycie detailingowe",
+      "category": "Wnętrze i mycie",
+      "description": "Bezpieczne mycie w strefie mokrej z centralnym zmiękczaczem wody. Darmowa konsultacja i bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie-parowe",
+      "name": "Mycie parowe",
+      "category": "Wnętrze i mycie",
+      "description": "Sucha para – najbezpieczniejsza metoda na ciężkie zabrudzenia w trudno dostępnych miejscach. Darmowa konsultacja i bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze",
+      "name": "Czyszczenie wnętrza",
+      "category": "Wnętrze i mycie",
+      "description": "Kompleksowe czyszczenie i pranie tapicerki. Darmowa konsultacja i bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "zabezpieczenie-wnetrza",
+      "name": "Zabezpieczenie wnętrza",
+      "category": "Wnętrze i mycie",
+      "description": "Ochrona skór, tapicerki i plastików. Darmowa konsultacja i bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora",
+      "name": "Naprawa tapicerki skórzanej",
+      "category": "Wnętrze i mycie",
+      "description": "Głębokie plamy, przetarcia, pęknięcia, dziury i przebarwienia – skóra znów jak nowa. Darmowa konsultacja i bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szyby",
+      "name": "Bezinwazyjne przyciemnianie szyb",
+      "category": "Inne usługi",
+      "description": "Przyciemnianie szyb bez demontażu. Darmowa konsultacja i bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pdr",
+      "name": "Usuwanie wgnieceń metodą PDR",
+      "category": "Inne usługi",
+      "description": "Bez lakierowania i szpachlowania – dla większości wgnieceń, w których nie doszło do odprysku lakieru. Darmowa konsultacja i bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "stylizacja",
+      "name": "Stylizacja samochodów",
+      "category": "Inne usługi",
+      "description": "Kompleksowa stylizacja łącząca pasję do motoryzacji z najnowszymi trendami w designie. Darmowa konsultacja i bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "shield",
+      "title": "Gwarancja PPF 7–12 lat",
+      "text": "Pisemna gwarancja od nas i od producenta folii."
+    },
+    {
+      "icon": "medal",
+      "title": "Jedyni na Podlasiu",
+      "text": "Certyfikowane studio powłok Gyeon Quartz, CarbonQ i folii Universe Protection."
+    },
+    {
+      "icon": "drop",
+      "title": "Strefa mokra i sucha",
+      "text": "Centralny zmiękczacz wody i osobna sucha strefa do powłok i folii PPF."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-rolls.webp",
+      "caption": "Rolls-Royce"
+    },
+    {
+      "image": "images/work-bentayga.webp",
+      "caption": "Bentley Bentayga"
+    },
+    {
+      "image": "images/work-911.webp",
+      "caption": "Porsche 911"
+    },
+    {
+      "image": "images/work-g-klasa.webp",
+      "caption": "Mercedes-Benz klasy G"
+    },
+    {
+      "image": "images/work-lc.webp",
+      "caption": "Lexus LC"
+    },
+    {
+      "image": "images/work-rr-sport.webp",
+      "caption": "Range Rover Sport"
+    },
+    {
+      "image": "images/work-ppf.webp",
+      "caption": "Aplikacja folii ochronnej PPF"
+    },
+    {
+      "image": "images/work-bmw8.webp",
+      "caption": "BMW serii 8"
+    },
+    {
+      "image": "images/work-911-red.webp",
+      "caption": "Porsche 911"
+    },
+    {
+      "image": "images/work-x7.webp",
+      "caption": "BMW X7"
+    },
+    {
+      "image": "images/work-challenger.webp",
+      "caption": "Dodge Challenger"
+    },
+    {
+      "image": "images/work-cayenne.webp",
+      "caption": "Porsche Cayenne"
+    },
+    {
+      "image": "images/work-bmw5.webp",
+      "caption": "BMW serii 5"
+    },
+    {
+      "image": "images/work-szyby.webp",
+      "caption": "Przyciemnianie szyb"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ile kosztuje usługa?",
+      "answer": "Konsultacja i wycena są bezpłatne – dobierzemy pakiet idealnie dopasowany do Twoich potrzeb i budżetu. Zadzwoń: +48 577 905 175 albo zarezerwuj termin oględzin.",
+      "keywords": [
+        "ile kosztuje",
+        "cena",
+        "cennik",
+        "wycen",
+        "koszt"
+      ]
+    },
+    {
+      "question": "Jaką gwarancję daje folia PPF?",
+      "answer": "Każdy Klient, który zabezpieczy u nas auto foliami PPF, dostaje od nas i od producenta pisemną gwarancję na 7 do 12 lat.",
+      "keywords": [
+        "gwarancj",
+        "ppf",
+        "folia",
+        "ile lat"
+      ]
+    },
+    {
+      "question": "Czy elastomer jest lepszy od ceramiki?",
+      "answer": "Elastomer wyróżnia się większą elastycznością i lepiej radzi sobie z tzw. twardą wodą. Okres ochrony zależy od wybranego wariantu.",
+      "keywords": [
+        "elastomer",
+        "ceramik",
+        "lepsz",
+        "roznic"
+      ]
+    },
+    {
+      "question": "Czy zabezpieczacie też motocykle i łodzie?",
+      "answer": "Tak – zabezpieczamy ceramiką i folią PPF także motocykle, skutery, quady, łodzie i rowery, a także dbamy o jachty i motorówki.",
+      "keywords": [
+        "motocykl",
+        "lodz",
+        "jacht",
+        "skuter",
+        "quad",
+        "rower"
+      ]
+    },
+    {
+      "question": "Czy odbieracie auto?",
+      "answer": "Tak, oferujemy usługę door to door – odbierzemy auto i je odwieziemy.",
+      "keywords": [
+        "door",
+        "odbier",
+        "odwiez",
+        "transport"
+      ]
+    },
+    {
+      "question": "Kiedy jesteście otwarci?",
+      "answer": "Poniedziałek–piątek 9:00–17:00, sobota 9:00–14:00, w niedzielę odpoczywamy. ul. 42 Pułku Piechoty 41, Białystok.",
+      "keywords": [
+        "otwart",
+        "godzin",
+        "sobot",
+        "niedziel",
+        "gdzie",
+        "adres"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
