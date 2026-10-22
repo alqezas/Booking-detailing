@@ -3,11 +3,14 @@
  * told which language to answer in; these are the template answers of the
  * no-model fallback, error messages and reminder pushes.
  */
-export type Lang = 'ru' | 'cs';
+export type Lang = 'ru' | 'cs' | 'pl';
 
-export const langOf = (locale: string | null | undefined): Lang => (locale?.toLowerCase().startsWith('cs') ? 'cs' : 'ru');
+export const langOf = (locale: string | null | undefined): Lang => {
+  const l = locale?.toLowerCase() ?? '';
+  return l.startsWith('cs') ? 'cs' : l.startsWith('pl') ? 'pl' : 'ru';
+};
 
-export const INTL: Record<Lang, string> = {ru: 'ru-RU', cs: 'cs-CZ'};
+export const INTL: Record<Lang, string> = {ru: 'ru-RU', cs: 'cs-CZ', pl: 'pl-PL'};
 
 export const L = {
   ru: {
@@ -152,6 +155,76 @@ export const L = {
     noAccess: 'K tomuto studiu nemáte přístup',
     cannotCount: 'Nepodařilo se spočítat',
     cannotLoadBookings: 'Rezervace se nepodařilo načíst',
+  },
+  pl: {
+    today: 'dziś',
+    tomorrow: 'jutro',
+    at: 'o',
+    days: ['dzień', 'dni', 'dni'] as [string, string, string],
+    h: 'godz.',
+    min: 'min',
+    from: 'od ',
+    onRequest: 'cena do ustalenia',
+    weekdays: ['', 'Pn', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob', 'Nd'],
+    dayOff: 'zamknięte',
+    noService: 'Nie ma takiej usługi. Weź service_id z list_services.',
+    noSlotsNote: 'W najbliższych trzech tygodniach nie ma wolnych terminów',
+    toolUnavailable: 'Narzędzie jest niedostępne',
+    location: (address: string, map: string, phone: string) => `Znajdziesz nas pod adresem ${address}. Nawigacja: ${map}. Telefon: ${phone}.`,
+    hours: (list: string) => `Godziny otwarcia: ${list}.`,
+    contacts: (phone: string, address: string) => `Telefon: ${phone}. Adres: ${address}.`,
+    prices: 'Ceny:',
+    noSlots: (service: string, phone: string) => `Na „${service}” w najbliższych trzech tygodniach nie mamy wolnego terminu. Zadzwoń do nas: ${phone}.`,
+    slots: (service: string, list: string) => `Najbliższe wolne terminy na „${service}”: ${list}. Stuknij „Zarezerwuj” i wybierz.`,
+    whichService: 'Doprecyzuj, proszę, o którą usługę chodzi?',
+    whichServiceForSlot: 'Na jaką usługę szukasz terminu? Od niej zależy czas trwania.',
+    clientHelp: 'Pomogę z wolnymi terminami, cenami i dojazdem. W czym pomóc?',
+    clientExamples: ['Kiedy najbliższy wolny termin?', 'Ile kosztuje czyszczenie wnętrza?', 'Gdzie was znajdę?'],
+    clientPrompt: (name: string, today: string, tz: string) =>
+      [
+        `Jesteś asystentem rezerwacji online studia „${name}”. Dziś jest ${today}, strefa czasowa studia ${tz}.`,
+        'Odpowiadaj po polsku, zwracając się do klienta na „Ty”, krótko i przyjaźnie, 1–4 zdania.',
+        'Odpowiadaj WYŁĄCZNIE na podstawie danych z narzędzi. Nie wymyślaj cen, godzin, adresów ani rabatów.',
+        'Wolnych terminów szukaj tylko przez find_free_slots. Jeśli nie wiadomo, o którą usługę chodzi, zadaj jedno pytanie doprecyzowujące.',
+        'Nie rozmawiaj o innych klientach ani cudzych rezerwacjach – nie masz takich danych.',
+        'Aby się zapisać, zaproponuj stuknięcie „Zarezerwuj” i wybór godziny. Sam nie tworzysz ani nie anulujesz rezerwacji.',
+      ].join('\n'),
+    faqIntro: 'Częste pytania i odpowiedzi studia. Odpowiadaj według nich własnymi słowami, niczego nie dodając od siebie:',
+    status: {confirmed: 'czekamy', arrived: 'przyjęte', ready: 'gotowe', cancelled: 'anulowane', no_show: 'nie przyjechał'} as Record<string, string>,
+    netNote: 'net_received — faktycznie otrzymane pieniądze. expected_value_forecast — szacunek według cen rezerwacji, to nie przychód.',
+    noBookings: (period: string) => `${period}: brak rezerwacji.`,
+    bookingsCount: (n: number): string => (n === 1 ? 'rezerwacja' : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 'rezerwacje' : 'rezerwacji'),
+    more: (n: number) => `…i jeszcze ${n}`,
+    cars: (arrivals: number, completed: number, bookings: number) => `przyjazdy ${arrivals}, zakończone zlecenia ${completed}, rezerwacje ${bookings}`,
+    cash: (net: string, extra: string | null) => `otrzymano ${net}${extra ? ` (${extra})` : ''}`,
+    cashExtra: (paid: string, refunds: string) => `płatności ${paid}, zwroty ${refunds}`,
+    todayLabel: 'Dziś',
+    weekLabel: 'W tym tygodniu',
+    ownerHelp: 'Mogę pokazać rezerwacje i policzyć auta lub pieniądze za dzień, tydzień albo miesiąc. Czego potrzebujesz?',
+    ownerExamples: ['Co mam jutro?', 'Ile aut było w tym tygodniu?', 'Ile pieniędzy otrzymaliśmy?'],
+    ownerPrompt: (name: string, today: string, tz: string) =>
+      [
+        `Jesteś asystentem właściciela studia „${name}”. Dziś jest ${today}, strefa czasowa ${tz}.`,
+        'Odpowiadaj po polsku, krótko, w liczbach. Dane bierz WYŁĄCZNIE z narzędzi get_bookings i get_stats.',
+        'Tydzień trwa od poniedziałku do niedzieli. „Otrzymano” to net_received; oczekiwana wartość to szacunek, nie nazywaj jej przychodem.',
+        'Dane tylko czytasz: nie tworzysz, nie przenosisz ani nie anulujesz rezerwacji i nie wprowadzasz płatności. Jeśli ktoś prosi o zmianę, wyjaśnij, gdzie zrobić to w panelu.',
+        'Jeśli okres jest niejasny, dopytaj.',
+      ].join('\n'),
+    simplified: 'Asystent odpowiada w trybie uproszczonym',
+    onlyPost: 'Tylko POST',
+    badQuestion: 'Napisz pytanie do 500 znaków',
+    unavailable: 'Asystent jest chwilowo niedostępny',
+    tooMany: 'Zbyt wiele pytań z rzędu. Spróbuj za kilka minut.',
+    tooManyOwner: 'Zbyt wiele pytań z rzędu. Poczekaj kilka minut.',
+    studioNotFound: 'Nie znaleziono studia',
+    disabled: 'Asystent w tym studiu jest wyłączony',
+    overloaded: 'Asystent jest teraz przeciążony. Spróbuj później albo zadzwoń do nas.',
+    noSlotsData: 'Nie udało się pobrać wolnych terminów',
+    signIn: 'Zaloguj się do panelu',
+    sessionExpired: 'Sesja wygasła, zaloguj się ponownie',
+    noAccess: 'Nie masz dostępu do tego studia',
+    cannotCount: 'Nie udało się policzyć',
+    cannotLoadBookings: 'Nie udało się pobrać rezerwacji',
   },
 };
 

@@ -60,12 +60,14 @@ export const formatDate = (date: string, options: Intl.DateTimeFormatOptions = {
 
 export const todayIn = (tz: string, now = new Date()) => formatInTimeZone(now, tz, 'yyyy-MM-dd');
 
-/** +79991234567 → +7 999 123-45-67; +420777056596 → +420 777 056 596. */
+/** +79991234567 → +7 999 123-45-67; +420777056596 → +420 777 056 596; +48533557260 → +48 533 557 260. */
 export function formatPhone(e164: string): string {
   const ru = e164.match(/^\+7(\d{3})(\d{3})(\d{2})(\d{2})$/);
   if (ru) return `+7 ${ru[1]} ${ru[2]}-${ru[3]}-${ru[4]}`;
   const cz = e164.match(/^\+(420|421)(\d{3})(\d{3})(\d{3})$/);
   if (cz) return `+${cz[1]} ${cz[2]} ${cz[3]} ${cz[4]}`;
+  const pl = e164.match(/^\+48(\d{3})(\d{3})(\d{3})$/);
+  if (pl) return `+48 ${pl[1]} ${pl[2]} ${pl[3]}`;
   return e164;
 }
 

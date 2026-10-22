@@ -7,16 +7,20 @@
  * screens shown before the studio is known follow the browser language.
  */
 import {cs} from './cs.ts';
+import {pl} from './pl.ts';
 import {ru, type Messages} from './ru.ts';
 
 export type {Messages};
 export type Lang = Messages['lang'];
 
-const CATALOGUES: Record<Lang, Messages> = {ru, cs};
+const CATALOGUES: Record<Lang, Messages> = {ru, cs, pl};
 
 export let msg: Messages = ru;
 
-export const langOf = (locale: string | null | undefined): Lang => (locale?.toLowerCase().startsWith('cs') ? 'cs' : 'ru');
+export const langOf = (locale: string | null | undefined): Lang => {
+  const l = locale?.toLowerCase() ?? '';
+  return l.startsWith('cs') ? 'cs' : l.startsWith('pl') ? 'pl' : 'ru';
+};
 
 export function setLang(lang: Lang): void {
   if (msg.lang === lang) return;

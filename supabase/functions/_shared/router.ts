@@ -89,8 +89,8 @@ export function matchServices(text: string, services: ServiceRef[], lang: Lang =
 }
 
 /**
- * Keyword patterns per language. Czech patterns are written without
- * diacritics: norm() strips them from the question first.
+ * Keyword patterns per language. Czech and Polish patterns are written
+ * without diacritics: norm() strips them from the question first.
  */
 const PATTERNS = {
   ru: {
@@ -160,9 +160,43 @@ const PATTERNS = {
     bookings: /co mam|jake rezervace|kdo.{0,10}(prijede|je objednan|bude)|rozvrh|rezervac|objednav|vytizen|plan/,
     stats: /statistik|souhrn|prehled|report|vysledk/,
   },
+  pl: {
+    weekdays: [
+      [/poniedzial/, 1],
+      [/wtor/, 2],
+      [/srod/, 3],
+      [/czwart/, 4],
+      [/piat/, 5],
+      [/sobot/, 6],
+      [/niedziel/, 7],
+    ] as [RegExp, number][],
+    afterTomorrow: /pojutrze/,
+    tomorrow: /jutr/,
+    today: /dzis/,
+    weekend: /weekend/,
+    // Genitive month names («18 października»).
+    months: ['stycz', 'lut', 'mar', 'kwie', 'maj', 'czerw', 'lip', 'sierp', 'wrze', 'pazdz', 'listop', 'grud'],
+    dayMonth: /(\d{1,2})\.?\s+([a-z]+)/,
+    location: /(gdzie|jak).{0,20}(znajd|trafic|dojechac|dojade|jestescie|miesci)|adres|nawigac|na mapie|mapa|dojazd/,
+    price: /(ile|za ile).{0,15}(kosztuj|kosztow|bedzie|wyjdzie)|cen[aeiy]|cennik|koszt/,
+    slot: /najbliz|woln|termin|kiedy.{0,15}(moge|mozna|mozemy|przyjechac|umowic|zapisac|macie)|umowic|zapisac|rezerw|macie.{0,10}(czas|miejsce)/,
+    hours: /godziny otwarcia|otwarte|do ktorej|od ktorej|o ktorej|czynne|godziny pracy/,
+    services: /jakie uslugi|co.{0,10}(robicie|oferujecie|potraficie)|uslugi|ofert/,
+    contacts: /telefon|zadzwonic|kontakt|whatsapp|telegram|e-?mail/,
+    explicit: /tydzien|tygodni|miesi|wczoraj|dzis|jutr|poniedzial|wtor|srod|czwart|piat|sobot|niedziel|\d{1,2}\.?\s+[a-z]+/,
+    lastWeek: /(poprzedni|zeszl|ostatni)\S* (tydz|tygod)/,
+    week: /tydzien|tygodni/,
+    lastMonth: /(poprzedni|zeszl|ostatni)\S* miesi/,
+    month: /miesi/,
+    yesterday: /wczoraj/,
+    money: /pieniedz|pieniadz|przych|utarg|otrzymal|zarobi|zaplat|platnos|kasa|ile.{0,10}(zlotych|zl|pln)/,
+    cars: /ile.{0,12}(aut|samochod|klient|przyjazd)|przyjazd|aut bylo|przyjechal/,
+    bookings: /co mam|jakie rezerwacje|kto.{0,10}(przyjedzie|jest zapisany|bedzie)|grafik|rezerwac|zapis|oblozen|plan/,
+    stats: /statystyk|podsumow|raport|zestawien|wynik/,
+  },
 };
 
-/** «завтра», «в субботу», «18 октября» / «zítra», «v sobotu», «18. října» → local date. */
+/** «завтра», «в субботу», «18 октября» / «zítra», «v sobotu», «18. října» / «jutro», «w sobotę», «18 października» → local date. */
 export function parseDate(text: string, tz: string, now = new Date(), lang: Lang = 'ru'): string | null {
   const p = PATTERNS[lang];
   const t = norm(text, lang);

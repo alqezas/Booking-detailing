@@ -47,6 +47,7 @@ async function iconOnBlack(src: string, size: number, inner: number, out: string
 const ASSET_TEXT = {
   ru: {lang: 'ru', booking: 'Онлайн-запись', book: 'Записаться', my: 'Моя запись', noscript: 'Для записи включите JavaScript.'},
   cs: {lang: 'cs', booking: 'Online rezervace', book: 'Rezervovat termín', my: 'Moje rezervace', noscript: 'Pro rezervaci zapněte JavaScript.'},
+  pl: {lang: 'pl', booking: 'Rezerwacja online', book: 'Zarezerwuj termin', my: 'Moja rezerwacja', noscript: 'Aby zarezerwować, włącz JavaScript.'},
 };
 
 async function buildTenant(slug: string, dir: string, c: BusinessConfig): Promise<void> {
@@ -97,7 +98,7 @@ async function buildTenant(slug: string, dir: string, c: BusinessConfig): Promis
   }
 
   const shortName = c.shortName ?? (c.name.length <= 14 ? c.name : c.name.split(/\s+/)[0]!.slice(0, 14));
-  const words = c.locale === 'cs-CZ' ? ASSET_TEXT.cs : ASSET_TEXT.ru;
+  const words = c.locale === 'cs-CZ' ? ASSET_TEXT.cs : c.locale === 'pl-PL' ? ASSET_TEXT.pl : ASSET_TEXT.ru;
   const description = c.tagline || `${words.booking}: ${c.name}`;
   const manifest = {
     id: `${base}/`,

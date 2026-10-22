@@ -35,7 +35,7 @@ export type ClientSource = {
 const langOfTenant = (t: PublicTenant): Lang => langOf(t.locale);
 
 const mapSearch = (address: string, lang: Lang) =>
-  lang === 'cs'
+  lang !== 'ru'
     ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
     : `https://yandex.ru/maps/?text=${encodeURIComponent(address)}`;
 

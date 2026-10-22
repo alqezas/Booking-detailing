@@ -14,7 +14,7 @@ const plural = (n: number, one: string, few: string, many: string): string => {
 };
 
 export const ru = {
-  lang: 'ru' as 'ru' | 'cs',
+  lang: 'ru' as 'ru' | 'cs' | 'pl',
   intl: 'ru-RU',
   dateLocale,
   plural,

@@ -1,13 +1,14 @@
-/** Small text helpers shared by the router and fallback answers (Russian and Czech). */
+/** Small text helpers shared by the router and fallback answers (Russian, Czech and Polish). */
 import {INTL, L, type Lang} from './lang.ts';
 
 /**
  * Lower case, punctuation removed. Russian keeps its letters («ё» → «е»);
- * Czech drops diacritics, so «čištění» and «cisteni» match the same patterns.
+ * Czech and Polish drop diacritics, so «čištění» ~ «cisteni», «wnętrza» ~ «wnetrza»
+ * («ł» has no combining mark and is mapped by hand).
  */
 export const norm = (s: string, lang: Lang = 'ru') => {
   let t = s.toLowerCase();
-  t = lang === 'cs' ? t.normalize('NFD').replace(/\p{M}/gu, '') : t.replace(/ё/g, 'е');
+  t = lang === 'ru' ? t.replace(/ё/g, 'е') : t.normalize('NFD').replace(/\p{M}/gu, '').replace(/ł/g, 'l');
   return t
     .replace(/[^\p{L}\p{N}\s-]/gu, ' ')
     .replace(/\s+/g, ' ')
@@ -16,7 +17,7 @@ export const norm = (s: string, lang: Lang = 'ru') => {
 
 /** Crude stem: drops vowel endings so «полировку» matches «Полировка кузова», «keramiku» — «Keramika». */
 export function stem(w: string, lang: Lang = 'ru'): string {
-  const vowel = lang === 'cs' ? /[aeiouy]$/ : /[аяуюоеыиьйэ]$/;
+  const vowel = lang === 'ru' ? /[аяуюоеыиьйэ]$/ : /[aeiouy]$/;
   let s = w;
   for (let i = 0; i < 2 && s.length > 3 && vowel.test(s); i++) s = s.slice(0, -1);
   return s;
@@ -29,9 +30,10 @@ export const words = (s: string, lang: Lang = 'ru') =>
 
 export function plural(n: number, one: string, few: string, many: string, lang: Lang = 'ru'): string {
   if (lang === 'cs') return n === 1 ? one : n >= 2 && n <= 4 ? few : many;
+  if (lang === 'pl' && n === 1) return one;
   const m10 = n % 10;
   const m100 = n % 100;
-  if (m10 === 1 && m100 !== 11) return one;
+  if (lang === 'ru' && m10 === 1 && m100 !== 11) return one;
   if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return few;
   return many;
 }
@@ -69,10 +71,12 @@ export function localDate(tz: string, offsetDays = 0, now = new Date()): string 
   );
 }
 
-/** +74950001234 → +7 495 000-12-34; +420777056596 → +420 777 056 596 */
+/** +74950001234 → +7 495 000-12-34; +420777056596 → +420 777 056 596; +48533557260 → +48 533 557 260 */
 export function phone(e164: string): string {
   const ru = e164.match(/^\+7(\d{3})(\d{3})(\d{2})(\d{2})$/);
   if (ru) return `+7 ${ru[1]} ${ru[2]}-${ru[3]}-${ru[4]}`;
   const cz = e164.match(/^\+(420|421)(\d{3})(\d{3})(\d{3})$/);
-  return cz ? `+${cz[1]} ${cz[2]} ${cz[3]} ${cz[4]}` : e164;
+  if (cz) return `+${cz[1]} ${cz[2]} ${cz[3]} ${cz[4]}`;
+  const pl = e164.match(/^\+48(\d{3})(\d{3})(\d{3})$/);
+  return pl ? `+48 ${pl[1]} ${pl[2]} ${pl[3]}` : e164;
 }
