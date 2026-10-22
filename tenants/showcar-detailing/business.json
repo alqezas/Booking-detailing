@@ -1,0 +1,440 @@
+{
+  "slug": "showcar-detailing",
+  "name": "Showcar Detailing",
+  "shortName": "Showcar",
+  "kind": "detailing",
+  "tagline": "Powłoki ceramiczne Fireball i folie ochronne PPF Llumar w Gdyni",
+  "description": "Nazywam się Marek Lachowicz i zajmuję się auto detailingiem od 2006 roku. Showcar Detailing to studio, które oficjalnie stworzyłem w 2015 roku – dziś to dwuosobowy team. Naszym głównym zajęciem jest renowacja i zabezpieczanie lakieru powłokami ceramicznymi i foliami ochronnymi PPF. Jesteśmy pierwszym akredytowanym studiem powłok Fireball w Trójmieście i pierwszym w województwie pomorskim akredytowanym studiem folii PPF Llumar.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#B8BEC6",
+  "contacts": {
+    "phone": "+48 506 698 699",
+    "address": "ul. Hutnicza 47, 81-061 Gdynia",
+    "mapUrl": "https://g.page/ShowcarDetailing?share",
+    "email": "marek@showcar.pl",
+    "instagram": "showcar_detailing",
+    "facebook": "ShowcarDetailingGdynia"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 1440,
+    "horizonDays": 60,
+    "cancelCutoffHours": 48,
+    "defaultBufferMinutes": 60
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "aegis",
+      "name": "Fireball Aegis (2 lata)",
+      "category": "Powłoki ceramiczne",
+      "description": "Koreańska powłoka ceramiczna Fireball, trwałość 2 lata. Dla aut segmentu mini –10 %; auta z wieloma plastikowymi elementami i minivany wyceniamy indywidualnie. Cena netto.",
+      "price": 1200,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "devils-blood",
+      "name": "Fireball Devils Blood (3 lata)",
+      "category": "Powłoki ceramiczne",
+      "description": "Koreańska powłoka ceramiczna Fireball, trwałość 3 lata. Dla aut segmentu mini –10 %; auta z wieloma plastikowymi elementami i minivany wyceniamy indywidualnie. Cena netto.",
+      "price": 1700,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "silla",
+      "name": "Fireball Silla (5 lat)",
+      "category": "Powłoki ceramiczne",
+      "description": "Koreańska powłoka ceramiczna Fireball, trwałość 5 lat. Dla aut segmentu mini –10 %; auta z wieloma plastikowymi elementami i minivany wyceniamy indywidualnie. Cena netto.",
+      "price": 2200,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "butterfly",
+      "name": "Fireball Butterfly 9H (7 lat)",
+      "category": "Powłoki ceramiczne",
+      "description": "Koreańska powłoka ceramiczna Fireball, trwałość 7 lat. Dla aut segmentu mini –10 %; auta z wieloma plastikowymi elementami i minivany wyceniamy indywidualnie. Cena netto.",
+      "price": 2500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "butterfly-graphene",
+      "name": "Fireball Butterfly Graphene 9H (9 lat)",
+      "category": "Powłoki ceramiczne",
+      "description": "Koreańska powłoka ceramiczna Fireball, trwałość 9 lat. Dla aut segmentu mini –10 %; auta z wieloma plastikowymi elementami i minivany wyceniamy indywidualnie. Cena netto.",
+      "price": 2900,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "dokdo",
+      "name": "Fireball Dokdo 9H (10 lat)",
+      "category": "Powłoki ceramiczne",
+      "description": "Koreańska powłoka ceramiczna Fireball, trwałość 10 lat. Dla aut segmentu mini –10 %; auta z wieloma plastikowymi elementami i minivany wyceniamy indywidualnie. Cena netto.",
+      "price": 4000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf",
+      "name": "Folia ochronna PPF Llumar z samoregeneracją",
+      "category": "Folie PPF",
+      "description": "Najlepsze zabezpieczenie lakieru: brak odprysków, samoregeneracja i maksymalny połysk. Od full front po oklejenie całego auta – zakres dobieramy indywidualnie. Cena netto.",
+      "price": 4500,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szyba-folia",
+      "name": "Folia ochronna przedniej szyby",
+      "category": "Folie PPF",
+      "description": "Maksymalne zabezpieczenie szyby czołowej – zapomnisz o odpryskach i pęknięciach. Cena netto.",
+      "price": 1200,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta",
+      "name": "Korekta lakieru / polerowanie",
+      "category": "Lakier i szyby",
+      "description": "Usuwanie mikrozarysowań i rys z powłoki lakierniczej, sfinalizowane jak największym połyskiem. Wycena zawsze indywidualna. Cena netto.",
+      "price": 900,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "woskowanie",
+      "name": "Woskowanie lakieru",
+      "category": "Lakier i szyby",
+      "description": "Wycena zawsze indywidualna. Cena netto.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "hydrofob-przod",
+      "name": "Powłoka hydrofobowa – przednia szyba",
+      "category": "Lakier i szyby",
+      "description": "Niewidzialna wycieraczka na szybę czołową. Cena netto.",
+      "price": 100,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "hydrofob-wszystkie",
+      "name": "Powłoka hydrofobowa – wszystkie szyby",
+      "category": "Lakier i szyby",
+      "description": "Hydrofobowe zabezpieczenie wszystkich szyb. Cena netto.",
+      "price": 300,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora",
+      "name": "Zabezpieczanie tapicerki skórzanej",
+      "category": "Pielęgnacja",
+      "description": "Mniejsze brudzenie, łatwiejsze czyszczenie i przesunięta granica przetarć. Cena netto.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "sprzedaz",
+      "name": "Przygotowanie do sprzedaży",
+      "category": "Pielęgnacja",
+      "description": "Polerowanie lakieru, odpryski, zarysowania parkingowe czy czyszczenie wnętrza – pakiet skrojony do Twojego auta. Wycena zawsze indywidualna. Cena netto.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie",
+      "name": "Bezpieczne mycie auta",
+      "category": "Pielęgnacja",
+      "description": "Dokładne mycie auta, nie powodujące zarysowań lakieru.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Ozonowanie wnętrza",
+      "category": "Pielęgnacja",
+      "description": "Dezynfekcja wnętrza: usuwanie bakterii, nieprzyjemnych zapachów i grzybów. Cena netto.",
+      "price": 50,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "silnik",
+      "name": "Czyszczenie komory silnika",
+      "category": "Pielęgnacja",
+      "description": "Wycena zawsze indywidualna. Nie czyścimy po usterkach olejowych. Cena netto.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "shield",
+      "title": "Akredytacja Fireball i Llumar",
+      "text": "Pierwsze studio Fireball w Trójmieście i pierwsze w województwie pomorskim studio folii PPF Llumar."
+    },
+    {
+      "icon": "car",
+      "title": "Auto zastępcze 0 zł",
+      "text": "Door2door dom–studio–dom od 0 zł, transport salon–studio–salon od 100 zł netto."
+    },
+    {
+      "icon": "medal",
+      "title": "Od 2006 roku",
+      "text": "Doświadczenie zdobyte na setkach przeróżnych aut."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-gt3.webp",
+      "caption": "Porsche 911 GT3 Touring całe w folii PPF Llumar"
+    },
+    {
+      "image": "images/work-ferrari.webp",
+      "caption": "Ferrari 812 Superfast"
+    },
+    {
+      "image": "images/work-m3.webp",
+      "caption": "BMW M3 Competition – folia PPF i powłoka Fireball Butterfly"
+    },
+    {
+      "image": "images/work-bentley.webp",
+      "caption": "Bentley Continental GT oklejony w całości folią PPF Llumar"
+    },
+    {
+      "image": "images/work-r8.webp",
+      "caption": "Audi R8 RWD oklejone w całości folią PPF Llumar Valor"
+    },
+    {
+      "image": "images/work-defender.webp",
+      "caption": "Land Rover Defender – matowa folia PPF Llumar"
+    },
+    {
+      "image": "images/work-m4.webp",
+      "caption": "BMW M4 Competition Coupé – full body PPF"
+    },
+    {
+      "image": "images/work-bentayga.webp",
+      "caption": "Bentley Bentayga – korekta lakieru i powłoka Fireball Dokdo"
+    },
+    {
+      "image": "images/work-stelvio.webp",
+      "caption": "Alfa Romeo Stelvio Quadrifoglio – folia ochronna PPF"
+    },
+    {
+      "image": "images/work-x7.webp",
+      "caption": "BMW X7 – folia PPF Llumar Valor i powłoka Fireball Butterfly Graphene"
+    },
+    {
+      "image": "images/work-gts.webp",
+      "caption": "Porsche 911 GTS całe w folii PPF Llumar Valor"
+    },
+    {
+      "image": "images/work-xc60.webp",
+      "caption": "Volvo XC60 – full front PPF Llumar Valor i powłoka Fireball Butterfly"
+    },
+    {
+      "image": "images/work-cl55.webp",
+      "caption": "Mercedes-Benz CL55 AMG oklejony w całości folią PPF Llumar Valor"
+    },
+    {
+      "image": "images/work-rrover.webp",
+      "caption": "Range Rover Westminster – korekta lakieru i sprzątanie wnętrza"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Czy ceny są netto?",
+      "answer": "Tak, ceny oznaczone w cenniku gwiazdką są cenami netto. Wycena w wielu przypadkach jest indywidualna, np. gdy auto ma wiele plastikowych elementów albo jest minivanem. Auta segmentu mini –10 %.",
+      "keywords": [
+        "netto",
+        "brutto",
+        "vat",
+        "faktur"
+      ]
+    },
+    {
+      "question": "Czy dajecie auto zastępcze?",
+      "answer": "Tak, auto zastępcze za 0 zł. Oferujemy też door2door dom–studio–dom od 0 zł i transport salon–studio–salon od 100 zł netto.",
+      "keywords": [
+        "zastepcz",
+        "door",
+        "transport",
+        "odbior",
+        "salon"
+      ]
+    },
+    {
+      "question": "Jaką powłokę ceramiczną wybrać?",
+      "answer": "Pracujemy na koreańskich powłokach Fireball: Aegis (2 lata, od 1200 zł), Devils Blood (3 lata, od 1700 zł), Silla (5 lat, od 2200 zł), Butterfly 9H (7 lat, od 2500 zł), Butterfly Graphene 9H (9 lat, od 2900 zł) i Dokdo 9H (10 lat, od 4000 zł). Najpopularniejszy zestaw to folia PPF z samoregeneracją + powłoka ceramiczna.",
+      "keywords": [
+        "jaka powlok",
+        "ktora powlok",
+        "wybrac",
+        "fireball",
+        "roznic"
+      ]
+    },
+    {
+      "question": "Czy prowadzicie szkolenia?",
+      "answer": "Tak – z polerowania lakieru, powłok ceramicznych i folii ochronnych PPF. Szkolenia odbywają się w formule maksymalnie dwóch uczniów, z dużym naciskiem na praktykę.",
+      "keywords": [
+        "szkoleni",
+        "kurs",
+        "nauczyc"
+      ]
+    },
+    {
+      "question": "Kiedy jesteście otwarci?",
+      "answer": "Od poniedziałku do soboty 9:00–18:00. Studio: ul. Hutnicza 47, Gdynia.",
+      "keywords": [
+        "otwarte",
+        "otwarci",
+        "godziny",
+        "sobot",
+        "gdzie",
+        "adres",
+        "hutnicz"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
