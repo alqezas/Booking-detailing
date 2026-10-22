@@ -1,0 +1,489 @@
+{
+  "slug": "glow-factory",
+  "name": "Glow Factory Auto SPA & Detailing",
+  "shortName": "Glow Factory",
+  "kind": "detailing",
+  "tagline": "Auto SPA & Detailing w Poznaniu – Twoje auto przejdzie prawdziwą metamorfozę",
+  "description": "Glow Factory to miejsce, w którym Twoje auto przejdzie prawdziwą metamorfozę. Firma powstała z pasji ludzi, dla których samochody od lat są częścią życia – to połączenie hobby, wiedzy i wieloletniego doświadczenia. Wszystkie auta traktujemy jak własne i pracujemy wyłącznie na najwyższej jakości produktach, bezpiecznych dla lakieru. Dbamy o samochody nowe i używane, motocykle, a nawet łodzie.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#2E7BD6",
+  "contacts": {
+    "phone": "+48 516 349 865",
+    "address": "ul. Polanowska 191 (wjazd od ul. Słupskiej), 60-454 Poznań",
+    "mapUrl": "https://g.page/glowfactory?share",
+    "email": "glowfactorypoznan@gmail.com",
+    "instagram": "glowfactory_detailing",
+    "facebook": "https://www.facebook.com/profile.php?id=100063615518287"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "mycie-premium",
+      "name": "Mycie premium",
+      "category": "Mycie i wnętrze",
+      "description": "Bezpieczne mycie ręczne.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie-detailingowe",
+      "name": "Mycie detailingowe",
+      "category": "Mycie i wnętrze",
+      "description": "Dokładne mycie z dekontaminacją.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "quick",
+      "name": "Quick detailing wnętrza",
+      "category": "Mycie i wnętrze",
+      "description": "Szybkie odświeżenie wnętrza.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze",
+      "name": "Detailing wnętrza",
+      "category": "Mycie i wnętrze",
+      "description": "Tapicerka, plastiki, listwy, uchwyty, uszczelki i kokpit – pranie, odkurzanie i zabezpieczenie.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "tapicerka",
+      "name": "Czyszczenie tapicerki materiałowej",
+      "category": "Mycie i wnętrze",
+      "description": "Pranie tapicerki materiałowej.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skory",
+      "name": "Czyszczenie i impregnacja skór",
+      "category": "Mycie i wnętrze",
+      "description": "Czyszczenie i zabezpieczenie tapicerki skórzanej.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "zabezpieczenie-tapicerki",
+      "name": "Zabezpieczenie tapicerki",
+      "category": "Mycie i wnętrze",
+      "description": "Impregnacja chroniąca tapicerkę.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "podsufitka",
+      "name": "Czyszczenie podsufitki",
+      "category": "Mycie i wnętrze",
+      "description": "Czyszczenie podsufitki.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "cabrio",
+      "name": "Czyszczenie dachu cabrio",
+      "category": "Mycie i wnętrze",
+      "description": "Czyszczenie miękkiego dachu.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "silnik",
+      "name": "Czyszczenie komory silnika",
+      "category": "Mycie i wnętrze",
+      "description": "Bezpieczne czyszczenie komory silnika.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "sprzedaz",
+      "name": "Przygotowanie do sprzedaży",
+      "category": "Mycie i wnętrze",
+      "description": "Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "reflektory",
+      "name": "Renowacja reflektorów",
+      "category": "Lakier",
+      "description": "Przywrócenie przejrzystości reflektorów.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-1",
+      "name": "Jednoetapowa korekta lakieru",
+      "category": "Lakier",
+      "description": "Usuwanie rys i przywrócenie głębi koloru.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-2",
+      "name": "Dwuetapowa korekta lakieru",
+      "category": "Lakier",
+      "description": "Głębsza korekta lakieru.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-multi",
+      "name": "Wieloetapowa korekta lakieru",
+      "category": "Lakier",
+      "description": "Pełna korekta lakieru.",
+      "price": 1400,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wosk",
+      "name": "Zabezpieczenie lakieru woskiem",
+      "category": "Zabezpieczenia",
+      "description": "Ochrona i połysk lakieru.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika",
+      "name": "Powłoka ceramiczna",
+      "category": "Zabezpieczenia",
+      "description": "Powłoki o trwałości od roku do nawet 7 lat. Po usłudze wysyłamy mailem instrukcję pielęgnacji.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szyby",
+      "name": "Powłoka na szyby",
+      "category": "Zabezpieczenia",
+      "description": "Hydrofobowe zabezpieczenie szyb.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "felgi",
+      "name": "Zabezpieczenie felg powłoką",
+      "category": "Zabezpieczenia",
+      "description": "Powłoka ochronna na felgi.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "plastiki",
+      "name": "Zabezpieczenie plastików powłoką",
+      "category": "Zabezpieczenia",
+      "description": "Powłoka ochronna na plastiki.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf",
+      "name": "Zabezpieczenie lakieru folią PPF",
+      "category": "Zabezpieczenia",
+      "description": "Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Średnia ocen 5.0",
+      "text": "Wszyscy nasi klienci są zadowoleni z wykonanych usług."
+    },
+    {
+      "icon": "car",
+      "title": "Door to door od 50 zł",
+      "text": "Odbierzemy auto spod wskazanego adresu i odwieziemy po usłudze."
+    },
+    {
+      "icon": "credit-card",
+      "title": "Kod GLOW5 – 5% rabatu",
+      "text": "Na każdą usługę powyżej 200 zł. Płatność kartą, faktura lub paragon."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-bmw1.webp",
+      "caption": "BMW serii 1"
+    },
+    {
+      "image": "images/work-arteon.webp",
+      "caption": "Volkswagen Arteon"
+    },
+    {
+      "image": "images/work-gls.webp",
+      "caption": "Mercedes-Benz GLS"
+    },
+    {
+      "image": "images/work-bmw7.webp",
+      "caption": "BMW serii 7"
+    },
+    {
+      "image": "images/work-x5.webp",
+      "caption": "BMW X5"
+    },
+    {
+      "image": "images/work-jaguar.webp",
+      "caption": "Jaguar"
+    },
+    {
+      "image": "images/work-vw.webp",
+      "caption": "Volkswagen"
+    },
+    {
+      "image": "images/work-bmw1-grill.webp",
+      "caption": "BMW serii 1 – przód"
+    },
+    {
+      "image": "images/work-fotel.webp",
+      "caption": "Czyszczenie tapicerki – fotel Volkswagen R"
+    },
+    {
+      "image": "images/work-wnetrze.webp",
+      "caption": "Detailing wnętrza"
+    },
+    {
+      "image": "images/work-korekta.webp",
+      "caption": "Korekta lakieru"
+    },
+    {
+      "image": "images/work-powloka.webp",
+      "caption": "Aplikacja powłoki ceramicznej"
+    },
+    {
+      "image": "images/work-hydrofob.webp",
+      "caption": "Efekt hydrofobowy powłoki"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Czy mogę płacić kartą i dostać fakturę?",
+      "answer": "Tak, akceptujemy płatności kartą, a na każdą usługę możemy wystawić fakturę lub paragon.",
+      "keywords": [
+        "kart",
+        "faktur",
+        "paragon",
+        "platn"
+      ]
+    },
+    {
+      "question": "Czy odbieracie auto?",
+      "answer": "Tak, oferujemy usługę door to door – odbierzemy samochód spod wskazanego adresu i odwieziemy po usłudze. Cena zależy od odległości i zaczyna się od 50 zł.",
+      "keywords": [
+        "door",
+        "odbier",
+        "odwiez",
+        "podjechac po"
+      ]
+    },
+    {
+      "question": "Czy mogę zostawić auto dzień wcześniej?",
+      "answer": "Tak, nie ma problemu – prosimy tylko wcześniej o taką informację. Przy przyjęciu zawsze spisujemy protokół w obecności właściciela.",
+      "keywords": [
+        "dzien wczesniej",
+        "zostawic",
+        "przyjec",
+        "protokol"
+      ]
+    },
+    {
+      "question": "Jak dbać o auto z powłoką ceramiczną?",
+      "answer": "Myj auto bezdotykowo lub ręcznie, unikaj myjni szczotkowych i zawsze dokładnie osuszaj lakier. Po usłudze wysyłamy mailem instrukcję pielęgnacji. Powłoki trzymają od roku do nawet 7 lat.",
+      "keywords": [
+        "dbac",
+        "pielegnac",
+        "myc",
+        "ile trzyma",
+        "trwalos"
+      ]
+    },
+    {
+      "question": "Macie rabaty lub vouchery?",
+      "answer": "Podaj kod GLOW5 przy umawianiu wizyty i zgarnij 5% rabatu na każdą usługę powyżej 200 zł. Mamy też vouchery podarunkowe ważne pół roku.",
+      "keywords": [
+        "rabat",
+        "kod",
+        "promocj",
+        "voucher",
+        "prezent"
+      ]
+    },
+    {
+      "question": "Gdzie jesteście i kiedy otwarte?",
+      "answer": "Poznań, ul. Polanowska 191 (wjazd od ul. Słupskiej). Otwarte pon.–pt. 8:00–17:00.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "polanowsk",
+        "dojazd",
+        "otwart",
+        "godzin"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
