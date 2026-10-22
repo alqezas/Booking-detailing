@@ -1,0 +1,690 @@
+{
+  "slug": "zoom-detailing",
+  "name": "ZOOM Detailing",
+  "shortName": "ZOOM",
+  "kind": "detailing",
+  "tagline": "Autorskie studio detailingu w Warszawie-Wawrze – PPF, ceramika, korekta lakieru",
+  "description": "ZOOM DETAILING powstał, aby pomagać właścicielom pojazdów dbać o swoje samochody profesjonalnie i kompleksowo. Po kilku latach pracy w topowych firmach auto detailingu w Warszawie otworzyliśmy własne autorskie studio dla prawdziwych miłośników motoryzacji. Nasz „zoom” na jakość i profesjonalizm w każdym aspekcie pracy to nasza dewiza. Stosowane przez nas folie PPF mają samoregenerację i 10-letnią gwarancję producenta.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#4A6FA5",
+  "contacts": {
+    "phone": "+48 450 150 350",
+    "address": "ul. Kombajnistów 3, Warszawa-Wawer",
+    "legalAddress": "ZOOM DETAILING, NIP 952-165-43-41",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Kombajnist%C3%B3w%203%2C%20Warszawa",
+    "email": "kontakt@zoomdetailing.pl",
+    "instagram": "zoom_detailing_warszawa",
+    "facebook": "https://www.facebook.com/profile.php?id=100090486777510"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "sat": [
+      [
+        "10:00",
+        "14:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 1440,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "mycie",
+      "name": "Wieloetapowe mycie detailingowe z dekontaminacją",
+      "category": "Detailing zewnętrzny",
+      "description": "Mały / średni / duży samochód: 250 / 300 / 350 zł netto.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "silnik",
+      "name": "Mycie detailingowe silnika z impregnacją plastików",
+      "category": "Detailing zewnętrzny",
+      "description": "Mały / średni / duży samochód: 250 / 300 / 350 zł netto.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-1",
+      "name": "Jednoetapowa korekta lakieru",
+      "category": "Detailing zewnętrzny",
+      "description": "Usunięcie od 30% do 40% rys. Mały / średni / duży samochód: 800 / 900 / 1000 zł netto.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 720,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-2",
+      "name": "Dwuetapowa korekta lakieru",
+      "category": "Detailing zewnętrzny",
+      "description": "Usunięcie od 50% do 70% rys. Mały / średni / duży samochód: 1100 / 1200 / 1300 zł netto.",
+      "price": 1100,
+      "priceFrom": true,
+      "durationMinutes": 960,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-pelna",
+      "name": "Pełna korekta lakieru",
+      "category": "Detailing zewnętrzny",
+      "description": "Usunięcie od 80% do 90% rys. Mały / średni / duży samochód: od 1600 / od 1800 / od 2000 zł netto.",
+      "price": 1600,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "reflektory",
+      "name": "Renowacja reflektorów z powłoką ceramiczną",
+      "category": "Detailing zewnętrzny",
+      "description": "Cena netto.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-basic",
+      "name": "Powłoka ceramiczna – BASIC",
+      "category": "Detailing zewnętrzny",
+      "description": "Mały / średni / duży samochód: 850 / 950 / 1050 zł netto.",
+      "price": 850,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-standard",
+      "name": "Powłoka ceramiczna – STANDARD",
+      "category": "Detailing zewnętrzny",
+      "description": "Mały / średni / duży samochód: 1350 / 1450 / 1550 zł netto.",
+      "price": 1350,
+      "priceFrom": true,
+      "durationMinutes": 600,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "serwis",
+      "name": "Serwis powłoki ceramicznej",
+      "category": "Detailing zewnętrzny",
+      "description": "Mycie detailingowe z dekontaminacją, powłoka kwarcowa, czernienie opon. Mały / średni / duży samochód: 400 / 500 / 600 zł netto.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "felgi",
+      "name": "Ceramiczne zabezpieczenie felg (front)",
+      "category": "Detailing zewnętrzny",
+      "description": "Mały / średni / duży samochód: 250 / 300 / 350 zł netto.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "felgi-pelne",
+      "name": "Ceramiczne zabezpieczenie felg (front + środek)",
+      "category": "Detailing zewnętrzny",
+      "description": "Mały / średni / duży samochód: 450 / 550 / 650 zł netto.",
+      "price": 450,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wosk",
+      "name": "Aplikacja twardego wosku",
+      "category": "Detailing zewnętrzny",
+      "description": "Mały / średni / duży samochód: 300 / 350 / 400 zł netto.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szyby",
+      "name": "Powłoka ceramiczna na szybę czołową i przednie boczne",
+      "category": "Detailing zewnętrzny",
+      "description": "Mały / średni / duży samochód: 250 / 250 / 300 zł netto.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "cabrio",
+      "name": "Czyszczenie dachu cabrio z impregnacją",
+      "category": "Detailing zewnętrzny",
+      "description": "Mały / średni / duży samochód: 500 / 550 / 600 zł netto.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "zaprawki",
+      "name": "Zaprawki lakiernicze",
+      "category": "Detailing zewnętrzny",
+      "description": "Cena netto.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "sprzatanie",
+      "name": "Sprzątanie podstawowe wnętrza",
+      "category": "Detailing wnętrza",
+      "description": "Odkurzanie i przetarcie plastików quick detailerem. Mały / średni / duży samochód: 250 / 300 / 350 zł netto.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze",
+      "name": "Detailing wnętrza",
+      "category": "Detailing wnętrza",
+      "description": "Wieloetapowe odkurzanie, czyszczenie plastików i zakamarków, czyszczenie skór lub pranie tapicerki i impregnacja całego wnętrza. Mały / średni / duży samochód: 650 / 700 / 800 zł netto.",
+      "price": 650,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pranie-podlogi",
+      "name": "Pranie podłogi (bez demontażu foteli)",
+      "category": "Detailing wnętrza",
+      "description": "Mały / średni / duży samochód: 300 / 350 / 400 zł netto.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pranie-tapicerki",
+      "name": "Pranie tapicerki materiałowej",
+      "category": "Detailing wnętrza",
+      "description": "Mały / średni / duży samochód: 250 / 300 / 400 zł netto.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "impregnacja-tapicerki",
+      "name": "Impregnacja tapicerki materiałowej",
+      "category": "Detailing wnętrza",
+      "description": "Mały / średni / duży samochód: 200 / 250 / 350 zł netto.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "podsufitka",
+      "name": "Czyszczenie podsufitki",
+      "category": "Detailing wnętrza",
+      "description": "Mały / średni / duży samochód: 150 / 250 / 300 zł netto.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora",
+      "name": "Czyszczenie i impregnacja elementów skórzanych",
+      "category": "Detailing wnętrza",
+      "description": "Mały / średni / duży samochód: 300 / 350 / 450 zł netto.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Ozonowanie",
+      "category": "Detailing wnętrza",
+      "description": "Cena netto.",
+      "price": 150,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-basic",
+      "name": "Pakiet PPF – BASIC",
+      "category": "Folie PPF i kolor",
+      "description": "Reflektory, wnęki klamek, próg załadunkowy zderzaka tylnego. Cena netto.",
+      "price": 1200,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-bikini",
+      "name": "Pakiet PPF – BIKINI",
+      "category": "Folie PPF i kolor",
+      "description": "Zderzak przedni, 1/3 maski i błotników przednich, reflektory, wnęki klamek, próg załadunkowy. Cena netto.",
+      "price": 3200,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full-front",
+      "name": "Pakiet PPF – FULL FRONT",
+      "category": "Folie PPF i kolor",
+      "description": "Zderzak przedni, maska, błotniki przednie, lusterka, słupki A, fragment dachu nad szybą, reflektory, wnęki klamek, ranty drzwi, próg załadunkowy. Cena netto.",
+      "price": 5200,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full-body",
+      "name": "Pakiet PPF – FULL BODY",
+      "category": "Folie PPF i kolor",
+      "description": "Pełne zabezpieczenie karoserii i lamp. Cena netto.",
+      "price": 12500,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-reflektory",
+      "name": "Folia PPF na reflektory",
+      "category": "Folie PPF i kolor",
+      "description": "Cena netto.",
+      "price": 450,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wrapping",
+      "name": "Wrapping – zmiana koloru auta",
+      "category": "Folie PPF i kolor",
+      "description": "Wycena indywidualna. Także dechroming, usuwanie reklam i przyciemnianie szyb.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "nowe-basic",
+      "name": "Auto nowe – pakiet BASIC",
+      "category": "Pakiety – auta nowe",
+      "description": "Do 500 km przebiegu: mycie detailingowe, ceramika na lakier 1 rok, powłoka na szyby, felgi front, impregnacja skór/tapicerki, czernienie opon. Mały / średni / duży samochód: 1600 / 1800 / 2000 zł netto.",
+      "price": 1600,
+      "priceFrom": true,
+      "durationMinutes": 960,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "nowe-standard",
+      "name": "Auto nowe – pakiet STANDARD",
+      "category": "Pakiety – auta nowe",
+      "description": "Jak BASIC, z powłoką ceramiczną na 3 lata. Mały / średni / duży samochód: 2100 / 2300 / 2500 zł netto.",
+      "price": 2100,
+      "priceFrom": true,
+      "durationMinutes": 960,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "nowe-premium",
+      "name": "Auto nowe – pakiet PREMIUM",
+      "category": "Pakiety – auta nowe",
+      "description": "Jak BASIC, z powłoką ceramiczną na 5 lat. Mały / średni / duży samochód: 2700 / 2950 / 3200 zł netto.",
+      "price": 2700,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "silver",
+      "name": "Auto używane – pakiet SILVER",
+      "category": "Pakiety – auta używane",
+      "description": "Mycie z dekontaminacją, sprzątanie wnętrza, quick detailer na lakier i wnętrze, mycie szyb, czernienie opon. Mały / średni / duży samochód: 650 / 750 / 850 zł netto.",
+      "price": 650,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "gold",
+      "name": "Auto używane – pakiet GOLD",
+      "category": "Pakiety – auta używane",
+      "description": "Jednoetapowa korekta, ceramika na 1 rok, sprzątanie wnętrza, szyby, zaprawki i ozonowanie. Mały / średni / duży samochód: 2050 / 2350 / 2650 zł netto.",
+      "price": 2050,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "gold-plus",
+      "name": "Auto używane – pakiet GOLD +",
+      "category": "Pakiety – auta używane",
+      "description": "Dwuetapowa korekta, ceramika na 3 lata, detailingowe sprzątanie wnętrza, ceramika na szyby, zaprawki, ozonowanie. Mały / średni / duży samochód: 3400 / 3700 / 4100 zł netto.",
+      "price": 3400,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "platinum",
+      "name": "Auto używane – pakiet PLATINUM",
+      "category": "Pakiety – auta używane",
+      "description": "Pełna korekta, ceramika na 5 lat, pełny detailing wnętrza, felgi, szyby, komora silnika, zaprawki i ozonowanie. Mały / średni / duży samochód: 4600 / 5200 / 5850 zł netto.",
+      "price": 4600,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "sprzedaz",
+      "name": "Przygotowanie auta do sprzedaży",
+      "category": "Pakiety – auta używane",
+      "description": "Mycie z dekontaminacją, jednoetapowa korekta, quick detailer, sprzątanie wnętrza, odtłuszczenie szyb. Mały / średni / duży samochód: 1150 / 1300 / 1450 zł netto.",
+      "price": 1150,
+      "priceFrom": true,
+      "durationMinutes": 720,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "car",
+      "title": "Door-to-Door gratis",
+      "text": "Odbiór i zwrot auta do 10 km bez dopłat."
+    },
+    {
+      "icon": "shield",
+      "title": "PPF z 10-letnią gwarancją",
+      "text": "Folie z samoregeneracją – najlepiej zaraz po odbiorze auta z salonu."
+    },
+    {
+      "icon": "clock",
+      "title": "Także poza godzinami",
+      "text": "Możesz umówić wizytę także poza godzinami pracy."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-superb.webp",
+      "caption": "Škoda Superb – tuning optyczny"
+    },
+    {
+      "image": "images/work-e350d.webp",
+      "caption": "Mercedes-Benz E 350d Cabrio"
+    },
+    {
+      "image": "images/work-xc90.webp",
+      "caption": "Volvo XC90"
+    },
+    {
+      "image": "images/work-bmw5.webp",
+      "caption": "BMW serii 5"
+    },
+    {
+      "image": "images/work-lbx.webp",
+      "caption": "Lexus LBX"
+    },
+    {
+      "image": "images/work-xc60.webp",
+      "caption": "Volvo XC60"
+    },
+    {
+      "image": "images/work-fiat500.webp",
+      "caption": "Fiat 500"
+    },
+    {
+      "image": "images/work-xc60-white.webp",
+      "caption": "Volvo XC60"
+    },
+    {
+      "image": "images/work-ppf.webp",
+      "caption": "Folia PPF na reflektory"
+    },
+    {
+      "image": "images/work-polerowanie.webp",
+      "caption": "Korekta lakieru"
+    },
+    {
+      "image": "images/work-ceramika.webp",
+      "caption": "Aplikacja powłoki ceramicznej"
+    },
+    {
+      "image": "images/work-s2000.webp",
+      "caption": "Czyszczenie skóry – Honda S2000"
+    },
+    {
+      "image": "images/work-studio.webp",
+      "caption": "Nasze studio w Wawrze"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Czy ceny są netto?",
+      "answer": "Tak, ceny są w złotych netto – przy płatności należy doliczyć 23% VAT. Większość usług ma trzy ceny: dla małego, średniego i dużego samochodu.",
+      "keywords": [
+        "netto",
+        "brutto",
+        "vat",
+        "faktur",
+        "maly",
+        "duzy"
+      ]
+    },
+    {
+      "question": "Czy odbieracie auto?",
+      "answer": "Tak – Door-to-Door do 10 km jest gratis.",
+      "keywords": [
+        "door",
+        "odbier",
+        "odwiez",
+        "transport",
+        "dowoz"
+      ]
+    },
+    {
+      "question": "Czy trzeba się umawiać?",
+      "answer": "Tak, prosimy o umówienie się na wizytę – często realizujemy zlecenia poza siedzibą firmy. Można też umówić się poza godzinami pracy: pn.–pt. 9:00–17:00, sob. 10:00–14:00.",
+      "keywords": [
+        "umowi",
+        "wizyt",
+        "godzin",
+        "otwart",
+        "sobot",
+        "niedziel"
+      ]
+    },
+    {
+      "question": "Kiedy najlepiej założyć folię PPF?",
+      "answer": "Rekomendujemy zabezpieczyć karoserię folią ochronną tuż po odbiorze samochodu z salonu. Folie mają samoregenerację i 10-letnią gwarancję producenta.",
+      "keywords": [
+        "kiedy",
+        "nowe auto",
+        "salon",
+        "gwarancj",
+        "ppf"
+      ]
+    },
+    {
+      "question": "Obsługujecie firmy?",
+      "answer": "Tak – dla klientów B2B: tel. 450-150-850, e-mail biuro@zoomdetailing.pl.",
+      "keywords": [
+        "b2b",
+        "firm",
+        "flot",
+        "faktura vat"
+      ]
+    },
+    {
+      "question": "Gdzie was znajdę?",
+      "answer": "Warszawa-Wawer, ul. Kombajnistów 3.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "kombajnist",
+        "wawer",
+        "dojazd"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
