@@ -1,0 +1,424 @@
+{
+  "slug": "car-art-detailing",
+  "name": "Car Art Detailing",
+  "shortName": "Car Art",
+  "kind": "detailing",
+  "tagline": "Lider ochrony lakieru w Poznaniu – folie PPF, powłoki ceramiczne, renowacja",
+  "description": "Car Art Detailing to studio w Poznaniu, które od 2012 roku dba o samochody, motocykle, łodzie i wiele innych pojazdów. Od 2018 roku działamy w kompleksie PIXEL przy ul. Grunwaldzkiej 184 – jednym z największych centrów odnowy i ochrony lakieru w Wielkopolsce. Jesteśmy głównym akredytowanym partnerem Nano Ceramic Protect® i głównym dostawcą folii ochronnych CarbonQ Poland. Wycena jest bezpłatna, a na czas usługi dajemy auto zastępcze.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#9AA0A6",
+  "contacts": {
+    "phone": "+48 535 221 888",
+    "address": "ul. Grunwaldzka 184, PIXEL V, piętro -1, 60-166 Poznań",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Grunwaldzka%20184%2C%2060-166%20Pozna%C5%84",
+    "email": "biuro@carartdetailing.pl",
+    "instagram": "carartdetailing",
+    "facebook": "CarArtDetailing"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 1440,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 60
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "ppf-bikini",
+      "name": "Folia PPF – pakiet „bikini”",
+      "category": "Folie PPF",
+      "description": "Częściowe pokrycie elementów przodu pojazdu. Folia 180 mikronów z samoregeneracją, 10 lat gwarancji producenta. Bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full-front",
+      "name": "Folia PPF – pakiet „full front”",
+      "category": "Folie PPF",
+      "description": "Cały przód do wysokości lusterek. Wykończenie: połysk, mat, carbon, perła, czarny mat lub piano black. Bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full-body",
+      "name": "Folia PPF – pakiet „full body”",
+      "category": "Folie PPF",
+      "description": "Cały pojazd folią ochronną CarbonQ. Bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-wnetrze",
+      "name": "Folia PPF – dekory, ekrany i progi",
+      "category": "Folie PPF",
+      "description": "Wykrojniki do zabezpieczenia dekorów wnętrza, ekranów dotykowych i progów. Bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szyby",
+      "name": "Przyciemnianie szyb",
+      "category": "Folie PPF",
+      "description": "Przepuszczalność światła od 2 do 90% w zależności od materiału. Bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika",
+      "name": "Powłoka ceramiczna Nano Ceramic Protect",
+      "category": "Lakier i powłoki",
+      "description": "Ochrona lakieru na wybrany okres od 2 do ponad 5 lat, z indywidualnym certyfikatem z numerem seryjnym. Opcje dodatkowe: felgi, szyby i wnętrze.",
+      "price": 1690,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-1",
+      "name": "Korekta jednoetapowa (polerowanie)",
+      "category": "Lakier i powłoki",
+      "description": "Usuwa niewielkie defekty, nadaje wysoki połysk i podkreśla głębię koloru. Cena netto.",
+      "price": 900,
+      "priceFrom": true,
+      "durationMinutes": 720,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-2",
+      "name": "Dwuetapowa renowacja lakieru",
+      "category": "Lakier i powłoki",
+      "description": "Usuwa głębsze zarysowania i ślady po myjniach szczotkowych. Cena netto, zależna od stanu lakieru i wielkości auta.",
+      "price": 1200,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "myjnia",
+      "name": "Myjnia Premium",
+      "category": "Detailing",
+      "description": "Wieloetapowe bezpieczne mycie metodą „na dwa wiadra” z odkurzaniem i myciem szyb bez smug. Bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "nadwozie",
+      "name": "Detailing nadwozia (dekontaminacja)",
+      "category": "Detailing",
+      "description": "Chemiczne usunięcie osadów drogowych, mineralnych, organicznych i lotnej rdzy, także z ościeży drzwi. Bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze",
+      "name": "Detailing wnętrza",
+      "category": "Detailing",
+      "description": "Nawiewy, schowki, tworzywa, bagażnik, deska – dokładnie oczyszczone i zakonserwowane. Bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pranie",
+      "name": "Pranie tapicerki i konserwacja skór",
+      "category": "Detailing",
+      "description": "Materiał, skóra, alcantara i welur, także podsufitka i pasy. Skórę kończymy matową konserwacją. Bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "dekory",
+      "name": "Renowacja dekorów wnętrza",
+      "category": "Detailing",
+      "description": "Polerowanie zniszczonych i zarysowanych listew lakierowanych. Bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Ozonowanie wnętrza",
+      "category": "Detailing",
+      "description": "Kabina wolna od alergenów, drobnoustrojów i zapachów. Bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "sprzedaz",
+      "name": "Przygotowanie auta do sprzedaży z sesją zdjęciową",
+      "category": "Detailing",
+      "description": "Dobór usług poprawiających wygląd auta niewielkim kosztem, na koniec zdjęcia do ogłoszenia. Bezpłatna wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pdr",
+      "name": "Usuwanie wgnieceń metodą PDR",
+      "category": "Naprawy",
+      "description": "Bez lakierowania: szkody parkingowe, gradobicie, drobne wgniecenia. 150–450 zł netto za pojedyncze miejsce naprawy.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora",
+      "name": "Renowacja tapicerki skórzanej",
+      "category": "Naprawy",
+      "description": "Naprawa przetarć i odbarwień foteli i kierownicy. Pojedyncze uszkodzenie (np. oparcie fotela) 250–450 zł netto.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "car",
+      "title": "Auto zastępcze i door to door",
+      "text": "Przyjedziemy po Twój pojazd i damy auto zastępcze na czas usługi."
+    },
+    {
+      "icon": "medal",
+      "title": "Od 2012 roku",
+      "text": "Główny akredytowany partner Nano Ceramic Protect® i dostawca folii CarbonQ Poland."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Bezpłatna wycena",
+      "text": "Transparentnie – każdą usługę wyceniamy przed wykonaniem, nieodpłatnie."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-lamborghini.webp",
+      "caption": "Lamborghini Urus i Huracán"
+    },
+    {
+      "image": "images/work-bmw-m.webp",
+      "caption": "BMW M3 i M5"
+    },
+    {
+      "image": "images/work-panamera-g63.webp",
+      "caption": "Porsche Panamera i Mercedes-AMG G 63"
+    },
+    {
+      "image": "images/work-amg-gt.webp",
+      "caption": "Mercedes-AMG GT"
+    },
+    {
+      "image": "images/work-g63.webp",
+      "caption": "Mercedes-AMG G 63"
+    },
+    {
+      "image": "images/work-fiat-126p.webp",
+      "caption": "Fiat 126p"
+    },
+    {
+      "image": "images/work-peugeot.webp",
+      "caption": "Peugeot 2008"
+    },
+    {
+      "image": "images/work-ppf.webp",
+      "caption": "Montaż folii ochronnej PPF"
+    },
+    {
+      "image": "images/work-ceramika.webp",
+      "caption": "Aplikacja powłoki ceramicznej"
+    },
+    {
+      "image": "images/work-korekta.webp",
+      "caption": "Korekta lakieru w naszym studiu"
+    },
+    {
+      "image": "images/work-skora.webp",
+      "caption": "Renowacja tapicerki skórzanej"
+    },
+    {
+      "image": "images/work-mycie.webp",
+      "caption": "Myjnia Premium – Porsche Panamera"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ile kosztuje powłoka ceramiczna?",
+      "answer": "Od 1690 zł. Końcowa cena zależy od wariantu (od 2 do ponad 5 lat ochrony) i opcji dodatkowych: powłoki na felgi, szyby oraz wnętrze. Otrzymasz indywidualny certyfikat z numerem seryjnym producenta.",
+      "keywords": [
+        "ceramik",
+        "powlok",
+        "certyfikat"
+      ]
+    },
+    {
+      "question": "Jaką gwarancję ma folia PPF?",
+      "answer": "Producent udziela 10 lat gwarancji na pęknięcia, pęcherze powietrza i żółknięcie wynikające z wad materiału. Prawidłowo użytkowana folia działa dużo dłużej.",
+      "keywords": [
+        "gwarancj",
+        "ile wytrzym",
+        "ppf",
+        "folia"
+      ]
+    },
+    {
+      "question": "Czy dostanę auto zastępcze?",
+      "answer": "Tak – na czas usługi zapewniamy samochód zastępczy, a w ramach door to door przyjedziemy też po Twój pojazd.",
+      "keywords": [
+        "zastepcz",
+        "door",
+        "odbior",
+        "przyjedzie"
+      ]
+    },
+    {
+      "question": "Czy robicie usługi w salonach?",
+      "answer": "Tak, jako lider ochrony lakieru wykonujemy usługi w wielu salonach samochodowych w Polsce – możesz zamówić zabezpieczenie jeszcze przed odbiorem auta.",
+      "keywords": [
+        "salon",
+        "przed odbiorem",
+        "nowe auto"
+      ]
+    },
+    {
+      "question": "Gdzie was znajdę?",
+      "answer": "Poznań, ul. Grunwaldzka 184, kompleks PIXEL V, piętro -1. Otwarte pn.–pt. 8:00–18:00.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "grunwaldzk",
+        "pixel",
+        "dojazd",
+        "otwart",
+        "godzin"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
