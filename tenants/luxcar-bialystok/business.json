@@ -1,0 +1,515 @@
+{
+  "slug": "luxcar-bialystok",
+  "name": "Luxcar Auto Detailing",
+  "shortName": "Luxcar",
+  "kind": "detailing",
+  "tagline": "Auto Detailing Roku w woj. podlaskim – powłoki, korekta lakieru, PPF w Białymstoku",
+  "description": "Luxcar to studio auto kosmetyki w Białymstoku, które powstało z pasji do motoryzacji i dbania o każdy szczegół. Jako jedyni na Podlasiu mamy akredytację powłok ceramicznych DELIXIRUM i samoregenerujących powłok elastomerowych Titan Coatings. Ponad 800 aut zabezpieczonych powłokami, 1300 korekt lakieru i 3100 wnętrz po metamorfozie. Auto Detailing Roku w woj. podlaskim w latach 2022, 2024, 2025 i 2026 (plebiscyt Mistrzowie Motoryzacji ORLEN OIL).",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#B8913A",
+  "contacts": {
+    "phone": "+48 722 143 568",
+    "address": "ul. Techniczna 8/2, 15-602 Białystok",
+    "mapUrl": "https://g.page/LuxcarBialystok",
+    "email": "luxcarbialystok@gmail.com",
+    "instagram": "luxcarautodetailingbialystok",
+    "facebook": "luxcarautodetailingbialystok"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "15:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 1440,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "ceramika-5",
+      "name": "Powłoka ceramiczna na lakier 5 lat",
+      "category": "Powłoki i korekta",
+      "description": "Cena promocyjna (standardowo 2999 zł). W cenie gratisy o wartości 1200 zł: powłoka hydrofobowa na szyby, zabezpieczenie skór/materiałów i folia PPF na wnęki drzwi.",
+      "price": 2499,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-7",
+      "name": "Powłoka ceramiczna na lakier 7 lat",
+      "category": "Powłoki i korekta",
+      "description": "Akredytowana powłoka ceramiczna DELIXIRUM.",
+      "price": 2999,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "elastomer",
+      "name": "Powłoka elastomerowa Titan Coatings (10 lat)",
+      "category": "Powłoki i korekta",
+      "description": "TITAN PX10 + 2 × VULCAN TX155 na całe auto, gwarancja 10 lat. Samoregeneracja rys pod wpływem temperatury. Cena promocyjna (standardowo 7000 zł).",
+      "price": 6000,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "felgi",
+      "name": "Powłoka ceramiczna na felgi (2 lata)",
+      "category": "Powłoki i korekta",
+      "description": "499 zł jednostronnie, 699 zł dwustronnie.",
+      "price": 499,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wosk-6",
+      "name": "Wosk Swizzvax (6 miesięcy)",
+      "category": "Powłoki i korekta",
+      "description": "Wosk na lakier z trwałością 6 miesięcy.",
+      "price": 499,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wosk-12",
+      "name": "Wosk Swizzvax (12 miesięcy)",
+      "category": "Powłoki i korekta",
+      "description": "Wosk na lakier z trwałością 12 miesięcy.",
+      "price": 899,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-1",
+      "name": "Korekta lakieru jednoetapowa",
+      "category": "Powłoki i korekta",
+      "description": "Auta prawie nowe do 2 lat ok. 999 zł, używane od 2 lat ok. 1499 zł. Przy nowych autach pod powłokę – 0 zł. Wycena po oględzinach umytego auta.",
+      "price": 999,
+      "priceFrom": true,
+      "durationMinutes": 960,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-2",
+      "name": "Korekta lakieru 2-etapowa",
+      "category": "Powłoki i korekta",
+      "description": "Dla znacznie zniszczonych lakierów i aut pod powłoki ceramiczne.",
+      "price": 2499,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-3",
+      "name": "Korekta lakieru 3-etapowa",
+      "category": "Powłoki i korekta",
+      "description": "Dla bardzo zniszczonych lakierów – usuwa do 99% zarysowań. Cena 3999–4999 zł.",
+      "price": 3999,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "serwis-ceramiki",
+      "name": "Serwis powłoki ceramicznej",
+      "category": "Powłoki i korekta",
+      "description": "Serwis powłok ceramicznych, kwarcowych i elastomerowych. Opcjonalnie usuwanie smoły i deironizacja – po 99 zł.",
+      "price": 499,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-podstawowy",
+      "name": "Folia PPF – pakiet podstawowy",
+      "category": "Folia PPF i szyby",
+      "description": "Maska, zderzak przedni, lampy, błotniki, lusterka, słupki A i B, czołowa część dachu. Ok. 2 dni. Gwarancja do 10 lat, auto zastępcze MINI ONE gratis.",
+      "price": 5000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-calosc",
+      "name": "Folia PPF – całe auto",
+      "category": "Folia PPF i szyby",
+      "description": "Wszystkie lakierowane elementy karoserii. Ok. 5 dni. Auto zastępcze MINI ONE gratis.",
+      "price": 14000,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-lampy",
+      "name": "Folia PPF na lampy (2 szt.)",
+      "category": "Folia PPF i szyby",
+      "description": "Zabezpieczenie 2 przednich lamp folią PPF 190 mikronów.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "przyciemnianie",
+      "name": "Przyciemnianie szyb",
+      "category": "Folia PPF i szyby",
+      "description": "Folie ceramiczne z odbijaniem UV i gwarancją trwałości kleju. 3 szyby 699 zł, 5 szyb 799 zł, 7 szyb 899 zł; busy – wycena indywidualna.",
+      "price": 699,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mini",
+      "name": "Pranie tapicerki – Pakiet Mini",
+      "category": "Wnętrze",
+      "description": "Odkurzanie całego wnętrza z bagażnikiem, pranie tapicerki siedzeń, czyszczenie i impregnacja plastików, mycie szyb od środka, czyszczenie dywaników, impregnacja uszczelek, ozonowanie. Dotyczy też tapicerki skórzanej (czyszczenie skór). SUV/VAN +99–199 zł.",
+      "price": 799,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "podstawowy",
+      "name": "Pranie tapicerki – Pakiet Podstawowy",
+      "category": "Wnętrze",
+      "description": "Pakiet Mini oraz ręczne czyszczenie podsufitki i wnęk drzwiowych. SUV/VAN +99–199 zł.",
+      "price": 999,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "rozszerzony",
+      "name": "Pranie tapicerki – Pakiet Rozszerzony",
+      "category": "Wnętrze",
+      "description": "Pakiet Podstawowy oraz pranie wykładziny podłogowej i demontaż foteli przednich w razie potrzeby. Pakiet PREMIUM z demontażem plastików i dekorów +499 zł.",
+      "price": 1199,
+      "priceFrom": false,
+      "durationMinutes": 600,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora-ceramika",
+      "name": "Powłoka ceramiczna na skóry (2 lata)",
+      "category": "Wnętrze",
+      "description": "Zabezpieczenie skórzanej tapicerki. Powłoka hydrofobowa 1-letnia – 600 zł.",
+      "price": 1000,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "materialy-hydrofob",
+      "name": "Powłoka hydrofobowa na siedzenia materiałowe (2 lata)",
+      "category": "Wnętrze",
+      "description": "Zabezpieczenie siedzeń materiałowych. Wersja 1-letnia – 500 zł.",
+      "price": 800,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie",
+      "name": "Mycie detailingowe",
+      "category": "Ochrona i pakiety",
+      "description": "Cena zależna od wielkości i zabrudzenia auta. Przy korekcie lakieru – gratis. Glinkowanie i deironizacja – po 99 zł.",
+      "price": 199,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "podwozie",
+      "name": "Konserwacja podwozia Waxoyl – nowe auto",
+      "category": "Ochrona i pakiety",
+      "description": "Cena promocyjna do 31.12.2026 (standardowo 4499 zł) dla aut do roku i ok. 10 tys. km. Gratis folia PPF na wnęki drzwi i powłoka hydrofobowa na szyby.",
+      "price": 3499,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "slub",
+      "name": "Przygotowanie auta do ślubu",
+      "category": "Ochrona i pakiety",
+      "description": "Mycie, odtłuszczenie lakieru, powłoka hydrofobowa na szyby i lakier + płynne szkło, montaż tablic i ozdób ślubnych. Gratis niespodzianka dla Państwa Młodych.",
+      "price": 1399,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "weryfikacja",
+      "name": "Weryfikacja lakieru przed zakupem",
+      "category": "Ochrona i pakiety",
+      "description": "Pomiar grubości lakieru z raportem i zdjęciami w 20–30 minut. W studiu 0 zł, z dojazdem na terenie Białegostoku 150 zł.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wygluszenie",
+      "name": "Wygłuszanie wnętrza",
+      "category": "Ochrona i pakiety",
+      "description": "Drzwi 599–899 zł/szt., nadkole 599–899 zł/szt., podłoga 1499–1999 zł, maska 599–799 zł, klapa bagażnika 599 zł. Dokładna wycena po obejrzeniu auta.",
+      "price": 599,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Auto Detailing Roku",
+      "text": "W woj. podlaskim w latach 2022, 2024, 2025 i 2026 – plebiscyt Mistrzowie Motoryzacji ORLEN OIL."
+    },
+    {
+      "icon": "shield",
+      "title": "Jedyni na Podlasiu",
+      "text": "Akredytacja powłok DELIXIRUM i elastomerów Titan Coatings."
+    },
+    {
+      "icon": "car",
+      "title": "Door to door gratis",
+      "text": "Odbiór auta na terenie Białegostoku +10 km bezpłatnie, także z salonu."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-a6.webp",
+      "caption": "Audi A6"
+    },
+    {
+      "image": "images/work-astra-vxr.webp",
+      "caption": "Vauxhall Astra VXR – powłoka Delixirum Gold"
+    },
+    {
+      "image": "images/work-bmw6.webp",
+      "caption": "BMW serii 6"
+    },
+    {
+      "image": "images/work-cx5.webp",
+      "caption": "Mazda CX-5"
+    },
+    {
+      "image": "images/work-stonic.webp",
+      "caption": "Kia Stonic"
+    },
+    {
+      "image": "images/work-rav4.webp",
+      "caption": "Toyota RAV4"
+    },
+    {
+      "image": "images/work-ceed.webp",
+      "caption": "Kia Ceed"
+    },
+    {
+      "image": "images/work-bmw6-gc.webp",
+      "caption": "BMW serii 6 Gran Coupé"
+    },
+    {
+      "image": "images/work-superb.webp",
+      "caption": "Škoda Superb"
+    },
+    {
+      "image": "images/work-corolla.webp",
+      "caption": "Toyota Corolla"
+    },
+    {
+      "image": "images/work-civic.webp",
+      "caption": "Honda Civic – połysk po korekcie"
+    },
+    {
+      "image": "images/work-nagroda.webp",
+      "caption": "Auto Detailing Roku – Plebiscyt Mistrzowie Motoryzacji"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Czy odbieracie auto?",
+      "answer": "Tak – door to door na terenie Białegostoku +10 km bezpłatnie (powyżej 20 km od siedziby płatne). Odbieramy też auto z salonu i sprawdzamy stan oraz grubość lakieru.",
+      "keywords": [
+        "odbier",
+        "door",
+        "dowoz",
+        "salon",
+        "odbior"
+      ]
+    },
+    {
+      "question": "Czym różni się powłoka elastomerowa od ceramicznej?",
+      "answer": "Powłoka elastomerowa jest dużo bardziej wytrzymała, pochłania uderzenia i sama regeneruje rysy pod wpływem temperatury. Ceramika wymaga regularnego serwisu co pół roku lub rok (ok. 400–500 zł).",
+      "keywords": [
+        "elastomer",
+        "roznic",
+        "ceramik",
+        "titan"
+      ]
+    },
+    {
+      "question": "Ile trwa wycena?",
+      "answer": "Bezpłatna wycena auta zajmuje 15 minut. Auta wyceniamy po oględzinach – przed przyjazdem prosimy dokładnie umyć auto.",
+      "keywords": [
+        "wycen",
+        "ogledzin",
+        "ile trwa",
+        "bezplat"
+      ]
+    },
+    {
+      "question": "Czy dostanę auto zastępcze?",
+      "answer": "Tak, przy oklejaniu folią PPF i przyciemnianiu szyb odbierzesz bezpłatnie samochód zastępczy MINI ONE na czas usługi.",
+      "keywords": [
+        "zastepcz",
+        "mini one",
+        "samochod zastep"
+      ]
+    },
+    {
+      "question": "Kiedy można dzwonić?",
+      "answer": "Zadzwoń codziennie 8–22: +48 722 143 568. Studio: ul. Techniczna 8/2, Białystok.",
+      "keywords": [
+        "dzwonic",
+        "telefon",
+        "kiedy",
+        "godzin",
+        "gdzie",
+        "adres",
+        "techniczn"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
