@@ -1,0 +1,509 @@
+{
+  "slug": "lowcy-blasku",
+  "name": "Łowcy Blasku",
+  "shortName": "Łowcy Blasku",
+  "kind": "detailing",
+  "tagline": "Studio Detailingu & Car Spa w Łodzi – my nie myjemy aut, my je dopieszczamy",
+  "description": "Łowcy Blasku Studio Detailingu & Auto Spa to wieloetapowa, metodyczna i świadoma pielęgnacja całego pojazdu lub jego poszczególnych elementów. Doczyścimy, zregenerujemy i zabezpieczymy każdy element Twojego wozu, by wyglądał lepiej niż w dniu zakupu. W Łodzi jesteśmy pierwszymi i jedynymi instalatorami powłok ceramicznych Opti Coat Pro, a jako jedni z nielicznych w Polsce nakładamy je metodą natryskową. Pracujemy z autami nowymi, używanymi, flotowymi i zabytkowymi.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#2E5AAC",
+  "contacts": {
+    "phone": "+48 504 810 216",
+    "address": "ul. Kilińskiego 207, 93-106 Łódź",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Kili%C5%84skiego%20207%2C%2093-106%20%C5%81%C3%B3d%C5%BA",
+    "email": "biuro@lowcyblasku.pl",
+    "instagram": "lowcyblasku",
+    "facebook": "lowcyblasku"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 1440,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "mycie",
+      "name": "Detailingowe mycie",
+      "category": "Auto detailing",
+      "description": "Czas usługi: 2–4 h.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze",
+      "name": "Detailing wnętrza",
+      "category": "Auto detailing",
+      "description": "Z pędzelkiem w ręku czyścimy każdy element – od dywaników i uszczelek po tapicerkę i podsufitkę. Czas usługi: 1–2 dni.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "woskowanie",
+      "name": "Woskowanie",
+      "category": "Auto detailing",
+      "description": "Czas usługi: 2 h.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pranie",
+      "name": "Pranie tapicerki",
+      "category": "Auto detailing",
+      "description": "Czas usługi: 1–2 dni.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "plastiki",
+      "name": "Czyszczenie i konserwacja plastików",
+      "category": "Auto detailing",
+      "description": "Pędzelkami, patyczkami i wykałaczkami, na koniec odżywczy i antystatyczny dressing. Czas usługi: 3–5 h.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "renowacja-1",
+      "name": "Renowacja I step",
+      "category": "Renowacja lakieru",
+      "description": "Jednoetapowa korekta: odświeżona powłoka, znikają mikrorysy. Czas usługi: 1–2 dni.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "renowacja-2",
+      "name": "Renowacja II steps",
+      "category": "Renowacja lakieru",
+      "description": "Dwuetapowa korekta: usuwamy 80–90% rys. Czas usługi: 2–3 dni.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pelna-korekta",
+      "name": "Pełna korekta lakieru",
+      "category": "Renowacja lakieru",
+      "description": "Trzyetapowa korekta: znika do 100% zarysowań. Czas usługi: 3–4 dni.",
+      "price": 1300,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "gloss-coat",
+      "name": "Powłoka Gloss Coat",
+      "category": "Powłoki Opti Coat",
+      "description": "Efekt szkła i głębia koloru, hydrofobowa i odporna na chemię. Gwarancja 2 lata. Czas usługi: 1–2 dni.",
+      "price": 2000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "opti-coat",
+      "name": "Powłoka Opti Coat Pro+",
+      "category": "Powłoki Opti Coat",
+      "description": "Najwyższa ochrona przed chemią i najlepsza hydrofobowość, łączy się z lakierem na poziomie molekularnym. Gwarancja 5 lat. Czas usługi: 1–2 dni.",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "natrysk",
+      "name": "Opti Coat Pro+ metodą natryskową",
+      "category": "Powłoki Opti Coat",
+      "description": "Wersja de luxe – pokrywa równomiernie 100% powierzchni lakieru, najlepsza ochrona i najmocniejszy blask. Gwarancja 5 lat. Czas usługi: 1–2 dni.",
+      "price": 3800,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "front-bikini",
+      "name": "Folia ochronna – Front Bikini",
+      "category": "Folie ochronne",
+      "description": "Przednia część maski i błotników, przedni zderzak, lusterka i przednie lampy. Folia samoregenerująca Llumar.",
+      "price": 3500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "full-front",
+      "name": "Folia ochronna – Full Front",
+      "category": "Folie ochronne",
+      "description": "Cała maska, zderzak, nadkola, lampy i lusterka. Folia samoregenerująca Llumar.",
+      "price": 7500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "full-car",
+      "name": "Folia ochronna – Full Car",
+      "category": "Folie ochronne",
+      "description": "Mocna bariera dla uszkodzeń całego samochodu. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "zderzak-tyl",
+      "name": "Folia ochronna – zderzak tylny",
+      "category": "Folie ochronne",
+      "description": "Ochrona przed otarciami parkingowymi.",
+      "price": 1490,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "lampy",
+      "name": "Folia ochronna – lampy",
+      "category": "Folie ochronne",
+      "description": "Ochrona przed odpryskami i matowieniem reflektorów.",
+      "price": 290,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "klamki",
+      "name": "Folia ochronna – klamki (komplet)",
+      "category": "Folie ochronne",
+      "description": "Ochrona wnęk klamek przed zarysowaniem.",
+      "price": 290,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "progi",
+      "name": "Folia ochronna – progi wewnętrzne",
+      "category": "Folie ochronne",
+      "description": "Ochrona przed uszkodzeniami przy wsiadaniu i transporcie.",
+      "price": 390,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pielegnacja-skory",
+      "name": "Pielęgnacja skóry",
+      "category": "Skóra i dodatki",
+      "description": "Czyszczenie i odżywianie skórzanej tapicerki. Czas usługi: 2–4 h.",
+      "price": 200,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "regeneracja-skory",
+      "name": "Regeneracja skóry",
+      "category": "Skóra i dodatki",
+      "description": "Zadrapania, przetarcia, a nawet ubytki w licu znikną. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "przyciemnianie",
+      "name": "Przyciemnianie szyb",
+      "category": "Skóra i dodatki",
+      "description": "Luksusowy look i ochrona wnętrza przed UV.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "lampy-renowacja",
+      "name": "Renowacja lamp",
+      "category": "Skóra i dodatki",
+      "description": "Reflektory bez rys, zmatowień i zażółceń.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wycieraczka",
+      "name": "Niewidzialna wycieraczka",
+      "category": "Skóra i dodatki",
+      "description": "Szyby same oczyszczają się z wody pod wpływem pędu powietrza.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "car",
+      "title": "Door to door",
+      "text": "Przyjeżdżamy po auto i odstawiamy je tam, gdzie wskażesz."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Bezpłatna ocena stanu",
+      "text": "Nie płacisz za oględziny, plan i wycenę. Bez ukrytych kosztów."
+    },
+    {
+      "icon": "medal",
+      "title": "Bonusy dla stałych klientów",
+      "text": "Pielęgnacja karoserii lub detailing wnętrza gratis."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-911.webp",
+      "caption": "Porsche 911"
+    },
+    {
+      "image": "images/work-190sl.webp",
+      "caption": "Mercedes-Benz 190 SL"
+    },
+    {
+      "image": "images/work-model-x.webp",
+      "caption": "Tesla Model X – powłoka ceramiczna metodą natryskową"
+    },
+    {
+      "image": "images/work-s-coupe.webp",
+      "caption": "Mercedes-Benz S Coupé – powłoka ceramiczna metodą natryskową"
+    },
+    {
+      "image": "images/work-718.webp",
+      "caption": "Porsche 718 Boxster – powłoka ceramiczna"
+    },
+    {
+      "image": "images/work-mustang.webp",
+      "caption": "Ford Mustang – powłoka ceramiczna"
+    },
+    {
+      "image": "images/work-klasa-e.webp",
+      "caption": "Mercedes-Benz klasy E – powłoka Gloss Coat"
+    },
+    {
+      "image": "images/work-ppf.webp",
+      "caption": "Oklejanie folią ochronną"
+    },
+    {
+      "image": "images/work-xc60.webp",
+      "caption": "Volvo XC60"
+    },
+    {
+      "image": "images/work-gla.webp",
+      "caption": "Mercedes-Benz GLA"
+    },
+    {
+      "image": "images/work-jeep-skora.webp",
+      "caption": "Czyszczenie i regeneracja skór – Jeep"
+    },
+    {
+      "image": "images/work-corvette-wnetrze.webp",
+      "caption": "Wnętrze Chevrolet Corvette"
+    },
+    {
+      "image": "images/work-lamborghini.webp",
+      "caption": "Detailing wnętrza Lamborghini"
+    },
+    {
+      "image": "images/work-wnetrze.webp",
+      "caption": "Detailing wnętrza w naszym studiu"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Czy ocena stanu auta jest płatna?",
+      "answer": "Nie – oględziny, plan i wycena działań są bezpłatne. Cena lub jej zakres są ustalone na wstępie, bez ukrytych kosztów.",
+      "keywords": [
+        "ocena",
+        "ogledzin",
+        "bezplat",
+        "wycen",
+        "ukryt"
+      ]
+    },
+    {
+      "question": "Czy odbieracie auto od klienta?",
+      "answer": "Tak, oferujemy usługę door to door – przyjeżdżamy po auto i odstawiamy je tam, gdzie wskażesz.",
+      "keywords": [
+        "door",
+        "odbier",
+        "przyjedzie",
+        "transport",
+        "odstaw"
+      ]
+    },
+    {
+      "question": "Gdzie jesteście i kiedy otwarte?",
+      "answer": "Studio w Łodzi: ul. Kilińskiego 207, poniedziałek–piątek 9:00–17:00 (możliwe indywidualne godziny). Filia w Zgierzu: ul. Sienkiewicza 20 – indywidualne godziny, zadzwoń lub napisz, żeby się umówić.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "zgierz",
+        "lodz",
+        "otwart",
+        "godzin",
+        "kilinsk"
+      ]
+    },
+    {
+      "question": "Jaką powłokę wybrać?",
+      "answer": "Gloss Coat (od 2000 zł, gwarancja 2 lata), Opti Coat Pro+ (od 3000 zł, 5 lat) albo Opti Coat Pro+ metodą natryskową (od 3800 zł, 5 lat) – pokrywa 100% lakieru, także trudno dostępne miejsca.",
+      "keywords": [
+        "jaka powlok",
+        "ktora powlok",
+        "opti coat",
+        "gloss",
+        "natrysk",
+        "wybrac"
+      ]
+    },
+    {
+      "question": "Prowadzicie szkolenia?",
+      "answer": "Tak – prowadzimy szkolenia z auto detailingu i aplikacji folii ochronnych PPF, także indywidualne.",
+      "keywords": [
+        "szkoleni",
+        "kurs",
+        "nauczyc"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
