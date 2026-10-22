@@ -1,0 +1,659 @@
+{
+  "slug": "car-detailing-agp",
+  "name": "Car Detailing AGP",
+  "shortName": "Car Detailing",
+  "kind": "detailing",
+  "tagline": "Studio detailingu w salonie Volkswagen Centrum Wrocław – ceramika, folie XPEL",
+  "description": "Oferujemy profesjonalne usługi w nowoczesnym studiu detailingowym na 1. piętrze salonu Volkswagen Centrum Wrocław przy al. Aleksandra Brücknera 54. Zabezpieczamy lakier powłokami ceramicznymi G’ZOX, KOCH i QJUTSU oraz folią ochronną XPEL ULTIMATE PLUS™, która jest samoregenerująca, przejrzysta i nie żółknie. Wykonujemy też korekty lakieru, zmianę koloru, dechroming, czyszczenie wnętrz i sesje zdjęciowe do ogłoszeń.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#E30613",
+  "contacts": {
+    "phone": "+48 71 773 93 69",
+    "address": "al. Aleksandra Brücknera 54, Wrocław (1. piętro salonu Volkswagen)",
+    "legalAddress": "Auto Group Polska Sp. z o.o., Wrocław",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Br%C3%BCcknera%2054%2C%20Wroc%C5%82aw",
+    "email": "cardetailing@centrumwroclaw.pl",
+    "instagram": "agp_cardetailing",
+    "facebook": "AutoGroupPolska"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "14:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 1440,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "wosk",
+      "name": "Twardy wosk GYEON (6 miesięcy)",
+      "category": "Powłoki i korekta",
+      "description": "Ochrona lakieru woskiem na 6 miesięcy.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "qjutsu-1",
+      "name": "Ceramika QJUTSU (1 rok)",
+      "category": "Powłoki i korekta",
+      "description": "Powłoka ceramiczna na rok. Przy autach używanych potrzebna jest korekta lakieru – wycena indywidualna.",
+      "price": 600,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "qjutsu-2",
+      "name": "Ceramika QJUTSU PRO (2 lata)",
+      "category": "Powłoki i korekta",
+      "description": "Powłoka ceramiczna na 2 lata. Hatchback / limuzyna i kombi / SUV / bus: od 1 200 / 1 400 / 1 600 / 1 800 zł. Przy autach używanych potrzebna jest korekta lakieru – wycena indywidualna.",
+      "price": 1200,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "gzox",
+      "name": "Ceramika G’ZOX (5 lat)",
+      "category": "Powłoki i korekta",
+      "description": "Powłoka ceramiczna na 5 lat. Hatchback / limuzyna i kombi / SUV / bus: od 3 600 / 3 800 / 4 000 / 4 200 zł.",
+      "price": 3600,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "koch",
+      "name": "Ceramika KOCH (4 lata)",
+      "category": "Powłoki i korekta",
+      "description": "Powłoka ceramiczna na 4 lata. Hatchback / limuzyna i kombi / SUV / bus: od 4 400 / 4 600 / 4 800 / 5 000 zł.",
+      "price": 4400,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "glaco",
+      "name": "Niewidzialna wycieraczka GLACO",
+      "category": "Powłoki i korekta",
+      "description": "Hydrofobowa powłoka na szyby.",
+      "price": 500,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "felgi",
+      "name": "Powłoka ceramiczna na felgi SOFT99 (4 szt.)",
+      "category": "Powłoki i korekta",
+      "description": "Zabezpieczenie 4 felg.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "serwis",
+      "name": "Serwis powłoki ceramicznej",
+      "category": "Powłoki i korekta",
+      "description": "250 zł dla klientów salonu, 500 zł dla klientów zewnętrznych. Podwójne mycie wstępne, mycie na dwa wiadra, odkurzanie wnętrza, mycie szyb i komory silnika, odżywka do powłok.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-1",
+      "name": "Jednoetapowa korekta lakieru",
+      "category": "Powłoki i korekta",
+      "description": " Hatchback / limuzyna i kombi / SUV / bus: od 1 000 / 1 200 / 1 400 / 1 600 zł.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 600,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-2",
+      "name": "Dwuetapowa korekta lakieru",
+      "category": "Powłoki i korekta",
+      "description": " Hatchback / limuzyna i kombi / SUV / bus: od 1 400 / 1 600 / 1 800 / 2 000 zł.",
+      "price": 1400,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-4",
+      "name": "Czteroetapowa korekta lakieru (matowienie)",
+      "category": "Powłoki i korekta",
+      "description": " Hatchback / limuzyna i kombi / SUV / bus: od 2 400 / 2 600 / 2 800 / 3 000 zł.",
+      "price": 2400,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "rysy",
+      "name": "Usuwanie głębokich rys",
+      "category": "Powłoki i korekta",
+      "description": "Cena od 250 zł za element.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-mini-mini",
+      "name": "Folia PPF XPEL – MINI MINI BIKINI",
+      "category": "Folie PPF i kolor",
+      "description": "1/3 maski i 1/3 błotników przednich.",
+      "price": 1800,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-mini",
+      "name": "Folia PPF XPEL – MINI BIKINI",
+      "category": "Folie PPF i kolor",
+      "description": "1/3 maski, 1/3 błotników i lusterka.",
+      "price": 2600,
+      "priceFrom": true,
+      "durationMinutes": 600,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-midi",
+      "name": "Folia PPF XPEL – MIDI BIKINI",
+      "category": "Folie PPF i kolor",
+      "description": "1/3 maski, 1/3 błotników, lusterka, słupki A i rant dachu.",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-maxi",
+      "name": "Folia PPF XPEL – MAXI BIKINI",
+      "category": "Folie PPF i kolor",
+      "description": "MIDI BIKINI oraz zderzak przedni.",
+      "price": 4000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full-front",
+      "name": "Folia PPF XPEL – FULL FRONT",
+      "category": "Folie PPF i kolor",
+      "description": "Cała maska, całe błotniki, cały zderzak, reflektory i przeciwmgielne, słupki A, rant dachu, lusterka.",
+      "price": 5500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full-body",
+      "name": "Folia PPF XPEL – FULL BODY",
+      "category": "Folie PPF i kolor",
+      "description": "Wszystkie zewnętrzne elementy karoserii.",
+      "price": 14000,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-wt",
+      "name": "Folia PPF – W&T",
+      "category": "Folie PPF i kolor",
+      "description": "Próg załadunkowy, progi wewnętrzne, ranty drzwi i wnęki klamek. Z reflektorami przód – od 1 800 zł.",
+      "price": 1600,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-interior",
+      "name": "Folia PPF – INTERIOR",
+      "category": "Folie PPF i kolor",
+      "description": "Wszystkie elementy piano black i ekran dotykowy.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-reflektory",
+      "name": "Folia PPF na reflektory",
+      "category": "Folie PPF i kolor",
+      "description": "Bezbarwna od 500 zł, przyciemniająca (trzy odcienie) od 600 zł.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "przyciemnianie",
+      "name": "Przyciemnianie szyb",
+      "category": "Folie PPF i kolor",
+      "description": "Przyciemnianie szyb folią.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "kolor-wylewane",
+      "name": "Zmiana koloru – folie wylewane",
+      "category": "Folie PPF i kolor",
+      "description": " Hatchback / limuzyna i kombi / SUV / bus: od 12 000 / 13 000 / 14 000 / 15 000 zł.",
+      "price": 12000,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "kolor-ppf",
+      "name": "Zmiana koloru – folie PPF (170 kolorów)",
+      "category": "Folie PPF i kolor",
+      "description": " Hatchback / limuzyna i kombi / SUV / bus: od 22 000 / 24 000 / 26 000 / 28 000 zł.",
+      "price": 22000,
+      "priceFrom": true,
+      "durationMinutes": 10080,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "dechroming",
+      "name": "Pełen dechroming",
+      "category": "Folie PPF i kolor",
+      "description": "Hatchback / limuzyna i kombi / SUV / bus: od 3 500 / 4 000 / 4 500 / 4 500 zł. Atrapa grilla lub listwy wokół szyb – od 1 000 zł.",
+      "price": 3500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie-detailingowe",
+      "name": "Mycie detailingowe",
+      "category": "Mycie i wnętrze",
+      "description": "Prewash, usuwanie owadów, mycie na dwa wiadra, felgi, pędzelkowanie plastików, odkurzanie wnętrza i bagażnika, szyby, komora silnika, wosk. Hatchback/limuzyna 600 zł, SUV/bus 750 zł.",
+      "price": 600,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie-podstawowe",
+      "name": "Mycie podstawowe – kompletne",
+      "category": "Mycie i wnętrze",
+      "description": "Aktywna piana, felgi, mycie na dwa wiadra, osuszanie, odkurzanie, plastiki, opony, szyba czołowa. Hatchback/limuzyna 400 zł, SUV/bus 500 zł.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pranie-foteli",
+      "name": "Czyszczenie wnętrza – pranie foteli",
+      "category": "Mycie i wnętrze",
+      "description": "Pranie foteli.",
+      "price": 600,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze-pelne",
+      "name": "Czyszczenie wnętrza – fotele, podsufitka, plastiki",
+      "category": "Mycie i wnętrze",
+      "description": "Pranie foteli, czyszczenie podsufitki i plastików.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "impregnacja-skory",
+      "name": "Impregnacja tapicerki skórzanej",
+      "category": "Mycie i wnętrze",
+      "description": "Impregnacja welurowej tapicerki od 400 zł.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "plastiki",
+      "name": "Impregnacja plastików",
+      "category": "Mycie i wnętrze",
+      "description": "Impregnat od 500 zł, ceramika od 600 zł, Onyx od 700 zł.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szyby",
+      "name": "Polerowanie szyb",
+      "category": "Inne",
+      "description": "Usuwanie rys i zmatowień szyb.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "zaprawki",
+      "name": "Zaprawka punktowa",
+      "category": "Inne",
+      "description": "Średnio od 100 zł.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pdr",
+      "name": "PDR – usuwanie wgnieceń",
+      "category": "Inne",
+      "description": "Wyceniane indywidualnie. Możliwa bezkosztowa naprawa gradobić przez ubezpieczalnię.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "sesja",
+      "name": "Sesja zdjęciowa do ogłoszenia",
+      "category": "Inne",
+      "description": "15–30 kadrów do ogłoszenia sprzedażowego.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "sprzedaz",
+      "name": "Przygotowanie auta do sprzedaży lub zwrotu",
+      "category": "Inne",
+      "description": "Cena ustalana indywidualnie.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "shield",
+      "title": "Folia XPEL ULTIMATE PLUS™",
+      "text": "Samoregenerująca, przejrzysta, odporna na przebarwienia i nie żółknie."
+    },
+    {
+      "icon": "car",
+      "title": "W salonie Volkswagen",
+      "text": "Nowoczesne studio na 1. piętrze Volkswagen Centrum Wrocław."
+    },
+    {
+      "icon": "credit-card",
+      "title": "Taniej dla klientów salonu",
+      "text": "Serwis powłoki ceramicznej 250 zł zamiast 500 zł."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-911.webp",
+      "caption": "Porsche 911 Carrera 4 GTS w naszym studiu"
+    },
+    {
+      "image": "images/work-rs3.webp",
+      "caption": "Audi RS3"
+    },
+    {
+      "image": "images/work-rsq8.webp",
+      "caption": "Audi RS Q8"
+    },
+    {
+      "image": "images/work-r8.webp",
+      "caption": "Audi R8"
+    },
+    {
+      "image": "images/work-r8-wnetrze.webp",
+      "caption": "Wnętrze Audi R8"
+    },
+    {
+      "image": "images/work-911-wnetrze.webp",
+      "caption": "Wnętrze Porsche 911"
+    },
+    {
+      "image": "images/work-skoda.webp",
+      "caption": "ŠKODA – reflektory i grill"
+    },
+    {
+      "image": "images/work-felgi.webp",
+      "caption": "Mycie felg"
+    },
+    {
+      "image": "images/work-skora.webp",
+      "caption": "Czyszczenie skórzanej tapicerki"
+    },
+    {
+      "image": "images/work-ppf.webp",
+      "caption": "Aplikacja folii ochronnej PPF"
+    },
+    {
+      "image": "images/work-silnik.webp",
+      "caption": "Komora silnika V10"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Czy ceny są brutto?",
+      "answer": "Tak, podane ceny są cenami brutto (robocizna + materiał). Zależą od modelu i wersji pojazdu – wiele usług ma cenę dla hatchbacka, limuzyny/kombi, SUV i busa.",
+      "keywords": [
+        "brutto",
+        "netto",
+        "vat",
+        "hatchback",
+        "suv",
+        "bus",
+        "od czego"
+      ]
+    },
+    {
+      "question": "Czy klienci salonu mają zniżkę?",
+      "answer": "Tak – serwis powłoki ceramicznej kosztuje 250 zł dla klientów salonu i 500 zł dla klientów zewnętrznych.",
+      "keywords": [
+        "klient salonu",
+        "znizk",
+        "rabat",
+        "taniej",
+        "zewnetrz"
+      ]
+    },
+    {
+      "question": "Czy przed ceramiką trzeba korygować lakier?",
+      "answer": "Przy autach używanych tak – korekta lakieru przygotowuje powierzchnię pod powłokę ceramiczną. Wyceniamy ją indywidualnie.",
+      "keywords": [
+        "przed ceramik",
+        "uzywan",
+        "przygotowan",
+        "korekt"
+      ]
+    },
+    {
+      "question": "Naprawiacie szkody po gradobiciu?",
+      "answer": "Tak, metodą PDR – możliwa jest bezkosztowa naprawa gradobić przez ubezpieczalnię.",
+      "keywords": [
+        "grad",
+        "pdr",
+        "wgniec",
+        "ubezpiecz"
+      ]
+    },
+    {
+      "question": "Gdzie jesteście?",
+      "answer": "Wrocław, al. Aleksandra Brücknera 54 – 1. piętro salonu Volkswagen Centrum Wrocław. Tel. +48 71 773 93 69.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "brucknera",
+        "salon",
+        "dojazd",
+        "pietro"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
