@@ -1,0 +1,573 @@
+{
+  "slug": "misc-detailing",
+  "name": "MISC Detailing",
+  "shortName": "MISC",
+  "kind": "detailing",
+  "tagline": "Studio autodetailingu w Warszawie-Ursusie – przemyślany proces ochrony i pielęgnacji",
+  "description": "Zapraszamy do naszego studia autodetailingu w warszawskiej dzielnicy Ursus, gdzie przywracamy pojazdom ich pierwotną świetność. Priorytetem jest dla nas perfekcja detali i luksusowa pielęgnacja pojazdów. Renowacja i detailing aut to nasza pasja od wielu lat – pracujemy na najlepszych produktach, w adekwatnych cenach. Współpracujemy też z salonami i komisami samochodowymi, także w systemie door to door.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#D7262E",
+  "contacts": {
+    "phone": "+48 579 988 628",
+    "address": "Aleje Jerozolimskie 236, 02-495 Warszawa",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Aleje%20Jerozolimskie%20236%2C%2002-495%20Warszawa",
+    "email": "kontakt@miscdetailing.com.pl",
+    "instagram": "misc_detailing",
+    "facebook": "miscdetailing"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "15:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "polerowanie-1",
+      "name": "Polerowanie jednoetapowe (odświeżenie lakieru)",
+      "category": "Lakier i powłoki",
+      "description": "Odświeżenie lakieru + twardy wosk, niewidzialna wycieraczka, woskowanie felg, mycie detailingowe karoserii i wnęk. Mały / średni / duży samochód: 900 / 1000 / 1100 zł.",
+      "price": 900,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "polerowanie-pelne",
+      "name": "Polerowanie wieloetapowe (pełna korekta lakieru)",
+      "category": "Lakier i powłoki",
+      "description": "Pełna korekta lakieru + twardy wosk, niewidzialna wycieraczka, woskowanie felg, mycie detailingowe karoserii i wnęk. Mały / średni / duży samochód: 1500 / 1800 / 2000 zł.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "zabezpieczenie",
+      "name": "Zabezpieczenie lakieru woskiem",
+      "category": "Lakier i powłoki",
+      "description": "Mycie detailingowe z oczyszczeniem lakieru z nalotów drogowych + mycie wnęk, twardy wosk, niewidzialna wycieraczka i woskowanie felg. Mały / średni / duży samochód: 450 / 550 / 650 zł.",
+      "price": 450,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pakiet-ceramika",
+      "name": "Pakiet powłok ceramicznych",
+      "category": "Lakier i powłoki",
+      "description": "Powłoka karoserii 5 lat, szyby 3 lata, felgi 3 lata, plastiki strukturalne do 2 lat + polerowanie jednoetapowe lakieru. Mały / średni / duży samochód: 3100 / 3300 / 3500 zł.",
+      "price": 3100,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "lampy",
+      "name": "Polerowanie lamp",
+      "category": "Lakier i powłoki",
+      "description": "Cena 180–260 zł.",
+      "price": 180,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szyba",
+      "name": "Polerowanie szyby",
+      "category": "Lakier i powłoki",
+      "description": "Usuwanie rys i zmatowień szyby.",
+      "price": 240,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "obtarcia",
+      "name": "Usuwanie punktowych obtarć",
+      "category": "Lakier i powłoki",
+      "description": "Punktowa korekta lakieru.",
+      "price": 50,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-zderzak",
+      "name": "Folia PPF – zderzak przedni + lampy",
+      "category": "Folie i wrapping",
+      "description": "Samoregenerująca folia PPF – bezbarwna, matowa lub przyciemniająca.",
+      "price": 1200,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full-front",
+      "name": "Folia PPF – Full Front",
+      "category": "Folie i wrapping",
+      "description": "Zderzak przedni, lampy przednie, maska, błotniki przednie, lusterka.",
+      "price": 4500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-cale",
+      "name": "Folia PPF – całe auto",
+      "category": "Folie i wrapping",
+      "description": "Samoregenerująca folia PPF na całe auto.",
+      "price": 10000,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-prog",
+      "name": "Folia PPF – próg załadunkowy",
+      "category": "Folie i wrapping",
+      "description": "Ochrona progu bagażnika.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-lampy-przod",
+      "name": "Folia na lampy przednie",
+      "category": "Folie i wrapping",
+      "description": "Bezbarwna lub przyciemniająca.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-lampy-tyl",
+      "name": "Folia na lampy tylne",
+      "category": "Folie i wrapping",
+      "description": "Bezbarwna lub przyciemniająca.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-klamki",
+      "name": "Folia PPF – wnęki klamek",
+      "category": "Folie i wrapping",
+      "description": "Ochrona wnęk klamek przed zarysowaniem.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "kolor",
+      "name": "Zmiana koloru – całe auto",
+      "category": "Folie i wrapping",
+      "description": "Cena zależna od wybranego producenta folii i wielkości auta. Wzory i inne – wycena indywidualna.",
+      "price": 6500,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "listwy",
+      "name": "Folia na listwy wokół szyb (dechroming)",
+      "category": "Folie i wrapping",
+      "description": "Zmiana koloru listew wokół szyb.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wneki-drzwi",
+      "name": "Zmiana koloru wnęk drzwiowych",
+      "category": "Folie i wrapping",
+      "description": "Oklejenie wnęk drzwiowych.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "przyciemnianie",
+      "name": "Przyciemnianie szyb",
+      "category": "Folie i wrapping",
+      "description": "Przyciemnianie szyb folią.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "quick",
+      "name": "Quick detailing wnętrza",
+      "category": "Wnętrze i skóra",
+      "description": "Odkurzanie podłogi, bagażnika i foteli, czyszczenie wszystkich plastików.",
+      "price": 120,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze",
+      "name": "Detailing wnętrza",
+      "category": "Wnętrze i skóra",
+      "description": "Pranie kompletu foteli lub czyszczenie i impregnacja skóry, pranie dywaników, szczotkowanie, odkurzanie podłogi i bagażnika, czyszczenie i konserwacja plastików.",
+      "price": 550,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze-pelne",
+      "name": "Pełny detailing wnętrza",
+      "category": "Wnętrze i skóra",
+      "description": "Z demontażem foteli: pranie foteli lub skóra, dywaniki, podłoga, bagażnik, podsufitka i wszystkie plastiki.",
+      "price": 900,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "fotel",
+      "name": "Renowacja całego fotela",
+      "category": "Wnętrze i skóra",
+      "description": "Renowacja skóry fotela.",
+      "price": 450,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "kierownica",
+      "name": "Renowacja kierownicy",
+      "category": "Wnętrze i skóra",
+      "description": "Renowacja skórzanej kierownicy.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "zaprawki",
+      "name": "Zaprawki lakiernicze",
+      "category": "Inne",
+      "description": "Punktowe zaprawki odprysków.",
+      "price": 70,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wgniecenia",
+      "name": "Usuwanie wgnieceń",
+      "category": "Inne",
+      "description": "Usuwanie wgnieceń bez lakierowania.",
+      "price": 80,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "rower",
+      "name": "Zabezpieczenie roweru",
+      "category": "Inne",
+      "description": "Aplikacja folii zabezpieczającej i powłoki ceramicznej.",
+      "price": 1000,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "motocykl",
+      "name": "Detailing motocykla",
+      "category": "Inne",
+      "description": "Mycie detailingowe, polerowanie lakieru i chromów, zestaw powłok ceramicznych.",
+      "price": 1200,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "sprzedaz",
+      "name": "Przygotowanie auta do sprzedaży",
+      "category": "Inne",
+      "description": "Detailing samochodu z myślą o korzystnej sprzedaży – wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "sparkle",
+      "title": "Perfekcja w każdym detalu",
+      "text": "Luksusowa pielęgnacja i najlepsze produkty."
+    },
+    {
+      "icon": "credit-card",
+      "title": "Adekwatne ceny",
+      "text": "Profesjonalne usługi w dobrych cenach – przejrzysty cennik."
+    },
+    {
+      "icon": "car",
+      "title": "Współpraca B2B",
+      "text": "Salony i komisy: door to door lub z dojazdem do Klienta."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-corvette.webp",
+      "caption": "Chevrolet Corvette C8"
+    },
+    {
+      "image": "images/work-cla45.webp",
+      "caption": "Mercedes-AMG CLA 45 S"
+    },
+    {
+      "image": "images/work-mercedes-fiolet.webp",
+      "caption": "Mercedes-Benz"
+    },
+    {
+      "image": "images/work-cla.webp",
+      "caption": "Mercedes-AMG CLA"
+    },
+    {
+      "image": "images/work-bmw-m-zielone.webp",
+      "caption": "BMW M"
+    },
+    {
+      "image": "images/work-bmw-m-niebieskie.webp",
+      "caption": "BMW M"
+    },
+    {
+      "image": "images/work-defender.webp",
+      "caption": "Land Rover Defender"
+    },
+    {
+      "image": "images/work-911.webp",
+      "caption": "Porsche 911"
+    },
+    {
+      "image": "images/work-911-wnetrze.webp",
+      "caption": "Wnętrze Porsche 911"
+    },
+    {
+      "image": "images/work-stinger.webp",
+      "caption": "Kia Stinger"
+    },
+    {
+      "image": "images/work-bmw7.webp",
+      "caption": "BMW serii 7"
+    },
+    {
+      "image": "images/work-bmw1.webp",
+      "caption": "BMW serii 1"
+    },
+    {
+      "image": "images/work-gr-yaris.webp",
+      "caption": "Toyota GR Yaris"
+    },
+    {
+      "image": "images/work-moto.webp",
+      "caption": "Detailing motocykla Yamaha Ténéré"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Od czego zależy cena?",
+      "answer": "Polerowanie, zabezpieczenie lakieru i pakiet ceramiczny mają trzy ceny – dla małego, średniego i dużego samochodu. Folie i wrapping zależą od producenta folii i wielkości auta.",
+      "keywords": [
+        "od czego",
+        "zalezy",
+        "maly",
+        "sredni",
+        "duzy",
+        "wielkos"
+      ]
+    },
+    {
+      "question": "Co zawiera pakiet powłok ceramicznych?",
+      "answer": "Powłokę karoserii o trwałości 5 lat, powłokę na szyby i felgi na 3 lata, powłokę na plastiki strukturalne do 2 lat oraz jednoetapowe polerowanie lakieru. Cena 3100–3500 zł.",
+      "keywords": [
+        "pakiet",
+        "ceramicz",
+        "zawiera",
+        "powlok"
+      ]
+    },
+    {
+      "question": "Współpracujecie z salonami i komisami?",
+      "answer": "Tak – pracujemy z salonami i komisami samochodowymi w systemie door to door lub z dojazdem do Klienta.",
+      "keywords": [
+        "salon",
+        "komis",
+        "b2b",
+        "door",
+        "firm"
+      ]
+    },
+    {
+      "question": "Robicie też motocykle i rowery?",
+      "answer": "Tak – detailing motocykla z powłokami ceramicznymi za 1200 zł i zabezpieczenie roweru folią i ceramiką za 1000 zł.",
+      "keywords": [
+        "motocykl",
+        "rower",
+        "motor"
+      ]
+    },
+    {
+      "question": "Gdzie was znajdę?",
+      "answer": "Warszawa-Ursus, Aleje Jerozolimskie 236. Otwarte pon.–pt. 9:00–18:00, sobota 9:00–15:00.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "jerozolimsk",
+        "ursus",
+        "otwart",
+        "godzin",
+        "sobot"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
