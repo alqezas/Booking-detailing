@@ -1,0 +1,524 @@
+{
+  "slug": "ms-detailing-studio",
+  "name": "Detailing Studio MS",
+  "shortName": "Studio MS",
+  "kind": "detailing",
+  "tagline": "Profesjonalna kosmetyka aut w Bydgoszczy – korekta lakieru, ceramika, PPF",
+  "description": "Detailing Studio MS przy ul. Ziemskiej 6 oferuje kompleksowe usługi detailingowe, przywracające Twojemu pojazdowi perfekcyjny wygląd i zapewniające długotrwałą ochronę. Wykonujemy polerowanie lakieru, kompleksowe czyszczenie wnętrz, renowację i naprawę skór oraz aplikację powłok ceramicznych i elastomerowych. Specjalizujemy się również w oklejaniu folią PPF, renowacji pojazdów i przygotowaniu auta do sprzedaży.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#E67E22",
+  "contacts": {
+    "phone": "+48 533 557 260",
+    "address": "ul. Ziemska 6, Bydgoszcz (obok salonu Toyota Jaworski)",
+    "mapUrl": "https://g.co/kgs/Vg9997M",
+    "email": "biuro@ms-clean.pl",
+    "instagram": "detailingstudiobydgoszcz",
+    "facebook": "mscleanbydgoszcz"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "14:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 240,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "fresh",
+      "name": "Pakiet FRESH",
+      "category": "Pakiety",
+      "description": "Mycie detailingowe karoserii, odkurzenie wnętrza, mycie szyb, nabłyszczenie opon i wosk syntetyczny. Cena 280–360 zł w zależności od wielkości i stanu auta.",
+      "price": 280,
+      "priceFrom": true,
+      "durationMinutes": 150,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "komfort",
+      "name": "Pakiet KOMFORT",
+      "category": "Pakiety",
+      "description": "Odkurzanie i czyszczenie plastików, czyszczenie trudno dostępnych miejsc tornadorem, pranie dywanów i tapicerki materiałowej lub skór, czyszczenie podsufitki, impregnacja plastików. Cena 650–950 zł w zależności od wielkości i stanu auta.",
+      "price": 650,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "shine",
+      "name": "Pakiet SHINE",
+      "category": "Pakiety",
+      "description": "Mycie, dekontaminacja i glinkowanie, 1-etapowa korekta lakieru, wosk premium, nabłyszczenie opon, pielęgnacja dodatków i końcówek tłumików. Cena 1050–1150 zł w zależności od wielkości i stanu auta.",
+      "price": 1050,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramic",
+      "name": "Pakiet CERAMIC",
+      "category": "Pakiety",
+      "description": "Mycie i dekontaminacja, 1-etapowa korekta lakieru, powłoka ceramiczna (2 lata), powłoka hydrofobowa na szyby. Cena 2100–2200 zł w zależności od wielkości i stanu auta.",
+      "price": 2100,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "e-coating",
+      "name": "Pakiet E-COATING",
+      "category": "Pakiety",
+      "description": "Mycie detailingowe, wieloetapowa korekta lakieru, powłoka elastomerowa (4 lata), powłoka hydrofobowa na szyby. Cena 3100–3300 zł w zależności od wielkości i stanu auta.",
+      "price": 3100,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "new-car",
+      "name": "Pakiet NEW CAR",
+      "category": "Pakiety",
+      "description": "Dla nowych aut: odświeżenie lakieru pastą CarPro Essence, powłoka elastomerowa (4 lata) na lakier i dodatki, powłoka hydrofobowa na szyby. Cena 2550–2650 zł w zależności od wielkości i stanu auta.",
+      "price": 2550,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie",
+      "name": "Mycie detailingowe karoserii",
+      "category": "Mycie i wnętrze",
+      "description": "Dokładne mycie detailingowe nadwozia.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "dekontaminacja",
+      "name": "Dekontaminacja lakieru",
+      "category": "Mycie i wnętrze",
+      "description": "Usunięcie zanieczyszczeń wbitych w lakier.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wosk",
+      "name": "Woskowanie syntetyczne",
+      "category": "Mycie i wnętrze",
+      "description": "Ochrona lakieru woskiem syntetycznym.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze-standard",
+      "name": "Czyszczenie wnętrza (standard)",
+      "category": "Mycie i wnętrze",
+      "description": "Podstawowe czyszczenie wnętrza auta.",
+      "price": 130,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze-premium",
+      "name": "Czyszczenie wnętrza (premium)",
+      "category": "Mycie i wnętrze",
+      "description": "Dokładniejsze czyszczenie wnętrza auta.",
+      "price": 180,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "tapicerka",
+      "name": "Pranie tapicerki materiałowej",
+      "category": "Mycie i wnętrze",
+      "description": "Pranie foteli i tapicerki materiałowej.",
+      "price": 330,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skory",
+      "name": "Pranie skór + konserwacja",
+      "category": "Mycie i wnętrze",
+      "description": "Czyszczenie i konserwacja skórzanej tapicerki.",
+      "price": 380,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "podsufitka",
+      "name": "Pranie podsufitki",
+      "category": "Mycie i wnętrze",
+      "description": "Czyszczenie podsufitki.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-1",
+      "name": "Korekta lakieru 1-etapowa",
+      "category": "Korekta i powłoki",
+      "description": "Jednoetapowe polerowanie lakieru, przywraca połysk.",
+      "price": 650,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-2",
+      "name": "Korekta lakieru 2-etapowa",
+      "category": "Korekta i powłoki",
+      "description": "Dwuetapowe polerowanie – usuwa więcej zarysowań i hologramów.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 720,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-pelna",
+      "name": "Pełna korekta lakieru",
+      "category": "Korekta i powłoki",
+      "description": "Wieloetapowa, pełna korekta lakieru.",
+      "price": 1800,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-2",
+      "name": "Powłoka ceramiczna 2 lata",
+      "category": "Korekta i powłoki",
+      "description": "Powłoka ceramiczna na lakier z trwałością 2 lata.",
+      "price": 1350,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-4",
+      "name": "Powłoka ceramiczna 4 lata",
+      "category": "Korekta i powłoki",
+      "description": "Powłoka ceramiczna na lakier z trwałością 4 lata.",
+      "price": 2350,
+      "priceFrom": true,
+      "durationMinutes": 720,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "felgi",
+      "name": "Ceramika na felgi (front)",
+      "category": "Korekta i powłoki",
+      "description": "Powłoka ceramiczna na przód felg.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Ozonowanie wnętrza",
+      "category": "Dodatki",
+      "description": "Usuwa zapachy i odświeża wnętrze.",
+      "price": 60,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wycieraczka",
+      "name": "Niewidzialna wycieraczka",
+      "category": "Dodatki",
+      "description": "Powłoka hydrofobowa na szybę.",
+      "price": 80,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "impregnacja-skor",
+      "name": "Impregnacja skór",
+      "category": "Dodatki",
+      "description": "Zabezpieczenie skórzanej tapicerki.",
+      "price": 100,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "plastiki-zew",
+      "name": "Konserwacja plastików zewnętrznych",
+      "category": "Dodatki",
+      "description": "Odświeżenie i ochrona zewnętrznych plastików.",
+      "price": 50,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Rabaty dla stałych klientów",
+      "text": "Wracasz do nas? Dostajesz lepszą cenę."
+    },
+    {
+      "icon": "car",
+      "title": "Door-to-door do 5 km",
+      "text": "Odbierzemy i odwieziemy auto za 50 zł."
+    },
+    {
+      "icon": "shield",
+      "title": "Współpraca z salonami",
+      "text": "Przygotowujemy auta dla salonów samochodowych – obok salonu Toyota Jaworski."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-arteon.webp",
+      "caption": "Volkswagen Arteon"
+    },
+    {
+      "image": "images/work-audi.webp",
+      "caption": "Audi"
+    },
+    {
+      "image": "images/work-mercedes-wnetrze.webp",
+      "caption": "Wnętrze Mercedes-Benz"
+    },
+    {
+      "image": "images/work-challenger.webp",
+      "caption": "Dodge Challenger"
+    },
+    {
+      "image": "images/work-volvo-wnetrze.webp",
+      "caption": "Wnętrze Volvo"
+    },
+    {
+      "image": "images/work-mustang.webp",
+      "caption": "Ford Mustang"
+    },
+    {
+      "image": "images/work-amg-wnetrze.webp",
+      "caption": "Wnętrze Mercedes-AMG"
+    },
+    {
+      "image": "images/work-defender.webp",
+      "caption": "Land Rover Defender"
+    },
+    {
+      "image": "images/work-mercedes.webp",
+      "caption": "Mercedes-Benz klasy A"
+    },
+    {
+      "image": "images/work-glc.webp",
+      "caption": "Mercedes-Benz GLC Coupé"
+    },
+    {
+      "image": "images/work-lakier.webp",
+      "caption": "Lakier po korekcie"
+    },
+    {
+      "image": "images/work-skora.webp",
+      "caption": "Skórzane wnętrze Mercedes-Benz"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Czym dokładnie się zajmujecie?",
+      "answer": "Specjalizujemy się w auto detailingu – kompleksowej pielęgnacji i renowacji pojazdów: korekta lakieru, powłoki ceramiczne, mycie detailingowe, pranie tapicerki, renowacja skór i przygotowanie auta do sprzedaży.",
+      "keywords": [
+        "czym",
+        "zajmujecie",
+        "co robicie"
+      ]
+    },
+    {
+      "question": "Czy pracujecie tylko z samochodami osobowymi?",
+      "answer": "Głównie, ale nie tylko. Pracujemy też z SUV-ami, autami luksusowymi, flotami firmowymi oraz – w wybranych przypadkach – z pojazdami użytkowymi.",
+      "keywords": [
+        "osobow",
+        "suv",
+        "flot",
+        "dostawcz",
+        "uzytkow"
+      ]
+    },
+    {
+      "question": "Czy odbieracie auto od klienta?",
+      "answer": "Tak, oferujemy usługę door-to-door do 5 km za 50 zł.",
+      "keywords": [
+        "odbier",
+        "door",
+        "dowoz",
+        "odwiez",
+        "przywiez"
+      ]
+    },
+    {
+      "question": "Czy macie rabaty?",
+      "answer": "Tak, stali klienci mogą liczyć na rabaty.",
+      "keywords": [
+        "rabat",
+        "znizk",
+        "promocj",
+        "stal"
+      ]
+    },
+    {
+      "question": "Czy używacie profesjonalnych kosmetyków?",
+      "answer": "Tak, pracujemy wyłącznie na markowych, sprawdzonych produktach i sprzęcie klasy premium – bezpiecznych dla lakieru, tapicerki i wszystkich powierzchni.",
+      "keywords": [
+        "kosmetyk",
+        "produkt",
+        "sprzet",
+        "chemi"
+      ]
+    },
+    {
+      "question": "Gdzie was znajdę?",
+      "answer": "Bydgoszcz, ul. Ziemska 6 – obok salonu Toyota Jaworski (ul. Jana Pawła II).",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "ziemsk",
+        "dojazd",
+        "toyota"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
