@@ -1,0 +1,528 @@
+{
+  "slug": "madness-detailing",
+  "name": "Madness Detailing",
+  "shortName": "Madness",
+  "kind": "detailing",
+  "tagline": "Studio detailingu w Warszawie – korekta lakieru, powłoki, czyszczenie wnętrz",
+  "description": "Madness Detailing to profesjonalne studio detailingowe tworzone przez młody, ambitny zespół kochający zarówno nową, jak i starą motoryzację. Przywracamy blask przez polerowanie samochodu, woskowanie auta i dokładne czyszczenie środka. Myjemy ręcznie, używając tylko profesjonalnych, bezpiecznych dla powierzchni samochodu środków. Indywidualne podejście daje Ci gwarancję 100% satysfakcji z wykonanej usługi.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#2A4EEF",
+  "contacts": {
+    "phone": "+48 505 131 613",
+    "address": "ul. Kazimierza Gierdziejewskiego 1, 02-495 Warszawa",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Kazimierza%20Gierdziejewskiego%201%2C%2002-495%20Warszawa",
+    "email": "biuro@madnessdetailing.pl",
+    "instagram": "_madness_detailing_",
+    "facebook": "madnessdetailing",
+    "tiktok": "madness_detailing"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "10:00",
+        "15:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 240,
+    "horizonDays": 45,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "mycie-premium",
+      "name": "Mycie PREMIUM",
+      "category": "Detailing zewnętrzny",
+      "description": "Ręczne mycie samochodu z użyciem najwyższej jakości środków. Kompakt (np. Renault Clio, Audi A1) 300 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) 350 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) 400 zł.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "detoks",
+      "name": "Mycie detailingowe DETOKS",
+      "category": "Detailing zewnętrzny",
+      "description": "Specjalna formuła usuwająca wszelkie zanieczyszczenia i osady, nadająca lakierowi niepowtarzalny blask. Kompakt (np. Renault Clio, Audi A1) 500 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) 600 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) 700 zł.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-1",
+      "name": "Jednoetapowa korekta lakieru",
+      "category": "Detailing zewnętrzny",
+      "description": "Usunięcie do 50% zarysowań lakieru. Kompakt (np. Renault Clio, Audi A1) 800 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) 900 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) 1000 zł.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-2",
+      "name": "Dwuetapowa korekta lakieru",
+      "category": "Detailing zewnętrzny",
+      "description": "Usunięcie do 75% zarysowań lakieru. Kompakt (np. Renault Clio, Audi A1) 1100 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) 1300 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) 1500 zł.",
+      "price": 1100,
+      "priceFrom": true,
+      "durationMinutes": 720,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-multi",
+      "name": "Wieloetapowa korekta lakieru",
+      "category": "Detailing zewnętrzny",
+      "description": "Usunięcie do 95% zarysowań lakieru. Wycena po oględzinach pojazdu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "dach",
+      "name": "Czyszczenie i impregnacja materiałowego dachu",
+      "category": "Detailing zewnętrzny",
+      "description": "Czysty i zaimpregnowany dach powłoką hydrofobową to kropka nad „i” dopełniająca mycie auta cabrio.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "quick",
+      "name": "Quick Detailing wnętrza",
+      "category": "Detailing wnętrza",
+      "description": "Szybkie wyczyszczenie wnętrza samochodu. Kompakt (np. Renault Clio, Audi A1) od 150 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) od 200 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) od 250 zł.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze",
+      "name": "Czyszczenie wnętrza",
+      "category": "Detailing wnętrza",
+      "description": "Szczegółowy detailing wnętrza samochodu. Kompakt (np. Renault Clio, Audi A1) od 450 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) od 550 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) od 750 zł.",
+      "price": 450,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pranie",
+      "name": "Pranie tapicerki materiałowej",
+      "category": "Detailing wnętrza",
+      "description": "Profesjonalne pranie tapicerki materiałowej. Kompakt (np. Renault Clio, Audi A1) 350 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) 600 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) 800 zł.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "impregnacja",
+      "name": "Impregnacja tapicerki materiałowej",
+      "category": "Detailing wnętrza",
+      "description": "Powłoka zabezpieczająca materiałową tapicerkę. Kompakt (np. Renault Clio, Audi A1) 150 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) 200 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) 250 zł.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skory",
+      "name": "Czyszczenie i impregnacja skór",
+      "category": "Detailing wnętrza",
+      "description": "Matowe i pachnące skóry w aucie to dopełnienie całości.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "powloka-2",
+      "name": "Powłoka ceramiczna (2 lata)",
+      "category": "Powłoki ochronne",
+      "description": "Chroni lakier przed brudem i zarysowaniami oraz wydobywa jego głębię. Kompakt (np. Renault Clio, Audi A1) 1000 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) 1300 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) 1600 zł.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "powloka-3",
+      "name": "Powłoka ceramiczna (3 lata)",
+      "category": "Powłoki ochronne",
+      "description": "Chroni lakier przed brudem i zarysowaniami oraz wydobywa jego głębię. Kompakt (np. Renault Clio, Audi A1) 1600 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) 1900 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) 2200 zł.",
+      "price": 1600,
+      "priceFrom": true,
+      "durationMinutes": 600,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "powloka-5",
+      "name": "Powłoka ceramiczna (5 lat)",
+      "category": "Powłoki ochronne",
+      "description": "Chroni lakier przed brudem i zarysowaniami oraz wydobywa jego głębię. Kompakt (np. Renault Clio, Audi A1) 1200 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) 1400 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) 1700 zł.",
+      "price": 1200,
+      "priceFrom": true,
+      "durationMinutes": 600,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "grafen-3",
+      "name": "Powłoka grafenowa (3 lata)",
+      "category": "Powłoki ochronne",
+      "description": "Powłoka grafenowa z 3-letnią trwałością. Kompakt (np. Renault Clio, Audi A1) 2600 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) 3000 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) 3400 zł.",
+      "price": 2600,
+      "priceFrom": true,
+      "durationMinutes": 720,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "elastomer-4",
+      "name": "Powłoka elastomerowa (4 lata)",
+      "category": "Powłoki ochronne",
+      "description": "Powłoka elastomerowa z 4-letnią trwałością. Kompakt (np. Renault Clio, Audi A1) 3300 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) 3600 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) 3900 zł.",
+      "price": 3300,
+      "priceFrom": true,
+      "durationMinutes": 720,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "felgi",
+      "name": "Powłoka ceramiczna na felgi",
+      "category": "Powłoki ochronne",
+      "description": "Zabezpieczone felgi to zawsze czyste felgi. Front felg 200 zł; w cenniku także wariant za 450 zł.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "relax",
+      "name": "Pakiet SPECJALNY RELAX",
+      "category": "Pakiety",
+      "description": "Mycie ręczne, woskowanie lakieru i aromaterapia wnętrza. Kompakt (np. Renault Clio, Audi A1) 450 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) 500 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) 600 zł.",
+      "price": 450,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "elite",
+      "name": "Pakiet SPECJALNY ELITE",
+      "category": "Pakiety",
+      "description": "Mycie detailingowe wewnętrzne i zewnętrzne, pranie lub czyszczenie tapicerki, powłoka ceramiczna 2-letnia, jednoetapowa korekta lakieru i ozonowanie wnętrza. Kompakt (np. Renault Clio, Audi A1) 2800 zł, sedan i kombi (np. Hyundai Tucson, Audi A6) 3000 zł, limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS) 3200 zł.",
+      "price": 2800,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wosk",
+      "name": "Twardy wosk na lakier z myciem",
+      "category": "Dodatki",
+      "description": "Wosk wydobywa głębię lakieru i nadaje mu hydrofobowość.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "demontaz-felg",
+      "name": "Demontaż felg",
+      "category": "Dodatki",
+      "description": "Dla dokładnego wyczyszczenia nadkoli oraz wewnętrznej strony felg.",
+      "price": 250,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "klima",
+      "name": "Klimatyzacja SPA",
+      "category": "Dodatki",
+      "description": "Ozonowanie wnętrza – usuwa nieprzyjemne zapachy.",
+      "price": 300,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szyby",
+      "name": "Powłoka hydrofobowa na wszystkie szyby",
+      "category": "Dodatki",
+      "description": "Hydrofobowe zabezpieczenie wszystkich szyb.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "reflektory",
+      "name": "Renowacja reflektorów",
+      "category": "Dodatki",
+      "description": "Przywrócenie przejrzystości matowym reflektorom.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "zaprawki",
+      "name": "Zaprawki lakiernicze",
+      "category": "Dodatki",
+      "description": "Punktowe zaprawki odprysków lakieru.",
+      "price": 90,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "sparkle",
+      "title": "Indywidualne podejście",
+      "text": "Dostosowujemy usługi do potrzeb klienta, dbając o każdy detal."
+    },
+    {
+      "icon": "drop",
+      "title": "Ręczne mycie",
+      "text": "Myjemy ręcznie najnowszymi i najbardziej efektywnymi środkami."
+    },
+    {
+      "icon": "medal",
+      "title": "100% satysfakcji",
+      "text": "Profesjonalne podejście do każdego auta – nowego i klasyka."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-tucson-tyl.webp",
+      "caption": "Hyundai Tucson N-line po detailingu"
+    },
+    {
+      "image": "images/work-tucson-kokpit.webp",
+      "caption": "Hyundai Tucson N-line – kokpit"
+    },
+    {
+      "image": "images/work-tucson-fotele.webp",
+      "caption": "Hyundai Tucson N-line – tylna kanapa"
+    },
+    {
+      "image": "images/work-tucson.webp",
+      "caption": "Hyundai Tucson N-line"
+    },
+    {
+      "image": "images/work-508.webp",
+      "caption": "Peugeot 508 RXH po detailingu"
+    },
+    {
+      "image": "images/work-508-wnetrze.webp",
+      "caption": "Peugeot 508 RXH – wnętrze"
+    },
+    {
+      "image": "images/work-508-tyl.webp",
+      "caption": "Peugeot 508 RXH"
+    },
+    {
+      "image": "images/work-508-konsola.webp",
+      "caption": "Peugeot 508 RXH – konsola środkowa"
+    },
+    {
+      "image": "images/work-508-felga.webp",
+      "caption": "Peugeot 508 RXH – mycie felg"
+    },
+    {
+      "image": "images/work-208.webp",
+      "caption": "Peugeot 208 po detailingu"
+    },
+    {
+      "image": "images/work-208-wnetrze.webp",
+      "caption": "Peugeot 208 – wnętrze"
+    },
+    {
+      "image": "images/work-208-przod.webp",
+      "caption": "Peugeot 208"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Od czego zależy cena?",
+      "answer": "Większość usług ma trzy ceny: kompakt (np. Renault Clio, Audi A1), sedan i kombi (np. Hyundai Tucson, Audi A6) oraz limuzyna i SUV (np. Audi A8, Mercedes-Benz GLS). Cena po dokładnych oględzinach może się zmienić ze względu na stopień zabrudzenia lub zniszczenia.",
+      "keywords": [
+        "od czego",
+        "zalezy",
+        "suv",
+        "kombi",
+        "limuzyn",
+        "rozmiar",
+        "wielkos"
+      ]
+    },
+    {
+      "question": "Czy ceny są brutto?",
+      "answer": "Tak, ceny w cenniku są cenami brutto (zw. VAT).",
+      "keywords": [
+        "brutto",
+        "netto",
+        "vat",
+        "faktur"
+      ]
+    },
+    {
+      "question": "Ile kosztuje korekta lakieru?",
+      "answer": "Jednoetapowa (do 50% zarysowań) 800–1000 zł, dwuetapowa (do 75%) 1100–1500 zł w zależności od wielkości auta. Wieloetapową (do 95%) wyceniamy po oględzinach.",
+      "keywords": [
+        "korekt",
+        "polerowan",
+        "rys",
+        "zarysowan"
+      ]
+    },
+    {
+      "question": "Co zawiera pakiet ELITE?",
+      "answer": "Mycie detailingowe wewnętrzne i zewnętrzne, pranie lub czyszczenie tapicerki materiałowej lub skórzanej, powłokę ceramiczną 2-letnią, jednoetapową korektę lakieru i ozonowanie wnętrza. Cena 2800–3200 zł.",
+      "keywords": [
+        "elite",
+        "pakiet",
+        "zawiera"
+      ]
+    },
+    {
+      "question": "Gdzie was znajdę?",
+      "answer": "Warszawa, ul. Kazimierza Gierdziejewskiego 1. Zadzwoń: +48 505 131 613 lub +48 22 493 46 45.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "gierdziejewsk",
+        "dojazd",
+        "ursus"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
