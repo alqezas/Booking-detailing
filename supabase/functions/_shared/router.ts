@@ -178,7 +178,8 @@ const PATTERNS = {
     months: ['stycz', 'lut', 'mar', 'kwie', 'maj', 'czerw', 'lip', 'sierp', 'wrze', 'pazdz', 'listop', 'grud'],
     dayMonth: /(\d{1,2})\.?\s+([a-z]+)/,
     location: /(gdzie|jak).{0,20}(znajd|trafic|dojechac|dojade|jestescie|miesci)|adres|nawigac|na mapie|mapa|dojazd/,
-    price: /(ile|za ile).{0,15}(kosztuj|kosztow|bedzie|wyjdzie)|cen[aeiy]|cennik|koszt/,
+    // «cena» as a whole word only: «ocena» (assessment) is not a price question.
+    price: /(ile|za ile).{0,15}(kosztuj|kosztow|bedzie|wyjdzie)|\bcen[aeiy]?\b|cennik|koszt/,
     slot: /najbliz|woln|termin|kiedy.{0,15}(moge|mozna|mozemy|przyjechac|umowic|zapisac|macie)|umowic|zapisac|rezerw|macie.{0,10}(czas|miejsce)/,
     hours: /godziny otwarcia|otwarte|do ktorej|od ktorej|o ktorej|czynne|godziny pracy/,
     services: /jakie uslugi|co.{0,10}(robicie|oferujecie|potraficie)|uslugi|ofert/,

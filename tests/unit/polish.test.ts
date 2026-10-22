@@ -88,6 +88,8 @@ describe('Polish assistant without a model', () => {
     expect(routeClient('Chcę pranie tapicerki, macie jutro termin?', services, TZ, NOW, 'pl')).toEqual({intent: 'nearest_slot', serviceId: 'tap', dateFrom: '2026-10-20'});
     expect(routeClient('Czy można umówić korektę lakieru na 5 listopada?', services, TZ, NOW, 'pl')).toEqual({intent: 'nearest_slot', serviceId: 'k1', dateFrom: '2026-11-05'});
     expect(routeClient('Do której jesteście otwarci?', services, TZ, NOW, 'pl')).toEqual({intent: 'hours'});
+    expect(routeClient('Jaka jest cena korekty lakieru?', services, TZ, NOW, 'pl')).toMatchObject({intent: 'price'});
+    expect(routeClient('Czy ocena stanu auta jest płatna?', services, TZ, NOW, 'pl', [{question: 'Ocena', keywords: ['ocena']}])).toEqual({intent: 'faq', index: 0});
   });
 
   it('routes owner questions', () => {

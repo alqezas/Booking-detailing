@@ -32,7 +32,7 @@ await page.screenshot({path: `${out}/pl-step2.png`});
 await d.getByRole('button', {name: 'Dalej'}).click();
 await d.getByLabel('Imię').fill('Jan Kowalski');
 await d.getByLabel('Telefon').fill(`533 ${Math.floor(100 + Math.random() * 899)} ${Math.floor(100 + Math.random() * 899)}`);
-await d.getByLabel('Auto').fill('Toyota Corolla');
+await d.getByLabel('Auto', {exact: true}).fill('Toyota Corolla');
 await d.getByRole('button', {name: 'Sprawdź rezerwację'}).click();
 await d.getByText('Sprawdź i potwierdź').waitFor();
 await foreign(page, 'confirm');
