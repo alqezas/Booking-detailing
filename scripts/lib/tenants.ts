@@ -2,7 +2,7 @@ import {createHash} from 'node:crypto';
 import {existsSync, readdirSync, readFileSync, statSync} from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
-import {businessSchema, findPlaceholders, type BusinessConfig} from '../../shared/business.ts';
+import {businessSchema, findPlaceholders, longestOpening, neverFitsADay, type BusinessConfig} from '../../shared/business.ts';
 import {mediaFileName} from '../../shared/media.ts';
 
 export const ROOT = path.resolve(import.meta.dirname, '..', '..');
@@ -102,12 +102,10 @@ export async function loadTenant(slug: string): Promise<LoadedTenant | {slug: st
     names.set(out, rel);
   }
 
-  // A service shorter than a day must fit into one opening interval; anything
-  // longer than the longest interval but under 24 h never gets a free slot.
-  const toMin = (t: string) => Number(t.slice(0, 2)) * 60 + Number(t.slice(3, 5));
-  const longestDay = Math.max(0, ...Object.values(config.hours).flatMap(iv => iv.map(([a, b]) => toMin(b) - toMin(a))));
+  const intervals = Object.values(config.hours).flat();
+  const longestDay = longestOpening(intervals);
   config.services.forEach((s, i) => {
-    if (s.durationMinutes > longestDay && s.durationMinutes < 1440) {
+    if (neverFitsADay(s.durationMinutes, intervals)) {
       issues.push({
         level: 'error',
         path: `services[${i}].durationMinutes`,

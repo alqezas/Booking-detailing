@@ -18,6 +18,7 @@ import {useToast} from '@astryxdesign/core/Toast';
 import {PencilSimple, Plus} from '@phosphor-icons/react';
 import {useMutation, useQuery} from '@tanstack/react-query';
 import {useState} from 'react';
+import {longestOpening, neverFitsADay} from '../../../../shared/business.ts';
 import {useTenant} from '../../../app/tenant.tsx';
 import {InlineEmpty, InlineError, RowsSkeleton} from '../../../components/StatusScreens.tsx';
 import {randomKey} from '../../../lib/booking-store.ts';
@@ -43,6 +44,10 @@ type ServiceRow = {
 };
 type ResourceRow = {id: string; name: string; is_active: boolean};
 
+/** The studio's opening intervals as [opens, closes] pairs («08:00:00» is cut to «08:00»). */
+const openingIntervals = (hours: {opens: string; closes: string}[]): [string, string][] =>
+  hours.map(h => [h.opens.slice(0, 5), h.closes.slice(0, 5)]);
+
 export function ServicesSettings() {
   const tenant = useTenant();
   const {api, slug} = useOwner();
@@ -53,6 +58,7 @@ export function ServicesSettings() {
   if (services.isPending || resources.isPending) return <RowsSkeleton rows={5} />;
   if (services.isError) return <InlineError message={services.error.message} onRetry={() => void services.refetch()} />;
   if (resources.isError) return <InlineError message={resources.error.message} onRetry={() => void resources.refetch()} />;
+  const intervals = openingIntervals(tenant.hours);
 
   return (
     <VStack gap={3}>
@@ -72,6 +78,7 @@ export function ServicesSettings() {
               endContent={
                 <HStack gap={2} align="center">
                   {!s.is_active && <Badge label={msg.servicesSettings.hidden} />}
+                  {s.is_active && neverFitsADay(s.duration_minutes, intervals) && <Badge label={msg.servicesSettings.unbookable} variant="error" />}
                   <Icon icon={PencilSimple} color="secondary" />
                 </HStack>
               }
@@ -108,12 +115,15 @@ function ServiceEditor({service, resources, onClose}: {service: ServiceRow | 'ne
     resource_ids: existing?.service_resources.map(r => r.resource_id) ?? resources.filter(r => r.is_active).map(r => r.id),
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const intervals = openingIntervals(tenant.hours);
+  const tooLong = f.duration_minutes != null && neverFitsADay(f.duration_minutes, intervals);
+  const tooLongText = msg.v.tooLongForDay(formatDuration(longestOpening(intervals)), longestOpening(intervals));
 
   const save = useMutation({
     mutationFn: async () => {
       const parsed = serviceEditSchema.safeParse(f);
-      if (!parsed.success) {
-        setErrors(fieldErrors(parsed.error));
+      if (!parsed.success || tooLong) {
+        setErrors({...(parsed.success ? {} : fieldErrors(parsed.error)), ...(tooLong ? {duration_minutes: tooLongText} : {})});
         throw new ApiError('CLIENT', msg.common.checkFields);
       }
       setErrors({});
@@ -149,7 +159,7 @@ function ServiceEditor({service, resources, onClose}: {service: ServiceRow | 'ne
             min={15}
             step={15}
             description={f.duration_minutes ? msg.servicesSettings.durationHint(formatDuration(f.duration_minutes)) : undefined}
-            status={errorStatus(errors.duration_minutes)}
+            status={errorStatus(tooLong ? tooLongText : errors.duration_minutes)}
           />
           <NumberInput
             label={msg.servicesSettings.buffer}

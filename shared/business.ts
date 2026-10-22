@@ -25,6 +25,17 @@ const minutes = (t: string): number => {
   return (h ?? 0) * 60 + (m ?? 0);
 };
 
+/** Longest single opening interval, in minutes («08:00»–«17:00» → 540). */
+export const longestOpening = (intervals: [string, string][]): number =>
+  Math.max(0, ...intervals.map(([a, b]) => minutes(b) - minutes(a)));
+
+/**
+ * A service shorter than a day must fit into one opening interval; one that
+ * is longer than every interval but under 24 h never gets a free slot.
+ */
+export const neverFitsADay = (durationMinutes: number, intervals: [string, string][]): boolean =>
+  durationMinutes < 1440 && durationMinutes > longestOpening(intervals);
+
 const interval = z
   .tuple([z.string().regex(TIME_RE), z.string().regex(TIME_RE)])
   .refine(([a, b]) => minutes(a) < minutes(b), {message: 'Время закрытия должно быть позже открытия'});

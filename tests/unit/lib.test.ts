@@ -1,5 +1,5 @@
 import {describe, expect, it} from 'vitest';
-import {businessSchema, findPlaceholders} from '../../shared/business.ts';
+import {businessSchema, findPlaceholders, longestOpening, neverFitsADay} from '../../shared/business.ts';
 import {accentPair, contrast} from '../../shared/color.ts';
 import {configMediaUrl, mediaFileName, resolveMediaUrl} from '../../shared/media.ts';
 import {buildIcs} from '../../src/lib/ics.ts';
@@ -83,5 +83,20 @@ describe('business.json', () => {
     const c = JSON.parse(readFileSync('tenants/graphite/business.json', 'utf8'));
     c.services[0].resources = ['nope'];
     expect(businessSchema.safeParse(c).success).toBe(false);
+  });
+});
+
+describe('services that never fit an opening day', () => {
+  const day: [string, string][] = [['09:00', '18:00'], ['09:00', '15:00']];
+  it('measures the longest opening interval', () => {
+    expect(longestOpening(day)).toBe(540);
+    expect(longestOpening([])).toBe(0);
+  });
+  it('flags only durations between the longest day and 24 h', () => {
+    expect(neverFitsADay(540, day)).toBe(false);
+    expect(neverFitsADay(720, day)).toBe(true);
+    expect(neverFitsADay(1439, day)).toBe(true);
+    expect(neverFitsADay(1440, day)).toBe(false);
+    expect(neverFitsADay(4320, day)).toBe(false);
   });
 });
