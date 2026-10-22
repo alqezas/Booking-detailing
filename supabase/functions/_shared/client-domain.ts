@@ -138,7 +138,9 @@ export async function clientFallback(src: ClientSource, text: string): Promise<A
       const list = t.services.filter(s => ids.includes(s.id)).slice(0, 8);
       const price = (s: PublicService) => (s.price === 0 && !s.price_from ? say.onRequest : `${s.price_from ? say.from : ''}${money(s.price, cur, lang)}`);
       const lines = list.map(s => `${s.name} — ${price(s)}, ${duration(s.duration_minutes, lang)}`);
-      return {text: lines.length === 1 ? `${lines[0]}.` : `${say.prices}\n${lines.join('\n')}`, mode: 'fallback', tools: ['list_services']};
+      // «… 6 godz.» already ends with a dot.
+      const one = lines[0] ?? '';
+      return {text: lines.length === 1 ? (one.endsWith('.') ? one : `${one}.`) : `${say.prices}\n${lines.join('\n')}`, mode: 'fallback', tools: ['list_services']};
     }
     case 'nearest_slot': {
       const r = await freeSlots(src, intent.serviceId, intent.dateFrom, 3);

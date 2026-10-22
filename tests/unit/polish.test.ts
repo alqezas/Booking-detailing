@@ -90,6 +90,8 @@ describe('Polish assistant without a model', () => {
     expect(routeClient('Do której jesteście otwarci?', services, TZ, NOW, 'pl')).toEqual({intent: 'hours'});
     expect(routeClient('Jaka jest cena korekty lakieru?', services, TZ, NOW, 'pl')).toMatchObject({intent: 'price'});
     expect(routeClient('Czy ocena stanu auta jest płatna?', services, TZ, NOW, 'pl', [{question: 'Ocena', keywords: ['ocena']}])).toEqual({intent: 'faq', index: 0});
+    // «czy» is a question word, not «czyszczenie».
+    expect(routeClient('Czy można negocjować cenę?', services, TZ, NOW, 'pl', [{question: 'Negocjacje', keywords: ['negocj']}])).toEqual({intent: 'faq', index: 0});
   });
 
   it('routes owner questions', () => {

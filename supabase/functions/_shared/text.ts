@@ -23,10 +23,18 @@ export function stem(w: string, lang: Lang = 'ru'): string {
   return s;
 }
 
+/**
+ * Polish question and filler words that share a prefix with service names
+ * («czy» ~ «czyszczenie»), so they must not count as a service mention.
+ */
+const STOP: Partial<Record<Lang, Set<string>>> = {
+  pl: new Set(['czy', 'jak', 'jaka', 'jaki', 'jakie', 'ile', 'gdzie', 'kiedy', 'mozna', 'moge', 'macie', 'jest', 'dla', 'sie', 'czym', 'przy', 'oraz', 'albo', 'lub', 'tak', 'nie']),
+};
+
 export const words = (s: string, lang: Lang = 'ru') =>
   norm(s, lang)
     .split(/[\s-]+/)
-    .filter(w => w.length >= 3);
+    .filter(w => w.length >= 3 && !STOP[lang]?.has(w));
 
 export function plural(n: number, one: string, few: string, many: string, lang: Lang = 'ru'): string {
   if (lang === 'cs') return n === 1 ? one : n >= 2 && n <= 4 ? few : many;
