@@ -1,0 +1,444 @@
+{
+  "slug": "car-lab",
+  "name": "CAR LAB Detailing",
+  "shortName": "CAR LAB",
+  "kind": "detailing",
+  "tagline": "Studio detailingowe w Katowicach – folie PPF, powłoki ceramiczne, zmiana koloru",
+  "description": "CAR LAB specjalizuje się w auto detailingu: przywracamy kilkuletnim samochodom fabryczny wygląd, a nowe auta zabezpieczamy powłokami ceramicznymi i foliami PPF. Wykonujemy renowację lakieru, regenerację reflektorów, zabezpieczanie felg, przyciemnianie szyb, twardy wosk oraz renowację wnętrza – od prania tapicerki po impregnację skór. Każdy projekt doprowadzamy do końca zgodnie z ustalonym terminem. Obsługujemy Katowice i cały Górny Śląsk.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#C8102E",
+  "contacts": {
+    "phone": "+48 577 717 179",
+    "address": "ul. Kościuszki 257, 40-690 Katowice",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ko%C5%9Bciuszki%20257%2C%2040-690%20Katowice",
+    "email": "biuro@car-lab.pl",
+    "instagram": "carlab_detailing",
+    "facebook": "carlabquality"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "13:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 1440,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 60
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "ppf-front",
+      "name": "Folia PPF – Front",
+      "category": "Folie PPF i kolor",
+      "description": "Zderzak, część maski, reflektory i lusterka – ochrona przed zarysowaniami, kamieniami i solą drogową. Gwarancja 10 lat (żółknięcie, pękanie). Darmowa wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full-front",
+      "name": "Folia PPF – Full Front",
+      "category": "Folie PPF i kolor",
+      "description": "Zderzak, maska, reflektory, błotniki i lusterka – maksymalna ochrona przodu auta. Gwarancja 10 lat. Darmowa wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full-body",
+      "name": "Folia PPF – Full Body",
+      "category": "Folie PPF i kolor",
+      "description": "Kompleksowa ochrona całej karoserii. Średnie ceny od kilku do kilkunastu tysięcy złotych za całe nadwozie. Darmowa wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-kolor",
+      "name": "Kolorowa folia PPF – zmiana koloru",
+      "category": "Folie PPF i kolor",
+      "description": "Zmiana koloru i ochrona lakieru w jednym. Pełne oklejenie zwykle 11 000–19 000 zł netto – zależnie od modelu, nadwozia i zakresu.",
+      "price": 11000,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "zmiana-koloru",
+      "name": "Zmiana koloru auta folią",
+      "category": "Folie PPF i kolor",
+      "description": "Alternatywa dla lakierowania pojazdu – całość lub wybrane elementy. Darmowa wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "kameleon",
+      "name": "Folia kameleon na szybę",
+      "category": "Folie PPF i kolor",
+      "description": "Odmień wygląd swojego auta folią kameleon. Darmowa wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-1",
+      "name": "Powłoka ceramiczna (1 rok)",
+      "category": "Powłoki i lakier",
+      "description": "Podstawowe zabezpieczenie lakieru. Cena brutto.",
+      "price": 1800,
+      "priceFrom": true,
+      "durationMinutes": 960,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-3",
+      "name": "Powłoka ceramiczna (3 lata)",
+      "category": "Powłoki i lakier",
+      "description": "Zabezpieczenie lakieru na 3 lata. Darmowa wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-premium",
+      "name": "Pakiet premium – ceramika 5 lat, felgi i szyby",
+      "category": "Powłoki i lakier",
+      "description": "Najbardziej kompleksowa ochrona: lakier na 5 lat, felgi oraz szyby. Cena brutto.",
+      "price": 3300,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta",
+      "name": "Renowacja i korekta lakieru",
+      "category": "Powłoki i lakier",
+      "description": "Usuwanie rys i przebarwień – lakier odzyskuje świeży wygląd i blask. Darmowa wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wosk",
+      "name": "Aplikacja twardego wosku",
+      "category": "Powłoki i lakier",
+      "description": "Ochrona i połysk lakieru. Darmowa wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "reflektory",
+      "name": "Regeneracja reflektorów",
+      "category": "Powłoki i lakier",
+      "description": "Polerowanie matowych reflektorów. Darmowa wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "grafiki",
+      "name": "Grafiki na auto",
+      "category": "Grafika i reklama",
+      "description": "Wyróżnij się na drodze – projekt i aplikacja grafik. Proste grafiki 1–3 godziny. Darmowa wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "reklama",
+      "name": "Reklama na samochód",
+      "category": "Grafika i reklama",
+      "description": "Mobilna promocja Twojej marki. Płacisz za realnie wykorzystane materiały i roboczogodziny. Zwykle 2–4 godziny. Darmowa wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie",
+      "name": "Mycie detailingowe",
+      "category": "Detailing",
+      "description": "Kompleksowe mycie karoserii, kół i felg – przygotowanie do zabezpieczenia. Darmowa wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "felgi",
+      "name": "Zabezpieczanie felg",
+      "category": "Detailing",
+      "description": "Ochrona felg przed pyłem z klocków i brudem. Darmowa wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szyby",
+      "name": "Przyciemnianie szyb",
+      "category": "Detailing",
+      "description": "Przyciemnianie szyb folią. Darmowa wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze",
+      "name": "Renowacja wnętrza – pranie tapicerki i impregnacja skór",
+      "category": "Detailing",
+      "description": "Odnowienie wnętrza pojazdu. Darmowa wycena.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "shield",
+      "title": "Gwarancja 10 lat na PPF",
+      "text": "Folia z TPU – samoregeneracja drobnych rys, 100% przezroczysta."
+    },
+    {
+      "icon": "clock",
+      "title": "Zgodnie z terminem",
+      "text": "Każdy projekt doprowadzamy do końca w ustalonym czasie."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Darmowa wycena",
+      "text": "Dobierzemy zakres ochrony do potrzeb, budżetu i sposobu użytkowania auta."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-gt4rs.webp",
+      "caption": "Porsche 718 Cayman GT4 RS Clubsport"
+    },
+    {
+      "image": "images/work-cls.webp",
+      "caption": "Mercedes-Benz CLS"
+    },
+    {
+      "image": "images/work-megane.webp",
+      "caption": "Renault Mégane R.S."
+    },
+    {
+      "image": "images/work-z3.webp",
+      "caption": "BMW Z3"
+    },
+    {
+      "image": "images/work-wrangler.webp",
+      "caption": "Jeep Wrangler"
+    },
+    {
+      "image": "images/work-s3.webp",
+      "caption": "Audi S3"
+    },
+    {
+      "image": "images/work-mx5.webp",
+      "caption": "Mazda MX-5"
+    },
+    {
+      "image": "images/work-superb.webp",
+      "caption": "Škoda Superb"
+    },
+    {
+      "image": "images/work-mercedes.webp",
+      "caption": "Mercedes-Benz"
+    },
+    {
+      "image": "images/work-ppf.webp",
+      "caption": "Aplikacja folii ochronnej PPF"
+    },
+    {
+      "image": "images/work-cls-wnetrze.webp",
+      "caption": "Wnętrze Mercedes-Benz"
+    },
+    {
+      "image": "images/work-wrangler-wnetrze.webp",
+      "caption": "Wnętrze Jeep Wrangler"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ile kosztuje folia PPF?",
+      "answer": "Cena zależy od wielkości auta, skomplikowania nadwozia, pakietu (np. Full Front albo całe auto) i marki folii. Średnio od kilku tysięcy złotych za pakiet Front do kilkunastu tysięcy za całe nadwozie. Kolorowa folia PPF na całe auto to zwykle 11 000–19 000 zł netto.",
+      "keywords": [
+        "ppf",
+        "folia",
+        "full front",
+        "full body",
+        "kolorow"
+      ]
+    },
+    {
+      "question": "Ile kosztuje powłoka ceramiczna?",
+      "answer": "Od 1800 zł brutto za powłokę roczną. Pakiet premium (lakier na 5 lat, felgi i szyby) od 3300 zł brutto. Do wyboru warianty na 1 rok, 3 lata lub 5 lat.",
+      "keywords": [
+        "ile kosztuje",
+        "koszt",
+        "ile trzyma",
+        "trwalos"
+      ]
+    },
+    {
+      "question": "Kiedy powłoka ceramiczna nie ma sensu?",
+      "answer": "Gdy lakier jest w złym stanie i nie został przygotowany albo gdy auto ma być myte tylko na szczotkach. Jeśli zależy Ci na wysokiej odporności na uszkodzenia mechaniczne – lepsza będzie folia PPF.",
+      "keywords": [
+        "nie ma sensu",
+        "sensu",
+        "szczotk",
+        "kiedy nie",
+        "oplaca",
+        "ceramik"
+      ]
+    },
+    {
+      "question": "Czy muszę okleić całe auto?",
+      "answer": "Nie – możesz zabezpieczyć tylko najbardziej narażone elementy albo zdecydować się na ochronę całego auta. Dobierzemy zakres do Twoich potrzeb i budżetu.",
+      "keywords": [
+        "cale auto",
+        "calego",
+        "wybrane",
+        "elementy",
+        "musze"
+      ]
+    },
+    {
+      "question": "Gdzie was znajdę?",
+      "answer": "Katowice, ul. Kościuszki 257. Obsługujemy klientów z całego Śląska.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "kosciuszki",
+        "dojazd"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
