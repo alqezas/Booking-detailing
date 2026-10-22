@@ -1,0 +1,288 @@
+{
+  "slug": "ciesielska-detailing",
+  "name": "Ciesielska Detailing",
+  "shortName": "Ciesielska",
+  "kind": "detailing",
+  "tagline": "Folia PPF, powłoki ceramiczne i detailing we Wrocławiu",
+  "description": "Nazywam się Aleksandra Ciesielska i z pasją zajmuję się detailingiem samochodowym we Wrocławiu – od ponad dekady. Jako jedyna kobieta w mieście prowadząca usługi detailingu udowadniam, że w tej branży liczy się precyzja, cierpliwość i wyczucie. Specjalizuję się w kompleksowej pielęgnacji i zabezpieczeniu pojazdów: od mycia i renowacji lakieru, przez powłoki ceramiczne, aż po folię PPF, którą aplikuje doświadczony aplikator z ponad 10-letnią praktyką.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#C9A227",
+  "contacts": {
+    "phone": "+48 661 628 661",
+    "address": "ul. Ołtaszyńska 98a, 53-034 Wrocław",
+    "legalAddress": "Ciesielska Detailing Aleksandra Ciesielska, NIP 8992929506",
+    "mapUrl": "https://maps.app.goo.gl/AeyvWjkWJRbpKfF57",
+    "email": "ciesielska.detailing@gmail.com",
+    "instagram": "ciesielska_detailing",
+    "facebook": "ciesielskadetailing"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "13:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 1440,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 60
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "ppf",
+      "name": "Oklejanie folią PPF",
+      "category": "Ochrona lakieru",
+      "description": "Najskuteczniejsza ochrona lakieru przed zarysowaniami i kamieniami. Samoregeneracja drobnych rys, całkowicie przezroczysta – nie zmienia koloru ani połysku lakieru. Cenę ustalamy indywidualnie po oględzinach auta.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika",
+      "name": "Powłoka ceramiczna",
+      "category": "Ochrona lakieru",
+      "description": "Twarda warstwa chroniąca przed czynnikami atmosferycznymi, chemikaliami i UV. Efekt hydrofobowy, intensywny połysk i głębia koloru. Cenę ustalamy indywidualnie po oględzinach auta.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta",
+      "name": "Korekta lakieru",
+      "category": "Ochrona lakieru",
+      "description": "Nowy wygląd bez malowania: usuwa hologramy, mikrorysy i oksydację, przywraca blask i głębię koloru. Idealna baza pod ceramikę lub folię PPF. Cenę ustalamy indywidualnie po oględzinach auta.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 960,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze",
+      "name": "Detailing wnętrza",
+      "category": "Pielęgnacja",
+      "description": "Dogłębne czyszczenie kabiny, eliminacja zapachów oraz ochrona plastików, skóry i tkanin specjalistycznymi preparatami. Cenę ustalamy indywidualnie po oględzinach auta.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie",
+      "name": "Mycie detailingowe",
+      "category": "Pielęgnacja",
+      "description": "Specjalistyczne piany i szampony, bezpieczne mycie systemem Optimum, czyszczenie felg, wnęk i listew. Idealne przygotowanie pod kolejne zabiegi. Cenę ustalamy indywidualnie po oględzinach auta.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Ponad dekada pasji",
+      "text": "Jedyna kobieta we Wrocławiu prowadząca studio detailingu."
+    },
+    {
+      "icon": "shield",
+      "title": "Aplikator PPF z 10-letnią praktyką",
+      "text": "Folię ochronną nakłada doświadczony aplikator."
+    },
+    {
+      "icon": "sparkle",
+      "title": "40 opinii Google",
+      "text": "Każde auto traktujemy indywidualnie – jak własne."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-911-mycie-after.webp",
+      "before": "images/work-911-mycie-before.webp",
+      "caption": "Porsche 911 – przed i po"
+    },
+    {
+      "image": "images/work-volvo-wnetrze-after.webp",
+      "before": "images/work-volvo-wnetrze-before.webp",
+      "caption": "Detailing wnętrza Volvo – przed i po"
+    },
+    {
+      "image": "images/work-panamera.webp",
+      "caption": "Porsche Panamera"
+    },
+    {
+      "image": "images/work-corvette.webp",
+      "caption": "Chevrolet Corvette C1"
+    },
+    {
+      "image": "images/work-911-cabrio.webp",
+      "caption": "Porsche 911 Cabriolet"
+    },
+    {
+      "image": "images/work-cobra.webp",
+      "caption": "AC Cobra"
+    },
+    {
+      "image": "images/work-cobra-wnetrze.webp",
+      "caption": "Wnętrze AC Cobra"
+    },
+    {
+      "image": "images/work-911.webp",
+      "caption": "Porsche 911"
+    },
+    {
+      "image": "images/work-subaru.webp",
+      "caption": "Subaru Impreza WRX"
+    },
+    {
+      "image": "images/work-lexus.webp",
+      "caption": "Lexus NX"
+    },
+    {
+      "image": "images/work-golf.webp",
+      "caption": "Volkswagen Golf I"
+    },
+    {
+      "image": "images/work-tesla.webp",
+      "caption": "Tesla Model 3"
+    },
+    {
+      "image": "images/work-bmw.webp",
+      "caption": "BMW serii 3"
+    },
+    {
+      "image": "images/work-korekta.webp",
+      "caption": "Korekta lakieru w naszym studiu"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ile kosztuje usługa?",
+      "answer": "Każde auto traktujemy indywidualnie, dlatego cenę ustalamy po oględzinach. Zadzwoń pod +48 661 628 661 albo zarezerwuj termin – przygotujemy wycenę.",
+      "keywords": [
+        "ile kosztuje",
+        "cena",
+        "cennik",
+        "wycen",
+        "koszt"
+      ]
+    },
+    {
+      "question": "Czy warto połączyć korektę z ceramiką lub PPF?",
+      "answer": "Tak – po korekcie lakieru warto nałożyć powłokę ceramiczną lub folię PPF, aby efekt utrzymał się na lata.",
+      "keywords": [
+        "polaczy",
+        "po korekcie",
+        "razem",
+        "ceramik",
+        "ppf"
+      ]
+    },
+    {
+      "question": "Czym różni się mycie detailingowe od myjni?",
+      "answer": "Mycie detailingowe to precyzyjny proces: specjalistyczne piany i szampony oraz bezpieczne mycie systemem Optimum, które chroni lakier przed mikrorysami. Czyścimy też felgi, wnęki, listwy i zakamarki.",
+      "keywords": [
+        "myjni",
+        "roznic",
+        "optimum",
+        "czemu"
+      ]
+    },
+    {
+      "question": "Gdzie was znajdę?",
+      "answer": "Wrocław, ul. Ołtaszyńska 98a.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "oltaszynsk",
+        "dojazd",
+        "dojechac"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
