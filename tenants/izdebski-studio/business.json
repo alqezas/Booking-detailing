@@ -1,0 +1,510 @@
+{
+  "slug": "izdebski-studio",
+  "name": "Izdebski Studio Auto Detailing",
+  "shortName": "Izdebski",
+  "kind": "detailing",
+  "tagline": "Auto detailing w Warszawie – tu precyzja spotyka się z perfekcją",
+  "description": "W Izdebski Studio Auto Detailing w Warszawie podchodzimy do każdego auta z niezwykłą dbałością o detale. Łączymy tradycyjne techniki z nowoczesnymi rozwiązaniami, korzystamy wyłącznie z renomowanych produktów i stale szkolimy nasz zespół. Dla nas detailing to nie tylko praca, ale prawdziwa pasja – dzięki temu Twoje auto zawsze będzie wyglądać jak z salonu.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#1E7FE0",
+  "contacts": {
+    "phone": "+48 881 490 054",
+    "address": "ul. Kasztanowa 4, 03-197 Warszawa",
+    "email": "izdebskiautodetailing@gmail.com",
+    "instagram": "izdebskistudio_autodetailing",
+    "facebook": "https://www.facebook.com/profile.php?id=100093037453948"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "14:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 240,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "fx-vision",
+      "name": "Roczna powłoka FX Vision",
+      "category": "Korekta i powłoki",
+      "description": "Mycie detailingowe, korekta lakieru, zaprawki lakiernicze i ceramika FX Vision – ekonomiczna ochrona przed zarysowaniami, UV i pogodą na rok. Cena netto, orientacyjna – zależy od wielkości auta i stanu lakieru.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "fx-evolution",
+      "name": "3-letnia powłoka FX Evolution 9H",
+      "category": "Korekta i powłoki",
+      "description": "Mycie detailingowe, korekta lakieru, zaprawki lakiernicze i twarda ceramika FX Evolution 9H na 3 lata. Cena netto, orientacyjna – zależy od wielkości auta i stanu lakieru.",
+      "price": 2000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "g-finity",
+      "name": "5-letnia powłoka G-Finity",
+      "category": "Korekta i powłoki",
+      "description": "Mycie detailingowe, korekta lakieru, zaprawki lakiernicze i ceramika G-Finity – nasze najtrwalsze zabezpieczenie, na 5 lat. Cena netto, orientacyjna – zależy od wielkości auta i stanu lakieru.",
+      "price": 2500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie-wosk-korekta",
+      "name": "Mycie detailingowe + wosk + korekta lakieru",
+      "category": "Korekta i powłoki",
+      "description": "Wieloetapowe mycie, korekta usuwająca zarysowania i matowienie oraz zabezpieczenie woskiem.",
+      "price": 1199,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "serwis-powloki",
+      "name": "Serwis powłoki",
+      "category": "Korekta i powłoki",
+      "description": "Odświeżenie i kontrola istniejącej powłoki ceramicznej.",
+      "price": 399,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-mini",
+      "name": "Pakiet Mini PPF",
+      "category": "Folia PPF",
+      "description": "Folia PPF na wnęki klamek, próg bagażnika i słupki piano black. Cena netto, orientacyjna – zależy od wielkości auta i stanu lakieru.",
+      "price": 699,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-standard",
+      "name": "Pakiet Standard PPF",
+      "category": "Folia PPF",
+      "description": "Folia PPF na maskę, zderzak przedni i lampy przednie. Cena netto, orientacyjna – zależy od wielkości auta i stanu lakieru.",
+      "price": 3499,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full-front",
+      "name": "Pakiet Full Front PPF",
+      "category": "Folia PPF",
+      "description": "Folia PPF na zderzak przedni, lampy, błotniki przednie, maskę, lusterka i próg bagażnika. Cena netto, orientacyjna – zależy od wielkości auta i stanu lakieru.",
+      "price": 5499,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "sprzatanie",
+      "name": "Sprzątanie wnętrza",
+      "category": "Wnętrze",
+      "description": "Odkurzanie, czyszczenie wnętrza (siedzenia, kokpit, kierownica, schowki, bagażnik) i mycie szyb.",
+      "price": 149,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "sprzatanie-mycie",
+      "name": "Sprzątanie wnętrza + mycie detailingowe",
+      "category": "Wnętrze",
+      "description": "Sprzątanie wnętrza połączone z wieloetapowym myciem detailingowym nadwozia.",
+      "price": 299,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skory",
+      "name": "Czyszczenie skór",
+      "category": "Wnętrze",
+      "description": "Czyszczenie i impregnacja tapicerki skórzanej, odkurzanie, sprzątanie wnętrza i mycie szyb.",
+      "price": 499,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pakiet-pelny",
+      "name": "Pakiet pełny wnętrza",
+      "category": "Wnętrze",
+      "description": "Pranie foteli materiałowych i kanapy, podłogi, bagażnika i dywaników, czyszczenie podsufitki, odkurzanie i impregnacja.",
+      "price": 799,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie",
+      "name": "Mycie detailingowe",
+      "category": "Mycie i dodatki",
+      "description": "Wieloetapowe mycie z użyciem najwyższej jakości kosmetyków – usuwa nawet najdrobniejsze zabrudzenia.",
+      "price": 149,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie-wosk",
+      "name": "Mycie detailingowe + wosk",
+      "category": "Mycie i dodatki",
+      "description": "Mycie detailingowe i zabezpieczenie lakieru woskiem.",
+      "price": 399,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "cabrio",
+      "name": "Zabezpieczenie dachu cabrio",
+      "category": "Mycie i dodatki",
+      "description": "Powłoka ceramiczna na dach cabrio: ochrona przed UV, brudem i łatwiejsze czyszczenie.",
+      "price": 499,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "zaciski",
+      "name": "Zabezpieczenie zacisków powłoką ceramiczną",
+      "category": "Mycie i dodatki",
+      "description": "Chroni zaciski hamulcowe przed korozją, solą i brudem.",
+      "price": 149,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "reflektory",
+      "name": "Regeneracja reflektorów",
+      "category": "Mycie i dodatki",
+      "description": "Przywrócenie przejrzystości lamp. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "sprzedaz",
+      "name": "Przygotowanie auta do sprzedaży",
+      "category": "Mycie i dodatki",
+      "description": "Kompleksowe odświeżenie auta przed sprzedażą. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "felgi-front",
+      "name": "Ceramika na front felg",
+      "category": "Felgi i szyby",
+      "description": "Powłoka ceramiczna na frontach felg – najbardziej narażonej części.",
+      "price": 199,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "felgi-cale",
+      "name": "Ceramika na całe felgi",
+      "category": "Felgi i szyby",
+      "description": "Powłoka ceramiczna na wszystkich felgach – łatwiejsze czyszczenie i ochrona przed osadem.",
+      "price": 549,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szyba-przednia",
+      "name": "Ceramika na szybę przednią",
+      "category": "Felgi i szyby",
+      "description": "Hydrofobowa powłoka na szybie przedniej.",
+      "price": 149,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szyby-wszystkie",
+      "name": "Ceramika na wszystkie szyby",
+      "category": "Felgi i szyby",
+      "description": "Hydrofobowa powłoka na szybie przedniej, bocznych i tylnej.",
+      "price": 249,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Wieloletnie doświadczenie",
+      "text": "Setki zadowolonych klientów i aut prezentujących się jak z salonu."
+    },
+    {
+      "icon": "shield",
+      "title": "Ceramika FX i G-Finity",
+      "text": "Powłoki na 1, 3 i 5 lat – zawsze z korektą lakieru i zaprawkami."
+    },
+    {
+      "icon": "car",
+      "title": "Studio na Targówku",
+      "text": "ul. Kasztanowa 4, Warszawa – wpadnij do nas."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-octavia.webp",
+      "caption": "Škoda Octavia Combi"
+    },
+    {
+      "image": "images/work-s3.webp",
+      "caption": "Audi S3 Sportback"
+    },
+    {
+      "image": "images/work-ferrari.webp",
+      "caption": "Ferrari – detailing tyłu"
+    },
+    {
+      "image": "images/work-ferrari-ppf.webp",
+      "caption": "Ferrari – aplikacja folii PPF"
+    },
+    {
+      "image": "images/work-x5.webp",
+      "caption": "BMW X5"
+    },
+    {
+      "image": "images/work-q7.webp",
+      "caption": "Audi Q7"
+    },
+    {
+      "image": "images/work-proceed.webp",
+      "caption": "Kia ProCeed GT"
+    },
+    {
+      "image": "images/work-911-wnetrze.webp",
+      "caption": "Porsche 911 – wnętrze"
+    },
+    {
+      "image": "images/work-lexus-wnetrze.webp",
+      "caption": "Lexus RX – czyszczenie wnętrza"
+    },
+    {
+      "image": "images/work-skora.webp",
+      "caption": "Czyszczenie i impregnacja skóry"
+    },
+    {
+      "image": "images/work-reflektory.webp",
+      "caption": "Regeneracja reflektorów BMW"
+    },
+    {
+      "image": "images/work-kodiaq.webp",
+      "caption": "Škoda Kodiaq"
+    },
+    {
+      "image": "images/work-308cc.webp",
+      "caption": "Peugeot 308 CC"
+    },
+    {
+      "image": "images/work-octavia-studio.webp",
+      "caption": "Škoda Octavia przed studiem"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Czy ceny są ostateczne?",
+      "answer": "Ceny ustalane są indywidualnie w zależności od wielkości auta i stanu lakieru. Cennik to orientacyjny wgląd w ofertę; ceny powłok i folii PPF podajemy netto.",
+      "keywords": [
+        "ostateczn",
+        "netto",
+        "vat",
+        "brutto",
+        "orientacyj",
+        "wielkosc"
+      ]
+    },
+    {
+      "question": "Którą powłokę ceramiczną wybrać?",
+      "answer": "FX Vision chroni rok i jest najbardziej ekonomiczna, FX Evolution 9H – 3 lata, G-Finity – 5 lat i to nasze najtrwalsze zabezpieczenie. Każdy pakiet obejmuje mycie detailingowe, korektę lakieru i zaprawki lakiernicze.",
+      "keywords": [
+        "ktora powlok",
+        "wybrac",
+        "vision",
+        "evolution",
+        "finity",
+        "na ile lat",
+        "trwal"
+      ]
+    },
+    {
+      "question": "Co obejmują pakiety folii PPF?",
+      "answer": "Mini: wnęki klamek, próg bagażnika, słupki piano black. Standard: maska, zderzak przedni, lampy. Full Front: zderzak, lampy, błotniki przednie, maska, lusterka i próg bagażnika.",
+      "keywords": [
+        "pakiety",
+        "co obejmuj",
+        "full front",
+        "mini ppf"
+      ]
+    },
+    {
+      "question": "Czym różni się wosk od ceramiki?",
+      "answer": "Wosk to najprostsze i najtańsze zabezpieczenie lakieru na krótszy czas. Powłoka ceramiczna tworzy twardą warstwę, która chroni przed zarysowaniami, odpryskami, UV i pogodą przez lata.",
+      "keywords": [
+        "rozni",
+        "roznic",
+        "wosk czy"
+      ]
+    },
+    {
+      "question": "Co zawiera pakiet pełny wnętrza?",
+      "answer": "Pranie foteli materiałowych i kanapy, podłogi, bagażnika i dywaników, czyszczenie podsufitki, odkurzanie, czyszczenie wnętrza, mycie szyb i impregnację – 799 zł.",
+      "keywords": [
+        "pakiet peln",
+        "co zawiera",
+        "podsufit",
+        "dywanik"
+      ]
+    },
+    {
+      "question": "Gdzie jesteście?",
+      "answer": "Warszawa, ul. Kasztanowa 4 (03-197, Targówek). Zadzwoń: +48 881 490 054.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "kasztanow",
+        "dojazd",
+        "lokalizac"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
