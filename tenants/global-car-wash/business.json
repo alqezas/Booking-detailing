@@ -1,0 +1,640 @@
+{
+  "slug": "global-car-wash",
+  "name": "Global Car Wash – myjnia ręczna i detailing",
+  "shortName": "Global Wash",
+  "kind": "detailing",
+  "tagline": "Ręczna myjnia i auto detailing na Okęciu, przy Lotnisku Chopina",
+  "description": "Global Car Wash to ręczna myjnia samochodowa i studio detailingu w Warszawie, przy Alei Krakowskiej 89 na Okęciu. Doświadczenie zdobyliśmy, przygotowując auta sportowe i luksusowe w naszej wypożyczalni Global Elite Car. Nie działamy taśmowo – stawiamy na dokładność i bezpieczeństwo lakieru. Zostaw auto i idź na zakupy albo leć w podróż – SMS dostaniesz, gdy będzie gotowe.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#2F5E9E",
+  "contacts": {
+    "phone": "+48 734 242 242",
+    "address": "Al. Krakowska 89, 02-180 Warszawa",
+    "mapUrl": "https://maps.app.goo.gl/ezbDUBDrhib7VybMA",
+    "email": "biuro@myjniasamochodowawarszawa.pl"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "20:00"
+      ]
+    ],
+    "sat": [
+      [
+        "08:00",
+        "14:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 120,
+    "horizonDays": 60,
+    "cancelCutoffHours": 12,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "s1",
+      "name": "Stanowisko 1"
+    },
+    {
+      "key": "s2",
+      "name": "Stanowisko 2"
+    }
+  ],
+  "services": [
+    {
+      "key": "mycie",
+      "name": "Mycie auta",
+      "category": "Mycie",
+      "description": "Mycie z zewnątrz, mycie szyb od zewnątrz, osuszanie karoserii, mycie felg i nabłyszczenie opon.",
+      "price": 149,
+      "priceFrom": false,
+      "durationMinutes": 45,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "mycie-komplet",
+      "name": "Mycie komplet",
+      "category": "Mycie",
+      "description": "Mycie z zewnątrz, odkurzanie, czyszczenie plastików, szyby z obu stron, osuszanie, mycie felg, nabłyszczenie opon i powłoka hydrofobowa przeciw kurzowi. Cena: S (np. Smart) 219 zł, M (np. BMW 3) 229 zł, L (np. Audi Q8) 239 zł.",
+      "price": 219,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "szybkie-parking",
+      "name": "Szybkie mycie + 7 dni parkingu",
+      "category": "Mycie",
+      "description": "Mycie z zewnątrz, osuszanie, odkurzanie, kokpit i szyby – razem z miejscem na monitorowanym parkingu przy Lotnisku Chopina do 7 dni.",
+      "price": 300,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "mycie-detailingowe",
+      "name": "Mycie detailingowe",
+      "category": "Mycie",
+      "description": "Mycie na dwa wiadra, pędzelkowanie szczelin i zakamarków, dekontaminacja chemiczna, dressing plastików zewnętrznych oraz doczyszczenie felg.",
+      "price": 299,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "pelne",
+      "name": "Pełne mycie i czyszczenie detailingowe",
+      "category": "Mycie",
+      "description": "Mycie detailingowe z kompleksowym czyszczeniem wnętrza, pędzelkowaniem wlotów i szyn oraz zabezpieczeniem plastików.",
+      "price": 549,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "detailing-wnetrza",
+      "name": "Detailing wnętrza",
+      "category": "Wnętrze",
+      "description": "Dokładne czyszczenie wnętrza i szyb od środka, plastików, pędzelkowanie szyn i zakamarków, dressing plastików.",
+      "price": 249,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "pranie",
+      "name": "Pranie kompletne tapicerki",
+      "category": "Wnętrze",
+      "description": "Fotele przednie, tylna kanapa, boczki i bagażnik.",
+      "price": 349,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "pranie-srodek",
+      "name": "Pranie lub skóra + czyszczenie środka",
+      "category": "Wnętrze",
+      "description": "Pranie kompletne lub czyszczenie skóry z odkurzaniem, czyszczeniem plastików z kokpitem i myciem szyb od środka.",
+      "price": 449,
+      "priceFrom": false,
+      "durationMinutes": 300,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "pranie-mycie",
+      "name": "Pranie lub skóra + mycie auta",
+      "category": "Wnętrze",
+      "description": "Pranie lub czyszczenie skóry razem z myciem auta z zewnątrz i wewnątrz, szybami, plastikami, nabłyszczeniem opon i powłoką hydrofobową.",
+      "price": 549,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "skora",
+      "name": "Czyszczenie tapicerki skórzanej",
+      "category": "Wnętrze",
+      "description": "Fotele, boczki, kierownica, zagłówki i lewarek – specjalne środki i szczotka do skóry.",
+      "price": 349,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "impregnacja-skory",
+      "name": "Impregnacja skóry",
+      "category": "Wnętrze",
+      "description": "Colourlock Leather Versiegelung – zabezpieczenie na 3–6 miesięcy.",
+      "price": 199,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "podsufitka",
+      "name": "Pranie podsufitki",
+      "category": "Wnętrze",
+      "description": "Pranie podsufitki.",
+      "price": 199,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Ozonowanie",
+      "category": "Wnętrze",
+      "description": "Dezynfekcja – cząsteczki ozonu dogłębnie oczyszczają kabinę.",
+      "price": 99,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "sprzedaz",
+      "name": "Przygotowanie do sprzedaży / zwrotu z leasingu",
+      "category": "Wnętrze",
+      "description": "Mycie, pranie lub czyszczenie skóry, ozonowanie, detailing wnętrza, pędzelkowanie wlotów i szyn oraz zabezpieczenie plastików. Także przy zakupie auta. Cena: S (np. Smart) 699 zł, M (np. BMW 3) 749 zł, L (np. Audi Q8) 799 zł.",
+      "price": 699,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "korekta-1",
+      "name": "Jednoetapowa korekta lakieru",
+      "category": "Korekta i powłoki",
+      "description": "Usuwa około 60% rys i przywraca utracony blask. Cena: S (np. Smart) 799 zł, M (np. BMW 3) 899 zł, L (np. Audi Q8) 999 zł.",
+      "price": 799,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "korekta-2",
+      "name": "Dwuetapowa korekta lakieru",
+      "category": "Korekta i powłoki",
+      "description": "Usuwa do 85% rys i przywraca utracony blask. Cena: S (np. Smart) 1099 zł, M (np. BMW 3) 1299 zł, L (np. Audi Q8) 1499 zł.",
+      "price": 1099,
+      "priceFrom": true,
+      "durationMinutes": 720,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "ceramika-1",
+      "name": "Roczna powłoka ceramiczna + one step",
+      "category": "Korekta i powłoki",
+      "description": "Roczna ceramika, jednoetapowa korekta i mycie detailingowe. Cena zależy też od stanu lakieru. Cena: S (np. Smart) 1299 zł, M (np. BMW 3) 1399 zł, L (np. Audi Q8) 1499 zł.",
+      "price": 1299,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "ceramika-3",
+      "name": "3-letnia powłoka ceramiczna + one step",
+      "category": "Korekta i powłoki",
+      "description": "3-letnia ceramika, jednoetapowa korekta, mycie detailingowe i niewidzialna wycieraczka na szybę czołową. Cena: S (np. Smart) 1799 zł, M (np. BMW 3) 1999 zł, L (np. Audi Q8) 2299 zł.",
+      "price": 1799,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "ceramika-5",
+      "name": "5-letnia powłoka ceramiczna + one step",
+      "category": "Korekta i powłoki",
+      "description": "5-letnia ceramika, jednoetapowa korekta, mycie detailingowe, detailing wnętrza i niewidzialna wycieraczka. Cena: S (np. Smart) 1999 zł, M (np. BMW 3) 2299 zł, L (np. Audi Q8) 2499 zł.",
+      "price": 1999,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "elastomer-5",
+      "name": "5-letnia powłoka elastomerowa + korekta 2-etapowa",
+      "category": "Korekta i powłoki",
+      "description": "Elastomer z samoregeneracją mikrorys, dwuetapowa korekta, mycie detailingowe, detailing wnętrza i niewidzialna wycieraczka. Cena: S (np. Smart) 2799 zł, M (np. BMW 3) 2999 zł, L (np. Audi Q8) 3499 zł.",
+      "price": 2799,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "serwis-powloki",
+      "name": "Serwis powłoki ceramicznej",
+      "category": "Korekta i powłoki",
+      "description": "Przywraca powłoce właściwości hydrofobowe.",
+      "price": 249,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "wosk",
+      "name": "Twardy wosk",
+      "category": "Korekta i powłoki",
+      "description": "Zabezpieczenie karoserii na 3–6 miesięcy.",
+      "price": 149,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "ppf-front",
+      "name": "Folia PPF Full Front",
+      "category": "Folia PPF",
+      "description": "Maska, zderzak, reflektory, błotniki, słupki A i B, czoło dachu, wnęki klamek i próg bagażnika. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "ppf-front-ceramika",
+      "name": "Full Front PPF + powłoka ceramiczna",
+      "category": "Folia PPF",
+      "description": "Folia na przód auta i ceramika na resztę karoserii. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "ppf-full",
+      "name": "Full Body PPF",
+      "category": "Folia PPF",
+      "description": "Bezbarwna folia na całe auto. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 4320,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "wycieraczka",
+      "name": "Niewidzialna wycieraczka – szyba przednia",
+      "category": "Dodatki",
+      "description": "Powłoka hydrofobowa odpychająca wodę – lepsza widoczność w deszczu.",
+      "price": 149,
+      "priceFrom": false,
+      "durationMinutes": 45,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "wycieraczka-plus",
+      "name": "Niewidzialna wycieraczka – przód, boczne i szyberdach",
+      "category": "Dodatki",
+      "description": "Powłoka hydrofobowa na szybie przedniej, bocznych przednich i szyberdachu.",
+      "price": 249,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "lampy",
+      "name": "Polerowanie i renowacja lamp",
+      "category": "Dodatki",
+      "description": "Usunięcie utlenionej warstwy kloszy. Zabezpieczenie ceramiką +100 zł za parę.",
+      "price": 199,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "silnik",
+      "name": "Mycie komory silnika",
+      "category": "Dodatki",
+      "description": "Mycie oraz nabłyszczenie elementów plastikowych i gumowych.",
+      "price": 199,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "key": "odkurzanie",
+      "name": "Dodatkowe odkurzanie",
+      "category": "Dodatki",
+      "description": "Dodatkowe odkurzanie wnętrza.",
+      "price": 49,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "s1",
+        "s2"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "167 opinii Google",
+      "text": "Średnia ocen 5,0 – klienci wracają i polecają nas dalej."
+    },
+    {
+      "icon": "car",
+      "title": "Parking przy Lotnisku Chopina",
+      "text": "Zostaw auto przed wylotem – odbierzesz je czyste po powrocie."
+    },
+    {
+      "icon": "credit-card",
+      "title": "Płatność kartą",
+      "text": "Wygodna poczekalnia albo zakupy 5 minut pieszo – SMS, gdy auto gotowe."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-911.webp",
+      "caption": "Porsche 911"
+    },
+    {
+      "image": "images/work-718.webp",
+      "caption": "Porsche 718 Cayman – folia PPF"
+    },
+    {
+      "image": "images/work-tesla-s.webp",
+      "caption": "Tesla Model S – folia PPF"
+    },
+    {
+      "image": "images/work-tesla-ppf.webp",
+      "caption": "Aplikacja folii PPF na maskę"
+    },
+    {
+      "image": "images/work-tesla-dach.webp",
+      "caption": "Tesla – oklejanie słupków i dachu"
+    },
+    {
+      "image": "images/work-s3.webp",
+      "caption": "Audi S3"
+    },
+    {
+      "image": "images/work-q5.webp",
+      "caption": "Audi Q5"
+    },
+    {
+      "image": "images/work-ml.webp",
+      "caption": "Mercedes ML"
+    },
+    {
+      "image": "images/work-yaris.webp",
+      "caption": "Toyota Yaris Cross"
+    },
+    {
+      "image": "images/work-cayenne.webp",
+      "caption": "Porsche Cayenne – czyszczenie wnętrza"
+    },
+    {
+      "image": "images/work-skora.webp",
+      "caption": "Czyszczenie skóry – w trakcie"
+    },
+    {
+      "image": "images/work-fotel-przed.webp",
+      "caption": "Fotel przed praniem"
+    },
+    {
+      "image": "images/work-lampy.webp",
+      "caption": "Polerowanie reflektorów"
+    },
+    {
+      "image": "images/work-korekta.webp",
+      "caption": "Korekta lakieru"
+    },
+    {
+      "image": "images/work-kierownica.webp",
+      "caption": "Czyszczenie skórzanej kierownicy"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ile trwa mycie samochodu?",
+      "answer": "Kompletne mycie z czyszczeniem wnętrza trwa zwykle 1–1,5 godziny, mycie detailingowe 45–120 minut. Usługi detailingowe mogą wymagać kilku godzin lub zostawienia auta na dłużej.",
+      "keywords": [
+        "ile trwa",
+        "jak dlugo",
+        "czas"
+      ]
+    },
+    {
+      "question": "Czy mogę zostawić auto na czas wyjazdu?",
+      "answer": "Tak. Jesteśmy przy Lotnisku Chopina i mamy monitorowany parking. Pakiet „Szybkie mycie” za 300 zł obejmuje mycie auta i miejsce postojowe do 7 dni – odbierasz czyste auto po powrocie.",
+      "keywords": [
+        "lotnisk",
+        "parking",
+        "wyjazd",
+        "urlop",
+        "zostawic",
+        "wylot"
+      ]
+    },
+    {
+      "question": "Od czego zależy cena?",
+      "answer": "Od wielkości auta (S np. Smart, M np. BMW 3, L np. Audi Q8) oraz stanu lakieru i zabrudzenia – przy bardzo dużym zabrudzeniu cena może wzrosnąć ze względu na dłuższy czas pracy.",
+      "keywords": [
+        "zalezy cena",
+        "wielkosc",
+        "rozmiar",
+        "zabrudzen"
+      ]
+    },
+    {
+      "question": "Czy obsługujecie auta premium?",
+      "answer": "Tak. Doświadczenie zdobyliśmy, przygotowując auta sportowe i luksusowe w wypożyczalni Global Elite Car – ale z taką samą dokładnością pracujemy przy każdym aucie.",
+      "keywords": [
+        "premium",
+        "luksus",
+        "sportow"
+      ]
+    },
+    {
+      "question": "Czy można płacić kartą?",
+      "answer": "Tak, akceptujemy płatności kartą.",
+      "keywords": [
+        "kart",
+        "platn",
+        "zaplac"
+      ]
+    },
+    {
+      "question": "Gdzie jesteście i kiedy otwarte?",
+      "answer": "Al. Krakowska 89, Warszawa Okęcie (Włochy, przy Lotnisku Chopina). Pon–pt 8:00–20:00, sob 8:00–14:00, w niedzielę nieczynne.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "krakowsk",
+        "dojazd",
+        "otwart",
+        "godzin",
+        "niedziel"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
