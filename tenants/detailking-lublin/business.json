@@ -1,0 +1,423 @@
+{
+  "slug": "detailking-lublin",
+  "name": "DetailKing Lublin by Auto Atelier",
+  "shortName": "DetailKing",
+  "kind": "detailing",
+  "tagline": "Auto detailing & smart repair w Lublinie – gwarancja nieskazitelnego efektu",
+  "description": "DetailKing to firma, w której Twoje auto uzyska nowe ja! Jesteśmy pasjonatami motoryzacji i pięknych samochodów. Zajmujemy się myciem detailingowym, praniem tapicerki z dowolnych materiałów – także skóry naturalnej – korektą lakieru, powłokami ceramicznymi i grafenowymi, folią PPF, przyciemnianiem i polerowaniem szyb oraz usuwaniem wgnieceń metodą PDR. Należymy do grupy DetailKing, działającej w całej Polsce od 2008 roku.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#E8731A",
+  "contacts": {
+    "phone": "+48 603 462 020",
+    "address": "ul. Willowa 36i, 20-819 Lublin",
+    "mapUrl": "https://www.google.com/maps/place/DetailKing+by+auto+atelier+-+Auto+Detailing+%26+Smart+Repair/@51.264314,22.522015,17z",
+    "facebook": "https://www.facebook.com/DETAILKINGlublinAUTOatelier"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 240,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "mycie",
+      "name": "Mycie detailingowe",
+      "category": "Mycie i wnętrze",
+      "description": "Mycie wstępne pianą, mycie ręczne, glinkowanie usuwające zanieczyszczenia niewidoczne gołym okiem i dokładne osuszanie – auto wygląda jak prosto z linii produkcyjnej.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze",
+      "name": "Sprzątanie i detailing wnętrza",
+      "category": "Mycie i wnętrze",
+      "description": "Dokładne czyszczenie wnętrza z każdego materiału – od ekoskóry, przez alcantarę i tkaniny, po welur.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pranie",
+      "name": "Pranie tapicerki samochodowej",
+      "category": "Mycie i wnętrze",
+      "description": "Odkurzanie, czyszczenie dywaników i schowków, odplamianie i pranie foteli z eco skóry, alcantary, materiału i weluru. Na życzenie impregnacja hydrofobowa.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora",
+      "name": "Renowacja skórzanej tapicerki",
+      "category": "Mycie i wnętrze",
+      "description": "Czyszczenie i impregnacja skóry foteli, kanapy, boczków, kierownicy i kokpitu, naprawa przetarć i pęknięć. Wycena po oględzinach.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "sprzedaz",
+      "name": "Przygotowanie auta do sprzedaży lub wystawy",
+      "category": "Mycie i wnętrze",
+      "description": "Kompleksowe odświeżenie nadwozia i wnętrza przed sprzedażą lub wystawą.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta",
+      "name": "Korekta lakieru",
+      "category": "Lakier i powłoki",
+      "description": "Polerowanie maszynowe z pastami i padami dobranymi do lakieru. Jednoetapowa usuwa 40–60% rys, dwuetapowa 60–80%, wieloetapowa najwięcej – zdejmujemy tylko 3–5 mikronów lakieru.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika",
+      "name": "Powłoka ceramiczna",
+      "category": "Lakier i powłoki",
+      "description": "Ochrona przed UV, solą, smołą i sokami z drzew oraz lustrzany połysk – od 5 do nawet 10 lat. Polecamy po korekcie lakieru lub w nowym aucie.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "grafen",
+      "name": "Powłoka grafenowa",
+      "category": "Lakier i powłoki",
+      "description": "Najnowocześniejsze zabezpieczenie lakieru o doskonałej odporności na ścieranie.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf",
+      "name": "Folia ochronna PPF",
+      "category": "Folie",
+      "description": "Niemal niewidoczna, samoregenerująca się folia poliuretanowa – na całe auto lub wybrane elementy, np. maskę i progi.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "zmiana-koloru",
+      "name": "Zmiana koloru samochodu folią",
+      "category": "Folie",
+      "description": "Full wrap lub pojedyncze elementy (dach, lusterka, listwy, spoiler) – mat, satyna, połysk, chrom. Lakier pozostaje nietknięty, folię można zdjąć np. przed zwrotem z leasingu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 4320,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "przyciemnianie",
+      "name": "Przyciemnianie szyb",
+      "category": "Szyby i lampy",
+      "description": "Folia zgodna z przepisami, montowana bez demontażu elementów auta – w każdej chwili można ją zdjąć.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "hydrofob",
+      "name": "Powłoka hydrofobowa na szyby",
+      "category": "Szyby i lampy",
+      "description": "Tzw. niewidzialna wycieraczka – na szybie przedniej trzyma około roku (ok. 15 tys. km), na bocznych dłużej.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "polerowanie-szyb",
+      "name": "Polerowanie szyb samochodowych",
+      "category": "Szyby i lampy",
+      "description": "Usuwanie rys i zmatowień po wycieraczkach i piasku – przywraca pełną widoczność.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "lampy",
+      "name": "Polerowanie lamp i reflektorów",
+      "category": "Szyby i lampy",
+      "description": "Przywrócenie przejrzystości zmatowionych reflektorów – lepsze oświetlenie drogi i wygląd auta.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pdr",
+      "name": "Usuwanie wgnieceń metodą PDR",
+      "category": "Smart repair",
+      "description": "Paintless Dent Repair – wypychanie wgnieceń bez lakierowania, np. po gradzie, parkingowej stłuczce lub wandalizmie.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Grupa DetailKing od 2008",
+      "text": "Autoryzowany salon marki działającej w całej Polsce."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Detailing i smart repair",
+      "text": "Od mycia i prania tapicerki po PPF, zmianę koloru i PDR."
+    },
+    {
+      "icon": "shield",
+      "title": "Wycena po oględzinach",
+      "text": "Przyjedź lub pokaż nam auto – dobierzemy zakres i podamy cenę."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-mustang.webp",
+      "caption": "Ford Mustang GT"
+    },
+    {
+      "image": "images/work-a8.webp",
+      "caption": "Audi A8"
+    },
+    {
+      "image": "images/work-a8-wnetrze.webp",
+      "caption": "Audi A8 – wnętrze"
+    },
+    {
+      "image": "images/work-glc.webp",
+      "caption": "Mercedes GLC Coupé"
+    },
+    {
+      "image": "images/work-glc-ppf.webp",
+      "caption": "Mercedes GLC – folia PPF"
+    },
+    {
+      "image": "images/work-kamiq-ppf.webp",
+      "caption": "Škoda Kamiq – aplikacja folii PPF"
+    },
+    {
+      "image": "images/work-kamiq.webp",
+      "caption": "Škoda Kamiq"
+    },
+    {
+      "image": "images/work-lotus.webp",
+      "caption": "Lotus Evora"
+    },
+    {
+      "image": "images/work-macan.webp",
+      "caption": "Porsche Macan S"
+    },
+    {
+      "image": "images/work-jaguar.webp",
+      "caption": "Jaguar F-Pace"
+    },
+    {
+      "image": "images/work-jaguar-wnetrze.webp",
+      "caption": "Jaguar F-Pace – detailing wnętrza"
+    },
+    {
+      "image": "images/work-e30.webp",
+      "caption": "BMW E30"
+    },
+    {
+      "image": "images/work-tesla.webp",
+      "caption": "Tesla Model S"
+    },
+    {
+      "image": "images/work-indian.webp",
+      "caption": "Motocykle Indian"
+    },
+    {
+      "image": "images/work-skora.webp",
+      "caption": "Skórzana tapicerka po renowacji"
+    },
+    {
+      "image": "images/work-studio.webp",
+      "caption": "Nasze studio przy ul. Willowej"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ile kosztuje usługa?",
+      "answer": "Każde auto wyceniamy indywidualnie – zależnie od wielkości, stanu i wybranego zakresu. Zarezerwuj termin lub zadzwoń pod +48 603 462 020, a przygotujemy wycenę po oględzinach.",
+      "keywords": [
+        "ile kosztuj",
+        "cennik",
+        "wycen",
+        "koszt"
+      ]
+    },
+    {
+      "question": "Czy polerowanie lakieru można powtarzać?",
+      "answer": "Tak. Podczas korekty usuwamy tylko ok. 3–5 mikronów z typowych 110–180 mikronów lakieru, więc w przyszłości można go ponownie korygować.",
+      "keywords": [
+        "powtarza",
+        "mikron",
+        "grubos"
+      ]
+    },
+    {
+      "question": "Czym różni się ceramika od grafenu?",
+      "answer": "Powłoka ceramiczna oparta na krzemie trzyma od 5 do nawet 10 lat. Grafenowa to nowsza technologia z jeszcze lepszą odpornością na ścieranie.",
+      "keywords": [
+        "rozni",
+        "roznic",
+        "grafen"
+      ]
+    },
+    {
+      "question": "Czy przyciemnianie szyb jest legalne i odwracalne?",
+      "answer": "Tak – używamy folii zgodnej z przepisami (przepuszczalność przednich szyb min. 70%), a folię można w każdej chwili zdjąć lub wymienić.",
+      "keywords": [
+        "legaln",
+        "odwracal",
+        "przepis",
+        "zdjac"
+      ]
+    },
+    {
+      "question": "Czy po zmianie koloru auto wróci do fabrycznego?",
+      "answer": "Tak. Lakier pod folią pozostaje nietknięty i zabezpieczony – przed zwrotem z leasingu folię zdejmujemy. Całe auto oklejamy zwykle w kilka dni roboczych.",
+      "keywords": [
+        "fabryczn",
+        "leasing",
+        "wrap",
+        "zmiana koloru"
+      ]
+    },
+    {
+      "question": "Gdzie jesteście i kiedy otwarte?",
+      "answer": "Lublin, ul. Willowa 36i (20-819). Otwarte od poniedziałku do piątku 9:00–17:00.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "willow",
+        "dojazd",
+        "otwart",
+        "godzin"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
