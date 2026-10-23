@@ -1,0 +1,849 @@
+{
+  "slug": "art-detailing-bydgoszcz",
+  "name": "ART Detailing Bydgoszcz",
+  "shortName": "ART Detailing",
+  "kind": "detailing",
+  "tagline": "Zabezpieczenie nowych aut oraz renowacja lakieru i skór – od 2014 roku",
+  "description": "ART Detailing powstał w 2014 roku z zamiłowania do motoryzacji. Na czas usługi Twoje auto staje się naszym „oczkiem w głowie” – poświęcamy mu czas, umiejętności i wiedzę zdobywaną w kraju i za granicą. Specjalizujemy się w zabezpieczaniu nowych aut (powłoki ochronne i folie PPF) oraz renowacji lakieru i skór. Od 2023 roku w dziale ART ANTICOR wykonujemy też zabezpieczenia antykorozyjne podwozi szwajcarskim Waxoyl.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#5B2A86",
+  "contacts": {
+    "phone": "+48 602 152 322",
+    "address": "ul. Szczecińska 10, 86-065 Lisi Ogon k/Bydgoszczy",
+    "email": "studio@artdetailing.pl",
+    "facebook": "https://www.facebook.com/artdetailingbydgoszcz"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "07:30",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "07:30",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "07:30",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "07:30",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "07:30",
+        "17:00"
+      ]
+    ],
+    "sat": [
+      [
+        "10:00",
+        "14:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "mini",
+      "name": "Detailing Mini",
+      "category": "Pakiety",
+      "description": "Dekontaminacja, glinkowanie, mycie, jednoetapowe polerowanie One Step i wosk, niewidzialna wycieraczka, odkurzanie i dressing wnętrza, wosk na felgi. Idealny przed zimą lub na wiosnę. Cena: hatchback 1199 zł, sedan/kombi/crossover 1399 zł, limuzyna/SUV/Van 1599 zł.",
+      "price": 1199,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "medium",
+      "name": "Detailing Medium",
+      "category": "Pakiety",
+      "description": "Pełne mycie z glinkowaniem, korekta lakieru, polerowanie kloszy przednich i tylnych, hydrofob na przednie szyby, detailing wnętrza, wosk na felgi i konserwacja uszczelek. Cena: hatchback 1799 zł, sedan/kombi/crossover 2199 zł, limuzyna/SUV/Van 2399 zł.",
+      "price": 1799,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "max",
+      "name": "Detailing Max",
+      "category": "Pakiety",
+      "description": "Najpełniejszy pakiet: komplet szyb z hydrofobem, dwukrotna impregnacja skór Colourlock, mycie kół z demontażem i obustronny wosk felg, ozonowanie, zapach i mycie parowe komory silnika. Cena: hatchback 2999 zł, sedan/kombi/crossover 3399 zł, limuzyna/SUV/Van 3599 zł.",
+      "price": 2999,
+      "priceFrom": true,
+      "durationMinutes": 5760,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "nowe-graphene",
+      "name": "Nowe auto – Aqua Graphene",
+      "category": "Pakiety",
+      "description": "Pełny detailing nowego auta z powłoką na lakier, szyby, tapicerkę, skóry i opony. Gwarancja pisemna 3 lata. Cena: hatchback 2999 zł, sedan/kombi/crossover 3499 zł, limuzyna/SUV/Van 3999 zł.",
+      "price": 2999,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "nowe-9h",
+      "name": "Nowe auto – Aqua Coating 9H Pro",
+      "category": "Pakiety",
+      "description": "Pełny detailing nowego auta z powłoką na lakier, szyby, tapicerkę, skóry i opony. Gwarancja pisemna 4+ lata. Cena: hatchback 2999 zł, sedan/kombi/crossover 3499 zł, limuzyna/SUV/Van 3999 zł.",
+      "price": 2999,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "nowe-ecoating",
+      "name": "Nowe auto – Aqua E-Coating Pro",
+      "category": "Pakiety",
+      "description": "Pełny detailing nowego auta z powłoką na lakier, szyby, tapicerkę, skóry i opony. Gwarancja pisemna 5 lat. Cena: hatchback 3499 zł, sedan/kombi/crossover 3799 zł, limuzyna/SUV/Van 4399 zł.",
+      "price": 3499,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "nowe-uncr",
+      "name": "Nowe auto – MaxProtect UNC-R",
+      "category": "Pakiety",
+      "description": "Powłoka membranowa MaxProtect na lakier, tapicerkę i opony oraz Colourlock na skóry. Gwarancja pisemna 3 lata. Cena: hatchback 2999 zł, sedan/kombi/crossover 3499 zł, limuzyna/SUV/Van 3999 zł.",
+      "price": 2999,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "nowe-elite",
+      "name": "Nowe auto – MaxProtect Pro Elite",
+      "category": "Pakiety",
+      "description": "Powłoka membranowa MaxProtect na lakier, tapicerkę i opony oraz Colourlock na skóry. Gwarancja pisemna 5 lat. Cena: hatchback 3499 zł, sedan/kombi/crossover 3799 zł, limuzyna/SUV/Van 4399 zł.",
+      "price": 3499,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "nowe-waxoyl",
+      "name": "Nowe auto – Waxoyl Ceramic Coating",
+      "category": "Pakiety",
+      "description": "Ceramika Waxoyl na lakier, kwarc na szyby, zabezpieczenie plastików, tapicerki Waxoyl UPT i skór Colourlock. Gwarancja pisemna 5 lat. Cena: hatchback 3599 zł, sedan/kombi/crossover 4199 zł, limuzyna/SUV/Van 4599 zł.",
+      "price": 3599,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "sprzedaz",
+      "name": "Detailing – auto do sprzedaży",
+      "category": "Pakiety",
+      "description": "Mycie z glinkowaniem, hydrofob na szyby, opony, odkurzanie i dressing wnętrza, wosk syntetyczny. Opcje: odnowienie kierownicy i gałki 99 zł, regeneracja reflektorów 299 zł. Cena: hatchback 1199 zł, sedan/kombi/crossover 1299 zł, limuzyna/SUV/Van 1499 zł.",
+      "price": 1199,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie-premium",
+      "name": "Mycie Premium",
+      "category": "Mycie",
+      "description": "Piana aktywna, mycie na dwa wiadra z Grit Guard, wnęki drzwi, felgi, osuszanie mikrofibrą i powietrzem, szyby, HydroWax, odkurzanie i dressing opon. Środki HYPER i KIURLAB. Auto zabezpieczone u nas: 299 zł. Cena: hatchback 349 zł, sedan/kombi/crossover 349 zł, limuzyna/SUV/Van 399 zł.",
+      "price": 349,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie-detailingowe",
+      "name": "Mycie Detailingowe",
+      "category": "Mycie",
+      "description": "Dekontaminacja i deironizacja, dwa mycia z Grit Guard, glinkowanie, wnęki parą, bezdotykowe osuszanie, wosk syntetyczny na 2 miesiące, wnętrze i zapach. Środki DURAGLOSS. Auto zabezpieczone u nas: 399 zł. Cena: hatchback 499 zł, sedan/kombi/crossover 499 zł, limuzyna/SUV/Van 599 zł.",
+      "price": 499,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wosk",
+      "name": "Woskowanie lakieru woskiem syntetycznym",
+      "category": "Mycie",
+      "description": "Trwały wosk syntetyczny – ochrona powyżej 6 miesięcy.",
+      "price": 249,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "silnik-para",
+      "name": "Kosmetyka parowa komory silnika",
+      "category": "Mycie",
+      "description": "Mycie parowe komory silnika.",
+      "price": 99,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "silnik-chemia",
+      "name": "Mycie chemiczne komory silnika",
+      "category": "Mycie",
+      "description": "Chemiczne mycie komory silnika.",
+      "price": 199,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "odkurzanie",
+      "name": "Odkurzanie i odświeżenie wnętrza",
+      "category": "Wnętrze",
+      "description": "Odkurzanie, plastiki Interior QD, wyświetlacze, szyby z obu stron i wnęki drzwi.",
+      "price": 149,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pranie",
+      "name": "Pranie ekstrakcyjne tapicerki",
+      "category": "Wnętrze",
+      "description": "Pranie ekstrakcyjne, szyby, osuszanie i zapach. Opcje: podsufitka bonetem +149 zł, pasy bezpieczeństwa +200 zł / 4 pasy. Cena: hatchback 499 zł, sedan/kombi/crossover 499 zł, limuzyna/SUV/Van 599 zł.",
+      "price": 499,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze-max",
+      "name": "Detailing wnętrza Max – materiał",
+      "category": "Wnętrze",
+      "description": "Z demontażem przednich foteli: pranie całości, dressing AQUA, wyświetlacze, wnęki parą z woskiem, uszczelki, osuszanie i zapach perfumowy. Cena: hatchback 1199 zł, sedan/kombi/crossover 1399 zł, limuzyna/SUV/Van 1499 zł.",
+      "price": 1199,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "impregnacja",
+      "name": "Impregnacja tapicerki materiałowej",
+      "category": "Wnętrze",
+      "description": "Zabezpieczenie tapicerki przed plamami i wilgocią. Cena: hatchback 399 zł, sedan/kombi/crossover 399 zł, limuzyna/SUV/Van 499 zł.",
+      "price": 399,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Ozonowanie wnętrza",
+      "category": "Wnętrze",
+      "description": "Dezynfekcja i neutralizacja zapachów ozonem.",
+      "price": 99,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora",
+      "name": "Czyszczenie i impregnacja skór",
+      "category": "Wnętrze",
+      "description": "Odkurzanie, plastiki, wyświetlacze, szyby, wnęki parą i impregnacja wszystkich skór Colourlock. Powtórnie w ciągu 12 miesięcy: 300 zł. Cena: hatchback 499 zł, sedan/kombi/crossover 499 zł, limuzyna/SUV/Van 599 zł.",
+      "price": 499,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora-max",
+      "name": "Detailing wnętrza Max – skóra",
+      "category": "Wnętrze",
+      "description": "Z demontażem przednich foteli, płukaniem tkanin z neutralizatorem zapachów i impregnacją wszystkich skór Colourlock. Cena: hatchback 1199 zł, sedan/kombi/crossover 1399 zł, limuzyna/SUV/Van 1499 zł.",
+      "price": 1199,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "renowacja-skory",
+      "name": "Renowacja tapicerki skórzanej",
+      "category": "Wnętrze",
+      "description": "Czyszczenie, usuwanie rys i zagnieceń, dobór barwy i lakierowanie Colourlock. Komplet (fotele, boczki, zagłówki, kierownica) od 2999 zł, komplet foteli od 1999 zł, fotel od 999 zł, boczek od 599 zł.",
+      "price": 2999,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "kierownica",
+      "name": "Renowacja kierownicy i gałki biegów",
+      "category": "Wnętrze",
+      "description": "Renowacja skóry kierownicy i gałki skrzyni biegów systemem Colourlock.",
+      "price": 499,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-1",
+      "name": "Korekta lakieru – stopień I",
+      "category": "Lakier i powłoki",
+      "description": "Nadaje nowego blasku lakierowi, wosk syntetyczny na 3–4 miesiące. Cena: hatchback 999 zł, sedan/kombi/crossover 1199 zł, limuzyna/SUV/Van 1399 zł.",
+      "price": 999,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-2",
+      "name": "Korekta lakieru – stopień II",
+      "category": "Lakier i powłoki",
+      "description": "Nieskazitelny blask, zaprawki odprysków lakierem po kodzie, przygotowanie pod powłoki, wosk na 4–6 miesięcy. Cena: hatchback 1499 zł, sedan/kombi/crossover 1799 zł, limuzyna/SUV/Van 1999 zł.",
+      "price": 1499,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-3",
+      "name": "Korekta lakieru – stopień III",
+      "category": "Lakier i powłoki",
+      "description": "Pełna korekta z zaprawkami i uzupełnieniem głębokich rys, powłoka polimerowa na 6–12 miesięcy. Cena: hatchback 2399 zł, sedan/kombi/crossover 2599 zł, limuzyna/SUV/Van 2999 zł.",
+      "price": 2399,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szlifowanie",
+      "name": "Szlifowanie lakieru – usuwanie mory (całe auto)",
+      "category": "Lakier i powłoki",
+      "description": "Usługa specjalna: szlifowanie i polerowanie całego lakieru z zaprawkami. Cena: hatchback 3999 zł, sedan/kombi/crossover 4499 zł, limuzyna/SUV/Van 4999 zł.",
+      "price": 3999,
+      "priceFrom": true,
+      "durationMinutes": 14400,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "powloka-2",
+      "name": "Powłoka ochronna lakieru – 2–3 lata",
+      "category": "Lakier i powłoki",
+      "description": "CarPro Cquartz 1399 zł, Aqua Coating 9H 1499 zł, Gtechniq Crystal Serum Light 1699 zł (3 lata), MaxProtect UNC-R 1699 zł.",
+      "price": 1399,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "powloka-5",
+      "name": "Powłoka ochronna lakieru – 4–5 lat",
+      "category": "Lakier i powłoki",
+      "description": "Aqua 9H Pro 1999 zł, MaxProtect Pro Elite 2399 zł, Aqua E-Coating Pro 2499 zł, Waxoyl Crystal 9H i Williams Ceramic 2799 zł, Tevo Kuro Graphene 2999 zł.",
+      "price": 1999,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "konserwacja",
+      "name": "Konserwacja powłoki ochronnej",
+      "category": "Lakier i powłoki",
+      "description": "Odświeżenie powłoki – w cenie wymagane wcześniej mycie detailingowe. Cena: hatchback 499 zł, sedan/kombi/crossover 499 zł, limuzyna/SUV/Van 599 zł.",
+      "price": 499,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-reflektory",
+      "name": "Folia PPF – reflektory przednie",
+      "category": "Folie PPF",
+      "description": "Ochrona przed odpryskami, rysami, solą i UV. Cena orientacyjna.",
+      "price": 600,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-zderzak",
+      "name": "Folia PPF – zderzak przedni",
+      "category": "Folie PPF",
+      "description": "Cena orientacyjna.",
+      "price": 1900,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-maska",
+      "name": "Folia PPF – maska",
+      "category": "Folie PPF",
+      "description": "Cena orientacyjna.",
+      "price": 1800,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-klamki",
+      "name": "Folia PPF – przestrzenie pod klamkami",
+      "category": "Folie PPF",
+      "description": "Cena orientacyjna.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-prog",
+      "name": "Folia PPF – próg bagażnika",
+      "category": "Folie PPF",
+      "description": "Cena orientacyjna.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-progi",
+      "name": "Folia PPF – progi wewnętrzne (komplet)",
+      "category": "Folie PPF",
+      "description": "Cena orientacyjna.",
+      "price": 600,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full",
+      "name": "Folia PPF – Full Body",
+      "category": "Folie PPF",
+      "description": "Całe auto w folii ochronnej. Cena orientacyjna.",
+      "price": 17900,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "felgi",
+      "name": "Felgi – mycie z demontażem i wosk",
+      "category": "Felgi, szyby, lampy",
+      "description": "Demontaż, mycie, glinkowanie, opony i obustronny wosk syntetyczny.",
+      "price": 399,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "felgi-powloka",
+      "name": "Powłoka ochronna felg",
+      "category": "Felgi, szyby, lampy",
+      "description": "Aqua Wheels Coating 299 zł, 4nano Ice 399 zł.",
+      "price": 299,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "reflektory",
+      "name": "Regeneracja kloszy reflektorów",
+      "category": "Felgi, szyby, lampy",
+      "description": "Szlifowanie, polerowanie i powłoka ceramiczna na klosze.",
+      "price": 299,
+      "priceFrom": false,
+      "durationMinutes": 300,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "hydrofob",
+      "name": "Niewidzialna wycieraczka – szyba przednia",
+      "category": "Felgi, szyby, lampy",
+      "description": "Angelwax H2Go lub Waxoyl Final Glass 49 zł, powłoki 4nano / Aqua Glass / MaxProtect 99 zł. Komplet szyb: cena x2.",
+      "price": 49,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szyba-boczna",
+      "name": "Polerowanie szyby bocznej",
+      "category": "Felgi, szyby, lampy",
+      "description": "Usunięcie rys i zmatowień.",
+      "price": 399,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szyba-czolowa",
+      "name": "Polerowanie szyby czołowej",
+      "category": "Felgi, szyby, lampy",
+      "description": "Usunięcie rys po wycieraczkach i piasku.",
+      "price": 699,
+      "priceFrom": false,
+      "durationMinutes": 300,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "cabrio-dach",
+      "name": "Czyszczenie dachu kabrioletu",
+      "category": "Felgi, szyby, lampy",
+      "description": "Mycie auta, czyszczenie materiałowego dachu, suszenie i wygrzewanie promiennikiem IR.",
+      "price": 499,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "cabrio-szyba",
+      "name": "Regeneracja tylnej szyby kabrioletu",
+      "category": "Felgi, szyby, lampy",
+      "description": "Kilkuetapowe polerowanie poliwęglanu, powłoka kwarcowa i wygrzewanie IR.",
+      "price": 499,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "waxoyl",
+      "name": "Waxoyl – nowe auto",
+      "category": "Antykorozja Waxoyl",
+      "description": "Demontaż osłon, mycie parowe podwozia, bezbarwny wosk z inhibitorami korozji WAXOYL, hydrowosk na nadwozie, książeczka gwarancyjna. Cena: hatchback 3599 zł, sedan/kombi/crossover 3699 zł, limuzyna/SUV/Van 3799 zł.",
+      "price": 3599,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "waxoyl-medium",
+      "name": "Waxoyl Medium – nowe auto",
+      "category": "Antykorozja Waxoyl",
+      "description": "Rozszerzony pakiet antykorozyjny WAXOYL z książeczką gwarancyjną. Cena: hatchback 4999 zł, sedan/kombi/crossover 5499 zł, limuzyna/SUV/Van 5999 zł.",
+      "price": 4999,
+      "priceFrom": true,
+      "durationMinutes": 10080,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "waxoyl-max",
+      "name": "Waxoyl Max – nowe auto",
+      "category": "Antykorozja Waxoyl",
+      "description": "Najpełniejszy pakiet antykorozyjny WAXOYL z książeczką gwarancyjną. Cena: hatchback 6999 zł, sedan/kombi/crossover 7499 zł, limuzyna/SUV/Van 7999 zł.",
+      "price": 6999,
+      "priceFrom": true,
+      "durationMinutes": 11520,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "waxoyl-uzywane",
+      "name": "Waxoyl – auto używane",
+      "category": "Antykorozja Waxoyl",
+      "description": "Młotkowanie i sodowanie rdzy, podkład epoksydowy, czarny wosk WAXOYL. Wycena po oględzinach podwozia; auta sprzed 2020 r. od 4499 zł, na ramie i dostawcze od 5999 zł.",
+      "price": 3999,
+      "priceFrom": true,
+      "durationMinutes": 14400,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Od 2014 roku",
+      "text": "Wiedza zdobywana w kraju i za granicą, szkolenia dla detailerów."
+    },
+    {
+      "icon": "shield",
+      "title": "Gwarancja pisemna",
+      "text": "Powłoki Aqua, MaxProtect i Waxoyl z gwarancją do 5 lat."
+    },
+    {
+      "icon": "credit-card",
+      "title": "Ceny brutto",
+      "text": "Nie jesteśmy płatnikiem VAT. Płatność kartą. Bony podarunkowe od 99 zł."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-ferrari-przod.webp",
+      "caption": "Ferrari GTC4Lusso – folia PPF i CarPro Cquartz Skin"
+    },
+    {
+      "image": "images/work-ferrari-mycie.webp",
+      "caption": "Ferrari GTC4Lusso – mycie detailingowe"
+    },
+    {
+      "image": "images/work-ferrari-bok.webp",
+      "caption": "Ferrari GTC4Lusso – detal"
+    },
+    {
+      "image": "images/work-ferrari-kokpit.webp",
+      "caption": "Ferrari GTC4Lusso – wnętrze"
+    },
+    {
+      "image": "images/work-ferrari-fotele.webp",
+      "caption": "Ferrari GTC4Lusso – skóry Colourlock"
+    },
+    {
+      "image": "images/work-ferrari-silnik.webp",
+      "caption": "Ferrari GTC4Lusso – komora silnika"
+    },
+    {
+      "image": "images/work-ferrari-zacisk.webp",
+      "caption": "Ferrari GTC4Lusso – felgi i zaciski"
+    },
+    {
+      "image": "images/work-ppf.webp",
+      "caption": "Aplikacja folii PPF na maskę"
+    },
+    {
+      "image": "images/work-korekta.webp",
+      "caption": "Korekta lakieru"
+    },
+    {
+      "image": "images/work-opel-po.webp",
+      "caption": "Lakier po korekcie",
+      "before": "images/work-opel-przed.webp"
+    },
+    {
+      "image": "images/work-lampy-po.webp",
+      "caption": "Reflektory po regeneracji",
+      "before": "images/work-lampy-przed.webp"
+    },
+    {
+      "image": "images/work-skora.webp",
+      "caption": "Renowacja skóry Colourlock – przed i po"
+    },
+    {
+      "image": "images/work-alfa-155.webp",
+      "caption": "Alfa Romeo 155 V6"
+    },
+    {
+      "image": "images/work-studio.webp",
+      "caption": "Nasze studio w Lisim Ogonie"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Od czego zależy cena?",
+      "answer": "Od wielkości auta: hatchback (np. Audi A3, BMW 1), sedan/kombi/crossover (np. Audi A4–A6, BMW 3/5, X1) albo limuzyna/SUV/Van (np. Audi A8/Q5–Q8, BMW X3–X7, Mercedes S/GLC/GLE). Ostateczną wycenę robimy zawsze po oględzinach auta.",
+      "keywords": [
+        "zalezy cena",
+        "wielkosc",
+        "rozmiar",
+        "ostateczn",
+        "hatchback",
+        "suv"
+      ]
+    },
+    {
+      "question": "Czy ceny są brutto?",
+      "answer": "Tak, wszystkie ceny na stronie są cenami brutto – nie jesteśmy płatnikiem VAT.",
+      "keywords": [
+        "brutto",
+        "netto",
+        "vat",
+        "faktur"
+      ]
+    },
+    {
+      "question": "Jaką powłokę wybrać?",
+      "answer": "Klasa podstawowa (CarPro Cquartz, Aqua Coating 9H, Gtechniq CSL, MaxProtect UNC-R) chroni 2–3 lata. Nasza propozycja premium: Aqua 9H Pro, MaxProtect Pro Elite, Aqua E-Coating Pro, Waxoyl, Williams lub Tevo Kuro Graphene – 4–5 lat. Felgi, skóry i szyby zabezpieczamy produktami tej samej marki.",
+      "keywords": [
+        "ktora powlok",
+        "jaka powlok",
+        "wybrac",
+        "trwalos",
+        "ile lat"
+      ]
+    },
+    {
+      "question": "Co to jest zabezpieczenie Waxoyl?",
+      "answer": "Od 2023 roku w dziale ART ANTICOR zabezpieczamy podwozia szwajcarskim Waxoyl – woskiem z inhibitorami korozji, stosowanym fabrycznie. Każde auto dostaje książeczkę gwarancyjną WAXOYL.",
+      "keywords": [
+        "waxoyl",
+        "antykoroz",
+        "podwozi",
+        "rdza",
+        "korozj"
+      ]
+    },
+    {
+      "question": "Czy macie bony podarunkowe?",
+      "answer": "Tak – bony o wartości 100, 200 i 500 zł kosztują 99, 199 i 499 zł, obejmują wszystkie usługi i są ważne 12 miesięcy.",
+      "keywords": [
+        "bon",
+        "voucher",
+        "prezent",
+        "podarun"
+      ]
+    },
+    {
+      "question": "Gdzie jesteście i kiedy otwarte?",
+      "answer": "ul. Szczecińska 10, 86-065 Lisi Ogon k/Bydgoszczy. Pon–pt 7:30–17:00, sob 10:00–14:00, w niedzielę nieczynne.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "szczecinsk",
+        "lisi ogon",
+        "dojazd",
+        "otwart",
+        "godzin"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
