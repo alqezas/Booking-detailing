@@ -1,0 +1,761 @@
+{
+  "slug": "detailingownia",
+  "name": "Detailingownia",
+  "shortName": "Detailingownia",
+  "kind": "detailing",
+  "tagline": "Profesjonalny auto detailing w Krakowie od 2014 roku – ceramika, korekta, PPF",
+  "description": "Detailingownia to zespół pasjonatów motoryzacji z wieloletnim doświadczeniem – znani jako Auto Detailing Kraków, działamy od 2014 roku. Łączymy wiedzę, precyzję i najlepsze produkty, żeby Twoje auto wyglądało perfekcyjnie. Jesteśmy certyfikowanymi specjalistami od powłok i folii PPF, pracujemy na sprawdzonej chemii premium w nowoczesnym studiu z 3 stanowiskami i profesjonalnym oświetleniem.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#C8102E",
+  "contacts": {
+    "phone": "+48 535 572 625",
+    "address": "ul. Władysława Łokietka 266, 31-334 Kraków",
+    "mapUrl": "https://maps.app.goo.gl/zmgSEMU9E2eyjuRaA",
+    "email": "kontakt@detailingownia.pl",
+    "facebook": "https://www.facebook.com/275893129734149"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "14:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 240,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "s1",
+      "name": "Stanowisko 1"
+    },
+    {
+      "key": "s2",
+      "name": "Stanowisko 2"
+    },
+    {
+      "key": "s3",
+      "name": "Stanowisko 3"
+    }
+  ],
+  "services": [
+    {
+      "key": "mycie-podst",
+      "name": "Mycie podstawowe",
+      "category": "Myjnia",
+      "description": "Karoseria, felgi, szyby i opony – metoda dwóch wiader. Małe/sedan / SUV i kombi / van i bus: 100 / 130 / 150 zł.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "mycie-det",
+      "name": "Mycie detailingowe",
+      "category": "Myjnia",
+      "description": "Z dekontaminacją glinką i osuszeniem. Małe/sedan / SUV i kombi / van i bus: 180 / 220 / 260 zł.",
+      "price": 180,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "mycie-wosk",
+      "name": "Mycie + wosk na mokro",
+      "category": "Myjnia",
+      "description": "Ochrona i połysk na 2–4 tygodnie. Małe/sedan / SUV i kombi / van i bus: 150 / 180 / 210 zł.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "dekont",
+      "name": "Dekontaminacja chemiczna",
+      "category": "Myjnia",
+      "description": "Usunięcie nalotów, żywicy i smoły. Małe/sedan / SUV i kombi / van i bus: 300 / 350 / 400 zł.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "felgi-myc",
+      "name": "Czyszczenie felg",
+      "category": "Myjnia",
+      "description": "Detailingowe czyszczenie 4 felg.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "odkurzanie",
+      "name": "Odkurzanie + wycieranie wnętrza",
+      "category": "Wnętrze",
+      "description": "Podstawowe sprzątanie wnętrza. Małe/sedan / SUV i kombi / van i bus: 100 / 130 / 160 zł.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "pranie",
+      "name": "Pranie tapicerki materiałowej",
+      "category": "Wnętrze",
+      "description": "Ekstrakcyjne czyszczenie siedzeń, ok. 3–5 godzin. Małe/sedan / SUV i kombi / van i bus: od 500 / od 600 / od 700 zł.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "skora",
+      "name": "Czyszczenie skóry",
+      "category": "Wnętrze",
+      "description": "Delikatne oczyszczenie i nawilżenie. Małe/sedan / SUV i kombi / van i bus: od 400 / od 500 / od 600 zł.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "wnetrze-std",
+      "name": "Detailing wnętrza STANDARD",
+      "category": "Wnętrze",
+      "description": "Kompleksowe czyszczenie wszystkich elementów. Małe/sedan / SUV i kombi / van i bus: od 800 / od 1000 / od 1200 zł.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "wnetrze-prem",
+      "name": "Detailing wnętrza PREMIUM",
+      "category": "Wnętrze",
+      "description": "Standard + impregnacja, ozonowanie i dressing. Małe/sedan / SUV i kombi / van i bus: od 1200 / od 1500 / od 1800 zł.",
+      "price": 1200,
+      "priceFrom": true,
+      "durationMinutes": 600,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Ozonowanie",
+      "category": "Wnętrze",
+      "description": "Eliminacja zapachów i bakterii.",
+      "price": 100,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "impregnacja",
+      "name": "Impregnacja tapicerki",
+      "category": "Wnętrze",
+      "description": "Ochrona przed zabrudzeniami. Impregnacja skóry od 300 zł.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "one-step",
+      "name": "Korekta ONE-STEP (odświeżenie lakieru)",
+      "category": "Lakier i ceramika",
+      "description": "Jedno przejście maszynowe, usunięcie ok. 50–70% defektów. Cena 1000–1500 zł.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 600,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "two-step",
+      "name": "Korekta TWO-STEP",
+      "category": "Lakier i ceramika",
+      "description": "Cutting + finishing, usunięcie ok. 80–90% defektów. Cena 1500–2200 zł.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "multi-step",
+      "name": "Korekta MULTI-STEP (pełna)",
+      "category": "Lakier i ceramika",
+      "description": "Wieloetapowy proces, usunięcie 95–100% defektów.",
+      "price": 2500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "wosk",
+      "name": "Woskowanie premium",
+      "category": "Lakier i ceramika",
+      "description": "Wosk naturalny lub syntetyczny, trwałość 1–3 miesiące. Cena 500–800 zł.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "ceramika-1",
+      "name": "Powłoka ceramiczna 1-warstwowa (12 miesięcy)",
+      "category": "Lakier i ceramika",
+      "description": "Cena 800–1200 zł, z myciem i dekontaminacją.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "ceramika-2",
+      "name": "Powłoka ceramiczna 2-warstwowa (2 lata)",
+      "category": "Lakier i ceramika",
+      "description": "Cena 1500–2000 zł, z myciem i dekontaminacją.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "ceramika-prem",
+      "name": "Powłoka ceramiczna PREMIUM (3–5 lat)",
+      "category": "Lakier i ceramika",
+      "description": "Wielowarstwowa, maksymalna ochrona. Cena 2500–3500 zł.",
+      "price": 2500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "elastomer",
+      "name": "Powłoka elastomerowa (2–3 lata)",
+      "category": "Lakier i ceramika",
+      "description": "Samoregenerująca, odporna na water spoty. Cena 2000–3000 zł.",
+      "price": 2000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "felgi-cer",
+      "name": "Ceramika na felgi",
+      "category": "Lakier i ceramika",
+      "description": "Komplet 4 felg, trwałość 1–2 lata.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "serwis",
+      "name": "Serwis powłoki ceramicznej",
+      "category": "Lakier i ceramika",
+      "description": "Przegląd, odświeżenie i booster. Cena 600–800 zł.",
+      "price": 600,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "ppf-reflektory",
+      "name": "Folia PPF – reflektory przednie",
+      "category": "Folia PPF",
+      "description": "Para lamp.",
+      "price": 600,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "ppf-klamki",
+      "name": "Folia PPF – wnęki klamek",
+      "category": "Folia PPF",
+      "description": "4 wnęki.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "ppf-prog",
+      "name": "Folia PPF – próg załadowczy",
+      "category": "Folia PPF",
+      "description": "Ochrona przy załadunku.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "ppf-lusterka",
+      "name": "Folia PPF – lusterka + słupki A",
+      "category": "Folia PPF",
+      "description": "Elementy narażone na parkingach.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "ppf-zderzak",
+      "name": "Folia PPF – przedni zderzak",
+      "category": "Folia PPF",
+      "description": "Pełne oklejenie zderzaka.",
+      "price": 2000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "ppf-maska",
+      "name": "Folia PPF – maska",
+      "category": "Folia PPF",
+      "description": "Pełne oklejenie maski.",
+      "price": 2500,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "ppf-full-front",
+      "name": "Folia PPF – FULL FRONT",
+      "category": "Folia PPF",
+      "description": "Maska, zderzak, błotniki, lusterka i reflektory. Trwałość 5–10 lat.",
+      "price": 6000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "ppf-full-body",
+      "name": "Folia PPF – FULL BODY",
+      "category": "Folia PPF",
+      "description": "Pełne oklejenie samochodu – wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 7200,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "silnik",
+      "name": "Czyszczenie komory silnika",
+      "category": "Dodatkowe",
+      "description": "Bezpieczne czyszczenie komory silnika.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "reflektory",
+      "name": "Renowacja reflektorów",
+      "category": "Dodatkowe",
+      "description": "Polerowanie i zabezpieczenie, cena za parę.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "cabrio",
+      "name": "Czyszczenie dachu cabrio",
+      "category": "Dodatkowe",
+      "description": "Impregnacja dachu cabrio od 400 zł.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "szyby",
+      "name": "Powłoka na szyby (niewidzialna wycieraczka)",
+      "category": "Dodatkowe",
+      "description": "Hydrofobowe zabezpieczenie szyb.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "nowe-auto",
+      "name": "Zabezpieczenie nowego samochodu",
+      "category": "Dodatkowe",
+      "description": "Zestaw zabezpieczeń dobrany do nowego auta – wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "key": "leasing",
+      "name": "Przygotowanie auta do sprzedaży lub zwrotu z leasingu",
+      "category": "Dodatkowe",
+      "description": "Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "4.9/5 – 120+ opinii",
+      "text": "Od 2014 roku, ponad 12 lat doświadczenia."
+    },
+    {
+      "icon": "shield",
+      "title": "Certyfikowani specjaliści",
+      "text": "Przeszkoleni w aplikacji powłok i folii PPF."
+    },
+    {
+      "icon": "credit-card",
+      "title": "Korekta + ceramika = −10%",
+      "text": "Rabat 10% na całość przy pakiecie. Ceny netto, bez ukrytych kosztów."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-corvette.webp",
+      "caption": "Chevrolet Corvette"
+    },
+    {
+      "image": "images/work-ferrari.webp",
+      "caption": "Ferrari FF"
+    },
+    {
+      "image": "images/work-ferrari-mycie.webp",
+      "caption": "Mycie Ferrari FF"
+    },
+    {
+      "image": "images/work-ferrari-wnetrze.webp",
+      "caption": "Wnętrze Ferrari FF"
+    },
+    {
+      "image": "images/work-s500.webp",
+      "caption": "Mercedes-Benz S500 Coupé"
+    },
+    {
+      "image": "images/work-skora.webp",
+      "caption": "Czyszczenie skóry – Mercedes-Benz S500"
+    },
+    {
+      "image": "images/work-focus-rs.webp",
+      "caption": "Ford Focus RS"
+    },
+    {
+      "image": "images/work-gla45.webp",
+      "caption": "Mercedes-AMG GLA 45"
+    },
+    {
+      "image": "images/work-audi.webp",
+      "caption": "Audi"
+    },
+    {
+      "image": "images/work-w111.webp",
+      "caption": "Mercedes-Benz W111"
+    },
+    {
+      "image": "images/work-ml.webp",
+      "caption": "Mercedes-Benz ML"
+    },
+    {
+      "image": "images/work-ppf.webp",
+      "caption": "Aplikacja folii PPF – BMW"
+    },
+    {
+      "image": "images/work-felgi.webp",
+      "caption": "Czyszczenie felg"
+    },
+    {
+      "image": "images/work-silnik.webp",
+      "caption": "Czyszczenie komory silnika"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Czy ceny są netto?",
+      "answer": "Tak, wszystkie ceny w cenniku są netto – do kwoty dolicz 23% VAT. Cena ustalona przed rozpoczęciem prac jest ceną ostateczną, bez ukrytych kosztów.",
+      "keywords": [
+        "netto",
+        "brutto",
+        "vat",
+        "ukryt"
+      ]
+    },
+    {
+      "question": "Ile trwa usługa?",
+      "answer": "Pranie tapicerki to ok. 3–5 godzin, korekta lakieru 1–2 dni, powłoka ceramiczna 2–3 dni. Mycie ręczne zajmuje 1–3 godziny.",
+      "keywords": [
+        "ile trwa",
+        "jak dlugo",
+        "czas",
+        "godzin",
+        "dni"
+      ]
+    },
+    {
+      "question": "Jak można zapłacić?",
+      "answer": "Gotówką, BLIK-iem lub przelewem. Dla firm wystawiamy faktury VAT.",
+      "keywords": [
+        "zaplac",
+        "platn",
+        "blik",
+        "gotowk",
+        "przelew",
+        "faktur"
+      ]
+    },
+    {
+      "question": "Czy odbieracie auto?",
+      "answer": "Tak – door-to-door (odbiór i zwrot auta) za 150 zł. Przy dłuższych usługach auto zastępcze do uzgodnienia.",
+      "keywords": [
+        "door",
+        "odbior",
+        "zwrot",
+        "zastepcz",
+        "transport"
+      ]
+    },
+    {
+      "question": "Czy jest rabat przy łączeniu usług?",
+      "answer": "Tak – pakiet korekta lakieru + powłoka ceramiczna to rabat 10% na całość.",
+      "keywords": [
+        "rabat",
+        "pakiet",
+        "taniej",
+        "laczen",
+        "znizk"
+      ]
+    },
+    {
+      "question": "Gdzie jesteście i czy jest parking?",
+      "answer": "Kraków, ul. Władysława Łokietka 266 – ok. 200 m od sklepu Lewiatan jadąc od ul. Opolskiej. Bezpłatny parking przy studiu. Otwarte pn–pt 8:00–18:00, sob 9:00–14:00.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "lokietk",
+        "parking",
+        "dojazd",
+        "otwart",
+        "godzin"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
