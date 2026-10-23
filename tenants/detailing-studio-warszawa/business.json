@@ -1,0 +1,369 @@
+{
+  "slug": "detailing-studio-warszawa",
+  "name": "Detailing Studio Warszawa",
+  "shortName": "Detailing WAW",
+  "kind": "detailing",
+  "tagline": "Czystość, blask i ochrona Twojego auta – Praga Południe",
+  "description": "Detailing Studio Warszawa na Pradze Południe: korekta i polerowanie lakieru, powłoki ceramiczne i kwarcowe, czyszczenie wnętrza, pranie tapicerki i renowacja skóry. Jakość gwarantują imienne certyfikaty szkoleń ADBL. Działamy w trzech krokach: umawiasz wycenę i wspólnie wybieramy zakres, zostawiasz auto, odbierasz zadbany samochód. „Samochody to moja pasja” – Piotr, właściciel.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#C62828",
+  "contacts": {
+    "phone": "+48 511 101 520",
+    "address": "ul. Tyśmienicka 5, 04-303 Warszawa",
+    "mapUrl": "https://maps.app.goo.gl/VFqH4WQRJVCMuNLJ7"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "14:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 240,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "powloka",
+      "name": "Zabezpieczenie nadwozia powłoką",
+      "category": "Lakier i ochrona",
+      "description": "Powłoki ceramiczne lub kwarcowe chronią lakier przed zarysowaniami, zabrudzeniami i UV, nadając głęboki połysk i trwałość. Stosujemy m.in. Ultra Coat.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta",
+      "name": "Korekta lakieru",
+      "category": "Lakier i ochrona",
+      "description": "Usuwanie rys, hologramów i zmatowień – przywraca fabryczny wygląd karoserii. W nowych autach to prawie zawsze konieczność przed zabezpieczeniem.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "polerowanie",
+      "name": "Polerowanie lakieru",
+      "category": "Lakier i ochrona",
+      "description": "Usunięcie drobnych rys i zmatowień, przywrócenie głębokiego połysku.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "foliowanie",
+      "name": "Foliowanie – PPF lub zmiana koloru",
+      "category": "Lakier i ochrona",
+      "description": "Ochrona lakieru bezbarwną folią PPF albo zmiana koloru auta folią.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze",
+      "name": "Czyszczenie wnętrza",
+      "category": "Wnętrze",
+      "description": "Kompleksowe czyszczenie tapicerki, plastików i dywaników z zabezpieczeniem plastików dressingiem z ochroną UV.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 300,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pranie",
+      "name": "Pranie tapicerki",
+      "category": "Wnętrze",
+      "description": "Pranie tapicerki materiałowej lub skórzanej – usuwa plamy, zapachy i głębokie zabrudzenia.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora",
+      "name": "Regeneracja i naprawa tapicerki skórzanej",
+      "category": "Wnętrze",
+      "description": "Naprawa pęknięć i przetarć oraz odświeżenie koloru skóry – także kierownicy, bez obszywania na nowo.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "nadwozie",
+      "name": "Czyszczenie nadwozia",
+      "category": "Nadwozie i detale",
+      "description": "Dokładne czyszczenie karoserii z wszelkich zabrudzeń – przygotowanie do dalszych zabiegów.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "felgi",
+      "name": "Czyszczenie i impregnacja felg",
+      "category": "Nadwozie i detale",
+      "description": "Usuwa pył hamulcowy i zabezpiecza felgi przed korozją i osadzaniem się brudu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "silnik",
+      "name": "Czyszczenie komory silnika",
+      "category": "Nadwozie i detale",
+      "description": "Usunięcie brudu i olejów – lepsza estetyka i łatwiejsza diagnostyka.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "klosze",
+      "name": "Regeneracja kloszy reflektorów",
+      "category": "Nadwozie i detale",
+      "description": "Usuwa zmatowienia i zażółcenia – lepsza widoczność nocą, bez kosztownej wymiany lamp.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "przyciemnianie",
+      "name": "Przyciemnianie szyb",
+      "category": "Nadwozie i detale",
+      "description": "Mniej nagrzewania wnętrza i więcej prywatności pasażerów.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 300,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "5.0 w Google",
+      "text": "Na podstawie 138 opinii – klienci chwalą efekty, ceny i podejście właściciela."
+    },
+    {
+      "icon": "shield",
+      "title": "Certyfikaty ADBL",
+      "text": "Imienne certyfikaty z czyszczenia wnętrz i korekty lakieru."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Tylko trzy kroki",
+      "text": "Umów wycenę, zostaw samochód, jeździj zadbanym autem."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-tesla-y.webp",
+      "caption": "Tesla Model Y – korekta i powłoka ceramiczna Ultra Coat"
+    },
+    {
+      "image": "images/work-tesla-y-front.webp",
+      "caption": "Tesla Model Y – po zabezpieczeniu lakieru"
+    },
+    {
+      "image": "images/work-tesla-y-tyl.webp",
+      "caption": "Tesla Model Y – tył"
+    },
+    {
+      "image": "images/work-durango.webp",
+      "caption": "Dodge Durango RT – korekta dwuetapowa i ceramika"
+    },
+    {
+      "image": "images/work-durango-grill.webp",
+      "caption": "Dodge Durango RT – przód"
+    },
+    {
+      "image": "images/work-durango-felga.webp",
+      "caption": "Dodge Durango RT – felgi"
+    },
+    {
+      "image": "images/work-opel-po.webp",
+      "caption": "Opel – wnętrze po praniu tapicerki",
+      "before": "images/work-opel-przed.webp"
+    },
+    {
+      "image": "images/work-opel-drzwi-po.webp",
+      "caption": "Opel – boczek drzwi po",
+      "before": "images/work-opel-drzwi-przed.webp"
+    },
+    {
+      "image": "images/work-kierownica-po.webp",
+      "caption": "Kierownica skórzana po renowacji",
+      "before": "images/work-kierownica-przed.webp"
+    },
+    {
+      "image": "images/work-klosz-po.webp",
+      "caption": "Klosz reflektora po regeneracji",
+      "before": "images/work-klosz-przed.webp"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ile kosztuje detailing samochodu?",
+      "answer": "Koszt zależy od wybranych usług, wielkości auta i stopnia zabrudzenia. Wycena jest indywidualna – zarezerwuj termin albo zadzwoń: 511 10 15 20.",
+      "keywords": [
+        "ile kosztuj",
+        "cennik",
+        "wycen",
+        "koszt"
+      ]
+    },
+    {
+      "question": "Jak długo trwa detailing?",
+      "answer": "Czas zależy od zakresu prac – od kilku godzin do 2–3 dni.",
+      "keywords": [
+        "ile trwa",
+        "jak dlugo",
+        "czas"
+      ]
+    },
+    {
+      "question": "Czy detailing ma sens w starszym aucie?",
+      "answer": "Tak, pomaga odświeżyć wygląd i poprawić estetykę – nasi klienci przywozili nawet 20-letnie auta i byli zaskoczeni efektem.",
+      "keywords": [
+        "starsz",
+        "stary",
+        "wiekow",
+        "letni"
+      ]
+    },
+    {
+      "question": "Czy zabezpieczacie nowe auta z salonu?",
+      "answer": "Tak. Nowe samochody nie mają idealnego lakieru – zwykle robimy korektę, a potem zabezpieczamy go powłoką ceramiczną, żeby zachował fabryczny wygląd na dłużej.",
+      "keywords": [
+        "nowe",
+        "nowy",
+        "salon"
+      ]
+    },
+    {
+      "question": "Czym jest auto detailing?",
+      "answer": "To zaawansowany proces pielęgnacji auta, obejmujący czyszczenie, renowację i zabezpieczanie różnych jego elementów.",
+      "keywords": [
+        "czym jest",
+        "co to",
+        "detailing to"
+      ]
+    },
+    {
+      "question": "Gdzie jesteście?",
+      "answer": "Warszawa, Praga Południe, ul. Tyśmienicka 5 (04-303). Zadzwoń: 511 10 15 20.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "tysmienick",
+        "dojazd",
+        "lokalizac"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
