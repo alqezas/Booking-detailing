@@ -1,0 +1,1047 @@
+{
+  "slug": "arm-car-auto-spa",
+  "name": "ARM CAR Auto Spa – detailing & wrapping",
+  "shortName": "ARM CAR",
+  "kind": "detailing",
+  "tagline": "Folia PPF, powłoki ochronne, detailing i myjnia – Gdańsk, al. Grunwaldzka 229",
+  "description": "ARM CAR Auto Spa to studio detailingu i folii PPF w sercu Gdańska. Pod jednym adresem prowadzimy cztery hale – dwie do mycia i dwie do detailingu i aplikacji PPF, z kontrolowaną temperaturą i wilgotnością, oświetleniem LED i filtracją powietrza. Jesteśmy certyfikowanym aplikatorem XPEL, STEK i UltraFit oraz akredytowanym studiem Gyeon. Obsłużyliśmy ponad 7840 aut.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#C9A24A",
+  "contacts": {
+    "phone": "+48 534 304 050",
+    "address": "al. Grunwaldzka 229, 80-266 Gdańsk",
+    "mapUrl": "https://maps.app.goo.gl/D5j6zyN4a85ouEHd7",
+    "email": "biuroarmcar@gmail.com",
+    "whatsapp": "48534304050",
+    "instagram": "armcarautospagdansk",
+    "facebook": "https://www.facebook.com/armcarautospagdansk"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [
+      [
+        "08:00",
+        "16:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 120,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "myjnia1",
+      "name": "Hala myjąca 1"
+    },
+    {
+      "key": "myjnia2",
+      "name": "Hala myjąca 2"
+    },
+    {
+      "key": "hala1",
+      "name": "Hala detailing/PPF 1"
+    },
+    {
+      "key": "hala2",
+      "name": "Hala detailing/PPF 2"
+    }
+  ],
+  "services": [
+    {
+      "key": "ppf-bikini",
+      "name": "Pakiet PPF Bikini",
+      "category": "Folia PPF",
+      "description": "Ochrona najczęściej narażonych elementów przodu. Folie XPEL, STEK lub UltraFit z gwarancją producenta. Cena netto + 23% VAT.",
+      "price": 2500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ppf-full-front",
+      "name": "Pakiet PPF Full Front",
+      "category": "Folia PPF",
+      "description": "Cały przód – maska, zderzak, błotniki, lusterka – oraz słupki B i C i próg załadunkowy. Cena netto + 23% VAT.",
+      "price": 5000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ppf-full-body",
+      "name": "Pakiet PPF Full Body",
+      "category": "Folia PPF",
+      "description": "Pełne zabezpieczenie karoserii – aplikacja zwykle 3–7 dni roboczych. Auto zastępcze na czas realizacji. Cena netto + 23% VAT.",
+      "price": 12000,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ppf-kolor",
+      "name": "Zmiana koloru – kolorowa folia PPF",
+      "category": "Folia PPF",
+      "description": "Pełna zmiana koloru bez malowania z ochroną lakieru. Połysk, satyna lub mat. Cena netto + 23% VAT.",
+      "price": 13000,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ppf-wlasna",
+      "name": "Własna kombinacja PPF",
+      "category": "Folia PPF",
+      "description": "Wycena na podstawie zakresu i oględzin auta.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ppf-reflektor",
+      "name": "PPF – reflektor przedni",
+      "category": "Folia PPF",
+      "description": "Bezbarwna folia na klosz – ochrona przed odpryskami i matowieniem. Cena netto + 23% VAT.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ppf-lampa",
+      "name": "PPF – lampa tylna",
+      "category": "Folia PPF",
+      "description": "Zabezpieczenie klosza przed odpryskami kamieni. Cena netto + 23% VAT.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ppf-przyciemnienie",
+      "name": "Przyciemnienie reflektorów folią",
+      "category": "Folia PPF",
+      "description": "Efekt przyciemnienia z zachowaniem legalnej przepuszczalności światła. Cena netto + 23% VAT.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ppf-lusterko",
+      "name": "PPF – lusterko boczne",
+      "category": "Folia PPF",
+      "description": "Obudowa lusterka – element mocno narażony na odpryski. Cena netto + 23% VAT.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ppf-klamka",
+      "name": "PPF – wnęki klamek, ranty i progi drzwi",
+      "category": "Folia PPF",
+      "description": "Wnęka klamki od 50 zł, rant drzwi od 50 zł, próg drzwiowy od 70 zł – ochrona przed rysami od kluczy, butów i obiciami na parkingu. Cena netto + 23% VAT.",
+      "price": 50,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ppf-prog-bagaznika",
+      "name": "PPF – próg bagażnika",
+      "category": "Folia PPF",
+      "description": "Krawędź załadunkowa chroniona przed przetarciami. Cena netto + 23% VAT.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ppf-tunel",
+      "name": "PPF – tunel środkowy (piano black)",
+      "category": "Folia PPF",
+      "description": "Folia na piano black tunelu – koniec z drobnymi rysami. Cena netto + 23% VAT.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ppf-ekran",
+      "name": "PPF – wyświetlacz multimediów",
+      "category": "Folia PPF",
+      "description": "Antyrefleksyjna folia ochronna na ekran. Cena netto + 23% VAT.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ppf-piano",
+      "name": "PPF – elementy piano black",
+      "category": "Folia PPF",
+      "description": "Za sztukę. Komplet elementów piano black od 200 zł. Cena netto + 23% VAT.",
+      "price": 70,
+      "priceFrom": true,
+      "durationMinutes": 30,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ppf-szyba",
+      "name": "Folia ochronna na przednią szybę",
+      "category": "Folia PPF",
+      "description": "Ochrona przed odpryskami kamieni i mikrouszkodzeniami. Cena netto + 23% VAT.",
+      "price": 1300,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ppf-serwis",
+      "name": "Serwis folii PPF",
+      "category": "Folia PPF",
+      "description": "Odświeżenie, wymiana uszkodzonego fragmentu lub relokacja folii. Cena netto + 23% VAT.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ceramika-1",
+      "name": "Powłoka ceramiczna – 1 rok",
+      "category": "Powłoki ochronne",
+      "description": "Wejście w świat powłok – hydrofobia i łatwiejsze mycie na sezon. W pakiecie: czyszczenie, dekontaminacja, korekta Light One Step, powłoka na karoserię, hydrofob na szyby oraz powłoka na felgi i opony. Cena netto + 23% VAT.",
+      "price": 1700,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ceramika-2",
+      "name": "Powłoka ceramiczna – 2 lata",
+      "category": "Powłoki ochronne",
+      "description": "Dobry kompromis trwałości do ceny. W pakiecie: czyszczenie, dekontaminacja, korekta Light One Step, powłoka na karoserię, hydrofob na szyby oraz powłoka na felgi i opony. Cena netto + 23% VAT.",
+      "price": 2200,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ceramika-3",
+      "name": "Powłoka ceramiczna – 3 lata",
+      "category": "Powłoki ochronne",
+      "description": "Najczęściej wybierana – solidna ochrona na kilka sezonów. W pakiecie: czyszczenie, dekontaminacja, korekta Light One Step, powłoka na karoserię, hydrofob na szyby oraz powłoka na felgi i opony. Cena netto + 23% VAT.",
+      "price": 2700,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ceramika-4",
+      "name": "Powłoka ceramiczna – 4 lata",
+      "category": "Powłoki ochronne",
+      "description": "Długoterminowa ochrona z głębokim połyskiem. W pakiecie: czyszczenie, dekontaminacja, korekta Light One Step, powłoka na karoserię, hydrofob na szyby oraz powłoka na felgi i opony. Cena netto + 23% VAT.",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "ceramika-5",
+      "name": "Powłoka ceramiczna – 5 lat",
+      "category": "Powłoki ochronne",
+      "description": "Maksymalna trwałość ceramiki. W pakiecie: czyszczenie, dekontaminacja, korekta Light One Step, powłoka na karoserię, hydrofob na szyby oraz powłoka na felgi i opony. Cena netto + 23% VAT.",
+      "price": 3300,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "grafen-5",
+      "name": "Powłoka grafenowa – 5 lat",
+      "category": "Powłoki ochronne",
+      "description": "Twardsza i bardziej odporna termicznie od ceramiki. W pakiecie: czyszczenie, dekontaminacja, korekta Light One Step, powłoka na karoserię, hydrofob na szyby oraz powłoka na felgi i opony. Cena netto + 23% VAT.",
+      "price": 3800,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "elastomer-5",
+      "name": "Powłoka elastomerowa – 5 lat",
+      "category": "Powłoki ochronne",
+      "description": "Samoregenerująca się – mikrorysy znikają pod wpływem ciepła. W pakiecie: czyszczenie, dekontaminacja, korekta Light One Step, powłoka na karoserię, hydrofob na szyby oraz powłoka na felgi i opony. Cena netto + 23% VAT.",
+      "price": 4200,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "powloka-skora",
+      "name": "Powłoka na fotele i skóry",
+      "category": "Powłoki ochronne",
+      "description": "Ochrona skóry przed przetarciami, plamami i UV. Cena netto + 23% VAT.",
+      "price": 700,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "powloka-felgi",
+      "name": "Powłoka na felgi (4 szt.)",
+      "category": "Powłoki ochronne",
+      "description": "Utrudnia zapiekanie pyłu hamulcowego, ułatwia mycie. Cena netto + 23% VAT.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "powloka-plastiki",
+      "name": "Powłoka na plastiki zewnętrzne",
+      "category": "Powłoki ochronne",
+      "description": "Odświeżenie i zabezpieczenie czarnych plastików przed szarzeniem. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "cabrio",
+      "name": "Impregnacja dachu cabrio",
+      "category": "Powłoki ochronne",
+      "description": "Hydrofobowa impregnacja materiałowego dachu. Cena netto + 23% VAT.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "wycieraczka",
+      "name": "Niewidzialna wycieraczka",
+      "category": "Powłoki ochronne",
+      "description": "Powłoka na przednią szybę – lepsza widoczność w deszczu. Cena netto + 23% VAT.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "serwis-powloki",
+      "name": "Serwis powłoki",
+      "category": "Powłoki ochronne",
+      "description": "Doładowanie hydrofobii po sezonie. Cena netto + 23% VAT.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "korekta-light",
+      "name": "Lekka korekta – Light One Step",
+      "category": "Korekta lakieru",
+      "description": "Usunięcie do 30% zarysowań – świetny połysk i odświeżony lakier. Cena netto + 23% VAT.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "korekta-1",
+      "name": "Korekta lakieru 1-etapowa",
+      "category": "Korekta lakieru",
+      "description": "Od 60% zarysowań – bardzo wysoki połysk. Cena netto + 23% VAT.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "korekta-2",
+      "name": "Korekta lakieru 2-etapowa",
+      "category": "Korekta lakieru",
+      "description": "Od 80% zarysowań – dla aut z większą ilością rys, zmatowień i oksydacji. Cena netto + 23% VAT.",
+      "price": 1800,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "korekta-3",
+      "name": "Korekta lakieru 3-etapowa",
+      "category": "Korekta lakieru",
+      "description": "Od 90% zarysowań – usuwa głębokie rysy, zmatowienia i oksydację. Cena netto + 23% VAT.",
+      "price": 2800,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "korekta-punktowa",
+      "name": "Korekta punktowa",
+      "category": "Korekta lakieru",
+      "description": "Punktowe usunięcie rys. Cena netto + 23% VAT.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "zaprawki",
+      "name": "Zaprawki lakiernicze",
+      "category": "Korekta lakieru",
+      "description": "Zminimalizowanie punktowych uszkodzeń i ochrona przed korozją. Cena netto + 23% VAT.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "reflektory",
+      "name": "Polerowanie reflektorów",
+      "category": "Korekta lakieru",
+      "description": "Usunięcie matowości, żółknięcia i drobnych zarysowań. Cena netto + 23% VAT.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "mycie-reczne",
+      "name": "Mycie ręczne metodą dwóch wiader",
+      "category": "Detailing",
+      "description": "Bezpieczna metoda dwóch wiader – minimalizuje ryzyko rys. Cena netto + 23% VAT.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "mycie-detailingowe",
+      "name": "Mycie detailingowe",
+      "category": "Detailing",
+      "description": "Pre-wash, dwa wiadra, dekontaminacja i osuszanie bez smug – 3–5 godzin. Cena netto + 23% VAT.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "wnetrze",
+      "name": "Detailingowe czyszczenie wnętrza",
+      "category": "Detailing",
+      "description": "Odkurzanie, plastiki, szyby i tapicerka od środka. Cena netto + 23% VAT.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "wosk-12",
+      "name": "Wosk twardy – 12 miesięcy",
+      "category": "Detailing",
+      "description": "Sealant – ochrona i połysk na cały rok (sama aplikacja). Cena netto + 23% VAT.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "wosk-6",
+      "name": "Wosk twardy – 6 miesięcy",
+      "category": "Detailing",
+      "description": "Półroczna ochrona woskiem syntetycznym (sama aplikacja). Cena netto + 23% VAT.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "swissvax",
+      "name": "Wosk carnauba Swissvax",
+      "category": "Detailing",
+      "description": "Naturalny wosk – ciepły, głęboki efekt wet look. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "wosk-szybki",
+      "name": "Szybki wosk",
+      "category": "Detailing",
+      "description": "Odświeżenie połysku i hydrofobii po myciu. Cena netto + 23% VAT.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 30,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "dekontaminacja",
+      "name": "Dekontaminacja chemiczna",
+      "category": "Detailing",
+      "description": "Fallout remover rozpuszcza osady metaliczne z lakieru. Cena netto + 23% VAT.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "glinka",
+      "name": "Dekontaminacja mechaniczna – glinka",
+      "category": "Detailing",
+      "description": "Usuwa wtopione zanieczyszczenia – lakier gładki jak szkło. Cena netto + 23% VAT.",
+      "price": 1200,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "skory",
+      "name": "Czyszczenie i konserwacja skór",
+      "category": "Detailing",
+      "description": "Cleaner + odżywka – czysta, odżywiona skóra bez wysuszania. Cena netto + 23% VAT.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "renowacja-skory",
+      "name": "Renowacja i malowanie skór",
+      "category": "Detailing",
+      "description": "Czyszczenie, wypełnianie ubytków i barwienie skóry. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "pdr",
+      "name": "Usuwanie wgnieceń bez lakierowania (PDR)",
+      "category": "Detailing",
+      "description": "Wyciąganie wgnieceń bez naruszania fabrycznego lakieru. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "hala1",
+        "hala2"
+      ]
+    },
+    {
+      "key": "mycie-zewn",
+      "name": "Mycie zewnętrzne",
+      "category": "Myjnia",
+      "description": "Mycie ręczne. Szampon pH dla aut z powłoką lub PPF +50/60/70 zł, mycie szyb +30/35/40 zł. Ceny brutto. Auto małe / średnie / duże: 100 / 130 / 160 zł.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "myjnia1",
+        "myjnia2"
+      ]
+    },
+    {
+      "key": "komplet",
+      "name": "Mycie komplet",
+      "category": "Myjnia",
+      "description": "Mycie zewnętrzne, szyby, odkurzanie i plastiki z dressingiem. Ceny brutto. Auto małe / średnie / duże: 200 / 250 / 300 zł.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "myjnia1",
+        "myjnia2"
+      ]
+    },
+    {
+      "key": "odkurzanie",
+      "name": "Odkurzanie wnętrza",
+      "category": "Myjnia",
+      "description": "Odkurzanie dywaników +20/30/40 zł. Ceny brutto. Auto małe / średnie / duże: 60 / 70 / 80 zł.",
+      "price": 60,
+      "priceFrom": true,
+      "durationMinutes": 30,
+      "resources": [
+        "myjnia1",
+        "myjnia2"
+      ]
+    },
+    {
+      "key": "plastiki",
+      "name": "Czyszczenie plastików + dressing",
+      "category": "Myjnia",
+      "description": "Ceny brutto. Auto małe / średnie / duże: 50 / 60 / 70 zł.",
+      "price": 50,
+      "priceFrom": true,
+      "durationMinutes": 30,
+      "resources": [
+        "myjnia1",
+        "myjnia2"
+      ]
+    },
+    {
+      "key": "silnik",
+      "name": "Mycie silnika",
+      "category": "Myjnia",
+      "description": "Wyłącznie na podstawie podpisanego oświadczenia klienta. Cena brutto.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "myjnia1",
+        "myjnia2"
+      ]
+    },
+    {
+      "key": "podwozie",
+      "name": "Mycie podwozia",
+      "category": "Myjnia",
+      "description": "Spłukanie soli i błota – szczególnie ważne zimą. Cena brutto.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "myjnia1",
+        "myjnia2"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Ozonowanie samochodu",
+      "category": "Myjnia",
+      "description": "Usuwa zapachy i bakterie z kabiny, tapicerki i klimatyzacji. Cena brutto.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "myjnia1",
+        "myjnia2"
+      ]
+    },
+    {
+      "key": "fotel",
+      "name": "Pranie fotela",
+      "category": "Pranie tapicerki",
+      "description": "Za jeden fotel – pranie ekstrakcyjne z osuszaniem. Komplet wyceniamy indywidualnie. Cena brutto.",
+      "price": 150,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "myjnia1",
+        "myjnia2"
+      ]
+    },
+    {
+      "key": "podsufitka",
+      "name": "Pranie podsufitki",
+      "category": "Pranie tapicerki",
+      "description": "Delikatnie, bez ryzyka odklejenia. Cena brutto.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "myjnia1",
+        "myjnia2"
+      ]
+    },
+    {
+      "key": "podloga",
+      "name": "Pranie podłogi",
+      "category": "Pranie tapicerki",
+      "description": "Ekstrakcja podłogi kabiny po wyjęciu dywaników. Cena brutto.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "myjnia1",
+        "myjnia2"
+      ]
+    },
+    {
+      "key": "dywaniki",
+      "name": "Pranie dywaników (komplet)",
+      "category": "Pranie tapicerki",
+      "description": "Pranie i osuszanie. Cena brutto.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "myjnia1",
+        "myjnia2"
+      ]
+    },
+    {
+      "key": "boczki",
+      "name": "Pranie boczków drzwi lub pasów",
+      "category": "Pranie tapicerki",
+      "description": "Materiałowe boczki drzwi od 100 zł, pasy bezpieczeństwa z dezynfekcją od 100 zł. Cena brutto.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "myjnia1",
+        "myjnia2"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "5,0 w Google – 850 opinii",
+      "text": "Ponad 7840 obsłużonych aut i 100% zadowolonych klientów."
+    },
+    {
+      "icon": "shield",
+      "title": "XPEL, STEK, UltraFit, Gyeon",
+      "text": "Certyfikowany aplikator – gwarancja producenta rejestrowana na auto."
+    },
+    {
+      "icon": "car",
+      "title": "Auto zastępcze",
+      "text": "Na czas dłuższych usług. Wycena i oględziny bezpłatnie."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-hala.webp",
+      "caption": "Hala detailingu i folii PPF"
+    },
+    {
+      "image": "images/work-ppf-aplikacja.webp",
+      "caption": "Aplikacja folii PPF"
+    },
+    {
+      "image": "images/work-g-klasa.webp",
+      "caption": "Mercedes G – folia PPF, zmiana koloru"
+    },
+    {
+      "image": "images/work-bmw-zielony.webp",
+      "caption": "BMW X5 – zielona folia PPF"
+    },
+    {
+      "image": "images/work-bmw-full-body.webp",
+      "caption": "BMW – Full Body PPF"
+    },
+    {
+      "image": "images/work-mercedes-kolor.webp",
+      "caption": "Mercedes C Coupé – kolorowa folia PPF"
+    },
+    {
+      "image": "images/work-panamera.webp",
+      "caption": "Porsche Panamera – folia PPF"
+    },
+    {
+      "image": "images/work-x4.webp",
+      "caption": "BMW X4 – matowa folia PPF"
+    },
+    {
+      "image": "images/work-911.webp",
+      "caption": "Porsche 911"
+    },
+    {
+      "image": "images/work-m2.webp",
+      "caption": "BMW M2"
+    },
+    {
+      "image": "images/work-range-rover.webp",
+      "caption": "Range Rover Velar – mat"
+    },
+    {
+      "image": "images/work-karbon.webp",
+      "caption": "Folia PPF karbonowa"
+    },
+    {
+      "image": "images/work-korekta.webp",
+      "caption": "Porsche 911 – korekta trzyetapowa"
+    },
+    {
+      "image": "images/work-polerka.webp",
+      "caption": "Korekta lakieru"
+    },
+    {
+      "image": "images/work-bentley.webp",
+      "caption": "Bentley – detailing wnętrza"
+    },
+    {
+      "image": "images/work-porsche-wnetrze.webp",
+      "caption": "Porsche – wnętrze"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Czy ceny są netto czy brutto?",
+      "answer": "Detailing, folie PPF, powłoki i korektę lakieru podajemy netto – do cen należy doliczyć 23% VAT. Myjnia i pranie tapicerki są w cenach brutto. Ceny są orientacyjne – finalna kwota zależy od gabarytu i stanu auta.",
+      "keywords": [
+        "netto",
+        "brutto",
+        "vat",
+        "orientacyj"
+      ]
+    },
+    {
+      "question": "Czy wycena jest płatna?",
+      "answer": "Nie – oględziny i wycena w studio są bezpłatne, możemy też wycenić auto na podstawie zdjęć. Przy pakietach łączonych (np. korekta + powłoka, PPF + ceramika) dajemy rabaty pakietowe.",
+      "keywords": [
+        "wycena",
+        "platna",
+        "bezplat",
+        "rabat",
+        "pakietow"
+      ]
+    },
+    {
+      "question": "Jak długo trwa usługa?",
+      "answer": "Mycie detailingowe 3–5 godzin, korekta lakieru 1–3 dni, folia PPF w pełnym pakiecie 3–7 dni roboczych, powłoka ceramiczna 1–2 dni plus utwardzanie. Pełny detailing wnętrza zwykle 1 dzień.",
+      "keywords": [
+        "ile trwa",
+        "jak dlugo",
+        "dlugo trwa",
+        "czas trwania"
+      ]
+    },
+    {
+      "question": "Czy mogę zostawić auto na czas realizacji?",
+      "answer": "Tak. Studio jest zamkniętym, monitorowanym obiektem, a na czas dłuższych zleceń (PPF, kompleksowy detailing) udostępniamy auto zastępcze.",
+      "keywords": [
+        "zostawic",
+        "zastepcz",
+        "monitor",
+        "bezpiecz"
+      ]
+    },
+    {
+      "question": "Jakie folie i gwarancje oferujecie?",
+      "answer": "Pracujemy na foliach XPEL, STEK i UltraFit z gwarancją producenta (zwykle 7–10 lat). Powłoki ceramiczne i grafenowe mają gwarancję od 3 do 9 lat, a korektę i detailing obejmujemy własną gwarancją wykonania.",
+      "keywords": [
+        "xpel",
+        "stek",
+        "ultrafit",
+        "marki",
+        "gwaranc"
+      ]
+    },
+    {
+      "question": "Gdzie jesteście i kiedy otwarte?",
+      "answer": "al. Grunwaldzka 229, 80-266 Gdańsk. Pon–pt 8:00–17:00, sobota 8:00–16:00, niedziela zamknięte.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "grunwaldzk",
+        "dojazd",
+        "otwart",
+        "godzin"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
