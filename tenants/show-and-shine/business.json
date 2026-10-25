@@ -1,0 +1,465 @@
+{
+  "slug": "show-and-shine",
+  "name": "Show&Shine Car Detailing Łódź",
+  "shortName": "Show&Shine",
+  "kind": "detailing",
+  "tagline": "Studio auto detailingu w Łodzi od 2013 – jedyny w regionie partner powłok CS-II",
+  "description": "Show&Shine prowadzi profesjonalne studio auto detailingu w Łodzi od 2013 roku. Korekta i renowacja lakieru, powłoki ceramiczne i tytanowe CS-II, folie PPF, pranie tapicerki i renowacja skór. Jesteśmy jedynym w województwie łódzkim autoryzowanym partnerem marki CS-II, a nasze zabezpieczenia potwierdzamy pisemną gwarancją i certyfikatem aplikacji.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#3FAE49",
+  "contacts": {
+    "phone": "+48 792 866 603",
+    "address": "ul. Aleksandra 15, 93-418 Łódź",
+    "mapUrl": "https://g.page/showandshinestudio",
+    "email": "biuro@showandshine.pl",
+    "instagram": "showandshineldz",
+    "facebook": "https://www.facebook.com/showandshinestudio"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "13:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "mycie-wosk",
+      "name": "Mycie detailingowe z aplikacją wosku",
+      "category": "Mycie i renowacja",
+      "description": "Bezpieczne mycie i odtłuszczanie, deironizacja felg, usunięcie asfaltu i smoły, mycie krawędzi drzwi, suszenie sprężonym powietrzem, szyby, cleaner i wybrany wosk.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "sprzedaz",
+      "name": "Przygotowanie auta do sprzedaży",
+      "category": "Mycie i renowacja",
+      "description": "Czyszczenie karoserii i felg, konserwacja plastików i uszczelek, maszynowe odświeżenie lakieru, odkurzanie, czyszczenie tapicerki i deski rozdzielczej.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "renowacja",
+      "name": "Renowacja lakieru",
+      "category": "Mycie i renowacja",
+      "description": "Maszynowe polerowanie wszystkich elementów lakierowanych z zabezpieczeniem woskiem.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "b268",
+      "name": "Powłoka ceramiczna B268 CS-II",
+      "category": "Powłoki CS-II",
+      "description": "Czyszczenie i odtłuszczanie karoserii i felg, usunięcie asfaltu i smoły, korekta lakieru, konserwacja plastików, listew, uszczelek, szyb i opon i aplikacja powłoki ceramicznej.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "stage2",
+      "name": "Powłoka ceramiczna Stage 2 CS-II",
+      "category": "Powłoki CS-II",
+      "description": "Czyszczenie i odtłuszczanie karoserii i felg, usunięcie asfaltu i smoły, korekta lakieru, konserwacja plastików, listew, uszczelek, szyb i opon, powłoka ceramiczna, ceramika na felgi oraz czyszczenie i impregnacja wnętrza.",
+      "price": 2500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramic-coating",
+      "name": "Powłoka Ceramic Coating CS-II",
+      "category": "Powłoki CS-II",
+      "description": "Czyszczenie i odtłuszczanie karoserii i felg, usunięcie asfaltu i smoły, korekta lakieru, konserwacja plastików, listew, uszczelek, szyb i opon, powłoka, niewidzialna wycieraczka na wszystkie szyby, ceramika na felgi, czyszczenie i impregnacja wnętrza.",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "titanium",
+      "name": "Powłoka tytanowa Titanium CS-II",
+      "category": "Powłoki CS-II",
+      "description": "Nowa generacja powłok: twardość 9H, efekt samoczyszczenia, blokowanie 90% UV i głęboki połysk do 10 lat. W pakiecie korekta, szyby, felgi i wnętrze.",
+      "price": 3500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-bikini",
+      "name": "Folia PPF – pakiet Bikini",
+      "category": "Folia PPF",
+      "description": "Zderzak przedni, reflektory, 1/3 maski i błotniki do równej linii. Samoregenerująca folia w 3 wersjach, gwarancja i certyfikat aplikacji.",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full-front",
+      "name": "Folia PPF – pakiet Full Front",
+      "category": "Folia PPF",
+      "description": "Cała maska, zderzak przedni, reflektory i błotniki.",
+      "price": 5000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full",
+      "name": "Folia PPF – całe auto",
+      "category": "Folia PPF",
+      "description": "Pełne zabezpieczenie pojazdu folią. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 5760,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-klamki",
+      "name": "Folia PPF – przestrzeń pod klamkami",
+      "category": "Folia PPF",
+      "description": "Ochrona przed zarysowaniami od kluczy i paznokci.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-prog",
+      "name": "Folia PPF – próg załadunkowy bagażnika",
+      "category": "Folia PPF",
+      "description": "Ochrona przy załadunku i rozładunku.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "reflektory",
+      "name": "Zabezpieczenie i przyciemnienie reflektorów",
+      "category": "Folia PPF",
+      "description": "Folią ochronną lub przyciemniającą. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "interior",
+      "name": "Interior+ – detailing wnętrza",
+      "category": "Wnętrze",
+      "description": "Odkurzanie, deska rozdzielcza, tunel i schowki, konserwacja plastików, pranie ekstrakcyjne foteli, kanapy i boczków, czyszczenie i impregnacja skóry, ozonowanie. Dostępne w pakiecie z myciem.",
+      "price": 600,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora",
+      "name": "Renowacja tapicerki skórzanej",
+      "category": "Wnętrze",
+      "description": "Usuwamy pęknięcia, przebarwienia i przetarcia bez ponownego obszywania. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Ozonowanie wnętrza",
+      "category": "Wnętrze",
+      "description": "Usuwa nieprzyjemne zapachy i drobnoustroje z układu wentylacyjnego.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pdr",
+      "name": "Bezinwazyjne wyciąganie wgnieceń",
+      "category": "Usługi dodatkowe",
+      "description": "Po parkingowych szkodach, drobnych kolizjach lub gradzie – bez lakierowania. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "przyciemnianie",
+      "name": "Przyciemnianie szyb",
+      "category": "Usługi dodatkowe",
+      "description": "Folie z atestem montowane przez doświadczonych fachowców. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 300,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "jachty",
+      "name": "Detailing łodzi, skuterów wodnych i jachtów",
+      "category": "Usługi dodatkowe",
+      "description": "Także samoloty i helikoptery. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Od 2013 roku",
+      "text": "Doświadczony zespół i 100% satysfakcji klientów."
+    },
+    {
+      "icon": "shield",
+      "title": "Partner CS-II",
+      "text": "Jedyny autoryzowany partner CS-II w województwie łódzkim – pisemna gwarancja."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Pakiet serwisowy w cenie",
+      "text": "Do folii PPF gwarancja, certyfikat aplikacji i pakiet serwisowy."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-dbs.webp",
+      "caption": "Aston Martin DBS"
+    },
+    {
+      "image": "images/work-amg-gt.webp",
+      "caption": "Mercedes-AMG GT – matowy lakier"
+    },
+    {
+      "image": "images/work-amg-gt-2.webp",
+      "caption": "Mercedes-AMG GT – powłoka ceramiczna"
+    },
+    {
+      "image": "images/work-g63.webp",
+      "caption": "Mercedes G 63 AMG"
+    },
+    {
+      "image": "images/work-mustang-ppf.webp",
+      "caption": "Ford Mustang – folia PPF"
+    },
+    {
+      "image": "images/work-bmw-powloka.webp",
+      "caption": "BMW – powłoka ceramiczna CS-II"
+    },
+    {
+      "image": "images/work-bmw.webp",
+      "caption": "BMW – detailing"
+    },
+    {
+      "image": "images/work-mercedes-klasyki.webp",
+      "caption": "Klasyczne Mercedesy – renowacja lakieru"
+    },
+    {
+      "image": "images/work-fiat.webp",
+      "caption": "Fiat Spider – renowacja lakieru"
+    },
+    {
+      "image": "images/work-ferrari.webp",
+      "caption": "Ferrari oldtimer"
+    },
+    {
+      "image": "images/work-folia.webp",
+      "caption": "Folia ochronna na reflektory"
+    },
+    {
+      "image": "images/work-wnetrze.webp",
+      "caption": "Czyszczenie wnętrza"
+    },
+    {
+      "image": "images/work-skora.webp",
+      "caption": "Czyszczenie skór BMW"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Czym jest powłoka tytanowa CS-II?",
+      "answer": "To nowa generacja powłok od amerykańskiego producenta: twardość 9H, trwały efekt samoczyszczenia, odporność na lekkie zarysowania i chemię, blokowanie 90% UV i głęboki połysk do 10 lat. Jesteśmy jedynym autoryzowanym partnerem CS-II w województwie łódzkim.",
+      "keywords": [
+        "tytan",
+        "titanium",
+        "cs-ii",
+        "cs2",
+        "csii"
+      ]
+    },
+    {
+      "question": "Czy na powłokę jest gwarancja?",
+      "answer": "Tak – długotrwałe zabezpieczenie powłokami ceramicznymi potwierdzamy pisemną gwarancją, a przy folii PPF dostajesz gwarancję, certyfikat aplikacji i pakiet serwisowy w cenie.",
+      "keywords": [
+        "gwaranc",
+        "certyfikat",
+        "serwis"
+      ]
+    },
+    {
+      "question": "Czy mycie można zamówić osobno?",
+      "answer": "Samo mycie detailingowe i Interior+ są dostępne tylko w pakiecie. Osobno zamówisz mycie detailingowe z aplikacją wosku – od 500 zł.",
+      "keywords": [
+        "osobno",
+        "samo mycie",
+        "tylko w pakiecie"
+      ]
+    },
+    {
+      "question": "Ile trwa detailing?",
+      "answer": "Perfekcyjna pielęgnacja to często wielogodzinny proces – auto zwykle zostaje u nas od kilku godzin do kilku dni, zależnie od zakresu. Dokładny czas podamy przy wycenie.",
+      "keywords": [
+        "ile trwa",
+        "jak dlugo",
+        "czas"
+      ]
+    },
+    {
+      "question": "Czy macie vouchery?",
+      "answer": "Tak – voucher na powłoki ceramiczne, pakiety, folie PPF lub dowolną usługę. Pomożemy dobrać najlepszą opcję.",
+      "keywords": [
+        "voucher",
+        "bon",
+        "prezent",
+        "podarun"
+      ]
+    },
+    {
+      "question": "Gdzie jesteście?",
+      "answer": "Łódź, ul. Aleksandra 15 (93-418). Obsługujemy też Pabianice, Rzgów, Tuszyn, Zgierz i Sieradz.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "aleksandra",
+        "dojazd",
+        "lokalizac"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
