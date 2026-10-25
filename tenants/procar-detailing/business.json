@@ -1,0 +1,600 @@
+{
+  "slug": "procar-detailing",
+  "name": "ProCar Detailing Kraków",
+  "shortName": "ProCar",
+  "kind": "detailing",
+  "tagline": "Powłoki ceramiczne Modesta, folie PPF i detailing – Kraków, Zabłocie",
+  "description": "ProCar Detailing to studio auto detailingu w Krakowie, na Zabłociu przy ul. Romanowicza 19a. Zabezpieczamy samochody powłokami ceramicznymi Modesta i foliami ochronnymi PPF, korygujemy lakier, czyścimy wnętrza i podwozia suchym lodem, konserwujemy podwozia Waxoylem. W ramach „The Art of Detailing” odnawiamy klasyczne samochody – traktujemy je jak dzieła sztuki.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#1F6FB2",
+  "contacts": {
+    "phone": "+48 503 046 494",
+    "address": "ul. Tadeusza Romanowicza 19a, 30-702 Kraków",
+    "mapUrl": "https://g.page/ProCarDetailingKrK",
+    "email": "kontakt@procardetailing.pl",
+    "instagram": "procardetailingkrk",
+    "facebook": "https://www.facebook.com/procardetailingkrk/",
+    "tiktok": "procardetailingkrk"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "07:00",
+        "16:00"
+      ]
+    ],
+    "tue": [
+      [
+        "07:00",
+        "16:00"
+      ]
+    ],
+    "wed": [
+      [
+        "07:00",
+        "16:00"
+      ]
+    ],
+    "thu": [
+      [
+        "07:00",
+        "16:00"
+      ]
+    ],
+    "fri": [
+      [
+        "07:00",
+        "16:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "procar-care",
+      "name": "ProCar Care – pielęgnacja stałych klientów",
+      "category": "Pakiety",
+      "description": "Dla aut zabezpieczonych u nas powłoką lub folią: mycie zewnętrzne i odświeżenie wnętrza. Serwis powłoki (usunięcie osadów, odżywki) +150 zł. Małe / średnie / duże: 400 / 400 / 450 zł. Cena netto.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "onedayspa",
+      "name": "Pakiet OneDaySpa",
+      "category": "Pakiety",
+      "description": "Mycie detailingowe z usunięciem smoły i opiłków, wosk do 2 miesięcy, odświeżenie wnętrza z aromatyzacją, impregnacja plastików. Cena promocyjna (regularnie 750 / 1000 zł). Małe / średnie / duże: 550 / 550 / 750 zł. Cena netto.",
+      "price": 550,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "quick-detail",
+      "name": "Pakiet Quick Detail",
+      "category": "Pakiety",
+      "description": "Mycie detailingowe, cleaner usuwający oksydację i mikrorysy, wosk premium Swissvax/Zymol na 3 miesiące na lakier i felgi, odświeżenie wnętrza. Cena promocyjna (regularnie 1200 / 1400 zł). Małe / średnie / duże: 800 / 800 / 1000 zł. Cena netto.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "sprzedaz",
+      "name": "Przygotowanie auta do sprzedaży",
+      "category": "Pakiety",
+      "description": "Polerowanie One Step, pranie wnętrza i zdjęcia do ogłoszenia. Małe / średnie / duże: 1700 / 1900 / 2100 zł. Cena netto.",
+      "price": 1700,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "modesta-basic",
+      "name": "Modesta Basic – do 2 lat",
+      "category": "Powłoki Modesta",
+      "description": "Wysoki połysk, głębia koloru, łatwiejsze mycie. Auto nowe od 1900 zł, używane (z korektą) 3400 zł. Opcje: felgi i szyby +1000 zł, skóra (3 lata) +1200 zł, podwozie od 2500 zł. Cena netto.",
+      "price": 1900,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "modesta-advance",
+      "name": "Modesta Advance – 3 lata",
+      "category": "Powłoki Modesta",
+      "description": "Na lakier połysk/mat, folie i tworzywa; mocno spowalnia brudzenie. Auto nowe 2500 zł, używane 4000 zł. Opcje: felgi i szyby +1000 zł, skóra (3 lata) +1200 zł, podwozie od 2500 zł. Cena netto.",
+      "price": 2500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "modesta-premium",
+      "name": "Modesta Premium – 4–6 lat",
+      "category": "Powłoki Modesta",
+      "description": "Topowa powłoka szklana, odporna na mocną chemię, dobierana pod właściciela. Auto nowe 3400 zł, używane 4900 zł. Opcje: felgi i szyby +1000 zł, skóra (3 lata) +1200 zł, podwozie od 2500 zł. Cena netto.",
+      "price": 3400,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "modesta-private",
+      "name": "Modesta Private Label – do 10 lat",
+      "category": "Powłoki Modesta",
+      "description": "Najlepsze, co Modesta oferuje: twarda nieorganiczna baza i superhydrofobowy top, odporne na smołę, korozję i chemię. Wymaga corocznego odnawiania. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 4320,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wycieraczka",
+      "name": "Niewidzialna wycieraczka",
+      "category": "Powłoki Modesta",
+      "description": "Szyba czołowa 350 zł, wszystkie szyby 500 zł. Cena netto.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "felgi-12",
+      "name": "Ceramika na felgi – do 12 miesięcy",
+      "category": "Powłoki Modesta",
+      "description": "Zabezpieczenie felg powłoką ceramiczną. Cena netto.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "felgi-36",
+      "name": "Ceramika na felgi – do 36 miesięcy",
+      "category": "Powłoki Modesta",
+      "description": "Zabezpieczenie felg powłoką ceramiczną. Cena netto.",
+      "price": 1200,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-1",
+      "name": "Korekta Level 1 – One Step",
+      "category": "Korekta lakieru",
+      "description": "Usuwa ok. 60% zarysowań i osady po twardej wodzie, z jednoczesnym zabezpieczeniem lakieru. W cenie mycie SPA i glinkowanie. Małe / średnie / duże: 1000 / 1200 / 1500 zł. Cena netto.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-2",
+      "name": "Korekta Level 2 – dwuetapowa",
+      "category": "Korekta lakieru",
+      "description": "Usuwa ok. 80% zarysowań i wżerów, wykańcza lakier na wysoki połysk pod powłokę lub wosk. W cenie mycie SPA i glinkowanie. Małe / średnie / duże: 1500 / 2000 / 2500 zł. Cena netto.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-3",
+      "name": "Korekta Level 3 – Signature Detailing",
+      "category": "Korekta lakieru",
+      "description": "Wieloetapowa korekta wszystkich możliwych defektów, zakończona woskiem premium, powłoką lub folią PPF. Małe / średnie / duże: 2500 / 3000 / 3500 zł. Cena netto.",
+      "price": 2500,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "odswiezenie",
+      "name": "Odświeżenie wnętrza",
+      "category": "Wnętrze",
+      "description": "Odkurzanie, przetarcie plastików, mycie szyb od wewnątrz. 200–300 zł. Cena netto.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "detailing-wnetrza",
+      "name": "Detailing wnętrza",
+      "category": "Wnętrze",
+      "description": "Podsufitka, pranie ekstrakcyjne foteli lub pielęgnacja skóry, dywan, dywaniki i boczki, plastiki, ozonowanie. 800–1600 zł. Cena netto.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora",
+      "name": "Pielęgnacja tapicerki skórzanej",
+      "category": "Wnętrze",
+      "description": "Czyszczenie oraz impregnacja skóry. 300–500 zł. Cena netto.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "fotel",
+      "name": "Pranie fotela",
+      "category": "Wnętrze",
+      "description": "Za jeden fotel. Cena netto.",
+      "price": 200,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "dywaniki",
+      "name": "Pranie dywaników",
+      "category": "Wnętrze",
+      "description": "Komplet dywaników. Cena netto.",
+      "price": 50,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "podsufitka",
+      "name": "Czyszczenie podsufitki",
+      "category": "Wnętrze",
+      "description": "Czyszczenie podsufitki. Cena netto.",
+      "price": 150,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "impregnacja",
+      "name": "Impregnacja tapicerki materiałowej",
+      "category": "Wnętrze",
+      "description": "Ochrona tkanin przed plamami. 500–800 zł. Cena netto.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Ozonowanie wnętrza",
+      "category": "Wnętrze",
+      "description": "Dezynfekcja i neutralizacja zapachów. Cena netto.",
+      "price": 100,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-mini",
+      "name": "Folia PPF – lampy, klamki, próg",
+      "category": "Folie PPF",
+      "description": "Lampy przód (możliwe przyciemnienie), wnęki klamek, próg załadunkowy, opcjonalnie słupki B i progi wewnętrzne. Gwarancja producenta 10 lat. Cena netto.",
+      "price": 900,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full-front",
+      "name": "Folia PPF – pakiet Full Front",
+      "category": "Folie PPF",
+      "description": "Maska, zderzak, lampy, błotniki, lusterka, słupki A i B, czoło dachu, próg załadunkowy i wnęki klamek (opcjonalnie tylny zderzak). Cena netto.",
+      "price": 4500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-track",
+      "name": "Folia PPF – pakiet Track",
+      "category": "Folie PPF",
+      "description": "Full Front z progami bocznymi i tylnym zderzakiem – dla aut jeżdżących na tor. Cena netto.",
+      "price": 6000,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full-body",
+      "name": "Folia PPF – Full Body",
+      "category": "Folie PPF",
+      "description": "Wszystkie lakierowane elementy karoserii – możliwa zmiana wykończenia z połysku na mat. Trwałość 5–10 lat. Cena netto.",
+      "price": 10000,
+      "priceFrom": true,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "waxoyl",
+      "name": "Waxoyl – zabezpieczenie podwozia",
+      "category": "Dodatkowe",
+      "description": "Konserwacja podwozia nowego auta (prosto z salonu) preparatem Waxoyl. Małe / średnie / duże: 2500 / 3000 / 3500 zł. Cena netto.",
+      "price": 2500,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "suchy-lod",
+      "name": "Czyszczenie suchym lodem",
+      "category": "Dodatkowe",
+      "description": "Podwozie, komora silnika, wiązki przewodów – bez wody i chemii. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "klasyki",
+      "name": "Renowacja klasyków – The Art of Detailing",
+      "category": "Dodatkowe",
+      "description": "Kompleksowa renowacja samochodów „z duszą” od A do Z. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 7200,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "odbior-salon",
+      "name": "Odbiór auta z salonu z detailerem",
+      "category": "Dodatkowe",
+      "description": "Detailer jedzie z Tobą po nowe auto i sprawdza lakier przed odbiorem. Wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "4,9 w Google",
+      "text": "103 opinie i 100% poleceń na Facebooku."
+    },
+    {
+      "icon": "shield",
+      "title": "Modesta i folie PPF",
+      "text": "Powłoki do 10 lat i folie z 10-letnią gwarancją producenta."
+    },
+    {
+      "icon": "sparkle",
+      "title": "The Art of Detailing",
+      "text": "Renowacje klasyków – od Mustanga GT 1967 po Porsche 911."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-m5.webp",
+      "caption": "BMW M5 Competition – PPF i Modesta"
+    },
+    {
+      "image": "images/work-a7.webp",
+      "caption": "Audi A7 – Modesta BC-05, BC-06"
+    },
+    {
+      "image": "images/work-x5.webp",
+      "caption": "BMW X5 – Full Body PPF i Waxoyl"
+    },
+    {
+      "image": "images/work-gle.webp",
+      "caption": "Mercedes GLE 63 S AMG – Modesta"
+    },
+    {
+      "image": "images/work-m340i.webp",
+      "caption": "BMW M340i – PPF Track"
+    },
+    {
+      "image": "images/work-huracan.webp",
+      "caption": "Lamborghini Huracán – The Art of Detailing"
+    },
+    {
+      "image": "images/work-mustang.webp",
+      "caption": "Ford Mustang GT 1967 – renowacja klasyka"
+    },
+    {
+      "image": "images/work-911.webp",
+      "caption": "Porsche 911 Turbo – Art of Detailing"
+    },
+    {
+      "image": "images/work-focus-rs.webp",
+      "caption": "Ford Focus RS"
+    },
+    {
+      "image": "images/work-m2.webp",
+      "caption": "BMW M2"
+    },
+    {
+      "image": "images/work-waxoyl.webp",
+      "caption": "Zabezpieczenie podwozia Waxoyl"
+    },
+    {
+      "image": "images/work-dry-ice.webp",
+      "caption": "Czyszczenie suchym lodem"
+    },
+    {
+      "image": "images/work-wnetrze.webp",
+      "caption": "Detailing wnętrza"
+    },
+    {
+      "image": "images/work-studio.webp",
+      "caption": "Nasze studio na Zabłociu"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Czy ceny są netto?",
+      "answer": "Tak, wszystkie ceny podajemy netto. Cennik ma charakter informacyjny – ostateczną cenę ustalamy po oględzinach auta.",
+      "keywords": [
+        "netto",
+        "brutto",
+        "vat",
+        "faktur"
+      ]
+    },
+    {
+      "question": "Ile kosztuje powłoka na auto używane?",
+      "answer": "Na auto używane powłoka wymaga korekty lakieru, więc jest droższa: Modesta Basic 3400 zł zamiast 1900 zł, Advance 4000 zł zamiast 2500 zł, Premium 4900 zł zamiast 3400 zł netto.",
+      "keywords": [
+        "uzywan",
+        "nowe auto",
+        "nowy samoch"
+      ]
+    },
+    {
+      "question": "Jak długo trzyma folia PPF?",
+      "answer": "Folia wytrzymuje 5–10 lat zależnie od pielęgnacji i przeglądów, a producent daje na nią 10 lat gwarancji.",
+      "keywords": [
+        "folia",
+        "ppf",
+        "ile trzyma",
+        "trwalos",
+        "gwaranc"
+      ]
+    },
+    {
+      "question": "Czy w cenie korekty jest mycie?",
+      "answer": "Tak – w każdą opcję polerowania wliczone jest mycie SPA oraz glinkowanie lakieru.",
+      "keywords": [
+        "w cenie",
+        "glinkow",
+        "korekt"
+      ]
+    },
+    {
+      "question": "Mam auto zabezpieczone u Was – co dalej?",
+      "answer": "Dla stałych klientów mamy pakiet ProCar Care: mycie i odświeżenie wnętrza od 400 zł netto, a serwis powłoki z usunięciem osadów i odżywkami to dodatkowe 150 zł.",
+      "keywords": [
+        "staly klient",
+        "stali klienci",
+        "serwis powlok",
+        "procar care"
+      ]
+    },
+    {
+      "question": "Jak do Was trafić?",
+      "answer": "Kraków, Zabłocie, ul. Romanowicza 19a – czwarta brama po prawej, jadąc od ul. Lipowej (okolice Fabryki Schindlera). Brama i budynek są oznaczone naszym banerem. Otwarte pon–pt 7:00–16:00.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "romanowicz",
+        "dojazd",
+        "trafic",
+        "brama",
+        "otwart"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
