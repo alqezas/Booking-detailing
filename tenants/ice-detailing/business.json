@@ -1,0 +1,414 @@
+{
+  "slug": "ice-detailing",
+  "name": "ICE Detailing Warszawa",
+  "shortName": "ICE Detailing",
+  "kind": "detailing",
+  "tagline": "Auto detailing, suchy lód i folie PPF – certyfikowane studio ADBL Approved",
+  "description": "ICE Detailing to studio auto detailingu na warszawskim Targówku, ok. 15 minut od Centrum. Specjalizujemy się w kompleksowym detailingu, czyszczeniu suchym lodem, zabezpieczaniu podwozi i ochronie lakieru folią PPF ADBL Protect z 10-letnią gwarancją. Jako pionierzy czyszczenia suchym lodem docieramy tam, gdzie nie sięga woda – do każdego klienta i auta podchodzimy indywidualnie.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#2F6BFF",
+  "contacts": {
+    "phone": "+48 509 080 278",
+    "address": "ul. Przecławska 5, 03-879 Warszawa",
+    "email": "biuro@ice-detailing.pl",
+    "instagram": "icedetailing_pl",
+    "facebook": "https://www.facebook.com/ICEdetailingpl"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "mycie",
+      "name": "Mycie detailingowe",
+      "category": "Detailing",
+      "description": "Mycie wstępne, bezpieczne mycie ręczne, felgi, nadkola i trudno dostępne zakamarki – podstawa dalszej pielęgnacji i samodzielne odświeżenie auta.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "odswiezenie",
+      "name": "Odświeżenie – mycie i wnętrze",
+      "category": "Detailing",
+      "description": "Podstawowe odświeżenie auta z zewnątrz i w środku – ok. 3–6 godzin.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "kompleks",
+      "name": "Detailing kompleksowy",
+      "category": "Detailing",
+      "description": "Wnętrze, lakier i dekontaminacja – ok. 1–2 dni.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta",
+      "name": "Polerowanie i korekta lakieru",
+      "category": "Detailing",
+      "description": "Usuwanie rys, swirli i matowienia, przywracanie głębi i połysku. Zakres – od odświeżenia po wieloetapową korektę – dobieramy po ocenie lakieru.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-powloka",
+      "name": "Korekta + powłoka ochronna",
+      "category": "Detailing",
+      "description": "Korekta lakieru z zabezpieczeniem powłoką – ok. 2–4 dni.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 4320,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze",
+      "name": "Detailing wnętrza",
+      "category": "Detailing",
+      "description": "Tapicerka, plastiki, skóra, podsufitka i wszystkie zakamarki – świeżość i trwały efekt. Także jako samodzielna usługa.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "lod-silnik",
+      "name": "Czyszczenie komory silnika suchym lodem",
+      "category": "Suchy lód",
+      "description": "Usuwa zapieczony smar, kurz i wycieki oleju bez wody – zero ryzyka zwarć i korozji, auto gotowe od razu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "lod-podwozie",
+      "name": "Czyszczenie podwozia suchym lodem",
+      "category": "Suchy lód",
+      "description": "Błoto, sól i osady z zakamarków bez demontażu osłon i bez wilgoci – idealne przed zabezpieczeniem podwozia.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 300,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "lod-felgi",
+      "name": "Czyszczenie felg i nadkoli suchym lodem",
+      "category": "Suchy lód",
+      "description": "Zapieczony pył hamulcowy i smoła z wewnętrznych stron felg – bez rys i agresywnej chemii.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "lod-zawieszenie",
+      "name": "Czyszczenie zawieszenia suchym lodem",
+      "category": "Suchy lód",
+      "description": "Wahacze, sprężyny i gumy odsłonięte bez ścierania powłok – przed przeglądem lub renowacją.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "podwozie-wosk",
+      "name": "Zabezpieczenie podwozia bezbarwnym woskiem",
+      "category": "Suchy lód",
+      "description": "Bezbarwne woski chroniące przed korozją i solą drogową bez zmiany fabrycznego wyglądu podwozia.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf",
+      "name": "Oklejanie folią PPF ADBL Protect",
+      "category": "Oklejanie",
+      "description": "Od pakietów na najbardziej narażone elementy (maska, zderzak, błotniki, progi, lusterka) po całe auto. Folia samoregenerująca się z 10-letnią gwarancją producenta.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full",
+      "name": "Oklejanie całego auta folią PPF",
+      "category": "Oklejanie",
+      "description": "Pełna ochrona karoserii folią ADBL Protect.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 5760,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "zmiana-koloru",
+      "name": "Zmiana koloru auta folią",
+      "category": "Oklejanie",
+      "description": "Połysk, mat lub satyna bez ingerencji w fabryczny lakier – odwracalnie i z ochroną powierzchni.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 5760,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "lampy",
+      "name": "Przyciemnianie lamp folią",
+      "category": "Oklejanie",
+      "description": "Nowy wygląd i ochrona kloszy przed odpryskami, z zachowaniem widoczności.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "4,9/5 w Google",
+      "text": "66 opinii i ponad 550 realizacji."
+    },
+    {
+      "icon": "shield",
+      "title": "ADBL Approved",
+      "text": "Certyfikowane studio folii ADBL Protect – 10 lat gwarancji producenta."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Pionierzy suchego lodu",
+      "text": "Czyszczenie bez wody i chemii na 450 m² przestrzeni do pracy."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-ppf.webp",
+      "caption": "Aplikacja folii ADBL Protect"
+    },
+    {
+      "image": "images/work-aston.webp",
+      "caption": "Aston Martin Rapide"
+    },
+    {
+      "image": "images/work-polish.webp",
+      "caption": "Polerowanie lakieru Alfa Romeo"
+    },
+    {
+      "image": "images/work-alfa.webp",
+      "caption": "Alfa Romeo – efekt korekty"
+    },
+    {
+      "image": "images/work-clio.webp",
+      "caption": "Renault Clio V6"
+    },
+    {
+      "image": "images/work-clio-tyl.webp",
+      "caption": "Renault Clio V6 – tył"
+    },
+    {
+      "image": "images/work-podwozie.webp",
+      "caption": "Czyszczenie podwozia suchym lodem"
+    },
+    {
+      "image": "images/work-podwozie-2.webp",
+      "caption": "Podwozie po czyszczeniu suchym lodem"
+    },
+    {
+      "image": "images/work-jimny-po.webp",
+      "caption": "Suzuki Jimny – komora silnika po",
+      "before": "images/work-jimny-przed.webp"
+    },
+    {
+      "image": "images/work-silnik.webp",
+      "caption": "Komora silnika – suchy lód"
+    },
+    {
+      "image": "images/work-wnetrze.webp",
+      "caption": "Detailing wnętrza"
+    },
+    {
+      "image": "images/work-studio.webp",
+      "caption": "Studio ADBL Approved"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ile kosztuje detailing?",
+      "answer": "Cena zależy od zakresu prac i stanu pojazdu. Indywidualną wycenę przygotujemy po kontakcie – zadzwoń: 509 080 278 albo zarezerwuj termin oględzin.",
+      "keywords": [
+        "ile kosztuj",
+        "cena",
+        "cennik",
+        "wycen",
+        "koszt"
+      ]
+    },
+    {
+      "question": "Ile trwa detailing?",
+      "answer": "Podstawowe odświeżenie (mycie, wnętrze) ok. 3–6 godzin, detailing kompleksowy 1–2 dni, korekta z powłoką 2–4 dni, pełny pakiet z wieloetapową korektą nawet 3–5 dni.",
+      "keywords": [
+        "ile trwa",
+        "jak dlugo",
+        "czas"
+      ]
+    },
+    {
+      "question": "Czy suchy lód jest bezpieczny dla elektroniki?",
+      "answer": "Tak. Metoda nie używa wody, więc nie ma ryzyka zwarć, a wrażliwe złącza dodatkowo zabezpieczamy. Suchy lód sublimuje do gazu – auto nie wymaga osuszania i jest gotowe od razu.",
+      "keywords": [
+        "suchy lod",
+        "elektronik",
+        "bezpieczn",
+        "osusz",
+        "zwarc"
+      ]
+    },
+    {
+      "question": "Czym jest ADBL Approved?",
+      "answer": "To program certyfikacji instalatorów folii PPF prowadzony przez producenta ADBL Protect. Studia są szkolone i audytowane przez producenta, a klient dostaje pełną, 10-letnią gwarancję.",
+      "keywords": [
+        "adbl",
+        "approved",
+        "certyfik",
+        "gwaranc"
+      ]
+    },
+    {
+      "question": "Czy trzeba okleić całe auto?",
+      "answer": "Nie. Możesz zabezpieczyć tylko najbardziej narażone elementy (maska, zderzak, progi, lusterka) albo całe auto – doradzimy optymalny zakres. Folię da się zdjąć bez uszkodzenia lakieru.",
+      "keywords": [
+        "cale auto",
+        "calego auta",
+        "elementy",
+        "zdjac",
+        "okleic"
+      ]
+    },
+    {
+      "question": "Gdzie jesteście?",
+      "answer": "Warszawa Targówek, ul. Przecławska 5 (03-879), ok. 15 minut od Centrum. Pon–pt 9:00–17:00.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "przeclawsk",
+        "targowek",
+        "dojazd",
+        "otwart",
+        "godzin"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
