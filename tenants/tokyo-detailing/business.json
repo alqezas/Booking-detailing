@@ -1,0 +1,408 @@
+{
+  "slug": "tokyo-detailing",
+  "name": "Tokyo Detailing Center",
+  "shortName": "Tokyo",
+  "kind": "detailing",
+  "tagline": "Преміум детейлінг-центр у самому серці Одеси – експерти з PPF-плівки",
+  "description": "Преміум детейлінг-центр у самому серці Одеси. Ми спеціалізуємося на професійному захисті автомобілів PPF-плівкою та преміальному детейлінгу: полірування, хімчистка, керамічні покриття, тонування та шумоізоляція. Кожен автомобіль проходить повний цикл робіт із максимальною увагою до деталей, професійними матеріалами й суворим дотриманням технології.",
+  "locale": "uk-UA",
+  "timezone": "Europe/Kyiv",
+  "currency": "UAH",
+  "accentColor": "#C8102E",
+  "contacts": {
+    "phone": "+380 63 612 65 45",
+    "address": "вул. Краснова 3, Одеса",
+    "mapUrl": "https://maps.app.goo.gl/GMM8ChicGXwTLYrt9",
+    "telegram": "+380636126545",
+    "whatsapp": "380636126545",
+    "instagram": "detailingtokyo"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 240,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "boks",
+      "name": "Бокс"
+    }
+  ],
+  "services": [
+    {
+      "key": "ppf-full",
+      "name": "PPF плівка – повний захист кузова",
+      "category": "Антигравійний захист",
+      "description": "Повне обклеювання кузова антигравійною плівкою: захист від сколів, подряпин і реагентів. Комплексне тонування та бронювання передньої частини – наша найпопулярніша комбінація.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 5760,
+      "resources": [
+        "boks"
+      ]
+    },
+    {
+      "key": "ppf-front",
+      "name": "PPF плівка – передня частина",
+      "category": "Антигравійний захист",
+      "description": "Бронювання передньої частини: капот, бампер, фари, крила й дзеркала.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "boks"
+      ]
+    },
+    {
+      "key": "ppf-local",
+      "name": "PPF плівка – локальний захист",
+      "category": "Антигравійний захист",
+      "description": "Окремі елементи: фари, пороги, ніші ручок, зони під навантаженням.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "boks"
+      ]
+    },
+    {
+      "key": "korekciya",
+      "name": "Корекція лакофарбового покриття",
+      "category": "Полірування",
+      "description": "Машинне полірування кузова: усунення подряпин, голограм і тьмяності, глибокий блиск.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "boks"
+      ]
+    },
+    {
+      "key": "optyka",
+      "name": "Полірування оптики",
+      "category": "Полірування",
+      "description": "Відновлення прозорості фар.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "boks"
+      ]
+    },
+    {
+      "key": "dysky-polir",
+      "name": "Полірування дисків",
+      "category": "Полірування",
+      "description": "Відновлення блиску колісних дисків.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "boks"
+      ]
+    },
+    {
+      "key": "himchystka",
+      "name": "Хімчистка салону",
+      "category": "Хімчистка",
+      "description": "Глибока чистка сидінь, стелі, підлоги та пластику салону.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "boks"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Озонування",
+      "category": "Хімчистка",
+      "description": "Дезінфекція салону озоном, усунення запахів.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "boks"
+      ]
+    },
+    {
+      "key": "kuzov",
+      "name": "Детейлінг-мийка кузова",
+      "category": "Детейлінг",
+      "description": "Безпечна детейлінг-мийка кузова з очищенням від бітуму й металевих вкраплень.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "boks"
+      ]
+    },
+    {
+      "key": "dvygun",
+      "name": "Детейлінг двигуна",
+      "category": "Детейлінг",
+      "description": "Чистка й консервація моторного відсіку.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "boks"
+      ]
+    },
+    {
+      "key": "dysky",
+      "name": "Детейлінг дисків",
+      "category": "Детейлінг",
+      "description": "Глибока чистка колісних дисків.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "boks"
+      ]
+    },
+    {
+      "key": "keramika",
+      "name": "Керамічне покриття",
+      "category": "Захисні покриття",
+      "description": "Довготривалий захист лаку керамікою: гідрофобний ефект, блиск і стійкість до хімії.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "boks"
+      ]
+    },
+    {
+      "key": "leather-shield",
+      "name": "Leather Shield – захист шкіри",
+      "category": "Захисні покриття",
+      "description": "Захисне покриття для шкіряних сидінь: від потертостей, плям і вигоряння.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "boks"
+      ]
+    },
+    {
+      "key": "tonuvannia",
+      "name": "Тонування",
+      "category": "Тонування",
+      "description": "Тонування скла авто плівкою.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 300,
+      "resources": [
+        "boks"
+      ]
+    },
+    {
+      "key": "shumo-salon",
+      "name": "Шумоізоляція салону",
+      "category": "Шумоізоляція",
+      "description": "Комплексна шумо- та віброізоляція салону.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "boks"
+      ]
+    },
+    {
+      "key": "shumo-dveri",
+      "name": "Шумоізоляція дверей",
+      "category": "Шумоізоляція",
+      "description": "Шумо- та віброізоляція дверей.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "boks"
+      ]
+    },
+    {
+      "key": "shumo-pidloga",
+      "name": "Шумоізоляція підлоги",
+      "category": "Шумоізоляція",
+      "description": "Шумо- та віброізоляція підлоги.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "boks"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "shield",
+      "title": "Експерти з PPF",
+      "text": "Повний і локальний антигравійний захист кузова."
+    },
+    {
+      "icon": "medal",
+      "title": "7+ брендів-партнерів",
+      "text": "Gyeon, Kybertane, Polor, Brawix, Soft99, Car Detail Lab, Clif Designs."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Увага до кожної деталі",
+      "text": "Повний цикл робіт за суворою технологією – клієнти відзначають чистоту в студії."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-m4.webp",
+      "caption": "BMW M4 – матовий PPF"
+    },
+    {
+      "image": "images/work-ppf-bmw.webp",
+      "caption": "BMW – поклейка антигравійної плівки"
+    },
+    {
+      "image": "images/work-ppf-bmw-2.webp",
+      "caption": "Повний антигравійний захист"
+    },
+    {
+      "image": "images/work-polish.webp",
+      "caption": "Полірування Audi RS"
+    },
+    {
+      "image": "images/work-engine.webp",
+      "caption": "Детейлінг двигуна Audi RS"
+    },
+    {
+      "image": "images/work-wheel.webp",
+      "caption": "Детейлінг салону Audi"
+    },
+    {
+      "image": "images/work-seats.webp",
+      "caption": "Чистка шкіряних сидінь"
+    },
+    {
+      "image": "images/work-leather.webp",
+      "caption": "Leather Shield – захист шкіри"
+    },
+    {
+      "image": "images/work-noise.webp",
+      "caption": "Шумоізоляція підлоги"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Скільки коштують послуги?",
+      "answer": "Вартість залежить від авто та обсягу робіт – зателефонуйте або напишіть у месенджер, і ми підберемо оптимальний пакет: +380 63 612 65 45.",
+      "keywords": [
+        "скільки кошту",
+        "ціна",
+        "вартіст",
+        "прайс",
+        "пакет"
+      ]
+    },
+    {
+      "question": "Повний чи локальний PPF?",
+      "answer": "Повний захист обклеює весь кузов, бронювання передньої частини захищає найбільш уразливі зони від сколів, а локальний – окремі елементи на кшталт фар чи порогів. Підкажемо, що підійде вашому авто.",
+      "keywords": [
+        "повний",
+        "локальн",
+        "яку плівку",
+        "передн"
+      ]
+    },
+    {
+      "question": "Які матеріали ви використовуєте?",
+      "answer": "Лише сертифіковані матеріали та обладнання від світових лідерів: Gyeon, Kybertane, Polor, Brawix, Soft99, Car Detail Lab та Clif Designs.",
+      "keywords": [
+        "матеріал",
+        "бренд",
+        "gyeon",
+        "партнер",
+        "хімі"
+      ]
+    },
+    {
+      "question": "Що таке Leather Shield?",
+      "answer": "Захисне покриття Gyeon для шкіряних сидінь: зберігає вигляд шкіри, захищає від потертостей, плям і вигоряння.",
+      "keywords": [
+        "leather",
+        "шкір"
+      ]
+    },
+    {
+      "question": "Як записатися?",
+      "answer": "Оберіть послугу й вільний час тут на сайті або дзвоніть і пишіть у Telegram, WhatsApp чи Instagram – як вам зручніше.",
+      "keywords": [
+        "як записат",
+        "месенджер",
+        "telegram",
+        "viber",
+        "whatsapp"
+      ]
+    },
+    {
+      "question": "Де ви знаходитесь?",
+      "answer": "Одеса, вул. Краснова 3. Телефон: +380 63 612 65 45.",
+      "keywords": [
+        "де ви",
+        "адрес",
+        "краснов",
+        "знаходит",
+        "доїхат"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
