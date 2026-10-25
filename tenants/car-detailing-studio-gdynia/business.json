@@ -1,0 +1,704 @@
+{
+  "slug": "car-detailing-studio-gdynia",
+  "name": "Car Detailing Studio Gdynia",
+  "shortName": "Car Detailing",
+  "kind": "detailing",
+  "tagline": "Powłoki ceramiczne, korekta lakieru i woski Swissvax – Gdynia od 2006 roku",
+  "description": "Car Detailing Studio (dawniej Auto-Detailing Gdynia) to studio Michała Cieszyńskiego, który detailingu uczył się od 2005 roku w Hamburgu. Specjalizujemy się w aplikacji certyfikowanych powłok ceramicznych i kwarcowych z gwarancją na cały okres ich trwałości. Mamy akredytację Fireball i FX Protect, a jako certyfikowane Swissvax Car Care Center aplikujemy woski dedykowane konkretnym markom aut.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#E8561F",
+  "contacts": {
+    "phone": "+48 609 955 053",
+    "address": "ul. Hutnicza 11, Gdynia",
+    "mapUrl": "https://www.google.com/maps/place/Auto-Detailing+Gdynia/@54.5430823,18.4799668,17z",
+    "email": "biuro@cardetailingstudio.pl",
+    "instagram": "cardetailingstudiopl",
+    "facebook": "https://www.facebook.com/cardetailingstudiopl"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "mycie",
+      "name": "Mycie samochodu",
+      "category": "Mycie",
+      "description": "Piana aktywna, ręczne mycie karoserii z wnękami drzwi, felgami i nadkolami, wosk płynny z wiązkami ceramicznymi i osuszanie.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie-qd",
+      "name": "Mycie + Quick Detailer ceramiczny",
+      "category": "Mycie",
+      "description": "Mycie samochodu uzupełnione quick detailerem z wiązkami ceramicznymi.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 150,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie-powloka",
+      "name": "Mycie auta z powłoką lub woskiem twardym",
+      "category": "Mycie",
+      "description": "Premium chemia regenerująca zabezpieczenie – dla aut z powłoką ceramiczną, kwarcową lub woskiem.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 150,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie-wnetrze",
+      "name": "Mycie oraz sprzątanie wnętrza",
+      "category": "Mycie",
+      "description": "Mycie ręczne i sprzątanie wnętrza.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "detailing-wnetrza",
+      "name": "Detailing wnętrza",
+      "category": "Wnętrze i skóra",
+      "description": "Pranie ekstrakcyjne tapicerki, podłogi i bagażnika, skóry produktami o neutralnym pH, dokładne czyszczenie plastików.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pranie",
+      "name": "Pranie tapicerki materiałowej",
+      "category": "Wnętrze i skóra",
+      "description": "Ekstrakcyjne pranie tapicerki materiałowej.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora",
+      "name": "Czyszczenie tapicerki skórzanej",
+      "category": "Wnętrze i skóra",
+      "description": "Oczyszczanie skóry produktami dopasowanymi do jej kondycji.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora-retro",
+      "name": "Czyszczenie tapicerki skórzanej retro",
+      "category": "Wnętrze i skóra",
+      "description": "Delikatne czyszczenie skór w autach klasycznych.",
+      "price": 600,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora-nawilzanie",
+      "name": "Nawilżanie tapicerki skórzanej",
+      "category": "Wnętrze i skóra",
+      "description": "Przywrócenie elastyczności skóry.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora-zabezpieczenie",
+      "name": "Zabezpieczenie z nawilżeniem skóry",
+      "category": "Wnętrze i skóra",
+      "description": "Nawilżenie i zabezpieczenie tapicerki skórzanej.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora-przebarwienia",
+      "name": "Zabezpieczenie skóry przed przebarwieniami",
+      "category": "Wnętrze i skóra",
+      "description": "Ochrona przed przebarwieniami od dżinsów i innych materiałów.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora-barwnik",
+      "name": "Renowacja barwnika skóry",
+      "category": "Wnętrze i skóra",
+      "description": "Odnowienie barwnika z bezbarwną powłoką ochronną. Z naprawą zarysowań i uszkodzeń od 250 zł.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skora-plamy",
+      "name": "Usuwanie przebarwień i śladów po długopisie",
+      "category": "Wnętrze i skóra",
+      "description": "Punktowe usuwanie plam ze skóry.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "cabrio",
+      "name": "Konserwacja dachu cabrio",
+      "category": "Wnętrze i skóra",
+      "description": "Oczyszczenie i zabezpieczenie dachu – także starych, zniszczonych.",
+      "price": 600,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-oczyszczajaca",
+      "name": "Korekta oczyszczająca",
+      "category": "Korekta lakieru",
+      "description": "Maszynowe dogłębne oczyszczenie lakieru – idealny krok przed woskowaniem.",
+      "price": 1100,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-one-step",
+      "name": "Korekta One Step",
+      "category": "Korekta lakieru",
+      "description": "Oczyszczenie, część korekty i powłoka ochronna na 12 miesięcy. Usuwa 30–50% zarysowań.",
+      "price": 1300,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-1",
+      "name": "Korekta jednoetapowa",
+      "category": "Korekta lakieru",
+      "description": "Usuwa małe i mikro zarysowania – 50–60%. Cena zależy od wielkości auta.",
+      "price": 1600,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-2",
+      "name": "Korekta dwuetapowa",
+      "category": "Korekta lakieru",
+      "description": "Lakier odzyskuje głębię i blask bez smug i hologramów. Usuwa 60–80% zarysowań.",
+      "price": 1800,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-pelna",
+      "name": "Pełna korekta lakieru",
+      "category": "Korekta lakieru",
+      "description": "Usuwa 80–90% zarysowań. W cenie korekty woskowanie Swissvax Onyx.",
+      "price": 2100,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "lakierowanie",
+      "name": "Lakierowanie elementów karoserii",
+      "category": "Korekta lakieru",
+      "description": "Lakierowanie pojedynczych elementów.",
+      "price": 1200,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-2",
+      "name": "Powłoka ceramiczna do 2 lat",
+      "category": "Powłoki",
+      "description": "Trwałość 12–24 miesiące, do 30 tys. km – idealna do miasta. Auto używane z korektą jednoetapową w cenie – drożej o 1000 zł. Ceny dla średnich gabarytów, pisemna gwarancja producenta i studia.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-3",
+      "name": "Powłoka ceramiczna do 3 lat",
+      "category": "Powłoki",
+      "description": "Trwałość 24–36 miesięcy, do 50 tys. km – miasto i trasa. Auto używane z korektą jednoetapową w cenie – drożej o 1000 zł. Ceny dla średnich gabarytów, pisemna gwarancja producenta i studia.",
+      "price": 2200,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-5",
+      "name": "Powłoka ceramiczna do 5 lat",
+      "category": "Powłoki",
+      "description": "Trwałość 48–60 miesięcy, 60–100 tys. km, wzmocniona ochrona UV, warstwa do 10 mikronów. Auto używane z korektą jednoetapową w cenie – drożej o 1000 zł. Ceny dla średnich gabarytów, pisemna gwarancja producenta i studia.",
+      "price": 3500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "graphene-3",
+      "name": "Powłoka graphene do 2–3 lat",
+      "category": "Powłoki",
+      "description": "Jedna warstwa, do 40 tys. km. Nano-rurki węglowe z elastomerami – samoregeneracja mikrorys. Auto używane z korektą jednoetapową w cenie – drożej o 1000 zł. Ceny dla średnich gabarytów, pisemna gwarancja producenta i studia.",
+      "price": 2200,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "graphene-5",
+      "name": "Powłoka graphene do 5 lat / 60 tys. km",
+      "category": "Powłoki",
+      "description": "Dwie warstwy, samoregeneracja, lustrzany efekt. Auto używane z korektą jednoetapową w cenie – drożej o 1000 zł. Ceny dla średnich gabarytów, pisemna gwarancja producenta i studia.",
+      "price": 2800,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "graphene-5-plus",
+      "name": "Powłoka graphene do 5 lat / 100 tys. km",
+      "category": "Powłoki",
+      "description": "Dwie warstwy z systemem antygraffiti. Auto używane z korektą jednoetapową w cenie – drożej o 1000 zł. Ceny dla średnich gabarytów, pisemna gwarancja producenta i studia.",
+      "price": 3500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szyba",
+      "name": "Powłoka hydrofobowa – szyba czołowa",
+      "category": "Powłoki",
+      "description": "Trwałość 6–8 miesięcy. Komplet szyb od 600 zł (boczne do 2 lat).",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "felgi",
+      "name": "Zabezpieczenie felg powłoką SiCN",
+      "category": "Powłoki",
+      "description": "Komplet 4 felg z dodatkiem graphenu. Felgi używane od 1000 zł.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wosk-twardy",
+      "name": "Wosk twardy",
+      "category": "Woski",
+      "description": "Woski premium (m.in. Fireball) o trwałości do 3 miesięcy. Sealant do 6–8 miesięcy od 600 zł, wosk show car do 8–12 miesięcy od 800 zł.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "swissvax",
+      "name": "Wosk Swissvax z przygotowaniem",
+      "category": "Woski",
+      "description": "Woski dedykowane markom (Porsche, Mercedes, BMW, Ferrari, Volvo, Lexus…) i lakierom matowym – od 500 do 1500 zł zależnie od wosku (30–81% carnauby).",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "swissvax-felgi",
+      "name": "Wosk Swissvax na felgi",
+      "category": "Woski",
+      "description": "Komplet felg – połysk i ochrona przed pyłem z klocków. Linie premium od 1000 zł.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "swissvax-wnetrze",
+      "name": "Pielęgnacja wnętrza Swissvax",
+      "category": "Woski",
+      "description": "Leather Cleaner & Milk, Leather Glaze, Protection na plastiki, Wood Polish – od 200 zł; skóry w autach kolekcjonerskich od 600 zł.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "folia-mycie",
+      "name": "Mycie oklejonego samochodu",
+      "category": "Folie",
+      "description": "Mycie z chemią o neutralnym pH dla folii kolorowej i PPF.",
+      "price": 250,
+      "priceFrom": true,
+      "durationMinutes": 150,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "folia-mycie-detailing",
+      "name": "Mycie detailingowe oklejonego samochodu",
+      "category": "Folie",
+      "description": "Wieloetapowe mycie oczyszczające z deironizacją.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "folia-korekta",
+      "name": "Korekta oczyszczająca folii kolor i PPF",
+      "category": "Folie",
+      "description": "Usuwa zabrudzenia biologiczne, osady wapienne i drobne rysy, odświeża barwę folii.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "folia-sio2",
+      "name": "Podstawowe zabezpieczenie folii SiO2",
+      "category": "Folie",
+      "description": "Szybka powłoka samoczyszcząca na folię.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "folia-wosk",
+      "name": "Zabezpieczenie folii woskiem twardym",
+      "category": "Folie",
+      "description": "Dedykowany wosk na folię kolorową i PPF.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "folia-kwarc",
+      "name": "Powłoka kwarcowa na folię",
+      "category": "Folie",
+      "description": "Powłoka membranowa wypełniająca pory folii. Wersja Kwarc+ od 2000 zł.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "suchy-lod",
+      "name": "Czyszczenie suchym lodem",
+      "category": "Dodatkowe",
+      "description": "Stawka od 800 zł/h – np. komplet pasów bezpieczeństwa od 500 zł, komora silnika od 1000 zł.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Od 2006 roku",
+      "text": "Doświadczenie zdobyte w Hamburgu, studio w Gdyni od 2012."
+    },
+    {
+      "icon": "shield",
+      "title": "Fireball i FX Protect",
+      "text": "Akredytowane studio powłok – gwarancja na cały okres trwałości."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Swissvax Car Care Center",
+      "text": "Certyfikowane woski dedykowane marce Twojego auta."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-amg-gt.webp",
+      "caption": "Mercedes-AMG GT – powłoka FX Protect"
+    },
+    {
+      "image": "images/work-amg-gt-przod.webp",
+      "caption": "Mercedes-AMG GT – przód"
+    },
+    {
+      "image": "images/work-hydrofob.webp",
+      "caption": "Efekt hydrofobowy powłoki Hypernity"
+    },
+    {
+      "image": "images/work-rs6-bok.webp",
+      "caption": "Audi RS6 – powłoka ceramiczna"
+    },
+    {
+      "image": "images/work-rs6-tyl.webp",
+      "caption": "Audi RS6 – tył"
+    },
+    {
+      "image": "images/work-rs6-przod.webp",
+      "caption": "Audi RS6 – przód"
+    },
+    {
+      "image": "images/work-rs6-felga.webp",
+      "caption": "Audi RS6 – felgi i reflektory"
+    },
+    {
+      "image": "images/work-rs6-badge.webp",
+      "caption": "Audi RS6 – detal"
+    },
+    {
+      "image": "images/work-fiat.webp",
+      "caption": "Fiat 500 – korekta lakieru"
+    },
+    {
+      "image": "images/work-fiat-wosk.webp",
+      "caption": "Fiat 500 – aplikacja wosku"
+    },
+    {
+      "image": "images/work-korekta.webp",
+      "caption": "Ocena lakieru pod lampą"
+    },
+    {
+      "image": "images/work-felga.webp",
+      "caption": "Audi – felga po zabezpieczeniu"
+    },
+    {
+      "image": "images/work-silnik.webp",
+      "caption": "Komora silnika po czyszczeniu"
+    },
+    {
+      "image": "images/work-fireball.webp",
+      "caption": "Woski Fireball w naszym studiu"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Jak wyceniacie usługi?",
+      "answer": "Każdą usługę wyceniamy dokładnie na miejscu, po oględzinach auta. Ceny na stronie są cenami „od” dla aut o średnich gabarytach.",
+      "keywords": [
+        "wycen",
+        "ile kosztuj",
+        "cennik",
+        "koszt"
+      ]
+    },
+    {
+      "question": "Ile kosztuje powłoka na auto używane?",
+      "answer": "Dla aut używanych w cenie powłoki jest korekta jednoetapowa – to zwykle około 1000 zł więcej niż dla nowego auta, np. ceramika do 2 lat od 2500 zł zamiast od 1500 zł.",
+      "keywords": [
+        "uzywan",
+        "nowe auto",
+        "nowego"
+      ]
+    },
+    {
+      "question": "Czy powłoka ma gwarancję?",
+      "answer": "Tak. Każda powłoka ma pisemną gwarancję producenta i naszego studia na cały okres trwałości. Serwis powłoki robimy raz w roku – przypominamy o nim przez cały okres.",
+      "keywords": [
+        "gwaranc",
+        "serwis powlok",
+        "przeglad"
+      ]
+    },
+    {
+      "question": "Czym różni się graphene od ceramiki?",
+      "answer": "Powłoka graphene zawiera nano-rurki węglowe z elastomerami: warstwa jest dwukrotnie grubsza, mikrorysy samoregenerują się w cieple, a połysk i hydrofobowość są wyższe.",
+      "keywords": [
+        "graphene",
+        "grafen",
+        "rozni",
+        "roznic"
+      ]
+    },
+    {
+      "question": "Czy w cenie korekty jest zabezpieczenie?",
+      "answer": "Tak – po korekcie lakier woskujemy woskiem Swissvax Onyx. Na mocniejsze zabezpieczenie dajemy duży rabat (nie dotyczy powłok ceramicznych).",
+      "keywords": [
+        "po korekc",
+        "onyx",
+        "w cenie korekt"
+      ]
+    },
+    {
+      "question": "Gdzie jesteście i kiedy otwarte?",
+      "answer": "Gdynia, ul. Hutnicza 11. Pon–pt 8:00–17:00.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "hutnicz",
+        "dojazd",
+        "otwart",
+        "godzin"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
