@@ -1,0 +1,358 @@
+{
+  "slug": "jungle-car-spa",
+  "name": "Jungle Car Spa",
+  "kind": "detailing",
+  "tagline": "Premium detailing i zabezpieczenie folią PPF w Warszawie",
+  "description": "Jungle Car Spa to studio premium detailingu w Warszawie. Zabezpieczamy, odnawiamy i personalizujemy samochody z dbałością o każdy detal: folia PPF bezbarwna, satynowa i matowa, powłoki elastomerowe, korekta lakieru, detailing wnętrza i zmiana koloru. Pracujemy w rytmie precyzyjnej diagnostyki, przygotowania powierzchni i kontroli efektu w kontrolowanym świetle.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#7CC242",
+  "contacts": {
+    "phone": "+48 884 030 030",
+    "address": "Al. Gen. Chruściela 75, Warszawa",
+    "mapUrl": "https://www.google.com/maps/place/Jungle+Car+Spa/@52.2639876,21.1680681,17z",
+    "email": "kontakt@junglecarspa.pl",
+    "whatsapp": "48884030030",
+    "instagram": "jungle_carspa",
+    "facebook": "https://www.facebook.com/p/Jungle-Car-Spa-61572540779849/",
+    "tiktok": "jungle.car.spa"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "10:00",
+        "14:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "ppf-elementy",
+      "name": "Folia PPF – wybrane elementy",
+      "category": "Folia PPF",
+      "description": "Niewidzialna ochrona najbardziej narażonych elementów, np. zderzak, lusterka i klapa, przed odpryskami i zarysowaniami.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-front",
+      "name": "Folia PPF – Full Front",
+      "category": "Folia PPF",
+      "description": "Cały przód auta w bezbarwnej folii PPF – precyzyjne zawinięcie krawędzi i kontrola w świetle.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full",
+      "name": "Folia PPF – całe auto",
+      "category": "Folia PPF",
+      "description": "Pełne zabezpieczenie karoserii folią PPF, jak w naszym McLarenie 750S.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 5760,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-mat",
+      "name": "Matowa lub satynowa folia PPF",
+      "category": "Folia PPF",
+      "description": "Zmiana wykończenia z połysku na mat lub satynę z pełną ochroną lakieru – jak w BMW M3, BMW 7 i Volvo XC60.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 5760,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "zmiana-koloru",
+      "name": "Zmiana koloru – folie",
+      "category": "Folia PPF",
+      "description": "Personalizacja wyglądu auta przy użyciu wysokiej jakości folii kolorowych.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 5760,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "elastomer",
+      "name": "Powłoka elastomerowa",
+      "category": "Powłoki i korekta",
+      "description": "Długotrwałe zabezpieczenie lakieru, głębia koloru i hydrofobowość.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika",
+      "name": "Powłoka ceramiczna",
+      "category": "Powłoki i korekta",
+      "description": "Twarda ochrona lakieru i łatwiejsze mycie.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta",
+      "name": "Korekta lakieru",
+      "category": "Powłoki i korekta",
+      "description": "Usuwanie zmatowień, hologramów i mikrozarysowań w celu przywrócenia połysku.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-pakiet",
+      "name": "Korekta + powłoka + detailing wnętrza",
+      "category": "Powłoki i korekta",
+      "description": "Pakiet jak w naszym Focusie RS: korekta lakieru, powłoka ochronna i kompleksowy detailing wnętrza.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze",
+      "name": "Detailing wnętrza",
+      "category": "Detailing",
+      "description": "Kompleksowe czyszczenie, pielęgnacja i zabezpieczenie wnętrza samochodu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ogledziny",
+      "name": "Oględziny i wycena",
+      "category": "Detailing",
+      "description": "Sprawdzamy stan lakieru, ustalamy zakres prac i dobieramy zabezpieczenie: PPF, ceramikę, korektę lub detailing.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "shield",
+      "title": "Doświadczenie w PPF",
+      "text": "Folia bezbarwna, satynowa i matowa – od McLarena po codzienne auta."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Precyzyjne przygotowanie",
+      "text": "Przygotowanie powierzchni, precyzja krawędzi i kontrola w świetle."
+    },
+    {
+      "icon": "car",
+      "title": "Indywidualna wycena",
+      "text": "Zakres dopasowany do lakieru, stylu jazdy i oczekiwanej ochrony."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-m4-kolor.webp",
+      "caption": "BMW M4 – zmiana koloru folią"
+    },
+    {
+      "image": "images/work-m4-ppf.webp",
+      "caption": "BMW M4 – aplikacja folii PPF"
+    },
+    {
+      "image": "images/work-m3-po.webp",
+      "caption": "BMW M3 – matowa folia PPF",
+      "before": "images/work-m3-przed.webp"
+    },
+    {
+      "image": "images/work-mclaren.webp",
+      "caption": "McLaren 750S – bezbarwna folia PPF"
+    },
+    {
+      "image": "images/work-bmw7.webp",
+      "caption": "BMW 7 – satynowa folia PPF"
+    },
+    {
+      "image": "images/work-xc60.webp",
+      "caption": "Volvo XC60 – matowa folia PPF"
+    },
+    {
+      "image": "images/work-subaru.webp",
+      "caption": "Korekta lakieru Subaru"
+    },
+    {
+      "image": "images/work-powloka.webp",
+      "caption": "Aplikacja powłoki"
+    },
+    {
+      "image": "images/work-wnetrze.webp",
+      "caption": "Detailing wnętrza Mercedes"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ile kosztuje folia PPF?",
+      "answer": "Każde auto wyceniamy indywidualnie – zależnie od zakresu, modelu i stanu lakieru. Prześlij informacje lub zdjęcia auta albo umów oględziny: 884 030 030.",
+      "keywords": [
+        "ile kosztuj",
+        "cena",
+        "cennik",
+        "wycen",
+        "koszt"
+      ]
+    },
+    {
+      "question": "Jak wygląda współpraca?",
+      "answer": "Kontakt (informacje lub zdjęcia auta), oględziny i ustalenie zakresu, dobór usługi – PPF, ceramika, korekta lub detailing – realizacja w kontrolowanych warunkach i odbiór auta z zaleceniami pielęgnacyjnymi.",
+      "keywords": [
+        "wspolprac",
+        "jak wyglada",
+        "etapy",
+        "proces"
+      ]
+    },
+    {
+      "question": "Czy można zmienić połysk na mat?",
+      "answer": "Tak – matowa lub satynowa folia PPF zmienia wykończenie lakieru i jednocześnie go chroni. Efekt możesz zobaczyć w porównaniu przed/po naszego BMW M3.",
+      "keywords": [
+        "mat",
+        "satyn",
+        "polysk",
+        "wykonczen"
+      ]
+    },
+    {
+      "question": "Czy usługi są bezpieczne dla nowych aut?",
+      "answer": "Tak. Stosujemy sprawdzone materiały premium i bezpieczne procesy zarówno dla nowych, jak i używanych samochodów.",
+      "keywords": [
+        "nowe",
+        "nowy",
+        "bezpieczn",
+        "uzywan"
+      ]
+    },
+    {
+      "question": "Czy mogę napisać na WhatsApp?",
+      "answer": "Tak – napisz na WhatsApp lub zadzwoń pod 884 030 030, możesz też wysłać e-mail na kontakt@junglecarspa.pl.",
+      "keywords": [
+        "whatsapp",
+        "napisac",
+        "mail",
+        "kontakt"
+      ]
+    },
+    {
+      "question": "Gdzie jesteście?",
+      "answer": "Warszawa, Al. Gen. Chruściela 75.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "chrusciel",
+        "dojazd",
+        "lokalizac"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
