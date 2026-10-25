@@ -9,17 +9,18 @@
 import {cs} from './cs.ts';
 import {pl} from './pl.ts';
 import {ru, type Messages} from './ru.ts';
+import {uk} from './uk.ts';
 
 export type {Messages};
 export type Lang = Messages['lang'];
 
-const CATALOGUES: Record<Lang, Messages> = {ru, cs, pl};
+const CATALOGUES: Record<Lang, Messages> = {ru, cs, pl, uk};
 
 export let msg: Messages = ru;
 
 export const langOf = (locale: string | null | undefined): Lang => {
   const l = locale?.toLowerCase() ?? '';
-  return l.startsWith('cs') ? 'cs' : l.startsWith('pl') ? 'pl' : 'ru';
+  return l.startsWith('cs') ? 'cs' : l.startsWith('pl') ? 'pl' : l.startsWith('uk') ? 'uk' : 'ru';
 };
 
 export function setLang(lang: Lang): void {

@@ -10,6 +10,7 @@ const say = (pick: (v: Messages['v']) => string) => ({error: () => pick(msg.v)})
  *   ru: «8 999 123-45-67», «+7 (999) 123 45 67», «9991234567» → +79991234567
  *   cs: «777 056 596», «00420 777 056 596», «+420777056596» → +420777056596
  *   pl: «533 557 260», «0048 533 557 260», «+48533557260» → +48533557260
+ *   uk: «050 123 45 67», «+38 050 123 45 67», «+380501234567» → +380501234567
  */
 export function toE164(raw: string, country: string = msg.phoneCountry): string {
   let p = normalizePhone(raw.trim());
@@ -25,6 +26,10 @@ export function toE164(raw: string, country: string = msg.phoneCountry): string 
   } else if (country === '48') {
     if (/^\d{9}$/.test(p)) return '+48' + p;
     if (/^48\d{9}$/.test(p)) return '+' + p;
+  } else if (country === '380') {
+    if (/^0\d{9}$/.test(p)) return '+38' + p;
+    if (/^380\d{9}$/.test(p)) return '+' + p;
+    if (/^\d{9}$/.test(p)) return '+380' + p;
   }
   return p;
 }

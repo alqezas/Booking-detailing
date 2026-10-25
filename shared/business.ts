@@ -42,7 +42,7 @@ const interval = z
 
 const key = z.string().regex(/^[a-z0-9][a-z0-9-]{0,39}$/, 'Ключ: латиница, цифры и дефис');
 
-export const CURRENCIES = ['RUB', 'KZT', 'BYN', 'EUR', 'USD', 'CZK', 'PLN'] as const;
+export const CURRENCIES = ['RUB', 'KZT', 'BYN', 'EUR', 'USD', 'CZK', 'PLN', 'UAH'] as const;
 
 export const INFO_CARD_ICONS = [
   'shield',
@@ -82,7 +82,7 @@ export const businessSchema = z
     tagline: z.string().trim().max(90).default(''),
     description: z.string().trim().max(600).default(''),
     /** Interface language of the studio's site and cabinet. */
-    locale: z.enum(['ru-RU', 'cs-CZ', 'pl-PL']).default('ru-RU'),
+    locale: z.enum(['ru-RU', 'cs-CZ', 'pl-PL', 'uk-UA']).default('ru-RU'),
     timezone: z.string().refine(isValidTimeZone, 'Неизвестный часовой пояс IANA'),
     currency: z.enum(CURRENCIES).default('RUB'),
     accentColor: z.string().regex(HEX_RE),

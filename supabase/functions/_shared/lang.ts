@@ -3,14 +3,14 @@
  * told which language to answer in; these are the template answers of the
  * no-model fallback, error messages and reminder pushes.
  */
-export type Lang = 'ru' | 'cs' | 'pl';
+export type Lang = 'ru' | 'cs' | 'pl' | 'uk';
 
 export const langOf = (locale: string | null | undefined): Lang => {
   const l = locale?.toLowerCase() ?? '';
-  return l.startsWith('cs') ? 'cs' : l.startsWith('pl') ? 'pl' : 'ru';
+  return l.startsWith('cs') ? 'cs' : l.startsWith('pl') ? 'pl' : l.startsWith('uk') ? 'uk' : 'ru';
 };
 
-export const INTL: Record<Lang, string> = {ru: 'ru-RU', cs: 'cs-CZ', pl: 'pl-PL'};
+export const INTL: Record<Lang, string> = {ru: 'ru-RU', cs: 'cs-CZ', pl: 'pl-PL', uk: 'uk-UA'};
 
 export const L = {
   ru: {
@@ -225,6 +225,76 @@ export const L = {
     noAccess: 'Nie masz dostępu do tego studia',
     cannotCount: 'Nie udało się policzyć',
     cannotLoadBookings: 'Nie udało się pobrać rezerwacji',
+  },
+  uk: {
+    today: 'сьогодні',
+    tomorrow: 'завтра',
+    at: 'о',
+    days: ['день', 'дні', 'днів'] as [string, string, string],
+    h: 'год',
+    min: 'хв',
+    from: 'від ',
+    onRequest: 'ціна за запитом',
+    weekdays: ['', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'],
+    dayOff: 'вихідний',
+    noService: 'Такої послуги немає. Візьми service_id з list_services.',
+    noSlotsNote: 'Вільного часу найближчі три тижні немає',
+    toolUnavailable: 'Інструмент недоступний',
+    location: (address: string, map: string, phone: string) => `Ми знаходимося за адресою: ${address}. Маршрут: ${map}. Телефон: ${phone}.`,
+    hours: (list: string) => `Години роботи: ${list}.`,
+    contacts: (phone: string, address: string) => `Телефон студії: ${phone}. Адреса: ${address}.`,
+    prices: 'Ціни:',
+    noSlots: (service: string, phone: string) => `На «${service}» найближчі три тижні вільного часу немає. Зателефонуйте: ${phone}.`,
+    slots: (service: string, list: string) => `Найближчий вільний час на «${service}»: ${list}. Натисніть «Записатися», щоб обрати його.`,
+    whichService: 'Уточніть, будь ласка, яка саме послуга потрібна?',
+    whichServiceForSlot: 'Підкажіть, на яку послугу шукаєте час? Від неї залежить тривалість.',
+    clientHelp: 'Я допоможу з вільним часом, цінами і тим, як нас знайти. Що підказати?',
+    clientExamples: ['Коли найближче вільне вікно?', 'Скільки коштує полірування?', 'Як знайти студію?'],
+    clientPrompt: (name: string, today: string, tz: string) =>
+      [
+        `Ти — помічник онлайн-запису студії «${name}». Сьогодні ${today}, часовий пояс студії ${tz}.`,
+        'Відповідай українською, звертаючись на «ви», коротко й привітно, 1–4 речення.',
+        'Відповідай ЛИШЕ за даними, отриманими з інструментів. Не вигадуй ціни, час, адреси та знижки.',
+        'Вільний час шукай лише через find_free_slots. Якщо незрозуміло, яка послуга потрібна, постав одне уточнювальне питання.',
+        'Не обговорюй інших клієнтів і чужі записи — таких даних у тебе немає.',
+        'Щоб записатися, запропонуй натиснути «Записатися» й обрати час. Сам ти записи не створюєш і не скасовуєш.',
+      ].join('\n'),
+    faqIntro: 'Часті питання й відповіді студії. Відповідай за ними своїми словами, нічого не додаючи від себе:',
+    status: {confirmed: 'очікуємо', arrived: 'прийнято', ready: 'готово', cancelled: 'скасовано', no_show: 'не приїхав'} as Record<string, string>,
+    netNote: 'net_received — реально отримані гроші. expected_value_forecast — прогноз за цінами записів, не виручка.',
+    noBookings: (period: string) => `На ${period} записів немає.`,
+    bookingsCount: (n: number): string => (n % 10 === 1 && n % 100 !== 11 ? 'запис' : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 'записи' : 'записів'),
+    more: (n: number) => `…і ще ${n}`,
+    cars: (arrivals: number, completed: number, bookings: number) => `заїздів ${arrivals}, робіт завершено ${completed}, записів ${bookings}`,
+    cash: (net: string, extra: string | null) => `отримано ${net}${extra ? ` (${extra})` : ''}`,
+    cashExtra: (paid: string, refunds: string) => `оплати ${paid}, повернення ${refunds}`,
+    todayLabel: 'Сьогодні',
+    weekLabel: 'За цей тиждень',
+    ownerHelp: 'Можу показати записи й порахувати авто або гроші за день, тиждень чи місяць. Що потрібно?',
+    ownerExamples: ['Що в мене завтра?', 'Скільки авто було цього тижня?', 'Скільки грошей отримано?'],
+    ownerPrompt: (name: string, today: string, tz: string) =>
+      [
+        `Ти — помічник власника студії «${name}». Сьогодні ${today}, часовий пояс ${tz}.`,
+        'Відповідай українською, коротко, цифрами. Дані бери ЛИШЕ з інструментів get_bookings і get_stats.',
+        'Тиждень — з понеділка по неділю. «Отримано» — це net_received; очікувана вартість — прогноз, не називай її виручкою.',
+        'Ти лише читаєш дані: не створюєш, не переносиш і не скасовуєш записи та не вносиш оплати. Якщо просять змінити — поясни, де це зробити в кабінеті.',
+        'Якщо період незрозумілий, уточни.',
+      ].join('\n'),
+    simplified: 'Помічник відповідає у спрощеному режимі',
+    onlyPost: 'Лише POST',
+    badQuestion: 'Напишіть питання до 500 символів',
+    unavailable: 'Помічник тимчасово недоступний',
+    tooMany: 'Забагато питань поспіль. Спробуйте за кілька хвилин.',
+    tooManyOwner: 'Забагато питань поспіль. Зачекайте кілька хвилин.',
+    studioNotFound: 'Студію не знайдено',
+    disabled: 'Помічник у цій студії вимкнений',
+    overloaded: 'Помічник зараз перевантажений. Спробуйте пізніше або зателефонуйте в студію.',
+    noSlotsData: 'Не вдалося отримати вільний час',
+    signIn: 'Увійдіть до кабінету',
+    sessionExpired: 'Сесія завершилася, увійдіть знову',
+    noAccess: 'Немає доступу до цієї студії',
+    cannotCount: 'Не вдалося порахувати',
+    cannotLoadBookings: 'Не вдалося отримати записи',
   },
 };
 

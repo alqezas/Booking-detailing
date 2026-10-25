@@ -1,4 +1,4 @@
-/** Small text helpers shared by the router and fallback answers (Russian, Czech and Polish). */
+/** Small text helpers shared by the router and fallback answers (Russian, Czech, Polish and Ukrainian). */
 import {INTL, L, type Lang} from './lang.ts';
 
 /**
@@ -8,7 +8,10 @@ import {INTL, L, type Lang} from './lang.ts';
  */
 export const norm = (s: string, lang: Lang = 'ru') => {
   let t = s.toLowerCase();
-  t = lang === 'ru' ? t.replace(/ё/g, 'е') : t.normalize('NFD').replace(/\p{M}/gu, '').replace(/ł/g, 'l');
+  if (lang === 'ru') t = t.replace(/ё/g, 'е');
+  // Ukrainian keeps its letters; the apostrophe inside words («пʼять», «п'ять») is dropped and «ґ» read as «г».
+  else if (lang === 'uk') t = t.replace(/[ʼ'’`]/g, '').replace(/ґ/g, 'г');
+  else t = t.normalize('NFD').replace(/\p{M}/gu, '').replace(/ł/g, 'l');
   return t
     .replace(/[^\p{L}\p{N}\s-]/gu, ' ')
     .replace(/\s+/g, ' ')
@@ -17,7 +20,7 @@ export const norm = (s: string, lang: Lang = 'ru') => {
 
 /** Crude stem: drops vowel endings so «полировку» matches «Полировка кузова», «keramiku» — «Keramika». */
 export function stem(w: string, lang: Lang = 'ru'): string {
-  const vowel = lang === 'ru' ? /[аяуюоеыиьйэ]$/ : /[aeiouy]$/;
+  const vowel = lang === 'ru' ? /[аяуюоеыиьйэ]$/ : lang === 'uk' ? /[аяуюоеиіїєьй]$/ : /[aeiouy]$/;
   let s = w;
   for (let i = 0; i < 2 && s.length > 3 && vowel.test(s); i++) s = s.slice(0, -1);
   return s;
@@ -41,7 +44,7 @@ export function plural(n: number, one: string, few: string, many: string, lang: 
   if (lang === 'pl' && n === 1) return one;
   const m10 = n % 10;
   const m100 = n % 100;
-  if (lang === 'ru' && m10 === 1 && m100 !== 11) return one;
+  if ((lang === 'ru' || lang === 'uk') && m10 === 1 && m100 !== 11) return one;
   if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return few;
   return many;
 }
@@ -79,12 +82,14 @@ export function localDate(tz: string, offsetDays = 0, now = new Date()): string 
   );
 }
 
-/** +74950001234 → +7 495 000-12-34; +420777056596 → +420 777 056 596; +48533557260 → +48 533 557 260 */
+/** +74950001234 → +7 495 000-12-34; +420777056596 → +420 777 056 596; +48533557260 → +48 533 557 260; +380501234567 → +380 50 123 45 67 */
 export function phone(e164: string): string {
   const ru = e164.match(/^\+7(\d{3})(\d{3})(\d{2})(\d{2})$/);
   if (ru) return `+7 ${ru[1]} ${ru[2]}-${ru[3]}-${ru[4]}`;
   const cz = e164.match(/^\+(420|421)(\d{3})(\d{3})(\d{3})$/);
   if (cz) return `+${cz[1]} ${cz[2]} ${cz[3]} ${cz[4]}`;
   const pl = e164.match(/^\+48(\d{3})(\d{3})(\d{3})$/);
-  return pl ? `+48 ${pl[1]} ${pl[2]} ${pl[3]}` : e164;
+  if (pl) return `+48 ${pl[1]} ${pl[2]} ${pl[3]}`;
+  const ua = e164.match(/^\+380(\d{2})(\d{3})(\d{2})(\d{2})$/);
+  return ua ? `+380 ${ua[1]} ${ua[2]} ${ua[3]} ${ua[4]}` : e164;
 }
