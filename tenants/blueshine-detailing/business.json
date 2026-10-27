@@ -1,0 +1,377 @@
+{
+  "slug": "blueshine-detailing",
+  "name": "BlueShine Auto Detailing",
+  "shortName": "BlueShine",
+  "kind": "detailing",
+  "tagline": "Auto detailing, powłoki ceramiczne i folie PPF w Rzeszowie",
+  "description": "BlueShine to studio auto detailingu w Rzeszowie, w którym kompleksowo zajmujemy się wyglądem i ochroną samochodu. Wykonujemy korektę lakieru, powłoki ceramiczne, folie PPF, oklejanie aut, detailing wnętrza oraz polerowanie. Do każdego zlecenia podchodzimy indywidualnie, a zakres prac ustalamy zawsze wcześniej z klientem. Folie PPF – na materiałach premium VioletSkin.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#1E7BC4",
+  "contacts": {
+    "phone": "+48 730 059 679",
+    "address": "ul. Ignacego Paderewskiego 168, 35-001 Rzeszów",
+    "mapUrl": "https://www.google.com/maps/place/BlueShine+Auto+Detailing+Spa+Rzesz%C3%B3w/@50.0281284,22.0475378,17z",
+    "instagram": "blueshine_autodetailing",
+    "facebook": "https://www.facebook.com/blueshine.autodetailing/",
+    "tiktok": "blueshine_autodetailing"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "16:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "16:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "16:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "16:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "16:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "korekta",
+      "name": "Korekta lakieru",
+      "category": "Lakier i powłoki",
+      "description": "Wieloetapowe usuwanie rys i matu, przywracanie głębi lakieru.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "polerowanie",
+      "name": "Polerowanie",
+      "category": "Lakier i powłoki",
+      "description": "Wygładzenie i wypolerowanie powierzchni lakieru.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika",
+      "name": "Powłoka ceramiczna",
+      "category": "Lakier i powłoki",
+      "description": "Trwałe zabezpieczenie lakieru przed czynnikami zewnętrznymi.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "elastomer",
+      "name": "Powłoka elastomerowa",
+      "category": "Lakier i powłoki",
+      "description": "Głębia koloru i długotrwała ochrona – jak w naszym Astonie Martinie Vantage i Cuprze Formentor.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta-powloka",
+      "name": "Korekta + powłoka ochronna",
+      "category": "Lakier i powłoki",
+      "description": "Pakiet: wieloetapowa korekta lakieru i aplikacja powłoki ceramicznej lub elastomerowej.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "felgi-szyba",
+      "name": "Powłoka na felgi, szyby lub zaciski",
+      "category": "Lakier i powłoki",
+      "description": "Ceramika na felgi, niewidzialna wycieraczka na szybę, powłoka na zaciski hamulców i nadkola.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-front",
+      "name": "Folia PPF – Full Front",
+      "category": "Folie",
+      "description": "Cały przód auta w bezbarwnej folii PPF VioletSkin – jak w Cuprze Formentor.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-elementy",
+      "name": "Folia PPF – wybrane elementy",
+      "category": "Folie",
+      "description": "Ochrona najbardziej narażonych elementów: zderzak, lusterka, progi, klamki.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full",
+      "name": "Folia PPF – całe auto",
+      "category": "Folie",
+      "description": "Pełne zabezpieczenie karoserii folią PPF VioletSkin.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 5760,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "oklejanie",
+      "name": "Oklejanie aut – zmiana koloru",
+      "category": "Folie",
+      "description": "Zmiana koloru i detali nadwozia foliami samochodowymi.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 5760,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze",
+      "name": "Detailing wnętrza",
+      "category": "Wnętrze i mycie",
+      "description": "Czyszczenie tapicerki, skór i elementów kabiny.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie",
+      "name": "Mycie detailingowe z podwoziem",
+      "category": "Wnętrze i mycie",
+      "description": "Dokładne mycie auta, felg i podwozia.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ogledziny",
+      "name": "Oględziny i wycena",
+      "category": "Wnętrze i mycie",
+      "description": "Oceniamy stan lakieru i wspólnie ustalamy zakres prac oraz cenę.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "5,0 w Google",
+      "text": "Ponad 50 opinii klientów."
+    },
+    {
+      "icon": "shield",
+      "title": "Folie VioletSkin",
+      "text": "PPF na materiałach premium dobranych pod zakres ochrony."
+    },
+    {
+      "icon": "car",
+      "title": "Indywidualnie",
+      "text": "Zakres prac i cenę ustalamy zawsze wcześniej z klientem."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-aston.webp",
+      "caption": "Aston Martin Vantage V8 – korekta i powłoka elastomerowa"
+    },
+    {
+      "image": "images/work-aston-silnik.webp",
+      "caption": "Aston Martin Vantage V8 w studiu"
+    },
+    {
+      "image": "images/work-aston-zaciski.webp",
+      "caption": "Aston Martin – powłoka na zaciski i nadkola"
+    },
+    {
+      "image": "images/work-aston-wnetrze.webp",
+      "caption": "Aston Martin – odświeżenie wnętrza"
+    },
+    {
+      "image": "images/work-cupra.webp",
+      "caption": "Cupra Formentor – Full Front PPF"
+    },
+    {
+      "image": "images/work-cupra-studio.webp",
+      "caption": "Cupra Formentor w studiu"
+    },
+    {
+      "image": "images/work-cupra-felgi.webp",
+      "caption": "Cupra Formentor – ceramika na felgach"
+    },
+    {
+      "image": "images/work-m5.webp",
+      "caption": "BMW M5 V10 (E60)"
+    },
+    {
+      "image": "images/work-m5-felga.webp",
+      "caption": "BMW M5 V10 – detale"
+    },
+    {
+      "image": "images/work-bmw-mat.webp",
+      "caption": "BMW w matowej folii"
+    },
+    {
+      "image": "images/work-mercedes.webp",
+      "caption": "Mercedes klasy E"
+    },
+    {
+      "image": "images/work-porsche-wnetrze.webp",
+      "caption": "Porsche – detailing wnętrza"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ile kosztuje usługa?",
+      "answer": "Cenę ustalamy indywidualnie po obejrzeniu auta – zależy od stanu lakieru i zakresu prac. Zarezerwuj oględziny albo zadzwoń: 730 059 679.",
+      "keywords": [
+        "ile kosztuj",
+        "cena",
+        "cennik",
+        "wycen",
+        "koszt"
+      ]
+    },
+    {
+      "question": "Jakich folii PPF używacie?",
+      "answer": "Współpracujemy z marką VioletSkin, specjalizującą się w premium paint protection film. Możemy okleić wybrane elementy, cały przód (Full Front) albo całe auto.",
+      "keywords": [
+        "folia",
+        "folii",
+        "ppf",
+        "violetskin"
+      ]
+    },
+    {
+      "question": "Czym różni się powłoka ceramiczna od elastomerowej?",
+      "answer": "Obie chronią lakier i ułatwiają mycie. Ceramika jest twardsza, a elastomer bardziej elastyczny i daje mocną głębię koloru. Doradzimy najlepszą opcję po oględzinach.",
+      "keywords": [
+        "ceramiczn",
+        "elastomer",
+        "roznic"
+      ]
+    },
+    {
+      "question": "Czy robicie też wnętrza?",
+      "answer": "Tak – czyścimy tapicerkę, skóry i wszystkie elementy kabiny, a przy kompleksowych realizacjach także odświeżamy fotele i kierownicę.",
+      "keywords": [
+        "wnetrz",
+        "tapicerk",
+        "skor",
+        "fotel"
+      ]
+    },
+    {
+      "question": "Gdzie jesteście i kiedy pracujecie?",
+      "answer": "Rzeszów, ul. Ignacego Paderewskiego 168. Pon.–pt. 8:00–16:00, w weekendy zamknięte.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "paderewsk",
+        "dojazd",
+        "godzin",
+        "otwart"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
