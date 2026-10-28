@@ -31,7 +31,7 @@ test('a SUV on alloy R17 is priced by the matrix and booked with a plate', async
   const sheet = page.getByRole('dialog');
   // The heading is the server's label: the price was recomputed by the database.
   await expect(sheet.getByRole('heading', {level: 2}).first()).toHaveText('Přezutí kompletních kol + vyvážení — SUV / 4×4, Alu R17, 4×');
-  await expect(sheet.getByText(/1 h · 750\sKč za 4 kola|750\sKč za 4 kola/).first()).toBeVisible();
+  await expect(sheet.getByText(/750\sKč za 4 kola/).filter({visible: true}).first()).toBeVisible();
   await sheet.getByRole('radiogroup', {name: /čas/i}).getByRole('radio').first().click();
   await sheet.getByRole('button', {name: 'Pokračovat'}).click();
 
@@ -44,11 +44,11 @@ test('a SUV on alloy R17 is priced by the matrix and booked with a plate', async
   await sheet.getByLabel('Rozměr pneu').fill('235/55 R17');
   await sheet.getByRole('button', {name: 'Zkontrolovat rezervaci'}).click();
 
-  await expect(sheet.getByText('1E23456')).toBeVisible();
+  await expect(sheet.getByText('1E23456').filter({visible: true}).first()).toBeVisible();
   await sheet.getByRole('button', {name: 'Potvrdit rezervaci'}).click();
   await expect(sheet.getByText('Jste objednáni')).toBeVisible();
-  await expect(sheet.getByText(/750\sKč/).first()).toBeVisible();
-  await expect(sheet.getByText('1E23456')).toBeVisible();
+  await expect(sheet.getByText(/750\sKč/).filter({visible: true}).first()).toBeVisible();
+  await expect(sheet.getByText('1E23456').filter({visible: true}).first()).toBeVisible();
 });
 
 test('the home page shows the tyre price list and seasons, not detailing cards', async ({page}) => {
