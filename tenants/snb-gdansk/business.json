@@ -1,0 +1,590 @@
+{
+  "slug": "snb-gdansk",
+  "name": "SNB Gdańsk Auto Detailing",
+  "shortName": "SNB Gdańsk",
+  "kind": "detailing",
+  "tagline": "Studio auto detailingu w Gdańsku od 2008 roku – folie PPF, powłoki i renowacja lakieru",
+  "description": "SNB Gdańsk działa nieprzerwanie od 2008 roku. Oferujemy folie PPF, renowację lakieru, powłoki ceramiczne i grafenowe oraz pielęgnację wnętrza. Każde auto traktujemy indywidualnie – zaczynamy od inspekcji lakieru i wnętrza, a przy renowacji monitorujemy grubość powłoki lakierniczej. Wnętrza czyścimy preparatami Gliptone i Colourlock. Studio jest monitorowane i ubezpieczone, a od maja pracujemy w nowej, większej lokalizacji przy ul. Biologicznej 4.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#C9A13B",
+  "contacts": {
+    "phone": "+48 690 421 321",
+    "address": "ul. Biologiczna 4, Gdańsk",
+    "mapUrl": "https://maps.google.com/maps?ll=54.369519,18.459624&z=16&cid=15258220760882931066",
+    "email": "snbgdansk@gmail.com",
+    "instagram": "snbgdanskautodetailing",
+    "facebook": "https://www.facebook.com/spa.snb.gdansk"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:30",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:30",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:30",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:30",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:30",
+        "17:00"
+      ]
+    ],
+    "sat": [
+      [
+        "11:00",
+        "14:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "mycie-premium",
+      "name": "Mycie z woskiem Premium",
+      "category": "Pielęgnacja",
+      "description": "Mycie karoserii i felg, usuwanie smoły i żywicy, suszenie, hydrofobowa szyba czołowa, odkurzanie i wosk carnauba. Auta średnie 246 zł, duże 308 zł.",
+      "price": 185,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "mycie-exclusive",
+      "name": "Mycie z woskiem Exclusive",
+      "category": "Pielęgnacja",
+      "description": "Jak Premium, plus hydrofobizacja wszystkich szyb i maszynowa aplikacja cleanera pod wosk carnauba. Auta średnie 431 zł, duże 492 zł.",
+      "price": 369,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "sprzatanie",
+      "name": "Sprzątanie wnętrza",
+      "category": "Wnętrze",
+      "description": "Odkurzanie, czyszczenie deski, tunelu i schowków, konserwacja plastików. Auta średnie 148 zł, duże 185 zł.",
+      "price": 123,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skory",
+      "name": "Czyszczenie skór",
+      "category": "Wnętrze",
+      "description": "Czyszczenie tapicerki skórzanej przednich foteli i kanapy preparatami Gliptone i Colourlock. Auta średnie 369 zł, duże 431 zł.",
+      "price": 308,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "impregnacja",
+      "name": "Impregnacja tapicerki",
+      "category": "Wnętrze",
+      "description": "Oczyszczenie tapicerki tekstylnej lub skórzanej i nałożenie preparatu impregnującego. Auta średnie 369 zł, duże 431 zł.",
+      "price": 308,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pranie",
+      "name": "Ekstrakcyjne pranie tapicerki",
+      "category": "Wnętrze",
+      "description": "Pranie foteli, kanapy i boczków, czyszczenie deski rozdzielczej. Auta średnie 308 zł, duże 369 zł.",
+      "price": 246,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "podsufitka",
+      "name": "Pranie podsufitki",
+      "category": "Wnętrze",
+      "description": "Auta średnie 185 zł, duże 246 zł.",
+      "price": 123,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "podloga",
+      "name": "Pranie podłogi",
+      "category": "Wnętrze",
+      "description": "Auta średnie 227 zł, duże 303 zł.",
+      "price": 151,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "odswiezenie",
+      "name": "Kompleksowe odświeżenie (1-etapowe polerowanie)",
+      "category": "Renowacja lakieru",
+      "description": "Polerowanie 1-etapowe, wosk carnauba i pełne czyszczenie wnętrza. Auta średnie 1476 zł, duże 1845 zł.",
+      "price": 1230,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "renowacja-2",
+      "name": "Renowacja lakieru – 2 etapy (ok. 70% rys)",
+      "category": "Renowacja lakieru",
+      "description": "Dwuetapowe polerowanie maszynowe, wosk carnauba i czyszczenie wnętrza. Auta średnie 1968 zł, duże 2460 zł.",
+      "price": 1599,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "renowacja-3",
+      "name": "Renowacja lakieru – 3 etapy (ok. 99% rys)",
+      "category": "Renowacja lakieru",
+      "description": "Trzyetapowe polerowanie maszynowe, wosk carnauba i czyszczenie wnętrza. Auta średnie 3075 zł, duże 4305 zł.",
+      "price": 1845,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-pol",
+      "name": "Powłoka ceramiczna – 6 miesięcy",
+      "category": "Powłoki ochronne",
+      "description": "Powłoka ceramiczna, niewidzialna wycieraczka i polimer na felgi. Auta średnie 738 zł, duże 861 zł.",
+      "price": 615,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-1",
+      "name": "Powłoka ceramiczna – 1 rok (S36)",
+      "category": "Powłoki ochronne",
+      "description": "Auta średnie 1230 zł, duże 1599 zł.",
+      "price": 984,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-3",
+      "name": "Powłoka ceramiczna – 3 lata (Kisho / TEVO S36)",
+      "category": "Powłoki ochronne",
+      "description": "Auta średnie 2214 zł, duże 2583 zł.",
+      "price": 1845,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-5",
+      "name": "Powłoka ceramiczna – 5 lat (Kisho 901 / TEVO S60)",
+      "category": "Powłoki ochronne",
+      "description": "Auta średnie 3321 zł, duże 3690 zł.",
+      "price": 2829,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "multi-premium",
+      "name": "Multicoating Premium (S60 + S36)",
+      "category": "Powłoki ochronne",
+      "description": "Auta średnie 3321 zł, duże 3690 zł.",
+      "price": 3075,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "multi-exclusive",
+      "name": "Multicoating Exclusive (2× S60 + S36)",
+      "category": "Powłoki ochronne",
+      "description": "Auta średnie 4305 zł, duże 4674 zł.",
+      "price": 4059,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "grafen",
+      "name": "Powłoka grafenowa",
+      "category": "Powłoki ochronne",
+      "description": "Twardość 10H, trwałość do 60 miesięcy, większa hydrofobowość. Auta średnie 3500 zł, duże 4000 zł, SUV 4500 zł.",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-bikini",
+      "name": "Folia PPF – pakiet Bikini",
+      "category": "Folie PPF",
+      "description": "Ochrona najbardziej narażonych elementów przodu auta.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-optimal",
+      "name": "Folia PPF – pakiet Optimal",
+      "category": "Folie PPF",
+      "description": "Rozszerzona ochrona przodu auta.",
+      "price": 2800,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-front",
+      "name": "Folia PPF – Full Front",
+      "category": "Folie PPF",
+      "description": "Cały przód auta w bezbarwnej folii PPF.",
+      "price": 4500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full",
+      "name": "Folia PPF – Full Car",
+      "category": "Folie PPF",
+      "description": "Pełne zabezpieczenie karoserii folią PPF.",
+      "price": 10000,
+      "priceFrom": true,
+      "durationMinutes": 5760,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-reflektory",
+      "name": "Folia na reflektory",
+      "category": "Folie PPF",
+      "description": "Zabezpieczenie reflektorów folią ochronną.",
+      "price": 300,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-lusterka",
+      "name": "Folia na lusterka",
+      "category": "Folie PPF",
+      "description": "Zabezpieczenie lusterek folią ochronną.",
+      "price": 350,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-piano",
+      "name": "Folia na słupki piano black",
+      "category": "Folie PPF",
+      "description": "Ochrona błyszczących słupków przed rysami.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-prog",
+      "name": "Folia na próg załadunkowy",
+      "category": "Folie PPF",
+      "description": "Ochrona progu bagażnika przed zarysowaniami.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "reklama",
+      "name": "Usuwanie oklejenia reklamowego",
+      "category": "Pielęgnacja",
+      "description": "Auta średnie 369 zł, duże 492 zł.",
+      "price": 308,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "sprzedaz",
+      "name": "Przygotowanie auta do sprzedaży",
+      "category": "Pakiety",
+      "description": "Maszynowe odświeżenie lakieru, czyszczenie wnętrza i tapicerki. Auta średnie 861 zł, duże 984 zł.",
+      "price": 738,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pelen-pakiet",
+      "name": "Pełna korekta i pełne zabezpieczenie",
+      "category": "Pakiety",
+      "description": "3-etapowe polerowanie, ceramika na lakier, szyby i felgi oraz kompleksowe wnętrze z impregnacją. Auta średnie 7380 zł, duże 8979 zł.",
+      "price": 5904,
+      "priceFrom": true,
+      "durationMinutes": 4320,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ogledziny",
+      "name": "Oględziny i wycena",
+      "category": "Pakiety",
+      "description": "Ostateczną wycenę robimy zawsze po oględzinach auta.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Od 2008 roku",
+      "text": "Wieloletnie doświadczenie i wielu stałych klientów."
+    },
+    {
+      "icon": "shield",
+      "title": "Monitoring i ubezpieczenie",
+      "text": "Twoje auto jest u nas bezpieczne."
+    },
+    {
+      "icon": "car",
+      "title": "Door to door",
+      "text": "Przy renowacji i foliach PPF możemy odebrać i odstawić auto."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-911-turbo.webp",
+      "caption": "Porsche 911 Carrera Turbo S Cabrio"
+    },
+    {
+      "image": "images/work-911-turbo-felga.webp",
+      "caption": "Porsche 911 Turbo S – detale"
+    },
+    {
+      "image": "images/work-911-gts-tevo.webp",
+      "caption": "Porsche 911 Carrera GTS – powłoka TEVO"
+    },
+    {
+      "image": "images/work-bmw7.webp",
+      "caption": "BMW serii 7"
+    },
+    {
+      "image": "images/work-x5m.webp",
+      "caption": "BMW X5M Competition"
+    },
+    {
+      "image": "images/work-x5m-ppf.webp",
+      "caption": "BMW X5M Competition – aplikacja folii PPF"
+    },
+    {
+      "image": "images/work-gle.webp",
+      "caption": "Mercedes GLE"
+    },
+    {
+      "image": "images/work-gle-lakier.webp",
+      "caption": "Mercedes GLE – lakier po renowacji"
+    },
+    {
+      "image": "images/work-cayenne.webp",
+      "caption": "Porsche Cayenne GTS"
+    },
+    {
+      "image": "images/work-bmw4.webp",
+      "caption": "BMW serii 4 Gran Coupe"
+    },
+    {
+      "image": "images/work-taycan.webp",
+      "caption": "Porsche Taycan GTS Sport Turismo"
+    },
+    {
+      "image": "images/work-studio.webp",
+      "caption": "Studio SNB Gdańsk"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Czy ceny są ostateczne?",
+      "answer": "Ceny w cenniku mają charakter orientacyjny – ostateczną wycenę robimy zawsze po oględzinach pojazdu. Zależą też od wielkości auta (małe, średnie, duże).",
+      "keywords": [
+        "cena",
+        "cennik",
+        "ile kosztuj",
+        "ostateczn",
+        "wycen",
+        "koszt"
+      ]
+    },
+    {
+      "question": "Czy odbieracie auto?",
+      "answer": "Tak – przy renowacji lakieru i foliach PPF oferujemy usługę door to door. Szczegóły ustalimy telefonicznie: 690 421 321.",
+      "keywords": [
+        "door",
+        "odbier",
+        "odbior",
+        "dowoz",
+        "transport"
+      ]
+    },
+    {
+      "question": "Czym różni się powłoka grafenowa od ceramicznej?",
+      "answer": "Powłoka grafenowa ma twardość 10H, trwałość do 60 miesięcy oraz większą hydrofobowość i kąt poślizgu dzięki nanorurkom grafenowym. Ceramikę mamy w wariantach od 6 miesięcy do 5 lat.",
+      "keywords": [
+        "grafen",
+        "ceramiczn",
+        "roznic",
+        "trwalosc"
+      ]
+    },
+    {
+      "question": "Jakich preparatów używacie we wnętrzu?",
+      "answer": "Skóry i tapicerkę czyścimy bezpiecznymi preparatami światowych marek, takich jak Gliptone i Colourlock.",
+      "keywords": [
+        "preparat",
+        "gliptone",
+        "colourlock",
+        "skor",
+        "tapicerk"
+      ]
+    },
+    {
+      "question": "Gdzie jesteście i kiedy pracujecie?",
+      "answer": "Gdańsk, ul. Biologiczna 4. Pon.–pt. 8:30–17:00, sob. 11:00–14:00, niedziela zamknięte.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "biologiczn",
+        "dojazd",
+        "godzin",
+        "otwart"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
