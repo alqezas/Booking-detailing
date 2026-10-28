@@ -1,3 +1,5 @@
+import type {SeasonPeriod, TireConfig, TireSeason, TireSource} from '../../supabase/functions/_shared/tire.ts';
+
 export type TenantStatus = 'preview' | 'live' | 'suspended';
 export type BookingStatus = 'confirmed' | 'arrived' | 'ready' | 'cancelled' | 'no_show';
 
@@ -22,7 +24,7 @@ export type PublicTenant = {
   id: string;
   slug: string;
   status: TenantStatus;
-  kind: 'detailing' | 'autoservice';
+  kind: 'detailing' | 'autoservice' | 'tireservice';
   name: string;
   short_name: string | null;
   tagline: string;
@@ -47,7 +49,18 @@ export type PublicTenant = {
   logo_path: string | null;
   hero_path: string | null;
   assistant_enabled: boolean;
-  booking: {slot_step_minutes: number; min_lead_minutes: number; horizon_days: number; cancel_cutoff_hours: number; default_buffer_minutes: number};
+  booking: {
+    slot_step_minutes: number;
+    min_lead_minutes: number;
+    horizon_days: number;
+    /** Today's horizon: shorter while a tyre season with its own horizon runs (absent before the tyre migration). */
+    effective_horizon_days?: number;
+    cancel_cutoff_hours: number;
+    default_buffer_minutes: number;
+  };
+  /** Tyre services: the price matrix (null for other studios) and the seasons. */
+  tire?: TireConfig | null;
+  tire_seasons?: SeasonPeriod[];
   services: Service[];
   hours: HoursRow[];
   exceptions: ScheduleException[];
@@ -58,7 +71,10 @@ export type PublicTenant = {
 
 export type Slot = {start_at: string; available: boolean};
 export type AvailabilityDay = {date: string; slots: Slot[]};
+export type ServerQuote = {price: number; on_request: boolean; duration_minutes: number; wheels: number; label: string};
+
 export type Availability = {
+  quote?: ServerQuote;
   timezone: string;
   service: Pick<Service, 'id' | 'name' | 'duration_minutes' | 'price' | 'price_from'>;
   from: string;
@@ -82,6 +98,10 @@ export type PublicBooking = {
   customer_phone: string;
   car: string;
   comment: string;
+  plate?: string | null;
+  tire_size?: string | null;
+  tire_source?: TireSource | null;
+  tire_params?: {vehicle: string; rim: string; diameter: number; wheels: number; on_request: boolean} | null;
   resource_name: string;
   is_demo: boolean;
   cancel_deadline: string;
@@ -111,6 +131,10 @@ export type OwnerBooking = {
   customer_phone: string;
   car: string;
   comment: string;
+  plate?: string | null;
+  tire_size?: string | null;
+  tire_source?: TireSource | null;
+  tire_params?: {vehicle: string; rim: string; diameter: number; wheels: number; on_request: boolean} | null;
   source: 'client' | 'owner' | 'demo';
   is_demo: boolean;
   arrived_at: string | null;
@@ -142,3 +166,26 @@ export type Stats = {
   net_received: number;
   expected_value: number;
 };
+
+export type TireSet = {
+  id: string;
+  tenant_id: string;
+  customer_name: string;
+  customer_phone: string;
+  plate: string;
+  car: string;
+  tire_size: string;
+  season: TireSeason;
+  with_rims: boolean;
+  tread_mm: number | null;
+  condition: string;
+  location: string;
+  stored_at: string;
+  released_at: string | null;
+  last_contacted_at: string | null;
+  note: string;
+  next_booking_at?: string | null;
+  due?: boolean;
+};
+
+export type TireSetsView = {today: string; season: (SeasonPeriod & {start: string}) | null; sets: TireSet[]};

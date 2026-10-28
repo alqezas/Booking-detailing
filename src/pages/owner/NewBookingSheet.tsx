@@ -19,6 +19,9 @@ import {formatDuration, formatPrice} from '../../lib/format.ts';
 import {customerSchema, fieldErrors} from '../../lib/schemas.ts';
 import {ownerKey, useOwner} from './ownerContext.tsx';
 import {msg} from '../../i18n/index.ts';
+import {TireCalculator, initialCalc, isTireService, type CalcValue} from '../../components/tire/TireCalculator.tsx';
+import {TireDetails, plateError, type TireDetailsValue} from '../../components/tire/TireDetails.tsx';
+import {normalizePlate} from '../../../supabase/functions/_shared/tire.ts';
 
 /** A booking taken by phone: same engine, same conflict rules as online booking. */
 export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; onClose: () => void; onCreated: (id: string) => void}) {
@@ -32,11 +35,15 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [notice, setNotice] = useState<string | null>(null);
   const [key, setKey] = useState(randomKey);
+  // Tyre services: priced by the calculator, with plate and tyres.
+  const [calc, setCalc] = useState<CalcValue>(() => initialCalc(tenant));
+  const [tire, setTire] = useState<TireDetailsValue>({plate: '', tire_size: '', tire_source: 'own'});
 
   const reset = () => {
     setServiceId(null);
     setStart(null);
     setForm({name: '', phone: '', car: '', comment: ''});
+    setTire({plate: '', tire_size: '', tire_source: 'own'});
     setErrors({});
     setNotice(null);
     setKey(randomKey());
@@ -45,6 +52,17 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
   const create = useMutation({
     mutationFn: () => {
       const c = customerSchema.parse(form);
+      if (tireMode)
+        return api.createTireBooking({
+          serviceId: serviceId!,
+          startAt: start!,
+          name: c.name,
+          phone: c.phone,
+          car: c.car,
+          comment: c.comment,
+          key,
+          tire: {vehicle: calc.vehicle, rim: calc.rim, diameter: calc.diameter, wheels: calc.wheels, plate: normalizePlate(tire.plate), tire_size: tire.tire_size.trim(), tire_source: tire.tire_source},
+        });
       return api.createBooking({serviceId: serviceId!, startAt: start!, name: c.name, phone: c.phone, car: c.car, comment: c.comment, key});
     },
     onSuccess: b => {
@@ -67,8 +85,9 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
 
   const submit = () => {
     const parsed = customerSchema.safeParse(form);
-    if (!parsed.success) {
-      setErrors(fieldErrors(parsed.error));
+    const pErr = tireMode ? plateError(tire.plate) : null;
+    if (!parsed.success || pErr) {
+      setErrors({...(parsed.success ? {} : fieldErrors(parsed.error)), ...(pErr ? {plate: pErr} : {})});
       return;
     }
     setErrors({});
@@ -76,6 +95,7 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
   };
 
   const service = tenant.services.find(s => s.id === serviceId);
+  const tireMode = isTireService(tenant, service);
   const set = (k: keyof typeof form) => (v: string) => setForm(f => ({...f, [k]: v}));
 
   return (
@@ -88,6 +108,7 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
           onChange={v => {
             setServiceId(v ?? null);
             setStart(null);
+            if (v) setCalc(c => ({...c, serviceId: v}));
           }}
           placeholder={msg.newBooking.pickService}
           options={tenant.services.map(s => ({
@@ -96,6 +117,16 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
             description: `${formatPrice(s.price, s.price_from, tenant.currency)} · ${formatDuration(s.duration_minutes)}`,
           }))}
         />
+        {service && tireMode && (
+          <TireCalculator
+            value={{...calc, serviceId: service.id}}
+            onChange={v => {
+              setCalc(v);
+              setStart(null);
+            }}
+            hideService
+          />
+        )}
         {service && (
           <SlotPicker
             slug={slug}
@@ -108,7 +139,12 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
               setNotice(null);
             }}
             notice={notice}
-            ownerLoad={(from, days) => api.availability(service.id, from, days)}
+            {...(tireMode
+              ? {
+                  load: (from: string, days: number) => api.tireAvailability(service.id, {vehicle: calc.vehicle, rim: calc.rim, diameter: calc.diameter, wheels: calc.wheels}, from, days),
+                  loadKey: ['owner-tire', calc.vehicle, calc.rim, calc.diameter, calc.wheels],
+                }
+              : {ownerLoad: (from: string, days: number) => api.availability(service.id, from, days)})}
           />
         )}
         {start && (
@@ -118,6 +154,9 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
             <TextInput label={msg.flow.car} value={form.car} onChange={set('car')} status={errors.car ? {type: 'error', message: errors.car} : undefined} />
             <TextArea label={msg.flow.comment} isOptional value={form.comment} onChange={set('comment')} rows={2} />
           </FormLayout>
+        )}
+        {start && tireMode && (
+          <TireDetails slug={slug} value={tire} onChange={setTire} phone={form.phone} storage={!!tenant.tire?.storage} plateErrorText={errors.plate} />
         )}
         {create.isError && toApiError(create.error).code !== 'SLOT_TAKEN' && (
           <Banner status="error" title={errorText(create.error)} collapsible={false} />

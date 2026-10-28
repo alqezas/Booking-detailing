@@ -7,6 +7,7 @@
  * stays the runtime source of truth; this file only seeds and re-publishes it.
  */
 import {z} from 'zod';
+import {MAX_DIAMETER, MAX_WHEELS, MIN_DIAMETER, MONTH_DAY_RE, MOUNT_SEASONS, RIMS, VEHICLES} from '../supabase/functions/_shared/tire.ts';
 
 export const SLUG_RE = /^[a-z0-9](?:[a-z0-9-]{0,38}[a-z0-9])?$/;
 export const HEX_RE = /^#[0-9a-fA-F]{6}$/;
@@ -55,7 +56,70 @@ export const INFO_CARD_ICONS = [
   'sun',
   'coffee',
   'credit-card',
+  'tire',
+  'snowflake',
+  'warehouse',
 ] as const;
+
+export const TENANT_KINDS = ['detailing', 'autoservice', 'tireservice'] as const;
+
+const diameter = z.number().int().min(MIN_DIAMETER).max(MAX_DIAMETER);
+
+/**
+ * Tyre services: the price matrix of the calculator (see
+ * supabase/functions/_shared/tire.ts for the rules), vehicle and rim names in
+ * the studio language and the seasons. Every operation points at a service of
+ * the same studio: the service row carries the name, category, bays and the
+ * «from» price shown when the calculator is not used.
+ */
+export const tireSchema = z.object({
+  operations: z
+    .array(
+      z.object({
+        service: key,
+        unit: z.enum(['set', 'job']).default('set'),
+        rows: z
+          .array(
+            z
+              .object({
+                vehicles: z.array(z.enum(VEHICLES)).min(1).optional(),
+                rims: z.array(z.enum(RIMS)).min(1).optional(),
+                from: diameter,
+                to: diameter,
+                /** null = price on request */
+                price: z.number().int().min(0).max(1_000_000).nullable(),
+                minutes: z.number().int().min(5).max(24 * 60),
+              })
+              .refine(r => r.from <= r.to, {message: 'from ≤ to'}),
+          )
+          .min(1)
+          .max(80),
+      }),
+    )
+    .min(1)
+    .max(20),
+  names: z
+    .object({
+      vehicles: z.object({car: z.string().min(1).max(30), suv: z.string().min(1).max(30), van: z.string().min(1).max(30)}),
+      rims: z.object({steel: z.string().min(1).max(30), alloy: z.string().min(1).max(30)}),
+    })
+    .default({vehicles: {car: 'Osobní', suv: 'SUV / 4×4', van: 'Dodávka'}, rims: {steel: 'Plech', alloy: 'Alu'}}),
+  defaultWheels: z.number().int().min(1).max(MAX_WHEELS).default(4),
+  /** The studio stores tyre sets (pneuhotel): the booking form offers «from storage». */
+  storage: z.boolean().default(false),
+  seasons: z
+    .array(
+      z.object({
+        from: z.string().regex(MONTH_DAY_RE, 'MM-DD'),
+        to: z.string().regex(MONTH_DAY_RE, 'MM-DD'),
+        mount: z.enum(MOUNT_SEASONS),
+        horizonDays: z.number().int().min(1).max(120).nullable().optional(),
+      }),
+    )
+    .max(4)
+    .default([]),
+});
+export type TireSettings = z.output<typeof tireSchema>;
 
 export const serviceSchema = z.object({
   key,
@@ -78,7 +142,7 @@ export const businessSchema = z
     slug: z.string().regex(SLUG_RE, 'slug: латиница, цифры, дефис, до 40 символов'),
     name: z.string().trim().min(2).max(60),
     shortName: z.string().trim().min(1).max(14).optional(),
-    kind: z.enum(['detailing', 'autoservice']),
+    kind: z.enum(TENANT_KINDS),
     tagline: z.string().trim().max(90).default(''),
     description: z.string().trim().max(600).default(''),
     /** Interface language of the studio's site and cabinet. */
@@ -119,7 +183,8 @@ export const businessSchema = z
         defaultBufferMinutes: z.number().int().min(0).max(240).default(30),
       })
       .default({slotStepMinutes: 30, minLeadMinutes: 60, horizonDays: 30, cancelCutoffHours: 12, defaultBufferMinutes: 30}),
-    resources: z.array(z.object({key, name: z.string().trim().min(1).max(40)})).min(1).max(20),
+    /** seasonal: a post that takes bookings only inside a tyre season. */
+    resources: z.array(z.object({key, name: z.string().trim().min(1).max(40), seasonal: z.boolean().optional()})).min(1).max(20),
     services: z.array(serviceSchema).min(1).max(60),
     infoCards: z
       .array(
@@ -158,6 +223,7 @@ export const businessSchema = z
       .default([]),
     owner: z.object({email: z.email()}),
     assistant: z.object({enabled: z.boolean().default(true)}).default({enabled: true}),
+    tire: tireSchema.optional(),
   })
   .superRefine((b, ctx) => {
     const resourceKeys = new Set(b.resources.map(r => r.key));
@@ -173,6 +239,12 @@ export const businessSchema = z
           ctx.addIssue({code: 'custom', path: ['services', i, 'resources'], message: `Нет бокса «${r}»`});
         }
       });
+    });
+    if (b.kind === 'tireservice' && !b.tire) {
+      ctx.addIssue({code: 'custom', path: ['tire'], message: 'Шиномонтажу нужна матрица цен (tire)'});
+    }
+    b.tire?.operations.forEach((o, i) => {
+      if (!serviceKeys.has(o.service)) ctx.addIssue({code: 'custom', path: ['tire', 'operations', i, 'service'], message: `Нет услуги «${o.service}»`});
     });
     if (WEEKDAYS.every(d => b.hours[d].length === 0)) {
       ctx.addIssue({code: 'custom', path: ['hours'], message: 'Нужен хотя бы один рабочий день'});

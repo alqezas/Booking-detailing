@@ -31,6 +31,7 @@ import type {BookingStatus, OwnerBooking} from '../../lib/types.ts';
 import {statusLabel} from '../client/MyBookingPage.tsx';
 import {ownerKey, useOwner} from './ownerContext.tsx';
 import {msg} from '../../i18n/index.ts';
+import {tireRows} from '../../components/tire/tireRows.ts';
 
 type Mode = 'view' | 'pay' | 'move';
 
@@ -124,6 +125,11 @@ export function BookingSheet({bookingId, onClose}: {bookingId: string | null; on
               <MetadataListItem label={msg.summary.car}>
                 <Text>{b.car}</Text>
               </MetadataListItem>
+              {tireRows(b).map(r => (
+                <MetadataListItem key={r.label} label={r.label}>
+                  <Text>{r.value}</Text>
+                </MetadataListItem>
+              ))}
               {b.comment && (
                 <MetadataListItem label={msg.sheet.comment}>
                   <Text>{b.comment}</Text>

@@ -43,7 +43,7 @@ export default function AssistantPage() {
       <AssistantChat
         endpoint="assistant"
         slug={t.slug}
-        examples={assistantExamples()}
+        examples={assistantExamples(t)}
         intro={msg.assistant.intro}
         initialQuestion={params.get('q')}
         onBook={id => flow.open(id)}

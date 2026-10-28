@@ -29,8 +29,11 @@ import {
   Phone,
   ShieldCheck,
   Sparkle,
+  Snowflake,
   Sun,
   TelegramLogo,
+  Tire,
+  Warehouse,
   WhatsappLogo,
   Wrench,
   type Icon as PhosphorIcon,
@@ -40,6 +43,7 @@ import {useNavigate} from 'react-router';
 import {useTenant} from '../../app/tenant.tsx';
 import {formatDate, formatDuration, formatPhone, formatPrice, summarizeHours} from '../../lib/format.ts';
 import {msg} from '../../i18n/index.ts';
+import {tireMsg} from '../../i18n/tire.ts';
 import type {GalleryItem} from '../../lib/types.ts';
 import {mediaUrl} from '../../lib/media.ts';
 import {useReveal} from '../../lib/motion.ts';
@@ -57,10 +61,13 @@ const CARD_ICONS: Record<string, PhosphorIcon> = {
   sun: Sun,
   coffee: Coffee,
   'credit-card': CreditCard,
+  tire: Tire,
+  snowflake: Snowflake,
+  warehouse: Warehouse,
 };
 
 /** Example questions for the assistant, in the studio language. */
-export const assistantExamples = () => msg.home.assistantExamples;
+export const assistantExamples = (t?: {tire?: unknown}) => (t?.tire ? tireMsg().home.assistantExamples : msg.home.assistantExamples);
 
 /** A page section that fades in when scrolled into view (static with reduced motion). */
 export function RevealSection({title, id, children, action}: {title: string; id?: string; children: ReactNode; action?: ReactNode}) {
@@ -391,7 +398,7 @@ export function AssistantTeaser() {
             <Text color="secondary">{msg.home.assistantLead}</Text>
           </HStack>
           <HStack gap={2} wrap="wrap">
-            {assistantExamples().map(q => (
+            {assistantExamples(t).map(q => (
               <Button key={q} label={q} size="md" onClick={() => ask(q)} />
             ))}
           </HStack>

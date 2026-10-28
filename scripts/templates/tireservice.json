@@ -1,0 +1,470 @@
+{
+  "slug": "__slug__",
+  "name": "__name__",
+  "kind": "tireservice",
+  "tagline": "Pneuservis",
+  "description": "Коротко о шиномонтаже: что делаете и почему к вам едут.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#E0A100",
+  "contacts": {
+    "phone": "+70000000000",
+    "address": "Адрес студии, город, улица, дом"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "07:30",
+        "16:30"
+      ]
+    ],
+    "tue": [
+      [
+        "07:30",
+        "16:30"
+      ]
+    ],
+    "wed": [
+      [
+        "07:30",
+        "16:30"
+      ]
+    ],
+    "thu": [
+      [
+        "07:30",
+        "16:30"
+      ]
+    ],
+    "fri": [
+      [
+        "07:30",
+        "16:30"
+      ]
+    ],
+    "sat": [
+      [
+        "08:00",
+        "12:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [],
+  "booking": {
+    "slotStepMinutes": 15,
+    "minLeadMinutes": 60,
+    "horizonDays": 30,
+    "cancelCutoffHours": 2,
+    "defaultBufferMinutes": 0
+  },
+  "resources": [
+    {
+      "key": "zvedak-1",
+      "name": "Zvedák 1"
+    },
+    {
+      "key": "zvedak-2",
+      "name": "Zvedák 2"
+    },
+    {
+      "key": "zvedak-3",
+      "name": "Zvedák 3 (sezóna)",
+      "seasonal": true
+    }
+  ],
+  "services": [
+    {
+      "key": "prezuti-kol",
+      "name": "Přezutí kompletních kol + vyvážení",
+      "category": "Pneuservis",
+      "description": "Výměna letních a zimních kol na discích včetně vyvážení a kontroly tlaku.",
+      "price": 550,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "zvedak-1",
+        "zvedak-2",
+        "zvedak-3"
+      ]
+    },
+    {
+      "key": "disk-na-disk",
+      "name": "Přezutí pneu z disku na disk",
+      "category": "Pneuservis",
+      "description": "Přezutí pneumatik na vašich discích včetně vyvážení. Do 16″ a od 17″ jiná cena.",
+      "price": 850,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "zvedak-1",
+        "zvedak-2",
+        "zvedak-3"
+      ]
+    },
+    {
+      "key": "vyvazeni",
+      "name": "Vyvážení kol",
+      "category": "Pneuservis",
+      "description": "Vyvážení sady kol včetně závaží.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 30,
+      "resources": [
+        "zvedak-1",
+        "zvedak-2",
+        "zvedak-3"
+      ]
+    },
+    {
+      "key": "defekt",
+      "name": "Oprava defektu",
+      "category": "Pneuservis",
+      "description": "Oprava pneumatiky zevnitř správným postupem, ne „rychlé lepení“.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 30,
+      "resources": [
+        "zvedak-1",
+        "zvedak-2"
+      ]
+    },
+    {
+      "key": "uskladneni",
+      "name": "Uskladnění sady kol (sezóna)",
+      "category": "Pneuservis",
+      "description": "Sadu po přezutí umyjeme, změříme dezén a uložíme do regálu do další sezóny.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 15,
+      "resources": [
+        "zvedak-1",
+        "zvedak-2"
+      ]
+    }
+  ],
+  "tire": {
+    "defaultWheels": 4,
+    "storage": true,
+    "names": {
+      "vehicles": {
+        "car": "Osobní",
+        "suv": "SUV / 4×4",
+        "van": "Dodávka"
+      },
+      "rims": {
+        "steel": "Plech",
+        "alloy": "Alu"
+      }
+    },
+    "seasons": [
+      {
+        "from": "10-15",
+        "to": "11-30",
+        "mount": "winter",
+        "horizonDays": 14
+      },
+      {
+        "from": "03-15",
+        "to": "04-30",
+        "mount": "summer",
+        "horizonDays": 14
+      }
+    ],
+    "operations": [
+      {
+        "service": "prezuti-kol",
+        "unit": "set",
+        "rows": [
+          {
+            "vehicles": [
+              "car"
+            ],
+            "rims": [
+              "steel"
+            ],
+            "from": 13,
+            "to": 22,
+            "price": 550,
+            "minutes": 45
+          },
+          {
+            "vehicles": [
+              "car"
+            ],
+            "rims": [
+              "alloy"
+            ],
+            "from": 13,
+            "to": 22,
+            "price": 650,
+            "minutes": 45
+          },
+          {
+            "vehicles": [
+              "suv"
+            ],
+            "rims": [
+              "steel"
+            ],
+            "from": 13,
+            "to": 22,
+            "price": 650,
+            "minutes": 60
+          },
+          {
+            "vehicles": [
+              "suv"
+            ],
+            "rims": [
+              "alloy"
+            ],
+            "from": 13,
+            "to": 22,
+            "price": 750,
+            "minutes": 60
+          },
+          {
+            "vehicles": [
+              "van"
+            ],
+            "from": 20,
+            "to": 22,
+            "price": null,
+            "minutes": 75
+          },
+          {
+            "vehicles": [
+              "van"
+            ],
+            "rims": [
+              "steel"
+            ],
+            "from": 13,
+            "to": 19,
+            "price": 750,
+            "minutes": 60
+          },
+          {
+            "vehicles": [
+              "van"
+            ],
+            "rims": [
+              "alloy"
+            ],
+            "from": 13,
+            "to": 19,
+            "price": 850,
+            "minutes": 60
+          }
+        ]
+      },
+      {
+        "service": "disk-na-disk",
+        "unit": "set",
+        "rows": [
+          {
+            "vehicles": [
+              "car"
+            ],
+            "from": 13,
+            "to": 16,
+            "price": 850,
+            "minutes": 60
+          },
+          {
+            "vehicles": [
+              "car"
+            ],
+            "from": 17,
+            "to": 21,
+            "price": 1100,
+            "minutes": 60
+          },
+          {
+            "vehicles": [
+              "suv"
+            ],
+            "from": 13,
+            "to": 16,
+            "price": 1050,
+            "minutes": 75
+          },
+          {
+            "vehicles": [
+              "suv"
+            ],
+            "from": 17,
+            "to": 21,
+            "price": 1300,
+            "minutes": 75
+          },
+          {
+            "vehicles": [
+              "van"
+            ],
+            "from": 13,
+            "to": 16,
+            "price": 1000,
+            "minutes": 75
+          },
+          {
+            "vehicles": [
+              "van"
+            ],
+            "from": 17,
+            "to": 19,
+            "price": 1250,
+            "minutes": 75
+          },
+          {
+            "from": 13,
+            "to": 22,
+            "price": null,
+            "minutes": 90
+          }
+        ]
+      },
+      {
+        "service": "vyvazeni",
+        "unit": "set",
+        "rows": [
+          {
+            "vehicles": [
+              "car"
+            ],
+            "from": 13,
+            "to": 16,
+            "price": 400,
+            "minutes": 30
+          },
+          {
+            "vehicles": [
+              "car"
+            ],
+            "from": 17,
+            "to": 19,
+            "price": 500,
+            "minutes": 30
+          },
+          {
+            "vehicles": [
+              "car"
+            ],
+            "from": 20,
+            "to": 22,
+            "price": 600,
+            "minutes": 40
+          },
+          {
+            "vehicles": [
+              "suv",
+              "van"
+            ],
+            "from": 13,
+            "to": 16,
+            "price": 500,
+            "minutes": 40
+          },
+          {
+            "vehicles": [
+              "suv",
+              "van"
+            ],
+            "from": 17,
+            "to": 19,
+            "price": 600,
+            "minutes": 40
+          },
+          {
+            "vehicles": [
+              "suv",
+              "van"
+            ],
+            "from": 20,
+            "to": 22,
+            "price": 700,
+            "minutes": 45
+          }
+        ]
+      },
+      {
+        "service": "defekt",
+        "unit": "job",
+        "rows": [
+          {
+            "vehicles": [
+              "car",
+              "suv"
+            ],
+            "from": 13,
+            "to": 19,
+            "price": 500,
+            "minutes": 30
+          },
+          {
+            "from": 13,
+            "to": 22,
+            "price": null,
+            "minutes": 45
+          }
+        ]
+      },
+      {
+        "service": "uskladneni",
+        "unit": "job",
+        "rows": [
+          {
+            "vehicles": [
+              "car"
+            ],
+            "from": 13,
+            "to": 22,
+            "price": 800,
+            "minutes": 15
+          },
+          {
+            "vehicles": [
+              "suv",
+              "van"
+            ],
+            "from": 13,
+            "to": 22,
+            "price": 1000,
+            "minutes": 15
+          }
+        ]
+      }
+    ]
+  },
+  "infoCards": [
+    {
+      "icon": "tire",
+      "title": "Cena předem",
+      "text": "Kalkulačka spočítá cenu podle auta, disků a průměru ještě před objednáním."
+    },
+    {
+      "icon": "warehouse",
+      "title": "Pneuhotel",
+      "text": "Uskladníme vaši sadu kol. Při objednání uvidíte, že ji máme u nás."
+    },
+    {
+      "icon": "snowflake",
+      "title": "V sezóně 3 zvedáky",
+      "text": "Od 15. 10. do 30. 11. a od 15. 3. do 30. 4. přidáváme třetí zvedák."
+    }
+  ],
+  "gallery": [],
+  "faq": [],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}

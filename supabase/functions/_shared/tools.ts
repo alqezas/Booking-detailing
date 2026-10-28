@@ -18,6 +18,19 @@ export const CLIENT_TOOLS = {
     description: 'Список услуг студии с ценами (price, price_from = «от») и длительностью в минутах.',
     args: z.object({}).strict(),
   },
+  quote_tire: {
+    description:
+      'Только для шиномонтажа: цена и время по матрице студии. vehicle = car | suv | van, rim = steel | alloy, diameter = 13–22 (22 = 22 и больше), wheels = число колёс (по умолчанию 4), service_id — из list_services (необязательно). Без диаметра возвращает диапазон цен. price 0 с on_request = цена по запросу.',
+    args: z
+      .object({
+        service_id: z.string().uuid().nullish(),
+        vehicle: z.enum(['car', 'suv', 'van']).nullish(),
+        rim: z.enum(['steel', 'alloy']).nullish(),
+        diameter: z.number().int().min(13).max(22).nullish(),
+        wheels: z.number().int().min(1).max(8).nullish(),
+      })
+      .strict(),
+  },
   find_free_slots: {
     description:
       'Ближайшее свободное время для услуги. service_id — из list_services. date_from — дата YYYY-MM-DD в часовом поясе студии (необязательно). Возвращает время начала свободных окон.',

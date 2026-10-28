@@ -26,19 +26,28 @@ type Props = {
   notice?: string | null;
   /** Owner cabinet: load slots with the owner's session instead of the public endpoint. */
   ownerLoad?: (from: string, days: number) => Promise<Availability>;
+  /** Any other loader (the tyre calculator's priced availability); loadKey identifies its inputs. */
+  load?: (from: string, days: number) => Promise<Availability>;
+  loadKey?: unknown[];
+  /** Called with every loaded page, e.g. to show the server's price quote. */
+  onLoaded?: (a: Availability) => void;
 };
 
-export function SlotPicker({slug, serviceId, timezone, horizonDays, value, onChange, notice, ownerLoad}: Props) {
+export function SlotPicker({slug, serviceId, timezone, horizonDays, value, onChange, notice, ownerLoad, load, loadKey, onLoaded}: Props) {
   const today = todayIn(timezone);
   const [from, setFrom] = useState(today);
-  const publicQ = useAvailability(slug, ownerLoad ? null : serviceId, from, PAGE_DAYS);
+  const custom = load ?? ownerLoad;
+  const publicQ = useAvailability(slug, custom ? null : serviceId, from, PAGE_DAYS);
   const ownerQ = useQuery({
-    queryKey: ['owner', slug, 'availability', serviceId, from, PAGE_DAYS],
-    queryFn: () => ownerLoad!(from, PAGE_DAYS),
-    enabled: !!ownerLoad,
+    queryKey: [...(load ? ['availability', slug, 'custom', ...(loadKey ?? [])] : ['owner', slug, 'availability']), serviceId, from, PAGE_DAYS],
+    queryFn: () => custom!(from, PAGE_DAYS),
+    enabled: !!custom,
     placeholderData: keepPreviousData,
   });
-  const q = ownerLoad ? ownerQ : publicQ;
+  const q = custom ? ownerQ : publicQ;
+  useEffect(() => {
+    if (q.data) onLoaded?.(q.data);
+  }, [q.data, onLoaded]);
   const days = useMemo(() => q.data?.days ?? [], [q.data]);
   const [day, setDay] = useState<string | null>(null);
 

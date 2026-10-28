@@ -19,6 +19,7 @@ import {PageContainer, PageTitle} from '../../components/layout/Page.tsx';
 import {RevealSection} from '../../components/home/Sections.tsx';
 import {useBookingFlow} from '../../components/booking/BookingFlow.tsx';
 import {BookingSummary} from '../../components/booking/BookingSummary.tsx';
+import {tireRows} from '../../components/tire/tireRows.ts';
 import {ReminderOffer} from '../../components/booking/ReminderOffer.tsx';
 import {InlineError, RowsSkeleton} from '../../components/StatusScreens.tsx';
 import {cancelBooking, getBooking} from '../../lib/api/public.ts';
@@ -178,6 +179,7 @@ function BookingDetails({entry, onGone}: {entry: StoredBooking; onGone: () => vo
             timezone={t.timezone}
             currency={t.currency}
             customer={{name: b.customer_name, phone: b.customer_phone, car: b.car}}
+            extra={tireRows(b)}
           />
           <Text color="secondary">{msg.my.address(b.tenant.address)}</Text>
           {b.status === 'confirmed' && <ReminderOffer booking={b} token={entry.token} />}

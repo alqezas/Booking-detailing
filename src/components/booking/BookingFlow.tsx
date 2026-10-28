@@ -15,7 +15,7 @@ import {useMutation, useQueryClient} from '@tanstack/react-query';
 import {createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode} from 'react';
 import {useNavigate} from 'react-router';
 import {useTenant} from '../../app/tenant.tsx';
-import {createBooking} from '../../lib/api/public.ts';
+import {createBooking, createTireBooking, getTireAvailability} from '../../lib/api/public.ts';
 import {attemptKey, clearAttempt, rememberBooking} from '../../lib/booking-store.ts';
 import {ApiError, toApiError} from '../../lib/errors.ts';
 import {formatDuration, formatPrice, formatWhen} from '../../lib/format.ts';
@@ -26,10 +26,16 @@ import {BookingSummary} from './BookingSummary.tsx';
 import {ReminderOffer} from './ReminderOffer.tsx';
 import {SlotPicker} from './SlotPicker.tsx';
 import {msg} from '../../i18n/index.ts';
+import {tireMsg} from '../../i18n/tire.ts';
+import type {ServerQuote} from '../../lib/types.ts';
+import {operationFor, normalizePlate} from '../../../supabase/functions/_shared/tire.ts';
+import {TireCalculator, calcQuote, initialCalc, isTireService, quoteText, rememberCalc, tireServices, type CalcValue} from '../tire/TireCalculator.tsx';
+import {TireDetails, loadTireDetails, plateError, saveTireDetails, type TireDetailsValue} from '../tire/TireDetails.tsx';
 
 type Step = 'service' | 'time' | 'details' | 'confirm' | 'done';
 
-type FlowApi = {open: (serviceId?: string) => void};
+/** open(): the service sheet; open(id): straight to time; open(id, calc): a tyre service priced on the home page. */
+type FlowApi = {open: (serviceId?: string, calc?: CalcValue) => void};
 const FlowContext = createContext<FlowApi | null>(null);
 
 export function useBookingFlow(): FlowApi {
@@ -59,6 +65,12 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [result, setResult] = useState<{booking: PublicBooking; token: string} | null>(null);
   const pushedHistory = useRef(false);
+  // Tyre services: the calculator choice, the server's quote and plate/tyre details.
+  const [calc, setCalc] = useState<CalcValue | null>(null);
+  const [serverQuote, setServerQuote] = useState<ServerQuote | null>(null);
+  const [tire, setTire] = useState<TireDetailsValue>(() => loadTireDetails(tenant.slug));
+  const tireMode = isTireService(tenant, service) && !!calc;
+  const T = tireMsg();
 
   const close = useCallback(() => {
     setStep(null);
@@ -84,21 +96,58 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
   }, [step]);
 
   const open = useCallback(
-    (serviceId?: string) => {
-      const s = serviceId ? tenant.services.find(x => x.id === serviceId) ?? null : null;
-      setService(s);
+    (serviceId?: string, preset?: CalcValue) => {
+      const s = serviceId ? (tenant.services.find(x => x.id === serviceId) ?? null) : null;
+      const tireStart = tenant.tire ? (preset ?? initialCalc(tenant, s && isTireService(tenant, s) ? s.id : null)) : null;
+      setService(s ?? (tireStart ? (tenant.services.find(x => x.id === tireStart.serviceId) ?? null) : null));
+      setCalc(tireStart);
+      setServerQuote(null);
       setStartAt(null);
       setNotice(null);
       setErrors({});
       setResult(null);
-      setStep(s ? 'time' : 'service');
+      // A tyre service needs the calculator first unless the home page already priced it.
+      setStep(!s ? 'service' : isTireService(tenant, s) && !preset ? 'service' : 'time');
+    },
+    [tenant],
+  );
+
+  const onCalc = useCallback(
+    (v: CalcValue) => {
+      setCalc(v);
+      setServerQuote(null);
+      setStartAt(null);
+      setService(tenant.services.find(x => x.id === v.serviceId) ?? null);
     },
     [tenant.services],
   );
+  const onLoaded = useCallback((a: {quote?: ServerQuote}) => setServerQuote(a.quote ?? null), []);
 
   const create = useMutation({
     mutationFn: async () => {
       const parsed = customerSchema.parse(customer);
+      if (tireMode) {
+        const t = {
+          vehicle: calc!.vehicle,
+          rim: calc!.rim,
+          diameter: calc!.diameter,
+          wheels: calc!.wheels,
+          plate: normalizePlate(tire.plate),
+          tire_size: tire.tire_size.trim(),
+          tire_source: tire.tire_source,
+        };
+        return createTireBooking({
+          slug: tenant.slug,
+          serviceId: service!.id,
+          startAt: startAt!,
+          name: parsed.name,
+          phone: parsed.phone,
+          car: parsed.car,
+          comment: parsed.comment,
+          idempotencyKey: attemptKey(tenant.slug, `${service!.id}|${startAt}|${parsed.phone}|${JSON.stringify(t)}`),
+          tire: t,
+        });
+      }
       const fingerprint = `${service!.id}|${startAt}|${parsed.phone}`;
       return createBooking({
         slug: tenant.slug,
@@ -132,11 +181,16 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
 
   const submitDetails = () => {
     const parsed = customerSchema.safeParse(customer);
-    if (!parsed.success) {
-      setErrors(fieldErrors(parsed.error));
+    const plateErr = tireMode ? plateError(tire.plate) : null;
+    if (!parsed.success || plateErr) {
+      setErrors({...(parsed.success ? {} : fieldErrors(parsed.error)), ...(plateErr ? {plate: plateErr} : {})});
       return;
     }
     setErrors({});
+    if (tireMode) {
+      saveTireDetails(tenant.slug, tire);
+      rememberCalc(tenant.slug, calc!);
+    }
     try {
       localStorage.setItem(DRAFT_KEY(tenant.slug), JSON.stringify({name: parsed.data.name, phone: customer.phone, car: parsed.data.car}));
     } catch {
@@ -145,11 +199,29 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
     setStep('confirm');
   };
 
+  // With a tyre matrix the priced operations live in the calculator; the list shows the rest.
   const grouped = useMemo(() => {
     const m = new Map<string, Service[]>();
-    for (const s of tenant.services) m.set(s.category, [...(m.get(s.category) ?? []), s]);
+    for (const s of tenant.services) if (!isTireService(tenant, s)) m.set(s.category, [...(m.get(s.category) ?? []), s]);
     return [...m.entries()];
-  }, [tenant.services]);
+  }, [tenant]);
+  const hasCalc = !!tenant.tire && tireServices(tenant).length > 0;
+  const tireQuote = tireMode
+    ? serverQuote
+      ? {price: serverQuote.price, onRequest: serverQuote.on_request, durationMinutes: serverQuote.duration_minutes, wheels: serverQuote.wheels}
+      : calcQuote(tenant, calc!)
+    : null;
+  const tireUnit = tireMode ? operationFor(tenant.tire, service!.key)!.unit : 'set';
+  const shownName = tireMode && serverQuote ? serverQuote.label : (service?.name ?? '');
+  const shownPrice = tireQuote ? tireQuote.price : (service?.price ?? 0);
+  const shownFrom = tireQuote ? false : (service?.price_from ?? false);
+  const shownDuration = tireQuote ? tireQuote.durationMinutes : (service?.duration_minutes ?? 0);
+  const tireRows = tireMode
+    ? [
+        {label: T.summary.plate, value: normalizePlate(tire.plate)},
+        {label: T.summary.tires, value: [T.details.sources[tire.tire_source], tire.tire_size.trim()].filter(Boolean).join(' · ')},
+      ]
+    : undefined;
 
   const set = (k: keyof CustomerInput) => (v: string) => setCustomer(c => ({...c, [k]: v}));
   const tz = tenant.timezone;
@@ -169,8 +241,23 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
           <VStack gap={4}>
             <VStack gap={1}>
               <Heading level={2}>{msg.flow.title}</Heading>
-              <Text color="secondary">{msg.flow.step1}</Text>
+              <Text color="secondary">{hasCalc ? T.calc.lead : msg.flow.step1}</Text>
             </VStack>
+            {hasCalc && calc && (
+              <VStack gap={3}>
+                <TireCalculator value={calc} onChange={onCalc} />
+                <Button
+                  label={T.calc.choose}
+                  variant="primary"
+                  width="100%"
+                  onClick={() => {
+                    setService(tenant.services.find(x => x.id === calc.serviceId) ?? null);
+                    setStep('time');
+                  }}
+                />
+              </VStack>
+            )}
+            {hasCalc && grouped.length > 0 && <Heading level={3}>{T.calc.otherServices}</Heading>}
             {grouped.map(([category, services]) => (
               <List key={category} header={<Heading level={3}>{category}</Heading>} hasDividers>
                 {services.map(s => (
@@ -181,6 +268,7 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
                     endContent={<Icon icon={CaretRight} color="secondary" />}
                     onClick={() => {
                       setService(s);
+                      setCalc(null);
                       setStartAt(null);
                       setNotice(null);
                       setStep('time');
@@ -196,16 +284,27 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
           {service && (
             <VStack gap={4}>
               <VStack gap={1}>
-                <Heading level={2}>{service.name}</Heading>
+                <Heading level={2}>{shownName}</Heading>
                 <Text color="secondary">
-                  {msg.flow.step2(formatDuration(service.duration_minutes), formatPrice(service.price, service.price_from, tenant.currency))}
+                  {msg.flow.step2(
+                    formatDuration(shownDuration),
+                    tireQuote ? quoteText(tenant, tireQuote, tireUnit) : formatPrice(service.price, service.price_from, tenant.currency),
+                  )}
                 </Text>
               </VStack>
               <SlotPicker
                 slug={tenant.slug}
                 serviceId={service.id}
                 timezone={tz}
-                horizonDays={tenant.booking.horizon_days}
+                horizonDays={tenant.booking.effective_horizon_days ?? tenant.booking.horizon_days}
+                {...(tireMode
+                  ? {
+                      load: (from: string, days: number) =>
+                        getTireAvailability(tenant.slug, service.id, {vehicle: calc!.vehicle, rim: calc!.rim, diameter: calc!.diameter, wheels: calc!.wheels}, from, days),
+                      loadKey: ['tire', calc!.vehicle, calc!.rim, calc!.diameter, calc!.wheels],
+                      onLoaded,
+                    }
+                  : {})}
                 value={startAt}
                 onChange={v => {
                   setStartAt(v);
@@ -241,6 +340,12 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
               <TextInput label={msg.flow.car} value={customer.car} onChange={set('car')} placeholder={msg.flow.carPlaceholder} status={errors.car ? {type: 'error', message: errors.car} : undefined} />
               <TextArea label={msg.flow.comment} isOptional value={customer.comment ?? ''} onChange={set('comment')} rows={2} maxLength={500} />
             </FormLayout>
+            {tireMode && (
+              <VStack gap={2}>
+                <TireDetails slug={tenant.slug} value={tire} onChange={setTire} phone={customer.phone} storage={!!tenant.tire?.storage} plateErrorText={errors.plate} />
+                <Text type="supporting">{T.details.remembered}</Text>
+              </VStack>
+            )}
             <HStack gap={2}>
               <Button label={msg.common.back} variant="ghost" onClick={() => setStep('time')} style={{flexShrink: 0}} />
               <Button label={msg.flow.review} variant="primary" width="100%" onClick={submitDetails} />
@@ -253,15 +358,17 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
             <VStack gap={4}>
               <Heading level={2}>{msg.flow.confirmTitle}</Heading>
               <BookingSummary
-                serviceName={service.name}
-                price={service.price}
-                priceFrom={service.price_from}
-                durationMinutes={service.duration_minutes}
+                serviceName={shownName}
+                price={shownPrice}
+                priceFrom={shownFrom}
+                durationMinutes={shownDuration}
                 startAt={startAt}
                 timezone={tz}
                 currency={tenant.currency}
                 customer={{name: customer.name, phone: customerSchema.shape.phone.safeParse(customer.phone).data ?? customer.phone, car: customer.car}}
+                extra={tireRows}
               />
+              {tireMode && <Text type="supporting">{T.summary.labourOnly}</Text>}
               <Text type="supporting">{msg.flow.cancelRule(tenant.booking.cancel_cutoff_hours)}</Text>
               {create.isError && !(create.error instanceof ApiError && create.error.code === 'SLOT_TAKEN') && (
                 <Banner status="error" title={msg.flow.notCreated} description={toApiError(create.error).message} collapsible={false} />
@@ -300,6 +407,7 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
                 endAt={result.booking.end_at}
                 timezone={tz}
                 currency={tenant.currency}
+                extra={result.booking.plate ? [{label: T.summary.plate, value: result.booking.plate}] : undefined}
               />
               <ReminderOffer booking={result.booking} token={result.token} />
               <HStack gap={2}>

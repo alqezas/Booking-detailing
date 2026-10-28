@@ -24,8 +24,9 @@ import {ownerKey, useOwner} from '../ownerContext.tsx';
 import {useRefreshStudio} from './shared.tsx';
 import {ApiError} from '../../../lib/errors.ts';
 import {msg} from '../../../i18n/index.ts';
+import {tireMsg} from '../../../i18n/tire.ts';
 
-type ResourceRow = {id: string; name: string; is_active: boolean; sort: number};
+type ResourceRow = {id: string; name: string; is_active: boolean; sort: number; seasonal?: boolean};
 type ISODate = `${number}${number}${number}${number}-${number}${number}-${number}${number}`;
 
 export function ResourcesSettings() {
@@ -52,14 +53,19 @@ export function ResourcesSettings() {
 
 function ResourceRowEditor({resource}: {resource: ResourceRow | null}) {
   const {api} = useOwner();
+  const tenant = useTenant();
   const refresh = useRefreshStudio();
   const [name, setName] = useState(resource?.name ?? '');
   const [active, setActive] = useState(resource?.is_active ?? true);
+  // Tyre services: a post that only works during the seasons.
+  const seasons = !!tenant.tire;
+  const [seasonal, setSeasonal] = useState(resource?.seasonal ?? false);
   const save = useMutation({
     mutationFn: () =>
       api.upsertResource(resource?.id ?? null, {
         name: name.trim(),
         is_active: active,
+        ...(seasons ? {seasonal} : {}),
         ...(resource ? {} : {key: `bay-${Date.now().toString(36)}`, sort: 100}),
       }),
     onSuccess: () => {
@@ -67,12 +73,15 @@ function ResourceRowEditor({resource}: {resource: ResourceRow | null}) {
       if (!resource) setName('');
     },
   });
-  const dirty = resource ? name.trim() !== resource.name || active !== resource.is_active : name.trim().length > 0;
+  const dirty = resource
+    ? name.trim() !== resource.name || active !== resource.is_active || (seasons && seasonal !== (resource.seasonal ?? false))
+    : name.trim().length > 0;
   return (
     <VStack gap={1}>
       <HStack gap={2} align="end" wrap="wrap">
         <TextInput label={resource ? msg.bays.name : msg.bays.newBay} value={name} onChange={setName} placeholder={msg.bays.placeholder} width={240} />
         {resource && <Switch label={msg.bays.active} value={active} onChange={setActive} />}
+        {seasons && <Switch label={tireMsg().seasonsSettings.seasonal} description={tireMsg().seasonsSettings.seasonalHint} value={seasonal} onChange={setSeasonal} />}
         <Button label={resource ? msg.common.save : msg.common.add} isDisabled={!dirty || name.trim().length < 1} isLoading={save.isPending} onClick={() => save.mutate()} />
       </HStack>
       {save.isError && (

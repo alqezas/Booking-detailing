@@ -11,6 +11,9 @@ import {ScheduleSettings} from './settings/ScheduleSettings.tsx';
 import {ServicesSettings} from './settings/ServicesSettings.tsx';
 import {StudioSettings} from './settings/StudioSettings.tsx';
 import {msg} from '../../i18n/index.ts';
+import {tireMsg} from '../../i18n/tire.ts';
+import {useTenant} from '../../app/tenant.tsx';
+import {SeasonsSettings} from './settings/SeasonsSettings.tsx';
 
 const SECTIONS = [
   {value: 'studio', Component: StudioSettings},
@@ -21,9 +24,15 @@ const SECTIONS = [
   {value: 'gallery', Component: GallerySettings},
 ] as const;
 
+/** Tyre services get one more section: the seasons. */
+const TIRE_SECTIONS = [...SECTIONS.slice(0, 4), {value: 'seasons', Component: SeasonsSettings}, ...SECTIONS.slice(4)] as const;
+const tabLabel = (v: string) => (v === 'seasons' ? tireMsg().seasonsSettings.title : msg.settings.tabs[v as keyof typeof msg.settings.tabs]);
+
 export default function OwnerSettingsPage() {
   const [params, setParams] = useSearchParams();
-  const current = SECTIONS.find(s => s.value === params.get('tab')) ?? SECTIONS[0];
+  const tenant = useTenant();
+  const sections: readonly {value: string; Component: () => React.JSX.Element}[] = tenant.tire ? TIRE_SECTIONS : SECTIONS;
+  const current = sections.find(s => s.value === params.get('tab')) ?? sections[0]!;
   const Body = current.Component;
   return (
     <VStack>
@@ -31,8 +40,8 @@ export default function OwnerSettingsPage() {
         <VStack gap={3}>
           <Heading level={1}>{msg.settings.title}</Heading>
           <TabList value={current.value} onChange={v => setParams({tab: v}, {replace: true})} overflow="scroll" size="sm">
-            {SECTIONS.map(s => (
-              <Tab key={s.value} value={s.value} label={msg.settings.tabs[s.value]} />
+            {sections.map(s => (
+              <Tab key={s.value} value={s.value} label={tabLabel(s.value)} />
             ))}
           </TabList>
         </VStack>

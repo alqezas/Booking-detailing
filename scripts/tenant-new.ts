@@ -1,5 +1,5 @@
 /**
- * pnpm tenant:new <slug> --name "Имя студии" [--kind detailing|autoservice]
+ * pnpm tenant:new <slug> --name "Имя студии" [--kind detailing|autoservice|tireservice]
  *                  [--accent "#4690FF"] [--timezone Europe/Moscow]
  * pnpm tenant:new <slug> --images [--force]     (re)render placeholder images only
  *
@@ -61,7 +61,7 @@ if (values.images) {
 
 if (existsSync(file)) fail(`Студия «${slug}» уже есть: ${path.relative(ROOT, file)}`);
 if (!values.name || values.name.trim().length < 2) fail('Укажите --name "Название студии"');
-if (!['detailing', 'autoservice'].includes(values.kind!)) fail('--kind: detailing или autoservice');
+if (!['detailing', 'autoservice', 'tireservice'].includes(values.kind!)) fail('--kind: detailing, autoservice или tireservice');
 if (!HEX_RE.test(values.accent!)) fail('--accent: цвет в формате #RRGGBB');
 if (!isValidTimeZone(values.timezone!)) fail('--timezone: часовой пояс IANA, например Europe/Moscow');
 

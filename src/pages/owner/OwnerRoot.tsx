@@ -5,7 +5,7 @@ import {LinkProvider} from '@astryxdesign/core/Link';
 import {Tab, TabList} from '@astryxdesign/core/TabList';
 import {Text} from '@astryxdesign/core/Text';
 import {VStack} from '@astryxdesign/core/VStack';
-import {ArrowSquareOut, CalendarDots, ChatCircleDots, Coins, GearSix, SignOut} from '@phosphor-icons/react';
+import {ArrowSquareOut, CalendarDots, ChatCircleDots, Coins, GearSix, SignOut, Warehouse} from '@phosphor-icons/react';
 import {useMatchMedia} from '../../lib/motion.ts';
 import {BottomNav, BOTTOM_NAV_SPACE} from '../../components/BottomNav.tsx';
 import type {Session} from '@supabase/supabase-js';
@@ -21,6 +21,7 @@ import {ownerClient} from '../../lib/supabase.ts';
 import {OwnerContext, ownerKey} from './ownerContext.tsx';
 import {PageContainer} from '../../components/layout/Page.tsx';
 import {msg} from '../../i18n/index.ts';
+import {tireMsg} from '../../i18n/tire.ts';
 
 export default function OwnerRoot() {
   const tenant = useTenant();
@@ -74,6 +75,8 @@ export default function OwnerRoot() {
   const base = `/s/${tenant.slug}/owner`;
   const sections = [
     {value: 'bookings', label: msg.owner.tabs.bookings, to: base, icon: CalendarDots},
+    // Tyre services: the tyre hotel sits next to the bookings.
+    ...(tenant.tire ? [{value: 'tires', label: tireMsg().owner.tab, to: `${base}/tires`, icon: Warehouse}] : []),
     {value: 'stats', label: msg.owner.tabs.stats, to: `${base}/stats`, icon: Coins},
     {value: 'settings', label: msg.owner.tabs.settings, to: `${base}/settings`, icon: GearSix},
     {value: 'assistant', label: msg.owner.tabs.assistant, to: `${base}/assistant`, icon: ChatCircleDots},

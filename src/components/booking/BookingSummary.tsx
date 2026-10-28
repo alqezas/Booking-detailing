@@ -14,6 +14,8 @@ type Props = {
   currency: string;
   customer?: {name: string; phone: string; car: string};
   bay?: string;
+  /** Extra rows, e.g. the plate and tyres of a tyre-service booking. */
+  extra?: {label: string; value: string}[];
 };
 
 export function BookingSummary(p: Props) {
@@ -57,6 +59,11 @@ export function BookingSummary(p: Props) {
           </MetadataListItem>
         </>
       )}
+      {p.extra?.map(r => (
+        <MetadataListItem key={r.label} label={r.label}>
+          <Text>{r.value}</Text>
+        </MetadataListItem>
+      ))}
     </MetadataList>
   );
 }

@@ -9,7 +9,7 @@ import {List, ListItem} from '@astryxdesign/core/List';
 import {Section} from '@astryxdesign/core/Section';
 import {Text} from '@astryxdesign/core/Text';
 import {VStack} from '@astryxdesign/core/VStack';
-import {Plus} from '@phosphor-icons/react';
+import {Lightning, Plus} from '@phosphor-icons/react';
 import {keepPreviousData, useQuery} from '@tanstack/react-query';
 import {useMemo, useState} from 'react';
 import {useTenant} from '../../app/tenant.tsx';
@@ -20,6 +20,8 @@ import {statusLabel} from '../client/MyBookingPage.tsx';
 import {msg} from '../../i18n/index.ts';
 import {BookingSheet} from './BookingSheet.tsx';
 import {NewBookingSheet} from './NewBookingSheet.tsx';
+import {WalkInSheet} from './WalkInSheet.tsx';
+import {tireMsg} from '../../i18n/tire.ts';
 import {ownerKey, useOwner} from './ownerContext.tsx';
 import {PeriodNav, periodLabel, type Period} from './PeriodNav.tsx';
 
@@ -44,6 +46,7 @@ export default function OwnerBookingsPage() {
   const [anchor, setAnchor] = useState(() => todayIn(tenant.timezone));
   const [openId, setOpenId] = useState<string | null>(null);
   const [creating, setCreating] = useState(false);
+  const [walkIn, setWalkIn] = useState(false);
 
   // The server defines the period (studio time zone); the list uses the same bounds.
   const stats = useQuery({
@@ -77,7 +80,10 @@ export default function OwnerBookingsPage() {
         <VStack gap={4}>
           <HStack justify="between" align="center">
             <Heading level={1}>{msg.bookings.title}</Heading>
-            <Button label={msg.bookings.add} variant="primary" icon={<Icon icon={Plus} />} onClick={() => setCreating(true)} />
+            <HStack gap={2} wrap="wrap" justify="end">
+              {tenant.tire && <Button label={tireMsg().walkIn.button} variant="secondary" icon={<Icon icon={Lightning} />} onClick={() => setWalkIn(true)} />}
+              <Button label={msg.bookings.add} variant="primary" icon={<Icon icon={Plus} />} onClick={() => setCreating(true)} />
+            </HStack>
           </HStack>
           <PeriodNav
             period={period}
@@ -145,6 +151,7 @@ export default function OwnerBookingsPage() {
 
       <BookingSheet bookingId={openId} onClose={() => setOpenId(null)} />
       <NewBookingSheet isOpen={creating} onClose={() => setCreating(false)} onCreated={id => setOpenId(id)} />
+      {tenant.tire && <WalkInSheet isOpen={walkIn} onClose={() => setWalkIn(false)} onCreated={id => setOpenId(id)} />}
     </VStack>
   );
 }
