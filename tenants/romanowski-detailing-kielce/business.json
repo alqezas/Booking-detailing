@@ -1,0 +1,363 @@
+{
+  "slug": "romanowski-detailing-kielce",
+  "name": "Romanowski Detailing Kielce",
+  "shortName": "Romanowski",
+  "kind": "detailing",
+  "tagline": "Detailing & Car Spa przy salonie Toyota i Lexus Romanowski w Kielcach",
+  "description": "Romanowski Detailing & Car Spa powstał przy salonach Toyota & Lexus Romanowski w Kielcach, Radomiu i Krakowie. Kompleksowo dbamy o wygląd i ochronę auta: korekta lakieru, powłoki ceramiczne, folie ochronne PPF, zabezpieczenie felg, szyb i wnętrza oraz wielogodzinne Car Spa. Na czas usługi oferujemy samochód zastępczy, a nasi kierowcy mogą odebrać auto od dealera.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#E3262E",
+  "contacts": {
+    "phone": "+48 538 815 682",
+    "address": "ul. Radomska 168, Kielce",
+    "email": "kielce@romanowski-detailing.pl",
+    "facebook": "https://www.facebook.com/RomanowskiDetailingKielce"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "16:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "16:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "16:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "16:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "16:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "ogledziny",
+      "name": "Oględziny i wycena",
+      "category": "Oględziny",
+      "description": "Przyjedź na 30 minut – doradca obejrzy auto, dobierze zakres prac i ustali z Tobą cenę oraz termin realizacji. Przy korekcie, powłokach i foliach zaczynamy właśnie od tego.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "car-spa",
+      "name": "Car Spa – mycie detailingowe zewnątrz i wewnątrz",
+      "category": "Car Spa",
+      "description": "Wielogodzinne spa: piana aktywna, mycie „na dwa wiadra”, wnęki, komora silnika, felgi i nadkola, dekontaminacja lakieru, osuszanie mikrofibrą i sprężonym powietrzem, szyby z obu stron.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "komora-silnika",
+      "name": "Mycie komory silnika",
+      "category": "Car Spa",
+      "description": "Bezpieczne usunięcie brudu i oleju z komory silnika profesjonalną chemią.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pranie-tapicerki",
+      "name": "Pranie tapicerki",
+      "category": "Car Spa",
+      "description": "Dokładne pranie tapicerki samochodowej i czyszczenie wnętrza.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 360,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta",
+      "name": "Korekta lakieru",
+      "category": "Lakier i powłoki",
+      "description": "Usuwa zarysowania i defekty lakieru, przywracając mu pierwotny blask. Zakres ustalamy po oględzinach.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika",
+      "name": "Powłoka ceramiczna",
+      "category": "Lakier i powłoki",
+      "description": "Twarda, odporna na zarysowania warstwa, która chroni lakier i ułatwia utrzymanie auta w czystości.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "karoseria",
+      "name": "Zabezpieczenie karoserii",
+      "category": "Lakier i powłoki",
+      "description": "Bariera przed UV, solą drogową, ptasimi odchodami i żywicą.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szyby-lampy",
+      "name": "Powłoka na szyby i lampy",
+      "category": "Lakier i powłoki",
+      "description": "Hydrofobowa powłoka – lepsza widoczność w deszczu i ochrona reflektorów.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "felgi",
+      "name": "Zabezpieczenie felg i zacisków",
+      "category": "Lakier i powłoki",
+      "description": "Powłoki ochronne na felgi i zaciski hamulcowe – mniej brudu i korozji.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wnetrze",
+      "name": "Zabezpieczenie wnętrza",
+      "category": "Lakier i powłoki",
+      "description": "Czyszczenie i ochrona skóry, tapicerki materiałowej oraz elementów z drewna, aluminium i karbonu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-front",
+      "name": "Folia PPF – Full Front",
+      "category": "Folie ochronne",
+      "description": "Cały przód auta w bezbarwnej folii – jak w Lotusie Emira i Toyocie Land Cruiser.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full",
+      "name": "Folia PPF – całe auto (Full Body)",
+      "category": "Folie ochronne",
+      "description": "Pełna ochrona karoserii, także w wersji matowej – jak w Toyocie GR Yaris TRD.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 5760,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "car",
+      "title": "Samochód zastępczy",
+      "text": "Na czas usługi – a nasi kierowcy odbiorą auto od dealera."
+    },
+    {
+      "icon": "shield",
+      "title": "Toyota & Lexus Romanowski",
+      "text": "Studio przy salonie – trzy punkty: Kielce, Radom, Kraków."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Od Car Spa po PPF",
+      "text": "Pielęgnacja, korekta, ceramika i folie w jednym miejscu."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-lotus.webp",
+      "caption": "Lotus Emira First Edition – Full Front PPF + ceramika"
+    },
+    {
+      "image": "images/work-mclaren.webp",
+      "caption": "McLaren 650S Spider"
+    },
+    {
+      "image": "images/work-supra.webp",
+      "caption": "Toyota Supra A80"
+    },
+    {
+      "image": "images/work-lc500.webp",
+      "caption": "Lexus LC500"
+    },
+    {
+      "image": "images/work-rx.webp",
+      "caption": "Lexus RX"
+    },
+    {
+      "image": "images/work-land-cruiser.webp",
+      "caption": "Toyota Land Cruiser – korekta lakieru"
+    },
+    {
+      "image": "images/work-bz4x.webp",
+      "caption": "Toyota bZ4X"
+    },
+    {
+      "image": "images/work-ls.webp",
+      "caption": "Lexus LS"
+    },
+    {
+      "image": "images/work-lx.webp",
+      "caption": "Lexus LX570"
+    },
+    {
+      "image": "images/work-gsf.webp",
+      "caption": "Lexus GS F"
+    },
+    {
+      "image": "images/work-chr.webp",
+      "caption": "Toyota C-HR"
+    },
+    {
+      "image": "images/work-car-spa.webp",
+      "caption": "Car Spa – klasyk po pielęgnacji"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ile kosztuje usługa?",
+      "answer": "Cenę ustala doradca po obejrzeniu auta – zależy od stanu lakieru i zakresu prac. Zarezerwuj 30 minut na oględziny albo zadzwoń: 538 815 682.",
+      "keywords": [
+        "ile kosztuj",
+        "cena",
+        "cennik",
+        "wycen",
+        "koszt"
+      ]
+    },
+    {
+      "question": "Ile trwa korekta albo ceramika?",
+      "answer": "Zależy od auta – zwykle od jednego do kilku dni. Dokładny czas i termin oddania ustalamy przy oględzinach.",
+      "keywords": [
+        "ile trwa",
+        "jak dlugo",
+        "czas",
+        "dni"
+      ]
+    },
+    {
+      "question": "Czy dostanę auto zastępcze?",
+      "answer": "Tak – na czas wykonywania usługi oferujemy samochód zastępczy. Możemy też odebrać auto od dealera i przywieźć je do studia.",
+      "keywords": [
+        "zastepcz",
+        "auto zastepcze",
+        "odbior",
+        "laweta",
+        "transport"
+      ]
+    },
+    {
+      "question": "Czym jest Car Spa?",
+      "answer": "To wielogodzinna pielęgnacja: mycie pianą aktywną i „na dwa wiadra”, komora silnika, felgi, nadkola, dekontaminacja lakieru, osuszanie i szyby z obu stron.",
+      "keywords": [
+        "car spa",
+        "spa",
+        "mycie"
+      ]
+    },
+    {
+      "question": "Gdzie jesteście?",
+      "answer": "Kielce, ul. Radomska 168 (przy salonie Toyota Romanowski). Mamy też punkty w Radomiu i Krakowie.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "radomsk",
+        "dojazd",
+        "lokalizac"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
