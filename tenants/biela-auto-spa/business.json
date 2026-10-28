@@ -1,0 +1,703 @@
+{
+  "slug": "biela-auto-spa",
+  "name": "Biela Auto Spa",
+  "kind": "detailing",
+  "tagline": "Car detailing, folie PPF, oklejanie i naprawy smart – Kraków i Katowice",
+  "description": "Od 10 lat zajmujemy się kompleksową opieką nad samochodem w Krakowie i Katowicach: myjnia, car detailing, oklejanie pojazdów i naprawy smart. Specjalizujemy się w certyfikowanych powłokach ceramicznych i foliach ochronnych PPF. Każdy pojazd traktujemy indywidualnie, dbając o drobne detale z najwyższą starannością. Umów się na wybraną usługę albo na bezpłatną konsultację, na której omówimy zabiegi dla Twojego samochodu.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#B89B6A",
+  "contacts": {
+    "phone": "+48 533 355 278",
+    "address": "ul. Opolska 12, 31-323 Kraków",
+    "mapUrl": "https://goo.gl/maps/QJtYDDDQfhc5hd7C7",
+    "email": "biuro@bielaautospa.pl",
+    "instagram": "biela_auto_spa",
+    "facebook": "https://www.facebook.com/Bielaautospa/"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 60,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "stanowisko",
+      "name": "Stanowisko"
+    }
+  ],
+  "services": [
+    {
+      "key": "konsultacja",
+      "name": "Bezpłatna konsultacja",
+      "category": "Naprawy smart i inne",
+      "description": "Omówimy zabiegi pielęgnacyjne dla Twojego samochodu i przygotujemy wycenę.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "komplet",
+      "name": "Mycie komplet",
+      "category": "Mycie",
+      "description": "Mycie metodą dwóch wiader, hydrowosk, osuszanie, dressing opon, odkurzanie, plastiki, szyby i dywaniki. Samochód duży 260 zł, SUV/van 280 zł.",
+      "price": 240,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "zewnatrz",
+      "name": "Mycie z zewnątrz",
+      "category": "Mycie",
+      "description": "Piana aktywna, nadkola, wnęki, felgi, mycie dwoma wiadrami i hydrowosk. Samochód duży 150 zł, SUV/van 160 zł.",
+      "price": 130,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "srodek",
+      "name": "Sprzątanie środka",
+      "category": "Wnętrze",
+      "description": "Odkurzanie, czyszczenie i pielęgnacja plastików, szyby i dywaniki. Samochód duży 150 zł, SUV/van 160 zł.",
+      "price": 130,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "dekontaminacja",
+      "name": "Dekontaminacja chemiczna",
+      "category": "Mycie",
+      "description": "Usuwanie smoły, asfaltu i zanieczyszczeń metalicznych. Samochód duży 170 zł, SUV/van 200 zł.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "wosk",
+      "name": "Wosk 9 miesięcy + dekontaminacja",
+      "category": "Mycie",
+      "description": "Usługa dodatkowa do mycia lub kompletu: pełna dekontaminacja i ręczna aplikacja wosku twardego.",
+      "price": 350,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "polimer",
+      "name": "Powłoka polimerowa 3 miesiące",
+      "category": "Mycie",
+      "description": "Silny efekt hydrofobowy – odpycha wodę i brud. Samochód duży 180 zł, SUV/van 200 zł.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ozon",
+      "name": "Ozonowanie wnętrza",
+      "category": "Wnętrze",
+      "description": "Usuwa zapachy, bakterie i grzyby – polecane alergikom i po palaczach.",
+      "price": 120,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "siersc",
+      "name": "Usuwanie sierści",
+      "category": "Wnętrze",
+      "description": "Dokładne usunięcie sierści z tapicerki i dywaników.",
+      "price": 50,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "bagaznik",
+      "name": "Mycie bagażnika dachowego / boxa",
+      "category": "Mycie",
+      "description": "Łagodne detergenty bezpieczne dla powierzchni boxa.",
+      "price": 50,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "skory",
+      "name": "Czyszczenie skór + impregnacja",
+      "category": "Wnętrze",
+      "description": "Fotele, kierownica, boczki i deska – czyszczenie, konserwacja i impregnacja. Samochód duży 700 zł, SUV/van 700 zł.",
+      "price": 600,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pranie-standard",
+      "name": "Pranie standard",
+      "category": "Wnętrze",
+      "description": "Mycie auta, pranie tapicerki techniką tornadorowania, podłoga, bagażnik, plastiki i podsufitka. Samochód duży 1100 zł, SUV/van 1200 zł.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pranie-premium",
+      "name": "Pranie premium",
+      "category": "Wnętrze",
+      "description": "Pełny detailing wnętrza i zewnętrza: komora silnika, pasy, impregnacja skór i tkanin, dekontaminacja i wosk. Samochód duży 1600 zł, SUV/van 1700 zł.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "pranie-fotel",
+      "name": "Pranie fotela / siedziska",
+      "category": "Wnętrze",
+      "description": "Pranie pojedynczych elementów tapicerki.",
+      "price": 150,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "impregnacja",
+      "name": "Impregnacja wnętrza",
+      "category": "Wnętrze",
+      "description": "Zabezpieczenie plastików, skór i tekstyliów – dla nowego auta albo po praniu.",
+      "price": 600,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szyba-przod",
+      "name": "Powłoka hydrofobowa – przednia szyba",
+      "category": "Lakier i powłoki",
+      "description": "Lepsza widoczność w deszczu i przy śniegu.",
+      "price": 150,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "szyby-all",
+      "name": "Powłoka hydrofobowa – wszystkie szyby",
+      "category": "Lakier i powłoki",
+      "description": "Hydrofobowa ochrona wszystkich szyb pojazdu.",
+      "price": 300,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "one-step",
+      "name": "One step + wosk",
+      "category": "Lakier i powłoki",
+      "description": "Mycie Premium z glinkowaniem, inspekcja lakieru, jednoetapowe polerowanie i wosk. Samochód duży 1200 zł, SUV/van 1300 zł.",
+      "price": 1100,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "korekta",
+      "name": "Korekta lakieru 2–3 etapy",
+      "category": "Lakier i powłoki",
+      "description": "Wieloetapowe usuwanie zarysowań, zmatowień i wżerów, polerowanie i ponowne mycie. Samochód duży 1800 zł, SUV/van 2000 zł.",
+      "price": 1600,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "renowacja",
+      "name": "Renowacja lakieru",
+      "category": "Lakier i powłoki",
+      "description": "Kompleksowa renowacja lakieru – zakres ustalamy po oględzinach.",
+      "price": 2500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-3",
+      "name": "Pakiet ceramiczny 3 lata",
+      "category": "Lakier i powłoki",
+      "description": "Certyfikowana powłoka ceramiczna z przygotowaniem lakieru.",
+      "price": 2500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-5",
+      "name": "Pakiet ceramiczny 5 lat",
+      "category": "Lakier i powłoki",
+      "description": "Certyfikowana powłoka ceramiczna z przygotowaniem lakieru. Samochód duży 3800 zł, SUV/van 3800 zł.",
+      "price": 3500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ceramika-7",
+      "name": "Pakiet ceramiczny 7 lat – OKAZJA",
+      "category": "Lakier i powłoki",
+      "description": "Promocja: 2400 zł zamiast od 4800 zł.",
+      "price": 2400,
+      "priceFrom": false,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-basic",
+      "name": "Pakiet PPF Basic",
+      "category": "Folie PPF i oklejanie",
+      "description": "Ochrona najbardziej narażonych elementów folią PPF.",
+      "price": 1800,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-front",
+      "name": "Pakiet PPF Front",
+      "category": "Folie PPF i oklejanie",
+      "description": "Przód auta w folii PPF. Samochód duży i SUV od 7000 zł.",
+      "price": 6500,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full-front",
+      "name": "Pakiet hybrydowy Full Front",
+      "category": "Folie PPF i oklejanie",
+      "description": "Pełny przód auta w folii PPF. Samochód duży i SUV od 8000 zł.",
+      "price": 7000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-full",
+      "name": "Full Body PPF",
+      "category": "Folie PPF i oklejanie",
+      "description": "Zabezpieczenie całej karoserii folią PPF.",
+      "price": 14500,
+      "priceFrom": true,
+      "durationMinutes": 5760,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-reflektory",
+      "name": "Folia PPF – reflektory",
+      "category": "Folie PPF i oklejanie",
+      "description": "Ochrona reflektorów przed odpryskami i matowieniem.",
+      "price": 800,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-maska",
+      "name": "Folia PPF – maska",
+      "category": "Folie PPF i oklejanie",
+      "description": "Maska w bezbarwnej folii PPF.",
+      "price": 2000,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-zderzak",
+      "name": "Folia PPF – zderzak przedni",
+      "category": "Folie PPF i oklejanie",
+      "description": "Zderzak przedni w bezbarwnej folii PPF.",
+      "price": 2000,
+      "priceFrom": false,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-klamki",
+      "name": "Folia PPF – wnęki klamek",
+      "category": "Folie PPF i oklejanie",
+      "description": "Ochrona wnęk klamek przed zarysowaniami.",
+      "price": 400,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-progi",
+      "name": "Folia PPF – progi wewnętrzne",
+      "category": "Folie PPF i oklejanie",
+      "description": "Ochrona progów wewnętrznych.",
+      "price": 600,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-prog-bag",
+      "name": "Folia PPF – próg bagażnika",
+      "category": "Folie PPF i oklejanie",
+      "description": "Ochrona progu załadunkowego.",
+      "price": 500,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "ppf-lusterka",
+      "name": "Folia PPF – lusterka",
+      "category": "Folie PPF i oklejanie",
+      "description": "Ochrona obudów lusterek.",
+      "price": 600,
+      "priceFrom": false,
+      "durationMinutes": 180,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "zmiana-koloru",
+      "name": "Zmiana koloru auta folią",
+      "category": "Folie PPF i oklejanie",
+      "description": "Zmiana koloru folią PPF lub wylewaną, także grafika na auto – wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 5760,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "przyciemnianie",
+      "name": "Przyciemnianie szyb",
+      "category": "Folie PPF i oklejanie",
+      "description": "Bezinwazyjne przyciemnianie szyb. Samochód duży i SUV od 1200 zł.",
+      "price": 1000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "smart",
+      "name": "Usuwanie zarysowań Smart Repair",
+      "category": "Naprawy smart i inne",
+      "description": "Szybkie usuwanie uszkodzeń karoserii bez ponownego malowania – wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 240,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "odpryski",
+      "name": "Usuwanie odprysków na szybie",
+      "category": "Naprawy smart i inne",
+      "description": "Wypełnienie odprysku specjalnym klejem i utwardzenie.",
+      "price": 200,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "sprzedaz",
+      "name": "Przygotowanie do sprzedaży",
+      "category": "Naprawy smart i inne",
+      "description": "Mycie detailingowe, dekontaminacja, wosk, odświeżenie lakieru, pranie i ozonowanie – wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    },
+    {
+      "key": "leasing",
+      "name": "Oddaj auto po leasingu / najmie",
+      "category": "Naprawy smart i inne",
+      "description": "Przygotowanie auta do zwrotu: oględziny, usuwanie zarysowań SSR, pranie, wosk i zaprawki – wycena indywidualna.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 1440,
+      "resources": [
+        "stanowisko"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Od 10 lat",
+      "text": "Trzy oddziały w Krakowie i Katowicach."
+    },
+    {
+      "icon": "shield",
+      "title": "Certyfikowane powłoki i PPF",
+      "text": "Długotrwała ochrona i spektakularny efekt."
+    },
+    {
+      "icon": "car",
+      "title": "Bezpłatna konsultacja",
+      "text": "Omówimy zabiegi dla Twojego samochodu."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-range-rover.webp",
+      "caption": "Range Rover Sport – folia PPF"
+    },
+    {
+      "image": "images/work-bmw-m3.webp",
+      "caption": "BMW M3 – zmiana koloru folią"
+    },
+    {
+      "image": "images/work-g-klasa.webp",
+      "caption": "Mercedes klasy G – zmiana koloru"
+    },
+    {
+      "image": "images/work-gla.webp",
+      "caption": "Mercedes GLA – zmiana koloru folią"
+    },
+    {
+      "image": "images/work-cupra.webp",
+      "caption": "Cupra Formentor – powłoka ceramiczna"
+    },
+    {
+      "image": "images/work-cupra-tyl.webp",
+      "caption": "Cupra Formentor w studiu"
+    },
+    {
+      "image": "images/work-aston.webp",
+      "caption": "Aston Martin – detailing"
+    },
+    {
+      "image": "images/work-bmw-318.webp",
+      "caption": "BMW 318i E36 – renowacja lakieru"
+    },
+    {
+      "image": "images/work-alfa.webp",
+      "caption": "Alfa Romeo GT – przygotowanie do sprzedaży (przed i po)"
+    },
+    {
+      "image": "images/work-felga.webp",
+      "caption": "Mercedes – detailing felg"
+    },
+    {
+      "image": "images/work-praca.webp",
+      "caption": "Precyzyjna aplikacja folii"
+    },
+    {
+      "image": "images/work-studio.webp",
+      "caption": "Studio Biela Auto Spa"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Od czego zależy cena?",
+      "answer": "Cena zależy od wielkości auta – w cenniku podajemy ceny dla samochodu małego, dużego i SUV/vana. Przy renowacji, foliach i naprawach smart wycena jest indywidualna – zapraszamy na bezpłatną konsultację.",
+      "keywords": [
+        "cena",
+        "cennik",
+        "ile kosztuj",
+        "koszt",
+        "wycen",
+        "suv"
+      ]
+    },
+    {
+      "question": "Gdzie są Wasze oddziały?",
+      "answer": "Kraków Opolska: ul. Opolska 12, tel. 533 355 278 (pon.–pt. 8:00–17:00). Kraków Bonarka: ul. Kamieńskiego 11, tel. 730 790 310 (pon.–sob. 9:00–21:00). Katowice: Galeria Katowicka, ul. 3 Maja 30, poziom -2, tel. 730 790 417 (pon.–sob. 9:00–21:00).",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "oddzial",
+        "bonarka",
+        "katowice",
+        "opolsk",
+        "dojazd",
+        "godzin"
+      ]
+    },
+    {
+      "question": "Czym jest Smart Repair?",
+      "answer": "To system szybkiego usuwania uszkodzeń karoserii bez ponownego malowania – ubytek wypełniamy specjalnym preparatem przypominającym lakier, często bez demontażu elementów.",
+      "keywords": [
+        "smart",
+        "zarysowan",
+        "otarc",
+        "zderzak",
+        "rysa"
+      ]
+    },
+    {
+      "question": "Czy macie vouchery?",
+      "answer": "Tak – oferujemy vouchery na nasze usługi, to dobry pomysł na prezent dla fana motoryzacji. Zapytaj w oddziale: 533 355 278.",
+      "keywords": [
+        "voucher",
+        "prezent",
+        "bon"
+      ]
+    },
+    {
+      "question": "Czy prowadzicie szkolenia?",
+      "answer": "Tak – szkolenia z korekty lakieru, kompleksowego detailingu, czyszczenia wnętrz, powłok ceramicznych, folii PPF i przyciemniania szyb.",
+      "keywords": [
+        "szkolen",
+        "kurs",
+        "nauka"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
