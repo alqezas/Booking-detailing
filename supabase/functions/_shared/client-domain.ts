@@ -9,6 +9,8 @@ import {routeClient} from './router.ts';
 import {duration, localDate, money, phone, when} from './text.ts';
 import {TIRE_PROMPT, tireFallbackAnswer, tireQuoteTool, type QuoteArgs} from './tire-assistant.ts';
 import type {TireConfig} from './tire.ts';
+import {WASH_PROMPT, washFallbackAnswer, washQuoteTool, type WashArgs} from './wash-assistant.ts';
+import type {WashConfig} from './wash.ts';
 
 export type PublicService = {id: string; key?: string; name: string; category: string; price: number; price_from: boolean; duration_minutes: number; description: string};
 export type PublicTenant = {
@@ -28,6 +30,8 @@ export type PublicTenant = {
   faq?: {question: string; answer: string; keywords?: string[]}[];
   /** Tyre services: the price matrix of the calculator. */
   tire?: TireConfig | null;
+  /** Car wash: programs by car class and extras. */
+  wash?: WashConfig | null;
 };
 export type AvailabilityDays = {timezone: string; days: {date: string; slots: {start_at: string; available: boolean}[]}[]; horizon_end: string};
 
@@ -106,6 +110,8 @@ export function clientExecutor(src: ClientSource) {
         return servicesList(src.tenant);
       case 'quote_tire':
         return tireQuoteTool(src.tenant, args as QuoteArgs);
+      case 'quote_wash':
+        return washQuoteTool(src.tenant, args as WashArgs);
       case 'find_free_slots':
         return freeSlots(src, String(args.service_id), (args.date_from as string | null) ?? null, (args.limit as number | null) ?? 4);
       default:
@@ -117,7 +123,7 @@ export function clientExecutor(src: ClientSource) {
 export function clientSystemPrompt(t: PublicTenant, today: string): string {
   const say = texts(langOfTenant(t));
   const faq = (t.faq ?? []).map(f => `— ${f.question}\n${f.answer}`).join('\n\n');
-  return say.clientPrompt(t.name, today, t.timezone) + (t.tire ? `\n${TIRE_PROMPT[langOfTenant(t)]}` : '') + (faq ? `\n\n${say.faqIntro}\n${faq}` : '');
+  return say.clientPrompt(t.name, today, t.timezone) + (t.tire ? `\n${TIRE_PROMPT[langOfTenant(t)]}` : '') + (t.wash ? `\n${WASH_PROMPT[langOfTenant(t)]}` : '') + (faq ? `\n\n${say.faqIntro}\n${faq}` : '');
 }
 
 /** Template answer from the deterministic router: correct, if less fluent. */
@@ -128,6 +134,8 @@ export async function clientFallback(src: ClientSource, text: string): Promise<A
   // A tyre price question is answered from the studio's matrix before anything else.
   const tire = tireFallbackAnswer(t, text, lang);
   if (tire) return {text: tire.text, mode: 'fallback', tools: ['quote_tire'], data: tire.data};
+  const wash = washFallbackAnswer(t, text, lang);
+  if (wash) return {text: wash.text, mode: 'fallback', tools: ['quote_wash'], data: wash.data};
   const intent = routeClient(text, t.services, t.timezone, undefined, lang, t.faq ?? []);
   const cur = t.currency;
   switch (intent.intent) {

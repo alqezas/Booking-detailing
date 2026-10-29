@@ -14,27 +14,32 @@ import {
   ServicesSection,
 } from '../../components/home/Sections.tsx';
 import {TireBookingCard, TirePricesSection, TireSeasonSection} from '../../components/tire/TireSections.tsx';
+import {PeakHoursSection, WashBookingCard, WashPricesSection} from '../../components/wash/WashSections.tsx';
 
 /**
  * Layout contract: every block sits in PageContainer, so the hero text and all
  * sections share one left edge, and the sections follow one another in a
  * single column at every width. A tyre service with a price matrix shows the
  * calculator instead of the popular services, a price list per vehicle and
- * rim type instead of service cards, and its seasons and tyre hotel.
+ * rim type instead of service cards, and its seasons and tyre hotel. A car
+ * wash with a price list shows its calculator and prices by car class. Peak
+ * hours (any studio) are announced so a closed online slot is no surprise.
  */
 export function HomePage() {
   const t = useTenant();
   const tire = t.kind === 'tireservice' && !!t.tire;
+  const wash = t.kind === 'carwash' && !!t.wash;
   return (
     <VStack>
       <Hero />
       <PageContainer style={{paddingBlock: 'var(--spacing-6)'}}>
         <VStack gap={8}>
           <AboutSection />
-          {tire ? <TireBookingCard /> : <BookingCard />}
+          {tire ? <TireBookingCard /> : wash ? <WashBookingCard /> : <BookingCard />}
           <InfoCardsSection />
-          {tire ? <TirePricesSection /> : <ServicesSection />}
+          {tire ? <TirePricesSection /> : wash ? <WashPricesSection /> : <ServicesSection />}
           {tire && <TireSeasonSection />}
+          <PeakHoursSection />
           <GallerySection />
           <AssistantTeaser />
           <FaqSection />

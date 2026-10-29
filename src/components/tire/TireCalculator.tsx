@@ -76,7 +76,7 @@ export function quoteText(t: PublicTenant, q: Pick<TireQuote, 'price' | 'onReque
   return `${formatMoney(q.price, t.currency)} ${unit === 'set' ? T.calc.forWheels(q.wheels) : T.calc.perJob}`;
 }
 
-export const fromServer = (q: ServerQuote): TireQuote => ({price: q.price, onRequest: q.on_request, durationMinutes: q.duration_minutes, wheels: q.wheels});
+export const fromServer = (q: ServerQuote): TireQuote => ({price: q.price, onRequest: q.on_request, durationMinutes: q.duration_minutes, wheels: q.wheels ?? 4});
 
 /**
  * The price calculator: operation, vehicle, rims, diameter and number of

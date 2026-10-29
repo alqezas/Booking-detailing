@@ -59,9 +59,12 @@ export const INFO_CARD_ICONS = [
   'tire',
   'snowflake',
   'warehouse',
+  'spray',
+  'ticket',
+  'timer',
 ] as const;
 
-export const TENANT_KINDS = ['detailing', 'autoservice', 'tireservice'] as const;
+export const TENANT_KINDS = ['detailing', 'autoservice', 'tireservice', 'carwash'] as const;
 
 const diameter = z.number().int().min(MIN_DIAMETER).max(MAX_DIAMETER);
 
@@ -120,6 +123,44 @@ export const tireSchema = z.object({
     .default([]),
 });
 export type TireSettings = z.output<typeof tireSchema>;
+
+const classPrice = z.object({
+  /** null = price on request for this class */
+  price: z.number().int().min(0).max(1_000_000).nullable(),
+  minutes: z.number().int().min(0).max(24 * 60),
+});
+const classPrices = z.object({small: classPrice.optional(), medium: classPrice.optional(), suv: classPrice.optional(), van: classPrice.optional()});
+
+/**
+ * Car wash: programs priced by car class plus optional extras (rules in
+ * supabase/functions/_shared/wash.ts). Every program points at a service of
+ * the same studio, which carries its name, category and bays.
+ */
+export const washSchema = z.object({
+  classes: z
+    .object({small: z.string().min(1).max(30), medium: z.string().min(1).max(30), suv: z.string().min(1).max(30), van: z.string().min(1).max(30)})
+    .default({small: 'Malé', medium: 'Střední', suv: 'SUV / MPV', van: 'Dodávka'}),
+  /** The plate is optional by default; a studio with wash passes usually wants it. */
+  plateRequired: z.boolean().default(false),
+  programs: z.array(z.object({service: key, prices: classPrices})).min(1).max(20),
+  extras: z
+    .array(z.object({key, name: z.string().trim().min(2).max(40), prices: classPrices, programs: z.array(key).optional()}))
+    .max(20)
+    .default([]),
+});
+export type WashSettings = z.output<typeof washSchema>;
+
+/** Peak hours (any studio): online booking closed (walk-ins only) or limited to N parallel online bookings. */
+export const peakRuleSchema = z
+  .object({
+    days: z.array(z.number().int().min(1).max(7)).min(1).max(7),
+    from: z.string().regex(TIME_RE),
+    to: z.string().regex(TIME_RE),
+    mode: z.enum(['walkin', 'limit']),
+    posts: z.number().int().min(1).max(20).nullable().optional(),
+  })
+  .refine(r => r.from < r.to, {message: 'from < to'})
+  .refine(r => r.mode === 'walkin' || !!r.posts, {message: 'limit: posts'});
 
 export const serviceSchema = z.object({
   key,
@@ -181,6 +222,7 @@ export const businessSchema = z
         horizonDays: z.number().int().min(1).max(120).default(30),
         cancelCutoffHours: z.number().int().min(0).max(14 * 24).default(12),
         defaultBufferMinutes: z.number().int().min(0).max(240).default(30),
+        peakHours: z.array(peakRuleSchema).max(10).optional(),
       })
       .default({slotStepMinutes: 30, minLeadMinutes: 60, horizonDays: 30, cancelCutoffHours: 12, defaultBufferMinutes: 30}),
     /** seasonal: a post that takes bookings only inside a tyre season. */
@@ -224,6 +266,7 @@ export const businessSchema = z
     owner: z.object({email: z.email()}),
     assistant: z.object({enabled: z.boolean().default(true)}).default({enabled: true}),
     tire: tireSchema.optional(),
+    wash: washSchema.optional(),
   })
   .superRefine((b, ctx) => {
     const resourceKeys = new Set(b.resources.map(r => r.key));
@@ -245,6 +288,20 @@ export const businessSchema = z
     }
     b.tire?.operations.forEach((o, i) => {
       if (!serviceKeys.has(o.service)) ctx.addIssue({code: 'custom', path: ['tire', 'operations', i, 'service'], message: `Нет услуги «${o.service}»`});
+    });
+    if (b.kind === 'carwash' && !b.wash) {
+      ctx.addIssue({code: 'custom', path: ['wash'], message: 'Мойке нужен прайс по классам (wash)'});
+    }
+    b.wash?.programs.forEach((p, i) => {
+      if (!serviceKeys.has(p.service)) ctx.addIssue({code: 'custom', path: ['wash', 'programs', i, 'service'], message: `Нет услуги «${p.service}»`});
+    });
+    const extraKeys = new Set<string>();
+    b.wash?.extras.forEach((e, i) => {
+      if (extraKeys.has(e.key)) ctx.addIssue({code: 'custom', path: ['wash', 'extras', i, 'key'], message: 'Повтор ключа доп. услуги'});
+      extraKeys.add(e.key);
+      e.programs?.forEach(p => {
+        if (!serviceKeys.has(p)) ctx.addIssue({code: 'custom', path: ['wash', 'extras', i, 'programs'], message: `Нет услуги «${p}»`});
+      });
     });
     if (WEEKDAYS.every(d => b.hours[d].length === 0)) {
       ctx.addIssue({code: 'custom', path: ['hours'], message: 'Нужен хотя бы один рабочий день'});

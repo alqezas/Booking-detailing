@@ -1,4 +1,5 @@
 import type {SeasonPeriod, TireConfig, TireSeason, TireSource} from '../../supabase/functions/_shared/tire.ts';
+import type {PeakRule, WashConfig} from '../../supabase/functions/_shared/wash.ts';
 
 export type TenantStatus = 'preview' | 'live' | 'suspended';
 export type BookingStatus = 'confirmed' | 'arrived' | 'ready' | 'cancelled' | 'no_show';
@@ -24,7 +25,7 @@ export type PublicTenant = {
   id: string;
   slug: string;
   status: TenantStatus;
-  kind: 'detailing' | 'autoservice' | 'tireservice';
+  kind: 'detailing' | 'autoservice' | 'tireservice' | 'carwash';
   name: string;
   short_name: string | null;
   tagline: string;
@@ -61,6 +62,10 @@ export type PublicTenant = {
   /** Tyre services: the price matrix (null for other studios) and the seasons. */
   tire?: TireConfig | null;
   tire_seasons?: SeasonPeriod[];
+  /** Car wash: programs by car class and extras (null for other studios). */
+  wash?: WashConfig | null;
+  /** Online booking closed or limited in these windows (any studio). */
+  peak_hours?: PeakRule[];
   services: Service[];
   hours: HoursRow[];
   exceptions: ScheduleException[];
@@ -71,7 +76,7 @@ export type PublicTenant = {
 
 export type Slot = {start_at: string; available: boolean};
 export type AvailabilityDay = {date: string; slots: Slot[]};
-export type ServerQuote = {price: number; on_request: boolean; duration_minutes: number; wheels: number; label: string};
+export type ServerQuote = {kind?: 'tire' | 'wash'; price: number; on_request: boolean; duration_minutes: number; wheels?: number; label: string};
 
 export type Availability = {
   quote?: ServerQuote;
@@ -135,6 +140,8 @@ export type OwnerBooking = {
   tire_size?: string | null;
   tire_source?: TireSource | null;
   tire_params?: {vehicle: string; rim: string; diameter: number; wheels: number; on_request: boolean} | null;
+  /** Wash pass that paid for this booking (marked ready). */
+  pass?: {pass_id: string; total: number; remaining: number} | null;
   source: 'client' | 'owner' | 'demo';
   is_demo: boolean;
   arrived_at: string | null;
@@ -189,3 +196,21 @@ export type TireSet = {
 };
 
 export type TireSetsView = {today: string; season: (SeasonPeriod & {start: string}) | null; sets: TireSet[]};
+
+export type WashPass = {
+  id: string;
+  tenant_id: string;
+  customer_name: string;
+  customer_phone: string;
+  plate: string;
+  service_id: string | null;
+  service_name?: string | null;
+  total: number;
+  price: number | null;
+  sold_at: string;
+  expires_at: string | null;
+  note: string;
+  used?: number;
+  remaining?: number;
+  last_used_at?: string | null;
+};

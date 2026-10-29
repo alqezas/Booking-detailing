@@ -1,8 +1,9 @@
 import type {SupabaseClient} from '@supabase/supabase-js';
 import {toApiError} from '../errors.ts';
-import type {SeasonPeriod, TireParams} from '../../../supabase/functions/_shared/tire.ts';
-import type {Availability, BookingStatus, OwnerBooking, Stats, TireSet, TireSetsView} from '../types.ts';
-import type {TireBookingInput} from './public.ts';
+import type {SeasonPeriod} from '../../../supabase/functions/_shared/tire.ts';
+import type {PeakRule} from '../../../supabase/functions/_shared/wash.ts';
+import type {Availability, BookingStatus, OwnerBooking, Stats, TireSet, TireSetsView, WashPass} from '../types.ts';
+import type {PricedInput} from './public.ts';
 
 /**
  * Owner operations. Every call runs with the owner's JWT; the server resolves
@@ -45,9 +46,9 @@ export class OwnerApi {
       p_resource_id: a.resourceId ?? null,
       p_idempotency_key: a.key,
     });
-  tireAvailability = (serviceId: string, params: TireParams, from: string, days: number) =>
+  tireAvailability = (serviceId: string, params: object, from: string, days: number) =>
     this.rpc<Availability>('owner_tire_availability', {p_tenant_id: this.tenantId, p_service_id: serviceId, p_params: params, p_from: from, p_days: days});
-  createTireBooking = (a: {serviceId: string; startAt: string; name: string; phone: string; car: string; comment: string; tire: TireBookingInput; key: string}) =>
+  createTireBooking = (a: {serviceId: string; startAt: string; name: string; phone: string; car: string; comment: string; tire: PricedInput; key: string}) =>
     this.rpc<OwnerBooking>('owner_create_tire_booking', {
       p_tenant_id: this.tenantId,
       p_service_id: a.serviceId,
@@ -60,7 +61,7 @@ export class OwnerApi {
       p_idempotency_key: a.key,
     });
   /** Live queue: the nearest free slot from now; tire = null for a service without the calculator. */
-  walkIn = (a: {serviceId: string; tire: Partial<TireBookingInput> | null; name: string; phone: string; car: string; comment: string; key: string}) =>
+  walkIn = (a: {serviceId: string; tire: object | null; name: string; phone: string; car: string; comment: string; key: string}) =>
     this.rpc<OwnerBooking>('owner_walk_in', {
       p_tenant_id: this.tenantId,
       p_service_id: a.serviceId,
@@ -76,6 +77,12 @@ export class OwnerApi {
     id
       ? this.q(this.client.from('tire_sets').update(row).eq('id', id).select('id').single())
       : this.q(this.client.from('tire_sets').insert({...row, tenant_id: this.tenantId}).select('id').single());
+  washPasses = () => this.rpc<WashPass[]>('owner_wash_passes', {p_tenant_id: this.tenantId});
+  saveWashPass = (id: string | null, row: Partial<WashPass>) =>
+    id
+      ? this.q(this.client.from('wash_passes').update(row).eq('id', id).select('id').single())
+      : this.q(this.client.from('wash_passes').insert({...row, tenant_id: this.tenantId}).select('id').single());
+  setPeakHours = (rules: PeakRule[]) => this.rpc<PeakRule[]>('owner_set_peak_hours', {p_tenant_id: this.tenantId, p_rules: rules});
   setTireSeasons = (seasons: SeasonPeriod[]) => this.rpc<SeasonPeriod[]>('owner_set_tire_seasons', {p_tenant_id: this.tenantId, p_seasons: seasons});
   reschedule = (id: string, startAt: string, resourceId?: string | null) =>
     this.rpc<OwnerBooking>('owner_reschedule_booking', {p_booking_id: id, p_start_at: startAt, p_resource_id: resourceId ?? null});

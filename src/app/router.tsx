@@ -18,6 +18,7 @@ const OwnerStatsPage = lazy(() => import('../pages/owner/OwnerStatsPage.tsx'));
 const OwnerSettingsPage = lazy(() => import('../pages/owner/OwnerSettingsPage.tsx'));
 const OwnerAssistantPage = lazy(() => import('../pages/owner/OwnerAssistantPage.tsx'));
 const OwnerTiresPage = lazy(() => import('../pages/owner/OwnerTiresPage.tsx'));
+const OwnerPassesPage = lazy(() => import('../pages/owner/OwnerPassesPage.tsx'));
 
 // Rendered lazily so the texts follow the studio language set by TenantRoot.
 const RouteError = () => <FullScreenError title={msg.app.pageError} description={msg.app.pageErrorHint} onRetry={() => location.reload()} />;
@@ -51,6 +52,7 @@ export const router = createBrowserRouter([
           {path: 'settings', element: s(<OwnerSettingsPage />)},
           {path: 'assistant', element: s(<OwnerAssistantPage />)},
           {path: 'tires', element: s(<OwnerTiresPage />)},
+          {path: 'passes', element: s(<OwnerPassesPage />)},
         ],
       },
       {path: '*', element: <NotFound />},

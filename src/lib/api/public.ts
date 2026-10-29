@@ -40,11 +40,14 @@ export const createBooking = (i: CreateBookingInput) =>
 
 /** Tyre details sent with a calculator booking; the server recomputes the price. */
 export type TireBookingInput = TireParams & {plate: string; tire_size: string; tire_source: TireSource};
+/** Calculator parameters of either kind (tyres or wash) plus the plate; the server prices them. */
+export type PricedInput = TireBookingInput | {class: string; extras: string[]; plate: string};
 
-export const getTireAvailability = (slug: string, serviceId: string, params: TireParams, from: string, days: number) =>
+/** Priced availability for a calculator service (tyres or wash): slots for the quoted duration + the quote. */
+export const getTireAvailability = (slug: string, serviceId: string, params: object, from: string, days: number) =>
   rpc<Availability>('public_get_tire_availability', {p_slug: slug, p_service_id: serviceId, p_params: params, p_from: from, p_days: days});
 
-export const createTireBooking = (i: CreateBookingInput & {tire: TireBookingInput}) =>
+export const createTireBooking = (i: CreateBookingInput & {tire: PricedInput}) =>
   rpc<{booking: PublicBooking; access_token: string; replayed: boolean}>('public_create_tire_booking', {
     p_slug: i.slug,
     p_service_id: i.serviceId,
@@ -61,6 +64,11 @@ export type StoredSetHint = {season: 'summer' | 'winter' | 'all'; tire_size: str
 /** Whether the studio keeps this customer's set: needs both their phone and plate. */
 export const lookupTireStorage = (slug: string, phone: string, plate: string) =>
   rpc<StoredSetHint[]>('public_tire_storage_lookup', {p_slug: slug, p_phone: phone, p_plate: plate});
+
+export type PassHint = {service_name: string | null; total: number; remaining: number; expires_at: string | null};
+/** Washes left on the customer's pass: needs both their phone and plate. */
+export const lookupWashPass = (slug: string, phone: string, plate: string) =>
+  rpc<PassHint[]>('public_wash_pass_lookup', {p_slug: slug, p_phone: phone, p_plate: plate});
 
 export const getBooking = (slug: string, token: string) => rpc<PublicBooking>('public_get_booking', {p_slug: slug, p_token: token});
 

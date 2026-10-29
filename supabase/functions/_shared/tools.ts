@@ -31,6 +31,17 @@ export const CLIENT_TOOLS = {
       })
       .strict(),
   },
+  quote_wash: {
+    description:
+      'Только для автомойки: цена и время по прайсу студии. class = small | medium | suv | van (по умолчанию все), extras — ключи дополнений из ответа этого же инструмента, service_id — программа из list_services (необязательно). price 0 с on_request = цена по запросу.',
+    args: z
+      .object({
+        service_id: z.string().uuid().nullish(),
+        class: z.enum(['small', 'medium', 'suv', 'van']).nullish(),
+        extras: z.array(z.string().max(40)).max(20).nullish(),
+      })
+      .strict(),
+  },
   find_free_slots: {
     description:
       'Ближайшее свободное время для услуги. service_id — из list_services. date_from — дата YYYY-MM-DD в часовом поясе студии (необязательно). Возвращает время начала свободных окон.',

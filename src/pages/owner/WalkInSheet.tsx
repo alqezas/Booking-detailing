@@ -12,7 +12,7 @@ import {useToast} from '@astryxdesign/core/Toast';
 import {useMutation, useQueryClient} from '@tanstack/react-query';
 import {useState} from 'react';
 import {useTenant} from '../../app/tenant.tsx';
-import {TireCalculator, initialCalc, isTireService, type CalcValue} from '../../components/tire/TireCalculator.tsx';
+import {PricedCalculator, initialPriced, isPricedService, isWash, plateMode, pricedParams, type PricedValue} from '../../components/priced/priced.tsx';
 import {plateError} from '../../components/tire/TireDetails.tsx';
 import {msg} from '../../i18n/index.ts';
 import {tireMsg} from '../../i18n/tire.ts';
@@ -34,20 +34,21 @@ export function WalkInSheet({isOpen, onClose, onCreated}: {isOpen: boolean; onCl
   const qc = useQueryClient();
   const showToast = useToast();
   const T = tireMsg();
-  const [calc, setCalc] = useState<CalcValue>(() => initialCalc(tenant));
-  const [serviceId, setServiceId] = useState<string>(() => calc.serviceId || tenant.services[0]?.id || '');
+  const [calc, setCalc] = useState<PricedValue | null>(() => initialPriced(tenant));
+  const [serviceId, setServiceId] = useState<string>(() => calc?.serviceId || tenant.services[0]?.id || '');
   const [form, setForm] = useState({name: '', phone: '', car: '', plate: '', comment: ''});
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [key, setKey] = useState(randomKey);
   const service = tenant.services.find(s => s.id === serviceId);
-  const tire = isTireService(tenant, service);
+  const tire = isPricedService(tenant, service) && !!calc;
+  const plateRequired = tire && plateMode(tenant, calc!) === 'required';
 
   const create = useMutation({
     mutationFn: () => {
       const c = customerSchema.parse({...form, car: form.car.trim() || form.plate.trim()});
       return api.walkIn({
         serviceId,
-        tire: tire ? {vehicle: calc.vehicle, rim: calc.rim, diameter: calc.diameter, wheels: calc.wheels, plate: normalizePlate(form.plate)} : null,
+        tire: tire ? {...pricedParams(calc!), ...(form.plate.trim() ? {plate: normalizePlate(form.plate)} : {})} : null,
         name: c.name,
         phone: c.phone,
         car: c.car,
@@ -69,7 +70,7 @@ export function WalkInSheet({isOpen, onClose, onCreated}: {isOpen: boolean; onCl
 
   const submit = () => {
     const parsed = customerSchema.safeParse({...form, car: form.car.trim() || form.plate.trim()});
-    const pErr = tire ? plateError(form.plate) : null;
+    const pErr = tire && (plateRequired || form.plate.trim()) ? plateError(form.plate) : null;
     if (!parsed.success || pErr) {
       setErrors({...(parsed.success ? {} : fieldErrors(parsed.error)), ...(pErr ? {plate: pErr} : {})});
       return;
@@ -93,13 +94,16 @@ export function WalkInSheet({isOpen, onClose, onCreated}: {isOpen: boolean; onCl
           onChange={v => {
             if (!v) return;
             setServiceId(v);
-            if (isTireService(tenant, tenant.services.find(s => s.id === v))) setCalc(c => ({...c, serviceId: v}));
+            if (isPricedService(tenant, tenant.services.find(s => s.id === v))) {
+              const next = initialPriced(tenant, v);
+              setCalc(c => (c && next && isWash(c) === isWash(next) ? {...c, serviceId: v} : next));
+            }
           }}
           options={tenant.services.map(s => ({value: s.id, label: s.name}))}
         />
-        {tire && <TireCalculator value={{...calc, serviceId}} onChange={setCalc} hideService />}
+        {tire && <PricedCalculator value={{...calc!, serviceId}} onChange={setCalc} hideService />}
         <FormLayout defaultOptionality="required">
-          {tire && <TextInput label={T.details.plate} value={form.plate} onChange={set('plate')} placeholder={T.details.platePlaceholder} status={err('plate')} />}
+          {tire && <TextInput label={T.details.plate} isOptional={!plateRequired} value={form.plate} onChange={set('plate')} placeholder={T.details.platePlaceholder} status={err('plate')} />}
           <TextInput label={msg.newBooking.clientName} value={form.name} onChange={set('name')} status={err('name')} />
           <TextInput label={msg.flow.phone} value={form.phone} onChange={set('phone')} placeholder={msg.phonePlaceholder} status={err('phone')} />
           <TextInput label={msg.flow.car} isOptional={tire} value={form.car} onChange={set('car')} status={err('car')} />

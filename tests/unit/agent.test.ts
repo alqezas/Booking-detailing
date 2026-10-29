@@ -41,7 +41,7 @@ describe('tool scopes', () => {
   it('client and owner tools are disjoint and read-only', () => {
     const client = toolDefinitions('client').map(t => t.function.name);
     const owner = toolDefinitions('owner').map(t => t.function.name);
-    expect(client).toEqual(['get_studio_info', 'list_services', 'quote_tire', 'find_free_slots']);
+    expect(client).toEqual(['get_studio_info', 'list_services', 'quote_tire', 'quote_wash', 'find_free_slots']);
     expect(owner).toEqual(['get_bookings', 'get_stats']);
     expect(client.filter(n => owner.includes(n))).toEqual([]);
     for (const n of [...client, ...owner]) expect(n).not.toMatch(/create|update|delete|cancel|pay|sql/);

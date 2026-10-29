@@ -30,7 +30,10 @@ import {
   ShieldCheck,
   Sparkle,
   Snowflake,
+  SprayBottle,
   Sun,
+  Ticket,
+  Timer,
   TelegramLogo,
   Tire,
   Warehouse,
@@ -44,6 +47,7 @@ import {useTenant} from '../../app/tenant.tsx';
 import {formatDate, formatDuration, formatPhone, formatPrice, summarizeHours} from '../../lib/format.ts';
 import {msg} from '../../i18n/index.ts';
 import {tireMsg} from '../../i18n/tire.ts';
+import {washMsg} from '../../i18n/wash.ts';
 import type {GalleryItem} from '../../lib/types.ts';
 import {mediaUrl} from '../../lib/media.ts';
 import {useReveal} from '../../lib/motion.ts';
@@ -64,10 +68,14 @@ const CARD_ICONS: Record<string, PhosphorIcon> = {
   tire: Tire,
   snowflake: Snowflake,
   warehouse: Warehouse,
+  spray: SprayBottle,
+  ticket: Ticket,
+  timer: Timer,
 };
 
 /** Example questions for the assistant, in the studio language. */
-export const assistantExamples = (t?: {tire?: unknown}) => (t?.tire ? tireMsg().home.assistantExamples : msg.home.assistantExamples);
+export const assistantExamples = (t?: {tire?: unknown; wash?: unknown}) =>
+  t?.tire ? tireMsg().home.assistantExamples : t?.wash ? washMsg().home.assistantExamples : msg.home.assistantExamples;
 
 /** A page section that fades in when scrolled into view (static with reduced motion). */
 export function RevealSection({title, id, children, action}: {title: string; id?: string; children: ReactNode; action?: ReactNode}) {

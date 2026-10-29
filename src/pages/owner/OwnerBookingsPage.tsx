@@ -21,6 +21,7 @@ import {msg} from '../../i18n/index.ts';
 import {BookingSheet} from './BookingSheet.tsx';
 import {NewBookingSheet} from './NewBookingSheet.tsx';
 import {WalkInSheet} from './WalkInSheet.tsx';
+import {PostsLoad} from './PostsLoad.tsx';
 import {tireMsg} from '../../i18n/tire.ts';
 import {ownerKey, useOwner} from './ownerContext.tsx';
 import {PeriodNav, periodLabel, type Period} from './PeriodNav.tsx';
@@ -81,10 +82,11 @@ export default function OwnerBookingsPage() {
           <HStack justify="between" align="center">
             <Heading level={1}>{msg.bookings.title}</Heading>
             <HStack gap={2} wrap="wrap" justify="end">
-              {tenant.tire && <Button label={tireMsg().walkIn.button} variant="secondary" icon={<Icon icon={Lightning} />} onClick={() => setWalkIn(true)} />}
+              {(tenant.tire || tenant.wash) && <Button label={tireMsg().walkIn.button} variant="secondary" icon={<Icon icon={Lightning} />} onClick={() => setWalkIn(true)} />}
               <Button label={msg.bookings.add} variant="primary" icon={<Icon icon={Plus} />} onClick={() => setCreating(true)} />
             </HStack>
           </HStack>
+          {(tenant.tire || tenant.wash) && <PostsLoad />}
           <PeriodNav
             period={period}
             onPeriod={setPeriod}
@@ -151,7 +153,7 @@ export default function OwnerBookingsPage() {
 
       <BookingSheet bookingId={openId} onClose={() => setOpenId(null)} />
       <NewBookingSheet isOpen={creating} onClose={() => setCreating(false)} onCreated={id => setOpenId(id)} />
-      {tenant.tire && <WalkInSheet isOpen={walkIn} onClose={() => setWalkIn(false)} onCreated={id => setOpenId(id)} />}
+      {(tenant.tire || tenant.wash) && <WalkInSheet isOpen={walkIn} onClose={() => setWalkIn(false)} onCreated={id => setOpenId(id)} />}
     </VStack>
   );
 }

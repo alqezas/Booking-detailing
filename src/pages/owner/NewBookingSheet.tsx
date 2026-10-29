@@ -19,9 +19,10 @@ import {formatDuration, formatPrice} from '../../lib/format.ts';
 import {customerSchema, fieldErrors} from '../../lib/schemas.ts';
 import {ownerKey, useOwner} from './ownerContext.tsx';
 import {msg} from '../../i18n/index.ts';
-import {TireCalculator, initialCalc, isTireService, type CalcValue} from '../../components/tire/TireCalculator.tsx';
+import {PricedCalculator, initialPriced, isPricedService, isWash, plateMode, pricedParams, type PricedValue} from '../../components/priced/priced.tsx';
 import {TireDetails, plateError, type TireDetailsValue} from '../../components/tire/TireDetails.tsx';
 import {normalizePlate} from '../../../supabase/functions/_shared/tire.ts';
+import {WashDetails} from '../../components/wash/WashDetails.tsx';
 
 /** A booking taken by phone: same engine, same conflict rules as online booking. */
 export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; onClose: () => void; onCreated: (id: string) => void}) {
@@ -35,8 +36,8 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [notice, setNotice] = useState<string | null>(null);
   const [key, setKey] = useState(randomKey);
-  // Tyre services: priced by the calculator, with plate and tyres.
-  const [calc, setCalc] = useState<CalcValue>(() => initialCalc(tenant));
+  // Calculator services (tyres, wash): priced by the calculator, with plate (and tyres).
+  const [calc, setCalc] = useState<PricedValue | null>(() => initialPriced(tenant));
   const [tire, setTire] = useState<TireDetailsValue>({plate: '', tire_size: '', tire_source: 'own'});
 
   const reset = () => {
@@ -61,7 +62,9 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
           car: c.car,
           comment: c.comment,
           key,
-          tire: {vehicle: calc.vehicle, rim: calc.rim, diameter: calc.diameter, wheels: calc.wheels, plate: normalizePlate(tire.plate), tire_size: tire.tire_size.trim(), tire_source: tire.tire_source},
+          tire: isWash(calc!)
+            ? {class: calc.class, extras: calc.extras, plate: normalizePlate(tire.plate)}
+            : {vehicle: calc!.vehicle, rim: calc!.rim, diameter: calc!.diameter, wheels: calc!.wheels, plate: normalizePlate(tire.plate), tire_size: tire.tire_size.trim(), tire_source: tire.tire_source},
         });
       return api.createBooking({serviceId: serviceId!, startAt: start!, name: c.name, phone: c.phone, car: c.car, comment: c.comment, key});
     },
@@ -85,7 +88,7 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
 
   const submit = () => {
     const parsed = customerSchema.safeParse(form);
-    const pErr = tireMode ? plateError(tire.plate) : null;
+    const pErr = tireMode && (plateMode(tenant, calc!) === 'required' || tire.plate.trim()) ? plateError(tire.plate) : null;
     if (!parsed.success || pErr) {
       setErrors({...(parsed.success ? {} : fieldErrors(parsed.error)), ...(pErr ? {plate: pErr} : {})});
       return;
@@ -95,7 +98,8 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
   };
 
   const service = tenant.services.find(s => s.id === serviceId);
-  const tireMode = isTireService(tenant, service);
+  const tireMode = isPricedService(tenant, service) && !!calc;
+  const washMode = tireMode && isWash(calc!);
   const set = (k: keyof typeof form) => (v: string) => setForm(f => ({...f, [k]: v}));
 
   return (
@@ -108,7 +112,10 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
           onChange={v => {
             setServiceId(v ?? null);
             setStart(null);
-            if (v) setCalc(c => ({...c, serviceId: v}));
+            if (v) {
+              const next = initialPriced(tenant, v);
+              setCalc(c => (c && next && isWash(c) === isWash(next) ? {...c, serviceId: v} : next));
+            }
           }}
           placeholder={msg.newBooking.pickService}
           options={tenant.services.map(s => ({
@@ -118,8 +125,8 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
           }))}
         />
         {service && tireMode && (
-          <TireCalculator
-            value={{...calc, serviceId: service.id}}
+          <PricedCalculator
+            value={{...calc!, serviceId: service.id}}
             onChange={v => {
               setCalc(v);
               setStart(null);
@@ -141,8 +148,8 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
             notice={notice}
             {...(tireMode
               ? {
-                  load: (from: string, days: number) => api.tireAvailability(service.id, {vehicle: calc.vehicle, rim: calc.rim, diameter: calc.diameter, wheels: calc.wheels}, from, days),
-                  loadKey: ['owner-tire', calc.vehicle, calc.rim, calc.diameter, calc.wheels],
+                  load: (from: string, days: number) => api.tireAvailability(service.id, pricedParams(calc!), from, days),
+                  loadKey: ['owner-priced', JSON.stringify(pricedParams(calc!))],
                 }
               : {ownerLoad: (from: string, days: number) => api.availability(service.id, from, days)})}
           />
@@ -155,7 +162,10 @@ export function NewBookingSheet({isOpen, onClose, onCreated}: {isOpen: boolean; 
             <TextArea label={msg.flow.comment} isOptional value={form.comment} onChange={set('comment')} rows={2} />
           </FormLayout>
         )}
-        {start && tireMode && (
+        {start && washMode && (
+          <WashDetails slug={slug} plate={tire.plate} onPlate={v => setTire(x => ({...x, plate: v}))} phone={form.phone} required={plateMode(tenant, calc!) === 'required'} errorText={errors.plate} />
+        )}
+        {start && tireMode && !washMode && (
           <TireDetails slug={slug} value={tire} onChange={setTire} phone={form.phone} storage={!!tenant.tire?.storage} plateErrorText={errors.plate} />
         )}
         {create.isError && toApiError(create.error).code !== 'SLOT_TAKEN' && (

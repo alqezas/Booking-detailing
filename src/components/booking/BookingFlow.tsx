@@ -28,14 +28,28 @@ import {SlotPicker} from './SlotPicker.tsx';
 import {msg} from '../../i18n/index.ts';
 import {tireMsg} from '../../i18n/tire.ts';
 import type {ServerQuote} from '../../lib/types.ts';
-import {operationFor, normalizePlate} from '../../../supabase/functions/_shared/tire.ts';
-import {TireCalculator, calcQuote, initialCalc, isTireService, quoteText, rememberCalc, tireServices, type CalcValue} from '../tire/TireCalculator.tsx';
+import {normalizePlate} from '../../../supabase/functions/_shared/tire.ts';
 import {TireDetails, loadTireDetails, plateError, saveTireDetails, type TireDetailsValue} from '../tire/TireDetails.tsx';
+import {WashDetails} from '../wash/WashDetails.tsx';
+import {washMsg} from '../../i18n/wash.ts';
+import {
+  PricedCalculator,
+  initialPriced,
+  isPricedService,
+  isWash,
+  plateMode,
+  pricedParams,
+  pricedQuote,
+  pricedServices,
+  pricedText,
+  rememberPriced,
+  type PricedValue,
+} from '../priced/priced.tsx';
 
 type Step = 'service' | 'time' | 'details' | 'confirm' | 'done';
 
-/** open(): the service sheet; open(id): straight to time; open(id, calc): a tyre service priced on the home page. */
-type FlowApi = {open: (serviceId?: string, calc?: CalcValue) => void};
+/** open(): the service sheet; open(id): straight to time; open(id, calc): a calculator service priced on the home page. */
+type FlowApi = {open: (serviceId?: string, calc?: PricedValue) => void};
 const FlowContext = createContext<FlowApi | null>(null);
 
 export function useBookingFlow(): FlowApi {
@@ -65,11 +79,12 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [result, setResult] = useState<{booking: PublicBooking; token: string} | null>(null);
   const pushedHistory = useRef(false);
-  // Tyre services: the calculator choice, the server's quote and plate/tyre details.
-  const [calc, setCalc] = useState<CalcValue | null>(null);
+  // Calculator services (tyres, wash): the choice, the server's quote and plate/tyre details.
+  const [calc, setCalc] = useState<PricedValue | null>(null);
   const [serverQuote, setServerQuote] = useState<ServerQuote | null>(null);
   const [tire, setTire] = useState<TireDetailsValue>(() => loadTireDetails(tenant.slug));
-  const tireMode = isTireService(tenant, service) && !!calc;
+  const tireMode = isPricedService(tenant, service) && !!calc;
+  const washMode = tireMode && isWash(calc!);
   const T = tireMsg();
 
   const close = useCallback(() => {
@@ -96,9 +111,9 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
   }, [step]);
 
   const open = useCallback(
-    (serviceId?: string, preset?: CalcValue) => {
+    (serviceId?: string, preset?: PricedValue) => {
       const s = serviceId ? (tenant.services.find(x => x.id === serviceId) ?? null) : null;
-      const tireStart = tenant.tire ? (preset ?? initialCalc(tenant, s && isTireService(tenant, s) ? s.id : null)) : null;
+      const tireStart = preset ?? initialPriced(tenant, s && isPricedService(tenant, s) ? s.id : null);
       setService(s ?? (tireStart ? (tenant.services.find(x => x.id === tireStart.serviceId) ?? null) : null));
       setCalc(tireStart);
       setServerQuote(null);
@@ -106,14 +121,14 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
       setNotice(null);
       setErrors({});
       setResult(null);
-      // A tyre service needs the calculator first unless the home page already priced it.
-      setStep(!s ? 'service' : isTireService(tenant, s) && !preset ? 'service' : 'time');
+      // A calculator service starts at the calculator unless the home page already priced it.
+      setStep(!s ? 'service' : isPricedService(tenant, s) && !preset ? 'service' : 'time');
     },
     [tenant],
   );
 
   const onCalc = useCallback(
-    (v: CalcValue) => {
+    (v: PricedValue) => {
       setCalc(v);
       setServerQuote(null);
       setStartAt(null);
@@ -127,15 +142,9 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
     mutationFn: async () => {
       const parsed = customerSchema.parse(customer);
       if (tireMode) {
-        const t = {
-          vehicle: calc!.vehicle,
-          rim: calc!.rim,
-          diameter: calc!.diameter,
-          wheels: calc!.wheels,
-          plate: normalizePlate(tire.plate),
-          tire_size: tire.tire_size.trim(),
-          tire_source: tire.tire_source,
-        };
+        const t = isWash(calc!)
+          ? {class: calc.class, extras: calc.extras, plate: normalizePlate(tire.plate)}
+          : {...calc!, serviceId: undefined, plate: normalizePlate(tire.plate), tire_size: tire.tire_size.trim(), tire_source: tire.tire_source};
         return createTireBooking({
           slug: tenant.slug,
           serviceId: service!.id,
@@ -181,7 +190,7 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
 
   const submitDetails = () => {
     const parsed = customerSchema.safeParse(customer);
-    const plateErr = tireMode ? plateError(tire.plate) : null;
+    const plateErr = tireMode && (plateMode(tenant, calc!) === 'required' || tire.plate.trim()) ? plateError(tire.plate) : null;
     if (!parsed.success || plateErr) {
       setErrors({...(parsed.success ? {} : fieldErrors(parsed.error)), ...(plateErr ? {plate: plateErr} : {})});
       return;
@@ -189,7 +198,7 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
     setErrors({});
     if (tireMode) {
       saveTireDetails(tenant.slug, tire);
-      rememberCalc(tenant.slug, calc!);
+      rememberPriced(tenant.slug, calc!);
     }
     try {
       localStorage.setItem(DRAFT_KEY(tenant.slug), JSON.stringify({name: parsed.data.name, phone: customer.phone, car: parsed.data.car}));
@@ -202,21 +211,20 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
   // With a tyre matrix the priced operations live in the calculator; the list shows the rest.
   const grouped = useMemo(() => {
     const m = new Map<string, Service[]>();
-    for (const s of tenant.services) if (!isTireService(tenant, s)) m.set(s.category, [...(m.get(s.category) ?? []), s]);
+    for (const s of tenant.services) if (!isPricedService(tenant, s)) m.set(s.category, [...(m.get(s.category) ?? []), s]);
     return [...m.entries()];
   }, [tenant]);
-  const hasCalc = !!tenant.tire && tireServices(tenant).length > 0;
-  const tireQuote = tireMode
-    ? serverQuote
-      ? {price: serverQuote.price, onRequest: serverQuote.on_request, durationMinutes: serverQuote.duration_minutes, wheels: serverQuote.wheels}
-      : calcQuote(tenant, calc!)
-    : null;
-  const tireUnit = tireMode ? operationFor(tenant.tire, service!.key)!.unit : 'set';
+  const hasCalc = pricedServices(tenant).length > 0;
+  const tireQuote = tireMode ? pricedQuote(tenant, calc!, serverQuote) : null;
   const shownName = tireMode && serverQuote ? serverQuote.label : (service?.name ?? '');
   const shownPrice = tireQuote ? tireQuote.price : (service?.price ?? 0);
   const shownFrom = tireQuote ? false : (service?.price_from ?? false);
   const shownDuration = tireQuote ? tireQuote.durationMinutes : (service?.duration_minutes ?? 0);
-  const tireRows = tireMode
+  const tireRows = washMode
+    ? tire.plate.trim()
+      ? [{label: T.summary.plate, value: normalizePlate(tire.plate)}]
+      : undefined
+    : tireMode
     ? [
         {label: T.summary.plate, value: normalizePlate(tire.plate)},
         {label: T.summary.tires, value: [T.details.sources[tire.tire_source], tire.tire_size.trim()].filter(Boolean).join(' · ')},
@@ -241,11 +249,11 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
           <VStack gap={4}>
             <VStack gap={1}>
               <Heading level={2}>{msg.flow.title}</Heading>
-              <Text color="secondary">{hasCalc ? T.calc.lead : msg.flow.step1}</Text>
+              <Text color="secondary">{hasCalc ? (tenant.wash ? washMsg().calc.lead : T.calc.lead) : msg.flow.step1}</Text>
             </VStack>
             {hasCalc && calc && (
               <VStack gap={3}>
-                <TireCalculator value={calc} onChange={onCalc} />
+                <PricedCalculator value={calc} onChange={onCalc} />
                 <Button
                   label={T.calc.choose}
                   variant="primary"
@@ -288,7 +296,7 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
                 <Text color="secondary">
                   {msg.flow.step2(
                     formatDuration(shownDuration),
-                    tireQuote ? quoteText(tenant, tireQuote, tireUnit) : formatPrice(service.price, service.price_from, tenant.currency),
+                    tireQuote ? pricedText(tenant, calc!, tireQuote) : formatPrice(service.price, service.price_from, tenant.currency),
                   )}
                 </Text>
               </VStack>
@@ -300,8 +308,8 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
                 {...(tireMode
                   ? {
                       load: (from: string, days: number) =>
-                        getTireAvailability(tenant.slug, service.id, {vehicle: calc!.vehicle, rim: calc!.rim, diameter: calc!.diameter, wheels: calc!.wheels}, from, days),
-                      loadKey: ['tire', calc!.vehicle, calc!.rim, calc!.diameter, calc!.wheels],
+                        getTireAvailability(tenant.slug, service.id, pricedParams(calc!), from, days),
+                      loadKey: ['priced', JSON.stringify(pricedParams(calc!))],
                       onLoaded,
                     }
                   : {})}
@@ -340,7 +348,17 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
               <TextInput label={msg.flow.car} value={customer.car} onChange={set('car')} placeholder={msg.flow.carPlaceholder} status={errors.car ? {type: 'error', message: errors.car} : undefined} />
               <TextArea label={msg.flow.comment} isOptional value={customer.comment ?? ''} onChange={set('comment')} rows={2} maxLength={500} />
             </FormLayout>
-            {tireMode && (
+            {washMode && (
+              <WashDetails
+                slug={tenant.slug}
+                plate={tire.plate}
+                onPlate={v => setTire(x => ({...x, plate: v}))}
+                phone={customer.phone}
+                required={plateMode(tenant, calc!) === 'required'}
+                errorText={errors.plate}
+              />
+            )}
+            {tireMode && !washMode && (
               <VStack gap={2}>
                 <TireDetails slug={tenant.slug} value={tire} onChange={setTire} phone={customer.phone} storage={!!tenant.tire?.storage} plateErrorText={errors.plate} />
                 <Text type="supporting">{T.details.remembered}</Text>
@@ -368,7 +386,7 @@ export function BookingFlowProvider({children}: {children: ReactNode}) {
                 customer={{name: customer.name, phone: customerSchema.shape.phone.safeParse(customer.phone).data ?? customer.phone, car: customer.car}}
                 extra={tireRows}
               />
-              {tireMode && <Text type="supporting">{T.summary.labourOnly}</Text>}
+              {tireMode && !washMode && <Text type="supporting">{T.summary.labourOnly}</Text>}
               <Text type="supporting">{msg.flow.cancelRule(tenant.booking.cancel_cutoff_hours)}</Text>
               {create.isError && !(create.error instanceof ApiError && create.error.code === 'SLOT_TAKEN') && (
                 <Banner status="error" title={msg.flow.notCreated} description={toApiError(create.error).message} collapsible={false} />
