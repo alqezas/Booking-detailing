@@ -1,0 +1,535 @@
+{
+  "slug": "serwis-latka-kalisz",
+  "name": "Serwis Łatka – Renowacja Felg",
+  "shortName": "Serwis Łatka",
+  "kind": "tireservice",
+  "tagline": "Renowacja, prostowanie i toczenie felg CNC oraz wulkanizacja w Kaliszu",
+  "description": "Centrum renowacji felg w Kaliszu. Prostujemy, spawamy, piaskujemy i malujemy proszkowo felgi aluminiowe i stalowe, toczymy fronty felg na tokarce CNC, wymieniamy i wyważamy opony oraz przechowujemy koła w sezonie. Cenę wymiany opon i renowacji spokojnie sprawdzisz w kalkulatorze przed zapisem.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#D4A017",
+  "contacts": {
+    "phone": "+48 660 120 200",
+    "address": "ul. Owsiana 40, 62-800 Kalisz",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Serwis+%C5%81atka+Centrum+renowacji+felg+Kalisz",
+    "tiktok": "renowacjafelgcnc"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "17:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "14:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-01",
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 15,
+    "minLeadMinutes": 60,
+    "horizonDays": 30,
+    "cancelCutoffHours": 2,
+    "defaultBufferMinutes": 0
+  },
+  "resources": [
+    {
+      "key": "stanowisko-1",
+      "name": "Stanowisko 1"
+    },
+    {
+      "key": "stanowisko-2",
+      "name": "Stanowisko 2"
+    }
+  ],
+  "services": [
+    {
+      "key": "wymiana-kol",
+      "name": "Wymiana kół + wyważanie",
+      "category": "Wulkanizacja",
+      "description": "Zamiana kompletnych kół (letnie/zimowe) z wyważaniem i kontrolą ciśnienia.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 30,
+      "resources": [
+        "stanowisko-1",
+        "stanowisko-2"
+      ]
+    },
+    {
+      "key": "przekladka",
+      "name": "Przekładka opon z felg na felgi + wyważanie",
+      "category": "Wulkanizacja",
+      "description": "Zdjęcie i założenie opon na Twoje felgi, wyważenie i kontrola zaworów.",
+      "price": 160,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "stanowisko-1",
+        "stanowisko-2"
+      ]
+    },
+    {
+      "key": "prostowanie",
+      "name": "Prostowanie felgi",
+      "category": "Felgi",
+      "description": "Prostowanie felg aluminiowych i stalowych na prostownicy. Cena za sztukę – ustaw liczbę kół w kalkulatorze.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "stanowisko-1",
+        "stanowisko-2"
+      ]
+    },
+    {
+      "key": "renowacja",
+      "name": "Renowacja felg: piaskowanie + malowanie proszkowe",
+      "category": "Felgi",
+      "description": "Oddanie felg do renowacji. Piaskowanie, naprawa ubytków i malowanie proszkowe w wybranym kolorze. Odbiór zwykle po kilku dniach.",
+      "price": 1600,
+      "priceFrom": true,
+      "durationMinutes": 30,
+      "resources": [
+        "stanowisko-1",
+        "stanowisko-2"
+      ]
+    },
+    {
+      "key": "toczenie-cnc",
+      "name": "Toczenie frontów felg CNC (diamond cut)",
+      "category": "Felgi",
+      "description": "Oddanie felg do toczenia frontu na tokarce CNC – efekt nowej, polerowanej felgi. Odbiór zwykle po kilku dniach.",
+      "price": 2400,
+      "priceFrom": true,
+      "durationMinutes": 30,
+      "resources": [
+        "stanowisko-1",
+        "stanowisko-2"
+      ]
+    },
+    {
+      "key": "spawanie",
+      "name": "Spawanie pękniętej felgi",
+      "category": "Felgi",
+      "description": "Spawanie pęknięć felg aluminiowych. Wycena po obejrzeniu felgi.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 45,
+      "resources": [
+        "stanowisko-1",
+        "stanowisko-2"
+      ]
+    },
+    {
+      "key": "przechowalnia",
+      "name": "Przechowanie kół na sezon",
+      "category": "Wulkanizacja",
+      "description": "Przechowujemy koła w hotelu na kolejny sezon.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 15,
+      "resources": [
+        "stanowisko-1"
+      ]
+    }
+  ],
+  "tire": {
+    "defaultWheels": 4,
+    "storage": true,
+    "names": {
+      "vehicles": {
+        "car": "Osobowy",
+        "suv": "SUV / 4×4",
+        "van": "Dostawczy"
+      },
+      "rims": {
+        "steel": "Stalowe",
+        "alloy": "Aluminiowe"
+      }
+    },
+    "seasons": [
+      {
+        "from": "10-15",
+        "to": "11-30",
+        "mount": "winter",
+        "horizonDays": 14
+      },
+      {
+        "from": "03-15",
+        "to": "04-30",
+        "mount": "summer",
+        "horizonDays": 14
+      }
+    ],
+    "operations": [
+      {
+        "service": "wymiana-kol",
+        "unit": "set",
+        "rows": [
+          {
+            "vehicles": [
+              "car"
+            ],
+            "from": 13,
+            "to": 22,
+            "price": 100,
+            "minutes": 30
+          },
+          {
+            "vehicles": [
+              "suv"
+            ],
+            "from": 13,
+            "to": 22,
+            "price": 120,
+            "minutes": 40
+          },
+          {
+            "vehicles": [
+              "van"
+            ],
+            "from": 13,
+            "to": 22,
+            "price": 140,
+            "minutes": 45
+          }
+        ]
+      },
+      {
+        "service": "przekladka",
+        "unit": "set",
+        "rows": [
+          {
+            "vehicles": [
+              "car"
+            ],
+            "from": 13,
+            "to": 16,
+            "price": 160,
+            "minutes": 60
+          },
+          {
+            "vehicles": [
+              "car"
+            ],
+            "from": 17,
+            "to": 19,
+            "price": 200,
+            "minutes": 60
+          },
+          {
+            "vehicles": [
+              "car"
+            ],
+            "from": 20,
+            "to": 22,
+            "price": 260,
+            "minutes": 75
+          },
+          {
+            "vehicles": [
+              "suv"
+            ],
+            "from": 13,
+            "to": 19,
+            "price": 220,
+            "minutes": 75
+          },
+          {
+            "vehicles": [
+              "suv"
+            ],
+            "from": 20,
+            "to": 22,
+            "price": 300,
+            "minutes": 90
+          },
+          {
+            "vehicles": [
+              "van"
+            ],
+            "from": 13,
+            "to": 19,
+            "price": 240,
+            "minutes": 75
+          },
+          {
+            "vehicles": [
+              "van"
+            ],
+            "from": 20,
+            "to": 22,
+            "price": null,
+            "minutes": 90
+          }
+        ]
+      },
+      {
+        "service": "prostowanie",
+        "unit": "set",
+        "rows": [
+          {
+            "rims": [
+              "steel"
+            ],
+            "from": 13,
+            "to": 22,
+            "price": 320,
+            "minutes": 120
+          },
+          {
+            "rims": [
+              "alloy"
+            ],
+            "from": 13,
+            "to": 16,
+            "price": 600,
+            "minutes": 180
+          },
+          {
+            "rims": [
+              "alloy"
+            ],
+            "from": 17,
+            "to": 19,
+            "price": 800,
+            "minutes": 180
+          },
+          {
+            "rims": [
+              "alloy"
+            ],
+            "from": 20,
+            "to": 22,
+            "price": 1000,
+            "minutes": 240
+          }
+        ]
+      },
+      {
+        "service": "renowacja",
+        "unit": "set",
+        "rows": [
+          {
+            "rims": [
+              "steel"
+            ],
+            "from": 13,
+            "to": 16,
+            "price": 800,
+            "minutes": 30
+          },
+          {
+            "from": 13,
+            "to": 16,
+            "price": 1600,
+            "minutes": 30
+          },
+          {
+            "from": 17,
+            "to": 19,
+            "price": 2400,
+            "minutes": 30
+          },
+          {
+            "from": 20,
+            "to": 22,
+            "price": 3200,
+            "minutes": 30
+          }
+        ]
+      },
+      {
+        "service": "toczenie-cnc",
+        "unit": "set",
+        "rows": [
+          {
+            "rims": [
+              "steel"
+            ],
+            "from": 13,
+            "to": 22,
+            "price": null,
+            "minutes": 30
+          },
+          {
+            "from": 13,
+            "to": 16,
+            "price": null,
+            "minutes": 30
+          },
+          {
+            "from": 17,
+            "to": 19,
+            "price": 2400,
+            "minutes": 30
+          },
+          {
+            "from": 20,
+            "to": 22,
+            "price": 3200,
+            "minutes": 30
+          }
+        ]
+      },
+      {
+        "service": "spawanie",
+        "unit": "job",
+        "rows": [
+          {
+            "from": 13,
+            "to": 22,
+            "price": null,
+            "minutes": 45
+          }
+        ]
+      },
+      {
+        "service": "przechowalnia",
+        "unit": "job",
+        "rows": [
+          {
+            "vehicles": [
+              "car"
+            ],
+            "from": 13,
+            "to": 22,
+            "price": 200,
+            "minutes": 15
+          },
+          {
+            "vehicles": [
+              "suv",
+              "van"
+            ],
+            "from": 13,
+            "to": 22,
+            "price": 250,
+            "minutes": 15
+          }
+        ]
+      }
+    ]
+  },
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "4,9 w Google",
+      "text": "Ponad 400 opinii klientów z Kalisza i okolic."
+    },
+    {
+      "icon": "wrench",
+      "title": "Toczenie CNC",
+      "text": "Fronty felg toczone na tokarce CNC – jak nowe, z połyskiem."
+    },
+    {
+      "icon": "warehouse",
+      "title": "Przechowalnia kół",
+      "text": "Zostaw koła u nas na sezon – przy zapisie wybierz „Przechowane”."
+    }
+  ],
+  "gallery": [],
+  "faq": [
+    {
+      "question": "Ile trwa renowacja felg?",
+      "answer": "Felgi zostawiasz u nas – zapis w kalkulatorze to termin oddania. Piaskowanie, naprawa i malowanie proszkowe trwa zwykle kilka dni; dokładny termin odbioru ustalimy przy oddaniu.",
+      "keywords": [
+        "ile trwa",
+        "kiedy odbior",
+        "czas renowacji"
+      ]
+    },
+    {
+      "question": "Czy prostujecie i spawacie felgi?",
+      "answer": "Tak – prostujemy felgi aluminiowe i stalowe, a pęknięcia felg aluminiowych spawamy. Spawanie wyceniamy po obejrzeniu felgi.",
+      "keywords": [
+        "prostowan",
+        "spawan",
+        "pekniet",
+        "krzyw"
+      ]
+    },
+    {
+      "question": "Jak można zapłacić?",
+      "answer": "Płatność gotówką na miejscu. W razie pytań zadzwoń: 660 120 200.",
+      "keywords": [
+        "platnosc",
+        "zaplac",
+        "karta",
+        "gotowk"
+      ]
+    },
+    {
+      "question": "Gdzie jesteście?",
+      "answer": "Kalisz, ul. Owsiana 40. Pon.–pt. 9:00–17:00, sobota 9:00–14:00.",
+      "keywords": [
+        "gdzie",
+        "adres",
+        "dojazd",
+        "godzin",
+        "otwart"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
