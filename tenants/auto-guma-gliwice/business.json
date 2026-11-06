@@ -455,7 +455,32 @@
       "text": "Zostaw koła u nas na sezon – przy zapisie wybierz „Przechowane”."
     }
   ],
-  "gallery": [],
+  "gallery": [
+    {
+      "image": "images/work-wymiana.webp",
+      "caption": "Wymiana kół"
+    },
+    {
+      "image": "images/work-klucz.webp",
+      "caption": "Odkręcanie i dokręcanie kół"
+    },
+    {
+      "image": "images/work-felgi.webp",
+      "caption": "Felgi aluminiowe"
+    },
+    {
+      "image": "images/work-opony.webp",
+      "caption": "Opony na sezon"
+    },
+    {
+      "image": "images/work-komplety.webp",
+      "caption": "Komplety opon"
+    },
+    {
+      "image": "images/work-bieznik.webp",
+      "caption": "Kontrola bieżnika"
+    }
+  ],
   "faq": [
     {
       "question": "Ile kosztuje wymiana opon?",
