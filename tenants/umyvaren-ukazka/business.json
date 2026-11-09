@@ -1,0 +1,483 @@
+{
+  "slug": "umyvaren-ukazka",
+  "name": "Ručné umývanie Ukážka",
+  "shortName": "Umývanie Demo",
+  "kind": "carwash",
+  "tagline": "Ručné umývanie áut – cenu podľa veľkosti auta vidíte vopred",
+  "description": "Ukážková ručná umyváreň na vyskúšanie online rezervácie. Umývame ručne exteriér aj interiér, tepujeme sedačky a ponúkame vosk, umytie diskov, motora aj ozón. Cenu vypočíta kalkulačka podľa veľkosti auta a vybraných doplnkov. V sobotu doobeda len bez objednania.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Bratislava",
+  "currency": "EUR",
+  "accentColor": "#1FA2D6",
+  "contacts": {
+    "phone": "+421000000000",
+    "address": "Ukážková 2, 811 01 Bratislava"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "08:00",
+        "14:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-08-29",
+    "2027-09-01",
+    "2027-09-15",
+    "2027-11-01",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 15,
+    "minLeadMinutes": 30,
+    "horizonDays": 21,
+    "cancelCutoffHours": 2,
+    "defaultBufferMinutes": 5,
+    "peakHours": [
+      {
+        "days": [
+          6
+        ],
+        "from": "08:00",
+        "to": "12:00",
+        "mode": "walkin"
+      },
+      {
+        "days": [
+          5
+        ],
+        "from": "15:00",
+        "to": "18:00",
+        "mode": "limit",
+        "posts": 1
+      }
+    ]
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Box 1"
+    },
+    {
+      "key": "box-2",
+      "name": "Box 2"
+    },
+    {
+      "key": "box-3",
+      "name": "Box 3"
+    }
+  ],
+  "services": [
+    {
+      "key": "venkovni",
+      "name": "Ručné umytie exteriéru",
+      "category": "Umývanie",
+      "description": "Predumytie aktívnou penou, ručné umytie metódou dvoch vedier, umytie diskov a podbehov, vysušenie mikrovláknom.",
+      "price": 15,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "box-1",
+        "box-2",
+        "box-3"
+      ]
+    },
+    {
+      "key": "kompletni",
+      "name": "Kompletné umytie",
+      "category": "Umývanie",
+      "description": "Ručné umytie exteriéru, vysávanie interiéru a kufra, utretie plastov a umytie okien zvnútra.",
+      "price": 35,
+      "priceFrom": true,
+      "durationMinutes": 70,
+      "resources": [
+        "box-1",
+        "box-2",
+        "box-3"
+      ]
+    },
+    {
+      "key": "interier",
+      "name": "Čistenie interiéru",
+      "category": "Interiér",
+      "description": "Dôkladné vysávanie, vyčistenie a ošetrenie plastov, okná zvnútra, rohože.",
+      "price": 30,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2",
+        "box-3"
+      ]
+    },
+    {
+      "key": "tepovani",
+      "name": "Tepovanie sedačiek a kobercov",
+      "category": "Interiér",
+      "description": "Tepovanie látkových sedačiek a kobercov extraktorom (bez stropu).",
+      "price": 90,
+      "priceFrom": true,
+      "durationMinutes": 150,
+      "resources": [
+        "box-1",
+        "box-2",
+        "box-3"
+      ]
+    }
+  ],
+  "wash": {
+    "classes": {
+      "small": "Malé",
+      "medium": "Stredné",
+      "suv": "SUV / MPV",
+      "van": "Dodávka"
+    },
+    "plateRequired": true,
+    "programs": [
+      {
+        "service": "venkovni",
+        "prices": {
+          "small": {
+            "price": 15,
+            "minutes": 45
+          },
+          "medium": {
+            "price": 18,
+            "minutes": 60
+          },
+          "suv": {
+            "price": 22,
+            "minutes": 70
+          },
+          "van": {
+            "price": 28,
+            "minutes": 80
+          }
+        }
+      },
+      {
+        "service": "kompletni",
+        "prices": {
+          "small": {
+            "price": 35,
+            "minutes": 70
+          },
+          "medium": {
+            "price": 40,
+            "minutes": 75
+          },
+          "suv": {
+            "price": 48,
+            "minutes": 90
+          },
+          "van": {
+            "price": 58,
+            "minutes": 100
+          }
+        }
+      },
+      {
+        "service": "interier",
+        "prices": {
+          "small": {
+            "price": 30,
+            "minutes": 60
+          },
+          "medium": {
+            "price": 35,
+            "minutes": 60
+          },
+          "suv": {
+            "price": 42,
+            "minutes": 75
+          },
+          "van": {
+            "price": null,
+            "minutes": 90
+          }
+        }
+      },
+      {
+        "service": "tepovani",
+        "prices": {
+          "small": {
+            "price": 90,
+            "minutes": 150
+          },
+          "medium": {
+            "price": 110,
+            "minutes": 180
+          },
+          "suv": {
+            "price": 130,
+            "minutes": 210
+          },
+          "van": {
+            "price": null,
+            "minutes": 240
+          }
+        }
+      }
+    ],
+    "extras": [
+      {
+        "key": "vosk",
+        "name": "Tvrdý vosk",
+        "prices": {
+          "small": {
+            "price": 35,
+            "minutes": 75
+          },
+          "medium": {
+            "price": 40,
+            "minutes": 90
+          },
+          "suv": {
+            "price": 48,
+            "minutes": 105
+          },
+          "van": {
+            "price": 55,
+            "minutes": 120
+          }
+        },
+        "programs": [
+          "venkovni",
+          "kompletni"
+        ]
+      },
+      {
+        "key": "kola",
+        "name": "Umytie a ošetrenie diskov",
+        "prices": {
+          "small": {
+            "price": 15,
+            "minutes": 60
+          },
+          "medium": {
+            "price": 15,
+            "minutes": 60
+          },
+          "suv": {
+            "price": 15,
+            "minutes": 60
+          },
+          "van": {
+            "price": 20,
+            "minutes": 60
+          }
+        },
+        "programs": [
+          "venkovni",
+          "kompletni"
+        ]
+      },
+      {
+        "key": "motor",
+        "name": "Umytie motora",
+        "prices": {
+          "small": {
+            "price": 20,
+            "minutes": 60
+          },
+          "medium": {
+            "price": 20,
+            "minutes": 60
+          },
+          "suv": {
+            "price": 20,
+            "minutes": 60
+          },
+          "van": {
+            "price": null,
+            "minutes": 60
+          }
+        },
+        "programs": [
+          "venkovni",
+          "kompletni"
+        ]
+      },
+      {
+        "key": "okna",
+        "name": "Čistenie okien",
+        "prices": {
+          "small": {
+            "price": 10,
+            "minutes": 25
+          },
+          "medium": {
+            "price": 12,
+            "minutes": 30
+          },
+          "suv": {
+            "price": 14,
+            "minutes": 35
+          },
+          "van": {
+            "price": 16,
+            "minutes": 40
+          }
+        }
+      },
+      {
+        "key": "ozon",
+        "name": "Ozón – dezinfekcia a zápachy",
+        "prices": {
+          "small": {
+            "price": 30,
+            "minutes": 60
+          },
+          "medium": {
+            "price": 30,
+            "minutes": 60
+          },
+          "suv": {
+            "price": 30,
+            "minutes": 60
+          },
+          "van": {
+            "price": 30,
+            "minutes": 60
+          }
+        },
+        "programs": [
+          "kompletni",
+          "interier",
+          "tepovani"
+        ]
+      },
+      {
+        "key": "koberecky",
+        "name": "Umytie gumových rohoží",
+        "prices": {
+          "small": {
+            "price": 5,
+            "minutes": 15
+          },
+          "medium": {
+            "price": 5,
+            "minutes": 15
+          },
+          "suv": {
+            "price": 5,
+            "minutes": 15
+          },
+          "van": {
+            "price": 8,
+            "minutes": 15
+          }
+        },
+        "programs": [
+          "kompletni",
+          "interier"
+        ]
+      }
+    ]
+  },
+  "infoCards": [
+    {
+      "icon": "spray",
+      "title": "Len ručné umývanie",
+      "text": "Žiadne kefy. Umývanie dvoma vedrami a mikrovlákno šetrné k laku."
+    },
+    {
+      "icon": "ticket",
+      "title": "Permanentky",
+      "text": "Kúpte si permanentku na 5 alebo 10 umytí – pri objednávke uvidíte, koľko vám ešte zostáva."
+    },
+    {
+      "icon": "timer",
+      "title": "Sobota bez objednania",
+      "text": "V sobotu 8–12 h ideme len živým radom, online objednávky v tom čase nie sú."
+    }
+  ],
+  "gallery": [],
+  "faq": [
+    {
+      "question": "Môžem prísť bez objednania?",
+      "answer": "Áno. V sobotu doobeda (8–12 h) ideme len živým radom, v ostatné dni vás zaradíme do najbližšieho voľného boxu.",
+      "keywords": [
+        "bez objednania",
+        "bez objednavky",
+        "rad",
+        "prist hned"
+      ]
+    },
+    {
+      "question": "Máte permanentky?",
+      "answer": "Áno, permanentku na 5 alebo 10 umytí kúpite priamo u nás. Umytie sa odpočíta, keď je auto hotové, a pri online objednávke uvidíte, koľko vám ich zostáva.",
+      "keywords": [
+        "permanentk",
+        "predplat",
+        "balik"
+      ]
+    },
+    {
+      "question": "Ako zistím veľkosť auta?",
+      "answer": "Malé: Fabia, Golf, Yaris. Stredné: Octavia, Passat, Superb. SUV / MPV: Kodiaq, Karoq, X5, Touran. Dodávka: Transit, Sprinter a podobné.",
+      "keywords": [
+        "velkost",
+        "kategori",
+        "trieda",
+        "ake auto"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
