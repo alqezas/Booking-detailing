@@ -1,0 +1,482 @@
+{
+  "slug": "myjnia-przyklad",
+  "name": "Myjnia ręczna Przykład",
+  "shortName": "Myjnia Demo",
+  "kind": "carwash",
+  "tagline": "Ręczne mycie aut – cenę dla swojego auta widzisz przed zapisem",
+  "description": "Przykładowa myjnia ręczna do wypróbowania zapisów online. Myjemy ręcznie nadwozie i wnętrze, pierzemy tapicerkę, nakładamy wosk, myjemy felgi i silnik oraz robimy ozonowanie. Cenę policzy kalkulator według wielkości auta i wybranych dodatków. W sobotę przed południem tylko bez zapisu.",
+  "locale": "pl-PL",
+  "timezone": "Europe/Warsaw",
+  "currency": "PLN",
+  "accentColor": "#1FA2D6",
+  "contacts": {
+    "phone": "+48000000000",
+    "address": "ul. Przykładowa 2, 00-001 Warszawa"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "08:00",
+        "14:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-11",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-28",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-03",
+    "2027-05-16",
+    "2027-05-27",
+    "2027-08-15",
+    "2027-11-01",
+    "2027-11-11",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 15,
+    "minLeadMinutes": 30,
+    "horizonDays": 21,
+    "cancelCutoffHours": 2,
+    "defaultBufferMinutes": 5,
+    "peakHours": [
+      {
+        "days": [
+          6
+        ],
+        "from": "08:00",
+        "to": "12:00",
+        "mode": "walkin"
+      },
+      {
+        "days": [
+          5
+        ],
+        "from": "15:00",
+        "to": "18:00",
+        "mode": "limit",
+        "posts": 1
+      }
+    ]
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Stanowisko 1"
+    },
+    {
+      "key": "box-2",
+      "name": "Stanowisko 2"
+    },
+    {
+      "key": "box-3",
+      "name": "Stanowisko 3"
+    }
+  ],
+  "services": [
+    {
+      "key": "venkovni",
+      "name": "Mycie ręczne nadwozia",
+      "category": "Mycie",
+      "description": "Mycie wstępne aktywną pianą, mycie ręczne metodą dwóch wiader, mycie felg i nadkoli, suszenie mikrofibrą.",
+      "price": 50,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "box-1",
+        "box-2",
+        "box-3"
+      ]
+    },
+    {
+      "key": "kompletni",
+      "name": "Mycie kompleksowe",
+      "category": "Mycie",
+      "description": "Mycie ręczne nadwozia, odkurzanie wnętrza i bagażnika, przetarcie plastików i mycie szyb od środka.",
+      "price": 120,
+      "priceFrom": true,
+      "durationMinutes": 70,
+      "resources": [
+        "box-1",
+        "box-2",
+        "box-3"
+      ]
+    },
+    {
+      "key": "interier",
+      "name": "Sprzątanie wnętrza",
+      "category": "Wnętrze",
+      "description": "Dokładne odkurzanie, czyszczenie i zabezpieczenie plastików, szyby od środka, dywaniki.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2",
+        "box-3"
+      ]
+    },
+    {
+      "key": "tepovani",
+      "name": "Pranie tapicerki i wykładzin",
+      "category": "Wnętrze",
+      "description": "Pranie ekstrakcyjne foteli materiałowych i wykładzin (bez podsufitki).",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 150,
+      "resources": [
+        "box-1",
+        "box-2",
+        "box-3"
+      ]
+    }
+  ],
+  "wash": {
+    "classes": {
+      "small": "Małe",
+      "medium": "Średnie",
+      "suv": "SUV / van osobowy",
+      "van": "Dostawcze"
+    },
+    "plateRequired": true,
+    "programs": [
+      {
+        "service": "venkovni",
+        "prices": {
+          "small": {
+            "price": 50,
+            "minutes": 45
+          },
+          "medium": {
+            "price": 60,
+            "minutes": 60
+          },
+          "suv": {
+            "price": 70,
+            "minutes": 70
+          },
+          "van": {
+            "price": 90,
+            "minutes": 80
+          }
+        }
+      },
+      {
+        "service": "kompletni",
+        "prices": {
+          "small": {
+            "price": 120,
+            "minutes": 70
+          },
+          "medium": {
+            "price": 140,
+            "minutes": 75
+          },
+          "suv": {
+            "price": 160,
+            "minutes": 90
+          },
+          "van": {
+            "price": 190,
+            "minutes": 100
+          }
+        }
+      },
+      {
+        "service": "interier",
+        "prices": {
+          "small": {
+            "price": 100,
+            "minutes": 60
+          },
+          "medium": {
+            "price": 120,
+            "minutes": 60
+          },
+          "suv": {
+            "price": 140,
+            "minutes": 75
+          },
+          "van": {
+            "price": null,
+            "minutes": 90
+          }
+        }
+      },
+      {
+        "service": "tepovani",
+        "prices": {
+          "small": {
+            "price": 300,
+            "minutes": 150
+          },
+          "medium": {
+            "price": 350,
+            "minutes": 180
+          },
+          "suv": {
+            "price": 400,
+            "minutes": 210
+          },
+          "van": {
+            "price": null,
+            "minutes": 240
+          }
+        }
+      }
+    ],
+    "extras": [
+      {
+        "key": "vosk",
+        "name": "Wosk twardy",
+        "prices": {
+          "small": {
+            "price": 80,
+            "minutes": 75
+          },
+          "medium": {
+            "price": 90,
+            "minutes": 90
+          },
+          "suv": {
+            "price": 110,
+            "minutes": 105
+          },
+          "van": {
+            "price": 130,
+            "minutes": 120
+          }
+        },
+        "programs": [
+          "venkovni",
+          "kompletni"
+        ]
+      },
+      {
+        "key": "kola",
+        "name": "Mycie i zabezpieczenie felg",
+        "prices": {
+          "small": {
+            "price": 40,
+            "minutes": 60
+          },
+          "medium": {
+            "price": 40,
+            "minutes": 60
+          },
+          "suv": {
+            "price": 40,
+            "minutes": 60
+          },
+          "van": {
+            "price": 50,
+            "minutes": 60
+          }
+        },
+        "programs": [
+          "venkovni",
+          "kompletni"
+        ]
+      },
+      {
+        "key": "motor",
+        "name": "Mycie silnika",
+        "prices": {
+          "small": {
+            "price": 60,
+            "minutes": 60
+          },
+          "medium": {
+            "price": 60,
+            "minutes": 60
+          },
+          "suv": {
+            "price": 60,
+            "minutes": 60
+          },
+          "van": {
+            "price": null,
+            "minutes": 60
+          }
+        },
+        "programs": [
+          "venkovni",
+          "kompletni"
+        ]
+      },
+      {
+        "key": "okna",
+        "name": "Mycie szyb",
+        "prices": {
+          "small": {
+            "price": 30,
+            "minutes": 25
+          },
+          "medium": {
+            "price": 35,
+            "minutes": 30
+          },
+          "suv": {
+            "price": 40,
+            "minutes": 35
+          },
+          "van": {
+            "price": 45,
+            "minutes": 40
+          }
+        }
+      },
+      {
+        "key": "ozon",
+        "name": "Ozonowanie – dezynfekcja i zapachy",
+        "prices": {
+          "small": {
+            "price": 100,
+            "minutes": 60
+          },
+          "medium": {
+            "price": 100,
+            "minutes": 60
+          },
+          "suv": {
+            "price": 100,
+            "minutes": 60
+          },
+          "van": {
+            "price": 100,
+            "minutes": 60
+          }
+        },
+        "programs": [
+          "kompletni",
+          "interier",
+          "tepovani"
+        ]
+      },
+      {
+        "key": "koberecky",
+        "name": "Mycie gumowych dywaników",
+        "prices": {
+          "small": {
+            "price": 20,
+            "minutes": 15
+          },
+          "medium": {
+            "price": 20,
+            "minutes": 15
+          },
+          "suv": {
+            "price": 20,
+            "minutes": 15
+          },
+          "van": {
+            "price": 30,
+            "minutes": 15
+          }
+        },
+        "programs": [
+          "kompletni",
+          "interier"
+        ]
+      }
+    ]
+  },
+  "infoCards": [
+    {
+      "icon": "spray",
+      "title": "Tylko mycie ręczne",
+      "text": "Bez szczotek. Metoda dwóch wiader i mikrofibra bezpieczna dla lakieru."
+    },
+    {
+      "icon": "ticket",
+      "title": "Karnety",
+      "text": "Kup karnet na 5 lub 10 myć – przy zapisie zobaczysz, ile myć Ci zostało."
+    },
+    {
+      "icon": "timer",
+      "title": "Sobota bez zapisu",
+      "text": "W sobotę 8–12 przyjmujemy tylko z kolejki, zapisy online są wtedy wyłączone."
+    }
+  ],
+  "gallery": [],
+  "faq": [
+    {
+      "question": "Mogę przyjechać bez zapisu?",
+      "answer": "Tak. W sobotę przed południem (8–12) przyjmujemy tylko z kolejki, w inne dni wpuścimy Cię na najbliższe wolne stanowisko.",
+      "keywords": [
+        "bez zapisu",
+        "kolejka",
+        "od razu",
+        "przyjechac"
+      ]
+    },
+    {
+      "question": "Macie karnety?",
+      "answer": "Tak, karnet na 5 lub 10 myć kupisz u nas na miejscu. Mycie odejmujemy, gdy auto jest gotowe, a przy zapisie online widzisz, ile myć Ci zostało.",
+      "keywords": [
+        "karnet",
+        "abonament",
+        "pakiet"
+      ]
+    },
+    {
+      "question": "Jak sprawdzić wielkość auta?",
+      "answer": "Małe: Yaris, Fabia, Golf. Średnie: Octavia, Passat, Corolla. SUV / van osobowy: Tucson, Kodiaq, X5, Touran. Dostawcze: Transit, Sprinter i podobne.",
+      "keywords": [
+        "wielkosc",
+        "klasa",
+        "kategoria",
+        "jakie auto"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}

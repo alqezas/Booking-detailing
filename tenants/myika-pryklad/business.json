@@ -1,0 +1,466 @@
+{
+  "slug": "myika-pryklad",
+  "name": "Ручна мийка Приклад",
+  "shortName": "Мийка Приклад",
+  "kind": "carwash",
+  "tagline": "Ручна мийка авто – ціну для свого авто бачите ще до запису",
+  "description": "Демонстраційна ручна мийка, щоб спробувати онлайн-запис. Миємо вручну кузов і салон, робимо хімчистку сидінь, наносимо віск, миємо диски й двигун та робимо озонування. Ціну порахує калькулятор за розміром авто та вибраними послугами. У суботу до обіду – тільки без запису.",
+  "locale": "uk-UA",
+  "timezone": "Europe/Kyiv",
+  "currency": "UAH",
+  "accentColor": "#1FA2D6",
+  "contacts": {
+    "phone": "+380000000000",
+    "address": "вул. Прикладна, 2, Київ"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [
+      [
+        "08:00",
+        "14:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-12-25",
+    "2027-01-01"
+  ],
+  "booking": {
+    "slotStepMinutes": 15,
+    "minLeadMinutes": 30,
+    "horizonDays": 21,
+    "cancelCutoffHours": 2,
+    "defaultBufferMinutes": 5,
+    "peakHours": [
+      {
+        "days": [
+          6
+        ],
+        "from": "08:00",
+        "to": "12:00",
+        "mode": "walkin"
+      },
+      {
+        "days": [
+          5
+        ],
+        "from": "15:00",
+        "to": "18:00",
+        "mode": "limit",
+        "posts": 1
+      }
+    ]
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Пост 1"
+    },
+    {
+      "key": "box-2",
+      "name": "Пост 2"
+    },
+    {
+      "key": "box-3",
+      "name": "Пост 3"
+    }
+  ],
+  "services": [
+    {
+      "key": "venkovni",
+      "name": "Ручна мийка кузова",
+      "category": "Мийка",
+      "description": "Попередня мийка активною піною, ручна мийка двома відрами, мийка дисків і арок, сушіння мікрофіброю.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 45,
+      "resources": [
+        "box-1",
+        "box-2",
+        "box-3"
+      ]
+    },
+    {
+      "key": "kompletni",
+      "name": "Комплексна мийка",
+      "category": "Мийка",
+      "description": "Ручна мийка кузова, пилосос салону й багажника, протирання пластику та миття скла зсередини.",
+      "price": 700,
+      "priceFrom": true,
+      "durationMinutes": 70,
+      "resources": [
+        "box-1",
+        "box-2",
+        "box-3"
+      ]
+    },
+    {
+      "key": "interier",
+      "name": "Прибирання салону",
+      "category": "Салон",
+      "description": "Ретельний пилосос, чищення й захист пластику, скло зсередини, килимки.",
+      "price": 600,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2",
+        "box-3"
+      ]
+    },
+    {
+      "key": "tepovani",
+      "name": "Хімчистка сидінь і підлоги",
+      "category": "Салон",
+      "description": "Екстракторна хімчистка тканинних сидінь і підлоги (без стелі).",
+      "price": 2500,
+      "priceFrom": true,
+      "durationMinutes": 150,
+      "resources": [
+        "box-1",
+        "box-2",
+        "box-3"
+      ]
+    }
+  ],
+  "wash": {
+    "classes": {
+      "small": "Малі",
+      "medium": "Середні",
+      "suv": "Кросовер / мінівен",
+      "van": "Бус"
+    },
+    "plateRequired": true,
+    "programs": [
+      {
+        "service": "venkovni",
+        "prices": {
+          "small": {
+            "price": 350,
+            "minutes": 45
+          },
+          "medium": {
+            "price": 400,
+            "minutes": 60
+          },
+          "suv": {
+            "price": 500,
+            "minutes": 70
+          },
+          "van": {
+            "price": 600,
+            "minutes": 80
+          }
+        }
+      },
+      {
+        "service": "kompletni",
+        "prices": {
+          "small": {
+            "price": 700,
+            "minutes": 70
+          },
+          "medium": {
+            "price": 800,
+            "minutes": 75
+          },
+          "suv": {
+            "price": 950,
+            "minutes": 90
+          },
+          "van": {
+            "price": 1100,
+            "minutes": 100
+          }
+        }
+      },
+      {
+        "service": "interier",
+        "prices": {
+          "small": {
+            "price": 600,
+            "minutes": 60
+          },
+          "medium": {
+            "price": 700,
+            "minutes": 60
+          },
+          "suv": {
+            "price": 850,
+            "minutes": 75
+          },
+          "van": {
+            "price": null,
+            "minutes": 90
+          }
+        }
+      },
+      {
+        "service": "tepovani",
+        "prices": {
+          "small": {
+            "price": 2500,
+            "minutes": 150
+          },
+          "medium": {
+            "price": 3000,
+            "minutes": 180
+          },
+          "suv": {
+            "price": 3500,
+            "minutes": 210
+          },
+          "van": {
+            "price": null,
+            "minutes": 240
+          }
+        }
+      }
+    ],
+    "extras": [
+      {
+        "key": "vosk",
+        "name": "Твердий віск",
+        "prices": {
+          "small": {
+            "price": 400,
+            "minutes": 75
+          },
+          "medium": {
+            "price": 450,
+            "minutes": 90
+          },
+          "suv": {
+            "price": 550,
+            "minutes": 105
+          },
+          "van": {
+            "price": 650,
+            "minutes": 120
+          }
+        },
+        "programs": [
+          "venkovni",
+          "kompletni"
+        ]
+      },
+      {
+        "key": "kola",
+        "name": "Мийка та захист литих дисків",
+        "prices": {
+          "small": {
+            "price": 250,
+            "minutes": 60
+          },
+          "medium": {
+            "price": 250,
+            "minutes": 60
+          },
+          "suv": {
+            "price": 250,
+            "minutes": 60
+          },
+          "van": {
+            "price": 300,
+            "minutes": 60
+          }
+        },
+        "programs": [
+          "venkovni",
+          "kompletni"
+        ]
+      },
+      {
+        "key": "motor",
+        "name": "Мийка двигуна",
+        "prices": {
+          "small": {
+            "price": 400,
+            "minutes": 60
+          },
+          "medium": {
+            "price": 400,
+            "minutes": 60
+          },
+          "suv": {
+            "price": 400,
+            "minutes": 60
+          },
+          "van": {
+            "price": null,
+            "minutes": 60
+          }
+        },
+        "programs": [
+          "venkovni",
+          "kompletni"
+        ]
+      },
+      {
+        "key": "okna",
+        "name": "Миття скла",
+        "prices": {
+          "small": {
+            "price": 200,
+            "minutes": 25
+          },
+          "medium": {
+            "price": 250,
+            "minutes": 30
+          },
+          "suv": {
+            "price": 300,
+            "minutes": 35
+          },
+          "van": {
+            "price": 350,
+            "minutes": 40
+          }
+        }
+      },
+      {
+        "key": "ozon",
+        "name": "Озонування – дезінфекція і запахи",
+        "prices": {
+          "small": {
+            "price": 500,
+            "minutes": 60
+          },
+          "medium": {
+            "price": 500,
+            "minutes": 60
+          },
+          "suv": {
+            "price": 500,
+            "minutes": 60
+          },
+          "van": {
+            "price": 500,
+            "minutes": 60
+          }
+        },
+        "programs": [
+          "kompletni",
+          "interier",
+          "tepovani"
+        ]
+      },
+      {
+        "key": "koberecky",
+        "name": "Мийка гумових килимків",
+        "prices": {
+          "small": {
+            "price": 100,
+            "minutes": 15
+          },
+          "medium": {
+            "price": 100,
+            "minutes": 15
+          },
+          "suv": {
+            "price": 100,
+            "minutes": 15
+          },
+          "van": {
+            "price": 150,
+            "minutes": 15
+          }
+        },
+        "programs": [
+          "kompletni",
+          "interier"
+        ]
+      }
+    ]
+  },
+  "infoCards": [
+    {
+      "icon": "spray",
+      "title": "Тільки ручна мийка",
+      "text": "Без щіток. Мийка двома відрами та мікрофібра, безпечна для лаку."
+    },
+    {
+      "icon": "ticket",
+      "title": "Абонементи",
+      "text": "Купіть абонемент на 5 або 10 мийок – під час запису побачите, скільки мийок залишилось."
+    },
+    {
+      "icon": "timer",
+      "title": "Субота без запису",
+      "text": "У суботу 8–12 приймаємо тільки в живу чергу, онлайн-запис у цей час вимкнений."
+    }
+  ],
+  "gallery": [],
+  "faq": [
+    {
+      "question": "Можна приїхати без запису?",
+      "answer": "Так. У суботу до обіду (8–12) приймаємо тільки в живу чергу, в інші дні поставимо на найближчий вільний пост.",
+      "keywords": [
+        "без запису",
+        "черга",
+        "одразу",
+        "приїхати"
+      ]
+    },
+    {
+      "question": "Чи є абонементи?",
+      "answer": "Так, абонемент на 5 або 10 мийок можна купити у нас на місці. Мийка списується, коли авто готове, а під час онлайн-запису видно, скільки мийок залишилось.",
+      "keywords": [
+        "абонемент",
+        "пакет",
+        "передплат"
+      ]
+    },
+    {
+      "question": "Як визначити розмір авто?",
+      "answer": "Малі: Yaris, Fabia, Golf. Середні: Octavia, Passat, Camry. Кросовер / мінівен: Tucson, RAV4, X5, Touran. Бус: Transit, Sprinter та подібні.",
+      "keywords": [
+        "розмір",
+        "клас",
+        "категорія",
+        "яке авто"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
