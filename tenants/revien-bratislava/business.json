@@ -1,0 +1,673 @@
+{
+  "slug": "revien-bratislava",
+  "name": "REVIEN detailing",
+  "shortName": "REVIEN",
+  "kind": "carwash",
+  "tagline": "Autodetailingové štúdio v Bratislave – vyberte balíček a voľný termín online",
+  "description": "REVIEN je autodetailingové štúdio v Bratislave na Vajnorskej. Express umytie, interiérové a exteriérové balíčky, detailing s leštením, keramická ochrana aj PPF fólie. Cena sa prispôsobí veľkosti auta, ceny sú od a bez DPH. Pracujeme len na základe rezervácií.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Bratislava",
+  "currency": "EUR",
+  "accentColor": "#D8D8D8",
+  "contacts": {
+    "phone": "+421917190938",
+    "email": "info@revien.sk",
+    "address": "Vajnorská 1418/138, Bratislava III",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=REVIEN+Vajnorsk%C3%A1+1418+Bratislava"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "18:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-08-29",
+    "2027-09-01",
+    "2027-09-15",
+    "2027-11-01",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 180,
+    "horizonDays": 30,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Box 1"
+    },
+    {
+      "key": "box-2",
+      "name": "Box 2"
+    }
+  ],
+  "services": [
+    {
+      "key": "express-ext",
+      "name": "REVIEN Express exteriér",
+      "category": "Express",
+      "description": "Predoplach, aktívna pena, umytie diskov, metóda dvoch vedier, vysušenie stlačeným vzduchom, impregnácia pneumatík, okná zvonku a detailer pre lesk.",
+      "price": 39,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "express-int",
+      "name": "REVIEN Express interiér",
+      "category": "Express",
+      "description": "Vyfúkanie prachu zo špár, vysávanie, čistenie plastov, okná zvnútra, nástupné priestory a parfém.",
+      "price": 49,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "express-komplet",
+      "name": "REVIEN Express interiér + exteriér",
+      "category": "Express",
+      "description": "Kompletný udržiavací balíček – exteriér aj interiér. Ideálny na udržanie výsledku po detailingu.",
+      "price": 79,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "exterior-plus",
+      "name": "REVIEN Exterior+ package",
+      "category": "Balíčky",
+      "description": "Obhliadka, chemická a mechanická dekontaminácia, odmastnenie laku, prémiová ochrana s výdržou až 6 mesiacov, impregnácia plastov a pneumatík.",
+      "price": 199,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "clean-plus",
+      "name": "REVIEN Clean+ package",
+      "category": "Balíčky",
+      "description": "Kompletný balíček: umytie a dekontaminácia, tekutý vosk, hĺbkové čistenie a tepovanie interiéru, impregnácia plastov, dezinfekcia celého interiéru.",
+      "price": 229,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "basic",
+      "name": "REVIEN Basic detailing",
+      "category": "Detailing",
+      "description": "Dekontaminácia laku, jednostupňové leštenie, impregnácia plastov a pneumatík, vysávanie interiéru, oživenie tesnení.",
+      "price": 499,
+      "priceFrom": true,
+      "durationMinutes": 540,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "premium",
+      "name": "REVIEN Premium detailing",
+      "category": "Detailing",
+      "description": "Všetko z Basic detailingu + demontáž sedadiel podľa potreby, tepovanie, hĺbkové čistenie a dezinfekcia interiéru.",
+      "price": 699,
+      "priceFrom": true,
+      "durationMinutes": 600,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "shield",
+      "name": "REVIEN Shield package",
+      "category": "Detailing",
+      "description": "Viackrokové leštenie laku a keramická ochrana, ochrana diskov, okien a plastov, impregnácia kože a textílií.",
+      "price": 939,
+      "priceFrom": true,
+      "durationMinutes": 600,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ppf-front",
+      "name": "PPF ochrana – Front package",
+      "category": "PPF ochrana",
+      "description": "Takmer neviditeľná fólia na prednú časť – chráni lak pred kamienkami, škrabancami a UV.",
+      "price": 1100,
+      "priceFrom": true,
+      "durationMinutes": 600,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ppf-full",
+      "name": "PPF ochrana – Full package",
+      "category": "PPF ochrana",
+      "description": "PPF fólia na celú karosériu.",
+      "price": 3200,
+      "priceFrom": true,
+      "durationMinutes": 600,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "obhliadka",
+      "name": "PPF individual – obhliadka",
+      "category": "PPF ochrana",
+      "description": "Individuálna PPF ochrana interiéru aj exteriéru. Cenu určíme po obhliadke – rezervujte si termín.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "box-1"
+      ]
+    }
+  ],
+  "wash": {
+    "classes": {
+      "small": "Malé auto",
+      "medium": "Stredné auto",
+      "suv": "Veľké auto / SUV",
+      "van": "Dodávka"
+    },
+    "plateRequired": false,
+    "programs": [
+      {
+        "service": "express-ext",
+        "prices": {
+          "small": {
+            "price": 39,
+            "minutes": 60
+          },
+          "medium": {
+            "price": 39,
+            "minutes": 60
+          },
+          "suv": {
+            "price": 49,
+            "minutes": 60
+          },
+          "van": {
+            "price": null,
+            "minutes": 60
+          }
+        }
+      },
+      {
+        "service": "express-int",
+        "prices": {
+          "small": {
+            "price": 49,
+            "minutes": 60
+          },
+          "medium": {
+            "price": 49,
+            "minutes": 60
+          },
+          "suv": {
+            "price": 59,
+            "minutes": 60
+          },
+          "van": {
+            "price": null,
+            "minutes": 60
+          }
+        }
+      },
+      {
+        "service": "express-komplet",
+        "prices": {
+          "small": {
+            "price": 79,
+            "minutes": 120
+          },
+          "medium": {
+            "price": 79,
+            "minutes": 120
+          },
+          "suv": {
+            "price": 99,
+            "minutes": 120
+          },
+          "van": {
+            "price": null,
+            "minutes": 120
+          }
+        }
+      },
+      {
+        "service": "exterior-plus",
+        "prices": {
+          "small": {
+            "price": 199,
+            "minutes": 300
+          },
+          "medium": {
+            "price": 199,
+            "minutes": 300
+          },
+          "suv": {
+            "price": 239,
+            "minutes": 300
+          },
+          "van": {
+            "price": null,
+            "minutes": 300
+          }
+        }
+      },
+      {
+        "service": "clean-plus",
+        "prices": {
+          "small": {
+            "price": 229,
+            "minutes": 480
+          },
+          "medium": {
+            "price": 229,
+            "minutes": 480
+          },
+          "suv": {
+            "price": 259,
+            "minutes": 480
+          },
+          "van": {
+            "price": null,
+            "minutes": 480
+          }
+        }
+      },
+      {
+        "service": "basic",
+        "prices": {
+          "small": {
+            "price": 499,
+            "minutes": 540
+          },
+          "medium": {
+            "price": 499,
+            "minutes": 540
+          },
+          "suv": {
+            "price": 549,
+            "minutes": 540
+          },
+          "van": {
+            "price": null,
+            "minutes": 540
+          }
+        }
+      },
+      {
+        "service": "premium",
+        "prices": {
+          "small": {
+            "price": 699,
+            "minutes": 600
+          },
+          "medium": {
+            "price": 699,
+            "minutes": 600
+          },
+          "suv": {
+            "price": 779,
+            "minutes": 600
+          },
+          "van": {
+            "price": null,
+            "minutes": 600
+          }
+        }
+      },
+      {
+        "service": "shield",
+        "prices": {
+          "small": {
+            "price": 939,
+            "minutes": 600
+          },
+          "medium": {
+            "price": 939,
+            "minutes": 600
+          },
+          "suv": {
+            "price": 1099,
+            "minutes": 600
+          },
+          "van": {
+            "price": null,
+            "minutes": 600
+          }
+        }
+      },
+      {
+        "service": "ppf-front",
+        "prices": {
+          "small": {
+            "price": 1100,
+            "minutes": 600
+          },
+          "medium": {
+            "price": 1100,
+            "minutes": 600
+          },
+          "suv": {
+            "price": 1400,
+            "minutes": 600
+          },
+          "van": {
+            "price": null,
+            "minutes": 600
+          }
+        }
+      },
+      {
+        "service": "ppf-full",
+        "prices": {
+          "small": {
+            "price": 3200,
+            "minutes": 600
+          },
+          "medium": {
+            "price": 3200,
+            "minutes": 600
+          },
+          "suv": {
+            "price": 3400,
+            "minutes": 600
+          },
+          "van": {
+            "price": null,
+            "minutes": 600
+          }
+        }
+      },
+      {
+        "service": "obhliadka",
+        "prices": {
+          "small": {
+            "price": null,
+            "minutes": 30
+          },
+          "medium": {
+            "price": null,
+            "minutes": 30
+          },
+          "suv": {
+            "price": null,
+            "minutes": 30
+          },
+          "van": {
+            "price": null,
+            "minutes": 30
+          }
+        }
+      }
+    ],
+    "extras": [
+      {
+        "key": "tepovanie",
+        "name": "Tepovanie interiéru",
+        "prices": {
+          "small": {
+            "price": 60,
+            "minutes": 120
+          },
+          "medium": {
+            "price": 60,
+            "minutes": 120
+          },
+          "suv": {
+            "price": 60,
+            "minutes": 120
+          },
+          "van": {
+            "price": null,
+            "minutes": 120
+          }
+        }
+      },
+      {
+        "key": "koza",
+        "name": "Čistenie a impregnácia kože",
+        "prices": {
+          "small": {
+            "price": 70,
+            "minutes": 90
+          },
+          "medium": {
+            "price": 70,
+            "minutes": 90
+          },
+          "suv": {
+            "price": 70,
+            "minutes": 90
+          },
+          "van": {
+            "price": null,
+            "minutes": 90
+          }
+        }
+      },
+      {
+        "key": "ozon",
+        "name": "Dezinfekcia ozónom",
+        "prices": {
+          "small": {
+            "price": 20,
+            "minutes": 30
+          },
+          "medium": {
+            "price": 20,
+            "minutes": 30
+          },
+          "suv": {
+            "price": 20,
+            "minutes": 30
+          },
+          "van": {
+            "price": 20,
+            "minutes": 30
+          }
+        }
+      },
+      {
+        "key": "sklo-keramika",
+        "name": "Keramika na čelné sklo",
+        "prices": {
+          "small": {
+            "price": 100,
+            "minutes": 60
+          },
+          "medium": {
+            "price": 100,
+            "minutes": 60
+          },
+          "suv": {
+            "price": 100,
+            "minutes": 60
+          },
+          "van": {
+            "price": null,
+            "minutes": 60
+          }
+        }
+      },
+      {
+        "key": "stierace",
+        "name": "Tekuté stierače",
+        "prices": {
+          "small": {
+            "price": 20,
+            "minutes": 15
+          },
+          "medium": {
+            "price": 20,
+            "minutes": 15
+          },
+          "suv": {
+            "price": 20,
+            "minutes": 15
+          },
+          "van": {
+            "price": 20,
+            "minutes": 15
+          }
+        }
+      }
+    ]
+  },
+  "infoCards": [
+    {
+      "icon": "shield",
+      "title": "Keramika a PPF",
+      "text": "Shield package s keramickou ochranou aj PPF fólie na prednú časť či celé auto."
+    },
+    {
+      "icon": "spray",
+      "title": "Express údržba",
+      "text": "Po detailingu udržíte výsledok s Express balíčkami od 39 €."
+    },
+    {
+      "icon": "clock",
+      "title": "Len na rezerváciu",
+      "text": "Každému autu sa venujeme naplno – termín si vyberiete online."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-volant.webp",
+      "caption": "Čistenie volantu"
+    },
+    {
+      "image": "images/work-prieduchy.webp",
+      "caption": "Čistenie prieduchov"
+    },
+    {
+      "image": "images/work-interier.webp",
+      "caption": "Detailing interiéru"
+    },
+    {
+      "image": "images/work-lestenie.webp",
+      "caption": "Leštenie laku"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ako dlho trvá kompletný detailing?",
+      "answer": "Závisí od balíka a veľkosti auta, zvyčajne jeden pracovný deň. Dĺžku vidíte pri rezervácii.",
+      "keywords": [
+        "ako dlho",
+        "trva",
+        "cas",
+        "detailing"
+      ]
+    },
+    {
+      "question": "Musím sa objednať vopred?",
+      "answer": "Áno, pracujeme len na základe rezervácií – voľný termín si vyberiete priamo tu.",
+      "keywords": [
+        "objednat",
+        "vopred",
+        "rezerv",
+        "termin"
+      ]
+    },
+    {
+      "question": "Sú ceny s DPH?",
+      "answer": "Ceny sú uvedené od a bez DPH. Konečná cena závisí od veľkosti a stavu vozidla.",
+      "keywords": [
+        "dph",
+        "cena",
+        "kolko"
+      ]
+    },
+    {
+      "question": "Ako často odporúčate detailing?",
+      "answer": "Medzi detailingami udržíte výsledok s Express balíčkami interiéru a exteriéru.",
+      "keywords": [
+        "ako casto",
+        "udrzba",
+        "express"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
