@@ -1,0 +1,389 @@
+{
+  "slug": "padre-detail-trnava",
+  "name": "PADRE detail",
+  "shortName": "PADRE detail",
+  "kind": "detailing",
+  "tagline": "Autodetailing v Trnave – vyberte si službu a voľný termín online",
+  "description": "PADRE detail je auto-detailingové štúdio v Trnave, pri Kalvárii 8. Ručné umývanie, tepovanie a detailing interiéru, leštenie laku, keramické ochrany, starostlivosť o kožu, okenné a PPF fólie. Ceny sú orientačné a bez DPH – presnú cenu potvrdíme pri odovzdaní auta. Pri PPF, wrapoch a keramike si môžete rezervovať bezplatnú konzultáciu.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Bratislava",
+  "currency": "EUR",
+  "accentColor": "#E8C547",
+  "contacts": {
+    "phone": "+421917378182",
+    "email": "kontakt@padredetail.sk",
+    "address": "pri Kalvárii 8, 917 01 Trnava",
+    "legalAddress": "PADRE detail s.r.o., Tichá 677/5, 919 27 Brestovany, IČO 55312241",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=PADRE+detail+pri+Kalv%C3%A1rii+8+Trnava"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [
+      [
+        "08:00",
+        "12:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-11-17",
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-08",
+    "2027-07-05",
+    "2027-08-29",
+    "2027-09-01",
+    "2027-09-15",
+    "2027-11-01",
+    "2027-11-17",
+    "2027-12-24",
+    "2027-12-25",
+    "2027-12-26"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 120,
+    "horizonDays": 30,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Box 1"
+    },
+    {
+      "key": "box-2",
+      "name": "Box 2"
+    }
+  ],
+  "services": [
+    {
+      "key": "umytie",
+      "name": "Ručné umytie",
+      "category": "Exteriér",
+      "description": "Šetrné umytie vapkou, dôkladné čistenie diskov a medzidverí, sušenie mikrovláknom, tekutý vosk, impregnácia pneumatík, vysávanie, čistenie plastov, koberčekov a okien. 50–100 € podľa veľkosti auta.",
+      "price": 50,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "sezonny",
+      "name": "Sezónny program",
+      "category": "Exteriér",
+      "description": "Ručné umytie + chemická aj mechanická dekontaminácia laku, ochrana sezónnym keramickým voskom, tekuté stierače na čelné okno, impregnácia tesnení. 100–200 €.",
+      "price": 100,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "svetla",
+      "name": "Leštenie svetiel & fólia",
+      "category": "Exteriér",
+      "description": "Brúsenie a viacnásobné leštenie, návrat pôvodného stavu s výdržou 12+ rokov, ochranné fólie na svetlá. 80–180 €.",
+      "price": 80,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "motor",
+      "name": "Čistenie motora",
+      "category": "Exteriér",
+      "description": "Detailné čistenie motorového priestoru parou a pH neutrálnou penou, po vysušení impregnácia s dlhodobým efektom.",
+      "price": 30,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "tepovacka",
+      "name": "Tepovačka",
+      "category": "Interiér",
+      "description": "Tepovanie textilu – sedadlá, podlaha, koberčeky, čalúnenie dverí, kufor, strop. Impregnácia plastov, vyčistenie prieduchov, pedálov a okien zvnútra. Vozidlo bude pri odovzdaní suché.",
+      "price": 90,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "detailing-interier",
+      "name": "Detailing interiéru",
+      "category": "Interiér",
+      "description": "Tepovanie, hĺbkové čistenie plastov, prieduchov, pedálov a koľajničiek, šetrné hĺbkové čistenie a impregnácia kože. Vozidlo bude pri odovzdaní suché.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "jednokrok",
+      "name": "Leštenie „Jednokrok“",
+      "category": "Leštenie a keramika",
+      "description": "Ručné umytie + leštenie, ktoré odstráni približne 60–70 % jemných až stredných škrabancov. Vhodné pre nové autá. 195–390 €.",
+      "price": 195,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "max-korekcia",
+      "name": "Leštenie „Max korekcia“",
+      "category": "Leštenie a keramika",
+      "description": "Ručné umytie + maximálne leštenie a korekcia, odstráni približne 90 % škrabancov – maximálny lesk a oprava laku. 350–800 €.",
+      "price": 350,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "keramika-klasik",
+      "name": "Keramická ochrana KLASIK",
+      "category": "Leštenie a keramika",
+      "description": "Ochrana tvrdosti 7H KRYTEX v 1 vrstve, keramika MEGA GLASS na čelné okno, jednostupňové leštenie celého vozidla + detailing.",
+      "price": 750,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "keramika-premium",
+      "name": "Keramická ochrana PREMIUM",
+      "category": "Leštenie a keramika",
+      "description": "Ochrana tvrdosti 9H KRYTEX v 2 vrstvách, keramika MEGA GLASS na všetky okná, jednostupňové leštenie celého vozidla + detailing.",
+      "price": 1400,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "keramika-okna",
+      "name": "Keramika na okná",
+      "category": "Leštenie a keramika",
+      "description": "Hydrofóbny náter na sklo („tekuté stierače“) – od cca 80 km/h netreba stierače, lepšia viditeľnosť v daždi. KRYTEX.",
+      "price": 70,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "predaj",
+      "name": "Príprava auta na predaj",
+      "category": "Balíky",
+      "description": "Ručné umytie, Jednokrok, Tepovačka, umytie motora, voskovanie a nafotenie vozidla.",
+      "price": 300,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "koza-cistenie",
+      "name": "Čistenie kože",
+      "category": "Koža",
+      "description": "Detailné šetrné čistenie všetkých kožených častí interiéru kefkou a štetcom, impregnácia kože do matného efektu.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "koza-oprava",
+      "name": "Oprava kože",
+      "category": "Koža",
+      "description": "Oprava zodratej, poškodenej alebo pretrhnutej časti sedačky miešaním originálnej farby podľa odtieňa kože.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "okenne-folie",
+      "name": "Okenné fólie „Základná“",
+      "category": "Fólie",
+      "description": "Johnson Window Film3 – 96 % ochrana pred UV, 62 % ochrana pred teplom. Osobné auto 150 €, kombi 180 €, SUV 200 €.",
+      "price": 150,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ppf-kapota",
+      "name": "PPF fólia na kapotu",
+      "category": "Fólie",
+      "description": "Priehľadná samoregeneračná fólia s výdržou 12+ rokov, rezaná na mieru pre daný model. 200–400 €.",
+      "price": 200,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "konzultacia",
+      "name": "Bezplatná konzultácia (PPF, wrap, keramika)",
+      "category": "Fólie",
+      "description": "Obhliadka auta a návrh riešenia – PPF wrapy, zmena farby, reklamné polepy či keramické balíky. Cenu dohodneme na mieste.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "box-1"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "4,9 v Google",
+      "text": "Hodnotenia zákazníkov zo štúdia pri Kalvárii v Trnave."
+    },
+    {
+      "icon": "shield",
+      "title": "Keramika a PPF",
+      "text": "KRYTEX keramické ochrany a PPF fólie s výdržou 10–12 rokov."
+    },
+    {
+      "icon": "clock",
+      "title": "Auto vrátime suché",
+      "text": "Po tepovaní a detailingu interiéru odovzdávame vozidlo suché."
+    }
+  ],
+  "gallery": [],
+  "faq": [
+    {
+      "question": "Sú ceny konečné?",
+      "answer": "Ceny sú orientačné a bez DPH. Presná cena závisí od veľkosti a stavu auta – potvrdíme ju pri obhliadke alebo pri odovzdaní.",
+      "keywords": [
+        "cena",
+        "kolko",
+        "stoji",
+        "dph"
+      ]
+    },
+    {
+      "question": "Ako dlho trvá tepovanie?",
+      "answer": "Tepovačka aj detailing interiéru trvajú 8–24 hodín. Auto vám vrátime suché.",
+      "keywords": [
+        "tepovan",
+        "ako dlho",
+        "trva",
+        "interier"
+      ]
+    },
+    {
+      "question": "Robíte aj PPF a zmenu farby?",
+      "answer": "Áno – PPF wrapy, PVC wrapy aj reklamné polepy. Rezervujte si bezplatnú konzultáciu, auto si pozrieme a cenu dohodneme.",
+      "keywords": [
+        "ppf",
+        "wrap",
+        "folia",
+        "farb",
+        "polep"
+      ]
+    },
+    {
+      "question": "Kde vás nájdem?",
+      "answer": "Prevádzka je na adrese pri Kalvárii 8, Trnava. Telefón +421 917 378 182, e-mail kontakt@padredetail.sk.",
+      "keywords": [
+        "kde",
+        "adresa",
+        "kontakt",
+        "trnava"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
