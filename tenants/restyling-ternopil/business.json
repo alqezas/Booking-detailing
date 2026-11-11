@@ -1,0 +1,235 @@
+{
+  "slug": "restyling-ternopil",
+  "name": "REStyling",
+  "shortName": "REStyling",
+  "kind": "detailing",
+  "tagline": "Автоцентр REStyling у Тернополі – оберіть послугу та вільний час онлайн",
+  "description": "REStyling – автоцентр у Тернополі на Пісковій, 10: «нове дихання вашій автівці». Хімчистка салону, полірування, захист керамікою, бронеплівка кузова й лобового скла, тонування скла й фар, атермальна плівка, антихром, зміна кольору плівкою та підсвітка салону. Ціни орієнтовні – точну вартість назвемо після огляду авто.",
+  "locale": "uk-UA",
+  "timezone": "Europe/Kyiv",
+  "currency": "UAH",
+  "accentColor": "#D32F2F",
+  "contacts": {
+    "phone": "+380978510555",
+    "address": "вул. Піскова, 10, Тернопіль",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=REStyling&query_place_id=ChIJ28ck2NY1MEcR-DXWzzUd7hg",
+    "lat": 49.5432622,
+    "lng": 25.6156772
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [["08:30", "19:00"]],
+    "tue": [["08:30", "19:00"]],
+    "wed": [["08:30", "19:00"]],
+    "thu": [["08:30", "19:00"]],
+    "fri": [["08:30", "19:00"]],
+    "sat": [["08:30", "19:00"]],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-12-25",
+    "2027-01-01"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 120,
+    "horizonDays": 30,
+    "cancelCutoffHours": 12,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    { "key": "post-1", "name": "Пост 1" },
+    { "key": "post-2", "name": "Пост 2" }
+  ],
+  "services": [
+    {
+      "key": "khimchystka",
+      "name": "Хімчистка салону",
+      "category": "Салон",
+      "description": "Хімчистка сидінь, стелі, підлоги, дверних карт і багажника. Шкіру чистимо й доглядаємо окремими засобами.",
+      "price": 3500,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": ["post-1", "post-2"]
+    },
+    {
+      "key": "vstavky",
+      "name": "Оновлення декоративних вставок салону",
+      "category": "Салон",
+      "description": "Відновлюємо або міняємо вигляд декоративних вставок – салон виглядає як новий.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": ["post-1", "post-2"]
+    },
+    {
+      "key": "pidsvitka",
+      "name": "Підсвітка салону",
+      "category": "Салон",
+      "description": "Контурна підсвітка салону з вибором кольору – встановлюємо акуратно, без зайвих дірок.",
+      "price": 4000,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": ["post-1", "post-2"]
+    },
+    {
+      "key": "polir-kuzov",
+      "name": "Полірування кузова",
+      "category": "Кузов і захист",
+      "description": "Прибираємо подряпини й голограми, повертаємо глибокий блиск лаку.",
+      "price": 6000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": ["post-1", "post-2"]
+    },
+    {
+      "key": "keramika",
+      "name": "Захист керамікою",
+      "category": "Кузов і захист",
+      "description": "Полірування та керамічне покриття кузова – блиск, легке миття й захист лаку на роки.",
+      "price": 9000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": ["post-1", "post-2"]
+    },
+    {
+      "key": "ppf",
+      "name": "Захист кузова бронеплівкою",
+      "category": "Кузов і захист",
+      "description": "Поліуретанова плівка на зони ризику або весь кузов – захист від сколів і подряпин.",
+      "price": 12000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": ["post-1", "post-2"]
+    },
+    {
+      "key": "zmina-koloru",
+      "name": "Зміна кольору плівкою",
+      "category": "Кузов і захист",
+      "description": "Оклейка авто кольоровою плівкою – новий вигляд без фарбування, рідний лак під захистом.",
+      "price": 40000,
+      "priceFrom": true,
+      "durationMinutes": 2880,
+      "resources": ["post-1", "post-2"]
+    },
+    {
+      "key": "antykhrom",
+      "name": "Антихром",
+      "category": "Кузов і захист",
+      "description": "Оклеюємо хромовані молдинги та емблеми чорною плівкою.",
+      "price": 3000,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": ["post-1", "post-2"]
+    },
+    {
+      "key": "fary",
+      "name": "Полірування фар + плівка",
+      "category": "Фари та скло",
+      "description": "Шліфуємо й поліруємо фари та захищаємо їх плівкою – фари довше залишаються прозорими.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": ["post-1", "post-2"]
+    },
+    {
+      "key": "tonuv-far",
+      "name": "Тонування фар",
+      "category": "Фари та скло",
+      "description": "Тонувальна плівка на фари чи ліхтарі – стильний вигляд і додатковий захист.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": ["post-1", "post-2"]
+    },
+    {
+      "key": "tonuvannya",
+      "name": "Тонування скла",
+      "category": "Фари та скло",
+      "description": "Тонування задньої напівсфери плівкою за вашим вибором.",
+      "price": 2000,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": ["post-1", "post-2"]
+    },
+    {
+      "key": "atermalka",
+      "name": "Атермальна плівка на лобове",
+      "category": "Фари та скло",
+      "description": "Прозора атермальна плівка – менше спеки в салоні влітку, видимість не погіршується.",
+      "price": 4500,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": ["post-1", "post-2"]
+    },
+    {
+      "key": "bron-lobove",
+      "name": "Бронеплівка на лобове скло",
+      "category": "Фари та скло",
+      "description": "Захищає лобове скло від сколів і тріщин – дешевше, ніж міняти скло.",
+      "price": 5000,
+      "priceFrom": true,
+      "durationMinutes": 240,
+      "resources": ["post-1", "post-2"]
+    },
+    {
+      "key": "ohlyad",
+      "name": "Безкоштовний огляд і консультація",
+      "category": "Салон",
+      "description": "Подивимось авто, порадимо, що потрібно, і назвемо точну вартість.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": ["post-1"]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "4,9 у Google",
+      "text": "Понад 840 відгуків клієнтів автоцентру."
+    },
+    {
+      "icon": "shield",
+      "title": "Плівки та кераміка",
+      "text": "Бронеплівка, атермальна плівка, тонування й керамічний захист в одному місці."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Огляд безкоштовно",
+      "text": "Подивимось авто й назвемо точну ціну до початку робіт."
+    }
+  ],
+  "gallery": [],
+  "faq": [
+    {
+      "question": "Скільки коштує?",
+      "answer": "Ціни на сайті орієнтовні й залежать від розміру та стану авто. Запишіться на безкоштовний огляд – назвемо точну вартість.",
+      "keywords": ["ціна", "скільки", "вартість", "коштує"]
+    },
+    {
+      "question": "Скільки триває оклейка плівкою?",
+      "answer": "Бронеплівка на зони ризику – близько доби, повна зміна кольору – 2–3 дні. Точний термін скажемо на огляді.",
+      "keywords": ["плівка", "оклейка", "скільки", "днів", "термін"]
+    },
+    {
+      "question": "Чи не погіршить атермальна плівка видимість?",
+      "answer": "Ні, атермальна плівка прозора: вона затримує тепло, а не світло, тож видимість не страждає.",
+      "keywords": ["атермальна", "лобове", "видимість", "плівка"]
+    },
+    {
+      "question": "Коли ви працюєте?",
+      "answer": "Пн–сб 8:30–19:00, неділя – вихідний. Адреса: вул. Піскова, 10, Тернопіль.",
+      "keywords": ["коли", "години", "графік", "працюєте", "адреса"]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}

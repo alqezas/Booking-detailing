@@ -1,0 +1,16 @@
+# Never upload private data or local-only folders to Vercel
+leads/
+.secrets/
+.env
+.env.*
+!.env.example
+astryx/
+node_modules/
+dist/
+test-results/
+playwright-report/
+coverage/
+supabase/.temp/
+supabase/.branches/
+supabase/functions/.env
+supabase/functions/.env.sim
