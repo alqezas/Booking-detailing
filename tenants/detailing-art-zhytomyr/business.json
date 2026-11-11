@@ -1,0 +1,370 @@
+{
+  "slug": "detailing-art-zhytomyr",
+  "name": "Detailing Art",
+  "shortName": "Detailing Art",
+  "kind": "detailing",
+  "tagline": "Детейлінг у Житомирі – оберіть послугу та вільний час онлайн",
+  "description": "Detailing Art – детейлінг і реставрація авто в Житомирі на Заводській, 23. Полірування кузова, фар і скла, керамічний захист, бронеплівка ARMOUR, хімчистка салону, перетяжка керма й алькантара, тонування, шумоізоляція, антикорозійна обробка та малярні роботи. Ціни орієнтовні – точну вартість назвемо після огляду авто.",
+  "locale": "uk-UA",
+  "timezone": "Europe/Kyiv",
+  "currency": "UAH",
+  "accentColor": "#E8B923",
+  "contacts": {
+    "phone": "+380934456460",
+    "address": "вул. Заводська, 23, Житомир",
+    "mapUrl": "https://maps.app.goo.gl/KLzrZWcVr8CHYhNC9"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-12-25",
+    "2027-01-01"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 120,
+    "horizonDays": 30,
+    "cancelCutoffHours": 12,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "post-1",
+      "name": "Пост 1"
+    },
+    {
+      "key": "post-2",
+      "name": "Пост 2"
+    }
+  ],
+  "services": [
+    {
+      "key": "khimchystka",
+      "name": "Хімчистка салону",
+      "category": "Салон",
+      "description": "Хімчистка сидінь, стелі, підлоги, дверних карт і багажника. Шкіру чистимо й доглядаємо окремими засобами.",
+      "price": 3500,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "post-1",
+        "post-2"
+      ]
+    },
+    {
+      "key": "kermo",
+      "name": "Перетяжка керма",
+      "category": "Салон",
+      "description": "Перешиваємо кермо шкірою або алькантарою – акуратні шви, як із заводу.",
+      "price": 2500,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "post-1",
+        "post-2"
+      ]
+    },
+    {
+      "key": "alkantara",
+      "name": "Алькантара в салоні",
+      "category": "Салон",
+      "description": "Перетяжка вставок, стелі чи елементів салону алькантарою.",
+      "price": 2000,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": [
+        "post-1",
+        "post-2"
+      ]
+    },
+    {
+      "key": "shumka",
+      "name": "Шумоізоляція",
+      "category": "Салон",
+      "description": "Шумо- та віброізоляція дверей, підлоги, арок або багажника – тихіше в салоні на ходу.",
+      "price": 8000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "post-1",
+        "post-2"
+      ]
+    },
+    {
+      "key": "polir-kuzov",
+      "name": "Полірування кузова",
+      "category": "Кузов і захист",
+      "description": "Абразивне полірування лаку – прибираємо подряпини й голограми, повертаємо глибокий блиск.",
+      "price": 6000,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "post-1",
+        "post-2"
+      ]
+    },
+    {
+      "key": "keramika",
+      "name": "Керамічний захист",
+      "category": "Кузов і захист",
+      "description": "Полірування й нанесення кераміки – лак довше блищить і легше миється.",
+      "price": 9000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "post-1",
+        "post-2"
+      ]
+    },
+    {
+      "key": "ppf",
+      "name": "Бронеплівка ARMOUR",
+      "category": "Кузов і захист",
+      "description": "Захист кузова преміальною антигравійною плівкою ARMOUR – від сколів, подряпин і реагентів.",
+      "price": 12000,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "post-1",
+        "post-2"
+      ]
+    },
+    {
+      "key": "antykor",
+      "name": "Антикорозійна обробка",
+      "category": "Кузов і захист",
+      "description": "Обробка днища й прихованих порожнин від корозії.",
+      "price": 4000,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": [
+        "post-1",
+        "post-2"
+      ]
+    },
+    {
+      "key": "dvygun",
+      "name": "Мийка й консервація двигуна",
+      "category": "Кузов і захист",
+      "description": "Делікатна мийка моторного відсіку та нанесення захисного складу.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 90,
+      "resources": [
+        "post-1",
+        "post-2"
+      ]
+    },
+    {
+      "key": "dysky",
+      "name": "Чистка й захист дисків",
+      "category": "Кузов і захист",
+      "description": "Глибока чистка дисків від гальмівного пилу та нанесення захисного покриття.",
+      "price": 800,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "post-1",
+        "post-2"
+      ]
+    },
+    {
+      "key": "fary",
+      "name": "Полірування фар",
+      "category": "Скло та оптика",
+      "description": "Шліфування й полірування фар – прибираємо помутніння, світло знову яскраве.",
+      "price": 1200,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "post-1",
+        "post-2"
+      ]
+    },
+    {
+      "key": "sklo",
+      "name": "Полірування скла",
+      "category": "Скло та оптика",
+      "description": "Прибираємо дрібні подряпини та сліди склоочисників на склі.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "post-1",
+        "post-2"
+      ]
+    },
+    {
+      "key": "antydoshch",
+      "name": "Антидощ",
+      "category": "Скло та оптика",
+      "description": "Гідрофобне покриття на скло – вода скочується під час руху.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "post-1",
+        "post-2"
+      ]
+    },
+    {
+      "key": "tonuvannya",
+      "name": "Тонування",
+      "category": "Скло та оптика",
+      "description": "Тонування скла плівкою за вашим вибором.",
+      "price": 2000,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "post-1",
+        "post-2"
+      ]
+    },
+    {
+      "key": "malyarka",
+      "name": "Малярні роботи",
+      "category": "Огляд і ремонт",
+      "description": "Локальне фарбування та відновлення лакофарбового покриття. Вартість – після огляду.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "post-1"
+      ]
+    },
+    {
+      "key": "panorama",
+      "name": "Ремонт панорамного даху",
+      "category": "Огляд і ремонт",
+      "description": "Діагностика й ремонт панорамного даху. Вартість – після огляду.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "post-1"
+      ]
+    },
+    {
+      "key": "ohlyad",
+      "name": "Безкоштовний огляд і консультація",
+      "category": "Огляд і ремонт",
+      "description": "Подивимось авто, порадимо, що потрібно, і назвемо точну вартість.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "post-1"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "shield",
+      "title": "Плівка ARMOUR",
+      "text": "Працюємо з преміальною захисною плівкою ARMOUR."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Усе в одному місці",
+      "text": "Полірування, кераміка, хімчистка, оптика й плівка – в одній студії."
+    },
+    {
+      "icon": "car",
+      "title": "Огляд безкоштовно",
+      "text": "Подивимось авто й назвемо точну ціну до початку робіт."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-rav4.webp",
+      "caption": "Детейлінг Toyota RAV4"
+    },
+    {
+      "image": "images/work-kermo.webp",
+      "caption": "Перетяжка керма алькантарою"
+    },
+    {
+      "image": "images/work-fary.webp",
+      "caption": "Відновлення оптики"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Скільки коштує?",
+      "answer": "Ціни на сайті орієнтовні й залежать від стану авто. Запишіться на безкоштовний огляд – назвемо точну вартість.",
+      "keywords": [
+        "ціна",
+        "скільки",
+        "вартість",
+        "коштує"
+      ]
+    },
+    {
+      "question": "Скільки триває оклейка плівкою?",
+      "answer": "Зазвичай 1–2 дні, залежно від обсягу. Точний термін скажемо після огляду.",
+      "keywords": [
+        "плівк",
+        "ppf",
+        "оклейк",
+        "скільки триває"
+      ]
+    },
+    {
+      "question": "Де ви знаходитесь?",
+      "answer": "Житомир, вул. Заводська, 23. Телефон: +380 93 445 6460.",
+      "keywords": [
+        "де",
+        "адреса",
+        "знайти",
+        "житомир"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
