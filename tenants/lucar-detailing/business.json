@@ -1,0 +1,331 @@
+{
+  "slug": "lucar-detailing",
+  "name": "LuCar Detailing",
+  "shortName": "LuCar",
+  "kind": "detailing",
+  "tagline": "Detailing Třinec, Jablunkov a okolí – vyberte službu a volný termín online",
+  "description": "LuCar Detailing – detailing interiéru, mytí, leštění a keramická ochrana laku. Zázemí v Mostech u Jablunkova, ale většinou přijedu za vámi: po celém Moravskoslezském kraji, stačí přívod vody a elektřiny. Ceny jsou orientační a závisí na velikosti a stavu vozu – přesnou cenu potvrdím po prohlídce.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#9B6BB5",
+  "contacts": {
+    "phone": "+420603151557",
+    "email": "info@lucardetailing.cz",
+    "address": "Mosty u Jablunkova 455",
+    "legalAddress": "Lukáš Lýsek, IČO 21773131",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Mosty+u+Jablunkova+455"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "sat": [
+      [
+        "08:00",
+        "13:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 720,
+    "horizonDays": 30,
+    "cancelCutoffHours": 24,
+    "defaultBufferMinutes": 30
+  },
+  "resources": [
+    {
+      "key": "lukas",
+      "name": "Lukáš"
+    }
+  ],
+  "services": [
+    {
+      "key": "interier",
+      "name": "Detailing interiéru",
+      "category": "Interiér",
+      "description": "Důkladné vysávání a tepování koberců a sedaček, vyčištění plastů a oken, kožených prvků a provonění interiéru.",
+      "price": 2990,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "lukas"
+      ]
+    },
+    {
+      "key": "ext-premium",
+      "name": "Exteriér Premium",
+      "category": "Exteriér",
+      "description": "Mytí kol a podběhů, předmytí, mezidveřní prostory, kontaktní mytí, vysušení a impregnace pneumatik.",
+      "price": 1190,
+      "priceFrom": true,
+      "durationMinutes": 120,
+      "resources": [
+        "lukas"
+      ]
+    },
+    {
+      "key": "ext-exclusive",
+      "name": "Exteriér Exclusive",
+      "category": "Exteriér",
+      "description": "Vše z Premium + chemická dekontaminace laku (polétavá rez, asfalt) a keramický sealant na lak a okna.",
+      "price": 2490,
+      "priceFrom": true,
+      "durationMinutes": 210,
+      "resources": [
+        "lukas"
+      ]
+    },
+    {
+      "key": "motor",
+      "name": "Vyčištění a impregnace motorového prostoru",
+      "category": "Exteriér",
+      "description": "Šetrné vyčištění motorového prostoru a ošetření plastů.",
+      "price": 690,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "lukas"
+      ]
+    },
+    {
+      "key": "lesteni-1",
+      "name": "Jednokrokové leštění",
+      "category": "Leštění laku",
+      "description": "Odstraní 60–70 % poškození laku. Předem změřím tloušťku laku a ukážu výsledek na zkušební ploše.",
+      "price": 6990,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "lukas"
+      ]
+    },
+    {
+      "key": "lesteni-multi",
+      "name": "Vícekrokové leštění",
+      "category": "Leštění laku",
+      "description": "Korekce laku do TOP stavu podle vašich očekávání. Cena podle tvrdosti a poškození laku.",
+      "price": 11990,
+      "priceFrom": true,
+      "durationMinutes": 1440,
+      "resources": [
+        "lukas"
+      ]
+    },
+    {
+      "key": "keramika-1",
+      "name": "Keramická ochrana na 1 rok / 12 000 km",
+      "category": "Ochrana laku",
+      "description": "Bez nutnosti leštění: důkladné umytí, chemická dekontaminace a keramika na lak i vnější plasty.",
+      "price": 4990,
+      "priceFrom": false,
+      "durationMinutes": 300,
+      "resources": [
+        "lukas"
+      ]
+    },
+    {
+      "key": "keramika-3",
+      "name": "Keramická ochrana laku na 2–3 roky",
+      "category": "Ochrana laku",
+      "description": "Nanesení dlouhodobé keramiky. Lak je nutné předem vyleštit (minimálně jednokrokové leštění).",
+      "price": 9990,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "lukas"
+      ]
+    },
+    {
+      "key": "skla",
+      "name": "Keramická ochrana skel (2–3 roky)",
+      "category": "Doplňky",
+      "description": "Keramika na skla – voda stéká, lepší výhled za deště.",
+      "price": 1990,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "lukas"
+      ]
+    },
+    {
+      "key": "sterace",
+      "name": "Tekuté stěrače na čelní sklo",
+      "category": "Doplňky",
+      "description": "Hydrofobní ošetření čelního skla.",
+      "price": 990,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "lukas"
+      ]
+    },
+    {
+      "key": "svetla",
+      "name": "Renovace světel (1 kus)",
+      "category": "Doplňky",
+      "description": "Přebroušení a vyleštění zmatnělého světlometu. Cena za kus.",
+      "price": 690,
+      "priceFrom": false,
+      "durationMinutes": 60,
+      "resources": [
+        "lukas"
+      ]
+    },
+    {
+      "key": "prohlidka",
+      "name": "Bezplatná prohlídka a konzultace",
+      "category": "Na domluvu",
+      "description": "Zkontroluji stav laku i interiéru, navrhnu postup a řeknu přesnou cenu dřív, než začnu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "lukas"
+      ]
+    },
+    {
+      "key": "opravy-laku",
+      "name": "Broušení a drobné opravy laku",
+      "category": "Na domluvu",
+      "description": "Broušení laku nebo škrábanců pod vodou a přeleštění do původního stavu. Cena po prohlídce.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "lukas"
+      ]
+    },
+    {
+      "key": "grafen",
+      "name": "Grafénová keramická ochrana",
+      "category": "Na domluvu",
+      "description": "Tvrdší a odolnější než klasická keramika, ještě více odpuzuje prach. Cena po prohlídce.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "lukas"
+      ]
+    },
+    {
+      "key": "ppf",
+      "name": "PPF ochrana laku",
+      "category": "Na domluvu",
+      "description": "Neviditelná fólie proti kamínkům, ve spolupráci se specialistou na polepy. Cena po prohlídce.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "lukas"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "car",
+      "title": "Přijedu za vámi",
+      "text": "Po celém Moravskoslezském kraji – stačí přívod vody a elektřiny. Nebo auto vyzvednu a přivezu."
+    },
+    {
+      "icon": "medal",
+      "title": "Zkušenost ze Ženevy",
+      "text": "Rok jako hlavní detailer v NVN Motorworks – přes 300 vozů Ferrari, Porsche a Lamborghini."
+    },
+    {
+      "icon": "shield",
+      "title": "Cena předem",
+      "text": "Před leštěním změřím lak a cenu znáte dřív, než začnu."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-lesteni.webp",
+      "caption": "Blatník po leštění"
+    },
+    {
+      "image": "images/work-kapota.webp",
+      "caption": "Kapota – test 50/50"
+    },
+    {
+      "image": "images/work-interier.webp",
+      "caption": "Koberečky po tepování"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Přijedete až k nám domů?",
+      "answer": "Ano, po celém Moravskoslezském kraji. Stačí přívod vody a elektřiny. Místo upřesníme po rezervaci telefonicky.",
+      "keywords": [
+        "domů",
+        "přijedete",
+        "mobilně",
+        "kde"
+      ]
+    },
+    {
+      "question": "Kolik stojí čištění interiéru?",
+      "answer": "Detailing interiéru od 2 990 Kč. Přesná cena závisí na velikosti a stavu vozu.",
+      "keywords": [
+        "interiér",
+        "tepování",
+        "kolik",
+        "cena"
+      ]
+    },
+    {
+      "question": "Jak dlouho vydrží keramická ochrana?",
+      "answer": "Základní keramika 1 rok / 12 000 km, dlouhodobá 2–3 roky.",
+      "keywords": [
+        "keramika",
+        "vydrží",
+        "ochrana"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
