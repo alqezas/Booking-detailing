@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin
+Disallow: /koshyk
+Disallow: /oformlennia
+Disallow: /zamovlennia/

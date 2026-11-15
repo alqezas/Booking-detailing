@@ -1,0 +1,87 @@
+# Green Touch shop: types, unit, SQL/integration and Playwright tests, build.
+# External services are replaced by the controlled test adapters (tests/fakes);
+# this pipeline does NOT check the real LiqPay or Nova Poshta.
+name: green-touch
+
+on:
+  push:
+    paths: ['green-touch/**', '.github/workflows/green-touch.yml']
+  pull_request:
+    paths: ['green-touch/**', '.github/workflows/green-touch.yml']
+
+defaults:
+  run:
+    working-directory: green-touch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install (pnpm from packageManager, lockfile frozen)
+        run: |
+          corepack enable
+          pnpm install --frozen-lockfile
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Unit tests
+        run: pnpm test
+
+      - name: Start local Supabase
+        run: npx supabase start -x studio,imgproxy,logflare,vector,supavisor,postgres-meta
+
+      - name: SQL / integration tests
+        run: pnpm test:db
+
+      - name: Configure functions with the test adapters
+        run: |
+          GW=$(docker network inspect supabase_network_green-touch -f '{{(index .IPAM.Config 0).Gateway}}')
+          cat > supabase/functions/.env <<EOF
+          SITE_URL=http://localhost:4180
+          ALLOWED_ORIGINS=http://localhost:4180
+          ORDER_TOKEN_SECRET=$(openssl rand -base64 32)
+          JOBS_SECRET=$(openssl rand -base64 32)
+          LIQPAY_PUBLIC_KEY=sandbox_test_public
+          LIQPAY_PRIVATE_KEY=sandbox_test_private
+          LIQPAY_API_URL=http://$GW:55480
+          LIQPAY_CHECKOUT_URL=http://127.0.0.1:55480/api/3/checkout
+          LIQPAY_SANDBOX=1
+          LIQPAY_CALLBACK_URL=http://127.0.0.1:55421/functions/v1/liqpay-callback
+          NP_API_URL=http://$GW:55481/v2.0/json/
+          EOF
+          eval "$(npx supabase status -o env)"
+          printf 'VITE_SUPABASE_URL=%s\nVITE_SUPABASE_ANON_KEY=%s\nVITE_SITE_URL=http://localhost:4180\n' "$API_URL" "$ANON_KEY" > .env.local
+
+      - name: Start test adapters and Edge Functions
+        run: |
+          nohup pnpm fakes > fakes.log 2>&1 &
+          nohup npx supabase functions serve --env-file supabase/functions/.env > functions.log 2>&1 &
+          for i in $(seq 1 60); do curl -sf -o /dev/null http://127.0.0.1:55481/v2.0/json/ -d '{}' && break; sleep 2; done
+
+      - name: Build (tsc + vite + PWA + prerender)
+        run: pnpm build
+
+      - name: Playwright
+        run: |
+          pnpm exec playwright install --with-deps chromium
+          pnpm test:e2e
+
+      - name: Logs on failure
+        if: failure()
+        run: |
+          tail -n 200 fakes.log functions.log || true
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: green-touch/playwright-report
+          retention-days: 7

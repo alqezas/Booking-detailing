@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Фото буде додано">
+  <rect width="400" height="500" fill="#F2EEE3"/>
+  <g fill="none" stroke="#B9C2AE" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(200 220)">
+    <path d="M0 -70 C 40 -40 50 10 0 60 C -50 10 -40 -40 0 -70 Z"/>
+    <path d="M0 -40 L0 60"/>
+  </g>
+  <text x="200" y="350" text-anchor="middle" font-family="Manrope, sans-serif" font-size="22" fill="#7A846F">Фото буде додано</text>
+</svg>
