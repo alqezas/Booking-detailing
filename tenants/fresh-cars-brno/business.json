@@ -1,0 +1,238 @@
+{
+  "slug": "fresh-cars-brno",
+  "name": "Fresh Cars",
+  "shortName": "Fresh Cars",
+  "kind": "detailing",
+  "tagline": "Ruční mytí a detailing v Brně – vyberte službu a volný termín online",
+  "description": "Fresh Cars – ruční mytí a čištění interiérů i exteriérů v Brně-Žabovřesky, Kovařovicova 363. Tepování sedadel, renovace laku, nano keramická ochrana, voskování a příprava vozů k prodeji. Pracujeme s chemií Autoglym. Ceny u některých služeb jsou orientační – přesnou cenu potvrdíme při převzetí vozu.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#E53935",
+  "contacts": {
+    "phone": "+420608176276",
+    "email": "freshcarsdetailing@gmail.com",
+    "address": "Kovařovicova 363, 616 00 Brno-Žabovřesky",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fresh+Cars&query_place_id=ChIJ03mVLiCUEkcRXDVKk0heWjU"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "tue": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "wed": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "thu": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ],
+    "fri": [
+      [
+        "08:00",
+        "16:00"
+      ]
+    ],
+    "sat": [],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01"
+  ],
+  "booking": {
+    "slotStepMinutes": 30,
+    "minLeadMinutes": 120,
+    "horizonDays": 30,
+    "cancelCutoffHours": 12,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Box"
+    }
+  ],
+  "services": [
+    {
+      "key": "fresh",
+      "name": "Fresh – ruční mytí vozu",
+      "category": "Mytí",
+      "description": "Předmytí tlakem vody, aktivní pH neutrální pěna, dvouvědrové mytí laku, mytí alu kol, sušení, impregnace pneu a doladění laku detailerem.",
+      "price": 900,
+      "priceFrom": false,
+      "durationMinutes": 90,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "fresh-fast",
+      "name": "Fresh Fast – údržba interiéru",
+      "category": "Interiér",
+      "description": "Základní vysátí, odstranění prachu, čištění plastů, tepování koberečků, mytí a leštění oken, vyleštění obrazovek a budíků, provonění.",
+      "price": 1700,
+      "priceFrom": false,
+      "durationMinutes": 120,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "fresh-complete",
+      "name": "Fresh Complete – detailing interiéru",
+      "category": "Interiér",
+      "description": "Důkladné vysátí včetně kufru, tepování koberečků a sedadel, ošetření kůže a gumových koberečků, čištění plastů, leštění oken, provonění. Příplatek za znečištění 200–500 Kč.",
+      "price": 3300,
+      "priceFrom": true,
+      "durationMinutes": 300,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "vosk",
+      "name": "Voskování laku",
+      "category": "Lak a ochrana",
+      "description": "Ruční mytí a nanesení vosku – lesk a ochrana laku na několik měsíců.",
+      "price": 1500,
+      "priceFrom": true,
+      "durationMinutes": 150,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "renovace",
+      "name": "Renovace laku",
+      "category": "Lak a ochrana",
+      "description": "Strojní leštění – odstraníme hologramy a jemné škrábance a vrátíme laku hloubku.",
+      "price": 4990,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "keramika",
+      "name": "Nano keramická ochrana laku",
+      "category": "Lak a ochrana",
+      "description": "Leštění a nanesení keramiky – lak déle drží lesk a snáz se myje.",
+      "price": 7990,
+      "priceFrom": true,
+      "durationMinutes": 480,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "kola",
+      "name": "Čištění litých kol a pneu",
+      "category": "Mytí",
+      "description": "Důkladné vyčištění disků od brzdného prachu a impregnace pneumatik.",
+      "price": 500,
+      "priceFrom": true,
+      "durationMinutes": 60,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "prodej",
+      "name": "Příprava vozu k prodeji",
+      "category": "Balíčky",
+      "description": "Kompletní mytí, čištění interiéru a doladění vzhledu, aby auto na fotkách i při prohlídce zaujalo.",
+      "price": 3990,
+      "priceFrom": true,
+      "durationMinutes": 360,
+      "resources": [
+        "box-1"
+      ]
+    },
+    {
+      "key": "konzultace",
+      "name": "Bezplatná prohlídka a konzultace",
+      "category": "Balíčky",
+      "description": "Prohlédneme auto, poradíme a řekneme přesnou cenu.",
+      "price": 0,
+      "priceFrom": false,
+      "durationMinutes": 30,
+      "resources": [
+        "box-1"
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "drop",
+      "title": "Chemie Autoglym",
+      "text": "Pracujeme s kvalitní anglickou autokosmetikou Autoglym."
+    },
+    {
+      "icon": "sparkle",
+      "title": "Ruční mytí",
+      "text": "Dvouvědrová metoda a pH neutrální pěna – šetrně k laku."
+    },
+    {
+      "icon": "medal",
+      "title": "5,0 na Googlu",
+      "text": "Hodnocení 5,0 z 60 recenzí."
+    }
+  ],
+  "gallery": [],
+  "faq": [
+    {
+      "question": "Kde vás najdu?",
+      "answer": "Kovařovicova 363, Brno-Žabovřesky. Telefon: +420 608 176 276.",
+      "keywords": [
+        "kde",
+        "adresa",
+        "brno"
+      ]
+    },
+    {
+      "question": "Jak dlouho trvá detailing interiéru?",
+      "answer": "Fresh Fast zhruba 2 hodiny, Fresh Complete podle stavu vozu 4–6 hodin.",
+      "keywords": [
+        "jak dlouho",
+        "interiér",
+        "trvá"
+      ]
+    },
+    {
+      "question": "Jsou ceny konečné?",
+      "answer": "U mytí a údržby interiéru ano. U ostatních služeb jsou orientační – přesnou cenu potvrdíme při převzetí vozu.",
+      "keywords": [
+        "cena",
+        "kolik",
+        "stojí"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@example.com"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}
