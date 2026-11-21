@@ -12,3 +12,6 @@ test-results/
 coverage/
 .secrets/
 *.log
+
+.vercel
+.env*

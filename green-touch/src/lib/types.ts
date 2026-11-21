@@ -49,6 +49,7 @@ export type ShopSettings = {
   filters?: {season_visible?: boolean; age_visible?: boolean};
   delivery?: {summary?: string; payment?: string};
   legal?: {seller_name?: string | null; seller_code?: string | null; seller_address?: string | null};
+  payment?: {prepay_kop?: number; prepay_enabled?: boolean; full_enabled?: boolean};
 };
 
 export type CatalogMeta = {
@@ -102,6 +103,10 @@ export type GuestOrder = {
   delivery: {method: string; settlement: string; area: string | null; warehouse: string};
   first_name: string;
   can_pay: boolean;
+  payment_method: 'full_online' | 'prepay_manual';
+  prepay_kop: number;
+  prepay_received: boolean;
+  cod_kop: number;
   lines: {
     kind: ItemKind;
     slug: string;
@@ -115,4 +120,4 @@ export type GuestOrder = {
   }[];
 };
 
-export type PaymentStart = {state: 'redirect'; checkout: {url: string; data: string; signature: string}} | {state: 'paid' | 'processing' | 'in_progress' | 'unavailable'};
+export type PaymentStart = {state: 'redirect'; page_url: string} | {state: 'paid' | 'processing' | 'in_progress' | 'unavailable' | 'manual'};

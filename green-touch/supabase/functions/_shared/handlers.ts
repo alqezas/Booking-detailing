@@ -5,11 +5,12 @@
 import {z} from 'zod';
 import {checkoutRequestSchema, type DeliveryMethod} from './contracts.ts';
 import type {Ctx} from './ctx.ts';
+import {buildOrderMail, type MailKind, type OrderForMail} from './email.ts';
 import {byteaHex, canonicalJson, hmacSha256, sha256, timingSafeEqual, toBase64Url, toHex} from './crypto.ts';
 import {ApiError, clientIp, corsHeaders, dbError, errorResponse, json, rateLimit, readJson} from './http.ts';
-import {decodeData, liqpayStatusSchema, verify} from './liqpay.ts';
+import {monoStatusSchema, removeInvoice, verifyWebhook} from './mono.ts';
 import {searchSettlements, searchWarehouses, verifyWarehouse} from './np.ts';
-import {applyStatus, reconcileAttempt, reconcileOrder, startPayment} from './payments.ts';
+import {applyStatus, reconcileInvoice, reconcileOrder, startPayment} from './payments.ts';
 
 /** Same idempotency key → same token, so a retried request gets a working link. */
 async function guestToken(ctx: Ctx, key: string): Promise<{token: string; hash: Uint8Array}> {
@@ -49,7 +50,7 @@ export function handleCheckout(req: Request, ctx: Ctx): Promise<Response> {
 
     // Fingerprint of what was ordered: a reused key with other content is rejected.
     const lines = [...body.lines].sort((a, b) => a.id.localeCompare(b.id));
-    const requestHash = toHex(await sha256(canonicalJson({lines, customer: body.customer, delivery: body.delivery})));
+    const requestHash = toHex(await sha256(canonicalJson({lines, customer: body.customer, delivery: body.delivery, payment_method: body.payment_method})));
     const {token, hash} = await guestToken(ctx, body.idempotency_key);
 
     const payload = {
@@ -67,6 +68,7 @@ export function handleCheckout(req: Request, ctx: Ctx): Promise<Response> {
         settlement_name: np.settlementName,
         area: np.area,
       },
+      payment_method: body.payment_method,
       ...(body.expected_total_kop !== undefined ? {expected_total_kop: body.expected_total_kop} : {}),
     };
     const {data, error} = await ctx.db.rpc('svc_create_order', {
@@ -75,8 +77,10 @@ export function handleCheckout(req: Request, ctx: Ctx): Promise<Response> {
       p_token_hash: byteaHex(hash),
     });
     if (error) throw dbError(error);
-    const order = data as {order_id: string; number: number; total_kop: number; existing: boolean};
+    const order = data as {order_id: string; number: number; total_kop: number; payment_method: string; existing: boolean};
 
+    // Prepayment (150 грн) is arranged by the owner in Viber: no online payment here.
+    if (order.payment_method === 'prepay_manual') return json({...order, token, payment: {state: 'manual'}});
     // The order is saved; a payment failure must not lose it.
     let payment;
     try {
@@ -98,6 +102,7 @@ const orderRequestSchema = z.object({
 
 type GuestOrder = {
   payment_status: string;
+  payment_method: string;
   open_attempt: {status: string; created_at: string} | null;
 } & Record<string, unknown>;
 
@@ -117,12 +122,13 @@ export function handleOrder(req: Request, ctx: Ctx): Promise<Response> {
     let order = await read();
 
     if (action === 'pay') {
+      if (order.payment_method !== 'full_online') throw new ApiError('NOT_ONLINE_PAYMENT', 409);
       await rateLimit(ctx.db, `pay:${order_id}`, 6, 600);
       const payment = await startPayment(ctx, order_id);
       return json({order: await read(), payment});
     }
 
-    // Callback late or lost: ask LiqPay directly (at most once per 20 s per order).
+    // Webhook late or lost: ask mono directly (at most once per 20 s per order).
     const open = order.open_attempt;
     if (open && Date.now() - Date.parse(open.created_at) > 60_000) {
       const {data: allowed} = await ctx.db.rpc('svc_rate_limit', {p_bucket: `reconcile:${order_id}`, p_max: 1, p_window_s: 20});
@@ -158,34 +164,32 @@ export function handleNp(req: Request, ctx: Ctx): Promise<Response> {
   });
 }
 
-// ── LiqPay callback: no user JWT, authenticated by the signature over `data` ─
-export async function handleLiqPayCallback(req: Request, ctx: Ctx): Promise<Response> {
+// ── mono webhook: no user JWT, authenticated by the X-Sign signature ─────────
+export async function handleMonoWebhook(req: Request, ctx: Ctx): Promise<Response> {
   if (req.method !== 'POST') return json({error: 'METHOD_NOT_ALLOWED'}, 405);
-  if (!ctx.liqpay) return json({error: 'NOT_CONFIGURED'}, 503);
-  const raw = await req.text();
-  if (raw.length > 32_000) return json({error: 'PAYLOAD_TOO_LARGE'}, 413);
-  const form = new URLSearchParams(raw);
-  const data = form.get('data') ?? '';
-  // The signature covers the exact base64 `data` received; decode only after it verifies.
-  if (!verify(ctx.liqpay, data, form.get('signature') ?? '')) {
-    console.warn('liqpay callback: bad signature');
+  if (!ctx.mono) return json({error: 'NOT_CONFIGURED'}, 503);
+  const raw = new Uint8Array(await req.arrayBuffer());
+  if (raw.length > 64_000) return json({error: 'PAYLOAD_TOO_LARGE'}, 413);
+  // The signature covers the exact bytes received; parse only after it verifies.
+  const ok = await verifyWebhook(ctx.mono, raw, req.headers.get('x-sign')).catch(() => false);
+  if (!ok) {
+    console.warn('mono webhook: bad signature');
     return json({error: 'BAD_SIGNATURE'}, 401);
   }
   let body: unknown;
   try {
-    body = decodeData(data);
+    body = JSON.parse(new TextDecoder().decode(raw));
   } catch {
     return json({error: 'BAD_REQUEST'}, 400);
   }
-  const s = liqpayStatusSchema.safeParse(body);
-  if (!s.success) return json({error: 'BAD_REQUEST'}, 400);
-  if (s.data.public_key && s.data.public_key !== ctx.liqpay.publicKey) return json({error: 'WRONG_MERCHANT'}, 400);
+  const st = monoStatusSchema.safeParse(body);
+  if (!st.success) return json({error: 'BAD_REQUEST'}, 400);
   try {
-    const outcome = await applyStatus(ctx, s.data, 'callback');
-    // 200 for duplicates/mismatches too: the event is recorded, a retry won't help.
+    const outcome = await applyStatus(ctx, st.data, 'webhook');
+    // 200 for duplicates/mismatches too: the event is recorded, retrying won't help.
     return json({ok: true, outcome});
   } catch (e) {
-    return errorResponse(e); // 500 → LiqPay may retry; reconciliation covers the rest
+    return errorResponse(e); // 500 → mono retries; reconciliation covers the rest
   }
 }
 
@@ -214,11 +218,38 @@ async function deliverTelegram(ctx: Ctx, row: OutboxRow): Promise<void> {
   await ctx.db.rpc('svc_record_effect', {p_id: row.id, p_consumer: 'telegram'});
 }
 
+/** «Замовлення прийнято» / «Оплату отримано» to the buyer, if they gave an email. */
+async function deliverEmail(ctx: Ctx, row: OutboxRow): Promise<void> {
+  const kind: MailKind | null = row.topic === 'order.created' ? 'created' : row.topic === 'order.paid' ? 'paid' : null;
+  if (!ctx.mailer || !kind || !row.order_id) return;
+  const {data: done} = await ctx.db.from('outbox_effects').select('outbox_id').eq('outbox_id', row.id).eq('consumer', 'email').maybeSingle();
+  if (done) return;
+  const {data: o, error} = await ctx.db
+    .from('orders')
+    .select('id,number,idempotency_key,first_name,email,payment_method,prepay_kop,subtotal_kop,discount_kop,total_kop,delivery_method,np_settlement_name,np_warehouse_name,order_lines(line_no,name,volume,qty,line_total_kop)')
+    .eq('id', row.order_id)
+    .maybeSingle();
+  if (error) throw new Error(`email order: ${error.message}`);
+  if (!o?.email) return; // no email given, or the order was deleted
+  const lines = [...(o.order_lines as {line_no: number; name: string; volume: string | null; qty: number; line_total_kop: number}[])].sort((a, b) => a.line_no - b.line_no);
+  // the same link the buyer got after checkout (token derived from the order's idempotency key)
+  const {token} = await guestToken(ctx, o.idempotency_key);
+  const mail = buildOrderMail({...o, lines} as OrderForMail, kind, `${ctx.siteUrl}/zamovlennia/${o.id}#t=${token}`);
+  await ctx.mailer.send(mail);
+  await ctx.db.rpc('svc_record_effect', {p_id: row.id, p_consumer: 'email'});
+}
+
 /** Outbox consumers. Each is idempotent per (event, consumer). */
 async function consume(ctx: Ctx, row: OutboxRow): Promise<void> {
+  if (row.topic === 'mono.remove_invoice') {
+    // The order was deleted by the owner: invalidate its still-open invoice at mono.
+    if (ctx.mono) await removeInvoice(ctx.mono, String(row.payload.invoice_id));
+    return;
+  }
   const t = await ctx.db.rpc('svc_record_timeline', {p_outbox: row.id});
   if (t.error) throw new Error(`timeline: ${t.error.message}`);
   await deliverTelegram(ctx, row);
+  await deliverEmail(ctx, row);
 }
 
 export async function processOutbox(ctx: Ctx, worker: string, limit = 20): Promise<{done: number; failed: number}> {
@@ -241,13 +272,15 @@ export async function processOutbox(ctx: Ctx, worker: string, limit = 20): Promi
 
 export async function runJobs(ctx: Ctx, worker: string): Promise<JobsReport> {
   let reconciled = 0;
-  if (ctx.liqpay) {
+  if (ctx.mono) {
     const {data, error} = await ctx.db.rpc('svc_claim_payment_checks', {p_limit: 20});
     if (error) throw dbError(error);
-    for (const a of (data ?? []) as {provider_order_id: string; expires_at: string}[]) {
+    for (const a of (data ?? []) as {attempt_id: string; invoice_id: string; status: string}[]) {
       try {
-        await reconcileAttempt(ctx, a.provider_order_id, a.expires_at);
+        const outcome = await reconcileInvoice(ctx, a.invoice_id);
         reconciled++;
+        // A superseded invoice still open at mono is invalidated.
+        if (a.status === 'superseded' && outcome !== 'stale') await removeInvoice(ctx.mono, a.invoice_id);
       } catch (e) {
         console.warn('reconcile failed:', e instanceof Error ? e.message.slice(0, 120) : 'unknown');
       }

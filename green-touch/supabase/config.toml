@@ -69,7 +69,7 @@ schema_paths = []
 enabled = true
 # Specifies an ordered list of seed files to load during db reset.
 # Supports glob patterns relative to supabase directory: "./seeds/*.sql"
-sql_paths = ["./seed.sql"]
+sql_paths = ["./seed.sql", "./owner_texts.sql"]
 
 [db.network_restrictions]
 # Enable management of network restrictions.
@@ -414,9 +414,9 @@ enabled = true
 # and column/key alignment. Set to "null" to emit raw, unformatted SQL.
 # format_options = "{\"keywordCase\":\"upper\",\"indent\":2,\"maxWidth\":180,\"commaStyle\":\"trailing\"}"
 
-# LiqPay callback: no user JWT; every request is checked against the LiqPay
-# signature (sha3-256 over private_key + data + private_key) inside the function.
-[functions.liqpay-callback]
+# Payment provider webhook: no user JWT; every request is checked against the
+# mono X-Sign ECDSA signature over the raw body inside the function.
+[functions.mono-webhook]
 verify_jwt = false
 
 # Woken by pg_cron (pg_net) with a shared secret header, not a user JWT.

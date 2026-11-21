@@ -23,6 +23,7 @@ import {ErrorState} from '../components/Status.tsx';
 import {ItemCard} from '../components/ui.tsx';
 import {getMeta, searchCatalog} from '../lib/api.ts';
 import {useMeta} from '../lib/browser.ts';
+import {pinchSurface, pinchTarget, usePinchColumns} from '../lib/gridZoom.ts';
 import {useMatchMedia} from '../lib/motion.ts';
 import type {CatalogMeta, FacetGroup} from '../lib/types.ts';
 
@@ -126,6 +127,7 @@ export default function CatalogPage() {
   const results = useQuery({queryKey: ['catalog', catalogParams(q).toString()], queryFn: () => searchCatalog(q), placeholderData: keepPreviousData});
   const wide = useMatchMedia('(min-width: 960px)');
   const [sheet, setSheet] = useState(false);
+  const {cols, ref: pinchRef, gridRef} = usePinchColumns(!wide);
   const [search, setSearch] = useState(q.q);
   useEffect(() => setSearch(q.q), [q.q]);
   useEffect(() => {
@@ -180,11 +182,13 @@ export default function CatalogPage() {
           actions={<Button label="Скинути фільтри" onClick={() => update({skin: [], need: [], purpose: [], age: [], season: [], band: null, min: null, max: null, q: ''})} />}
         />
       ) : (
-        <Grid columns={{minWidth: 170}} gap={4} align="stretch">
-          {results.data.items.map(i => (
-            <ItemCard key={i.id} item={i} />
-          ))}
-        </Grid>
+        <section ref={gridRef} style={pinchTarget} aria-label="Список товарів">
+          <Grid columns={wide ? {minWidth: 170} : {minWidth: 60, max: cols}} gap={wide ? 4 : cols >= 3 ? 2 : 3} align="stretch">
+            {results.data.items.map(i => (
+              <ItemCard key={i.id} item={i} size={wide || cols <= 2 ? 'full' : cols === 3 ? 'compact' : 'tiny'} morphKey={wide ? undefined : String(i.id)} />
+            ))}
+          </Grid>
+        </section>
       )}
       {total > PAGE_SIZE && <Pagination page={q.page} totalItems={total} pageSize={PAGE_SIZE} onChange={p => update({page: p}, true)} label="Сторінки каталогу" />}
     </VStack>
@@ -212,7 +216,9 @@ export default function CatalogPage() {
         </section>
       ) : (
         <>
-          {resultsView}
+          <section ref={pinchRef} style={pinchSurface} aria-label="Товари (зведіть або розведіть два пальці, щоб змінити розмір карток)">
+            {resultsView}
+          </section>
           <BottomSheet isOpen={sheet} onOpenChange={setSheet} label="Фільтри" height="tall">
             <VStack gap={4} padding={2}>
               {panel}

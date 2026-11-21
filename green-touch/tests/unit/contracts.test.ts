@@ -46,6 +46,7 @@ describe('checkout validation', () => {
   it('accepts ids and quantities only; a price field is ignored', () => {
     const r = checkoutRequestSchema.safeParse({
       idempotency_key: 'abcdefghijklmnop',
+      payment_method: 'prepay_manual',
       lines: [{id: '00000000-0000-4000-8000-000000000001', qty: 1, price_kop: 1}],
       customer: {first_name: 'Олена', last_name: 'Петренко-Коваль', phone: '0671234567'},
       delivery: {method: 'np_branch', settlement_ref: '00000000-0000-4000-8000-000000000001', city_ref: '00000000-0000-4000-8000-000000000002', warehouse_ref: '00000000-0000-4000-8000-000000000003'},

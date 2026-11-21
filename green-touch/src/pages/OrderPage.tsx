@@ -15,7 +15,6 @@ import {ErrorState, Loading} from '../components/Status.tsx';
 import {ApiError, orderStatus, payAgain} from '../lib/api.ts';
 import {orderToken, rememberOrder, useMeta, useOnline} from '../lib/browser.ts';
 import {FULFILLMENT_LABEL, PAYMENT_LABEL, formatUah, kyivDateTime} from '../lib/format.ts';
-import {goToLiqPay} from '../lib/liqpay.ts';
 
 function tokenFor(id: string): string | null {
   // A link from the order page may carry the token in the fragment (never sent to servers).
@@ -47,7 +46,7 @@ export default function OrderPage() {
   const pay = useMutation({
     mutationFn: () => payAgain(id, token!),
     onSuccess: r => {
-      if (r.payment.state === 'redirect') goToLiqPay(r.payment.checkout);
+      if (r.payment.state === 'redirect') window.location.assign(r.payment.page_url);
       else void q.refetch();
     },
   });
@@ -75,10 +74,21 @@ export default function OrderPage() {
           від {kyivDateTime(o.created_at)} (за київським часом)
         </Text>
       </VStack>
-      {o.payment_status === 'paid' && !o.needs_review && <Banner status="success" title="Оплату підтверджено LiqPay" description="Дякуємо! Засоби виготовляються під ваше замовлення; після відправлення тут зʼявиться ТТН." collapsible={false} />}
+      {o.payment_method === 'prepay_manual' && !o.prepay_received && o.fulfillment_status !== 'cancelled' && (
+        <Banner
+          status="info"
+          title={`Замовлення прийнято. Чекайте повідомлення у Viber`}
+          description={`Ми напишемо вам на номер з замовлення і надішлемо реквізити для передоплати ${formatUah(o.prepay_kop)}. Решту ${formatUah(o.cod_kop)} ви сплатите при отриманні на Новій пошті.`}
+          collapsible={false}
+        />
+      )}
+      {o.payment_method === 'prepay_manual' && o.prepay_received && (
+        <Banner status="success" title={`Передоплату ${formatUah(o.prepay_kop)} отримано`} description={`Засоби виготовляються під ваше замовлення. При отриманні на Новій пошті до сплати ${formatUah(o.cod_kop)}.`} collapsible={false} />
+      )}
+      {o.payment_status === 'paid' && !o.needs_review && <Banner status="success" title="Оплату підтверджено банком" description="Дякуємо! Засоби виготовляються під ваше замовлення; після відправлення тут зʼявиться ТТН." collapsible={false} />}
       {o.payment_status === 'paid' && o.needs_review && <Banner status="warning" title="Оплату отримано, замовлення перевіряє менеджер" description="Ми звʼяжемося з вами щодо відправлення." collapsible={false} />}
       {(o.payment_status === 'awaiting' || o.payment_status === 'processing') && (
-        <Banner status="info" title="Очікуємо підтвердження оплати від LiqPay" description="Сторінка оновиться автоматично. Якщо ви не завершили оплату, можна повернутися до неї." collapsible={false} />
+        <Banner status="info" title="Очікуємо підтвердження оплати від банку" description="Сторінка оновиться автоматично. Якщо ви не завершили оплату, можна повернутися до неї." collapsible={false} />
       )}
       {(o.payment_status === 'failed' || o.payment_status === 'expired' || o.payment_status === 'unpaid') && o.can_pay && (
         <Banner status="warning" title={o.payment_status === 'unpaid' ? 'Замовлення збережено, але не оплачено' : p.label} description="Можна безпечно спробувати оплатити це саме замовлення ще раз." collapsible={false} />
@@ -90,8 +100,17 @@ export default function OrderPage() {
       <Card padding={5}>
         <MetadataList orientation="horizontal">
           <MetadataListItem label="Оплата">
-            <Badge variant={p.variant} label={p.label} />
+            {o.payment_method === 'prepay_manual' ? (
+              <Badge variant={o.prepay_received ? 'success' : 'warning'} label={o.prepay_received ? `Передоплату ${formatUah(o.prepay_kop)} отримано` : `Очікуємо передоплату ${formatUah(o.prepay_kop)}`} />
+            ) : (
+              <Badge variant={p.variant} label={p.label} />
+            )}
           </MetadataListItem>
+          {o.payment_method === 'prepay_manual' && (
+            <MetadataListItem label="При отриманні (накладений платіж)">
+              <Text type="body">{formatUah(o.cod_kop)}</Text>
+            </MetadataListItem>
+          )}
           <MetadataListItem label="Обробка">
             <Text type="body">{FULFILLMENT_LABEL[o.fulfillment_status] ?? o.fulfillment_status}</Text>
           </MetadataListItem>

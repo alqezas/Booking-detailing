@@ -1,3 +1,4 @@
+import {AlertDialog} from '@astryxdesign/core/AlertDialog';
 import {Badge} from '@astryxdesign/core/Badge';
 import {Banner} from '@astryxdesign/core/Banner';
 import {Button} from '@astryxdesign/core/Button';
@@ -78,9 +79,31 @@ const useItems = () =>
     },
   });
 
+const deleteErrText = (e: unknown) => {
+  const err = e as {message?: string; hint?: string};
+  if (err?.message === 'ITEM_IN_KIT') return `Цей товар входить до складу наборів: ${err.hint ?? ''}. Спершу приберіть його зі складу цих наборів або видаліть набори.`;
+  if (err?.message === 'ITEM_NOT_FOUND') return 'Позицію вже видалено.';
+  return 'Не вдалося видалити.';
+};
+
 export function AdminItems() {
   const items = useItems();
+  const qc = useQueryClient();
   const [kind, setKind] = useState<string | null>(null);
+  const [toDelete, setToDelete] = useState<AdminItem | null>(null);
+  const remove = useMutation({
+    mutationFn: async (itemId: string) => {
+      const {data, error} = await admin().rpc('admin_delete_item', {p_item: itemId});
+      if (error) throw error;
+      const paths = (data as {image_paths: string[]}).image_paths;
+      // best effort: the item is already gone, leftover files are harmless
+      if (paths.length) await admin().storage.from('catalog').remove(paths);
+    },
+    onSettled: () => {
+      setToDelete(null);
+      void qc.invalidateQueries({queryKey: ['admin-items']});
+    },
+  });
   if (items.isPending) return <Loading />;
   if (items.isError) return <ErrorState error={items.error} onRetry={() => items.refetch()} />;
   const rows = items.data.filter(i => !kind || i.kind === kind);
@@ -95,6 +118,7 @@ export function AdminItems() {
         </HStack>
       </HStack>
       <Selector label="Тип" hasClear value={kind} onChange={setKind} options={Object.entries(KIND_LABEL).map(([value, label]) => ({value, label}))} placeholder="Усі" width={240} />
+      {remove.isError && <Banner status="error" title={deleteErrText(remove.error)} collapsible={false} />}
       <Table<AdminItem>
         data={rows}
         idKey="id"
@@ -107,7 +131,33 @@ export function AdminItems() {
           {key: 'status', header: 'Статус', renderCell: i => <Badge variant={i.status === 'published' ? 'success' : 'neutral'} label={STATUS_LABEL[i.status] ?? i.status} />},
           {key: 'orderable', header: 'Замовлення', renderCell: i => (i.orderable ? 'приймаються' : <Badge variant="neutral" label="на паузі" />)},
           {key: 'data', header: 'Заповнено', renderCell: i => `фото ${i.images} · фільтри ${i.facets}${i.kind === 'kit' ? ` · склад ${i.components}` : ''}`},
+          {
+            key: 'actions',
+            header: '',
+            align: 'end',
+            renderCell: i => (
+              <Button
+                label="Видалити"
+                size="sm"
+                variant="ghost"
+                onClick={() => {
+                  remove.reset();
+                  setToDelete(i);
+                }}
+              />
+            ),
+          },
         ]}
+      />
+      <AlertDialog
+        isOpen={toDelete !== null}
+        onOpenChange={open => !open && setToDelete(null)}
+        title={`Видалити «${toDelete?.name ?? ''}»?`}
+        description="Позиція зникне з магазину й адмінки разом із фото та фільтрами. Уже оформлені замовлення збережуть свій склад і ціни. Цю дію не можна скасувати. Щоб лише тимчасово прибрати з продажу, вимкніть «Приймаємо замовлення» в картці товару."
+        actionLabel="Видалити"
+        cancelLabel="Скасувати"
+        isActionLoading={remove.isPending}
+        onAction={() => toDelete && remove.mutate(toDelete.id)}
       />
     </VStack>
   );

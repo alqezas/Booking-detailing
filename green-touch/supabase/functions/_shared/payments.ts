@@ -1,82 +1,81 @@
 /**
- * Payment orchestration (LiqPay). Database steps are short transactions.
- *   begin_payment (lock order, guard against a second live payment)
- *   → sign the checkout payload (no network) → attach_checkout
+ * Online payment orchestration (plata by mono). Database steps are short
+ * transactions; the mono HTTP call happens between them, never inside one.
+ *   begin_payment (lock order, guard against a second live invoice)
+ *   → createInvoice (HTTP) → attach_invoice | fail_attempt
  * A crash between the two leaves a 'creating' attempt; the next begin_payment
- * marks it abandoned after 45 s and prepares a new one (the unsaved payload was
- * never shown to the buyer, so it cannot be paid).
- * The browser then POSTs data+signature to LiqPay; the redirect back proves
- * nothing — only a verified callback or a status request changes the order.
+ * marks it abandoned after 45 s and starts over (the orphan invoice URL was never
+ * shown, so it cannot be paid). Only orders with payment_method = full_online pay here;
+ * the 150 грн prepayment is arranged by the owner in Viber, outside the site.
  */
 import type {Ctx} from './ctx.ts';
 import {dbError} from './http.ts';
-import {checkoutPayload, checkoutUrl, requestStatus, toEvent, type LiqPayStatus} from './liqpay.ts';
+import {createInvoice, invoiceStatus, MonoError, removeInvoice, toEvent, type MonoStatus} from './mono.ts';
 
-export type Checkout = {url: string; data: string; signature: string};
-export type PaymentStart = {state: 'redirect'; checkout: Checkout} | {state: 'paid' | 'processing' | 'in_progress' | 'unavailable'};
+export type PaymentStart = {state: 'redirect'; page_url: string} | {state: 'paid' | 'processing' | 'in_progress' | 'unavailable'};
 
 type Begin =
   | {state: 'paid' | 'processing' | 'in_progress'}
-  | {state: 'existing'; data: string; signature: string}
-  | {state: 'new'; attempt_id: string; amount_kop: number; number: number; provider_order_id: string; expires_at: string};
+  | {state: 'existing'; page_url: string}
+  | {state: 'new'; attempt_id: string; amount_kop: number; number: number; validity_s: number; cancel_invoice: string | null};
 
 export async function startPayment(ctx: Ctx, orderId: string): Promise<PaymentStart> {
-  if (!ctx.liqpay) return {state: 'unavailable'};
+  if (!ctx.mono) return {state: 'unavailable'};
   const {data, error} = await ctx.db.rpc('svc_begin_payment', {p_order: orderId, p_validity_minutes: ctx.paymentValidityMinutes});
   if (error) throw dbError(error);
   const b = data as Begin;
-  const url = checkoutUrl(ctx.liqpay);
-  if (b.state === 'existing') return {state: 'redirect', checkout: {url, data: b.data, signature: b.signature}};
+  if (b.state === 'existing') return {state: 'redirect', page_url: b.page_url};
   if (b.state !== 'new') return {state: b.state};
 
-  let payload: {data: string; signature: string};
+  if (b.cancel_invoice) await removeInvoice(ctx.mono, b.cancel_invoice);
+
+  let invoice: {invoiceId: string; pageUrl: string};
   try {
-    payload = checkoutPayload(ctx.liqpay, {
+    invoice = await createInvoice(ctx.mono, {
       amountKop: b.amount_kop,
-      orderId: b.provider_order_id,
-      description: `Оплата замовлення №${b.number}, Green Touch`,
-      resultUrl: `${ctx.siteUrl}/zamovlennia/${orderId}`,
-      serverUrl: ctx.callbackUrl,
-      expiresAt: new Date(b.expires_at),
+      reference: `GT-${b.number}`,
+      destination: `Оплата замовлення №${b.number}, Green Touch`,
+      redirectUrl: `${ctx.siteUrl}/zamovlennia/${orderId}`,
+      webhookUrl: ctx.webhookUrl,
+      validityS: b.validity_s,
     });
   } catch (e) {
-    await ctx.db.rpc('svc_fail_attempt', {p_attempt: b.attempt_id, p_error: e instanceof Error ? e.message : 'sign failed'});
+    const msg = e instanceof MonoError ? e.message : 'unexpected';
+    console.error('mono create failed:', msg);
+    await ctx.db.rpc('svc_fail_attempt', {p_attempt: b.attempt_id, p_error: msg});
     return {state: 'unavailable'};
   }
-  const att = await ctx.db.rpc('svc_attach_checkout', {p_attempt: b.attempt_id, p_data: payload.data, p_signature: payload.signature});
-  if (att.error) throw dbError(att.error);
-  if ((att.data as {state: string}).state !== 'created') return {state: 'in_progress'};
-  return {state: 'redirect', checkout: {url, ...payload}};
+
+  const att = await ctx.db.rpc('svc_attach_invoice', {p_attempt: b.attempt_id, p_invoice: invoice.invoiceId, p_page_url: invoice.pageUrl});
+  if (att.error) {
+    // The invoice exists at mono but we could not save it: invalidate it so it can't be paid unseen.
+    await removeInvoice(ctx.mono, invoice.invoiceId);
+    throw dbError(att.error);
+  }
+  if ((att.data as {state: string}).state === 'superseded') {
+    await removeInvoice(ctx.mono, invoice.invoiceId);
+    return {state: 'in_progress'};
+  }
+  return {state: 'redirect', page_url: invoice.pageUrl};
 }
 
-export async function applyStatus(ctx: Ctx, s: LiqPayStatus, source: 'callback' | 'reconcile'): Promise<string> {
-  const {status, event} = toEvent(ctx.liqpay!, s, source);
-  if (!status) return 'ignored_status';
-  const {data, error} = await ctx.db.rpc('svc_apply_payment_event', {p: event});
+export async function applyStatus(ctx: Ctx, s: MonoStatus, source: 'webhook' | 'reconcile'): Promise<string> {
+  const {data, error} = await ctx.db.rpc('svc_apply_payment_event', {p: toEvent(s, source)});
   if (error) throw dbError(error);
   return data as string;
 }
 
-/** Ask LiqPay for one payment's status and apply it. An unknown payment past its validity is expired. */
-export async function reconcileAttempt(ctx: Ctx, providerOrderId: string, expiresAt: string): Promise<string> {
-  if (!ctx.liqpay) return 'not_configured';
-  const s = await requestStatus(ctx.liqpay, providerOrderId);
-  if (s) return applyStatus(ctx, s, 'reconcile');
-  if (Date.parse(expiresAt) < Date.now()) {
-    const {data, error} = await ctx.db.rpc('svc_apply_payment_event', {
-      p: {dedupe_key: `${providerOrderId}:expired`, source: 'reconcile', provider_order_id: providerOrderId, provider_status: 'not_found_after_expiry', status: 'expired'},
-    });
-    if (error) throw dbError(error);
-    return data as string;
-  }
-  return 'not_started';
+/** Ask mono for the current status of one invoice and apply it. */
+export async function reconcileInvoice(ctx: Ctx, invoiceId: string): Promise<string> {
+  if (!ctx.mono) return 'not_configured';
+  return applyStatus(ctx, await invoiceStatus(ctx.mono, invoiceId), 'reconcile');
 }
 
-/** Reconcile every open payment of an order (used when the buyer looks at the status page). */
+/** Reconcile every open invoice of an order (used when the buyer looks at the status page). */
 export async function reconcileOrder(ctx: Ctx, orderId: string): Promise<void> {
   const {data, error} = await ctx.db.rpc('svc_order_attempts', {p_order: orderId});
   if (error) throw dbError(error);
-  for (const a of (data ?? []) as {provider_order_id: string; expires_at: string}[]) {
-    await reconcileAttempt(ctx, a.provider_order_id, a.expires_at).catch(e => console.warn('reconcile failed:', e instanceof Error ? e.message : 'unknown'));
+  for (const a of (data ?? []) as {invoice_id: string}[]) {
+    await reconcileInvoice(ctx, a.invoice_id).catch(e => console.warn('reconcile failed:', e instanceof Error ? e.message : 'unknown'));
   }
 }

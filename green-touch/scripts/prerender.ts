@@ -96,6 +96,18 @@ if (url && key) {
 }
 
 for (const p of pages) write(p.path, render(p));
+
+// /admin gets its own installable identity («GT Адмін»), so the owner can put the
+// admin on her home screen separately from the shop. Sign-in is still required.
+write(
+  '/admin',
+  shell
+    .replace(/<title>[^<]*<\/title>/, '<title>Адмін-панель · Green Touch</title>')
+    .replace('href="/manifest.webmanifest"', 'href="/admin.webmanifest"')
+    .replace(/<link rel="apple-touch-icon" href="[^"]*" \/>/, '<link rel="apple-touch-icon" href="/icons/admin-maskable-512.png" />')
+    .replace(/<meta name="theme-color" content="[^"]*" \/>/, '<meta name="theme-color" content="#1F2B1C" />')
+    .replace('<!--prerender-head-->', '<meta name="robots" content="noindex, nofollow" />\n    <meta name="apple-mobile-web-app-title" content="GT Адмін" />'),
+);
 if (site) {
   const urls = pages.map(p => `  <url><loc>${esc(site + p.path)}</loc></url>`).join('\n');
   writeFileSync(join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`);

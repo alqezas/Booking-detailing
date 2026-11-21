@@ -1,6 +1,6 @@
 # Green Touch shop: types, unit, SQL/integration and Playwright tests, build.
 # External services are replaced by the controlled test adapters (tests/fakes);
-# this pipeline does NOT check the real LiqPay or Nova Poshta.
+# this pipeline does NOT check the real plata by mono or Nova Poshta.
 name: green-touch
 
 on:
@@ -49,12 +49,9 @@ jobs:
           ALLOWED_ORIGINS=http://localhost:4180
           ORDER_TOKEN_SECRET=$(openssl rand -base64 32)
           JOBS_SECRET=$(openssl rand -base64 32)
-          LIQPAY_PUBLIC_KEY=sandbox_test_public
-          LIQPAY_PRIVATE_KEY=sandbox_test_private
-          LIQPAY_API_URL=http://$GW:55480
-          LIQPAY_CHECKOUT_URL=http://127.0.0.1:55480/api/3/checkout
-          LIQPAY_SANDBOX=1
-          LIQPAY_CALLBACK_URL=http://127.0.0.1:55421/functions/v1/liqpay-callback
+          MONO_TOKEN=test-mono-token
+          MONO_API_URL=http://$GW:55480
+          MONO_WEBHOOK_URL=http://127.0.0.1:55421/functions/v1/mono-webhook
           NP_API_URL=http://$GW:55481/v2.0/json/
           EOF
           eval "$(npx supabase status -o env)"

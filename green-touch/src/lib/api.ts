@@ -71,7 +71,7 @@ async function fn<T>(name: string, body: unknown, signal?: AbortSignal): Promise
   return data as T;
 }
 
-export type CheckoutResponse = {order_id: string; number: number; total_kop: number; existing: boolean; token: string; payment: PaymentStart};
+export type CheckoutResponse = {order_id: string; number: number; total_kop: number; payment_method: string; existing: boolean; token: string; payment: PaymentStart};
 export const submitCheckout = (body: CheckoutRequest) => fn<CheckoutResponse>('checkout', body);
 export const orderStatus = (order_id: string, token: string) => fn<{order: GuestOrder}>('order', {order_id, token, action: 'status'});
 export const payAgain = (order_id: string, token: string) => fn<{order: GuestOrder; payment: PaymentStart}>('order', {order_id, token, action: 'pay'});

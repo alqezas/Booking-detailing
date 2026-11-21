@@ -58,6 +58,8 @@ export function dbError(error: {message?: string; details?: string | null; code?
     EMPTY_CART: 400,
     CART_TOO_LARGE: 400,
     BAD_QTY: 400,
+    PAYMENT_METHOD_UNAVAILABLE: 409,
+    NOT_ONLINE_PAYMENT: 409,
   };
   const code = error.message ?? '';
   if (code in known) {

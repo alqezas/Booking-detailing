@@ -4,29 +4,30 @@ import {Card} from '@astryxdesign/core/Card';
 import {CheckboxInput} from '@astryxdesign/core/CheckboxInput';
 import {Grid} from '@astryxdesign/core/Grid';
 import {HStack, VStack} from '@astryxdesign/core/Layout';
+import {RadioList, RadioListItem} from '@astryxdesign/core/RadioList';
 import {Link} from '@astryxdesign/core/Link';
 import {Heading, Text} from '@astryxdesign/core/Text';
 import {TextArea} from '@astryxdesign/core/TextArea';
 import {TextInput} from '@astryxdesign/core/TextInput';
+import {useQuery} from '@tanstack/react-query';
 import {useEffect, useRef, useState} from 'react';
 import {useNavigate} from 'react-router';
-import {customerSchema, type CustomerInput} from '../../supabase/functions/_shared/contracts.ts';
+import {customerSchema, type CustomerInput, type PaymentMethod} from '../../supabase/functions/_shared/contracts.ts';
 import {NpPicker, type NpValue} from '../components/NpPicker.tsx';
 import {Page} from '../components/ShopLayout.tsx';
 import {Loading} from '../components/Status.tsx';
 import {PageTitle} from '../components/ui.tsx';
-import {ApiError, submitCheckout} from '../lib/api.ts';
+import {ApiError, getMeta, submitCheckout} from '../lib/api.ts';
 import {dropDraft, loadDraft, rememberOrder, saveDraft, useMeta, useOnline} from '../lib/browser.ts';
 import {cartPayload, dispatchCart, useCart} from '../lib/cart.ts';
 import {formatUah} from '../lib/format.ts';
-import {goToLiqPay} from '../lib/liqpay.ts';
 import {Totals, priceChanges, useQuote} from './CartPage.tsx';
 
 const DRAFT = 'gt-checkout-v1';
-type Draft = {customer: CustomerInput; np: NpValue; consent: boolean; key?: {value: string; fingerprint: string}};
-type Errors = Partial<Record<'first_name' | 'last_name' | 'phone' | 'email' | 'comment' | 'method' | 'settlement' | 'warehouse' | 'consent', string>>;
+type Draft = {customer: CustomerInput; np: NpValue; pay: PaymentMethod | null; consent: boolean; key?: {value: string; fingerprint: string}};
+type Errors = Partial<Record<'first_name' | 'last_name' | 'phone' | 'email' | 'comment' | 'method' | 'settlement' | 'warehouse' | 'pay' | 'consent', string>>;
 
-const emptyDraft: Draft = {customer: {first_name: '', last_name: '', phone: '', email: '', comment: ''}, np: {method: null, settlement: null, warehouse: null}, consent: false};
+const emptyDraft: Draft = {customer: {first_name: '', last_name: '', phone: '', email: '', comment: ''}, np: {method: null, settlement: null, warehouse: null}, pay: null, consent: false};
 
 function newKey(): string {
   const b = crypto.getRandomValues(new Uint8Array(18));
@@ -40,6 +41,7 @@ function validate(d: Draft): Errors {
   if (!d.np.method) e.method = 'Оберіть спосіб доставки';
   if (!d.np.settlement) e.settlement = 'Оберіть населений пункт зі списку';
   if (!d.np.warehouse) e.warehouse = d.np.method === 'np_postomat' ? 'Оберіть поштомат зі списку' : 'Оберіть відділення зі списку';
+  if (!d.pay) e.pay = 'Оберіть спосіб оплати';
   if (!d.consent) e.consent = 'Потрібна ваша згода';
   return e;
 }
@@ -50,17 +52,19 @@ export default function CheckoutPage() {
   const online = useOnline();
   const quote = useQuote();
   const navigate = useNavigate();
+  const meta = useQuery({queryKey: ['meta'], queryFn: getMeta, staleTime: 5 * 60_000});
   const [draft, setDraft] = useState<Draft>(() => ({...emptyDraft, ...(loadDraft<Draft>(DRAFT) ?? {})}));
   const [errors, setErrors] = useState<Errors>({});
   const [formError, setFormError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const errorRef = useRef<HTMLElement>(null);
+  const submitted = useRef(false);
 
   // The draft survives reloads and app updates; it is removed after a successful order.
   useEffect(() => saveDraft(DRAFT, draft), [draft]);
 
   if (cart.lines.length === 0) {
-    navigate('/koshyk', {replace: true});
+    if (!submitted.current) navigate('/koshyk', {replace: true});
     return null;
   }
   if (quote.isPending && online) return <Loading />;
@@ -70,6 +74,11 @@ export default function CheckoutPage() {
     setErrors(e => ({...e, ...Object.fromEntries(Object.keys(patch).map(k => [k, undefined]))}));
   };
   const changes = priceChanges(cart.lines, quote.data);
+  const payCfg = meta.data?.settings.payment ?? {};
+  const prepayKop = payCfg.prepay_kop ?? 15000;
+  const total = quote.data?.total_kop ?? 0;
+  const prepayAllowed = payCfg.prepay_enabled !== false && total > prepayKop;
+  const fullAllowed = payCfg.full_enabled !== false;
 
   async function submit() {
     setFormError(null);
@@ -88,6 +97,7 @@ export default function CheckoutPage() {
       lines,
       customer: draft.customer,
       delivery: {method: draft.np.method!, settlement_ref: draft.np.settlement!.settlement_ref, city_ref: draft.np.settlement!.city_ref, warehouse_ref: draft.np.warehouse!.ref},
+      payment_method: draft.pay!,
       consent: true as const,
     };
     // Same content → same idempotency key (a retry never creates a second order).
@@ -98,20 +108,23 @@ export default function CheckoutPage() {
     try {
       const r = await submitCheckout({...body, idempotency_key: key, ...(quote.data ? {expected_total_kop: quote.data.total_kop} : {})});
       rememberOrder(r.order_id, r.token);
-      dispatchCart({type: 'clear'});
       dropDraft(DRAFT);
+      // leave the page first: an emptied cart must not bounce the buyer back to /koshyk
+      submitted.current = true;
       if (r.payment.state === 'redirect') {
-        goToLiqPay(r.payment.checkout);
+        dispatchCart({type: 'clear'});
+        window.location.assign(r.payment.page_url);
         return;
       }
-      navigate(`/zamovlennia/${r.order_id}`);
+      navigate(`/zamovlennia/${r.order_id}`, {replace: true});
+      dispatchCart({type: 'clear'});
     } catch (err) {
       const a = err instanceof ApiError ? err : null;
       if (a?.code === 'BAD_REQUEST') {
         const fields = (a.details as {fields?: {path: string; message: string}[]} | null)?.fields ?? [];
         const map: Errors = {};
         for (const f of fields) {
-          const k = f.path.replace(/^customer\./, '').replace(/^delivery\.(settlement_ref|city_ref)$/, 'settlement').replace(/^delivery\.warehouse_ref$/, 'warehouse').replace(/^delivery\.method$/, 'method');
+          const k = f.path.replace(/^customer\./, '').replace(/^delivery\.(settlement_ref|city_ref)$/, 'settlement').replace(/^delivery\.warehouse_ref$/, 'warehouse').replace(/^delivery\.method$/, 'method').replace(/^payment_method$/, 'pay');
           map[k as keyof Errors] ??= f.message;
         }
         setErrors(map);
@@ -138,8 +151,8 @@ export default function CheckoutPage() {
               <TextInput label="Імʼя" value={draft.customer.first_name ?? ''} onChange={v => set({first_name: v})} status={st('first_name')} isRequired autoComplete="given-name" />
               <TextInput label="Прізвище" value={draft.customer.last_name ?? ''} onChange={v => set({last_name: v})} status={st('last_name')} isRequired autoComplete="family-name" />
             </Grid>
-            <TextInput label="Телефон" value={draft.customer.phone ?? ''} onChange={v => set({phone: v})} status={st('phone')} placeholder="+380 67 123 45 67" isRequired autoComplete="tel" />
-            <TextInput label="Email" type="email" value={draft.customer.email ?? ''} onChange={v => set({email: v})} status={st('email')} isOptional autoComplete="email" />
+            <TextInput label="Телефон" description="Для звʼязку щодо замовлення, зокрема у Viber" value={draft.customer.phone ?? ''} onChange={v => set({phone: v})} status={st('phone')} placeholder="+380 67 123 45 67" isRequired autoComplete="tel" />
+            <TextInput label="Email" description="Надішлемо підтвердження замовлення на пошту" type="email" value={draft.customer.email ?? ''} onChange={v => set({email: v})} status={st('email')} isOptional autoComplete="email" />
           </VStack>
           <VStack gap={4}>
             <Heading level={2}>Доставка</Heading>
@@ -151,6 +164,39 @@ export default function CheckoutPage() {
               }}
               errors={{method: errors.method, settlement: errors.settlement, warehouse: errors.warehouse}}
             />
+          </VStack>
+          <VStack gap={3}>
+            <Heading level={2}>Оплата</Heading>
+            <RadioList
+              label="Спосіб оплати"
+              value={draft.pay ?? ''}
+              onChange={v => {
+                setDraft(d => ({...d, pay: v as PaymentMethod}));
+                setErrors(e => ({...e, pay: undefined}));
+              }}
+              status={st('pay')}
+              isRequired
+            >
+              {fullAllowed && (
+                <RadioListItem
+                  value="full_online"
+                  label={`Повна оплата онлайн${total ? ` — ${formatUah(total)}` : ''}`}
+                  description="Одразу після оформлення відкриється сторінка оплати monobank (plata by mono)."
+                />
+              )}
+              {payCfg.prepay_enabled !== false && (
+                <RadioListItem
+                  value="prepay_manual"
+                  label={`Передоплата ${formatUah(prepayKop)}, решта — на Новій пошті`}
+                  description={
+                    prepayAllowed
+                      ? `На сайті нічого не сплачуєте: ми напишемо вам у Viber на вказаний номер і надішлемо реквізити для передоплати. Решту ${formatUah(total - prepayKop)} — при отриманні (накладений платіж; комісію за переказ Нова пошта стягує за своїми тарифами).`
+                      : 'Доступно для замовлень на суму більшу за передоплату.'
+                  }
+                  isDisabled={!prepayAllowed}
+                />
+              )}
+            </RadioList>
           </VStack>
           <TextArea label="Коментар до замовлення" value={draft.customer.comment ?? ''} onChange={v => set({comment: v})} status={st('comment')} isOptional rows={3} maxLength={1000} />
           <CheckboxInput
@@ -203,7 +249,7 @@ export default function CheckoutPage() {
             {formError && <Banner status="error" title={formError} collapsible={false} />}
           </section>
           <Button
-            label={quote.data ? `Підтвердити й оплатити ${formatUah(quote.data.total_kop)}` : 'Підтвердити й оплатити'}
+            label={draft.pay === 'prepay_manual' ? 'Підтвердити замовлення' : quote.data ? `Підтвердити й оплатити ${formatUah(quote.data.total_kop)}` : 'Підтвердити й оплатити'}
             variant="primary"
             size="lg"
             width="100%"
@@ -212,7 +258,9 @@ export default function CheckoutPage() {
             onClick={() => void submit()}
           />
           <Text type="supporting" color="secondary">
-            Після підтвердження відкриється сторінка оплати LiqPay. Замовлення вважається оплаченим лише після підтвердження від LiqPay; виготовлення починається після оплати.
+            {draft.pay === 'prepay_manual'
+              ? 'Після підтвердження ми напишемо вам у Viber з реквізитами для передоплати. Виготовлення починається після передоплати.'
+              : 'Після підтвердження відкриється сторінка оплати monobank. Замовлення вважається оплаченим лише після підтвердження від банку; виготовлення починається після оплати.'}
           </Text>
         </VStack>
       </Grid>

@@ -5,28 +5,28 @@ import {anon, closeDb, createItem, db, tag} from './helpers.ts';
 afterAll(closeDb);
 
 const SEED = [
-  ['ochyshchennia', 'Пінка для вмивання', '150 мл', 400],
-  ['ochyshchennia', 'Ензимна пудра', '50 мл', 520],
-  ['toniky', 'Тонік для нормальної та комбінованої шкіри', '100 мл', 400],
-  ['toniky', 'Тонік для сухої шкіри', '100 мл', 450],
-  ['toniky', 'Тонік для проблемної шкіри', '100 мл', 400],
-  ['syrovatky', 'Сироватка з гіалуроновою кислотою', '30 мл', 500],
-  ['syrovatky', 'Сироватка з вітаміном C та ніацинамідом', '30 мл', 950],
-  ['syrovatky', 'Сироватка з ретинолом', '30 мл', 960],
-  ['syrovatky', 'Пептидна сироватка для шкіри навколо очей', '30 мл', 400],
-  ['kremy', 'Антивіковий крем Anti-Age', '50 мл', 1100],
+  ['ochyshchennia', 'Пінка для вмивання обличчя для всіх типів шкіри', '150 мл', 400],
+  ['ochyshchennia', 'Ензимна пудра для вмивання', '50 мл', 520],
+  ['toniky', 'Тонік для нормальної та комбінованої шкіри з гіалуроновою кислотою', '100 мл', 400],
+  ['toniky', 'Тонік для сухої шкіри з гіалуроновою кислотою', '100 мл', 450],
+  ['toniky', 'Тонік з пребіотиком для проблемної шкіри з висипаннями', '100 мл', 400],
+  ['syrovatky', 'Сироватка для обличчя «Глибоке зволоження»', '30 мл', 500],
+  ['syrovatky', 'Сироватка з вітаміном С та ніацинамідом', '30 мл', 950],
+  ['syrovatky', 'Сироватка для обличчя з ретинолом', '30 мл', 960],
+  ['syrovatky', 'Пептидна сироватка для шкіри навколо очей', '10 мл', 400],
+  ['kremy', 'Крем Anti-Age з пептидним комплексом', '50 мл', 1100],
   ['kremy', 'Крем з гіалуроновою кислотою', '50 мл', 1100],
-  ['kremy', 'Живильний крем', '50 мл', 950],
-  ['kremy', 'Універсальний крем', '50 мл', 900],
-  ['kremy', 'Крем для проблемної шкіри', '50 мл', 900],
-  ['kremy', 'Матуючий крем', '50 мл', 900],
+  ['kremy', 'Живильний крем для обличчя', '50 мл', 950],
+  ['kremy', 'Універсальний зволожувальний крем', '50 мл', 900],
+  ['kremy', 'Крем для проблемної шкіри з висипаннями', '50 мл', 900],
+  ['kremy', 'Зволожувальний матуючий крем для жирної шкіри', '50 мл', 900],
   ['kremy', 'Крем з бакучіолом', '50 мл', 1500],
-  ['kremy', 'Крем з ботокс-ефектом', '50 мл', 1500],
+  ['kremy', 'Крем із ботокс-ефектом', '50 мл', 1500],
   ['kremy', 'Сонцезахисний крем SPF 30', '50 мл', 1100],
-  ['kremy', 'Крем проти куперозу та розацеа', '50 мл', 1200],
+  ['kremy', 'Крем для шкіри з куперозом та розацеа', '50 мл', 1200],
   ['kremy', 'Крем для шкіри навколо очей', '15 мл', 550],
-  ['masky', 'Маска з білою глиною', '50 мл', 1200],
-  ['masky', 'Маска з феруловою кислотою та рожевою глиною', '50 мл', 1300],
+  ['masky', 'Маска для обличчя «Живлення та відновлення» з білою глиною', '50 мл', 1200],
+  ['kremy', 'Крем із церамідами', '50 мл', 1100], // gt-23, added 15.11.2026
 ] as const;
 
 const seedRows = async () =>
@@ -38,16 +38,25 @@ const seedRows = async () =>
   ).rows;
 
 describe('starting catalog seed', () => {
-  it('has exactly the 22 products with exact names, volumes and prices', async () => {
+  it('has exactly the 22 products (gt-22 removed, gt-23 added by the owner) with exact names, volumes and prices', async () => {
     const rows = await seedRows();
     expect(rows).toHaveLength(22);
     expect(rows.map(r => [r.category, r.name, r.volume, r.price_kop / 100])).toEqual(SEED.map(s => [...s]));
-    // nothing invented: properties empty, everything made to order, no kits or samples seeded
+    // the owner's texts (owner_texts.sql, 21.11.2026) for every product; all made to order, no kits or samples seeded
     for (const r of rows) {
-      expect(r).toMatchObject({kind: 'product', orderable: true, description: null, inci: null});
+      expect(r).toMatchObject({kind: 'product', orderable: true});
+      expect(r.description).toBeTruthy();
+      expect(r.inci).toBeTruthy();
     }
+    // filters: exactly the owner's lists of 15.11.2026 (migration 20261115000500), nothing else
     const facets = await db().query('select count(*)::int as n from item_facets f join items i on i.id = f.item_id where i.seed_key is not null');
-    expect(facets.rows[0].n).toBe(0);
+    expect(facets.rows[0].n).toBe(130);
+    const of = async (seed: string) =>
+      (await db().query("select string_agg(f.slug, ',' order by f.group_key, f.slug) as s from item_facets x join facets f on f.id = x.facet_id join items i on i.id = x.item_id where i.seed_key = $1", [seed])).rows[0].s;
+    expect(await of('gt-14')).toBe('postakne,vysypannia,zhyrnyi-blysk,problemna');
+    expect(await of('gt-23')).toBe('pochervoninnia,pruzhnist,sukhist,zmorshky,chutlyva,sukha,zrila');
+    expect(await of('gt-18')).toBe('pihmentatsiia,pochervoninnia,postakne,zakhyst-sontse,sukha,zrila');
+    expect((await db().query("select count(*)::int as n from items where seed_key = 'gt-22'")).rows[0].n).toBe(0); // removed by the owner
   });
 
   it('is re-runnable without duplicates and keeps owner edits', async () => {
@@ -56,7 +65,7 @@ describe('starting catalog seed', () => {
     await db().query(seed);
     await db().query(seed);
     const rows = await seedRows();
-    expect(rows).toHaveLength(22);
+    expect(rows).toHaveLength(22); // the removed mask does not come back
     const edited = await db().query("select price_kop, description from items where seed_key = 'gt-01'");
     expect(edited.rows[0]).toEqual({price_kop: 41500, description: 'Опис від власниці'});
     await db().query("update items set price_kop = 40000, description = null where seed_key = 'gt-01'");

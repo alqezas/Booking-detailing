@@ -65,7 +65,7 @@ describe('anonymous visitor', () => {
   });
   it('can use the public catalog RPCs and dictionaries', async () => {
     expect((await anon().rpc('catalog_meta')).error).toBeNull();
-    expect((await anon().from('facets').select('slug').eq('group_key', 'skin_type')).data).toHaveLength(7);
+    expect((await anon().from('facets').select('slug').eq('group_key', 'skin_type')).data).toHaveLength(6); // «Нормальна» і «Комбінована» обʼєднані
   });
 });
 
@@ -106,11 +106,78 @@ describe('admin', () => {
     expect(row).toEqual({payment_status: 'unpaid', fulfillment_status: 'cancelled'});
   });
 
+  it('prepayment: only the admin records it, and only for prepay orders; then shipping is allowed', async () => {
+    expect((await user.rpc('admin_mark_prepay', {p_order: orderId})).error?.message).toBe('FORBIDDEN');
+    expect((await owner.rpc('admin_mark_prepay', {p_order: orderId})).error?.message).toBe('NOT_PREPAY_ORDER');
+    await db().query("update orders set payment_method = 'prepay_manual', prepay_kop = 1000, fulfillment_status = 'new' where id = $1", [orderId]);
+    expect((await owner.rpc('admin_update_order', {p_order: orderId, p_fulfillment: 'processing'})).error?.message).toBe('NOT_READY_TO_SHIP');
+    expect((await owner.rpc('admin_mark_prepay', {p_order: orderId, p_note: 'переказ на картку'})).error).toBeNull();
+    expect((await owner.rpc('admin_update_order', {p_order: orderId, p_fulfillment: 'processing'})).error).toBeNull();
+    const row = (await db().query('select payment_status, prepay_received_at is not null as got from orders where id = $1', [orderId])).rows[0];
+    // the online payment status is untouched by the manual prepayment
+    expect(row).toEqual({payment_status: 'unpaid', got: true});
+    await db().query("update orders set payment_method = 'full_online', prepay_kop = 0, prepay_received_at = null, fulfillment_status = 'new' where id = $1", [orderId]);
+  });
+
   it('a paid order can be processed and shipped with a TTN', async () => {
     await db().query("update orders set payment_status = 'paid', fulfillment_status = 'new', paid_at = now() where id = $1", [orderId]);
     expect((await owner.rpc('admin_update_order', {p_order: orderId, p_fulfillment: 'shipped'})).error?.message).toBe('TTN_REQUIRED');
     expect((await owner.rpc('admin_update_order', {p_order: orderId, p_fulfillment: 'shipped', p_ttn: '2045 0000 0000 00'})).error).toBeNull();
     expect((await db().query('select ttn from orders where id = $1', [orderId])).rows[0].ttn).toBe('20450000000000');
+  });
+
+  it('delete: admin only, never a paid or in-flight order; an open mono invoice is queued for removal', async () => {
+    const inv = `inv-${t}`;
+    expect((await user.rpc('admin_delete_order', {p_order: orderId})).error?.message).toBe('FORBIDDEN');
+    expect((await anon().rpc('admin_delete_order', {p_order: orderId})).error).not.toBeNull();
+    // still paid from the previous test
+    expect((await owner.rpc('admin_delete_order', {p_order: orderId})).error?.message).toBe('ORDER_PAID');
+
+    await db().query("update orders set payment_status = 'awaiting', paid_at = null where id = $1", [orderId]);
+    const att = (await db().query("insert into payment_attempts (order_id, status, provider_order_id, amount_kop, expires_at) values ($1, 'processing', $2, 10000, now() + interval '1 day') returning id", [orderId, inv])).rows[0].id;
+    await db().query("insert into payment_events (dedupe_key, source, provider_order_id, attempt_id, provider_status, status) values ($1, 'webhook', $2, $3, 'processing', 'processing')", [`${inv}:p`, inv, att]);
+    expect((await owner.rpc('admin_delete_order', {p_order: orderId})).error?.message).toBe('PAYMENT_IN_PROGRESS');
+
+    await db().query("update payment_attempts set status = 'created' where id = $1", [att]);
+    const del = await owner.rpc('admin_delete_order', {p_order: orderId});
+    expect(del.error).toBeNull();
+    expect((await db().query('select count(*)::int as n from orders where id = $1', [orderId])).rows[0].n).toBe(0);
+    expect((await db().query('select count(*)::int as n from order_lines where order_id = $1', [orderId])).rows[0].n).toBe(0);
+    expect((await db().query('select count(*)::int as n from payment_attempts where order_id = $1', [orderId])).rows[0].n).toBe(0);
+    // provider history stays, detached from the deleted attempt
+    expect((await db().query('select attempt_id from payment_events where dedupe_key = $1', [`${inv}:p`])).rows[0].attempt_id).toBeNull();
+    const ob = (await db().query("select order_id, payload->>'invoice_id' as inv from outbox where topic = 'mono.remove_invoice' and dedupe_key = $1", [`mono.remove_invoice:${inv}`])).rows;
+    expect(ob).toEqual([{order_id: null, inv}]);
+    expect((await owner.rpc('admin_delete_order', {p_order: orderId})).error?.message).toBe('ORDER_NOT_FOUND');
+    await db().query('delete from payment_events where dedupe_key = $1', [`${inv}:p`]);
+    await db().query('delete from outbox where dedupe_key = $1', [`mono.remove_invoice:${inv}`]);
+  });
+
+  it('item delete: admin only, kit components protected, past orders keep their snapshot, seed items stay deleted', async () => {
+    const p = await createItem({name: `${t} del product`, price_kop: 20000});
+    const kit = await createItem({name: `${t} del kit`, kind: 'kit', components: [{id: p, qty: 1}]});
+    await db().query('update items set seed_key = $2 where id = $1', [p, `sk-${t}`]);
+    const r = await checkout(makeCtx({npUrl: np.url}), checkoutBody([{id: p, qty: 1}]));
+    const order = r.data.order_id as string;
+
+    expect((await user.rpc('admin_delete_item', {p_item: p})).error?.message).toBe('FORBIDDEN');
+    const inKit = await owner.rpc('admin_delete_item', {p_item: p});
+    expect(inKit.error?.message).toBe('ITEM_IN_KIT');
+    expect(inKit.error?.hint).toBe(`${t} del kit`);
+
+    expect((await owner.rpc('admin_delete_item', {p_item: kit})).error).toBeNull();
+    expect((await db().query('select count(*)::int as n from kit_components where kit_id = $1', [kit])).rows[0].n).toBe(0);
+    const del = await owner.rpc('admin_delete_item', {p_item: p});
+    expect(del.error).toBeNull();
+    expect(del.data).toEqual({ok: true, image_paths: []});
+    expect((await db().query('select count(*)::int as n from items where id in ($1, $2)', [p, kit])).rows[0].n).toBe(0);
+    const line = (await db().query('select item_id, name, line_total_kop from order_lines where order_id = $1', [order])).rows[0];
+    expect(line).toEqual({item_id: null, name: `${t} del product`, line_total_kop: 20000});
+    expect((await db().query('select count(*)::int as n from private.deleted_seed_keys where seed_key = $1', [`sk-${t}`])).rows[0].n).toBe(1);
+    expect((await owner.rpc('admin_delete_item', {p_item: p})).error?.message).toBe('ITEM_NOT_FOUND');
+
+    await db().query('delete from orders where id = $1', [order]);
+    await db().query('delete from private.deleted_seed_keys where seed_key = $1', [`sk-${t}`]);
   });
 
   it('storage: only admins upload, only images', async () => {

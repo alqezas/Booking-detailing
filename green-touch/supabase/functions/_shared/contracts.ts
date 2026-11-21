@@ -211,8 +211,15 @@ export const cartLineSchema = z.object({
   qty: z.number().int().min(1).max(50),
 });
 
+export const PAYMENT_METHODS = [
+  {key: 'full_online', label: 'Повна оплата онлайн'},
+  {key: 'prepay_manual', label: 'Передоплата 150 грн, решта — на Новій пошті'},
+] as const;
+export type PaymentMethod = (typeof PAYMENT_METHODS)[number]['key'];
+
 export const checkoutRequestSchema = z.object({
   idempotency_key: z.string().regex(/^[A-Za-z0-9_-]{16,80}$/),
+  payment_method: z.enum(['full_online', 'prepay_manual'], {message: 'Оберіть спосіб оплати'}),
   lines: z.array(cartLineSchema).min(1).max(30),
   customer: customerSchema,
   delivery: deliverySchema,
@@ -261,6 +268,8 @@ export const ERROR_TEXT: Record<string, string> = {
   NP_POINT_INVALID: 'Оберіть відділення або поштомат зі списку для вибраного населеного пункту.',
   NP_UNAVAILABLE: 'Сервіс Нової пошти зараз недоступний. Спробуйте трохи пізніше.',
   PAYMENT_UNAVAILABLE: 'Не вдалося створити оплату. Замовлення збережено — спробуйте оплатити ще раз.',
+  PAYMENT_METHOD_UNAVAILABLE: 'Цей спосіб оплати зараз недоступний для замовлення. Оберіть інший.',
+  NOT_ONLINE_PAYMENT: 'Для цього замовлення обрано передоплату: реквізити надішлемо у Viber.',
   ORDER_NOT_FOUND: 'Замовлення не знайдено.',
   ORDER_CANCELLED: 'Замовлення скасовано.',
   EMPTY_CART: 'Кошик порожній.',

@@ -1,6 +1,6 @@
 # Green Touch — налаштування та публікація
 
-Магазин косметики «під замовлення»: React 19 + Vite (статичний фронтенд на Vercel), Supabase (Postgres, Auth, Storage, Edge Functions), оплата LiqPay, доставка Новою поштою.
+Магазин косметики «під замовлення»: React 19 + Vite (статичний фронтенд на Vercel), Supabase (Postgres, Auth, Storage, Edge Functions), оплата plata by mono (повна) або передоплата 150 грн через Viber, доставка Новою поштою.
 
 ## Архітектура коротко
 
@@ -9,7 +9,7 @@
 | Фронтенд | `src/` → `dist/` (Vercel) | вітрина, кошик (localStorage), оформлення, статус замовлення, адмінка `/admin`, PWA |
 | База | `supabase/migrations/` | каталог і набори, фільтри, замовлення зі знімками цін, платежі, outbox, RLS |
 | Seed | `supabase/seed.sql` | 22 товари, налаштування, тексти сторінок (повторно запускається без дублів) |
-| Edge Functions | `supabase/functions/` | `checkout`, `order`, `np` (Нова пошта), `liqpay-callback`, `jobs` (cron) |
+| Edge Functions | `supabase/functions/` | `checkout`, `order`, `np` (Нова пошта), `mono-webhook`, `jobs` (cron) |
 | Тести | `tests/unit`, `tests/db`, `tests/e2e` | Vitest, SQL/інтеграційні, Playwright |
 
 Гроші — цілі копійки. Час — UTC у базі, відображення Europe/Kyiv. Усе виготовляється під замовлення: залишків і резервів немає, у товару є лише перемикач «Приймаємо замовлення».
@@ -25,15 +25,12 @@ cp .env.example .env.local          # VITE_SUPABASE_ANON_KEY = ANON_KEY з `npx 
 cp supabase/functions/.env.example supabase/functions/.env
 ```
 
-Для локальної роботи без справжніх ключів у `supabase/functions/.env` вкажіть тестові адаптери (вони імітують LiqPay і Нову пошту, це НЕ справжні сервіси):
+Для локальної роботи без справжніх ключів у `supabase/functions/.env` вкажіть тестові адаптери (вони імітують mono і Нову пошту, це НЕ справжні сервіси):
 
 ```
-LIQPAY_PUBLIC_KEY=sandbox_test_public
-LIQPAY_PRIVATE_KEY=sandbox_test_private
-LIQPAY_API_URL=http://host.docker.internal:55480
-LIQPAY_CHECKOUT_URL=http://127.0.0.1:55480/api/3/checkout
-LIQPAY_SANDBOX=1
-LIQPAY_CALLBACK_URL=http://127.0.0.1:55421/functions/v1/liqpay-callback
+MONO_TOKEN=test-mono-token
+MONO_API_URL=http://host.docker.internal:55480
+MONO_WEBHOOK_URL=http://127.0.0.1:55421/functions/v1/mono-webhook
 NP_API_URL=http://host.docker.internal:55481/v2.0/json/
 ORDER_TOKEN_SECRET=<openssl rand -base64 32>
 JOBS_SECRET=<openssl rand -base64 32>
@@ -43,7 +40,7 @@ SITE_URL=http://localhost:4180
 Потім у трьох терміналах:
 
 ```bash
-pnpm fakes               # тестові адаптери LiqPay (55480) і Нової пошти (55481)
+pnpm fakes               # тестові адаптери mono (55480) і Нової пошти (55481)
 pnpm functions:serve     # Edge Functions
 pnpm build && pnpm preview   # http://localhost:4180
 ```
@@ -77,32 +74,34 @@ pnpm test:e2e                    # Playwright (потрібні fakes і functio
 
 ```bash
 npx supabase secrets set --env-file supabase/functions/.env
-npx supabase functions deploy checkout order liqpay-callback np jobs
+npx supabase functions deploy checkout order mono-webhook np jobs
 ```
 
 | Secret | Значення |
 |---|---|
-| `SITE_URL` | `https://<ваш домен>` (сюди LiqPay повертає покупця) |
+| `SITE_URL` | `https://<ваш домен>` (сюди mono повертає покупця) |
 | `ALLOWED_ORIGINS` | той самий домен (CORS) |
 | `ORDER_TOKEN_SECRET` | випадковий рядок (гостьові посилання на замовлення) |
 | `JOBS_SECRET` | випадковий рядок (той самий — у Vault, див. cron) |
-| `LIQPAY_PUBLIC_KEY`, `LIQPAY_PRIVATE_KEY` | ключі магазину з кабінету LiqPay → API |
-| `LIQPAY_SANDBOX` | `1` для тестових платежів, порожньо — бойові |
-| `LIQPAY_SIGNATURE_ALGO` | `sha3-256` (поточна документація) або `sha1` (старі кабінети) |
-| `PAYMENT_VALIDITY_MINUTES` | скільки діє посилання на оплату (за замовчуванням 1440 = 24 год) |
+| `MONO_TOKEN` | X-Token з кабінету https://web.monobank.ua (бойовий) або тестовий з https://api.monobank.ua/ |
+| `PAYMENT_VALIDITY_MINUTES` | скільки діє рахунок mono (за замовчуванням 1440 = 24 год) |
 | `NP_API_KEY` | ключ API Нової пошти (кабінет → Налаштування → Безпека) |
 | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | необовʼязково: сповіщення про оплачені замовлення |
+| `SMTP_USER`, `SMTP_PASS` | необовʼязково: листи покупцям («Замовлення прийнято», «Оплату отримано»). Gmail магазину + пароль застосунку (Google-акаунт → Безпека → Двоетапна перевірка → Паролі застосунків). Без них листи не надсилаються, решта працює |
+| `SMTP_HOST`, `SMTP_PORT`, `MAIL_FROM`, `MAIL_FROM_NAME`, `MAIL_REPLY_TO` | необовʼязково: за замовчуванням `smtp.gmail.com`, `465`, адреса `SMTP_USER`, «Green Touch». Порт лише 465: Edge Functions блокують 25 і 587. Для власного домену — будь-який SMTP (Resend, Brevo) |
 
-Функція `liqpay-callback` працює без JWT (так налаштовано в `config.toml`), її захищає перевірка підпису LiqPay. Решта функцій вимагають anon-ключ.
+Листи надсилає функція `jobs` з outbox (протягом хвилини після події), кожен лист — один раз на подію. Лист отримують лише покупці, які вказали email. Деплой: `npx supabase functions deploy jobs --import-map supabase/functions/deno.json`.
 
-## 4. LiqPay
+Функція `mono-webhook` працює без JWT (так налаштовано в `config.toml`), її захищає перевірка підпису X-Sign (ECDSA) по сирому тілу запиту. Решта функцій вимагають anon-ключ.
 
-1. У кабінеті LiqPay створіть магазин, візьміть public/private key.
-2. URL для callback (server_url) магазин передає сам у кожному платежі: `https://<ref>.supabase.co/functions/v1/liqpay-callback`.
-3. Перший прогін — з `LIQPAY_SANDBOX=1`: тестова оплата отримає статус `sandbox`, і лише в цьому режимі вважається оплаченою.
-4. Після перевірки приберіть `LIQPAY_SANDBOX` і перевірте одну справжню оплату на невелику суму.
+## 4. Оплата: plata by mono і передоплата
 
-Як працює: сервер рахує суму з бази, підписує форму (`data` + `signature`), браузер відправляє її на сторінку LiqPay. Повернення покупця на сайт оплату не підтверджує: статус змінює лише callback з правильним підписом або запит статусу (`action=status`). Кожна спроба оплати має власний `order_id` (LiqPay вимагає унікальності).
+Покупець на оформленні обирає один із двох варіантів:
+
+- **Повна оплата онлайн.** Сервер рахує суму з бази й створює рахунок mono (`invoice/create`), покупець переходить на сторінку pay.monobank.ua. Там є картка, Apple Pay, Google Pay і оплата через застосунок monobank (перевірено на справжній сторінці оплати). Повернення на сайт оплату не підтверджує: статус змінює лише webhook з правильним підписом X-Sign або запит статусу (`invoice/status`). Webhook: `https://<ref>.supabase.co/functions/v1/mono-webhook` (передається в кожному рахунку).
+- **Передоплата 150 грн.** На сайті нічого не сплачується. Власниця пише покупцю у Viber (кнопка «Написати у Viber» у картці замовлення), надсилає реквізити, після надходження натискає «Передоплату отримано». Решту покупець сплачує накладеним платежем на Новій пошті — суму показує адмінка; ТТН з накладеним платежем оформлюється вручну. Сума передоплати й увімкнення варіантів — налаштування `payment` у таблиці `shop_settings` (`prepay_kop`, `prepay_enabled`, `full_enabled`).
+
+Комплектування дозволене лише після підтвердженої mono оплати або позначки «Передоплату отримано».
 
 ## 5. Нова пошта
 
@@ -110,7 +109,7 @@ npx supabase functions deploy checkout order liqpay-callback np jobs
 
 ## 6. Cron (фонові задачі)
 
-Міграція вже планує `gt-wake-jobs` щохвилини (pg_cron → pg_net → функція `jobs`): звірка зависших платежів із LiqPay та доставка outbox. Додайте у Vault два секрети (SQL Editor):
+Міграція вже планує `gt-wake-jobs` щохвилини (pg_cron → pg_net → функція `jobs`): звірка зависших платежів із mono та доставка outbox. Додайте у Vault два секрети (SQL Editor):
 
 ```sql
 select vault.create_secret('https://<ref>.supabase.co/functions/v1/jobs', 'gt_jobs_url');
@@ -127,7 +126,14 @@ select vault.create_secret('<той самий JOBS_SECRET>', 'gt_jobs_secret');
 SUPABASE_URL=https://<ref>.supabase.co SUPABASE_SERVICE_ROLE_KEY=<service key> pnpm admin:create owner@example.com
 ```
 
-Пароль записується у `.secrets/admin.local.txt` (у git не потрапляє). Вхід — `/admin`. Розділ «Перед запуском» показує, чого ще бракує (фото, характеристики, тексти, контакти).
+Пароль записується у `.secrets/admin.local.txt` (у git не потрапляє). Вхід — `/admin`.
+
+**Адмінка на окремій адресі.** Магазин і адмінка — два окремі застосунки на різних адресах (різні origin: окремі значки на робочому столі, окрема памʼять браузера, адмінка не відкривається всередині застосунку магазину):
+
+- магазин: `https://green-touch-tau.vercel.app`
+- адмінка: `https://green-touch-admin.vercel.app/admin` (домен додано до того ж проєкту Vercel: `vercel domains add green-touch-admin.vercel.app green-touch`)
+
+Правила в `vercel.json`: `/admin…` на адресі магазину переадресовується на адресу адмінки, а будь-яка сторінка магазину на адресі адмінки — назад на магазин. При зміні доменів оновіть ці чотири правила. Сесія адмінки живе до закриття вкладки/застосунку, після 20 хв без дій — вихід. Розділ «Перед запуском» показує, чого ще бракує (фото, характеристики, тексти, контакти).
 
 ## 8. Публікація на Vercel
 
@@ -150,5 +156,4 @@ Service worker (Workbox, injectManifest) кешує оболонку, публі
 ## Рішення щодо стеку
 
 - **shadcn/ui не підключено.** У репозиторії діє правило AGENTS.md «без Tailwind-компілятора й утилітарних класів», а документація Astryx радить заміняти примітиви shadcn компонентами Astryx. Шторка — Astryx `BottomSheet`.
-- **SHA3 для LiqPay** — `@noble/hashes` (у Web Crypto немає SHA3), однаково працює в Deno і Node.
-- **liquid-gl** — лише на плаваючій панелі кошика; при reduced motion — звичайна непрозора панель.
+- **Плаваюча панель кошика** — звичайна непрозора панель. Ефект «рідкого скла» (liquid-gl) прибрано: на телефонах крізь нього просвічувала сторінка й текст не читався.

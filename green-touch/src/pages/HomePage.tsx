@@ -1,12 +1,14 @@
+import {Banner} from '@astryxdesign/core/Banner';
+import {BottomSheet} from '@astryxdesign/core/BottomSheet';
 import {Button} from '@astryxdesign/core/Button';
 import {Card} from '@astryxdesign/core/Card';
 import {ClickableCard} from '@astryxdesign/core/ClickableCard';
 import {Grid} from '@astryxdesign/core/Grid';
 import {Icon} from '@astryxdesign/core/Icon';
-import {HStack, VStack} from '@astryxdesign/core/Layout';
+import {HStack, StackItem, VStack} from '@astryxdesign/core/Layout';
 import {Link} from '@astryxdesign/core/Link';
 import {Heading, Text} from '@astryxdesign/core/Text';
-import {ArrowRight, CreditCard, Package, Truck} from '@phosphor-icons/react';
+import {ArrowRight, CheckCircle, CreditCard, DeviceMobile, Export, Package, PlusSquare, Truck} from '@phosphor-icons/react';
 import {useQuery} from '@tanstack/react-query';
 import {CONCERNS, catalogParams, catalogQuerySchema} from '../../supabase/functions/_shared/contracts.ts';
 import {Page} from '../components/ShopLayout.tsx';
@@ -15,9 +17,94 @@ import {ItemCard, ProductImage} from '../components/ui.tsx';
 import {getMeta} from '../lib/api.ts';
 import {useMeta} from '../lib/browser.ts';
 import {useReveal} from '../lib/motion.ts';
-import type {ReactNode} from 'react';
+import {useInstallApp} from '../lib/pwa.ts';
+import {useState, type ReactNode} from 'react';
 
-const catalogLink = (o: Partial<{category: string; need: string[]}>) => `/katalog?${catalogParams(catalogQuerySchema.parse({...o}))}`;
+/** In-app browsers (Instagram, Facebook, Telegram, TikTok…) have no «На екран „Додому“» at all. */
+const isInAppBrowser = () => typeof navigator !== 'undefined' && /Instagram|FBAN|FBAV|FB_IAB|Telegram|TikTok|Line\/|Viber|GSA\//i.test(navigator.userAgent);
+
+function IosInstallSheet({open, onOpenChange}: {open: boolean; onOpenChange: (v: boolean) => void}) {
+  const [copied, setCopied] = useState(false);
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(location.origin + '/');
+      setCopied(true);
+    } catch {
+      setCopied(false);
+    }
+  };
+  const inApp = isInAppBrowser();
+  return (
+    <BottomSheet isOpen={open} onOpenChange={onOpenChange} label="Як додати Green Touch на головний екран" height="hug" padding={5}>
+      <VStack gap={4}>
+        <Heading level={2}>Додати на головний екран</Heading>
+        {inApp && (
+          <Banner
+            status="info"
+            title="Ви у вбудованому браузері застосунку"
+            description="Тут немає пункту «На екран „Додому“». Скопіюйте посилання й відкрийте його в Safari, а потім повторіть кроки нижче."
+            collapsible={false}
+          />
+        )}
+        <HStack gap={3} vAlign="center">
+          <Icon icon={Export} size="lg" color="accent" />
+          <Text type="body">1. Натисніть «Поділитися» — квадрат зі стрілкою вгору на панелі Safari (внизу екрана).</Text>
+        </HStack>
+        <HStack gap={3} vAlign="center">
+          <Icon icon={PlusSquare} size="lg" color="accent" />
+          <Text type="body">2. Прогорніть меню вниз і оберіть «На екран „Додому“».</Text>
+        </HStack>
+        <HStack gap={3} vAlign="center">
+          <Icon icon={CheckCircle} size="lg" color="accent" />
+          <Text type="body">3. Натисніть «Додати» — значок Green Touch зʼявиться поруч з іншими застосунками.</Text>
+        </HStack>
+        <Text type="supporting" color="secondary">
+          Немає пункту «На екран „Додому“»? Відкрийте сайт саме в Safari: у Telegram, Instagram та інших застосунках його немає.
+        </Text>
+        <HStack gap={2} wrap="wrap">
+          <Button label={copied ? 'Посилання скопійовано' : 'Скопіювати посилання'} variant={inApp ? 'primary' : 'secondary'} onClick={() => void copy()} />
+          <Button label="Зрозуміло" variant={inApp ? 'secondary' : 'primary'} onClick={() => onOpenChange(false)} />
+        </HStack>
+      </VStack>
+    </BottomSheet>
+  );
+}
+
+function InstallCard() {
+  const {hidden, platform, install} = useInstallApp();
+  const [sheet, setSheet] = useState(false);
+  if (hidden) return null;
+  return (
+    <Card padding={5} variant="green">
+      <HStack gap={4} vAlign="start" wrap="wrap">
+        <Icon icon={DeviceMobile} color="accent" size="lg" />
+        <StackItem size="fill">
+          <VStack gap={3}>
+            <Heading level={2}>Green Touch на головному екрані</Heading>
+            <Text type="body" color="secondary">
+              Додайте магазин як застосунок: відкривається в один дотик, без адресного рядка, а збережений кошик і каталог доступні навіть без інтернету.
+            </Text>
+            {platform === 'other' ? (
+              <Text type="body">Відкрийте меню браузера (⋮ або ⋯) і оберіть «Додати на головний екран» або «Встановити застосунок».</Text>
+            ) : (
+              <HStack gap={2}>
+                <Button
+                  label="Додати на головний екран"
+                  variant="primary"
+                  icon={<Icon icon={PlusSquare} />}
+                  onClick={() => (platform === 'prompt' ? void install() : setSheet(true))}
+                />
+              </HStack>
+            )}
+          </VStack>
+        </StackItem>
+      </HStack>
+      {platform === 'ios' && <IosInstallSheet open={sheet} onOpenChange={setSheet} />}
+    </Card>
+  );
+}
+
+const catalogLink =(o: Partial<{category: string; need: string[]}>) => `/katalog?${catalogParams(catalogQuerySchema.parse({...o}))}`;
 
 function Reveal({children}: {children: ReactNode}) {
   const {ref, style} = useReveal<HTMLElement>();
@@ -188,7 +275,7 @@ export default function HomePage() {
                   Оплата онлайн
                 </Text>
                 <Text type="body" color="secondary">
-                  Карткою через LiqPay. Статус оплати підтверджує платіжний сервіс.
+                  Повна оплата через monobank або передоплата 150 грн, решта — на Новій пошті.
                 </Text>
               </VStack>
             </Card>
@@ -223,6 +310,9 @@ export default function HomePage() {
           )}
         </VStack>
       </Reveal>
+
+      {/* 9. Add to home screen (hidden once installed) */}
+      <InstallCard />
     </Page>
   );
 }

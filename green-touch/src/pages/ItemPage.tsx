@@ -170,10 +170,11 @@ export default function ItemPage({kind}: {kind: 'product' | 'kit'}) {
 
   return (
     <Page>
+      {/* no product name here: it is the heading right below, and a long name wrapped
+          onto a new line that started with the «/» separator */}
       <Breadcrumbs label="Навігація">
         <BreadcrumbItem href="/">Головна</BreadcrumbItem>
         <BreadcrumbItem href={`/katalog?kategoriia=${item.category}`}>{item.category_name}</BreadcrumbItem>
-        <BreadcrumbItem>{item.name}</BreadcrumbItem>
       </Breadcrumbs>
       <Grid columns={{minWidth: 320, repeat: 'fit'}} gap={8}>
         <Gallery item={item} />
@@ -211,7 +212,7 @@ export default function ItemPage({kind}: {kind: 'product' | 'kit'}) {
           <Banner
             status="info"
             title="Під замовлення · доставка й оплата"
-            description="Виготовляється під замовлення після оплати. Нова пошта: відділення або поштомат, доставку сплачує отримувач за тарифами перевізника. Оплата онлайн через LiqPay."
+            description="Виготовляється під замовлення після оплати. Нова пошта: відділення або поштомат, доставку сплачує отримувач за тарифами перевізника. Повна оплата онлайн через monobank або передоплата 150 грн."
             collapsible={false}
           />
           {item.in_kits.length > 0 && (

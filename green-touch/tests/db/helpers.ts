@@ -2,6 +2,7 @@ import {randomBytes, randomUUID} from 'node:crypto';
 import {createClient, type SupabaseClient} from '@supabase/supabase-js';
 import pg from 'pg';
 import type {Ctx} from '../../supabase/functions/_shared/ctx.ts';
+import type {Mailer} from '../../supabase/functions/_shared/email.ts';
 import {handleCheckout, handleOrder} from '../../supabase/functions/_shared/handlers.ts';
 import {NP_FIX, NP_POINTS} from '../fakes/np.ts';
 
@@ -26,21 +27,20 @@ export const key = () => randomBytes(18).toString('base64url');
 export const tag = () => `t${randomUUID().slice(0, 8)}`;
 export const fakeIp = () => `10.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}`;
 
-export function makeCtx(o: {liqpay?: {url: string; publicKey?: string; privateKey?: string}; npUrl: string; telegramUrl?: string}): Ctx {
+export function makeCtx(o: {monoUrl?: string; monoToken?: string; npUrl: string; telegramUrl?: string; mailer?: Mailer}): Ctx {
   return {
     db: admin(),
     np: {apiUrl: o.npUrl, apiKey: 'test', timeoutMs: 3000},
-    liqpay: o.liqpay
-      ? {publicKey: o.liqpay.publicKey ?? 'sandbox_test_public', privateKey: o.liqpay.privateKey ?? 'sandbox_test_private', apiUrl: o.liqpay.url, algo: 'sha3-256', sandbox: true, timeoutMs: 5000}
-      : null,
+    mono: o.monoUrl ? {apiUrl: o.monoUrl, token: o.monoToken ?? 'test-mono-token', timeoutMs: 5000} : null,
     siteUrl: 'http://localhost:4180',
-    // callbacks of the fake provider go to an in-test server (see payments.test.ts)
-    callbackUrl: 'http://127.0.0.1:9/never',
+    // webhooks of the fake provider go to an in-test server (see payments.test.ts)
+    webhookUrl: 'http://127.0.0.1:9/never',
     tokenSecret: 'test-token-secret',
     paymentValidityMinutes: 1440,
     allowedOrigins: [],
     jobsSecret: 'test-jobs-secret',
     telegram: o.telegramUrl ? {token: 'x', chatId: '1', apiUrl: o.telegramUrl} : null,
+    mailer: o.mailer ?? null,
   };
 }
 
@@ -81,6 +81,7 @@ export async function createItem(o: {
 export function checkoutBody(lines: {id: string; qty: number}[], extra: Record<string, unknown> = {}) {
   return {
     idempotency_key: key(),
+    payment_method: 'full_online',
     lines,
     customer: {first_name: 'Олена', last_name: 'Тестова', phone: `067${Math.floor(1000000 + Math.random() * 8999999)}`, email: '', comment: ''},
     delivery: {method: 'np_branch', settlement_ref: NP_FIX.kyiv.settlement, city_ref: NP_FIX.kyiv.city, warehouse_ref: NP_POINTS.kyivBranch1},

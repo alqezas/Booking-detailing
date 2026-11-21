@@ -1,7 +1,7 @@
 /**
- * Full path with controlled test adapters (Nova Poshta + LiqPay), real internal
- * state transitions: checkout → server pricing → signed LiqPay form → signed
- * callback → order paid in the database → visible to the owner.
+ * Full path with controlled test adapters (Nova Poshta + mono), real internal
+ * state transitions: checkout → server pricing → mono invoice → signed
+ * webhook → order paid in the database → visible to the owner.
  */
 import {expect, test} from '@playwright/test';
 import {adminLogin, fillCheckout, payAndConfirm} from './helpers.ts';
@@ -35,7 +35,7 @@ test('каталог → фільтр → товар → кошик → дані
   await adminLogin(page);
   await page.getByLabel('Пошук').fill(String(number));
   await page.getByRole('link', {name: `№${number}`}).click();
-  await expect(page.getByText('Оплачено (підтверджено LiqPay)')).toBeVisible();
+  await expect(page.getByText('Оплачено (підтверджено monobank)').first()).toBeVisible();
   await expect(page.getByText(/E2E Крем для сухої шкіри, 50 мл × 2/)).toBeVisible();
   await expect(page.getByText(/Відділення №1: вул\. Тестова, 1/)).toBeVisible();
   // fulfilment is separate from payment: the owner can move it, not the payment

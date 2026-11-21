@@ -75,16 +75,52 @@ export function AddToCart({item, qty = 1, size = 'md', width}: {item: Card_; qty
   );
 }
 
+const morphStyle = (name: string, cls: string) => ({viewTransitionName: name, viewTransitionClass: cls}) as CSSProperties;
+
 /**
  * Catalog card. Equal-height cards in a row: the title block grows, price and
  * button sit at the bottom, so cards with long names don't shift their neighbours.
  */
-export function ItemCard({item}: {item: Card_}) {
-  return (
-    <VStack gap={3} height="100%">
+export function ItemCard({item, size = 'full', morphKey}: {item: Card_; size?: 'full' | 'compact' | 'tiny'; morphKey?: string}) {
+  // morphKey: when the catalog grid is pinched (gridZoom.ts) the photo flies to its
+  // new place and size, the caption fades out and back in at the new place
+  const morph = morphKey ? morphStyle(`gt-card-${morphKey}`, 'gt-card') : undefined;
+  const cardAttr = morphKey ? {'data-card': ''} : {};
+  const photo = (
+    <figure style={{margin: 0, ...(morphKey ? morphStyle(`gt-photo-${morphKey}`, 'gt-photo') : {})}}>
       <ClickableCard href={itemHref(item)} label={item.name} padding={0} width="100%">
         <ProductImage path={item.image} alt={item.name} />
       </ClickableCard>
+    </figure>
+  );
+  if (size !== 'full') {
+    // 3–4 cards per row on a phone: photo, short name and price; the cart button
+    // shrinks to a round icon next to the price
+    const cartIcon = () =>
+      item.available && <Button label="У кошик" variant="primary" size="sm" isIconOnly icon={<Icon icon={ShoppingBagOpen} color="inherit" />} onClick={() => dispatchCart({type: 'add', item, qty: 1})} />;
+    return (
+      // minWidth 0: long words are cut with «…» instead of pushing into the next card
+      <VStack gap={1.5} height="100%" style={{minWidth: 0, ...morph}} {...cardAttr}>
+        {photo}
+        <StackItem size="fill">
+          <Link href={itemHref(item)} label={item.name} color="primary">
+            <Text type="supporting" size={size === 'tiny' ? 'xsm' : undefined} weight="semibold" maxLines={2} style={{overflowWrap: 'anywhere'}}>
+              {item.name}
+            </Text>
+          </Link>
+        </StackItem>
+        <HStack gap={1} vAlign="center" hAlign="between">
+          <Text type="supporting" size={size === 'tiny' ? '2xs' : undefined} weight="semibold" style={{whiteSpace: 'nowrap'}}>
+            {size === 'tiny' ? formatUah(item.price_kop).replace(/\s*грн$/, ' ₴') : formatUah(item.price_kop)}
+          </Text>
+          {cartIcon()}
+        </HStack>
+      </VStack>
+    );
+  }
+  return (
+    <VStack gap={3} height="100%" style={morph} {...cardAttr}>
+      {photo}
       <StackItem size="fill">
         <VStack gap={1} height="100%">
           <Link href={itemHref(item)} label={item.name} color="primary">
