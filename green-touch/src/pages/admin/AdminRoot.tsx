@@ -23,6 +23,7 @@ import {admin} from '../../lib/supabase.ts';
 
 const NAV = [
   {href: '/admin', label: 'Замовлення'},
+  {href: '/admin/hroshi', label: 'Гроші'},
   {href: '/admin/tovary', label: 'Товари й набори'},
   {href: '/admin/kontent', label: 'Контент'},
   {href: '/admin/zapusk', label: 'Перед запуском'},

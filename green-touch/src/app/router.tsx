@@ -16,6 +16,7 @@ const AdminOrders = lazy(() => import('../pages/admin/AdminOrders.tsx').then(m =
 const AdminOrder = lazy(() => import('../pages/admin/AdminOrders.tsx').then(m => ({default: m.AdminOrder})));
 const AdminItems = lazy(() => import('../pages/admin/AdminItems.tsx').then(m => ({default: m.AdminItems})));
 const AdminItemEdit = lazy(() => import('../pages/admin/AdminItems.tsx').then(m => ({default: m.AdminItemEdit})));
+const AdminMoney = lazy(() => import('../pages/admin/AdminMoney.tsx').then(m => ({default: m.AdminMoney})));
 const AdminContent = lazy(() => import('../pages/admin/AdminContent.tsx').then(m => ({default: m.AdminContent})));
 const AdminLaunch = lazy(() => import('../pages/admin/AdminContent.tsx').then(m => ({default: m.AdminLaunch})));
 
@@ -47,6 +48,7 @@ export const router = createBrowserRouter([
     children: [
       {index: true, element: s(<AdminOrders />)},
       {path: 'zamovlennia/:id', element: s(<AdminOrder />)},
+      {path: 'hroshi', element: s(<AdminMoney />)},
       {path: 'tovary', element: s(<AdminItems />)},
       {path: 'tovary/:id', element: s(<AdminItemEdit />)},
       {path: 'kontent', element: s(<AdminContent />)},
