@@ -7,6 +7,7 @@ import type {CSSProperties} from 'react';
 import {NavLink, useLocation} from 'react-router';
 import {useLiquidGlass} from '../lib/glass.ts';
 import {msg} from '../i18n/index.ts';
+import {isLightTenant, useTenant} from '../app/tenant.tsx';
 
 /** Height the page must keep free at the bottom so the bar never covers content. */
 export const BOTTOM_NAV_SPACE = 'calc(96px + env(safe-area-inset-bottom, 0px))';
@@ -22,8 +23,18 @@ export const clientNavItems = (slug: string): NavItem[] => [
 /** Floating glass tab bar: the client app, and the owner cabinet on phones. */
 export function BottomNav({items, label = msg.nav.label}: {items: NavItem[]; label?: string}) {
   const {pathname} = useLocation();
+  // Beauty studios are light: milky frosted glass. The heavy frost and white tint
+  // blur whatever scrolls underneath, so no distorted letters show through.
+  const light = isLightTenant(useTenant());
   // Real refraction of whatever scrolls under the bar.
-  useLiquidGlass({target: '[data-glass="nav"]', snapshot: 'body', refreshKey: pathname, resolution: 1, frost: 3});
+  useLiquidGlass({
+    target: '[data-glass="nav"]',
+    snapshot: 'body',
+    refreshKey: pathname,
+    resolution: 1,
+    frost: light ? 7 : 3,
+    ...(light ? {tint: 'rgba(255, 255, 255, 0.74)'} : {}),
+  });
 
   const bar: CSSProperties = {
     position: 'fixed',
@@ -32,11 +43,13 @@ export function BottomNav({items, label = msg.nav.label}: {items: NavItem[]; lab
     bottom: 'calc(env(safe-area-inset-bottom, 0px) + var(--spacing-2))',
     maxWidth: 480,
     marginInline: 'auto',
-    borderRadius: 'var(--radius-page)',
+    // A full pill with full-pill tabs: the active tab follows the bar's curve exactly.
+    borderRadius: 'var(--radius-full)',
     border: '1px solid var(--color-border)',
-    background: 'rgba(14, 14, 18, 0.55)',
-    backdropFilter: 'blur(18px) saturate(140%)',
-    WebkitBackdropFilter: 'blur(18px) saturate(140%)',
+    background: light ? 'rgba(255, 255, 255, 0.78)' : 'rgba(14, 14, 18, 0.55)',
+    backdropFilter: light ? 'blur(24px) saturate(160%)' : 'blur(18px) saturate(140%)',
+    WebkitBackdropFilter: light ? 'blur(24px) saturate(160%)' : 'blur(18px) saturate(140%)',
+    ...(light ? {boxShadow: '0 10px 30px rgba(60, 40, 90, 0.12)'} : {}),
   };
 
   return (
@@ -54,7 +67,7 @@ export function BottomNav({items, label = msg.nav.label}: {items: NavItem[]; lab
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            borderRadius: 'var(--radius-container)',
+            borderRadius: 'var(--radius-full)',
             textDecoration: 'none',
             color: isActive ? 'var(--color-text-accent)' : 'var(--color-text-secondary)',
             background: isActive ? 'var(--color-accent-muted)' : 'transparent',

@@ -33,6 +33,17 @@ function reply(body: {messages: Msg[]; tools?: {function: {name: string}}[]; too
     const data = msgs.find(m => m.role === 'system' && m.content?.startsWith('Данные инструмента'))?.content ?? '';
     return text(`[симулятор, JSON-режим] ${data.slice(0, 160)}`);
   }
+  // Beauty price question: list the services, then let the studio price the first option.
+  if (names.includes('quote_beauty') && /стоит|скільки|кошту/i.test(user ?? '')) {
+    if (!toolResults.length) return call('list_services', {});
+    const last = JSON.parse(toolResults.at(-1)!.content ?? '{}');
+    if (Array.isArray(last)) {
+      const svc = last.find((s: {options?: unknown[]}) => s.options?.length) ?? last[0];
+      return call('quote_beauty', {service_id: svc.id, addons: svc.options?.[0] ? [svc.options[0].key] : []});
+    }
+    const q = last.quotes?.[0];
+    return text(`[симулятор] ${q?.service} + ${(q?.options ?? []).join(', ')} = ${q?.price} (${q?.duration_minutes} мин)`);
+  }
   if (names.includes('find_free_slots')) {
     if (!toolResults.length) return call('list_services', {});
     const last = JSON.parse(toolResults.at(-1)!.content ?? '{}');

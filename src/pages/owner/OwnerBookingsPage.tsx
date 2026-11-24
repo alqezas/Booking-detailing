@@ -24,6 +24,10 @@ import {WalkInSheet} from './WalkInSheet.tsx';
 import {PostsLoad} from './PostsLoad.tsx';
 import {tireMsg} from '../../i18n/tire.ts';
 import {ownerKey, useOwner} from './ownerContext.tsx';
+import {Selector} from '@astryxdesign/core/Selector';
+import {BeautyNewBookingSheet} from './beauty/BeautyNewBookingSheet.tsx';
+import {beautyMsg} from '../../i18n/beauty.ts';
+import {isAddonsParams} from '../../lib/types.ts';
 import {PeriodNav, periodLabel, type Period} from './PeriodNav.tsx';
 
 export function StatTile({label, value, hint}: {label: string; value: string; hint?: string}) {
@@ -48,11 +52,16 @@ export default function OwnerBookingsPage() {
   const [openId, setOpenId] = useState<string | null>(null);
   const [creating, setCreating] = useState(false);
   const [walkIn, setWalkIn] = useState(false);
+  // Beauty with several masters: one master's day, numbers and money.
+  const beauty = tenant.kind === 'beauty';
+  const B = beautyMsg();
+  const masters = (tenant.resources ?? []).filter(r => r.role === 'master');
+  const [master, setMaster] = useState<string>('');
 
   // The server defines the period (studio time zone); the list uses the same bounds.
   const stats = useQuery({
-    queryKey: ownerKey(slug, 'stats', period, anchor),
-    queryFn: () => api.stats(period, anchor),
+    queryKey: ownerKey(slug, 'stats', period, anchor, master),
+    queryFn: () => (beauty ? api.statsFor(period, anchor, master || null) : api.stats(period, anchor)),
     placeholderData: keepPreviousData,
   });
   const bookings = useQuery({
@@ -66,11 +75,12 @@ export default function OwnerBookingsPage() {
   const byDay = useMemo(() => {
     const m = new Map<string, OwnerBooking[]>();
     for (const b of bookings.data ?? []) {
+      if (master && b.resource_id !== master) continue;
       const d = fmt(b.start_at, tenant.timezone, 'yyyy-MM-dd');
       m.set(d, [...(m.get(d) ?? []), b]);
     }
     return [...m.entries()];
-  }, [bookings.data, tenant.timezone]);
+  }, [bookings.data, tenant.timezone, master]);
 
   const s = stats.data;
   const cur = tenant.currency;
@@ -87,6 +97,15 @@ export default function OwnerBookingsPage() {
             </HStack>
           </HStack>
           {(tenant.tire || tenant.wash) && <PostsLoad />}
+          {beauty && masters.length > 1 && (
+            <Selector
+              label={B.owner.masterFilter}
+              value={master || '__all__'}
+              onChange={v => setMaster(!v || v === '__all__' ? '' : v)}
+              options={[{value: '__all__', label: B.owner.allMasters}, ...masters.map(m => ({value: m.id, label: m.name}))]}
+              width={260}
+            />
+          )}
           <PeriodNav
             period={period}
             onPeriod={setPeriod}
@@ -98,12 +117,22 @@ export default function OwnerBookingsPage() {
           {stats.isError ? (
             <InlineError message={stats.error.message} onRetry={() => void stats.refetch()} />
           ) : (
+            beauty ? (
+              <Grid columns={{minWidth: 140, max: 5}} gap={2}>
+                <StatTile label={msg.bookings.tiles.bookings} value={s ? String(s.bookings) : '—'} />
+                <StatTile label={B.owner.upcoming} value={s ? String(s.upcoming ?? 0) : '—'} hint={B.owner.upcomingHint} />
+                <StatTile label={msg.bookings.tiles.ready} value={s ? String(s.completed) : '—'} hint={msg.bookings.tiles.readyHint} />
+                <StatTile label={B.owner.noShow} value={s ? String(s.no_show) : '—'} hint={B.owner.noShowHint} />
+                <StatTile label={msg.bookings.tiles.received} value={s ? formatMoney(s.net_received, cur) : '—'} hint={msg.bookings.tiles.receivedHint} />
+              </Grid>
+            ) : (
             <Grid columns={{minWidth: 150, max: 4}} gap={2}>
               <StatTile label={msg.bookings.tiles.bookings} value={s ? String(s.bookings) : '—'} />
               <StatTile label={msg.bookings.tiles.arrivals} value={s ? String(s.arrivals) : '—'} hint={msg.bookings.tiles.arrivalsHint} />
               <StatTile label={msg.bookings.tiles.ready} value={s ? String(s.completed) : '—'} hint={msg.bookings.tiles.readyHint} />
               <StatTile label={msg.bookings.tiles.received} value={s ? formatMoney(s.net_received, cur) : '—'} hint={msg.bookings.tiles.receivedHint} />
             </Grid>
+            )
           )}
         </VStack>
       </Section>
@@ -137,7 +166,7 @@ export default function OwnerBookingsPage() {
                     <ListItem
                       key={b.id}
                       label={b.service_name}
-                      description={`${b.customer_name} · ${b.car} · ${b.resource_name}${b.balance > 0 && b.status !== 'cancelled' ? msg.bookings.toPay(formatMoney(b.balance, cur)) : ''}`}
+                      description={`${[b.customer_name, b.car, b.resource_name, isAddonsParams(b.tire_params) && b.tire_params.addons.length ? `+${b.tire_params.addons.map(a => a.name).join(', ')}` : ''].filter(Boolean).join(' · ')}${b.balance > 0 && b.status !== 'cancelled' ? msg.bookings.toPay(formatMoney(b.balance, cur)) : ''}`}
                       startContent={<Text hasTabularNumbers weight="semibold">{formatTime(b.start_at, tenant.timezone)}</Text>}
                       endContent={<Badge label={st.label} variant={st.variant} />}
                       onClick={() => setOpenId(b.id)}
@@ -152,7 +181,11 @@ export default function OwnerBookingsPage() {
       </Section>
 
       <BookingSheet bookingId={openId} onClose={() => setOpenId(null)} />
-      <NewBookingSheet isOpen={creating} onClose={() => setCreating(false)} onCreated={id => setOpenId(id)} />
+      {beauty ? (
+        <BeautyNewBookingSheet isOpen={creating} onClose={() => setCreating(false)} onCreated={id => setOpenId(id)} />
+      ) : (
+        <NewBookingSheet isOpen={creating} onClose={() => setCreating(false)} onCreated={id => setOpenId(id)} />
+      )}
       {(tenant.tire || tenant.wash) && <WalkInSheet isOpen={walkIn} onClose={() => setWalkIn(false)} onCreated={id => setOpenId(id)} />}
     </VStack>
   );

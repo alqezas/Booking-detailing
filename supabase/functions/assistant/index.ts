@@ -52,8 +52,19 @@ Deno.serve(async req => {
 
   const src: ClientSource = {
     tenant,
-    availability: async (serviceId, from, days) => {
-      const r = await svc.rpc('svc_public_availability', {p_slug: slug, p_service_id: serviceId, p_from: from, p_days: days});
+    availability: async (serviceId, from, days, opts) => {
+      // Beauty: the same SQL as the booking page, with the chosen options and master.
+      const r =
+        tenant.kind === 'beauty'
+          ? await svc.rpc('svc_beauty_availability', {
+              p_slug: slug,
+              p_service_id: serviceId,
+              p_addons: opts?.addons ?? [],
+              p_resource_id: opts?.masterId ?? null,
+              p_from: from,
+              p_days: days,
+            })
+          : await svc.rpc('svc_public_availability', {p_slug: slug, p_service_id: serviceId, p_from: from, p_days: days});
       if (r.error) throw new Error(say.noSlotsData);
       return r.data;
     },

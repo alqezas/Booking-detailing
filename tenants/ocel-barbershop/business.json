@@ -1,0 +1,138 @@
+{
+  "slug": "ocel-barbershop",
+  "name": "OCEL Barbershop",
+  "shortName": "OCEL",
+  "kind": "beauty",
+  "appearance": "dark",
+  "vocabulary": "barber",
+  "tagline": "Pánské střihy, fade a péče o vousy na Žižkově",
+  "description": "Barbershop na Žižkově: klasické i moderní pánské střihy, skin fade, úprava vousů a holení břitvou s horkým ručníkem. Tři barbeři, káva nebo pivo zdarma a rezervace online bez registrace.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#C8963E",
+  "contacts": {
+    "phone": "+420777200300",
+    "address": "Seifertova 24, Praha 3",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Seifertova%2024%2C%20Praha%203",
+    "instagram": "ocel.barbershop.demo",
+    "whatsapp": "+420777200300"
+  },
+  "images": {"hero": "images/hero.webp", "logo": "images/logo.png"},
+  "hours": {
+    "mon": [["10:00", "20:00"]],
+    "tue": [["10:00", "20:00"]],
+    "wed": [["10:00", "20:00"]],
+    "thu": [["10:00", "20:00"]],
+    "fri": [["10:00", "20:00"]],
+    "sat": [["09:00", "16:00"]],
+    "sun": []
+  },
+  "closedDates": ["2026-12-24", "2026-12-25", "2026-12-31", "2027-01-01"],
+  "booking": {"slotStepMinutes": 15, "minLeadMinutes": 30, "horizonDays": 30, "cancelCutoffHours": 3, "defaultBufferMinutes": 10},
+  "resources": [
+    {"key": "marek", "name": "Marek", "role": "master", "title": "Fade a moderní střihy", "bio": "9 let za křeslem: skin fade, textura, crop a ostré linky strojkem", "photo": "images/barber-marek.webp"},
+    {
+      "key": "tomas",
+      "name": "Tomáš",
+      "role": "master",
+      "title": "Klasika, vousy a břitva",
+      "bio": "Klasické střihy nůžkami, tvarování vousů a tradiční holení s horkým ručníkem",
+      "photo": "images/barber-tomas.webp"
+    },
+    {
+      "key": "dima",
+      "name": "Dima",
+      "role": "master",
+      "title": "Fade, dětské střihy",
+      "bio": "Mluví česky, ukrajinsky i rusky. Fade, crop a trpělivé dětské střihy",
+      "photo": "images/barber-dima.webp",
+      "hours": {"mon": [], "tue": [["12:00", "20:00"]], "wed": [["12:00", "20:00"]], "thu": [["12:00", "20:00"]], "fri": [["12:00", "20:00"]], "sat": [["09:00", "16:00"]], "sun": []}
+    }
+  ],
+  "services": [
+    {
+      "key": "haircut", "name": "Pánský střih", "category": "Střihy",
+      "description": "Konzultace, střih strojkem i nůžkami, mytí a styling. Nejčastější volba",
+      "price": 590, "durationMinutes": 45, "resources": ["marek", "tomas", "dima"],
+      "addons": [
+        {"key": "brows", "name": "Úprava obočí", "price": 100, "minutes": 10},
+        {"key": "wax", "name": "Depilace nosu a uší voskem", "price": 150, "minutes": 10}
+      ]
+    },
+    {
+      "key": "skin-fade", "name": "Skin fade", "category": "Střihy",
+      "description": "Přechod až do kůže s čistými linkami, vrch podle přání",
+      "price": 690, "durationMinutes": 60, "resources": ["marek", "dima"],
+      "addons": [
+        {"key": "lineup", "name": "Ostré kontury (line-up) břitvou", "price": 100, "minutes": 10},
+        {"key": "design", "name": "Vyholený vzor", "price": 150, "minutes": 15},
+        {"key": "brows", "name": "Úprava obočí", "price": 100, "minutes": 10}
+      ]
+    },
+    {
+      "key": "scissors", "name": "Střih nůžkami — delší vlasy", "category": "Střihy",
+      "description": "Střih jen nůžkami pro delší vlasy a klasické účesy, foukaná a styling",
+      "price": 690, "durationMinutes": 60, "resources": ["tomas"]
+    },
+    {
+      "key": "buzz", "name": "Buzz cut", "category": "Střihy",
+      "description": "Strojkem na jednu délku po celé hlavě, rychle a čistě",
+      "price": 390, "durationMinutes": 30, "resources": ["marek", "tomas", "dima"]
+    },
+    {
+      "key": "kids", "name": "Dětský střih do 12 let", "category": "Střihy",
+      "description": "Trpělivě a bez stresu, v klidném tempu",
+      "price": 390, "durationMinutes": 30, "resources": ["dima", "marek"]
+    },
+    {
+      "key": "beard", "name": "Úprava vousů", "category": "Vousy",
+      "description": "Tvarování vousů strojkem a nůžkami, kontury břitvou, balzám",
+      "price": 450, "durationMinutes": 30, "resources": ["tomas", "marek", "dima"],
+      "addons": [
+        {"key": "towel", "name": "Horký ručník", "price": 100, "minutes": 10},
+        {"key": "color", "name": "Tónování vousů", "price": 250, "minutes": 20}
+      ]
+    },
+    {
+      "key": "shave", "name": "Holení břitvou", "category": "Vousy",
+      "description": "Tradiční holení s horkým ručníkem, olejem a chladivou péčí",
+      "price": 550, "durationMinutes": 40, "resources": ["tomas"]
+    },
+    {
+      "key": "combo", "name": "Střih + vousy", "category": "Kombinace",
+      "description": "Pánský střih a úprava vousů v jedné návštěvě — o 150 Kč výhodněji",
+      "price": 890, "durationMinutes": 75, "resources": ["marek", "tomas", "dima"],
+      "addons": [
+        {"key": "towel", "name": "Horký ručník", "price": 100, "minutes": 10},
+        {"key": "brows", "name": "Úprava obočí", "price": 100, "minutes": 10},
+        {"key": "mask", "name": "Černá čisticí maska", "price": 150, "minutes": 15}
+      ]
+    },
+    {
+      "key": "royal", "name": "Kompletní péče OCEL", "category": "Kombinace",
+      "description": "Střih, holení břitvou, horký ručník, maska a styling. Hodina a půl jen pro vás",
+      "price": 1290, "durationMinutes": 90, "resources": ["tomas", "marek"]
+    }
+  ],
+  "infoCards": [
+    {"icon": "coffee", "title": "Káva nebo pivo", "text": "Ke každé návštěvě espresso, limonáda nebo točené pivo zdarma"},
+    {"icon": "shield", "title": "Čisté nástroje", "text": "Každému klientovi dezinfikované strojky a nová žiletka v břitvě"},
+    {"icon": "calendar", "title": "Přesun online", "text": "Přesunout nebo zrušit termín můžete online nejpozději 3 hodiny předem"}
+  ],
+  "gallery": [
+    {"image": "images/work-1.webp", "caption": "Low fade s texturou nahoře"},
+    {"image": "images/work-2.webp", "caption": "Kontury břitvou"},
+    {"image": "images/work-3.webp", "caption": "Tvarování plnovousu"},
+    {"image": "images/work-4.webp", "caption": "Střih nůžkami a hřebenem"},
+    {"image": "images/work-5.webp", "caption": "Holení s horkým ručníkem"},
+    {"image": "images/work-6.webp", "caption": "Mid fade strojkem"}
+  ],
+  "faq": [
+    {"question": "Musím se objednat předem?", "answer": "Doporučujeme online rezervaci — volné termíny vidíte hned. Když je volné křeslo, vezmeme vás i bez objednání.", "keywords": ["bez objedn", "předem", "walk"]},
+    {"question": "Jak dlouho trvá střih?", "answer": "Pánský střih 45 minut, skin fade hodinu, střih s vousy 75 minut.", "keywords": ["dlouho", "trvá", "minut"]},
+    {"question": "Můžu platit kartou?", "answer": "Ano, kartou i hotově, platí se až po návštěvě. Záloha není potřeba.", "keywords": ["kart", "platb", "záloh"]}
+  ],
+  "owner": {"email": "owner@ocel-barbershop.demo"},
+  "assistant": {"enabled": true}
+}

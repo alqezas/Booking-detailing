@@ -31,9 +31,17 @@ type Props = {
   loadKey?: unknown[];
   /** Called with every loaded page, e.g. to show the server's price quote. */
   onLoaded?: (a: Availability) => void;
+  /** Group the day's slots into morning / day / evening blocks with these headings. */
+  dayParts?: {morning: string; day: string; evening: string};
 };
 
-export function SlotPicker({slug, serviceId, timezone, horizonDays, value, onChange, notice, ownerLoad, load, loadKey, onLoaded}: Props) {
+/** Local hour of a slot → part of day: before 12, 12–17, from 17. */
+export function dayPartOf(iso: string, tz: string): 'morning' | 'day' | 'evening' {
+  const h = Number(formatTime(iso, tz).slice(0, 2));
+  return h < 12 ? 'morning' : h < 17 ? 'day' : 'evening';
+}
+
+export function SlotPicker({slug, serviceId, timezone, horizonDays, value, onChange, notice, ownerLoad, load, loadKey, onLoaded, dayParts}: Props) {
   const today = todayIn(timezone);
   const [from, setFrom] = useState(today);
   const custom = load ?? ownerLoad;
@@ -69,6 +77,48 @@ export function SlotPicker({slug, serviceId, timezone, horizonDays, value, onCha
     setDay(null);
     setFrom(to);
   };
+
+  const slotGrid = (slots: AvailabilityDay['slots'], label: string) => (
+            <Grid columns={{minWidth: 76, max: 6}} gap={2} role="radiogroup" aria-label={label}>
+              {slots.map(s => {
+                const t = formatTime(s.start_at, timezone);
+                const selected = value === s.start_at;
+                return s.available ? (
+                  <Button
+                    key={s.start_at}
+                    label={t}
+                    role="radio"
+                    aria-checked={selected}
+                    variant={selected ? 'primary' : 'secondary'}
+                    onClick={() => onChange(s.start_at)}
+                    width="100%"
+                    style={{minHeight: 48}}
+                  />
+                ) : (
+                  <Button
+                    key={s.start_at}
+                    label={msg.slots.slotTaken(t)}
+                    role="radio"
+                    aria-checked={false}
+                    isDisabled
+                    variant="ghost"
+                    width="100%"
+                    tooltip={msg.slots.slotTakenTip}
+                    style={{minHeight: 48}}
+                  >
+                    <VStack gap={0} align="center">
+                      <Text hasStrikethrough color="inherit">
+                        {t}
+                      </Text>
+                      <Text type="supporting" color="inherit">
+                        {msg.slots.taken}
+                      </Text>
+                    </VStack>
+                  </Button>
+                );
+              })}
+            </Grid>
+  );
 
   if (q.isPending) return <RowsSkeleton rows={3} height={48} />;
   if (q.isError) return <InlineError message={q.error.message} onRetry={() => void q.refetch()} />;
@@ -132,45 +182,22 @@ export function SlotPicker({slug, serviceId, timezone, horizonDays, value, onCha
           {current.slots.every(s => !s.available) && (
             <Text color="secondary">{msg.slots.allTaken}</Text>
           )}
-          <Grid columns={{minWidth: 76, max: 6}} gap={2} role="radiogroup" aria-label={msg.slots.pickTime}>
-            {current.slots.map(s => {
-              const t = formatTime(s.start_at, timezone);
-              const selected = value === s.start_at;
-              return s.available ? (
-                <Button
-                  key={s.start_at}
-                  label={t}
-                  role="radio"
-                  aria-checked={selected}
-                  variant={selected ? 'primary' : 'secondary'}
-                  onClick={() => onChange(s.start_at)}
-                  width="100%"
-                  style={{minHeight: 48}}
-                />
-              ) : (
-                <Button
-                  key={s.start_at}
-                  label={msg.slots.slotTaken(t)}
-                  role="radio"
-                  aria-checked={false}
-                  isDisabled
-                  variant="ghost"
-                  width="100%"
-                  tooltip={msg.slots.slotTakenTip}
-                  style={{minHeight: 48}}
-                >
-                  <VStack gap={0} align="center">
-                    <Text hasStrikethrough color="inherit">
-                      {t}
-                    </Text>
-                    <Text type="supporting" color="inherit">
-                      {msg.slots.taken}
-                    </Text>
+          {dayParts
+            ? (['morning', 'day', 'evening'] as const).map(part => {
+                const slots = current.slots.filter(x => dayPartOf(x.start_at, timezone) === part);
+                if (!slots.length) return null;
+                const free = slots.filter(x => x.available).length;
+                return (
+                  <VStack key={part} gap={2}>
+                    <HStack gap={2} align="center">
+                      <Text weight="semibold">{dayParts[part]}</Text>
+                      <Text type="supporting">{free ? msg.slots.freeShort(free) : msg.slots.taken}</Text>
+                    </HStack>
+                    {slotGrid(slots, `${msg.slots.pickTime}: ${dayParts[part]}`)}
                   </VStack>
-                </Button>
-              );
-            })}
-          </Grid>
+                );
+              })
+            : slotGrid(current.slots, msg.slots.pickTime)}
           {Intl.DateTimeFormat().resolvedOptions().timeZone !== timezone && (
             <Text type="supporting">{msg.slots.tzNote}</Text>
           )}

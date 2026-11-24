@@ -42,14 +42,30 @@ export const CLIENT_TOOLS = {
       })
       .strict(),
   },
+  quote_beauty: {
+    description:
+      'Только для бьюти-студии: цена и длительность услуги с дополнительными опциями. service_id — из list_services (без него — все услуги), addons — ключи опций из offered_options. Сумму считает студия, не пересчитывай.',
+    args: z
+      .object({
+        service_id: z.string().uuid().nullish(),
+        addons: z.array(z.string().max(40)).max(10).nullish(),
+      })
+      .strict(),
+  },
+  list_masters: {
+    description: 'Только для бьюти-студии: мастера студии (id, имя, специализация, какие услуги делает).',
+    args: z.object({}).strict(),
+  },
   find_free_slots: {
     description:
-      'Ближайшее свободное время для услуги. service_id — из list_services. date_from — дата YYYY-MM-DD в часовом поясе студии (необязательно). Возвращает время начала свободных окон.',
+      'Ближайшее свободное время для услуги. service_id — из list_services. date_from — дата YYYY-MM-DD в часовом поясе студии (необязательно). Для бьюти-студии: addons — ключи опций (время услуги увеличится), master_id — мастер из list_masters (без него — любой свободный). Возвращает время начала свободных окон.',
     args: z
       .object({
         service_id: z.string().uuid(),
         date_from: isoDate.nullish(),
         limit: z.number().int().min(1).max(8).nullish(),
+        addons: z.array(z.string().max(40)).max(10).nullish(),
+        master_id: z.string().uuid().nullish(),
       })
       .strict(),
   },
@@ -64,6 +80,11 @@ export const OWNER_TOOLS = {
   get_stats: {
     description:
       'Показатели за период: заезды (машины приняты), завершённые работы, полученные деньги (оплаты минус возвраты) и ожидаемая стоимость записей (это прогноз, не выручка). period = day | week | month, anchor_date — дата внутри периода.',
+    args: z.object({period: z.enum(['day', 'week', 'month']), anchor_date: isoDate}).strict(),
+  },
+  count_free_slots: {
+    description:
+      'Свободные окна студии за период (по услугам: число свободных стартов и ближайшее время; с учётом смен мастеров и занятого времени; не больше 14 дней вперёд). period = day | week | month, anchor_date — дата внутри периода. Только чтение.',
     args: z.object({period: z.enum(['day', 'week', 'month']), anchor_date: isoDate}).strict(),
   },
 } as const;

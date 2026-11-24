@@ -8,12 +8,22 @@ const moneyFormat = (currency: string) => {
   let f = moneyCache.get(key);
   if (!f) {
     f = new Intl.NumberFormat(msg.intl, {style: 'currency', currency, maximumFractionDigits: 0});
+    // A foreign currency in this language («750 CZK» in Russian): use its local sign («750 Kč»).
+    if (/^[A-Z]{3}$/.test(f.formatToParts(0).find(p => p.type === 'currency')?.value ?? '')) {
+      f = new Intl.NumberFormat(msg.intl, {style: 'currency', currency, currencyDisplay: 'narrowSymbol', maximumFractionDigits: 0});
+    }
     moneyCache.set(key, f);
   }
   return f;
 };
 
 export const formatMoney = (amount: number, currency = 'RUB'): string => moneyFormat(currency).format(amount);
+
+/**
+ * A studio without a public phone (booking via Instagram Direct) keeps a
+ * zero placeholder like +420000000000: no «call» button is shown for it.
+ */
+export const hasPhone = (e164: string | null | undefined): boolean => !!e164 && !/^\+\d{1,3}0{8,}$/.test(e164);
 
 /** «₽», «Kč», «€» — for field labels like «Цена, ₽». */
 export const currencySymbol = (currency: string): string =>
@@ -70,6 +80,9 @@ export function formatPhone(e164: string): string {
   if (pl) return `+48 ${pl[1]} ${pl[2]} ${pl[3]}`;
   const ua = e164.match(/^\+380(\d{2})(\d{3})(\d{2})(\d{2})$/);
   if (ua) return `+380 ${ua[1]} ${ua[2]} ${ua[3]} ${ua[4]}`;
+  // Austria: Vienna landline «+43 1 920 8295», mobile «+43 664 123 4567».
+  const at = e164.match(/^\+43(1|6\d\d|[2-57-9]\d{1,3})(\d{3})(\d{2,})$/);
+  if (at) return `+43 ${at[1]} ${at[2]} ${at[3]}`;
   return e164;
 }
 

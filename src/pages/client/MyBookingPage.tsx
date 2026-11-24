@@ -1,4 +1,5 @@
 import {AlertDialog} from '@astryxdesign/core/AlertDialog';
+import {BottomSheet} from '@astryxdesign/core/BottomSheet';
 import {Badge} from '@astryxdesign/core/Badge';
 import {Button} from '@astryxdesign/core/Button';
 import {Card} from '@astryxdesign/core/Card';
@@ -10,7 +11,7 @@ import {Section} from '@astryxdesign/core/Section';
 import {Text} from '@astryxdesign/core/Text';
 import {VStack} from '@astryxdesign/core/VStack';
 import {useToast} from '@astryxdesign/core/Toast';
-import {CaretRight, LinkSimple, Phone} from '@phosphor-icons/react';
+import {ArrowsClockwise, CaretRight, LinkSimple, Phone} from '@phosphor-icons/react';
 import {useMutation, useQueryClient} from '@tanstack/react-query';
 import {useEffect, useMemo, useState} from 'react';
 import {useLocation, useNavigate, useSearchParams} from 'react-router';
@@ -22,12 +23,14 @@ import {BookingSummary} from '../../components/booking/BookingSummary.tsx';
 import {tireRows} from '../../components/tire/tireRows.ts';
 import {ReminderOffer} from '../../components/booking/ReminderOffer.tsx';
 import {InlineError, RowsSkeleton} from '../../components/StatusScreens.tsx';
-import {cancelBooking, getBooking} from '../../lib/api/public.ts';
+import {cancelBooking, getBooking, getRescheduleOptions, rescheduleBooking} from '../../lib/api/public.ts';
+import {SlotPicker} from '../../components/booking/SlotPicker.tsx';
+import {beautyMsg} from '../../i18n/beauty.ts';
 import {forgetBooking, listBookings, rememberBooking, type StoredBooking} from '../../lib/booking-store.ts';
 import {errorText} from '../../lib/errors.ts';
-import {formatPhone, formatWhen} from '../../lib/format.ts';
+import {formatPhone, formatWhen, hasPhone} from '../../lib/format.ts';
 import {bookingKey, usePublicBooking} from '../../lib/queries.ts';
-import type {BookingStatus, PublicBooking} from '../../lib/types.ts';
+import {isAddonsParams, type BookingStatus, type PublicBooking} from '../../lib/types.ts';
 import {msg} from '../../i18n/index.ts';
 
 const STATUS_VARIANT: Record<BookingStatus, 'info' | 'success' | 'warning' | 'error' | 'neutral'> = {
@@ -128,6 +131,27 @@ function BookingDetails({entry, onGone}: {entry: StoredBooking; onGone: () => vo
   const showToast = useToast();
   const q = usePublicBooking(t.slug, entry.token);
   const [confirming, setConfirming] = useState(false);
+  const [moving, setMoving] = useState(false);
+  const [moveTo, setMoveTo] = useState<string | null>(null);
+  const [moveNotice, setMoveNotice] = useState<string | null>(null);
+  const B = beautyMsg();
+  // Moving is atomic on the server: a failure leaves the booking where it was.
+  const move = useMutation({
+    mutationFn: (startAt: string) => rescheduleBooking(t.slug, entry.token, startAt),
+    onSuccess: b => {
+      qc.setQueryData(bookingKey(t.slug, entry.token), b);
+      rememberBooking(t.slug, {...entry, startAt: b.start_at});
+      void qc.invalidateQueries({queryKey: ['availability', t.slug]});
+      setMoving(false);
+      setMoveTo(null);
+      showToast({body: B.my.rescheduled});
+    },
+    onError: e => {
+      setMoveTo(null);
+      setMoveNotice(errorText(e));
+      void qc.invalidateQueries({queryKey: ['availability', t.slug, 'custom', 'move']});
+    },
+  });
   const cancel = useMutation({
     mutationFn: () => cancelBooking(t.slug, entry.token),
     onSuccess: b => {
@@ -179,14 +203,23 @@ function BookingDetails({entry, onGone}: {entry: StoredBooking; onGone: () => vo
             timezone={t.timezone}
             currency={t.currency}
             customer={{name: b.customer_name, phone: b.customer_phone, car: b.car}}
-            extra={tireRows(b)}
+            extra={[
+              ...tireRows(b),
+              ...(isAddonsParams(b.tire_params) && b.tire_params.addons.length
+                ? [{label: B.flow.options, value: b.tire_params.addons.map(a => a.name).join(', ')}]
+                : []),
+              ...(b.resource_role === 'master' ? [{label: B.flow.master2, value: b.resource_name}] : []),
+              ...(b.comment && t.kind === 'beauty' ? [{label: B.flow.commentLabel, value: b.comment}] : []),
+            ]}
           />
           <Text color="secondary">{msg.my.address(b.tenant.address)}</Text>
           {b.status === 'confirmed' && <ReminderOffer booking={b} token={entry.token} />}
           <HStack gap={2} wrap="wrap">
-            <Button label={msg.my.callStudioLabel(formatPhone(t.phone))} icon={<Icon icon={Phone} />} href={`tel:${t.phone}`}>
+            {hasPhone(t.phone) && (
+              <Button label={msg.my.callStudioLabel(formatPhone(t.phone))} icon={<Icon icon={Phone} />} href={`tel:${t.phone}`}>
               {msg.my.callStudio}
             </Button>
+            )}
             <Button
               label={msg.my.copyLink}
               variant="ghost"
@@ -197,9 +230,24 @@ function BookingDetails({entry, onGone}: {entry: StoredBooking; onGone: () => vo
               }}
             />
           </HStack>
+          {b.status === 'confirmed' && b.can_reschedule && t.kind === 'beauty' && (
+            <Button
+              label={B.my.reschedule}
+              variant="secondary"
+              icon={<Icon icon={ArrowsClockwise} />}
+              onClick={() => {
+                setMoveNotice(null);
+                setMoveTo(null);
+                setMoving(true);
+              }}
+            />
+          )}
           {b.status === 'confirmed' &&
             (b.can_cancel ? (
-              <Button label={msg.my.cancel} variant="destructive" onClick={() => setConfirming(true)} />
+              <>
+                {t.kind === 'beauty' && <Text type="supporting">{B.my.rescheduleUntil(formatWhen(b.cancel_deadline, t.timezone))}</Text>}
+                <Button label={msg.my.cancel} variant="destructive" onClick={() => setConfirming(true)} />
+              </>
             ) : (
               <Text type="supporting">{msg.my.cancelUntil(formatWhen(b.cancel_deadline, t.timezone))}</Text>
             ))}
@@ -210,6 +258,43 @@ function BookingDetails({entry, onGone}: {entry: StoredBooking; onGone: () => vo
           )}
         </VStack>
       </Card>
+      <BottomSheet isOpen={moving} onOpenChange={setMoving} label={B.my.rescheduleTitle} height="tall">
+        {moving && (
+          <VStack gap={4}>
+            <VStack gap={1}>
+              <Heading level={2}>{B.my.rescheduleTitle}</Heading>
+              <Text color="secondary">{B.my.rescheduleLead(formatWhen(b.start_at, t.timezone))}</Text>
+              {isAddonsParams(b.tire_params) && b.tire_params.master_choice === 'specific' && <Text type="supporting">{B.my.sameMaster}</Text>}
+            </VStack>
+            <SlotPicker
+              slug={t.slug}
+              serviceId={b.service_id ?? b.id}
+              timezone={t.timezone}
+              horizonDays={t.booking.horizon_days}
+              load={(from, days) => getRescheduleOptions(t.slug, entry.token, from, days)}
+              loadKey={['move', b.id, b.start_at]}
+              value={moveTo}
+              onChange={v => {
+                setMoveTo(v);
+                setMoveNotice(null);
+              }}
+              notice={moveNotice}
+              dayParts={B.flow.dayParts}
+            />
+            <HStack gap={2}>
+              <Button label={msg.common.cancel} variant="ghost" onClick={() => setMoving(false)} style={{flexShrink: 0}} />
+              <Button
+                label={moveTo ? B.my.rescheduleTo(formatWhen(moveTo, t.timezone)) : B.my.reschedule}
+                variant="primary"
+                width="100%"
+                isDisabled={!moveTo}
+                isLoading={move.isPending}
+                onClick={() => moveTo && !move.isPending && move.mutate(moveTo)}
+              />
+            </HStack>
+          </VStack>
+        )}
+      </BottomSheet>
       <AlertDialog
         isOpen={confirming}
         onOpenChange={setConfirming}

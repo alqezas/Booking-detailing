@@ -78,3 +78,31 @@ npx vercel build --prod && npx vercel deploy --prebuilt --prod
 
 `.env.local`, `.env.publish`, `supabase/functions/.env`, `.secrets/owners.local.txt`, `.vercel/`.
 В сайт попадают только `VITE_*`: URL, publishable-ключ и публичный VAPID-ключ.
+
+## Бьюти-студии: Telegram и проверки
+
+Дополнительные секреты функций (`supabase/functions/.env.example`):
+
+| Секрет | Назначение |
+|---|---|
+| `TELEGRAM_BOT_TOKEN` | бот, через который владельцы получают мгновенные сообщения о записи/переносе/отмене клиентом (создать у @BotFather) |
+| `SITE_URL` | адрес сайта для ссылки «Открыть кабинет» в сообщении |
+
+```bash
+npx supabase secrets set TELEGRAM_BOT_TOKEN=<токен> SITE_URL=https://<сайт> --project-ref <ref>
+npx supabase db push -p <пароль>            # миграция 20261112000100_beauty.sql
+pnpm functions:deploy                        # assistant, owner-assistant, notify-dispatch
+```
+
+Отправка идёт через тот же outbox `notification_jobs`: задачу будит pg_net сразу после коммита записи, страховка —
+cron `notify-dispatch` раз в минуту. Без токена задача честно завершается `failed: TELEGRAM_BOT_TOKEN is not set`,
+и владелец видит это в кабинете.
+
+```bash
+npx vitest run --project db tests/db/beauty.test.ts       # движок бьюти на локальном Supabase
+npx tsx tests/integration/beauty-assistant-check.ts       # помощники на AURA/VELVET (нужен pnpm functions:serve)
+npx tsx tests/integration/telegram-check.ts               # outbox → notify-dispatch → Bot API (без токена: честный failed)
+TELEGRAM_TEST_CHAT_ID=<chat> npx tsx tests/integration/telegram-check.ts   # с токеном в functions/.env: реальная доставка
+```
+
+Локальные демо-владельцы бьюти-студий: `owner@aura-beauty.demo`, `owner@velvet-spa.demo` (пароль — `scripts/lib/demo.ts`).

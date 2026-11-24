@@ -17,12 +17,14 @@ const T: Record<Lang, {onRequest: string; approx: string; outro: string; which: 
   cs: {onRequest: 'cena na dotaz', approx: 'cca', outro: 'Přesnou cenu i volný termín ukáže kalkulačka při objednání.', which: 'Ceny mytí:'},
   pl: {onRequest: 'cena do ustalenia', approx: 'ok.', outro: 'Dokładną cenę i wolny termin pokaże kalkulator przy rezerwacji.', which: 'Ceny mycia:'},
   uk: {onRequest: 'ціна за запитом', approx: 'близько', outro: 'Точну ціну й вільний час покаже калькулятор під час запису.', which: 'Ціни мийки:'},
+  de: {onRequest: 'Preis auf Anfrage', approx: 'ca.', outro: 'Den genauen Preis und freie Termine zeigt der Rechner bei der Buchung.', which: 'Preise der Wäsche:'},
 };
 
 export const WASH_PROMPT: Record<Lang, string> = {
   ru: 'Цены мойки считай ТОЛЬКО инструментом quote_wash (class: small | medium | suv | van, extras — ключи дополнений). Не пересчитывай цены сам; price 0 с on_request = цена по запросу.',
   cs: 'Ceny mytí počítej POUZE nástrojem quote_wash (class: small | medium | suv | van, extras = klíče doplňků). Ceny sám nepřepočítávej; price 0 s on_request = cena na dotaz. Odpovídej česky.',
   pl: 'Ceny mycia licz WYŁĄCZNIE narzędziem quote_wash (class: small | medium | suv | van, extras = klucze dodatków). Nie przeliczaj cen sam; price 0 z on_request = cena do ustalenia.',
+  de: 'Preise der Wäsche berechnest du NUR mit quote_wash (class: small | medium | suv | van, extras = Schlüssel der Extras). Rechne Preise nicht selbst um; price 0 mit on_request = Preis auf Anfrage. Antworte auf Deutsch.',
   uk: 'Ціни мийки рахуй ЛИШЕ інструментом quote_wash (class: small | medium | suv | van, extras — ключі доповнень). Не перераховуй ціни сам; price 0 з on_request = ціна за запитом.',
 };
 

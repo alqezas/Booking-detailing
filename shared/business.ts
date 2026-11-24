@@ -62,9 +62,49 @@ export const INFO_CARD_ICONS = [
   'spray',
   'ticket',
   'timer',
+  'scissors',
+  'hand',
+  'flower',
+  'leaf',
+  'heart',
+  'eye',
+  'gift',
+  'map-pin',
+  'calendar',
 ] as const;
 
-export const TENANT_KINDS = ['detailing', 'autoservice', 'tireservice', 'carwash'] as const;
+export const TENANT_KINDS = ['detailing', 'autoservice', 'tireservice', 'carwash', 'beauty'] as const;
+
+/** Weekly hours: up to three intervals per day. */
+const weekHours = () => z.object(Object.fromEntries(WEEKDAYS.map(d => [d, z.array(interval).max(3)])) as Record<Weekday, z.ZodArray<typeof interval>>);
+
+/**
+ * A service option («Removal of old coating +15 min / +100»): the server adds
+ * its price and minutes to the service when the client ticks it.
+ */
+export const addonSchema = z.object({
+  key,
+  name: z.string().trim().min(2).max(60),
+  price: z.number().int().min(0).max(1_000_000),
+  minutes: z.number().int().min(0).max(240).default(0),
+});
+
+/**
+ * A bookable resource: a bay/post for car studios, a master or a place
+ * (chair, cabinet) for beauty studios. A master may have an own weekly shift
+ * (`hours`; without it the studio hours apply) and own days off.
+ */
+export const resourceSchema = z.object({
+  key,
+  name: z.string().trim().min(1).max(40),
+  seasonal: z.boolean().optional(),
+  role: z.enum(['place', 'master']).optional(),
+  title: z.string().trim().max(60).optional(),
+  bio: z.string().trim().max(300).optional(),
+  photo: z.string().min(1).optional(),
+  hours: weekHours().optional(),
+  daysOff: z.array(z.string().regex(DATE_RE)).max(60).optional(),
+});
 
 const diameter = z.number().int().min(MIN_DIAMETER).max(MAX_DIAMETER);
 
@@ -176,6 +216,7 @@ export const serviceSchema = z.object({
     .max(60 * 24 * 14),
   bufferMinutes: z.number().int().min(0).max(24 * 60).optional(),
   resources: z.array(key).min(1),
+  addons: z.array(addonSchema).max(10).optional(),
 });
 
 export const businessSchema = z
@@ -187,10 +228,14 @@ export const businessSchema = z
     tagline: z.string().trim().max(90).default(''),
     description: z.string().trim().max(600).default(''),
     /** Interface language of the studio's site and cabinet. */
-    locale: z.enum(['ru-RU', 'cs-CZ', 'pl-PL', 'uk-UA']).default('ru-RU'),
+    locale: z.enum(['ru-RU', 'cs-CZ', 'pl-PL', 'uk-UA', 'de-AT']).default('ru-RU'),
     timezone: z.string().refine(isValidTimeZone, 'Неизвестный часовой пояс IANA'),
     currency: z.enum(CURRENCIES).default('RUB'),
     accentColor: z.string().regex(HEX_RE),
+    /** Beauty studios are light by default; "dark" for barbershops and similar. Car studios are always dark. */
+    appearance: z.enum(['light', 'dark', 'cream']).optional(),
+    /** Interface words on top of the kind: "barber" — barbershops (beauty kind only). */
+    vocabulary: z.enum(['barber']).optional(),
     contacts: z.object({
       phone: z.string().transform(normalizePhone).pipe(z.string().regex(PHONE_RE, 'Телефон в формате E.164: +79991234567, +420777056596')),
       address: z.string().trim().min(5).max(200),
@@ -213,7 +258,7 @@ export const businessSchema = z
       logo: z.string().min(1),
       icon: z.string().min(1).optional(),
     }),
-    hours: z.object(Object.fromEntries(WEEKDAYS.map(d => [d, z.array(interval).max(3)])) as Record<Weekday, z.ZodArray<typeof interval>>),
+    hours: weekHours(),
     closedDates: z.array(z.string().regex(DATE_RE)).default([]),
     booking: z
       .object({
@@ -226,7 +271,7 @@ export const businessSchema = z
       })
       .default({slotStepMinutes: 30, minLeadMinutes: 60, horizonDays: 30, cancelCutoffHours: 12, defaultBufferMinutes: 30}),
     /** seasonal: a post that takes bookings only inside a tyre season. */
-    resources: z.array(z.object({key, name: z.string().trim().min(1).max(40), seasonal: z.boolean().optional()})).min(1).max(20),
+    resources: z.array(resourceSchema).min(1).max(20),
     services: z.array(serviceSchema).min(1).max(60),
     infoCards: z
       .array(
@@ -264,6 +309,13 @@ export const businessSchema = z
       .max(20)
       .default([]),
     owner: z.object({email: z.email()}),
+    /**
+     * Instant owner notifications. The chat id is not secret but stays out of
+     * the public card; the bot token is a server secret (TELEGRAM_BOT_TOKEN).
+     */
+    notifications: z
+      .object({telegramChatId: z.string().regex(/^(-?\d{5,20}|@[A-Za-z0-9_]{5,32})$/, 'Telegram chat id: число или @канал').optional()})
+      .optional(),
     assistant: z.object({enabled: z.boolean().default(true)}).default({enabled: true}),
     tire: tireSchema.optional(),
     wash: washSchema.optional(),
@@ -302,6 +354,29 @@ export const businessSchema = z
       e.programs?.forEach(p => {
         if (!serviceKeys.has(p)) ctx.addIssue({code: 'custom', path: ['wash', 'extras', i, 'programs'], message: `Нет услуги «${p}»`});
       });
+    });
+    b.services.forEach((s, i) => {
+      const seen = new Set<string>();
+      s.addons?.forEach((a, j) => {
+        if (seen.has(a.key)) ctx.addIssue({code: 'custom', path: ['services', i, 'addons', j, 'key'], message: 'Повтор ключа опции'});
+        seen.add(a.key);
+      });
+      if (s.addons?.length && b.kind !== 'beauty') {
+        ctx.addIssue({code: 'custom', path: ['services', i, 'addons'], message: 'Опции услуг (addons) — для бьюти-студий; у мойки — wash.extras'});
+      }
+    });
+    // A master's shift narrows the studio hours: it must lie inside them.
+    b.resources.forEach((r, i) => {
+      if (!r.hours) return;
+      WEEKDAYS.forEach(d => {
+        r.hours![d].forEach(([a, z2], j) => {
+          const inside = b.hours[d].some(([o, c]) => minutes(o) <= minutes(a) && minutes(z2) <= minutes(c));
+          if (!inside) ctx.addIssue({code: 'custom', path: ['resources', i, 'hours', d, j], message: `Смена ${a}–${z2} выходит за часы студии (${d})`});
+        });
+      });
+      if (WEEKDAYS.every(d => r.hours![d].length === 0)) {
+        ctx.addIssue({code: 'custom', path: ['resources', i, 'hours'], message: 'У мастера нет ни одного рабочего дня'});
+      }
     });
     if (WEEKDAYS.every(d => b.hours[d].length === 0)) {
       ctx.addIssue({code: 'custom', path: ['hours'], message: 'Нужен хотя бы один рабочий день'});

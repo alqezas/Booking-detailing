@@ -11,6 +11,7 @@ const say = (pick: (v: Messages['v']) => string) => ({error: () => pick(msg.v)})
  *   cs: «777 056 596», «00420 777 056 596», «+420777056596» → +420777056596
  *   pl: «533 557 260», «0048 533 557 260», «+48533557260» → +48533557260
  *   uk: «050 123 45 67», «+38 050 123 45 67», «+380501234567» → +380501234567
+ *   de: «0664 123 4567», «01 920 8295», «0043 664 1234567» → +436641234567
  */
 export function toE164(raw: string, country: string = msg.phoneCountry): string {
   let p = normalizePhone(raw.trim());
@@ -26,6 +27,9 @@ export function toE164(raw: string, country: string = msg.phoneCountry): string 
   } else if (country === '48') {
     if (/^\d{9}$/.test(p)) return '+48' + p;
     if (/^48\d{9}$/.test(p)) return '+' + p;
+  } else if (country === '43') {
+    if (/^0[1-9]\d{5,12}$/.test(p)) return '+43' + p.slice(1);
+    if (/^43[1-9]\d{5,12}$/.test(p)) return '+' + p;
   } else if (country === '380') {
     if (/^0\d{9}$/.test(p)) return '+38' + p;
     if (/^380\d{9}$/.test(p)) return '+' + p;
@@ -48,6 +52,8 @@ export const customerSchema = z.object({
   comment: z.string().trim().max(500, say(v => v.commentLong)).default(''),
 });
 export type CustomerInput = z.input<typeof customerSchema>;
+/** A beauty client: no car, just a name, a phone and an optional wish for the visit. */
+export const personSchema = customerSchema.omit({car: true});
 
 export const loginSchema = z.object({
   email: z.email(say(v => v.emailRequired)),

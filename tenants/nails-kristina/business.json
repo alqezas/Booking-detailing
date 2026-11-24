@@ -1,0 +1,401 @@
+{
+  "slug": "nails-kristina",
+  "name": "Nails by Kristina",
+  "shortName": "Kristina",
+  "kind": "beauty",
+  "tagline": "Частный мастер маникюра на Смихове",
+  "description": "Я Кристина, мастер маникюра с 6-летним опытом. Работаю одна в уютном кабинете: гигиенический и японский маникюр, стойкий гель-лак, укрепление, наращивание и дизайн. Только стерильный инструмент, запись без предоплаты.",
+  "locale": "ru-RU",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#C026D3",
+  "contacts": {
+    "phone": "+420777654321",
+    "address": "Štefánikova 12, Praha 5 – Smíchov",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=%C5%A0tef%C3%A1nikova%2012%2C%20Praha%205",
+    "instagram": "nails.kristina.demo",
+    "whatsapp": "+420777654321"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [],
+    "tue": [
+      [
+        "10:00",
+        "19:00"
+      ]
+    ],
+    "wed": [
+      [
+        "10:00",
+        "19:00"
+      ]
+    ],
+    "thu": [
+      [
+        "12:00",
+        "20:00"
+      ]
+    ],
+    "fri": [
+      [
+        "10:00",
+        "19:00"
+      ]
+    ],
+    "sat": [
+      [
+        "10:00",
+        "16:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-12-24",
+    "2026-12-25",
+    "2026-12-26",
+    "2026-12-31",
+    "2027-01-01"
+  ],
+  "booking": {
+    "slotStepMinutes": 15,
+    "minLeadMinutes": 60,
+    "horizonDays": 30,
+    "cancelCutoffHours": 6,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "kristina",
+      "name": "Кристина",
+      "role": "master",
+      "title": "Мастер маникюра, 6 лет опыта",
+      "bio": "Японский маникюр, наращивание на верхние формы, нюдовые покрытия и френч",
+      "photo": "images/master-kristina.webp"
+    }
+  ],
+  "services": [
+    {
+      "key": "manicure-classic",
+      "name": "Гигиенический маникюр без покрытия",
+      "category": "Уход",
+      "description": "Комбинированный, аппаратный или классический: чистка, обработка кутикулы, форма ногтей. Подходит и мужчинам",
+      "price": 450,
+      "durationMinutes": 45,
+      "resources": [
+        "kristina"
+      ],
+      "addons": [
+        {
+          "key": "removal",
+          "name": "Снятие старого покрытия",
+          "price": 100,
+          "minutes": 15
+        },
+        {
+          "key": "polish",
+          "name": "Покрытие прозрачным укрепляющим лаком",
+          "price": 80,
+          "minutes": 10
+        }
+      ]
+    },
+    {
+      "key": "japanese",
+      "name": "Японский эко-маникюр",
+      "category": "Уход",
+      "description": "Медицинский маникюр: питание пастами и полировка — «голые», но ухоженные и блестящие ногти",
+      "price": 600,
+      "durationMinutes": 60,
+      "resources": [
+        "kristina"
+      ],
+      "addons": [
+        {
+          "key": "removal",
+          "name": "Снятие старого покрытия",
+          "price": 100,
+          "minutes": 15
+        }
+      ]
+    },
+    {
+      "key": "removal-only",
+      "name": "Снятие покрытия без нового",
+      "category": "Уход",
+      "description": "Аккуратное снятие гель-лака или наращивания, форма и уход за кутикулой",
+      "price": 250,
+      "durationMinutes": 30,
+      "resources": [
+        "kristina"
+      ]
+    },
+    {
+      "key": "manicure-gel",
+      "name": "Маникюр + однотонный гель-лак",
+      "category": "Покрытие",
+      "description": "Флагман студии: аппаратный маникюр, выравнивание и стойкое покрытие в один тон на 3–4 недели",
+      "price": 750,
+      "durationMinutes": 90,
+      "resources": [
+        "kristina"
+      ],
+      "addons": [
+        {
+          "key": "removal",
+          "name": "Снятие старого покрытия",
+          "price": 100,
+          "minutes": 15
+        },
+        {
+          "key": "strengthen",
+          "name": "Укрепление гелем / акригелем / пудрой",
+          "price": 150,
+          "minutes": 15
+        },
+        {
+          "key": "repair",
+          "name": "Ремонт / донаращивание 1–2 ногтей",
+          "price": 120,
+          "minutes": 15
+        },
+        {
+          "key": "design",
+          "name": "Дизайн на 2 ногтя",
+          "price": 120,
+          "minutes": 15
+        },
+        {
+          "key": "french",
+          "name": "Френч",
+          "price": 200,
+          "minutes": 20
+        },
+        {
+          "key": "gradient",
+          "name": "Градиент (омбре)",
+          "price": 200,
+          "minutes": 25
+        },
+        {
+          "key": "stamping",
+          "name": "Стемпинг",
+          "price": 150,
+          "minutes": 15
+        }
+      ]
+    },
+    {
+      "key": "manicure-strong",
+      "name": "Маникюр + укрепление + гель-лак",
+      "category": "Покрытие",
+      "description": "Для тонких, слабых или длинных ногтей: укрепление гелем, акригелем или пудрой под цветное покрытие",
+      "price": 900,
+      "durationMinutes": 120,
+      "resources": [
+        "kristina"
+      ],
+      "addons": [
+        {
+          "key": "removal",
+          "name": "Снятие старого покрытия",
+          "price": 100,
+          "minutes": 15
+        },
+        {
+          "key": "repair",
+          "name": "Ремонт / донаращивание 1–2 ногтей",
+          "price": 120,
+          "minutes": 15
+        },
+        {
+          "key": "design",
+          "name": "Дизайн на 2 ногтя",
+          "price": 120,
+          "minutes": 15
+        },
+        {
+          "key": "french",
+          "name": "Френч",
+          "price": 200,
+          "minutes": 20
+        }
+      ]
+    },
+    {
+      "key": "extension",
+      "name": "Наращивание ногтей + гель-лак",
+      "category": "Наращивание",
+      "description": "На верхние формы, гелевые типсы или шаблоны; длина и форма на выбор",
+      "price": 1400,
+      "durationMinutes": 180,
+      "resources": [
+        "kristina"
+      ],
+      "addons": [
+        {
+          "key": "removal",
+          "name": "Снятие чужого материала",
+          "price": 200,
+          "minutes": 20
+        },
+        {
+          "key": "design",
+          "name": "Дизайн на 2 ногтя",
+          "price": 120,
+          "minutes": 15
+        },
+        {
+          "key": "french",
+          "name": "Френч",
+          "price": 200,
+          "minutes": 20
+        },
+        {
+          "key": "gradient",
+          "name": "Градиент (омбре)",
+          "price": 200,
+          "minutes": 25
+        }
+      ]
+    },
+    {
+      "key": "correction",
+      "name": "Коррекция нарощенных ногтей",
+      "category": "Наращивание",
+      "description": "Раз в 3–4 недели: опил отросшего материала, выравнивание архитектуры, новое покрытие",
+      "price": 1100,
+      "durationMinutes": 150,
+      "resources": [
+        "kristina"
+      ],
+      "addons": [
+        {
+          "key": "repair",
+          "name": "Донаращивание 1–2 ногтей",
+          "price": 150,
+          "minutes": 20
+        },
+        {
+          "key": "design",
+          "name": "Дизайн на 2 ногтя",
+          "price": 120,
+          "minutes": 15
+        },
+        {
+          "key": "french",
+          "name": "Френч",
+          "price": 200,
+          "minutes": 20
+        }
+      ]
+    },
+    {
+      "key": "pedicure",
+      "name": "Педикюр + гель-лак",
+      "category": "Педикюр",
+      "description": "Смарт-педикюр стоп и пальцев, обработка кутикулы и стойкое покрытие",
+      "price": 950,
+      "durationMinutes": 90,
+      "resources": [
+        "kristina"
+      ],
+      "addons": [
+        {
+          "key": "removal",
+          "name": "Снятие старого покрытия",
+          "price": 100,
+          "minutes": 15
+        },
+        {
+          "key": "design",
+          "name": "Дизайн на 2 ногтя",
+          "price": 120,
+          "minutes": 15
+        }
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "shield",
+      "title": "Стерильно",
+      "text": "Инструмент проходит сухожар, одноразовые пилки и крафт-пакеты вскрываем при вас"
+    },
+    {
+      "icon": "heart",
+      "title": "Только вы и мастер",
+      "text": "Принимаю по одному клиенту: тихо, без очереди и спешки"
+    },
+    {
+      "icon": "calendar",
+      "title": "Перенос записи",
+      "text": "Перенести или отменить можно онлайн не позднее чем за 6 часов"
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-1.webp",
+      "caption": "Нюдовый гель-лак с укреплением"
+    },
+    {
+      "image": "images/work-2.webp",
+      "caption": "Ягодный градиент"
+    },
+    {
+      "image": "images/work-3.webp",
+      "caption": "Японский маникюр, натуральный блеск"
+    },
+    {
+      "image": "images/work-4.webp",
+      "caption": "Френч на короткую длину"
+    },
+    {
+      "image": "images/work-5.webp",
+      "caption": "Наращивание на верхние формы, миндаль"
+    },
+    {
+      "image": "images/work-6.webp",
+      "caption": "Стемпинг на однотонном покрытии"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Сколько держится гель-лак?",
+      "answer": "3–4 недели. Если покрытие сколется в первые 7 дней — исправим бесплатно.",
+      "keywords": [
+        "держит",
+        "носк",
+        "сколько недел"
+      ]
+    },
+    {
+      "question": "Снимаете чужое покрытие?",
+      "answer": "Да. Снятие перед новым маникюром — опция за 100 Kč, чужое наращивание — 200 Kč. Отметьте её при записи.",
+      "keywords": [
+        "чуж",
+        "снят",
+        "снима"
+      ]
+    },
+    {
+      "question": "Нужна ли предоплата?",
+      "answer": "Нет, оплата после процедуры наличными или картой.",
+      "keywords": [
+        "предоплат",
+        "оплат",
+        "карт"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@nails-kristina.demo"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}

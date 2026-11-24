@@ -1,0 +1,347 @@
+{
+  "slug": "yana-nails-shpt",
+  "name": "Yana Nails",
+  "shortName": "Yana Nails",
+  "kind": "beauty",
+  "tagline": "Краса у деталях · манікюр, корекція, нарощення · Шепетівка",
+  "description": "Ваш майстер — Яна. Акуратний манікюр з укріпленням і покриттям, дизайн та френч. Акуратність, стерильність і комфорт — у кожному візиті.",
+  "locale": "uk-UA",
+  "timezone": "Europe/Kyiv",
+  "currency": "UAH",
+  "accentColor": "#BE185D",
+  "contacts": {
+    "phone": "+380000000000",
+    "address": "м. Шепетівка",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=%D0%A8%D0%B5%D0%BF%D0%B5%D1%82%D1%96%D0%B2%D0%BA%D0%B0",
+    "instagram": "yana_nails.shpt"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "sat": [
+      [
+        "10:00",
+        "16:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-12-31",
+    "2027-01-01"
+  ],
+  "booking": {
+    "slotStepMinutes": 15,
+    "minLeadMinutes": 120,
+    "horizonDays": 30,
+    "cancelCutoffHours": 12,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "yana",
+      "name": "Яна",
+      "role": "master",
+      "title": "Майстер манікюру",
+      "bio": "Манікюр з укріпленням і покриттям, дизайн, френч"
+    }
+  ],
+  "services": [
+    {
+      "key": "hygienic",
+      "name": "Гігієнічний манікюр",
+      "category": "Манікюр",
+      "description": "Обробка кутикули, форма та покриття прозорим лаком",
+      "price": 200,
+      "durationMinutes": 45,
+      "resources": [
+        "yana"
+      ]
+    },
+    {
+      "key": "removal-hygienic",
+      "name": "Зняття матеріалу + гігієнічний манікюр",
+      "category": "Манікюр",
+      "description": "Зняття старого матеріалу, гігієнічний манікюр і покриття прозорим лаком",
+      "price": 250,
+      "durationMinutes": 60,
+      "resources": [
+        "yana"
+      ]
+    },
+    {
+      "key": "correction-min",
+      "name": "Корекція (мінімальна довжина / укріплення своїх нігтів)",
+      "category": "Корекція",
+      "description": "Укріплення власних нігтів або мінімальна довжина, покриття кольором",
+      "price": 400,
+      "durationMinutes": 120,
+      "resources": [
+        "yana"
+      ],
+      "addons": [
+        {
+          "key": "architecture",
+          "name": "Підняття ключових, архітектура, добудова кутиків",
+          "price": 50,
+          "minutes": 15
+        },
+        {
+          "key": "french",
+          "name": "Френч",
+          "price": 50,
+          "minutes": 15
+        },
+        {
+          "key": "vtirka",
+          "name": "Втирка",
+          "price": 50,
+          "minutes": 10
+        },
+        {
+          "key": "strazy",
+          "name": "Стрази",
+          "price": 50,
+          "minutes": 10
+        }
+      ]
+    },
+    {
+      "key": "correction-3",
+      "name": "Корекція, довжина до 3",
+      "category": "Корекція",
+      "description": "Корекція нарощених нігтів довжиною до 3, покриття кольором",
+      "price": 450,
+      "durationMinutes": 135,
+      "resources": [
+        "yana"
+      ],
+      "addons": [
+        {
+          "key": "architecture",
+          "name": "Підняття ключових, архітектура, добудова кутиків",
+          "price": 50,
+          "minutes": 15
+        },
+        {
+          "key": "french",
+          "name": "Френч",
+          "price": 50,
+          "minutes": 15
+        },
+        {
+          "key": "vtirka",
+          "name": "Втирка",
+          "price": 50,
+          "minutes": 10
+        },
+        {
+          "key": "strazy",
+          "name": "Стрази",
+          "price": 50,
+          "minutes": 10
+        }
+      ]
+    },
+    {
+      "key": "correction-4",
+      "name": "Корекція, довжина від 4",
+      "category": "Корекція",
+      "description": "Корекція нарощених нігтів довжиною від 4, покриття кольором",
+      "price": 500,
+      "durationMinutes": 150,
+      "resources": [
+        "yana"
+      ],
+      "addons": [
+        {
+          "key": "architecture",
+          "name": "Підняття ключових, архітектура, добудова кутиків",
+          "price": 50,
+          "minutes": 15
+        },
+        {
+          "key": "french",
+          "name": "Френч",
+          "price": 50,
+          "minutes": 15
+        },
+        {
+          "key": "vtirka",
+          "name": "Втирка",
+          "price": 50,
+          "minutes": 10
+        },
+        {
+          "key": "strazy",
+          "name": "Стрази",
+          "price": 50,
+          "minutes": 10
+        }
+      ]
+    },
+    {
+      "key": "extension",
+      "name": "Нарощення",
+      "category": "Нарощення",
+      "description": "Ціна залежить від довжини",
+      "price": 600,
+      "priceFrom": true,
+      "durationMinutes": 180,
+      "resources": [
+        "yana"
+      ],
+      "addons": [
+        {
+          "key": "architecture",
+          "name": "Підняття ключових, архітектура, добудова кутиків",
+          "price": 50,
+          "minutes": 15
+        },
+        {
+          "key": "french",
+          "name": "Френч",
+          "price": 50,
+          "minutes": 15
+        },
+        {
+          "key": "vtirka",
+          "name": "Втирка",
+          "price": 50,
+          "minutes": 10
+        },
+        {
+          "key": "strazy",
+          "name": "Стрази",
+          "price": 50,
+          "minutes": 10
+        }
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "sparkle",
+      "title": "Акуратність",
+      "text": "Рівне покриття і чиста кутикула — нігтики виглядають доглянуто тижнями"
+    },
+    {
+      "icon": "shield",
+      "title": "Стерильність",
+      "text": "Стерильний інструмент і одноразові пилки для кожної клієнтки"
+    },
+    {
+      "icon": "heart",
+      "title": "Комфорт",
+      "text": "Затишно, без поспіху й черг — лише ви та майстер"
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-1.webp",
+      "caption": "Нюдовий манікюр, квадрат"
+    },
+    {
+      "image": "images/work-2.webp",
+      "caption": "Малиновий з втиркою"
+    },
+    {
+      "image": "images/work-3.webp",
+      "caption": "Шоколадний глянець"
+    },
+    {
+      "image": "images/work-4.webp",
+      "caption": "Класичний френч"
+    },
+    {
+      "image": "images/work-5.webp",
+      "caption": "Червоний на короткі нігті"
+    },
+    {
+      "image": "images/work-6.webp",
+      "caption": "Нюд з дизайном"
+    },
+    {
+      "image": "images/work-7.webp",
+      "caption": "Чорний глянець"
+    },
+    {
+      "image": "images/work-8.webp",
+      "caption": "Шоколад з леопардовим принтом"
+    },
+    {
+      "image": "images/work-9.webp",
+      "caption": "Сірий, нарощення"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Де ви знаходитесь?",
+      "answer": "Шепетівка. Точну адресу надішлемо після запису.",
+      "keywords": [
+        "де",
+        "адрес",
+        "знайти",
+        "шепетів"
+      ]
+    },
+    {
+      "question": "Чи можна записатися через Instagram?",
+      "answer": "Так, пишіть у Direct @yana_nails.shpt — або оберіть час тут, це швидше.",
+      "keywords": [
+        "інстаграм",
+        "instagram",
+        "директ",
+        "direct"
+      ]
+    },
+    {
+      "question": "Скільки коштує дизайн?",
+      "answer": "Френч, втирка або стрази — +50 грн кожне. Підняття ключових, виправлення архітектури, добудова кутиків — теж +50 грн.",
+      "keywords": [
+        "дизайн",
+        "френч",
+        "втирк",
+        "страз"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@yana-nails-shpt.demo"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}

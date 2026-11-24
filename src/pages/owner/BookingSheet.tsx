@@ -32,6 +32,8 @@ import {statusLabel} from '../client/MyBookingPage.tsx';
 import {ownerKey, useOwner} from './ownerContext.tsx';
 import {msg} from '../../i18n/index.ts';
 import {tireRows} from '../../components/tire/tireRows.ts';
+import {beautyMsg} from '../../i18n/beauty.ts';
+import {isAddonsParams} from '../../lib/types.ts';
 
 type Mode = 'view' | 'pay' | 'move';
 
@@ -122,9 +124,23 @@ export function BookingSheet({bookingId, onClose}: {bookingId: string | null; on
                   {formatPhone(b.customer_phone)}
                 </Button>
               </MetadataListItem>
-              <MetadataListItem label={msg.summary.car}>
-                <Text>{b.car}</Text>
-              </MetadataListItem>
+              {b.car ? (
+                <MetadataListItem label={msg.summary.car}>
+                  <Text>{b.car}</Text>
+                </MetadataListItem>
+              ) : null}
+              {isAddonsParams(b.tire_params) && (
+                <>
+                  {b.tire_params.addons.length > 0 && (
+                    <MetadataListItem label={beautyMsg().flow.options}>
+                      <Text>{b.tire_params.addons.map(a => `${a.name} (+${formatMoney(a.price, tenant.currency)})`).join(', ')}</Text>
+                    </MetadataListItem>
+                  )}
+                  <MetadataListItem label={beautyMsg().flow.master2}>
+                    <Text>{b.tire_params.master_choice === 'any' ? beautyMsg().flow.anyAssigned(b.resource_name) : b.resource_name}</Text>
+                  </MetadataListItem>
+                </>
+              )}
               {tireRows(b).map(r => (
                 <MetadataListItem key={r.label} label={r.label}>
                   <Text>{r.value}</Text>
@@ -310,7 +326,7 @@ function MoveForm({booking, onDone, onBack}: {booking: OwnerBooking; onDone: (b:
           setNotice(null);
         }}
         notice={notice}
-        ownerLoad={(from, days) => api.availability(booking.service_id, from, days)}
+        ownerLoad={(from, days) => api.moveOptions(booking.id, from, days)}
       />
       <HStack gap={2}>
         <Button label={msg.common.back} variant="ghost" onClick={onBack} style={{flexShrink: 0}} />

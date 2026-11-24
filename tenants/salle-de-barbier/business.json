@@ -1,0 +1,142 @@
+{
+  "slug": "salle-de-barbier",
+  "name": "Salle de Barbier",
+  "shortName": "Salle",
+  "kind": "beauty",
+  "appearance": "dark",
+  "vocabulary": "barber",
+  "tagline": "Tradition trifft Modern · beim Hundertwasserhaus",
+  "description": "Ihr exklusiver Barbershop in Wien-Landstraße/Leopoldstadt: professionelle Haarschnitte, präzise Bartpflege mit heißem Handtuch und entspannende Pflege in gemütlicher Atmosphäre. Lehnen Sie sich zurück, genießen Sie ein Getränk – Onur und Feyzo kümmern sich um Ihren Look.",
+  "locale": "de-AT",
+  "timezone": "Europe/Vienna",
+  "currency": "EUR",
+  "accentColor": "#C9A227",
+  "contacts": {
+    "phone": "+4368184231979",
+    "address": "Böcklinstraße 58, 1020 Wien",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Salle%20de%20Barbier%2C%20B%C3%B6cklinstra%C3%9Fe%2058%2C%201020%20Wien",
+    "instagram": "salledebarbier"
+  },
+  "images": {"hero": "images/hero.webp", "logo": "images/logo.png"},
+  "hours": {
+    "mon": [],
+    "tue": [["09:00", "18:00"]],
+    "wed": [["09:00", "18:00"]],
+    "thu": [["09:00", "18:00"]],
+    "fri": [["09:00", "18:00"]],
+    "sat": [["09:30", "17:00"]],
+    "sun": []
+  },
+  "closedDates": ["2026-12-25", "2026-12-26", "2027-01-01", "2027-01-06"],
+  "booking": {"slotStepMinutes": 15, "minLeadMinutes": 30, "horizonDays": 30, "cancelCutoffHours": 3, "defaultBufferMinutes": 5},
+  "resources": [
+    {"key": "onur", "name": "Onur", "role": "master", "title": "Gründer · Barbier seit 2011", "bio": "Leidenschaft, Präzision und internationales Flair. Spricht Deutsch, Englisch und Türkisch.", "photo": "images/barber-onur.webp"},
+    {"key": "feyzo", "name": "Feyzo", "role": "master", "title": "Barbier seit 2015", "bio": "Präzise Schnitte und individuelle Styles. Spricht Deutsch, Türkisch und etwas Englisch.", "photo": "images/barber-feyzo.webp"}
+  ],
+  "services": [
+    {
+      "key": "dry-cut", "name": "Trockenhaarschnitt", "category": "Herren Haar",
+      "description": "Präziser Herrenschnitt ohne Waschen.",
+      "price": 30, "durationMinutes": 30,
+      "resources": ["onur", "feyzo"],
+      "addons": [{"key": "brows", "name": "Augenbrauen zupfen", "price": 6, "minutes": 15}]
+    },
+    {
+      "key": "wash-cut", "name": "Waschen & Schneiden", "category": "Herren Haar",
+      "description": "Haarwäsche, Schnitt und Styling.",
+      "price": 32, "durationMinutes": 30,
+      "resources": ["onur", "feyzo"],
+      "addons": [{"key": "brows", "name": "Augenbrauen zupfen", "price": 6, "minutes": 15}]
+    },
+    {
+      "key": "special-cut", "name": "Herren Spezial Haarschnitt", "category": "Herren Haar",
+      "description": "Ausführliche Beratung und aufwendiger Schnitt – nimmt sich Zeit für Ihren Look.",
+      "price": 55, "durationMinutes": 60,
+      "resources": ["onur", "feyzo"]
+    },
+    {
+      "key": "hair-beard", "name": "Haar & Bart Service inkl. heißem Handtuch", "category": "Haar & Bart",
+      "description": "Haarschnitt und Bartpflege mit heißem Handtuch.",
+      "price": 52, "durationMinutes": 60,
+      "resources": ["onur", "feyzo"],
+      "addons": [{"key": "brows", "name": "Augenbrauen zupfen", "price": 6, "minutes": 15}]
+    },
+    {
+      "key": "salle-special", "name": "Salle de Barbier Speziall", "category": "Haar & Bart",
+      "description": "Das komplette Verwöhnprogramm des Hauses.",
+      "price": 60, "durationMinutes": 75,
+      "resources": ["onur", "feyzo"]
+    },
+    {
+      "key": "full-shave", "name": "Traditionelle Komplettrasur", "category": "Bart",
+      "description": "Klassische Rasur mit dem Messer.",
+      "price": 28, "durationMinutes": 30,
+      "resources": ["onur", "feyzo"]
+    },
+    {
+      "key": "trim-shave", "name": "Trimmen & Rasieren mit heißem Handtuch", "category": "Bart",
+      "description": "Bart trimmen, Konturen rasieren, heißes Handtuch.",
+      "price": 28, "durationMinutes": 30,
+      "resources": ["onur", "feyzo"]
+    },
+    {
+      "key": "trim", "name": "Trimmen ohne Rasur", "category": "Bart",
+      "description": "Bart in Form bringen, ohne Rasur.",
+      "price": 25, "durationMinutes": 30,
+      "resources": ["onur", "feyzo"]
+    },
+    {
+      "key": "brows", "name": "Augenbrauen zupfen", "category": "Extras",
+      "description": "Augenbrauen in Form bringen.",
+      "price": 6, "durationMinutes": 15,
+      "resources": ["onur", "feyzo"]
+    },
+    {
+      "key": "perm", "name": "Dauerwelle – klassisch oder natürlich", "category": "Extras",
+      "description": "Klassische oder natürliche Wellen. Preis je nach Länge 55–95 €.",
+      "price": 55, "priceFrom": true, "durationMinutes": 135,
+      "resources": ["onur", "feyzo"]
+    },
+    {
+      "key": "color", "name": "Haare färben", "category": "Extras",
+      "description": "Farbe oder Tönung. Preis je nach Länge 40–60 €.",
+      "price": 40, "priceFrom": true, "durationMinutes": 60,
+      "resources": ["onur", "feyzo"]
+    }
+  ],
+  "infoCards": [
+    {"icon": "medal", "title": "Top Rated 2023 · 2025 · 2026", "text": "Über 14 Jahre Erfahrung – klassisches Handwerk und moderne Styles"},
+    {"icon": "credit-card", "title": "Faire Festpreise", "text": "Haarschnitt ab 30 €, Haar & Bart mit heißem Handtuch 52 € – alle Preise online"},
+    {"icon": "calendar", "title": "Termin ohne Provision", "text": "Direkt beim Salon buchen – verschieben oder stornieren bis 3 Stunden vorher"}
+  ],
+  "gallery": [
+    {"image": "images/work-1.webp", "caption": "Locken mit Taper Fade"},
+    {"image": "images/work-2.webp", "caption": "Klassischer Seitenscheitel"},
+    {"image": "images/work-3.webp", "caption": "Textured Mullet"},
+    {"image": "images/work-4.webp", "caption": "Skin Fade"},
+    {"image": "images/work-5.webp", "caption": "Low Fade mit Volumen"},
+    {"image": "images/work-6.webp", "caption": "Taper mit Textur"},
+    {"image": "images/work-7.webp", "caption": "French Crop"},
+    {"image": "images/work-8.webp", "caption": "Präzision beim Schnitt"},
+    {"image": "images/work-9.webp", "caption": "Unsere Lounge"}
+  ],
+  "faq": [
+    {
+      "question": "Wo finde ich euch?",
+      "answer": "Böcklinstraße 58, 1020 Wien – gleich beim Hundertwasserhaus.",
+      "keywords": ["adresse", "wo", "finden", "hundertwasser"]
+    },
+    {
+      "question": "Welche Sprachen sprecht ihr?",
+      "answer": "Deutsch, Türkisch und Englisch.",
+      "keywords": ["sprache", "englisch", "türkisch", "english"]
+    },
+    {
+      "question": "Wann habt ihr geöffnet?",
+      "answer": "Dienstag bis Freitag 9–18 Uhr, Samstag 9:30–17 Uhr. Sonntag und Montag geschlossen.",
+      "keywords": ["öffnungszeiten", "offen", "montag"]
+    }
+  ],
+  "owner": {"email": "owner@salle-de-barbier.demo"},
+  "assistant": {"enabled": true}
+}

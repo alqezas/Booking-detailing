@@ -13,6 +13,7 @@ import {StatTile} from './OwnerBookingsPage.tsx';
 import {ownerKey, useOwner} from './ownerContext.tsx';
 import {PeriodNav, periodLabel, type Period} from './PeriodNav.tsx';
 import {msg} from '../../i18n/index.ts';
+import {beautyMsg} from '../../i18n/beauty.ts';
 
 type PaymentRow = {
   id: string;
@@ -77,7 +78,11 @@ export default function OwnerStatsPage() {
                 <StatTile label={msg.bookings.tiles.ready} value={String(s.completed)} hint={msg.bookings.tiles.readyHint} />
                 <StatTile label={msg.bookings.tiles.bookings} value={String(s.bookings)} hint={msg.stats.bookingsHint} />
                 <StatTile label={msg.stats.cancelNoShow} value={`${s.cancelled} / ${s.no_show}`} />
+                {s.upcoming !== undefined && <StatTile label={beautyMsg().owner.upcoming} value={String(s.upcoming)} hint={beautyMsg().owner.upcomingHint} />}
               </Grid>
+              {s.upcoming_value !== undefined && (
+                <StatTile label={beautyMsg().owner.upcomingValue} value={formatMoney(s.upcoming_value, cur)} hint={beautyMsg().owner.upcomingValueHint} />
+              )}
               <StatTile
                 label={msg.stats.expected}
                 value={formatMoney(s.expected_value, cur)}

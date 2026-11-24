@@ -13,7 +13,26 @@ export type Service = {
   price: number;
   price_from: boolean;
   duration_minutes: number;
+  /** Resources (masters/bays) that can do the service (absent before the beauty migration). */
+  resource_ids?: string[];
+  /** Options of the service (beauty): price and minutes are added on the server. */
+  addons?: Addon[];
 };
+
+export type Addon = {key: string; name: string; price: number; duration_minutes: number};
+
+/** A master or a place (beauty), a bay or post (car studios). */
+export type Resource = {id: string; key: string; name: string; role: 'master' | 'place'; title: string; bio: string; photo_path: string | null};
+
+/** Snapshot of the chosen options in a beauty booking. */
+export type AddonsParams = {
+  kind: 'addons';
+  addons: Addon[];
+  base_price: number;
+  base_minutes: number;
+  master_choice: 'any' | 'specific';
+};
+export type TireParamsSnapshot = {vehicle: string; rim: string; diameter: number; wheels: number; on_request: boolean};
 
 export type InfoCard = {position: number; icon: string; title: string; text: string};
 export type FaqItem = {question: string; answer: string};
@@ -25,7 +44,7 @@ export type PublicTenant = {
   id: string;
   slug: string;
   status: TenantStatus;
-  kind: 'detailing' | 'autoservice' | 'tireservice' | 'carwash';
+  kind: 'detailing' | 'autoservice' | 'tireservice' | 'carwash' | 'beauty';
   name: string;
   short_name: string | null;
   tagline: string;
@@ -34,6 +53,10 @@ export type PublicTenant = {
   currency: string;
   locale: string;
   accent_color: string;
+  /** Beauty studios are light unless the config asks for 'dark' (barbershops). */
+  appearance?: 'light' | 'dark' | 'cream' | null;
+  /** Words of the interface on top of the kind: 'barber' for barbershops (beauty kind). */
+  vocabulary?: 'barber' | null;
   phone: string;
   address: string;
   /** Registered office when it differs from the workshop address. */
@@ -67,6 +90,8 @@ export type PublicTenant = {
   /** Online booking closed or limited in these windows (any studio). */
   peak_hours?: PeakRule[];
   services: Service[];
+  /** Masters and places (absent before the beauty migration). */
+  resources?: Resource[];
   hours: HoursRow[];
   exceptions: ScheduleException[];
   info_cards: InfoCard[];
@@ -76,7 +101,18 @@ export type PublicTenant = {
 
 export type Slot = {start_at: string; available: boolean};
 export type AvailabilityDay = {date: string; slots: Slot[]};
-export type ServerQuote = {kind?: 'tire' | 'wash'; price: number; on_request: boolean; duration_minutes: number; wheels?: number; label: string};
+export type ServerQuote = {
+  kind?: 'tire' | 'wash' | 'addons';
+  price: number;
+  on_request: boolean;
+  duration_minutes: number;
+  wheels?: number;
+  label: string;
+  price_from?: boolean;
+  base_price?: number;
+  base_minutes?: number;
+  addons?: Addon[];
+};
 
 export type Availability = {
   quote?: ServerQuote;
@@ -85,6 +121,7 @@ export type Availability = {
   from: string;
   to: string;
   horizon_end: string;
+  resource_id?: string | null;
   days: AvailabilityDay[];
 };
 
@@ -93,6 +130,7 @@ export type ReminderState = {status: 'pending' | 'processing' | 'sent' | 'failed
 export type PublicBooking = {
   id: string;
   status: BookingStatus;
+  service_id?: string;
   service_name: string;
   price: number;
   price_from: boolean;
@@ -106,11 +144,13 @@ export type PublicBooking = {
   plate?: string | null;
   tire_size?: string | null;
   tire_source?: TireSource | null;
-  tire_params?: {vehicle: string; rim: string; diameter: number; wheels: number; on_request: boolean} | null;
+  tire_params?: TireParamsSnapshot | AddonsParams | null;
   resource_name: string;
+  resource_role?: 'master' | 'place';
   is_demo: boolean;
   cancel_deadline: string;
   can_cancel: boolean;
+  can_reschedule?: boolean;
   cancel_cutoff_hours: number;
   reminder: ReminderState | null;
   tenant: {slug: string; name: string; phone: string; address: string; map_url: string | null; timezone: string; currency: string; status: TenantStatus};
@@ -139,7 +179,7 @@ export type OwnerBooking = {
   plate?: string | null;
   tire_size?: string | null;
   tire_source?: TireSource | null;
-  tire_params?: {vehicle: string; rim: string; diameter: number; wheels: number; on_request: boolean} | null;
+  tire_params?: TireParamsSnapshot | AddonsParams | null;
   /** Wash pass that paid for this booking (marked ready). */
   pass?: {pass_id: string; total: number; remaining: number} | null;
   source: 'client' | 'owner' | 'demo';
@@ -164,6 +204,9 @@ export type Stats = {
   from_at: string;
   to_at: string;
   bookings: number;
+  /** Confirmed bookings still ahead (from now) in the period, and their agreed value — a forecast. */
+  upcoming?: number;
+  upcoming_value?: number;
   cancelled: number;
   no_show: number;
   arrivals: number;
@@ -214,3 +257,5 @@ export type WashPass = {
   remaining?: number;
   last_used_at?: string | null;
 };
+
+export const isAddonsParams = (p: PublicBooking['tire_params']): p is AddonsParams => !!p && (p as AddonsParams).kind === 'addons';

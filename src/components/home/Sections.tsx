@@ -13,8 +13,16 @@ import {Tab, TabList} from '@astryxdesign/core/TabList';
 import {Text} from '@astryxdesign/core/Text';
 import {VStack} from '@astryxdesign/core/VStack';
 import {
+  CalendarCheck,
   Car,
   ChatCircleDots,
+  Eye,
+  Flower,
+  Gift,
+  HandHeart,
+  Heart,
+  Leaf,
+  Scissors,
   Clock,
   Coffee,
   CreditCard,
@@ -44,17 +52,18 @@ import {
 import {useMemo, useState, type ReactNode} from 'react';
 import {useNavigate} from 'react-router';
 import {useTenant} from '../../app/tenant.tsx';
-import {formatDate, formatDuration, formatPhone, formatPrice, summarizeHours} from '../../lib/format.ts';
+import {formatDate, formatDuration, formatPhone, formatPrice, hasPhone, summarizeHours} from '../../lib/format.ts';
 import {msg} from '../../i18n/index.ts';
 import {tireMsg} from '../../i18n/tire.ts';
 import {washMsg} from '../../i18n/wash.ts';
+import {beautyMsg} from '../../i18n/beauty.ts';
 import type {GalleryItem} from '../../lib/types.ts';
 import {mediaUrl} from '../../lib/media.ts';
 import {useReveal} from '../../lib/motion.ts';
 import {useBookingFlow} from '../booking/BookingFlow.tsx';
 import {TEXT_MAX_WIDTH} from '../layout/Page.tsx';
 
-const CARD_ICONS: Record<string, PhosphorIcon> = {
+export const CARD_ICONS: Record<string, PhosphorIcon> = {
   shield: ShieldCheck,
   sparkle: Sparkle,
   clock: Clock,
@@ -71,11 +80,26 @@ const CARD_ICONS: Record<string, PhosphorIcon> = {
   spray: SprayBottle,
   ticket: Ticket,
   timer: Timer,
+  scissors: Scissors,
+  hand: HandHeart,
+  flower: Flower,
+  leaf: Leaf,
+  heart: Heart,
+  eye: Eye,
+  gift: Gift,
+  'map-pin': MapPin,
+  calendar: CalendarCheck,
 };
 
 /** Example questions for the assistant, in the studio language. */
-export const assistantExamples = (t?: {tire?: unknown; wash?: unknown}) =>
-  t?.tire ? tireMsg().home.assistantExamples : t?.wash ? washMsg().home.assistantExamples : msg.home.assistantExamples;
+export const assistantExamples = (t?: {tire?: unknown; wash?: unknown; kind?: string; services?: {name: string; price: number; addons?: unknown[]}[]}): string[] => {
+  if (t?.tire) return tireMsg().home.assistantExamples;
+  if (t?.wash) return washMsg().home.assistantExamples;
+  const base = msg.home.assistantExamples;
+  // Beauty: the price question names this studio's own service (nails, massage, brows…).
+  const s = t?.kind === 'beauty' ? (t.services?.find(x => x.addons?.length && x.price > 0) ?? t.services?.find(x => x.price > 0)) : undefined;
+  return s ? [base[0]!, beautyMsg().home.priceQuestion(s.name), base[2]!] : base;
+};
 
 /** A page section that fades in when scrolled into view (static with reduced motion). */
 export function RevealSection({title, id, children, action}: {title: string; id?: string; children: ReactNode; action?: ReactNode}) {
@@ -355,12 +379,14 @@ export function ContactsSection() {
               )}
             </VStack>
           </HStack>
+          {hasPhone(t.phone) && (
           <HStack gap={3} align="center">
             <Icon icon={Phone} color="accent" />
             <Button label={msg.home.call(formatPhone(t.phone))} variant="ghost" href={`tel:${t.phone}`}>
               {formatPhone(t.phone)}
             </Button>
           </HStack>
+          )}
           {t.email && (
             <HStack gap={3} align="center">
               <Icon icon={EnvelopeSimple} color="accent" />

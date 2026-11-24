@@ -3,14 +3,14 @@
  * told which language to answer in; these are the template answers of the
  * no-model fallback, error messages and reminder pushes.
  */
-export type Lang = 'ru' | 'cs' | 'pl' | 'uk';
+export type Lang = 'ru' | 'cs' | 'pl' | 'uk' | 'de';
 
 export const langOf = (locale: string | null | undefined): Lang => {
   const l = locale?.toLowerCase() ?? '';
-  return l.startsWith('cs') ? 'cs' : l.startsWith('pl') ? 'pl' : l.startsWith('uk') ? 'uk' : 'ru';
+  return l.startsWith('cs') ? 'cs' : l.startsWith('pl') ? 'pl' : l.startsWith('uk') ? 'uk' : l.startsWith('de') ? 'de' : 'ru';
 };
 
-export const INTL: Record<Lang, string> = {ru: 'ru-RU', cs: 'cs-CZ', pl: 'pl-PL', uk: 'uk-UA'};
+export const INTL: Record<Lang, string> = {ru: 'ru-RU', cs: 'cs-CZ', pl: 'pl-PL', uk: 'uk-UA', de: 'de-AT'};
 
 export const L = {
   ru: {
@@ -295,6 +295,76 @@ export const L = {
     noAccess: 'Немає доступу до цієї студії',
     cannotCount: 'Не вдалося порахувати',
     cannotLoadBookings: 'Не вдалося отримати записи',
+  },
+  de: {
+    today: 'heute',
+    tomorrow: 'morgen',
+    at: 'um',
+    days: ['Tag', 'Tage', 'Tage'] as [string, string, string],
+    h: 'Std.',
+    min: 'Min.',
+    from: 'ab ',
+    onRequest: 'Preis auf Anfrage',
+    weekdays: ['', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'],
+    dayOff: 'geschlossen',
+    noService: 'Diese Leistung gibt es nicht. Nimm die service_id aus list_services.',
+    noSlotsNote: 'In den nächsten drei Wochen gibt es keinen freien Termin',
+    toolUnavailable: 'Werkzeug nicht verfügbar',
+    location: (address: string, map: string, phone: string) => `Sie finden uns hier: ${address}. Route: ${map}. Telefon: ${phone}.`,
+    hours: (list: string) => `Öffnungszeiten: ${list}.`,
+    contacts: (phone: string, address: string) => `Telefon: ${phone}. Adresse: ${address}.`,
+    prices: 'Preise:',
+    noSlots: (service: string, phone: string) => `Für „${service}“ gibt es in den nächsten drei Wochen keinen freien Termin. Rufen Sie uns an: ${phone}.`,
+    slots: (service: string, list: string) => `Nächste freie Termine für „${service}“: ${list}. Tippen Sie auf „Buchen“, um einen zu wählen.`,
+    whichService: 'Um welche Leistung geht es genau?',
+    whichServiceForSlot: 'Für welche Leistung suchen Sie einen Termin? Davon hängt die Dauer ab.',
+    clientHelp: 'Ich helfe bei freien Terminen, Preisen und dem Weg zu uns. Womit kann ich helfen?',
+    clientExamples: ['Wann ist der nächste freie Termin?', 'Was kostet ein Haarschnitt?', 'Wo finde ich Sie?'],
+    clientPrompt: (name: string, today: string, tz: string) =>
+      [
+        `Du bist der Buchungsassistent von „${name}“. Heute ist ${today}, Zeitzone des Studios ${tz}.`,
+        'Antworte auf Deutsch, sieze die Kunden, kurz und freundlich, 1–4 Sätze.',
+        'Antworte NUR anhand der Daten aus den Werkzeugen. Erfinde keine Preise, Zeiten, Adressen oder Rabatte.',
+        'Freie Termine suchst du nur über find_free_slots. Ist unklar, welche Leistung gemeint ist, stelle eine Rückfrage.',
+        'Sprich nicht über andere Kunden oder fremde Termine – solche Daten hast du nicht.',
+        'Zum Buchen empfiehl, auf „Buchen“ zu tippen und eine Uhrzeit zu wählen. Du legst selbst keine Termine an und stornierst keine.',
+      ].join('\n'),
+    faqIntro: 'Häufige Fragen und Antworten des Studios. Antworte danach in eigenen Worten und füge nichts hinzu:',
+    status: {confirmed: 'erwartet', arrived: 'angekommen', ready: 'erledigt', cancelled: 'storniert', no_show: 'nicht erschienen'} as Record<string, string>,
+    netNote: 'net_received — tatsächlich erhaltenes Geld. expected_value_forecast — Schätzung nach den Terminpreisen, kein Umsatz.',
+    noBookings: (period: string) => `${period}: keine Termine.`,
+    bookingsCount: (n: number): string => (n === 1 ? 'Termin' : 'Termine'),
+    more: (n: number) => `…und ${n} weitere`,
+    cars: (arrivals: number, completed: number, bookings: number) => `angekommen ${arrivals}, erledigt ${completed}, Termine ${bookings}`,
+    cash: (net: string, extra: string | null) => `erhalten ${net}${extra ? ` (${extra})` : ''}`,
+    cashExtra: (paid: string, refunds: string) => `Zahlungen ${paid}, Rückerstattungen ${refunds}`,
+    todayLabel: 'Heute',
+    weekLabel: 'Diese Woche',
+    ownerHelp: 'Ich kann Termine zeigen und Besuche oder Geld für Tag, Woche oder Monat zählen. Was brauchen Sie?',
+    ownerExamples: ['Wer ist morgen gebucht?', 'Wie viele Besuche gab es diese Woche?', 'Wie viel Geld haben wir erhalten?'],
+    ownerPrompt: (name: string, today: string, tz: string) =>
+      [
+        `Du bist der Assistent des Inhabers von „${name}“. Heute ist ${today}, Zeitzone ${tz}.`,
+        'Antworte auf Deutsch, kurz, in Zahlen. Daten NUR aus den Werkzeugen get_bookings und get_stats.',
+        'Die Woche geht von Montag bis Sonntag. „Erhalten“ ist net_received; der erwartete Wert ist eine Schätzung, nenne ihn nicht Umsatz.',
+        'Du liest nur: du legst keine Termine an, verschiebst oder stornierst keine und erfasst keine Zahlungen. Wird eine Änderung gewünscht, erkläre, wo man sie in der Verwaltung macht.',
+        'Ist der Zeitraum unklar, frage nach.',
+      ].join('\n'),
+    simplified: 'Der Assistent antwortet im vereinfachten Modus',
+    onlyPost: 'Nur POST',
+    badQuestion: 'Bitte eine Frage mit bis zu 500 Zeichen',
+    unavailable: 'Der Assistent ist vorübergehend nicht verfügbar',
+    tooMany: 'Zu viele Fragen hintereinander. Versuchen Sie es in ein paar Minuten.',
+    tooManyOwner: 'Zu viele Fragen hintereinander. Bitte warten Sie ein paar Minuten.',
+    studioNotFound: 'Studio nicht gefunden',
+    disabled: 'Der Assistent ist in diesem Studio ausgeschaltet',
+    overloaded: 'Der Assistent ist gerade überlastet. Versuchen Sie es später oder rufen Sie uns an.',
+    noSlotsData: 'Freie Termine konnten nicht geladen werden',
+    signIn: 'Bitte melden Sie sich in der Verwaltung an',
+    sessionExpired: 'Sitzung abgelaufen, bitte erneut anmelden',
+    noAccess: 'Kein Zugriff auf dieses Studio',
+    cannotCount: 'Konnte nicht gezählt werden',
+    cannotLoadBookings: 'Termine konnten nicht geladen werden',
   },
 };
 

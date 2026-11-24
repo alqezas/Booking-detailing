@@ -6,7 +6,8 @@
 import type {AgentReply} from './agent.ts';
 import {INTL, texts, type Lang} from './lang.ts';
 import {routeOwner, type OwnerPeriod} from './router.ts';
-import {money} from './text.ts';
+import {money, norm} from './text.ts';
+import {BEAUTY_OWNER_PROMPT, FREE_WORDS, freeSlotsAnswer, type FreeSummary} from './beauty-assistant.ts';
 
 export type OwnerStats = {
   period: OwnerPeriod;
@@ -23,6 +24,8 @@ export type OwnerStats = {
   refunded: number;
   net_received: number;
   expected_value: number;
+  upcoming?: number;
+  upcoming_value?: number;
 };
 export type OwnerBookingRow = {
   start_at: string;
@@ -43,6 +46,9 @@ export type OwnerSource = {
   lang?: Lang;
   stats: (period: OwnerPeriod, anchor: string) => Promise<OwnerStats>;
   bookings: (from: string, to: string) => Promise<OwnerBookingRow[]>;
+  /** Beauty studios: free windows of the period (owner_free_slot_summary). */
+  freeSlots?: (period: OwnerPeriod, anchor: string) => Promise<FreeSummary>;
+  kind?: string;
 };
 
 const langOfSource = (src: OwnerSource): Lang => src.lang ?? 'ru';
@@ -69,6 +75,7 @@ export async function ownerBookings(src: OwnerSource, period: OwnerPeriod, ancho
       customer: r.customer_name,
       car: r.car,
       bay: r.resource_name,
+      is_master: src.kind === 'beauty',
       status: texts(lang).status[r.status] ?? r.status,
       price: r.price,
       to_pay: r.status === 'cancelled' ? 0 : r.balance,
@@ -91,6 +98,7 @@ export async function ownerStats(src: OwnerSource, period: OwnerPeriod, anchor: 
     refunds: s.refunded,
     net_received: s.net_received,
     expected_value_forecast: s.expected_value,
+    ...(s.upcoming !== undefined ? {upcoming_confirmed: s.upcoming, upcoming_value_forecast: s.upcoming_value} : {}),
     note: texts(lang).netNote,
   };
 }
@@ -101,23 +109,36 @@ export function ownerExecutor(src: OwnerSource) {
     const anchor = String(args.anchor_date);
     if (name === 'get_bookings') return ownerBookings(src, period, anchor);
     if (name === 'get_stats') return ownerStats(src, period, anchor);
+    if (name === 'count_free_slots' && src.freeSlots) {
+      const r = await src.freeSlots(period, anchor);
+      return {...r, note: 'free_starts = start times with at least one free suitable master; at most 14 days ahead'};
+    }
     return {error: texts(langOfSource(src)).toolUnavailable};
   };
 }
 
 export function ownerSystemPrompt(src: OwnerSource, today: string): string {
-  return texts(langOfSource(src)).ownerPrompt(src.studioName, today, src.timezone);
+  const base = texts(langOfSource(src)).ownerPrompt(src.studioName, today, src.timezone);
+  return src.kind === 'beauty' ? `${base}\n${BEAUTY_OWNER_PROMPT[langOfSource(src)]}` : base;
 }
 
 export async function ownerFallback(src: OwnerSource, text: string): Promise<AgentReply> {
   const lang = langOfSource(src);
   const say = texts(lang);
   const intent = routeOwner(text, src.timezone, undefined, lang);
+  // Beauty: «Сколько свободных окон на этой неделе?»
+  if (src.freeSlots && FREE_WORDS.test(norm(text, lang))) {
+    const period: OwnerPeriod = intent.intent === 'clarify' ? 'week' : intent.period;
+    const anchor = intent.intent === 'clarify' ? new Intl.DateTimeFormat('en-CA', {timeZone: src.timezone}).format(new Date()) : intent.anchor;
+    const r = await src.freeSlots(period, anchor);
+    const label = periodText({period, from_date: r.from_date, to_date: r.to_date}, lang);
+    return {text: freeSlotsAnswer(r, label, lang, iso => fmtTime(iso, src.timezone, lang)), mode: 'fallback', tools: ['count_free_slots']};
+  }
   if (intent.intent === 'clarify') return {text: intent.question, mode: 'fallback', tools: [], data: {options: intent.options ?? []}};
   if (intent.intent === 'bookings') {
     const r = await ownerBookings(src, intent.period, intent.anchor);
     if (!r.bookings.length) return {text: say.noBookings(r.period), mode: 'fallback', tools: ['get_bookings']};
-    const lines = r.bookings.slice(0, 12).map(b => `${b.when} — ${b.service}, ${b.customer} (${b.car}), ${b.status}`);
+    const lines = r.bookings.slice(0, 12).map(b => `${b.when} — ${b.service}, ${b.is_master ? `${b.customer} → ${b.bay}` : `${b.customer} (${b.car})`}, ${b.status}`);
     const more = r.bookings.length > 12 ? `\n${say.more(r.bookings.length - 12)}` : '';
     return {text: `${r.period}: ${r.total_active} ${say.bookingsCount(r.total_active)}.\n${lines.join('\n')}${more}`, mode: 'fallback', tools: ['get_bookings']};
   }

@@ -1,0 +1,458 @@
+{
+  "slug": "murats-barbershop",
+  "name": "Murat's BarberShop",
+  "shortName": "Murat's",
+  "kind": "beauty",
+  "appearance": "dark",
+  "vocabulary": "barber",
+  "tagline": "Haarschnitt, Fade und Bart in Favoriten · seit 2003",
+  "description": "Murat ist Friseurmeister und seit 2003 im Barberhandwerk, mit Erfahrung aus einem Barbershop in der Türkei. Gemeinsam mit seinem Team: klassische und moderne Haarschnitte, Fades, präzises Bartstyling, Haar-Muster und Augenbrauen.",
+  "locale": "de-AT",
+  "timezone": "Europe/Vienna",
+  "currency": "EUR",
+  "accentColor": "#C9A227",
+  "contacts": {
+    "phone": "+4319208295",
+    "address": "Neilreichgasse 76, 1100 Wien",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Neilreichgasse%2076%2C%201100%20Wien",
+    "instagram": "muratsbarbershop"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "sat": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01",
+    "2027-01-06"
+  ],
+  "booking": {
+    "slotStepMinutes": 15,
+    "minLeadMinutes": 30,
+    "horizonDays": 30,
+    "cancelCutoffHours": 3,
+    "defaultBufferMinutes": 5
+  },
+  "resources": [
+    {
+      "key": "murat",
+      "name": "Murat",
+      "role": "master",
+      "title": "Inhaber · Friseurmeister",
+      "bio": "Seit 2003 im Handwerk: klassische und moderne Schnitte, Bart, Augenbrauen und Haar-Muster",
+      "photo": "images/barber-murat.webp"
+    },
+    {
+      "key": "baris",
+      "name": "Barış",
+      "role": "master",
+      "title": "Barber",
+      "bio": "Haarschnitte, Fades und Bart",
+      "photo": "images/barber-baris.webp"
+    },
+    {
+      "key": "ahmad",
+      "name": "Ahmad",
+      "role": "master",
+      "title": "Barber",
+      "bio": "Haarschnitte und Bartpflege, viele Stammkunden",
+      "photo": "images/barber-ahmad.webp"
+    }
+  ],
+  "services": [
+    {
+      "key": "haircut",
+      "name": "Haarschnitt",
+      "category": "Haare",
+      "description": "Klassischer Schnitt für Herren – präzise & modern.",
+      "price": 20,
+      "durationMinutes": 30,
+      "resources": [
+        "murat",
+        "baris",
+        "ahmad"
+      ],
+      "addons": [
+        {
+          "key": "wash",
+          "name": "Haare waschen",
+          "price": 5,
+          "minutes": 5
+        },
+        {
+          "key": "wash-dry",
+          "name": "Haare waschen & föhnen",
+          "price": 10,
+          "minutes": 10
+        },
+        {
+          "key": "brows",
+          "name": "Augenbrauen zupfen",
+          "price": 7,
+          "minutes": 10
+        },
+        {
+          "key": "brows-blade",
+          "name": "Augenbrauen formen mit Messer",
+          "price": 5,
+          "minutes": 5
+        },
+        {
+          "key": "wax-face",
+          "name": "Gesicht harzen",
+          "price": 5,
+          "minutes": 5
+        },
+        {
+          "key": "wax-ears",
+          "name": "Ohren harzen",
+          "price": 3,
+          "minutes": 5
+        },
+        {
+          "key": "wax-nose",
+          "name": "Nase harzen",
+          "price": 3,
+          "minutes": 5
+        },
+        {
+          "key": "mask",
+          "name": "Gesichtsmaske",
+          "price": 5,
+          "minutes": 10
+        }
+      ]
+    },
+    {
+      "key": "machine",
+      "name": "Haarschnitt mit Maschine",
+      "category": "Haare",
+      "description": "Einfacher Maschinenschnitt, schnell & sauber.",
+      "price": 15,
+      "durationMinutes": 20,
+      "resources": [
+        "murat",
+        "baris",
+        "ahmad"
+      ],
+      "addons": [
+        {
+          "key": "wash",
+          "name": "Haare waschen",
+          "price": 5,
+          "minutes": 5
+        },
+        {
+          "key": "brows",
+          "name": "Augenbrauen zupfen",
+          "price": 7,
+          "minutes": 10
+        },
+        {
+          "key": "wax-ears",
+          "name": "Ohren harzen",
+          "price": 3,
+          "minutes": 5
+        },
+        {
+          "key": "wax-nose",
+          "name": "Nase harzen",
+          "price": 3,
+          "minutes": 5
+        }
+      ]
+    },
+    {
+      "key": "pattern",
+      "name": "Haar-Muster",
+      "category": "Haare",
+      "description": "Kreative Muster & individuelle Designs – Preis je nach Motiv.",
+      "price": 15,
+      "priceFrom": true,
+      "durationMinutes": 20,
+      "resources": [
+        "murat",
+        "baris",
+        "ahmad"
+      ]
+    },
+    {
+      "key": "kids",
+      "name": "Kinderhaarschnitt",
+      "category": "Kinder",
+      "description": "Speziell für Kinder, sanft & stilvoll.",
+      "price": 17,
+      "durationMinutes": 30,
+      "resources": [
+        "murat",
+        "baris",
+        "ahmad"
+      ]
+    },
+    {
+      "key": "kids-machine",
+      "name": "Kinderhaarschnitt mit Maschine",
+      "category": "Kinder",
+      "description": "Praktisch & unkompliziert für Kinder.",
+      "price": 15,
+      "durationMinutes": 20,
+      "resources": [
+        "murat",
+        "baris",
+        "ahmad"
+      ]
+    },
+    {
+      "key": "beard-model",
+      "name": "Bart Model Rasur",
+      "category": "Bart & Rasur",
+      "description": "Perfekte Bartformung für klare Linien.",
+      "price": 15,
+      "durationMinutes": 20,
+      "resources": [
+        "murat",
+        "baris",
+        "ahmad"
+      ],
+      "addons": [
+        {
+          "key": "mask",
+          "name": "Gesichtsmaske",
+          "price": 5,
+          "minutes": 10
+        },
+        {
+          "key": "wax-face",
+          "name": "Gesicht harzen",
+          "price": 5,
+          "minutes": 5
+        }
+      ]
+    },
+    {
+      "key": "beard-full",
+      "name": "Bart Komplett Rasur",
+      "category": "Bart & Rasur",
+      "description": "Glatte Rasur mit klassischem Finish.",
+      "price": 10,
+      "durationMinutes": 15,
+      "resources": [
+        "murat",
+        "baris",
+        "ahmad"
+      ]
+    },
+    {
+      "key": "head-shave",
+      "name": "Kopf Rasur",
+      "category": "Bart & Rasur",
+      "description": "Komplette Rasur für einen frischen Look.",
+      "price": 15,
+      "durationMinutes": 20,
+      "resources": [
+        "murat",
+        "baris",
+        "ahmad"
+      ]
+    },
+    {
+      "key": "wash-dry",
+      "name": "Haare waschen & föhnen",
+      "category": "Extras",
+      "description": "Waschen & Styling mit Föhn inklusive.",
+      "price": 10,
+      "durationMinutes": 15,
+      "resources": [
+        "murat",
+        "baris",
+        "ahmad"
+      ]
+    },
+    {
+      "key": "brows",
+      "name": "Augenbrauen zupfen",
+      "category": "Extras",
+      "description": "Präzises Zupfen für gepflegte Augenbrauen.",
+      "price": 7,
+      "durationMinutes": 15,
+      "resources": [
+        "murat",
+        "baris",
+        "ahmad"
+      ]
+    },
+    {
+      "key": "brows-blade",
+      "name": "Augenbrauen formen mit Messer",
+      "category": "Extras",
+      "description": "Exaktes Styling mit dem Messer.",
+      "price": 5,
+      "durationMinutes": 15,
+      "resources": [
+        "murat",
+        "baris",
+        "ahmad"
+      ]
+    },
+    {
+      "key": "wax-face",
+      "name": "Gesicht harzen",
+      "category": "Extras",
+      "description": "Schonende Entfernung von Gesichtshaaren. Ohren und Nase je 3 € als Extra.",
+      "price": 5,
+      "durationMinutes": 15,
+      "resources": [
+        "murat",
+        "baris",
+        "ahmad"
+      ],
+      "addons": [
+        {
+          "key": "wax-ears",
+          "name": "Ohren harzen",
+          "price": 3,
+          "minutes": 5
+        },
+        {
+          "key": "wax-nose",
+          "name": "Nase harzen",
+          "price": 3,
+          "minutes": 5
+        }
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "medal",
+      "title": "Seit 2003",
+      "text": "Friseurmeister mit über 20 Jahren Erfahrung – in Wien und in der Türkei"
+    },
+    {
+      "icon": "credit-card",
+      "title": "Faire Preise",
+      "text": "Haarschnitt 20 €, Maschinenschnitt 15 €, Bart ab 10 € – alle Preise online sichtbar"
+    },
+    {
+      "icon": "calendar",
+      "title": "Online verschieben",
+      "text": "Termin online verschieben oder stornieren bis 3 Stunden vorher"
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-1.webp",
+      "caption": "Fade mit Bart"
+    },
+    {
+      "image": "images/work-2.webp",
+      "caption": "Textur oben, Fade an den Seiten"
+    },
+    {
+      "image": "images/work-3.webp",
+      "caption": "Skin Fade"
+    },
+    {
+      "image": "images/work-4.webp",
+      "caption": "Seitenscheitel mit Fade"
+    },
+    {
+      "image": "images/work-5.webp",
+      "caption": "Locken mit Taper Fade"
+    },
+    {
+      "image": "images/work-6.webp",
+      "caption": "Haar-Muster"
+    },
+    {
+      "image": "images/work-7.webp",
+      "caption": "Kurzer Fade, sauber gezogen"
+    },
+    {
+      "image": "images/work-8.webp",
+      "caption": "Slick Back mit Fade"
+    },
+    {
+      "image": "images/work-9.webp",
+      "caption": "Muster im Nacken"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Kann ich auch telefonisch buchen?",
+      "answer": "Ja, unter 01 920 8295, Mo–Sa 9–19 Uhr. Online sehen Sie die freien Zeiten sofort und buchen ohne Warten.",
+      "keywords": [
+        "telefon",
+        "anrufen",
+        "nummer"
+      ]
+    },
+    {
+      "question": "Wie lange dauert ein Haarschnitt?",
+      "answer": "Etwa 30 Minuten, ein Maschinenschnitt rund 20 Minuten.",
+      "keywords": [
+        "dauert",
+        "lange",
+        "minuten"
+      ]
+    },
+    {
+      "question": "Kann ich mir den Barber aussuchen?",
+      "answer": "Ja: Murat, Barış oder Ahmad – oder einfach, wer gerade frei ist.",
+      "keywords": [
+        "barber",
+        "aussuch",
+        "wählen",
+        "murat",
+        "baris",
+        "ahmad"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@murats-barbershop.demo"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}

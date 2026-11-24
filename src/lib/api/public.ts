@@ -83,3 +83,48 @@ export const savePushSubscription = (slug: string, token: string, sub: PushSubsc
     p_p256dh: sub.keys?.p256dh,
     p_auth: sub.keys?.auth,
   });
+
+// ---- Beauty: add-ons, master choice, moving a booking ------------------------
+
+/** Slots for a service with options, for one master or any free one (null). The quote comes from the server. */
+export const getBeautyAvailability = (slug: string, serviceId: string, addons: string[], resourceId: string | null, from: string, days: number) =>
+  rpc<Availability>('public_get_beauty_availability', {
+    p_slug: slug,
+    p_service_id: serviceId,
+    p_addons: addons,
+    p_resource_id: resourceId,
+    p_from: from,
+    p_days: days,
+  });
+
+export type BeautyBookingInput = {
+  slug: string;
+  serviceId: string;
+  startAt: string;
+  resourceId: string | null;
+  name: string;
+  phone: string;
+  comment: string;
+  addons: string[];
+  idempotencyKey: string;
+};
+
+/** Price, duration and tenant are never sent: the server takes them from the service and its options. */
+export const createBeautyBooking = (i: BeautyBookingInput) =>
+  rpc<{booking: PublicBooking; access_token: string; replayed: boolean}>('public_create_beauty_booking', {
+    p_slug: i.slug,
+    p_service_id: i.serviceId,
+    p_start_at: i.startAt,
+    p_resource_id: i.resourceId,
+    p_customer_name: i.name,
+    p_customer_phone: i.phone,
+    p_comment: i.comment,
+    p_idempotency_key: i.idempotencyKey,
+    p_addons: i.addons,
+  });
+
+export const getRescheduleOptions = (slug: string, token: string, from: string, days: number) =>
+  rpc<Availability>('public_reschedule_options', {p_slug: slug, p_token: token, p_from: from, p_days: days});
+
+export const rescheduleBooking = (slug: string, token: string, startAt: string) =>
+  rpc<PublicBooking>('public_reschedule_booking', {p_slug: slug, p_token: token, p_start_at: startAt});

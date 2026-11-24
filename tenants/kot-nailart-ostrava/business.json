@@ -1,0 +1,113 @@
+{
+  "slug": "kot-nailart-ostrava",
+  "name": "Kot Nailart",
+  "shortName": "Kot Nailart",
+  "kind": "beauty",
+  "tagline": "Manikúra a pedikúra v Ostravě · útulné studio, 50+ barev",
+  "description": "Vaše nehtová designérka Ekaterina. Útulné studio v Ostravě-Hrabůvce: pečlivá manikúra a pedikúra, odolný gel lak z palety více než 50 barev, zpevnění, prodlužování a zdobení. Pracujeme pouze se sterilními nástroji.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#9F1239",
+  "contacts": {
+    "phone": "+420000000000",
+    "address": "Ostrava – Hrabůvka",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ostrava-Hrab%C5%AFvka",
+    "instagram": "kot_nailart_ostrava"
+  },
+  "images": {"hero": "images/hero.webp", "logo": "images/logo.png"},
+  "hours": {
+    "mon": [["09:00", "19:00"]],
+    "tue": [["09:00", "19:00"]],
+    "wed": [["09:00", "19:00"]],
+    "thu": [["09:00", "19:00"]],
+    "fri": [["09:00", "19:00"]],
+    "sat": [["09:00", "15:00"]],
+    "sun": []
+  },
+  "closedDates": ["2026-12-24", "2026-12-25", "2026-12-26", "2026-12-31", "2027-01-01"],
+  "booking": {"slotStepMinutes": 15, "minLeadMinutes": 120, "horizonDays": 30, "cancelCutoffHours": 12, "defaultBufferMinutes": 15},
+  "resources": [
+    {"key": "ekaterina", "name": "Ekaterina", "role": "master", "title": "Manikúra a pedikúra", "bio": "Gel lak z palety 50+ barev, zpevnění, pedikúra a zdobení nehtů"}
+  ],
+  "services": [
+    {
+      "key": "manicure-classic", "name": "Manikúra bez laku", "category": "Manikúra",
+      "description": "Kombinovaná nebo přístrojová: ošetření kůžičky, tvar nehtů, péče. Vhodná i pro muže",
+      "price": 400, "durationMinutes": 45, "resources": ["ekaterina"],
+      "addons": [
+        {"key": "removal", "name": "Odstranění starého laku", "price": 100, "minutes": 15},
+        {"key": "japanese", "name": "Japonská manikúra (pasty a leštění)", "price": 150, "minutes": 15}
+      ]
+    },
+    {
+      "key": "manicure-gel", "name": "Manikúra + gel lak", "category": "Manikúra",
+      "description": "Manikúra, vyrovnání a jednobarevný gel lak — paleta více než 50 barev, výdrž 3–4 týdny",
+      "price": 600, "durationMinutes": 90, "resources": ["ekaterina"],
+      "addons": [
+        {"key": "removal", "name": "Odstranění starého laku", "price": 100, "minutes": 15},
+        {"key": "strengthen", "name": "Zpevnění gelem / akrygelem", "price": 150, "minutes": 15},
+        {"key": "repair", "name": "Oprava 1–2 nehtů", "price": 80, "minutes": 10},
+        {"key": "design", "name": "Zdobení 2 nehtů", "price": 100, "minutes": 15},
+        {"key": "french", "name": "French", "price": 150, "minutes": 20},
+        {"key": "gradient", "name": "Ombré / chrom efekt", "price": 150, "minutes": 20}
+      ]
+    },
+    {
+      "key": "extension", "name": "Prodloužení nehtů + gel lak", "category": "Prodlužování",
+      "description": "Na horní formy nebo tipy, délka a tvar podle přání",
+      "price": 1100, "durationMinutes": 180, "resources": ["ekaterina"],
+      "addons": [
+        {"key": "removal", "name": "Odstranění cizího materiálu", "price": 150, "minutes": 20},
+        {"key": "design", "name": "Zdobení 2 nehtů", "price": 100, "minutes": 15},
+        {"key": "french", "name": "French", "price": 150, "minutes": 20}
+      ]
+    },
+    {
+      "key": "correction", "name": "Doplnění prodloužených nehtů", "category": "Prodlužování",
+      "description": "Jednou za 3–4 týdny: zapilování odrostlého materiálu, vyrovnání a nový lak",
+      "price": 900, "durationMinutes": 150, "resources": ["ekaterina"],
+      "addons": [
+        {"key": "repair", "name": "Doprodloužení 1–2 nehtů", "price": 100, "minutes": 15},
+        {"key": "design", "name": "Zdobení 2 nehtů", "price": 100, "minutes": 15}
+      ]
+    },
+    {
+      "key": "pedicure", "name": "Pedikúra bez laku", "category": "Pedikúra",
+      "description": "Přístrojová pedikúra chodidel a prstů, ošetření kůžičky",
+      "price": 550, "durationMinutes": 60, "resources": ["ekaterina"],
+      "addons": [{"key": "removal", "name": "Odstranění starého laku", "price": 100, "minutes": 15}]
+    },
+    {
+      "key": "pedicure-gel", "name": "Pedikúra + gel lak", "category": "Pedikúra",
+      "description": "Přístrojová pedikúra a odolný gel lak v barvě z palety 50+ odstínů",
+      "price": 750, "durationMinutes": 90, "resources": ["ekaterina"],
+      "addons": [
+        {"key": "removal", "name": "Odstranění starého laku", "price": 100, "minutes": 15},
+        {"key": "design", "name": "Zdobení 2 nehtů", "price": 100, "minutes": 15}
+      ]
+    },
+    {
+      "key": "removal-only", "name": "Odstranění gel laku", "category": "Manikúra",
+      "description": "Šetrné odstranění gel laku bez nového nalakování",
+      "price": 200, "durationMinutes": 30, "resources": ["ekaterina"]
+    }
+  ],
+  "infoCards": [
+    {"icon": "shield", "title": "Sterilizace", "text": "Nástroje procházejí úplnou sterilizací, sáček otevíráme přímo před vámi"},
+    {"icon": "sparkle", "title": "50+ barev", "text": "Velká paleta gel laků: vybereme odstín podle nálady i sezóny"},
+    {"icon": "map-pin", "title": "Kde nás najdete", "text": "Ostrava-Hrabůvka. Přesnou adresu pošleme po objednání"}
+  ],
+  "gallery": [
+    {"image": "images/work-1.webp", "caption": "Červený gel lak"},
+    {"image": "images/work-2.webp", "caption": "Bordó na krátké nehty"},
+    {"image": "images/work-3.webp", "caption": "Růžový nude, mandlový tvar"}
+  ],
+  "faq": [
+    {"question": "Kde studio najdu?", "answer": "Ostrava-Hrabůvka. Přesnou adresu a popis cesty vám pošleme po objednání.", "keywords": ["kde", "adresa", "hrabuvka", "najdu", "cesta"]},
+    {"question": "Jak dlouho vydrží gel lak?", "answer": "3–4 týdny při běžné zátěži. Na slabé nehty doporučujeme zpevnění.", "keywords": ["vydrz", "jak dlouho", "tydn"]},
+    {"question": "Můžu se objednat přes Instagram?", "answer": "Ano, napište do Direct @kot_nailart_ostrava — nebo si vyberte termín přímo tady, je to rychlejší.", "keywords": ["instagram", "direct", "zprav"]}
+  ],
+  "owner": {"email": "owner@kot-nailart-ostrava.demo"},
+  "assistant": {"enabled": true}
+}

@@ -47,3 +47,14 @@ export function withAlpha(hex: string, alpha: number): string {
   const [r, g, b] = hexToRgb(hex);
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
+
+/**
+ * Light canvas (beauty studios): the fill is the same as on dark, but accent
+ * text/icons must reach 4.5:1 on the white page, so they darken.
+ */
+export function accentPairLight(hex: string, page = '#FFFFFF'): {fill: string; text: string; onFill: string} {
+  const {fill, onFill} = accentPair(hex);
+  let text = hex.toUpperCase();
+  for (let i = 0; i < 40 && contrast(text, page) < 4.5; i++) text = scale(text, 0.94);
+  return {fill, text, onFill};
+}

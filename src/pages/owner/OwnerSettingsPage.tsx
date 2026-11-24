@@ -16,6 +16,40 @@ import {useTenant} from '../../app/tenant.tsx';
 import {SeasonsSettings} from './settings/SeasonsSettings.tsx';
 import {PeakHoursSettings} from './settings/PeakHoursSettings.tsx';
 import {washMsg} from '../../i18n/wash.ts';
+import {MastersSettings} from './beauty/MastersSettings.tsx';
+import {AddonsSettings, CategoriesSettings} from './beauty/AddonsSettings.tsx';
+import {TelegramSettings} from './beauty/TelegramSettings.tsx';
+import {SocialSettings} from './beauty/SocialSettings.tsx';
+
+/** Beauty: Telegram with the studio, add-ons and categories with services, profiles and shifts with masters. */
+const BeautyStudio = () => (
+  <VStack gap={6}>
+    <StudioSettings />
+    <SocialSettings />
+    <TelegramSettings />
+  </VStack>
+);
+const BeautyServices = () => (
+  <VStack gap={6}>
+    <ServicesSettings />
+    <CategoriesSettings />
+    <AddonsSettings />
+  </VStack>
+);
+const BeautyMasters = () => (
+  <VStack gap={6}>
+    <ResourcesSettings />
+    <MastersSettings />
+  </VStack>
+);
+const BEAUTY_SECTIONS = [
+  {value: 'studio', Component: BeautyStudio},
+  {value: 'services', Component: BeautyServices},
+  {value: 'bays', Component: BeautyMasters},
+  {value: 'schedule', Component: ScheduleSettings},
+  {value: 'cards', Component: InfoCardsSettings},
+  {value: 'gallery', Component: GallerySettings},
+] as const;
 
 const SECTIONS = [
   {value: 'studio', Component: StudioSettings},
@@ -36,7 +70,8 @@ const tabLabel = (v: string) =>
 export default function OwnerSettingsPage() {
   const [params, setParams] = useSearchParams();
   const tenant = useTenant();
-  const sections: readonly {value: string; Component: () => React.JSX.Element}[] = tenant.tire ? TIRE_SECTIONS : tenant.wash ? WASH_SECTIONS : SECTIONS;
+  const sections: readonly {value: string; Component: () => React.JSX.Element}[] =
+    tenant.kind === 'beauty' ? BEAUTY_SECTIONS : tenant.tire ? TIRE_SECTIONS : tenant.wash ? WASH_SECTIONS : SECTIONS;
   const current = sections.find(s => s.value === params.get('tab')) ?? sections[0]!;
   const Body = current.Component;
   return (

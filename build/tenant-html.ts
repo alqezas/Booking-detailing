@@ -23,6 +23,9 @@ type Head = {
   /** <html lang>; the app reads it to pick the interface language before the studio loads. */
   lang?: string;
   noscript?: string;
+  /** Beauty studios are light (cream canvas); car studios dark. */
+  themeColor?: string;
+  colorScheme?: 'light' | 'dark';
 };
 
 const MARKER = '<!--tenant-head-->';
@@ -51,6 +54,16 @@ export function renderHead(h: Head): string {
 function applyHead(template: string, h: Head): string {
   let html = template.replace(MARKER, renderHead(h)).replace(/<html lang="[a-z-]+"/, `<html lang="${h.lang ?? 'ru'}"`);
   if (h.noscript) html = html.replace(/<noscript>[^<]*<\/noscript>/,`<noscript>${esc(h.noscript)}</noscript>`);
+  if (h.colorScheme === 'light') {
+    // A light studio: no black flash before the app paints, dark status bar text on iOS.
+    html = html
+      .replace('data-astryx-mode="dark"', 'data-astryx-mode="light"')
+      .replace('<meta name="color-scheme" content="dark" />', '<meta name="color-scheme" content="light" />')
+      .replace('content="black-translucent"', 'content="default"')
+      // Dev keeps the source spacing, the build minifies it («html,body{color:#fff;background:#000}»): match both.
+      .replace(/html,\s*body\s*\{[^}]*\}/, `html,body{background:${h.themeColor ?? '#FFFFFF'};color:#141318}`);
+  }
+  if (h.themeColor) html = html.replace('<meta name="theme-color" content="#000000" />', `<meta name="theme-color" content="${h.themeColor}" />`);
   return html;
 }
 

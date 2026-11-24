@@ -1,0 +1,120 @@
+{
+  "slug": "victorie-barbershop",
+  "name": "Victorie Barber Shop",
+  "shortName": "Victorie",
+  "kind": "beauty",
+  "appearance": "dark",
+  "vocabulary": "barber",
+  "tagline": "Prémiový barbershop v centru Prahy · Žitná 29",
+  "description": "Moderní barber studio v centru Prahy: pánské střihy, fade, úprava vousů a kompletní grooming. Tři barbeři – Martin, Samuel a Marek – individuální přístup, precizní práce a dobrá nálada.",
+  "locale": "cs-CZ",
+  "timezone": "Europe/Prague",
+  "currency": "CZK",
+  "accentColor": "#C9A227",
+  "contacts": {
+    "phone": "+420601003900",
+    "address": "Žitná 606/29, Praha 1 – Nové Město",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Victorie%20Barber%20Shop%2C%20%C5%BDitn%C3%A1%20606%2F29%2C%20Praha",
+    "instagram": "victoriebarbershop"
+  },
+  "images": {"hero": "images/hero.webp", "logo": "images/logo.png"},
+  "hours": {
+    "mon": [["11:00", "20:00"]],
+    "tue": [["11:00", "20:00"]],
+    "wed": [["11:00", "20:00"]],
+    "thu": [["11:00", "20:00"]],
+    "fri": [["11:00", "20:00"]],
+    "sat": [["11:00", "16:00"]],
+    "sun": []
+  },
+  "closedDates": ["2026-12-24", "2026-12-25", "2026-12-26", "2027-01-01"],
+  "booking": {"slotStepMinutes": 15, "minLeadMinutes": 30, "horizonDays": 30, "cancelCutoffHours": 3, "defaultBufferMinutes": 5},
+  "resources": [
+    {"key": "martin", "name": "Martin", "role": "master", "title": "Vedoucí pobočky", "bio": "Fade, moderní střihy a úprava vousů", "photo": "images/barber-martin.webp"},
+    {"key": "samuel", "name": "Samuel", "role": "master", "title": "Barber", "bio": "Pánské střihy, textura a fade", "photo": "images/barber-samuel.webp"},
+    {"key": "marek", "name": "Marek", "role": "master", "title": "Barber", "bio": "Střihy, vousy a holení", "photo": "images/barber-marek.webp"}
+  ],
+  "services": [
+    {
+      "key": "haircut", "name": "Pánský střih", "category": "Střihy",
+      "description": "Konzultace, střih nůžkami i strojkem, fade a styling.",
+      "price": 450, "durationMinutes": 45,
+      "resources": ["martin", "samuel", "marek"],
+      "addons": [
+        {"key": "wash", "name": "Mytí vlasů", "price": 100, "minutes": 10},
+        {"key": "brows", "name": "Úprava obočí", "price": 100, "minutes": 10},
+        {"key": "wax", "name": "Depilace voskem (uši, nos)", "price": 100, "minutes": 10}
+      ]
+    },
+    {
+      "key": "machine", "name": "Střih strojkem", "category": "Střihy",
+      "description": "Jedna délka strojkem, čisté kontury.",
+      "price": 350, "durationMinutes": 30,
+      "resources": ["martin", "samuel", "marek"]
+    },
+    {
+      "key": "kids", "name": "Dětský střih", "category": "Střihy",
+      "description": "Pro kluky do 12 let.",
+      "price": 350, "durationMinutes": 30,
+      "resources": ["martin", "samuel", "marek"]
+    },
+    {
+      "key": "beard", "name": "Úprava vousů", "category": "Vousy",
+      "description": "Napáření vousů, precizní úprava a holení kontur.",
+      "price": 450, "durationMinutes": 30,
+      "resources": ["martin", "samuel", "marek"]
+    },
+    {
+      "key": "combo", "name": "Kompletní péče: střih + vousy", "category": "Komplet",
+      "description": "Pánský střih a úprava vousů s napářením, styling.",
+      "price": 800, "durationMinutes": 75,
+      "resources": ["martin", "samuel", "marek"],
+      "addons": [
+        {"key": "wash", "name": "Mytí vlasů", "price": 100, "minutes": 10},
+        {"key": "mask", "name": "Černá slupovací maska", "price": 150, "minutes": 15}
+      ]
+    },
+    {
+      "key": "head-shave", "name": "Holení hlavy", "category": "Vousy",
+      "description": "Hladké holení hlavy s horkým ručníkem.",
+      "price": 400, "durationMinutes": 30,
+      "resources": ["martin", "samuel", "marek"]
+    }
+  ],
+  "infoCards": [
+    {"icon": "medal", "title": "10. střih zdarma", "text": "Elektronická věrnostní kartička v mobilu – za každých 10 střihů jeden od nás"},
+    {"icon": "credit-card", "title": "Dárkové vouchery", "text": "Darujte střih a péči kamarádovi, tátovi nebo bratrovi"},
+    {"icon": "calendar", "title": "Online rezervace", "text": "Vyberte si barbera a volný čas, změna nebo zrušení až 3 hodiny předem"}
+  ],
+  "gallery": [
+    {"image": "images/work-1.webp", "caption": "Textura s fade"},
+    {"image": "images/work-2.webp", "caption": "Textured crop"},
+    {"image": "images/work-3.webp", "caption": "Práce v křesle"},
+    {"image": "images/work-4.webp", "caption": "Holení hlavy a vousy"},
+    {"image": "images/work-5.webp", "caption": "Najdete nás v Žitné 29"}
+  ],
+  "faq": [
+    {
+      "question": "Berete i zákazníky bez objednání?",
+      "answer": "Ano, podle aktuální kapacity. S rezervací online máte jistotu, že na vás barber čeká.",
+      "keywords": ["bez objednání", "walk", "přijít", "ulice"]
+    },
+    {
+      "question": "Jak funguje věrnostní kartička?",
+      "answer": "Naskenujete QR kód v barbershopu, kartička se uloží do mobilu. Při každé návštěvě dostanete razítko a 10. střih máte zdarma.",
+      "keywords": ["věrnost", "kartička", "razítko", "zdarma"]
+    },
+    {
+      "question": "Můžu se objednat telefonicky?",
+      "answer": "Ano, na čísle 601 003 900. Online ale volné časy uvidíte hned a nemusíte čekat, až barber dostříhá.",
+      "keywords": ["telefon", "zavolat", "číslo"]
+    },
+    {
+      "question": "Můžu si vybrat barbera?",
+      "answer": "Ano: Martin, Samuel nebo Marek – nebo kdokoli, kdo má zrovna volno.",
+      "keywords": ["barber", "vybrat", "martin", "samuel", "marek"]
+    }
+  ],
+  "owner": {"email": "owner@victorie-barbershop.demo"},
+  "assistant": {"enabled": true}
+}

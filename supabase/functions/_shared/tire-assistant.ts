@@ -30,6 +30,7 @@ const T: Record<Lang, {onRequest: string; approx: string; forSet: string; perJob
   ru: {onRequest: 'цена по запросу', approx: 'около', forSet: 'за комплект', perJob: 'за работу', outro: 'Точную цену и свободное время покажет калькулятор при записи.', which: 'Цены шиномонтажа (комплект из 4 колёс):', noTire: 'Калькулятора шиномонтажа в этой студии нет.'},
   cs: {onRequest: 'cena na dotaz', approx: 'cca', forSet: 'za sadu', perJob: 'za práci', outro: 'Přesnou cenu i volný termín ukáže kalkulačka při objednání.', which: 'Ceny pneuservisu (sada 4 kol):', noTire: 'Tento servis kalkulačku pneuservisu nemá.'},
   pl: {onRequest: 'cena do ustalenia', approx: 'ok.', forSet: 'za komplet', perJob: 'za usługę', outro: 'Dokładną cenę i wolny termin pokaże kalkulator przy rezerwacji.', which: 'Ceny wulkanizacji (komplet 4 kół):', noTire: 'Ten serwis nie ma kalkulatora wulkanizacji.'},
+  de: {onRequest: 'Preis auf Anfrage', approx: 'ca.', forSet: 'pro Satz', perJob: 'pro Arbeit', outro: 'Den genauen Preis und freie Termine zeigt der Rechner bei der Buchung.', which: 'Preise Reifenservice (Satz mit 4 Rädern):', noTire: 'Dieses Studio hat keinen Reifenrechner.'},
   uk: {onRequest: 'ціна за запитом', approx: 'близько', forSet: 'за комплект', perJob: 'за роботу', outro: 'Точну ціну й вільний час покаже калькулятор під час запису.', which: 'Ціни шиномонтажу (комплект із 4 коліс):', noTire: 'Калькулятора шиномонтажу в цьому сервісі немає.'},
 };
 
@@ -75,6 +76,7 @@ export const TIRE_PROMPT: Record<Lang, string> = {
   ru: 'Цены шиномонтажа считай ТОЛЬКО инструментом quote_tire (vehicle: car | suv | van, rim: steel | alloy, diameter 13–22, wheels). Не пересчитывай цены сам; price 0 с on_request = цена по запросу.',
   cs: 'Ceny pneuservisu počítej POUZE nástrojem quote_tire (vehicle: car | suv | van, rim: steel | alloy, diameter 13–22, wheels). Ceny sám nepřepočítávej; price 0 s on_request = cena na dotaz. Odpovídej česky.',
   pl: 'Ceny wulkanizacji licz WYŁĄCZNIE narzędziem quote_tire (vehicle: car | suv | van, rim: steel | alloy, diameter 13–22, wheels). Nie przeliczaj cen sam; price 0 z on_request = cena do ustalenia.',
+  de: 'Preise für den Reifenservice berechnest du NUR mit quote_tire (vehicle: car | suv | van, rim: steel | alloy, diameter 13–22, wheels). Rechne Preise nicht selbst um; price 0 mit on_request = Preis auf Anfrage. Antworte auf Deutsch.',
   uk: 'Ціни шиномонтажу рахуй ЛИШЕ інструментом quote_tire (vehicle: car | suv | van, rim: steel | alloy, diameter 13–22, wheels). Не перераховуй ціни сам; price 0 з on_request = ціна за запитом.',
 };
 

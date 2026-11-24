@@ -1,0 +1,75 @@
+{
+  "slug": "velvet-spa",
+  "name": "VELVET Massage & Spa",
+  "shortName": "VELVET",
+  "kind": "beauty",
+  "tagline": "Приватний масажний кабінет на Подолі",
+  "description": "Один майстер, один кабінет і стільки часу, скільки потрібно вашому тілу. Класичний, лімфодренажний та антистрес-масаж, свіжа білизна й тиша.",
+  "locale": "uk-UA",
+  "timezone": "Europe/Kyiv",
+  "currency": "UAH",
+  "accentColor": "#B4235F",
+  "contacts": {
+    "phone": "+380671234567",
+    "address": "вул. Сагайдачного 21, Київ",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=%D0%A1%D0%B0%D0%B3%D0%B0%D0%B9%D0%B4%D0%B0%D1%87%D0%BD%D0%BE%D0%B3%D0%BE%2021%2C%20%D0%9A%D0%B8%D1%97%D0%B2",
+    "instagram": "velvet.spa.demo",
+    "telegram": "velvet_spa_demo"
+  },
+  "images": {"hero": "images/hero.webp", "logo": "images/logo.png"},
+  "hours": {
+    "mon": [],
+    "tue": [["11:00", "21:00"]],
+    "wed": [["11:00", "21:00"]],
+    "thu": [["11:00", "21:00"]],
+    "fri": [["11:00", "21:00"]],
+    "sat": [["10:00", "19:00"]],
+    "sun": [["10:00", "16:00"]]
+  },
+  "closedDates": ["2026-12-31", "2027-01-01"],
+  "booking": {"slotStepMinutes": 30, "minLeadMinutes": 120, "horizonDays": 21, "cancelCutoffHours": 12, "defaultBufferMinutes": 20},
+  "resources": [
+    {"key": "olha", "name": "Ольга", "role": "master", "title": "Масажистка, 10 років практики", "bio": "Класичний і лімфодренажний масаж, робота з попереком та шиєю", "photo": "images/master-olha.webp"}
+  ],
+  "services": [
+    {
+      "key": "classic", "name": "Класичний масаж всього тіла", "category": "Масаж",
+      "description": "Глибоке опрацювання мʼязів спини, ніг і рук", "price": 1200, "durationMinutes": 60, "resources": ["olha"],
+      "addons": [
+        {"key": "hot-stones", "name": "Гаряче каміння", "price": 300, "minutes": 15},
+        {"key": "aroma", "name": "Ароматерапія", "price": 150, "minutes": 0},
+        {"key": "extra-30", "name": "Ще 30 хвилин", "price": 550, "minutes": 30}
+      ]
+    },
+    {
+      "key": "back", "name": "Масаж спини та шиї", "category": "Масаж",
+      "description": "Знімає напругу після сидячої роботи", "price": 700, "durationMinutes": 40, "resources": ["olha"],
+      "addons": [{"key": "hot-stones", "name": "Гаряче каміння", "price": 300, "minutes": 15}]
+    },
+    {
+      "key": "lymph", "name": "Лімфодренажний масаж", "category": "Тіло",
+      "description": "Легкість у ногах і менше набряків", "price": 1400, "durationMinutes": 75, "resources": ["olha"]
+    },
+    {
+      "key": "face", "name": "Масаж обличчя", "category": "Обличчя",
+      "description": "Скульптурний масаж і маска", "price": 900, "durationMinutes": 45, "resources": ["olha"],
+      "addons": [{"key": "mask", "name": "Альгінатна маска", "price": 250, "minutes": 15}]
+    }
+  ],
+  "infoCards": [
+    {"icon": "leaf", "title": "Натуральні олії", "text": "Працюємо на органічних оліях без запаху або з аромою на ваш вибір"},
+    {"icon": "map-pin", "title": "Вхід з двору", "text": "Домофон 21, другий поверх. Безкоштовна парковка у дворі"},
+    {"icon": "clock", "title": "Перенесення", "text": "Перенести чи скасувати онлайн можна не пізніше ніж за 12 годин"}
+  ],
+  "gallery": [
+    {"image": "images/work-1.webp", "caption": "Кабінет: тепле світло і свіжа білизна"},
+    {"image": "images/work-2.webp", "caption": "Масаж гарячим камінням"},
+    {"image": "images/work-3.webp", "caption": "Органічні олії"},
+    {"image": "images/work-4.webp", "caption": "Ритуал для обличчя"}
+  ],
+  "faq": [
+    {"question": "Чи є протипоказання?", "answer": "Гострі запалення, висока температура, тромбоз. Якщо сумніваєтеся — напишіть, підкажемо.", "keywords": ["протипоказ", "вагітн"]}
+  ],
+  "owner": {"email": "owner@velvet-spa.demo"},
+  "assistant": {"enabled": true}
+}

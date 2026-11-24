@@ -10,6 +10,12 @@ import type {PricedInput} from './public.ts';
  * the tenant of each row and checks membership (private.require_member), and
  * RLS limits every read to the owner's own studio.
  */
+export type NotificationStatus = {
+  telegram_chat_id: string | null;
+  tenant_status: 'preview' | 'live' | 'suspended';
+  recent: {kind: string; status: string; last_error: string | null; sent_at: string | null; created_at: string}[];
+};
+
 export class OwnerApi {
   constructor(
     readonly client: SupabaseClient,
@@ -33,6 +39,9 @@ export class OwnerApi {
   stats = (period: 'day' | 'week' | 'month', anchor: string) => this.rpc<Stats>('owner_stats', {p_tenant_id: this.tenantId, p_period: period, p_anchor: anchor});
   availability = (serviceId: string, from: string, days: number) =>
     this.rpc<Availability>('owner_availability', {p_tenant_id: this.tenantId, p_service_id: serviceId, p_from: from, p_days: days});
+  /** Free times for moving a booking: its own duration and buffer, its own slot not counted as busy. */
+  moveOptions = (bookingId: string, from: string, days: number) =>
+    this.rpc<Availability>('owner_move_options', {p_booking_id: bookingId, p_from: from, p_days: days});
 
   createBooking = (a: {serviceId: string; startAt: string; name: string; phone: string; car: string; comment: string; resourceId?: string | null; key: string}) =>
     this.rpc<OwnerBooking>('owner_create_booking', {
@@ -145,6 +154,48 @@ export class OwnerApi {
     );
   updateGalleryItem = (id: string, patch: {image_path?: string; before_path?: string | null; caption?: string}) =>
     this.q(this.client.from('gallery_items').update(patch).eq('id', id).select('id').single());
+  // ---- Beauty: masters, add-ons, notifications ----------------------------
+  statsFor = (period: 'day' | 'week' | 'month', anchor: string, resourceId: string | null) =>
+    this.rpc<Stats>('owner_stats_for', {p_tenant_id: this.tenantId, p_period: period, p_anchor: anchor, p_resource_id: resourceId});
+  beautyAvailability = (serviceId: string, addons: string[], resourceId: string | null, from: string, days: number) =>
+    this.rpc<Availability>('owner_beauty_availability', {
+      p_tenant_id: this.tenantId,
+      p_service_id: serviceId,
+      p_addons: addons,
+      p_resource_id: resourceId,
+      p_from: from,
+      p_days: days,
+    });
+  createBeautyBooking = (a: {serviceId: string; startAt: string; resourceId: string | null; name: string; phone: string; comment: string; addons: string[]; key: string}) =>
+    this.rpc<OwnerBooking>('owner_create_beauty_booking', {
+      p_tenant_id: this.tenantId,
+      p_service_id: a.serviceId,
+      p_start_at: a.startAt,
+      p_resource_id: a.resourceId,
+      p_customer_name: a.name,
+      p_customer_phone: a.phone,
+      p_comment: a.comment,
+      p_addons: a.addons,
+      p_idempotency_key: a.key,
+    });
+  addons = () => this.q(this.client.from('service_addons').select('*').eq('tenant_id', this.tenantId).order('sort').order('key'));
+  upsertAddon = (id: string | null, row: {service_id?: string; key?: string; name: string; price: number; duration_minutes: number; is_active: boolean; sort?: number}) =>
+    id
+      ? this.q(this.client.from('service_addons').update(row).eq('id', id).select('*').single())
+      : this.q(this.client.from('service_addons').insert({...row, tenant_id: this.tenantId}).select('*').single());
+  removeAddon = (id: string) => this.q(this.client.from('service_addons').delete().eq('id', id).select('id'));
+  resourceHours = () => this.q(this.client.from('resource_hours').select('resource_id, weekday, opens, closes').eq('tenant_id', this.tenantId).order('weekday').order('opens'));
+  setResourceHours = (resourceId: string, custom: boolean, rows: {weekday: number; opens: string; closes: string}[]) =>
+    this.rpc<void>('owner_set_resource_hours', {p_tenant_id: this.tenantId, p_resource_id: resourceId, p_custom: custom, p_hours: rows});
+  resourceExceptions = () => this.q(this.client.from('resource_exceptions').select('*').eq('tenant_id', this.tenantId).order('day'));
+  addResourceDayOff = (resourceId: string, day: string, note: string) =>
+    this.q(this.client.from('resource_exceptions').insert({tenant_id: this.tenantId, resource_id: resourceId, day, is_closed: true, note: note || null}).select('*').single());
+  removeResourceDayOff = (id: string) => this.q(this.client.from('resource_exceptions').delete().eq('id', id).select('id'));
+  renameCategory = (from: string, to: string) =>
+    this.q(this.client.from('services').update({category: to}).eq('tenant_id', this.tenantId).eq('category', from).select('id'));
+  notificationStatus = () => this.rpc<NotificationStatus>('owner_notification_status', {p_tenant_id: this.tenantId});
+  setTelegram = (chatId: string) => this.rpc<NotificationStatus>('owner_set_telegram', {p_tenant_id: this.tenantId, p_chat_id: chatId});
+
   removeGalleryItem = (id: string) => this.q(this.client.from('gallery_items').delete().eq('id', id).select('id'));
 
   /** Upload into this studio's folder; the storage policy rejects any other folder. */

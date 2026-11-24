@@ -20,7 +20,7 @@ for (const slug of slugs) {
   const warnings = t.issues.length - errors;
   if (errors) failed = true;
   const summary = t.config
-    ? `${t.config.name}: ${t.config.services.length} услуг, ${t.config.resources.length} бокс(ов), ${t.config.gallery.length} фото`
+    ? `${t.config.name}: ${t.config.services.length} услуг, ${t.config.resources.length} ${t.config.kind === 'beauty' ? 'мастер(ов)/мест' : 'бокс(ов)'}, ${t.config.gallery.length} фото`
     : 'не прочитан';
   console.log(`${errors ? '✗' : '✓'} ${slug} — ${summary}${warnings ? `, предупреждений: ${warnings}` : ''}`);
   printIssues(slug, t.issues);

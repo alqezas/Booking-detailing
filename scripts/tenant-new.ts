@@ -1,6 +1,7 @@
 /**
- * pnpm tenant:new <slug> --name "Имя студии" [--kind detailing|autoservice|tireservice]
+ * pnpm tenant:new <slug> --name "Имя студии" [--kind detailing|autoservice|tireservice|beauty]
  *                  [--accent "#4690FF"] [--timezone Europe/Moscow]
+ *                  [--theme nails|massage|hair]   (beauty: style of the temporary images)
  * pnpm tenant:new <slug> --images [--force]     (re)render placeholder images only
  *
  * Creates tenants/<slug>/business.json from a template plus temporary images,
@@ -13,6 +14,7 @@ import path from 'node:path';
 import {parseArgs} from 'node:util';
 import {HEX_RE, SLUG_RE, isValidTimeZone} from '../shared/business.ts';
 import {renderGallery, renderHero, renderLogo} from './lib/placeholder-art.ts';
+import {renderBeautyImages} from './lib/render-beauty-demo.ts';
 import {ROOT, TENANTS_DIR, loadTenant, printIssues} from './lib/tenants.ts';
 
 const {values, positionals} = parseArgs({
@@ -24,6 +26,7 @@ const {values, positionals} = parseArgs({
     timezone: {type: 'string', default: 'Europe/Moscow'},
     images: {type: 'boolean', default: false},
     force: {type: 'boolean', default: false},
+    theme: {type: 'string', default: 'nails'},
   },
 });
 
@@ -37,8 +40,13 @@ if (!slug || !SLUG_RE.test(slug)) fail('Укажите slug: латиница, �
 const dir = path.join(TENANTS_DIR, slug!);
 const file = path.join(dir, 'business.json');
 
-async function renderImages(config: {accentColor: string; name: string; images: {hero: string; logo: string}; gallery: {image: string}[]}) {
+async function renderImages(config: {kind?: string; accentColor: string; name: string; images: {hero: string; logo: string}; gallery: {image: string}[]}) {
   mkdirSync(path.join(dir, 'images'), {recursive: true});
+  if (config.kind === 'beauty') {
+    // Salon interior, works and master portraits instead of cars.
+    for (const rel of await renderBeautyImages(slug!, values.theme as 'nails' | 'massage' | 'hair', values.force)) console.log(`  + ${rel} (временное изображение)`);
+    return;
+  }
   const want = async (rel: string, render: (abs: string) => Promise<void>) => {
     const abs = path.join(dir, rel);
     if (existsSync(abs) && !values.force) return;
@@ -61,7 +69,8 @@ if (values.images) {
 
 if (existsSync(file)) fail(`Студия «${slug}» уже есть: ${path.relative(ROOT, file)}`);
 if (!values.name || values.name.trim().length < 2) fail('Укажите --name "Название студии"');
-if (!['detailing', 'autoservice', 'tireservice'].includes(values.kind!)) fail('--kind: detailing, autoservice или tireservice');
+if (!['detailing', 'autoservice', 'tireservice', 'beauty'].includes(values.kind!)) fail('--kind: detailing, autoservice, tireservice или beauty');
+if (!['nails', 'massage', 'hair'].includes(values.theme!)) fail('--theme: nails, massage или hair');
 if (!HEX_RE.test(values.accent!)) fail('--accent: цвет в формате #RRGGBB');
 if (!isValidTimeZone(values.timezone!)) fail('--timezone: часовой пояс IANA, например Europe/Moscow');
 

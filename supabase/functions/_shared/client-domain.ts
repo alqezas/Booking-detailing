@@ -10,11 +10,27 @@ import {duration, localDate, money, phone, when} from './text.ts';
 import {TIRE_PROMPT, tireFallbackAnswer, tireQuoteTool, type QuoteArgs} from './tire-assistant.ts';
 import type {TireConfig} from './tire.ts';
 import {WASH_PROMPT, washFallbackAnswer, washQuoteTool, type WashArgs} from './wash-assistant.ts';
+import {BEAUTY_PROMPT, beautyFallbackAnswer, beautyQuoteTool, isBeauty, mastersList, type BeautyQuoteArgs} from './beauty-assistant.ts';
+import type {AddonDef} from './beauty.ts';
 import type {WashConfig} from './wash.ts';
 
-export type PublicService = {id: string; key?: string; name: string; category: string; price: number; price_from: boolean; duration_minutes: number; description: string};
+export type PublicService = {
+  id: string;
+  key?: string;
+  name: string;
+  category: string;
+  price: number;
+  price_from: boolean;
+  duration_minutes: number;
+  description: string;
+  /** Beauty: options of the service and the masters who do it. */
+  addons?: AddonDef[];
+  resource_ids?: string[];
+};
 export type PublicTenant = {
   slug: string;
+  kind?: string;
+  resources?: {id: string; name: string; role: string; title: string}[];
   name: string;
   status: string;
   timezone: string;
@@ -35,9 +51,11 @@ export type PublicTenant = {
 };
 export type AvailabilityDays = {timezone: string; days: {date: string; slots: {start_at: string; available: boolean}[]}[]; horizon_end: string};
 
+export type SlotOptions = {addons?: string[] | null; masterId?: string | null};
 export type ClientSource = {
   tenant: PublicTenant;
-  availability: (serviceId: string, from: string, days: number) => Promise<AvailabilityDays>;
+  /** opts: beauty options and master (ignored by car studios). */
+  availability: (serviceId: string, from: string, days: number, opts?: SlotOptions) => Promise<AvailabilityDays>;
 };
 
 const langOfTenant = (t: PublicTenant): Lang => langOf(t.locale);
@@ -72,9 +90,10 @@ export const servicesList = (t: PublicTenant) =>
     price: s.price,
     price_from: s.price_from,
     duration: duration(s.duration_minutes, langOfTenant(t)),
+    ...(s.addons?.length ? {options: s.addons.map(a => ({key: a.key, name: a.name, price: a.price, minutes: a.duration_minutes}))} : {}),
   }));
 
-export async function freeSlots(src: ClientSource, serviceId: string, dateFrom: string | null, limit = 4) {
+export async function freeSlots(src: ClientSource, serviceId: string, dateFrom: string | null, limit = 4, opts?: SlotOptions) {
   const t = src.tenant;
   const lang = langOfTenant(t);
   const say = texts(lang);
@@ -84,7 +103,7 @@ export async function freeSlots(src: ClientSource, serviceId: string, dateFrom: 
   let from = dateFrom && dateFrom >= today ? dateFrom : today;
   const found: {start_at: string; label: string}[] = [];
   for (let page = 0; page < 3 && found.length < limit; page++) {
-    const a = await src.availability(serviceId, from, 7);
+    const a = await src.availability(serviceId, from, 7, opts);
     for (const d of a.days)
       for (const s of d.slots) if (s.available && found.length < limit) found.push({start_at: s.start_at, label: when(s.start_at, t.timezone, undefined, lang)});
     const last = a.days.at(-1)?.date;
@@ -112,8 +131,15 @@ export function clientExecutor(src: ClientSource) {
         return tireQuoteTool(src.tenant, args as QuoteArgs);
       case 'quote_wash':
         return washQuoteTool(src.tenant, args as WashArgs);
+      case 'quote_beauty':
+        return beautyQuoteTool(src.tenant, args as BeautyQuoteArgs);
+      case 'list_masters':
+        return mastersList(src.tenant);
       case 'find_free_slots':
-        return freeSlots(src, String(args.service_id), (args.date_from as string | null) ?? null, (args.limit as number | null) ?? 4);
+        return freeSlots(src, String(args.service_id), (args.date_from as string | null) ?? null, (args.limit as number | null) ?? 4, {
+          addons: (args.addons as string[] | null) ?? null,
+          masterId: (args.master_id as string | null) ?? null,
+        });
       default:
         return {error: texts(langOfTenant(src.tenant)).toolUnavailable};
     }
@@ -123,7 +149,7 @@ export function clientExecutor(src: ClientSource) {
 export function clientSystemPrompt(t: PublicTenant, today: string): string {
   const say = texts(langOfTenant(t));
   const faq = (t.faq ?? []).map(f => `— ${f.question}\n${f.answer}`).join('\n\n');
-  return say.clientPrompt(t.name, today, t.timezone) + (t.tire ? `\n${TIRE_PROMPT[langOfTenant(t)]}` : '') + (t.wash ? `\n${WASH_PROMPT[langOfTenant(t)]}` : '') + (faq ? `\n\n${say.faqIntro}\n${faq}` : '');
+  return say.clientPrompt(t.name, today, t.timezone) + (t.tire ? `\n${TIRE_PROMPT[langOfTenant(t)]}` : '') + (t.wash ? `\n${WASH_PROMPT[langOfTenant(t)]}` : '') + (isBeauty(t) ? `\n${BEAUTY_PROMPT[langOfTenant(t)]}` : '') + (faq ? `\n\n${say.faqIntro}\n${faq}` : '');
 }
 
 /** Template answer from the deterministic router: correct, if less fluent. */
@@ -134,6 +160,8 @@ export async function clientFallback(src: ClientSource, text: string): Promise<A
   // A tyre price question is answered from the studio's matrix before anything else.
   const tire = tireFallbackAnswer(t, text, lang);
   if (tire) return {text: tire.text, mode: 'fallback', tools: ['quote_tire'], data: tire.data};
+  const beauty = beautyFallbackAnswer(t, text, lang);
+  if (beauty) return {text: beauty.text, mode: 'fallback', tools: ['quote_beauty'], data: beauty.data};
   const wash = washFallbackAnswer(t, text, lang);
   if (wash) return {text: wash.text, mode: 'fallback', tools: ['quote_wash'], data: wash.data};
   const intent = routeClient(text, t.services, t.timezone, undefined, lang, t.faq ?? []);

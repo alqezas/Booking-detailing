@@ -15,6 +15,7 @@ import {
 } from '../../components/home/Sections.tsx';
 import {TireBookingCard, TirePricesSection, TireSeasonSection} from '../../components/tire/TireSections.tsx';
 import {PeakHoursSection, WashBookingCard, WashPricesSection} from '../../components/wash/WashSections.tsx';
+import {BeautyHero, MastersStrip, Portfolio, PriceList} from '../../components/beauty/BeautyHome.tsx';
 
 /**
  * Layout contract: every block sits in PageContainer, so the hero text and all
@@ -27,6 +28,7 @@ import {PeakHoursSection, WashBookingCard, WashPricesSection} from '../../compon
  */
 export function HomePage() {
   const t = useTenant();
+  if (t.kind === 'beauty') return <BeautyHomePage />;
   const tire = t.kind === 'tireservice' && !!t.tire;
   const wash = t.kind === 'carwash' && !!t.wash;
   return (
@@ -41,6 +43,31 @@ export function HomePage() {
           {tire && <TireSeasonSection />}
           <PeakHoursSection />
           <GallerySection />
+          <AssistantTeaser />
+          <FaqSection />
+          <ContactsSection />
+          <InstallHint />
+        </VStack>
+      </PageContainer>
+    </VStack>
+  );
+}
+
+/**
+ * Beauty studio: cover + logo + live status, masters (hidden for a solo
+ * studio), «Запись в студию» price list with category tabs, portfolio, three
+ * info cards, the assistant with one-tap questions, FAQ and contacts.
+ */
+function BeautyHomePage() {
+  return (
+    <VStack>
+      <BeautyHero />
+      <PageContainer style={{paddingBlock: 'var(--spacing-6)'}}>
+        <VStack gap={8}>
+          <MastersStrip />
+          <PriceList />
+          <Portfolio />
+          <InfoCardsSection />
           <AssistantTeaser />
           <FaqSection />
           <ContactsSection />

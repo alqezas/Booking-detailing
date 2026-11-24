@@ -1,6 +1,7 @@
 import {msg} from '../i18n/index.ts';
 import {tireMsg} from '../i18n/tire.ts';
 import {washMsg} from '../i18n/wash.ts';
+import {beautyMsg} from '../i18n/beauty.ts';
 
 /**
  * Server functions raise a stable machine code in `message` and a ready
@@ -28,6 +29,7 @@ export function toApiError(error: unknown, status: number | null = null): ApiErr
     msg.errors.codes[code] ??
     tireMsg().errors[code] ??
     washMsg().errors[code] ??
+    beautyMsg().errors[code] ??
     (code === 'Invalid login credentials' ? msg.errors.badLogin : null) ??
     (code.includes('fetch') ? msg.errors.offline : null) ??
     msg.errors.generic;

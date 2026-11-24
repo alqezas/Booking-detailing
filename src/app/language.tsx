@@ -1,12 +1,13 @@
 import {InternationalizationProvider} from '@astryxdesign/core/i18n';
 import csCZ from '@astryxdesign/core/locales/cs-CZ.generated.js';
+import deDE from '@astryxdesign/core/locales/de-DE.generated.js';
 import plPL from '@astryxdesign/core/locales/pl-PL.generated.js';
 import ukUA from '@astryxdesign/core/locales/uk-UA.generated.js';
 import ruRU from '@astryxdesign/core/locales/ru-RU.generated.js';
 import type {ReactNode} from 'react';
 import {msg} from '../i18n/index.ts';
 
-const COMPONENT_MESSAGES = {'ru-RU': ruRU, 'cs-CZ': csCZ, 'pl-PL': plPL, 'uk-UA': ukUA};
+const COMPONENT_MESSAGES = {'ru-RU': ruRU, 'cs-CZ': csCZ, 'pl-PL': plPL, 'uk-UA': ukUA, 'de-AT': deDE};
 
 /** Built-in texts of the design system (dialogs, date pickers) in the current interface language. */
 export function ComponentLanguage({children}: {children: ReactNode}) {

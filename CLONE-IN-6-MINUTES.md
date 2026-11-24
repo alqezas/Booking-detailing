@@ -25,3 +25,19 @@
 
 **Поля `business.json`** проверяет `shared/business.ts` (Zod). Длительность больше 1440 минут — услуга на
 несколько дней: бокс будет занят непрерывно, включая ночи.
+
+## Салон красоты, мастер маникюра, барбершоп, массаж (`kind: "beauty"`)
+
+| Минута | Действие |
+|---|---|
+| 0–1 | `pnpm tenant:new nails-anna --name "Nails by Anna" --kind beauty --accent "#7C3AED" --timezone Europe/Prague --theme nails` (`--theme massage` / `hair` — другой стиль временных картинок) |
+| 1–4 | В `tenants/nails-anna/business.json`: `locale`, `currency`, телефон, адрес, `contacts.instagram`, часы; **мастера** в `resources` (`role: "master"`, `title`, `photo`, необязательные `hours` — своя смена внутри часов студии, `daysOff`); **услуги** с `category` (табы прайса) и `addons` (`{"key","name","price","minutes"}`); `booking.defaultBufferMinutes` — подготовка/стерилизация места; 3 карточки `infoCards`; фото работ в `gallery`; почта владельца; при желании `notifications.telegramChatId` |
+| 4 | `pnpm tenant:validate nails-anna` |
+| 4–5 | `pnpm tenant:publish nails-anna --deploy --prod` — образец с демо-записями (у демо-записей есть опции и мастера; уведомления не отправляются) |
+| 5–6 | `pnpm tenant:verify nails-anna --url https://<сайт>` |
+
+- Один мастер в `resources` → блок «Мастера» и выбор мастера на сайте скрываются сами.
+- Фото владельца кладутся под теми же именами (`hero.webp`, `logo.png`, `work-N.webp`, `master-*.webp`) или
+  загружаются владельцем в кабинете (Настройки → Мастера / Фото работ / Студия).
+- Telegram: владелец пишет боту приложения `/start`, вставляет свой chat id в «Настройки → Студия → Уведомления
+  в Telegram». В образце уведомления видны как «пропущено»; после `--activate` уходят по-настоящему.

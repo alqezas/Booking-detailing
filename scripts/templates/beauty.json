@@ -1,0 +1,68 @@
+{
+  "slug": "__slug__",
+  "name": "__name__",
+  "kind": "beauty",
+  "tagline": "Маникюр, педикюр и брови",
+  "description": "Коротко о студии: чем вы особенные и почему к вам возвращаются.",
+  "locale": "ru-RU",
+  "timezone": "Europe/Moscow",
+  "currency": "RUB",
+  "accentColor": "#7C3AED",
+  "contacts": {
+    "phone": "+70000000000",
+    "address": "Адрес студии, город, улица, дом"
+  },
+  "images": {"hero": "images/hero.webp", "logo": "images/logo.png"},
+  "hours": {
+    "mon": [["10:00", "20:00"]],
+    "tue": [["10:00", "20:00"]],
+    "wed": [["10:00", "20:00"]],
+    "thu": [["10:00", "20:00"]],
+    "fri": [["10:00", "20:00"]],
+    "sat": [["10:00", "18:00"]],
+    "sun": []
+  },
+  "closedDates": [],
+  "booking": {"slotStepMinutes": 15, "minLeadMinutes": 60, "horizonDays": 30, "cancelCutoffHours": 6, "defaultBufferMinutes": 15},
+  "resources": [
+    {"key": "master-1", "name": "Мастер 1", "role": "master", "title": "Мастер маникюра", "photo": "images/master-1.webp"},
+    {"key": "master-2", "name": "Мастер 2", "role": "master", "title": "Бровист", "photo": "images/master-2.webp"}
+  ],
+  "services": [
+    {
+      "key": "manicure-gel", "name": "Маникюр с покрытием гель-лак", "category": "Маникюр",
+      "description": "Аппаратный маникюр и стойкое покрытие",
+      "price": 2500, "durationMinutes": 90, "resources": ["master-1", "master-2"],
+      "addons": [
+        {"key": "removal", "name": "Снятие старого покрытия", "price": 300, "minutes": 15},
+        {"key": "repair", "name": "Ремонт ногтя", "price": 200, "minutes": 10},
+        {"key": "strengthen", "name": "Укрепление", "price": 400, "minutes": 15}
+      ]
+    },
+    {
+      "key": "pedicure", "name": "Педикюр с покрытием", "category": "Педикюр",
+      "description": "Смарт-педикюр и покрытие гель-лак",
+      "price": 3200, "durationMinutes": 90, "resources": ["master-1"],
+      "addons": [{"key": "removal", "name": "Снятие старого покрытия", "price": 300, "minutes": 15}]
+    },
+    {
+      "key": "brows", "name": "Коррекция и окрашивание бровей", "category": "Брови и ресницы",
+      "description": "Форма и окрашивание краской или хной",
+      "price": 1800, "durationMinutes": 45, "resources": ["master-2"]
+    }
+  ],
+  "infoCards": [
+    {"icon": "shield", "title": "Стерильно", "text": "Инструмент проходит сухожар, крафт-пакет вскрываем при вас"},
+    {"icon": "map-pin", "title": "Как добраться", "text": "Ориентир, вход и где оставить машину"},
+    {"icon": "calendar", "title": "Перенос записи", "text": "Перенести или отменить онлайн можно не позднее чем за 6 часов"}
+  ],
+  "gallery": [
+    {"image": "images/work-1.webp", "caption": "Пример работы"},
+    {"image": "images/work-2.webp", "caption": "Пример работы"},
+    {"image": "images/work-3.webp", "caption": "Пример работы"},
+    {"image": "images/work-4.webp", "caption": "Пример работы"}
+  ],
+  "faq": [],
+  "owner": {"email": "owner@example.com"},
+  "assistant": {"enabled": true}
+}

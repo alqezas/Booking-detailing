@@ -12,7 +12,7 @@ type Props = {
   endAt?: string;
   timezone: string;
   currency: string;
-  customer?: {name: string; phone: string; car: string};
+  customer?: {name: string; phone: string; car?: string};
   bay?: string;
   /** Extra rows, e.g. the plate and tyres of a tyre-service booking. */
   extra?: {label: string; value: string}[];
@@ -54,9 +54,11 @@ export function BookingSummary(p: Props) {
             {/* Never break a phone number across lines. */}
             <Text textWrap="nowrap">{formatPhone(p.customer.phone)}</Text>
           </MetadataListItem>
-          <MetadataListItem label={msg.summary.car}>
-            <Text>{p.customer.car}</Text>
-          </MetadataListItem>
+          {p.customer.car ? (
+            <MetadataListItem label={msg.summary.car}>
+              <Text>{p.customer.car}</Text>
+            </MetadataListItem>
+          ) : null}
         </>
       )}
       {p.extra?.map(r => (

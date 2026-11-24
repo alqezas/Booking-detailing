@@ -10,6 +10,7 @@ export function toSyncPayload(config: BusinessConfig): BusinessConfig {
       logo: configMediaUrl(config.slug, config.images.logo),
       ...(config.images.icon ? {icon: configMediaUrl(config.slug, config.images.icon)} : {}),
     },
+    resources: config.resources.map(r => (r.photo ? {...r, photo: configMediaUrl(config.slug, r.photo)} : r)),
     gallery: config.gallery.map(g => ({
       ...g,
       image: configMediaUrl(config.slug, g.image),

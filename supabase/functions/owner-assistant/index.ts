@@ -46,9 +46,9 @@ Deno.serve(async req => {
   const {slug, message, history} = parsed.data;
 
   // RLS returns the studio only to its members.
-  const t = await user.from('tenants').select('id, name, timezone, currency, locale').eq('slug', slug).maybeSingle();
+  const t = await user.from('tenants').select('id, name, timezone, currency, locale, kind').eq('slug', slug).maybeSingle();
   if (t.error || !t.data) return fail(req, 403, 'FORBIDDEN', say.noAccess);
-  const tenant = t.data as {id: string; name: string; timezone: string; currency: string; locale: string};
+  const tenant = t.data as {id: string; name: string; timezone: string; currency: string; locale: string; kind: string};
   say = texts(langOf(tenant.locale));
 
   const rl = await svc.rpc('svc_rate_limit_hit', {p_key: `ai:owner:${who.data.user.id}`, p_limit: 40, p_window_seconds: 600});
@@ -59,8 +59,21 @@ Deno.serve(async req => {
     currency: tenant.currency,
     studioName: tenant.name,
     lang: langOf(tenant.locale),
+    kind: tenant.kind,
+    ...(tenant.kind === 'beauty'
+      ? {
+          freeSlots: async (period: 'day' | 'week' | 'month', anchor: string) => {
+            const r = await user.rpc('owner_free_slot_summary', {p_tenant_id: tenant.id, p_period: period, p_anchor: anchor});
+            if (r.error) throw new Error(say.cannotCount);
+            return r.data;
+          },
+        }
+      : {}),
     stats: async (period, anchor) => {
-      const r = await user.rpc('owner_stats', {p_tenant_id: tenant.id, p_period: period, p_anchor: anchor});
+      const r =
+        tenant.kind === 'beauty'
+          ? await user.rpc('owner_stats_for', {p_tenant_id: tenant.id, p_period: period, p_anchor: anchor, p_resource_id: null})
+          : await user.rpc('owner_stats', {p_tenant_id: tenant.id, p_period: period, p_anchor: anchor});
       if (r.error) throw new Error(say.cannotCount);
       return r.data;
     },

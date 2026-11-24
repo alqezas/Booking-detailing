@@ -49,8 +49,8 @@ import {
 type Step = 'service' | 'time' | 'details' | 'confirm' | 'done';
 
 /** open(): the service sheet; open(id): straight to time; open(id, calc): a calculator service priced on the home page. */
-type FlowApi = {open: (serviceId?: string, calc?: PricedValue) => void};
-const FlowContext = createContext<FlowApi | null>(null);
+export type FlowApi = {open: (serviceId?: string, calc?: PricedValue) => void};
+export const FlowContext = createContext<FlowApi | null>(null);
 
 export function useBookingFlow(): FlowApi {
   const c = useContext(FlowContext);

@@ -1,0 +1,321 @@
+{
+  "slug": "karina-nails-uman",
+  "name": "Karina Nails",
+  "shortName": "Karina Nails",
+  "kind": "beauty",
+  "tagline": "Манікюр, який підкреслює вашу красу · Умань",
+  "description": "Ваш майстер — Карина. Манікюр з укріпленням і покриттям, дизайн, френч та нарощення будь-якої довжини. Чистота, якість і комфорт — у кожному візиті.",
+  "locale": "uk-UA",
+  "timezone": "Europe/Kyiv",
+  "currency": "UAH",
+  "accentColor": "#B91C1C",
+  "contacts": {
+    "phone": "+380000000000",
+    "address": "м. Умань, вул. Незалежності, 12а",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=%D0%A3%D0%BC%D0%B0%D0%BD%D1%8C%2C%20%D0%B2%D1%83%D0%BB.%20%D0%9D%D0%B5%D0%B7%D0%B0%D0%BB%D0%B5%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%96%2C%2012%D0%B0",
+    "instagram": "karina_nails.uman"
+  },
+  "images": {
+    "hero": "images/hero.webp",
+    "logo": "images/logo.png"
+  },
+  "hours": {
+    "mon": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "tue": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "wed": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "thu": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "fri": [
+      [
+        "09:00",
+        "19:00"
+      ]
+    ],
+    "sat": [
+      [
+        "10:00",
+        "16:00"
+      ]
+    ],
+    "sun": []
+  },
+  "closedDates": [
+    "2026-12-31",
+    "2027-01-01"
+  ],
+  "booking": {
+    "slotStepMinutes": 15,
+    "minLeadMinutes": 120,
+    "horizonDays": 30,
+    "cancelCutoffHours": 12,
+    "defaultBufferMinutes": 15
+  },
+  "resources": [
+    {
+      "key": "karina",
+      "name": "Карина",
+      "role": "master",
+      "title": "Майстер манікюру та нарощення",
+      "bio": "Укріплення гелем, покриття кольором, дизайн, френч і нарощення"
+    }
+  ],
+  "services": [
+    {
+      "key": "hygienic",
+      "name": "Гігієнічний манікюр",
+      "category": "Манікюр",
+      "description": "Обробка кутикули та надання форми",
+      "price": 250,
+      "durationMinutes": 45,
+      "resources": [
+        "karina"
+      ],
+      "addons": [
+        {
+          "key": "removal",
+          "name": "Зняття старого покриття",
+          "price": 50,
+          "minutes": 15
+        }
+      ]
+    },
+    {
+      "key": "gel",
+      "name": "Манікюр з покриттям",
+      "category": "Манікюр",
+      "description": "Обробка кутикули, надання форми, укріплення гелем і покриття кольором",
+      "price": 350,
+      "durationMinutes": 90,
+      "resources": [
+        "karina"
+      ],
+      "addons": [
+        {
+          "key": "removal",
+          "name": "Зняття старого покриття",
+          "price": 50,
+          "minutes": 15
+        },
+        {
+          "key": "repair",
+          "name": "Ремонт 1–2 нігтів",
+          "price": 30,
+          "minutes": 10
+        }
+      ]
+    },
+    {
+      "key": "gel-design",
+      "name": "Манікюр з покриттям і дизайном",
+      "category": "Манікюр",
+      "description": "Обробка кутикули, надання форми, укріплення гелем, покриття кольором, дизайн або френч",
+      "price": 450,
+      "durationMinutes": 120,
+      "resources": [
+        "karina"
+      ],
+      "addons": [
+        {
+          "key": "removal",
+          "name": "Зняття старого покриття",
+          "price": 50,
+          "minutes": 15
+        },
+        {
+          "key": "repair",
+          "name": "Ремонт 1–2 нігтів",
+          "price": 30,
+          "minutes": 10
+        }
+      ]
+    },
+    {
+      "key": "ext-1-3",
+      "name": "Нарощення, довжина 1–3",
+      "category": "Нарощення",
+      "description": "Обробка кутикули, надання форми, нарощення гелем або кольоровим гелем, покриття кольором, дизайн чи френч за бажанням",
+      "price": 500,
+      "durationMinutes": 150,
+      "resources": [
+        "karina"
+      ],
+      "addons": [
+        {
+          "key": "removal",
+          "name": "Зняття чужого матеріалу",
+          "price": 100,
+          "minutes": 20
+        }
+      ]
+    },
+    {
+      "key": "ext-3-5",
+      "name": "Нарощення, довжина 3–5",
+      "category": "Нарощення",
+      "description": "Нарощення гелем, покриття кольором, дизайн чи френч за бажанням",
+      "price": 600,
+      "durationMinutes": 165,
+      "resources": [
+        "karina"
+      ],
+      "addons": [
+        {
+          "key": "removal",
+          "name": "Зняття чужого матеріалу",
+          "price": 100,
+          "minutes": 20
+        }
+      ]
+    },
+    {
+      "key": "ext-5-7",
+      "name": "Нарощення, довжина 5–7",
+      "category": "Нарощення",
+      "description": "Нарощення гелем, покриття кольором, дизайн чи френч за бажанням",
+      "price": 700,
+      "durationMinutes": 180,
+      "resources": [
+        "karina"
+      ],
+      "addons": [
+        {
+          "key": "removal",
+          "name": "Зняття чужого матеріалу",
+          "price": 100,
+          "minutes": 20
+        }
+      ]
+    },
+    {
+      "key": "ext-7-10",
+      "name": "Нарощення, довжина 7–10",
+      "category": "Нарощення",
+      "description": "Довгі нігті: нарощення гелем, покриття кольором, дизайн чи френч за бажанням",
+      "price": 800,
+      "durationMinutes": 195,
+      "resources": [
+        "karina"
+      ],
+      "addons": [
+        {
+          "key": "removal",
+          "name": "Зняття чужого матеріалу",
+          "price": 100,
+          "minutes": 20
+        }
+      ]
+    }
+  ],
+  "infoCards": [
+    {
+      "icon": "shield",
+      "title": "Чистота",
+      "text": "Стерильний інструмент і одноразові пилки для кожної клієнтки"
+    },
+    {
+      "icon": "sparkle",
+      "title": "Якість",
+      "text": "Укріплення гелем під кожне покриття — манікюр тримається довше"
+    },
+    {
+      "icon": "heart",
+      "title": "Комфорт",
+      "text": "Затишний кабінет, без поспіху й черг — лише ви та майстер"
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/work-1.webp",
+      "caption": "Френч на мигдальну форму"
+    },
+    {
+      "image": "images/work-2.webp",
+      "caption": "Дизайн з фольгою та стразами"
+    },
+    {
+      "image": "images/work-3.webp",
+      "caption": "Червоний матовий з бантиком"
+    },
+    {
+      "image": "images/work-4.webp",
+      "caption": "Ніжний дизайн з квітами"
+    },
+    {
+      "image": "images/work-5.webp",
+      "caption": "Бордо матовий"
+    },
+    {
+      "image": "images/work-6.webp",
+      "caption": "Шоколадний з дизайном"
+    },
+    {
+      "image": "images/work-7.webp",
+      "caption": "Рожевий френч, нарощення"
+    },
+    {
+      "image": "images/work-8.webp",
+      "caption": "Нюдовий градієнт, нарощення"
+    },
+    {
+      "image": "images/work-9.webp",
+      "caption": "Блакитний з леопардовим принтом"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Де ви знаходитесь?",
+      "answer": "Умань, вул. Незалежності, 12а. Кнопка «Маршрут» відкриє карту.",
+      "keywords": [
+        "де",
+        "адрес",
+        "незалежн",
+        "маршрут",
+        "знайти"
+      ]
+    },
+    {
+      "question": "Чи можна записатися через Instagram?",
+      "answer": "Так, пишіть у Direct @karina_nails.uman — або оберіть час тут, це швидше.",
+      "keywords": [
+        "інстаграм",
+        "instagram",
+        "директ",
+        "direct"
+      ]
+    },
+    {
+      "question": "Що входить у манікюр з покриттям?",
+      "answer": "Обробка кутикули, надання форми, укріплення гелем і покриття кольором. З дизайном або френчем — 450 грн.",
+      "keywords": [
+        "входить",
+        "укріплен",
+        "покритт"
+      ]
+    }
+  ],
+  "owner": {
+    "email": "owner@karina-nails-uman.demo"
+  },
+  "assistant": {
+    "enabled": true
+  }
+}

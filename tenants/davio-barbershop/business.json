@@ -1,0 +1,123 @@
+{
+  "slug": "davio-barbershop",
+  "name": "DAVIO Barbershop",
+  "shortName": "DAVIO",
+  "kind": "beauty",
+  "appearance": "dark",
+  "vocabulary": "barber",
+  "tagline": "Fades · Bart · Rasur in Höchst, Vorarlberg",
+  "description": "Neu in Höchst seit Mai 2026: moderner Barbershop mit Fades, Bartpflege und klassischer Rasur. Großer Salon, Lounge mit Spielkonsole, kostenlose Parkplätze. Mit und ohne Termin.",
+  "locale": "de-AT",
+  "timezone": "Europe/Vienna",
+  "currency": "EUR",
+  "accentColor": "#D4A24C",
+  "contacts": {
+    "phone": "+436766039930",
+    "address": "Hauptstraße 41, 6973 Höchst",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=DAVIO%20BARBERSHOP%2C%20Hauptstra%C3%9Fe%2041%2C%206973%20H%C3%B6chst",
+    "instagram": "daviobarbarshop",
+    "whatsapp": "+436766039930"
+  },
+  "images": {"hero": "images/hero.webp", "logo": "images/logo.png"},
+  "hours": {
+    "mon": [["09:00", "19:00"]],
+    "tue": [["09:00", "19:00"]],
+    "wed": [["09:00", "19:00"]],
+    "thu": [["09:00", "19:00"]],
+    "fri": [["09:00", "19:00"]],
+    "sat": [["09:00", "18:00"]],
+    "sun": []
+  },
+  "closedDates": ["2026-12-25", "2026-12-26", "2027-01-01", "2027-01-06"],
+  "booking": {"slotStepMinutes": 15, "minLeadMinutes": 30, "horizonDays": 30, "cancelCutoffHours": 3, "defaultBufferMinutes": 5},
+  "resources": [
+    {"key": "davio", "name": "Davio", "role": "master", "title": "Barber", "bio": "Fades, Bart und Rasur", "photo": "images/barber-davio.webp"},
+    {"key": "team", "name": "DAVIO Team", "role": "master", "title": "Barber", "bio": "Haarschnitt, Fade, Kinder – auch spontan", "photo": "images/barber-team.webp"}
+  ],
+  "services": [
+    {
+      "key": "haircut", "name": "Haarschnitt", "category": "Haare",
+      "description": "Herrenschnitt mit Schere und Maschine, Waschen und Styling.",
+      "price": 25, "durationMinutes": 30,
+      "resources": ["davio", "team"],
+      "addons": [
+        {"key": "beard", "name": "Bart dazu", "price": 12, "minutes": 15},
+        {"key": "brows", "name": "Augenbrauen", "price": 5, "minutes": 5},
+        {"key": "wax", "name": "Ohren & Nase waxen", "price": 5, "minutes": 5}
+      ]
+    },
+    {
+      "key": "fade", "name": "Skin Fade", "category": "Haare",
+      "description": "Präziser Übergang bis auf die Haut, scharfe Konturen.",
+      "price": 28, "durationMinutes": 40,
+      "resources": ["davio", "team"],
+      "addons": [
+        {"key": "beard", "name": "Bart dazu", "price": 12, "minutes": 15},
+        {"key": "wax", "name": "Ohren & Nase waxen", "price": 5, "minutes": 5}
+      ]
+    },
+    {
+      "key": "machine", "name": "Maschinenschnitt", "category": "Haare",
+      "description": "Eine Länge mit der Maschine, saubere Konturen.",
+      "price": 18, "durationMinutes": 20,
+      "resources": ["davio", "team"]
+    },
+    {
+      "key": "kids", "name": "Kinderhaarschnitt", "category": "Haare",
+      "description": "Für Kinder bis 12 Jahre – geduldig und mit Spaß.",
+      "price": 18, "durationMinutes": 25,
+      "resources": ["davio", "team"]
+    },
+    {
+      "key": "beard", "name": "Bart trimmen & Konturen", "category": "Bart & Rasur",
+      "description": "Bart in Form bringen, Konturen mit dem Messer.",
+      "price": 15, "durationMinutes": 20,
+      "resources": ["davio", "team"]
+    },
+    {
+      "key": "shave", "name": "Nassrasur mit heißem Tuch", "category": "Bart & Rasur",
+      "description": "Klassische Rasur mit dem Messer und heißem Handtuch.",
+      "price": 20, "durationMinutes": 25,
+      "resources": ["davio", "team"]
+    },
+    {
+      "key": "combo", "name": "Haarschnitt + Bart", "category": "Komplett",
+      "description": "Haarschnitt oder Fade mit Bartpflege und Styling.",
+      "price": 35, "durationMinutes": 50,
+      "resources": ["davio", "team"]
+    }
+  ],
+  "infoCards": [
+    {"icon": "medal", "title": "5,0 auf Google", "text": "Über 80 Bewertungen seit der Eröffnung im Mai 2026"},
+    {"icon": "credit-card", "title": "Gratis parken", "text": "Kostenlose Parkplätze direkt vor dem Salon in der Hauptstraße"},
+    {"icon": "calendar", "title": "Mit und ohne Termin", "text": "Online-Termin sichert Ihren Platz – spontan vorbeikommen geht auch"}
+  ],
+  "gallery": [
+    {"image": "images/work-1.webp", "caption": "Low Fade, Textur oben"},
+    {"image": "images/work-2.webp", "caption": "Locken mit Taper"},
+    {"image": "images/work-3.webp", "caption": "Kinderhaarschnitt"},
+    {"image": "images/work-4.webp", "caption": "Unser Salon"},
+    {"image": "images/work-5.webp", "caption": "Viele Plätze – kurze Wartezeit"},
+    {"image": "images/work-6.webp", "caption": "Lounge mit Konsole"},
+    {"image": "images/work-7.webp", "caption": "Hauptstraße 41, Höchst"}
+  ],
+  "faq": [
+    {
+      "question": "Kann ich auch ohne Termin kommen?",
+      "answer": "Ja, wir arbeiten mit und ohne Termin. Mit einem Online-Termin ist Ihr Platz aber sicher – ohne Warten.",
+      "keywords": ["ohne termin", "spontan", "walk", "warten"]
+    },
+    {
+      "question": "Gibt es Parkplätze?",
+      "answer": "Ja, kostenlose Parkplätze und Straßenparken direkt beim Salon.",
+      "keywords": ["parken", "parkplatz", "auto"]
+    },
+    {
+      "question": "Kann ich per WhatsApp schreiben?",
+      "answer": "Ja, unter 0676 6039930 – per WhatsApp oder Anruf.",
+      "keywords": ["whatsapp", "telefon", "nummer", "anrufen"]
+    }
+  ],
+  "owner": {"email": "owner@davio-barbershop.demo"},
+  "assistant": {"enabled": true}
+}

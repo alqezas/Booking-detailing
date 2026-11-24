@@ -19,6 +19,12 @@ import {mediaFileName} from '../shared/media.ts';
 import {PUBLIC_TENANTS_DIR, isLoaded, listTenantSlugs, loadTenant, printIssues} from './lib/tenants.ts';
 
 const BG = '#000000';
+/** Beauty studios are light: warm cream canvas, dark text. Car studios stay black. */
+const LIGHT_BG = '#FFFFFF';
+/** Beauty studios are light unless the config asks for "appearance": "dark" (barbershops). */
+const isLight = (c: BusinessConfig) => c.kind === 'beauty' && c.appearance !== 'dark';
+const canvasOf = (c: BusinessConfig) =>
+  c.kind === 'beauty' && c.appearance === 'cream' ? {bg: '#F6F1E9', text: '#2C2B2F'} : isLight(c) ? {bg: LIGHT_BG, text: '#141318'} : {bg: BG, text: '#ffffff'};
 
 // Portrait startup images for current iPhones (device px, CSS px, DPR).
 const SPLASH: {w: number; h: number; cw: number; ch: number; dpr: number}[] = [
@@ -35,9 +41,9 @@ const SPLASH: {w: number; h: number; cw: number; ch: number; dpr: number}[] = [
 
 const escapeXml = (s: string) => s.replace(/[<>&'"]/g, c => ({'<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;'})[c]!);
 
-async function iconOnBlack(src: string, size: number, inner: number, out: string): Promise<void> {
-  const logo = await sharp(src).resize(Math.round(size * inner), Math.round(size * inner), {fit: 'contain', background: BG}).toBuffer();
-  await sharp({create: {width: size, height: size, channels: 4, background: BG}})
+async function iconOnBlack(src: string, size: number, inner: number, out: string, bg = BG): Promise<void> {
+  const logo = await sharp(src).resize(Math.round(size * inner), Math.round(size * inner), {fit: 'contain', background: bg}).toBuffer();
+  await sharp({create: {width: size, height: size, channels: 4, background: bg}})
     .composite([{input: logo, gravity: 'center'}])
     .png()
     .toFile(out);
@@ -48,6 +54,7 @@ const ASSET_TEXT = {
   ru: {lang: 'ru', booking: 'Онлайн-запись', book: 'Записаться', my: 'Моя запись', noscript: 'Для записи включите JavaScript.'},
   cs: {lang: 'cs', booking: 'Online rezervace', book: 'Rezervovat termín', my: 'Moje rezervace', noscript: 'Pro rezervaci zapněte JavaScript.'},
   pl: {lang: 'pl', booking: 'Rezerwacja online', book: 'Zarezerwuj termin', my: 'Moja rezerwacja', noscript: 'Aby zarezerwować, włącz JavaScript.'},
+  de: {lang: 'de', booking: 'Online-Termin', book: 'Termin buchen', my: 'Mein Termin', noscript: 'Bitte aktivieren Sie JavaScript, um zu buchen.'},
   uk: {lang: 'uk', booking: 'Онлайн-запис', book: 'Записатися', my: 'Мій запис', noscript: 'Щоб записатися, увімкніть JavaScript.'},
 };
 
@@ -56,6 +63,7 @@ async function buildTenant(slug: string, dir: string, c: BusinessConfig): Promis
   rmSync(outDir, {recursive: true, force: true});
   for (const sub of ['media', 'icons', 'splash']) mkdirSync(path.join(outDir, sub), {recursive: true});
   const base = `/s/${slug}`;
+  const {bg, text: ink} = canvasOf(c);
 
   // Photos
   const hero = path.join(dir, c.images.hero);
@@ -64,28 +72,33 @@ async function buildTenant(slug: string, dir: string, c: BusinessConfig): Promis
   for (const file of c.gallery.flatMap(g => (g.before ? [g.image, g.before] : [g.image]))) {
     await sharp(path.join(dir, file)).rotate().resize({width: 1400, withoutEnlargement: true}).webp({quality: 78}).toFile(path.join(outDir, 'media', mediaFileName(file)));
   }
+  // Master portraits (beauty): square crops for the masters strip.
+  for (const r of c.resources) {
+    if (!r.photo) continue;
+    await sharp(path.join(dir, r.photo)).rotate().resize(640, 640, {fit: 'cover', position: 'attention'}).webp({quality: 80}).toFile(path.join(outDir, 'media', mediaFileName(r.photo)));
+  }
   const logo = path.join(dir, c.images.logo);
-  await sharp(logo).resize(512, 512, {fit: 'contain', background: BG}).png().toFile(path.join(outDir, 'media', mediaFileName(c.images.logo)));
+  await sharp(logo).resize(512, 512, {fit: 'contain', background: bg}).png().toFile(path.join(outDir, 'media', mediaFileName(c.images.logo)));
 
   // Icons
   const iconSrc = path.join(dir, c.images.icon ?? c.images.logo);
-  await iconOnBlack(iconSrc, 192, 0.92, path.join(outDir, 'icons', 'icon-192.png'));
-  await iconOnBlack(iconSrc, 512, 0.92, path.join(outDir, 'icons', 'icon-512.png'));
-  await iconOnBlack(iconSrc, 512, 0.72, path.join(outDir, 'icons', 'maskable-512.png')); // safe zone = inner 80%
-  await iconOnBlack(iconSrc, 180, 0.86, path.join(outDir, 'icons', 'apple-touch-icon.png'));
-  await iconOnBlack(iconSrc, 32, 1, path.join(outDir, 'icons', 'favicon-32.png'));
+  await iconOnBlack(iconSrc, 192, 0.92, path.join(outDir, 'icons', 'icon-192.png'), bg);
+  await iconOnBlack(iconSrc, 512, 0.92, path.join(outDir, 'icons', 'icon-512.png'), bg);
+  await iconOnBlack(iconSrc, 512, 0.72, path.join(outDir, 'icons', 'maskable-512.png'), bg); // safe zone = inner 80%
+  await iconOnBlack(iconSrc, 180, 0.86, path.join(outDir, 'icons', 'apple-touch-icon.png'), bg);
+  await iconOnBlack(iconSrc, 32, 1, path.join(outDir, 'icons', 'favicon-32.png'), bg);
 
   // iOS startup images: logo + name on black
-  const logoBuf = await sharp(iconSrc).resize(360, 360, {fit: 'contain', background: BG}).png().toBuffer();
+  const logoBuf = await sharp(iconSrc).resize(360, 360, {fit: 'contain', background: bg}).png().toBuffer();
   const splashLinks: {href: string; media: string}[] = [];
   for (const s of SPLASH) {
     const logoSize = Math.round(s.w * 0.28);
     const scaled = await sharp(logoBuf).resize(logoSize, logoSize).toBuffer();
     const text = Buffer.from(
-      `<svg xmlns="http://www.w3.org/2000/svg" width="${s.w}" height="${Math.round(s.w * 0.12)}"><text x="50%" y="70%" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="${Math.round(s.w * 0.055)}" fill="#ffffff">${escapeXml(c.name)}</text></svg>`,
+      `<svg xmlns="http://www.w3.org/2000/svg" width="${s.w}" height="${Math.round(s.w * 0.12)}"><text x="50%" y="70%" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="${Math.round(s.w * 0.055)}" fill="${ink}">${escapeXml(c.name)}</text></svg>`,
     );
     const file = `splash-${s.w}x${s.h}.png`;
-    await sharp({create: {width: s.w, height: s.h, channels: 4, background: BG}})
+    await sharp({create: {width: s.w, height: s.h, channels: 4, background: bg}})
       .composite([
         {input: scaled, top: Math.round(s.h * 0.4 - logoSize / 2), left: Math.round((s.w - logoSize) / 2)},
         {input: text, top: Math.round(s.h * 0.4 + logoSize / 2 + s.w * 0.04), left: 0},
@@ -99,7 +112,7 @@ async function buildTenant(slug: string, dir: string, c: BusinessConfig): Promis
   }
 
   const shortName = c.shortName ?? (c.name.length <= 14 ? c.name : c.name.split(/\s+/)[0]!.slice(0, 14));
-  const words = c.locale === 'cs-CZ' ? ASSET_TEXT.cs : c.locale === 'pl-PL' ? ASSET_TEXT.pl : c.locale === 'uk-UA' ? ASSET_TEXT.uk : ASSET_TEXT.ru;
+  const words = c.locale === 'cs-CZ' ? ASSET_TEXT.cs : c.locale === 'pl-PL' ? ASSET_TEXT.pl : c.locale === 'uk-UA' ? ASSET_TEXT.uk : c.locale === 'de-AT' ? ASSET_TEXT.de : ASSET_TEXT.ru;
   const description = c.tagline || `${words.booking}: ${c.name}`;
   const manifest = {
     id: `${base}/`,
@@ -113,8 +126,8 @@ async function buildTenant(slug: string, dir: string, c: BusinessConfig): Promis
     display: 'standalone',
     display_override: ['standalone', 'minimal-ui'],
     orientation: 'portrait',
-    background_color: BG,
-    theme_color: BG,
+    background_color: bg,
+    theme_color: bg,
     categories: ['lifestyle', 'business'],
     icons: [
       {src: `${base}/icons/icon-192.png`, sizes: '192x192', type: 'image/png', purpose: 'any'},
@@ -141,6 +154,8 @@ async function buildTenant(slug: string, dir: string, c: BusinessConfig): Promis
     splash: splashLinks,
     lang: words.lang,
     noscript: words.noscript,
+    themeColor: bg,
+    colorScheme: isLight(c) ? 'light' : 'dark',
   };
   writeFileSync(path.join(outDir, 'head.json'), JSON.stringify(head, null, 2));
 }

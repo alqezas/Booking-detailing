@@ -11,7 +11,7 @@ export const norm = (s: string, lang: Lang = 'ru') => {
   if (lang === 'ru') t = t.replace(/ё/g, 'е');
   // Ukrainian keeps its letters; the apostrophe inside words («пʼять», «п'ять») is dropped and «ґ» read as «г».
   else if (lang === 'uk') t = t.replace(/[ʼ'’`]/g, '').replace(/ґ/g, 'г');
-  else t = t.normalize('NFD').replace(/\p{M}/gu, '').replace(/ł/g, 'l');
+  else t = t.normalize('NFD').replace(/\p{M}/gu, '').replace(/ł/g, 'l').replace(/ß/g, 'ss');
   return t
     .replace(/[^\p{L}\p{N}\s-]/gu, ' ')
     .replace(/\s+/g, ' ')
@@ -42,6 +42,7 @@ export const words = (s: string, lang: Lang = 'ru') =>
 export function plural(n: number, one: string, few: string, many: string, lang: Lang = 'ru'): string {
   if (lang === 'cs') return n === 1 ? one : n >= 2 && n <= 4 ? few : many;
   if (lang === 'pl' && n === 1) return one;
+  if (lang === 'de') return n === 1 ? one : many;
   const m10 = n % 10;
   const m100 = n % 100;
   if ((lang === 'ru' || lang === 'uk') && m10 === 1 && m100 !== 11) return one;
@@ -49,8 +50,12 @@ export function plural(n: number, one: string, few: string, many: string, lang: 
   return many;
 }
 
-export const money = (n: number, currency = 'RUB', lang: Lang = 'ru') =>
-  new Intl.NumberFormat(INTL[lang], {style: 'currency', currency, maximumFractionDigits: 0}).format(n);
+/** «850 Kč» even in a Russian-language studio: a foreign currency shows its local sign, not its ISO code. */
+export const money = (n: number, currency = 'RUB', lang: Lang = 'ru') => {
+  const f = new Intl.NumberFormat(INTL[lang], {style: 'currency', currency, maximumFractionDigits: 0});
+  const sign = f.formatToParts(0).find(p => p.type === 'currency')?.value ?? '';
+  return (/^[A-Z]{3}$/.test(sign) ? new Intl.NumberFormat(INTL[lang], {style: 'currency', currency, currencyDisplay: 'narrowSymbol', maximumFractionDigits: 0}) : f).format(n);
+};
 
 export function duration(min: number, lang: Lang = 'ru'): string {
   const t = L[lang];
@@ -91,5 +96,8 @@ export function phone(e164: string): string {
   const pl = e164.match(/^\+48(\d{3})(\d{3})(\d{3})$/);
   if (pl) return `+48 ${pl[1]} ${pl[2]} ${pl[3]}`;
   const ua = e164.match(/^\+380(\d{2})(\d{3})(\d{2})(\d{2})$/);
-  return ua ? `+380 ${ua[1]} ${ua[2]} ${ua[3]} ${ua[4]}` : e164;
+  if (ua) return `+380 ${ua[1]} ${ua[2]} ${ua[3]} ${ua[4]}`;
+  // Austria: Vienna landline «+43 1 920 8295», mobile «+43 664 123 4567».
+  const at = e164.match(/^\+43(1|6\d\d|[2-57-9]\d{1,3})(\d{3})(\d{2,})$/);
+  return at ? `+43 ${at[1]} ${at[2]} ${at[3]}` : e164;
 }
