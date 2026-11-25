@@ -9,7 +9,7 @@
 | Фронтенд | `src/` → `dist/` (Vercel) | вітрина, кошик (localStorage), оформлення, статус замовлення, адмінка `/admin`, PWA |
 | База | `supabase/migrations/` | каталог і набори, фільтри, замовлення зі знімками цін, платежі, outbox, RLS |
 | Seed | `supabase/seed.sql` | 22 товари, налаштування, тексти сторінок (повторно запускається без дублів) |
-| Edge Functions | `supabase/functions/` | `checkout`, `order`, `np` (Нова пошта), `mono-webhook`, `jobs` (cron) |
+| Edge Functions | `supabase/functions/` | `checkout`, `order`, `np` (Нова пошта), `mono-webhook`, `jobs` (cron), `telegram` (бот сповіщень) |
 | Тести | `tests/unit`, `tests/db`, `tests/e2e` | Vitest, SQL/інтеграційні, Playwright |
 
 Гроші — цілі копійки. Час — UTC у базі, відображення Europe/Kyiv. Усе виготовляється під замовлення: залишків і резервів немає, у товару є лише перемикач «Приймаємо замовлення».
@@ -74,7 +74,7 @@ pnpm test:e2e                    # Playwright (потрібні fakes і functio
 
 ```bash
 npx supabase secrets set --env-file supabase/functions/.env
-npx supabase functions deploy checkout order mono-webhook np jobs
+npx supabase functions deploy checkout order mono-webhook np jobs telegram --import-map supabase/functions/deno.json
 ```
 
 | Secret | Значення |
@@ -86,7 +86,8 @@ npx supabase functions deploy checkout order mono-webhook np jobs
 | `MONO_TOKEN` | X-Token з кабінету https://web.monobank.ua (бойовий) або тестовий з https://api.monobank.ua/ |
 | `PAYMENT_VALIDITY_MINUTES` | скільки діє рахунок mono (за замовчуванням 1440 = 24 год) |
 | `NP_API_KEY` | ключ API Нової пошти (кабінет → Налаштування → Безпека) |
-| `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | необовʼязково: сповіщення про оплачені замовлення |
+| `TELEGRAM_BOT_TOKEN` | необовʼязково: бот сповіщень про нові замовлення й онлайн-оплати. Токен від @BotFather. Далі в адмінці «Перед запуском» → «Підключити бота», відкрити бота, /start, email і пароль від адмінки (повідомлення з паролем бот видаляє). Сповіщення отримують лише чати, що увійшли так |
+| `TELEGRAM_CHAT_ID`, `ADMIN_URL` | необовʼязково: фіксований чат без входу в боті; адреса адмінки для посилань у сповіщеннях (за замовчуванням `SITE_URL/admin`) |
 | `SMTP_USER`, `SMTP_PASS` | необовʼязково: листи покупцям («Замовлення прийнято», «Оплату отримано»). Gmail магазину + пароль застосунку (Google-акаунт → Безпека → Двоетапна перевірка → Паролі застосунків). Без них листи не надсилаються, решта працює |
 | `SMTP_HOST`, `SMTP_PORT`, `MAIL_FROM`, `MAIL_FROM_NAME`, `MAIL_REPLY_TO` | необовʼязково: за замовчуванням `smtp.gmail.com`, `465`, адреса `SMTP_USER`, «Green Touch». Порт лише 465: Edge Functions блокують 25 і 587. Для власного домену — будь-який SMTP (Resend, Brevo) |
 

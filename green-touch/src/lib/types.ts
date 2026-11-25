@@ -24,13 +24,17 @@ export type ItemDetail = ItemCard & {
   inci: string | null;
   usage: string | null;
   warnings: string | null;
+  /** kits: «Очікуваний результат» */
+  expected_result: string | null;
   published_at: string | null;
   images: {path: string; alt: string | null}[];
   facets: Facet[];
   components:
-    | {id: string; slug: string; name: string; volume: string | null; qty: number; price_kop: number; available: boolean; is_public: boolean; image: string | null}[]
+    | {id: string; slug: string; name: string; volume: string | null; qty: number; note: string | null; price_kop: number; available: boolean; is_public: boolean; image: string | null}[]
     | null;
   in_kits: {slug: string; name: string; price_kop: number}[];
+  /** «Доповніть свій догляд»: picked by the owner; shown instead of related when set */
+  recommendations?: ItemCard[];
   related: ItemCard[];
 };
 

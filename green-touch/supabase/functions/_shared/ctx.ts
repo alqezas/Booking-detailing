@@ -17,7 +17,13 @@ export type Ctx = {
   paymentValidityMinutes: number;
   allowedOrigins: string[];
   jobsSecret: string | null;
-  telegram: {token: string; chatId: string; apiUrl: string} | null;
+  /** bot token set → notifications to chats connected in the bot (+ optional fixed TELEGRAM_CHAT_ID) */
+  telegram: {token: string; chatId: string | null; apiUrl: string} | null;
+  supabaseUrl: string;
+  /** public anon key: the bot checks the owner's email and password with it */
+  anonKey: string;
+  /** admin app address for links in notifications */
+  adminUrl: string;
   /** order emails to buyers; null when SMTP is not configured (emails are skipped) */
   mailer: Mailer | null;
 };
@@ -44,7 +50,10 @@ export function ctxFromEnv(get: Env): Ctx {
     paymentValidityMinutes: Math.min(Math.max(Number(get('PAYMENT_VALIDITY_MINUTES') || 1440), 15), 7 * 1440),
     allowedOrigins: (get('ALLOWED_ORIGINS') ?? '').split(',').map(s => s.trim()).filter(Boolean),
     jobsSecret: get('JOBS_SECRET') ?? null,
-    telegram: tgToken && tgChat ? {token: tgToken, chatId: tgChat, apiUrl: get('TELEGRAM_API_URL') || 'https://api.telegram.org'} : null,
+    telegram: tgToken ? {token: tgToken, chatId: tgChat || null, apiUrl: get('TELEGRAM_API_URL') || 'https://api.telegram.org'} : null,
+    supabaseUrl: url.replace(/\/$/, ''),
+    anonKey: get('SUPABASE_ANON_KEY') ?? '',
+    adminUrl: (get('ADMIN_URL') || `${need('SITE_URL').replace(/\/$/, '')}/admin`).replace(/\/$/, ''),
     // set by the jobs function (smtp.ts); other functions never send mail
     mailer: null,
   };

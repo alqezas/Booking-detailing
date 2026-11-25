@@ -22,7 +22,7 @@ import {Loading} from './Status.tsx';
 const NAV = [
   {href: '/katalog', label: 'Каталог'},
   {href: '/katalog?kategoriia=nabory', label: 'Набори'},
-  {href: '/pro-brend', label: 'Про бренд'},
+  {href: '/pro-brend', label: 'Наша історія'},
   {href: '/dostavka-i-oplata', label: 'Доставка й оплата'},
   {href: '/kontakty', label: 'Контакти'},
 ];

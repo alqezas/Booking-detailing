@@ -6,6 +6,7 @@ import {z} from 'zod';
 import {checkoutRequestSchema, type DeliveryMethod} from './contracts.ts';
 import type {Ctx} from './ctx.ts';
 import {buildOrderMail, type MailKind, type OrderForMail} from './email.ts';
+import {adminChats, orderMessage, tgCall, type OrderForTg} from './telegram.ts';
 import {byteaHex, canonicalJson, hmacSha256, sha256, timingSafeEqual, toBase64Url, toHex} from './crypto.ts';
 import {ApiError, clientIp, corsHeaders, dbError, errorResponse, json, rateLimit, readJson} from './http.ts';
 import {monoStatusSchema, removeInvoice, verifyWebhook} from './mono.ts';
@@ -198,24 +199,42 @@ export type JobsReport = {reconciled: number; outbox: {done: number; failed: num
 
 type OutboxRow = {id: number; topic: string; order_id: string | null; payload: Record<string, unknown>; attempts: number};
 
+/**
+ * Owner notifications in Telegram, only for paid orders (an unpaid checkout may be abandoned):
+ * order.paid (monobank confirmed), order.prepaid (owner marked the prepayment), needs review.
+ * Recipients: chats connected in the bot by an admin, plus TELEGRAM_CHAT_ID if set.
+ * One effect row per (event, chat): a failure for one chat never resends to the others.
+ */
 async function deliverTelegram(ctx: Ctx, row: OutboxRow): Promise<void> {
-  if (!ctx.telegram || !['order.paid', 'payment.needs_review'].includes(row.topic) || !row.order_id) return;
-  const {data: done} = await ctx.db.from('outbox_effects').select('outbox_id').eq('outbox_id', row.id).eq('consumer', 'telegram').maybeSingle();
-  if (done) return;
-  const {data: o} = await ctx.db.from('orders').select('number,total_kop').eq('id', row.order_id).single();
-  const text =
-    row.topic === 'order.paid'
-      ? `Green Touch: оплачене замовлення №${o?.number}, ${((o?.total_kop ?? 0) / 100).toFixed(2)} грн`
-      : `Green Touch: замовлення №${o?.number} потребує перевірки (${String(row.payload.reason ?? '')})`;
-  const res = await fetch(`${ctx.telegram.apiUrl}/bot${ctx.telegram.token}/sendMessage`, {
-    method: 'POST',
-    headers: {'content-type': 'application/json'},
-    body: JSON.stringify({chat_id: ctx.telegram.chatId, text}),
-    signal: AbortSignal.timeout(8000),
-  });
-  if (!res.ok) throw new Error(`telegram http ${res.status}`);
-  // At-least-once: a crash right here may resend once; the effect row stops further repeats.
-  await ctx.db.rpc('svc_record_effect', {p_id: row.id, p_consumer: 'telegram'});
+  if (!ctx.telegram || !['order.paid', 'order.prepaid', 'payment.needs_review'].includes(row.topic) || !row.order_id) return;
+  const tg = ctx.telegram;
+  const targets: {chat: string | number; consumer: string}[] = (await adminChats(ctx)).map(c => ({chat: c, consumer: `telegram:${c}`}));
+  if (tg.chatId) targets.push({chat: tg.chatId, consumer: 'telegram'});
+  if (!targets.length) return;
+  const {data: done} = await ctx.db.from('outbox_effects').select('consumer').eq('outbox_id', row.id).in('consumer', targets.map(t => t.consumer));
+  const sent = new Set((done ?? []).map(d => d.consumer));
+  const todo = targets.filter(t => !sent.has(t.consumer));
+  if (!todo.length) return;
+  const {data: o, error} = await ctx.db
+    .from('orders')
+    .select('id,number,first_name,last_name,phone,total_kop,payment_method,prepay_kop,delivery_method,np_settlement_name,np_warehouse_name,comment,order_lines(line_no,name,volume,qty)')
+    .eq('id', row.order_id)
+    .maybeSingle();
+  if (error) throw new Error(`telegram order: ${error.message}`);
+  if (!o) return; // deleted by the owner
+  const lines = [...(o.order_lines as {line_no: number; name: string; volume: string | null; qty: number}[])].sort((a, b) => a.line_no - b.line_no);
+  const text = orderMessage(row.topic, {...o, lines} as OrderForTg, ctx.adminUrl, row.payload.reason ? String(row.payload.reason) : undefined);
+  let failure: unknown = null;
+  for (const t of todo) {
+    try {
+      await tgCall(tg, 'sendMessage', {chat_id: t.chat, text, parse_mode: 'HTML', link_preview_options: {is_disabled: true}});
+      // At-least-once: a crash right here may resend once; the effect row stops further repeats.
+      await ctx.db.rpc('svc_record_effect', {p_id: row.id, p_consumer: t.consumer});
+    } catch (e) {
+      failure = e;
+    }
+  }
+  if (failure) throw failure;
 }
 
 /** «Замовлення прийнято» / «Оплату отримано» to the buyer, if they gave an email. */

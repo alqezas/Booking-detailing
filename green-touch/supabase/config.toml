@@ -69,7 +69,7 @@ schema_paths = []
 enabled = true
 # Specifies an ordered list of seed files to load during db reset.
 # Supports glob patterns relative to supabase directory: "./seeds/*.sql"
-sql_paths = ["./seed.sql", "./owner_texts.sql"]
+sql_paths = ["./seed.sql", "./owner_texts.sql", "./kits.sql"]
 
 [db.network_restrictions]
 # Enable management of network restrictions.
@@ -432,3 +432,7 @@ verify_jwt = true
 
 [functions.np]
 verify_jwt = true
+
+[functions.telegram]
+# Telegram has no Supabase JWT: updates are checked by the secret header, setup by the admin's JWT
+verify_jwt = false

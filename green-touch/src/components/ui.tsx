@@ -61,10 +61,11 @@ export function Availability({available}: {available: boolean}) {
   return available ? null : <Badge variant="neutral" label="Тимчасово не приймаємо замовлення" />;
 }
 
-export function AddToCart({item, qty = 1, size = 'md', width}: {item: Card_; qty?: number; size?: 'md' | 'lg'; width?: string}) {
+export function AddToCart({item, qty = 1, size = 'md', width, isIconOnly}: {item: Card_; qty?: number; size?: 'sm' | 'md' | 'lg'; width?: string; isIconOnly?: boolean}) {
   return (
     <Button
       label={item.available ? 'У кошик' : 'Недоступно'}
+      isIconOnly={isIconOnly}
       variant="primary"
       size={size}
       width={width}

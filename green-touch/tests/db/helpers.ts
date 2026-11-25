@@ -40,6 +40,9 @@ export function makeCtx(o: {monoUrl?: string; monoToken?: string; npUrl: string;
     allowedOrigins: [],
     jobsSecret: 'test-jobs-secret',
     telegram: o.telegramUrl ? {token: 'x', chatId: '1', apiUrl: o.telegramUrl} : null,
+    supabaseUrl: 'http://127.0.0.1:55421',
+    anonKey: 'test',
+    adminUrl: 'http://localhost:4180/admin',
     mailer: o.mailer ?? null,
   };
 }

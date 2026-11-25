@@ -14,6 +14,7 @@ import {ErrorState, Loading} from '../../components/Status.tsx';
 import {ProductImage} from '../../components/ui.tsx';
 import {optimizeImage} from '../../lib/images.ts';
 import {admin} from '../../lib/supabase.ts';
+import {TelegramCard} from './AdminTelegram.tsx';
 
 type Settings = Record<string, Record<string, unknown>>;
 
@@ -199,7 +200,7 @@ export function AdminLaunch() {
     ['Без опису', d.without_description as number, d.without_description === 0],
     ['Без складу INCI', d.without_inci as number, d.without_inci === 0],
     ['Без способу застосування', d.without_usage as number, d.without_usage === 0],
-    ['Наборів опубліковано (очікується 14)', d.kits_published as number, (d.kits_published as number) >= 14],
+    ['Наборів опубліковано', d.kits_published as number, (d.kits_published as number) > 0],
     ['Пробників', d.samples as number, (d.samples as number) > 0],
     ['Сторінки, що потребують перевірки', (d.pages_need_review as string[]).join(', ') || 'немає', (d.pages_need_review as string[]).length === 0],
     ['Порожні контакти', (d.contacts_missing as string[]).join(', ') || 'немає', (d.contacts_missing as string[]).length === 0],
@@ -221,11 +222,12 @@ export function AdminLaunch() {
           ))}
         </VStack>
       </Card>
+      <TelegramCard />
       <Card padding={5}>
         <VStack gap={2}>
           <Heading level={2}>Матеріали від власниці</Heading>
           {[
-            'Назви й склади 14 наборів із кількістю кожного товару',
+            'Фото наборів (тексти й склад 12 наборів уже додано)',
             'Фотографії продукції, наборів і косметолога',
             'Підтверджені характеристики для фільтрів (тип шкіри, потреби, за бажанням — вік і сезон)',
             'Описи, склад INCI, спосіб застосування, застереження',

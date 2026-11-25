@@ -215,7 +215,7 @@ export default function HomePage() {
               <Text type="body" color="secondary">
                 {brand.about_text ?? 'Green Touch — косметика власного виробництва, створена косметологом.'}
               </Text>
-              <Button label="Детальніше про бренд" href="/pro-brend" />
+              <Button label="Наша історія" href="/pro-brend" />
             </VStack>
           </Grid>
         </Card>
@@ -286,7 +286,7 @@ export default function HomePage() {
                   Під замовлення
                 </Text>
                 <Text type="body" color="secondary">
-                  Кожен засіб виготовляється після оплати замовлення. Реєстрація не потрібна.
+                  Кожен засіб виготовляється після оплати й відправляється за 1–3 робочі дні. Реєстрація не потрібна.
                 </Text>
               </VStack>
             </Card>

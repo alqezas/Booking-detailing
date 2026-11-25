@@ -5,9 +5,12 @@
 import {z} from 'zod';
 
 // ── Money ────────────────────────────────────────────────────────────────────
-/** Kit discount, identical to private.discount_kop: basis points, half up to a kopeck. */
+/**
+ * Kit discount, identical to private.discount_kop: the kit price is the component sum
+ * minus bp, rounded half up to whole 10 грн; the discount is what is left.
+ */
 export function kitDiscountKop(baseKop: number, bp: number): number {
-  return Math.floor((baseKop * bp + 5000) / 10000);
+  return baseKop - Math.floor((baseKop * (10000 - bp) + 5_000_000) / 10_000_000) * 1000;
 }
 
 /** «1 234 грн» or «1 234,50 грн» (Ukrainian grouping). */

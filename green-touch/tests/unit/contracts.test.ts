@@ -11,11 +11,14 @@ import {
 } from '../../supabase/functions/_shared/contracts.ts';
 
 describe('kit discount (same rule as private.discount_kop)', () => {
-  it('rounds half up to a kopeck and is applied once', () => {
-    expect(kitDiscountKop(160000, 1500)).toBe(24000);
-    expect(kitDiscountKop(33333, 1500)).toBe(5000); // 4999.95 → 5000
-    expect(kitDiscountKop(33329, 1500)).toBe(4999); // 4999.35 → 4999
-    expect(kitDiscountKop(33331, 1500)).toBe(5000); // 4999.65 → 5000
+  it('rounds the kit price half up to whole 10 грн, as on the owner price list', () => {
+    const price = (base: number) => base - kitDiscountKop(base, 1500);
+    expect(kitDiscountKop(160000, 1500)).toBe(24000); // 1360 exactly
+    expect(price(215000)).toBe(183000); // 1827,50 → 1830
+    expect(price(205000)).toBe(174000); // 1742,50 → 1740
+    expect(price(170000)).toBe(145000); // 1445 → 1450 (half up)
+    expect(price(257000)).toBe(218000); // 2184,50 → 2180
+    expect(price(255000)).toBe(217000); // 2167,50 → 2170
   });
 });
 

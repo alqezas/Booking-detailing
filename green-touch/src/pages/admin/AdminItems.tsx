@@ -176,6 +176,7 @@ type Form = {
   inci: string;
   usage: string;
   warnings: string;
+  expected_result: string;
   status: string;
   orderable: boolean;
   sort: number;
@@ -202,7 +203,7 @@ export function AdminItemEdit() {
     queryFn: async () => {
       const {data, error} = await admin()
         .from('items')
-        .select('*,categories(slug),item_facets(facet_id),item_images(id,path,alt,sort),kit_components!kit_components_kit_id_fkey(product_id,qty,sort)')
+        .select('*,categories(slug),item_facets(facet_id),item_images(id,path,alt,sort),kit_components!kit_components_kit_id_fkey(product_id,qty,sort,note),item_recommendations!item_recommendations_item_id_fkey(rec_id,sort)')
         .eq('id', id)
         .single();
       if (error) throw error;
@@ -210,7 +211,8 @@ export function AdminItemEdit() {
         categories: {slug: string};
         item_facets: {facet_id: number}[];
         item_images: {id: string; path: string; alt: string | null; sort: number}[];
-        kit_components: {product_id: string; qty: number; sort: number}[];
+        kit_components: {product_id: string; qty: number; sort: number; note: string | null}[];
+        item_recommendations: {rec_id: string; sort: number}[];
       };
     },
   });
@@ -218,7 +220,8 @@ export function AdminItemEdit() {
   const kindParam = (sp.get('kind') as ItemKind) ?? 'product';
   const [f, setF] = useState<Form | null>(null);
   const [facets, setFacets] = useState<number[]>([]);
-  const [components, setComponents] = useState<{id: string; qty: number}[]>([]);
+  const [components, setComponents] = useState<{id: string; qty: number; note: string}[]>([]);
+  const [recs, setRecs] = useState<string[]>([]);
   const [slugTouched, setSlugTouched] = useState(false);
   useEffect(() => {
     if (isNew && !f) {
@@ -235,6 +238,7 @@ export function AdminItemEdit() {
         inci: '',
         usage: '',
         warnings: '',
+        expected_result: '',
         status: 'draft',
         orderable: true,
         sort: 0,
@@ -255,12 +259,14 @@ export function AdminItemEdit() {
         inci: (d.inci as string) ?? '',
         usage: (d.usage as string) ?? '',
         warnings: (d.warnings as string) ?? '',
+        expected_result: (d.expected_result as string) ?? '',
         status: d.status as string,
         orderable: d.orderable as boolean,
         sort: d.sort as number,
       });
       setFacets(d.item_facets.map(x => x.facet_id));
-      setComponents([...d.kit_components].sort((a, b) => a.sort - b.sort).map(c => ({id: c.product_id, qty: c.qty})));
+      setComponents([...d.kit_components].sort((a, b) => a.sort - b.sort).map(c => ({id: c.product_id, qty: c.qty, note: c.note ?? ''})));
+      setRecs([...d.item_recommendations].sort((a, b) => a.sort - b.sort).map(r => r.rec_id));
       setSlugTouched(true);
     }
   }, [item.data, isNew]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -289,6 +295,7 @@ export function AdminItemEdit() {
         inci: f.inci.trim() || null,
         usage: f.usage.trim() || null,
         warnings: f.warnings.trim() || null,
+        expected_result: f.expected_result.trim() || null,
         status: f.status,
         orderable: f.orderable,
         sort: f.sort,
@@ -302,6 +309,8 @@ export function AdminItemEdit() {
         const kr = await admin().rpc('admin_set_kit_components', {p_kit: itemId, p_components: components});
         if (kr.error) throw new Error(kr.error.message);
       }
+      const rr = await admin().rpc('admin_set_recommendations', {p_item: itemId, p_items: recs});
+      if (rr.error) throw new Error(rr.error.message);
       return itemId;
     },
     onSuccess: newId => {
@@ -357,7 +366,8 @@ export function AdminItemEdit() {
           <TextInput label="Коротке призначення" value={f.short_purpose} onChange={v => set({short_purpose: v})} isOptional />
           <TextArea label="Опис" value={f.description} onChange={v => set({description: v})} rows={4} isOptional />
           {f.kind !== 'kit' && <TextArea label="Склад (INCI)" value={f.inci} onChange={v => set({inci: v})} rows={3} isOptional />}
-          <TextArea label="Спосіб застосування" value={f.usage} onChange={v => set({usage: v})} rows={3} isOptional />
+          {f.kind === 'kit' && <TextArea label="Очікуваний результат" value={f.expected_result} onChange={v => set({expected_result: v})} rows={4} isOptional />}
+          <TextArea label={f.kind === 'kit' ? 'Схема догляду' : 'Спосіб застосування'} value={f.usage} onChange={v => set({usage: v})} rows={3} isOptional />
           <TextArea label="Застереження" value={f.warnings} onChange={v => set({warnings: v})} rows={2} isOptional />
         </VStack>
       </Card>
@@ -378,9 +388,10 @@ export function AdminItemEdit() {
                 />
                 <NumberInput label="Кількість" value={c.qty} onChange={v => setComponents(cs => cs.map((x, i) => (i === n ? {...x, qty: Math.max(1, v ?? 1)} : x)))} min={1} max={20} isIntegerOnly width={120} />
                 <Button label="Прибрати" variant="ghost" isIconOnly icon={<Icon icon={Trash} />} onClick={() => setComponents(cs => cs.filter((_, i) => i !== n))} />
+                <TextArea label="Що робить у наборі" value={c.note} onChange={v => setComponents(cs => cs.map((x, i) => (i === n ? {...x, note: v} : x)))} rows={2} isOptional width="100%" />
               </HStack>
             ))}
-            <Button label="Додати товар" isDisabled={products.length === 0} onClick={() => setComponents(cs => [...cs, {id: products[0]!.id, qty: 1}])} />
+            <Button label="Додати товар" isDisabled={products.length === 0} onClick={() => setComponents(cs => [...cs, {id: products[0]!.id, qty: 1, note: ''}])} />
             <Text type="body">
               Окремо: {formatUah(kitBase)} · знижка {f.kit_discount_pct}%: −{formatUah(kitDiscountKop(kitBase, f.kit_discount_pct * 100))} · ціна набору:{' '}
               {formatUah(kitBase - kitDiscountKop(kitBase, f.kit_discount_pct * 100))}
@@ -391,6 +402,29 @@ export function AdminItemEdit() {
           </VStack>
         </Card>
       )}
+
+      <Card padding={5}>
+        <VStack gap={3}>
+          <Heading level={2}>Доповніть свій догляд</Heading>
+          <Text type="supporting" color="secondary">
+            Товари, які показуються внизу сторінки замість «Схожі товари». Порожньо — показуються схожі товари з тієї ж категорії.
+          </Text>
+          {recs.map((r, n) => (
+            <HStack key={n} gap={2} vAlign="end" wrap="wrap">
+              <Selector
+                label={`Рекомендація ${n + 1}`}
+                value={r}
+                onChange={v => setRecs(rs => rs.map((x, i) => (i === n ? v : x)))}
+                options={(all.data ?? []).filter(p => p.id !== id && p.status !== 'archived').map(p => ({value: p.id, label: `${p.name}${p.volume ? `, ${p.volume}` : ''}`}))}
+                hasSearch
+                width={420}
+              />
+              <Button label="Прибрати" variant="ghost" isIconOnly icon={<Icon icon={Trash} />} onClick={() => setRecs(rs => rs.filter((_, i) => i !== n))} />
+            </HStack>
+          ))}
+          <Button label="Додати рекомендацію" isDisabled={products.length === 0 || recs.length >= 12} onClick={() => setRecs(rs => [...rs, products.find(p => !rs.includes(p.id) && p.id !== id)?.id ?? products[0]!.id])} />
+        </VStack>
+      </Card>
 
       <Card padding={5}>
         <VStack gap={4}>
