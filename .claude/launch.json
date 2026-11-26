@@ -36,6 +36,16 @@
         "preview"
       ],
       "port": 4180
+    },
+    {
+      "name": "tireflow-dev",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "--dir",
+        "tireflow",
+        "dev"
+      ],
+      "port": 3000
     }
   ]
 }

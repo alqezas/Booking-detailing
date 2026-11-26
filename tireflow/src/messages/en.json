@@ -1,0 +1,182 @@
+{
+  "app": { "name": "TireFlow", "tagline": "Tire service management" },
+  "nav": {
+    "dashboard": "Dashboard", "calendar": "Calendar", "orders": "Work orders", "customers": "Customers",
+    "vehicles": "Vehicles", "tireHotel": "Tire hotel", "inventory": "Inventory", "services": "Services & prices",
+    "employees": "Employees", "finance": "Finance", "analytics": "Analytics", "notifications": "Notifications",
+    "settings": "Settings", "admin": "Platform admin", "myWork": "My work"
+  },
+  "common": {
+    "save": "Save", "cancel": "Cancel", "create": "Create", "add": "Add", "edit": "Edit", "delete": "Delete",
+    "search": "Search", "searchPlaceholder": "Search name, phone or plate…", "filter": "Filter", "all": "All",
+    "loading": "Loading…", "empty": "Nothing here yet", "back": "Back", "close": "Close", "confirm": "Confirm",
+    "yes": "Yes", "no": "No", "actions": "Actions", "details": "Details", "status": "Status", "date": "Date",
+    "time": "Time", "total": "Total", "notes": "Notes", "name": "Name", "phone": "Phone", "email": "Email",
+    "branch": "Branch", "allBranches": "All branches", "export": "Export CSV", "print": "Print", "today": "Today",
+    "next": "Next", "previous": "Previous", "page": "Page {page} of {pages}", "saved": "Saved", "created": "Created",
+    "error": "Something went wrong", "retry": "Try again", "required": "Required", "optional": "optional",
+    "signOut": "Sign out", "theme": "Theme", "light": "Light", "dark": "Dark", "system": "System", "language": "Language",
+    "switchBusiness": "Switch business", "noAccess": "You do not have access to this section.", "minutes": "{n} min",
+    "quantity": "Qty", "price": "Price", "amount": "Amount", "method": "Method", "description": "Description",
+    "open": "Open", "view": "View", "comingSoon": "Not part of this release yet", "offline": "You are offline. Changes that need the server are disabled.",
+    "rows": "{count} rows", "commandHint": "Search or jump to… (Ctrl K)", "noResults": "No results"
+  },
+  "errors": {
+    "generic": "The operation failed. Please try again.",
+    "slot_taken": "That time is already taken on this post or by this employee.",
+    "forbidden": "You do not have permission for this action.",
+    "insufficient_stock": "Not enough stock for this movement.",
+    "location_full": "That storage cell is full.",
+    "warehouse_full": "No free cell left in this tire hotel.",
+    "storage_unpaid": "Storage is not fully paid. Record the payment first.",
+    "refund_exceeds_payment": "The refund is larger than what remains of the payment.",
+    "order_closed": "This order is closed.",
+    "booking_closed": "This booking is closed.",
+    "pending_approvals": "Some additional work is still waiting for the customer's approval.",
+    "rate_limited": "Too many attempts. Please wait a few minutes.",
+    "outside_hours": "That time is outside opening hours.",
+    "employee_absent": "The employee is absent at that time.",
+    "workstation_incompatible": "This post cannot perform the selected services.",
+    "too_late_to_change": "This booking can no longer be changed online. Please call us.",
+    "invalid_phone": "Please enter a valid phone number.",
+    "service_not_bookable": "One of the services cannot be booked online.",
+    "user_limit_reached": "The user limit of your license is reached.",
+    "module_disabled": "This module is turned off for your business.",
+    "invalid_amount": "Enter an amount greater than zero.",
+    "no_services": "Choose at least one service."
+  },
+  "auth": {
+    "signIn": "Sign in", "signInTitle": "Sign in to TireFlow", "password": "Password", "forgot": "Forgot password?",
+    "sendReset": "Send reset link", "resetSent": "If the address exists, a reset link is on its way.",
+    "newPassword": "New password", "setPassword": "Set password", "passwordUpdated": "Password updated.",
+    "invalid": "Wrong email or password.", "noBusiness": "Your account is not linked to any business yet. Ask the owner to invite you.",
+    "chooseBusiness": "Choose a business", "backToSignIn": "Back to sign in", "minLength": "At least 10 characters"
+  },
+  "dashboard": {
+    "title": "Dashboard", "bookingsToday": "Bookings today", "inProgress": "Cars in the workshop", "completedToday": "Completed today",
+    "revenueToday": "Revenue today", "revenueWeek": "This week", "revenueMonth": "This month", "avgTicket": "Average ticket",
+    "postLoad": "Post load today", "newCustomers": "New customers (month)", "returning": "Returning (month)",
+    "storedSets": "Tire sets stored", "overdue": "Unpaid completed orders", "upcoming": "Upcoming bookings",
+    "activeOrders": "Orders in progress", "revenue30": "Revenue, last 30 days", "load14": "Bookings, next 14 days",
+    "popular": "Popular services (90 days)", "lowStock": "Low stock", "storageEnding": "Storage ending in 30 days",
+    "seasonal": "{count} customers are due for a seasonal change and have no booking",
+    "quick": "Quick actions", "newBooking": "New booking", "newCustomer": "New customer", "newOrder": "New work order",
+    "newVehicle": "New vehicle", "checkIn": "Check in tires"
+  },
+  "customers": {
+    "title": "Customers", "new": "New customer", "firstName": "First name", "lastName": "Last name",
+    "channel": "Preferred channel", "locale": "Language", "discount": "Discount, %", "vip": "VIP",
+    "visits": "Visits", "spent": "Total spent", "lastVisit": "Last visit", "vehicles": "Vehicles", "history": "History",
+    "consents": "Consents", "dataProcessing": "Data processing", "marketing": "Marketing messages",
+    "exportData": "Export personal data", "anonymize": "Anonymize", "anonymizeConfirm": "Personal data will be removed. Financial records stay without names. This cannot be undone.",
+    "merge": "Merge duplicate", "mergeInto": "Merge this customer into…", "segment": "Segment", "tags": "Tags",
+    "segments": { "all": "All", "vip": "VIP", "new": "New (30 days)", "regular": "Regular (3+ visits)", "inactive": "Not seen for 6+ months", "corporate": "Corporate", "hotel": "Tire hotel" },
+    "channels": { "sms": "SMS", "email": "Email", "whatsapp": "WhatsApp", "telegram": "Telegram", "phone": "Phone call", "none": "Do not contact" },
+    "import": "Import CSV", "importHelp": "Columns: first_name,last_name,phone,email,plate", "imported": "Imported {count} customers",
+    "orders": "Work orders", "bookings": "Bookings", "tireSets": "Stored tires", "payments": "Payments"
+  },
+  "vehicles": {
+    "title": "Vehicles", "new": "New vehicle", "make": "Make", "model": "Model", "year": "Year", "plate": "Plate",
+    "vin": "VIN", "category": "Category", "rim": "Rim, inch", "tireSize": "Tire size", "mileage": "Mileage, km",
+    "tpms": "TPMS", "runflat": "RunFlat", "owner": "Owner", "serviceNotes": "Service notes", "findByPlate": "Find by plate…"
+  },
+  "services": {
+    "title": "Services & prices", "new": "New service", "category": "Category", "unit": "Unit", "basePrice": "Base price",
+    "duration": "Duration, min", "online": "Bookable online", "active": "Active", "rules": "Pricing rules",
+    "durationRules": "Duration rules", "newRule": "New rule", "conditions": "When", "adjustment": "Then", "priority": "Order",
+    "units": { "job": "per job", "wheel": "per wheel", "piece": "per piece", "hour": "per hour" },
+    "adjust": { "set": "set price to", "add": "add", "percent": "change by %" },
+    "anyService": "Every service", "anyCategory": "Any vehicle", "rimRange": "Rim from–to", "preview": "Price check",
+    "previewHelp": "See what the customer pays for given vehicle parameters.", "wheels": "Wheels", "rimType": "Rims",
+    "steel": "Steel", "alloy": "Alloy", "equipment": "Required equipment"
+  },
+  "calendar": {
+    "title": "Calendar", "day": "Day", "week": "Week", "list": "List", "byPost": "By post", "byEmployee": "By employee",
+    "newBooking": "New booking", "walkIn": "Walk-in", "customer": "Customer", "searchCustomer": "Find customer by name, phone or plate",
+    "newCustomerInline": "New customer", "vehicle": "Vehicle", "services": "Services", "post": "Post", "employee": "Employee",
+    "anyPost": "First free post", "noEmployee": "Not assigned", "start": "Start", "duration": "Duration", "estimate": "Estimate",
+    "internalNote": "Internal note", "block": "Block time", "blockReason": "Reason", "moved": "Booking moved",
+    "openOrder": "Open work order", "createOrder": "Create work order",
+    "status": { "pending": "Awaiting confirmation", "confirmed": "Confirmed", "arrived": "Arrived", "in_progress": "In progress", "completed": "Completed", "cancelled": "Cancelled", "no_show": "No-show" },
+    "waitlist": "Waiting list", "seasonalMode": "Seasonal mode", "dragHint": "Drag a booking to move it", "closed": "Closed"
+  },
+  "orders": {
+    "title": "Work orders", "new": "New work order", "number": "Number", "items": "Items", "addService": "Add service",
+    "addProduct": "Add product", "additional": "Additional work", "approve": "Approve", "decline": "Decline",
+    "awaitingApproval": "Waiting for customer approval", "subtotal": "Subtotal", "discount": "Discount", "tax": "VAT",
+    "paid": "Paid", "due": "Due", "recordPayment": "Record payment", "refund": "Refund", "refundReason": "Reason",
+    "damage": "Wheel and rim damage", "mileage": "Mileage", "assigned": "Assigned to", "printOrder": "Print work order",
+    "receipt": "Payment receipt", "notFiscal": "This document is not a fiscal receipt.",
+    "status": { "draft": "Draft", "scheduled": "Scheduled", "in_progress": "In progress", "awaiting_approval": "Awaiting approval", "ready": "Ready for pickup", "completed": "Completed", "cancelled": "Cancelled" },
+    "payment": { "unpaid": "Unpaid", "partial": "Partly paid", "paid": "Paid", "refunded": "Refunded", "overpaid": "Overpaid" },
+    "start": "Start work", "ready": "Mark ready", "complete": "Complete", "cancelOrder": "Cancel order", "warehouse": "Warehouse"
+  },
+  "hotel": {
+    "title": "Tire hotel", "checkIn": "Check in tires", "release": "Release", "releaseConfirm": "Release this set to the customer and free the cell?",
+    "code": "Code", "location": "Cell", "season": "Season", "seasons": { "summer": "Summer", "winter": "Winter", "all_season": "All-season" },
+    "size": "Size", "width": "Width", "profile": "Profile", "diameter": "Diameter", "loadIndex": "Load index", "speedIndex": "Speed index",
+    "withRims": "With rims", "condition": "Condition", "conditions": { "new": "New", "good": "Good", "fair": "Fair", "worn": "Worn", "unsafe": "Unsafe" },
+    "tires": "Per-tire condition", "dot": "DOT", "tread": "Tread, mm", "damage": "Damage", "positions": { "FL": "Front left", "FR": "Front right", "RL": "Rear left", "RR": "Rear right" },
+    "until": "Planned pickup", "price": "Storage price", "payNow": "Paid now", "label": "Print label", "capacity": "Capacity",
+    "occupied": "Occupied", "free": "Free", "fill": "Fill", "contract": "Contract", "ends": "Ends", "storedSince": "Stored since",
+    "manufacturer": "Manufacturer", "quantity": "Tires", "checkedIn": "Checked in to {location}", "released": "Released", "warehouse": "Hotel",
+    "scan": "Code or plate"
+  },
+  "inventory": {
+    "title": "Inventory", "newProduct": "New product", "sku": "SKU", "barcode": "Barcode", "category": "Category", "onHand": "On hand",
+    "minStock": "Minimum", "purchase": "Purchase price", "retail": "Retail price", "movement": "Stock movement",
+    "kinds": { "receipt": "Receipt", "issue": "Issue", "write_off": "Write-off", "return": "Return", "adjustment": "Adjustment", "transfer_out": "Transfer out", "transfer_in": "Transfer in", "order_consumption": "Used in order" },
+    "categories": { "new_tires": "New tires", "used_tires": "Used tires", "rims": "Rims", "valves": "Valves", "tpms_sensors": "TPMS sensors", "balance_weights": "Balance weights", "repair_materials": "Repair materials", "bolts": "Bolts", "nuts": "Nuts", "consumables": "Consumables", "other": "Other" },
+    "low": "Low", "history": "Movement history", "unitCost": "Unit cost"
+  },
+  "employees": {
+    "title": "Employees", "new": "New employee", "position": "Position", "skills": "Skills", "schedule": "Schedule", "absences": "Absences",
+    "orders": "Orders (90 days)", "revenue": "Revenue (90 days)", "commission": "Commission, %", "invite": "Invite to CRM", "role": "Role",
+    "roles": { "owner": "Owner", "manager": "Manager", "mechanic": "Mechanic", "accountant": "Accountant" }, "invited": "Invitation sent"
+  },
+  "finance": {
+    "title": "Finance", "payments": "Payments", "expenses": "Expenses", "newExpense": "New expense", "income": "Income", "refunds": "Refunds",
+    "net": "Net received", "debts": "Outstanding", "category": "Category", "disclaimer": "Management accounting only. Not a certified accounting or fiscal system.",
+    "expenseCategories": { "rent": "Rent", "salaries": "Salaries", "utilities": "Utilities", "purchases": "Purchases", "equipment": "Equipment", "marketing": "Marketing", "taxes": "Taxes", "other": "Other" }
+  },
+  "analytics": {
+    "title": "Analytics", "period": "Period", "revenue": "Revenue", "grossProfit": "Gross profit", "orders": "Orders",
+    "avgTicket": "Average ticket", "newCustomers": "New customers", "returning": "Returning customers", "cancelRate": "Cancellation rate",
+    "noShowRate": "No-show rate", "storageRevenue": "Tire hotel revenue", "hotelFill": "Tire hotel fill", "byService": "By service",
+    "byEmployee": "By employee", "byMonth": "By month", "byWeekday": "Bookings by weekday", "vsPrevious": "vs previous period",
+    "ranges": { "month": "This month", "prevMonth": "Last month", "season": "Last 90 days", "year": "Last 12 months" }
+  },
+  "notifications": {
+    "title": "Notifications", "queue": "Queue", "channels": "Channels", "templates": "Templates", "provider": "Provider",
+    "testAdapter": "Test adapter — messages are logged, nothing is delivered.", "notConnected": "Not connected", "connected": "Connected",
+    "event": "Event", "recipient": "Recipient", "attempts": "Attempts", "inbox": "Inbox", "markRead": "Mark read",
+    "jobStatus": { "queued": "Queued", "processing": "Sending", "sent": "Sent (test)", "failed": "Failed", "dead": "Gave up", "skipped": "Skipped" }
+  },
+  "settings": {
+    "title": "Settings", "business": "Business", "branding": "Branding", "modules": "Modules", "branches": "Branches", "posts": "Posts",
+    "team": "Team", "booking": "Online booking", "brandColor": "Brand color", "accentColor": "Accent color", "logo": "Logo",
+    "currency": "Currency", "crmLocale": "CRM language", "publicLocale": "Booking page language", "timezone": "Time zone",
+    "taxRate": "Default VAT, %", "pricesIncludeTax": "Prices include VAT", "slotStep": "Slot step, min", "leadTime": "Earliest booking, min ahead",
+    "horizon": "Booking horizon, days", "cancelUntil": "Customers can change until, min before", "requireConfirm": "Online bookings need confirmation",
+    "publicLink": "Public booking page", "address": "Address", "city": "City", "hours": "Opening hours",
+    "moduleNames": { "calendar": "Calendar", "orders": "Work orders", "customers": "Customers", "vehicles": "Vehicles", "tire_hotel": "Tire hotel", "inventory": "Inventory", "services": "Services", "employees": "Employees", "finance": "Finance", "analytics": "Analytics", "notifications": "Notifications", "corporate": "Corporate fleets", "online_booking": "Online booking", "ai_assistant": "AI assistant" },
+    "storagePrice": "Tire storage price per season", "newBranch": "New branch", "newPost": "New post", "equipment": "Equipment"
+  },
+  "admin": {
+    "title": "Platform admin", "businesses": "Businesses", "new": "New business", "slug": "Slug (URL)", "ownerEmail": "Owner email",
+    "active": "Active", "license": "License", "members": "Users", "bookings30": "Bookings (30 d)", "privacy": "Platform admins see counts only. Customer data stays inside each business.",
+    "createdInvite": "Business created. Invitation sent to the owner.", "deactivate": "Deactivate", "activate": "Activate"
+  },
+  "public": {
+    "book": "Book a visit", "step": "Step {n} of {total}", "branch": "Choose a branch", "vehicle": "Your vehicle", "category": "Vehicle type",
+    "rim": "Wheel size", "services": "Services", "extras": "Details", "tpms": "My car has TPMS", "runflat": "RunFlat tires",
+    "estimate": "Estimated price", "estimateNote": "Final price is confirmed at the workshop.", "slot": "Choose a time", "noSlots": "No free times on this day.",
+    "contact": "Your details", "plate": "License plate", "note": "Note for the workshop", "marketing": "Send me seasonal reminders and offers",
+    "gdpr": "Your data is used to handle the booking.", "confirm": "Confirm booking", "done": "Booking confirmed",
+    "doneText": "We look forward to seeing you. Save this link to change or cancel your booking:", "manage": "Your booking",
+    "cancel": "Cancel booking", "cancelled": "Booking cancelled", "reschedule": "Change time", "rescheduled": "Time changed",
+    "notFound": "Booking not found.", "closedOnline": "Online booking is not available.", "hours": "Opening hours", "poweredBy": "Powered by TireFlow",
+    "weekdays": { "1": "Mon", "2": "Tue", "3": "Wed", "4": "Thu", "5": "Fri", "6": "Sat", "7": "Sun" }
+  },
+  "offline": { "title": "You are offline", "text": "TireFlow needs a connection to book posts, move stock and take payments. Reconnect and reload." }
+}

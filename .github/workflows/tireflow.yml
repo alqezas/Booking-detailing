@@ -1,0 +1,57 @@
+name: tireflow
+
+on:
+  push:
+    paths: ["tireflow/**", ".github/workflows/tireflow.yml"]
+  pull_request:
+    paths: ["tireflow/**", ".github/workflows/tireflow.yml"]
+
+defaults:
+  run:
+    working-directory: tireflow
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: tireflow/package.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: tireflow/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+
+      # Local Supabase in Docker: migrations + demo seed, used by DB and E2E tests
+      - run: pnpm exec supabase start -x studio,imgproxy,vector,logflare,supavisor,edge-runtime
+      - name: Write .env.local from the local stack
+        run: |
+          pnpm exec supabase status -o env > .supabase.env
+          . ./.supabase.env
+          {
+            echo "NEXT_PUBLIC_APP_URL=http://localhost:3000"
+            echo "NEXT_PUBLIC_SUPABASE_URL=$API_URL"
+            echo "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=$PUBLISHABLE_KEY"
+            echo "SUPABASE_SECRET_KEY=$SECRET_KEY"
+            echo "SUPABASE_PROJECT_REF=local"
+          } > .env.local
+          echo "TEST_SUPABASE_URL=$API_URL" >> "$GITHUB_ENV"
+          echo "TEST_SUPABASE_PUBLISHABLE_KEY=$PUBLISHABLE_KEY" >> "$GITHUB_ENV"
+          echo "TEST_SUPABASE_SECRET_KEY=$SECRET_KEY" >> "$GITHUB_ENV"
+
+      - name: Generated DB types are up to date
+        run: |
+          pnpm exec supabase gen types typescript --local > /tmp/types.ts
+          diff -q /tmp/types.ts src/lib/supabase/database.types.ts
+
+      - run: pnpm typecheck
+      - run: pnpm lint
+      - run: pnpm test
+      - run: pnpm test:db
+      - run: pnpm build
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:e2e
